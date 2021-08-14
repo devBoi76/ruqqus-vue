@@ -2472,6 +2472,7 @@ CREATE TABLE public.subscriptions (
     board_id integer,
     created_utc integer NOT NULL,
     is_active boolean,
+    show_membership boolean DEFAULT true,
     get_notifs boolean DEFAULT false
 );
 
