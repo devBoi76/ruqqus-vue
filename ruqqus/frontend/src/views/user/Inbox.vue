@@ -63,9 +63,10 @@
 
 <script>
 // Import Components
+import { defineAsyncComponent } from 'vue'
 import axios from "axios";
 
-const NotificationList = () => import('@/components/notifications/NotificationList.vue')
+const NotificationList = defineAsyncComponent(() => import('@/components/notifications/NotificationList.vue'));
 
 import { mapState } from 'vuex';
 

@@ -125,10 +125,11 @@
 </template>
 
 <script>
+  import { defineAsyncComponent } from 'vue'
   import axios from "axios";
   //import { mapGetters } from "vuex"
   import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue'
-  const NotificationList = () => import('@/components/notifications/NotificationList.vue')
+  const NotificationList = defineAsyncComponent(() => import('@/components/notifications/NotificationList.vue'));
   
   export default {
     name: "NotificationsDropdown",

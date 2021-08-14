@@ -117,10 +117,11 @@
 
 <script>
 // Import components
+import { defineAsyncComponent } from 'vue'
 import axios from "axios";
 import { mapActions } from "vuex";
 
-const ItemList = () => import('@/views/ItemList.vue')
+const ItemList = defineAsyncComponent(() => import('@/views/ItemList.vue'));
 
 export default {
 	name: "ModerationReportsView",

@@ -21,8 +21,9 @@
 
 <script>
 // Import components
-const ItemList = () => import('@/views/ItemList.vue')
-const ListingToggle = () => import('@/components/forms/ListingToggle.vue')
+import { defineAsyncComponent } from 'vue'
+const ItemList = defineAsyncComponent(() => import('@/views/ItemList.vue')
+const ListingToggle = defineAsyncComponent(() => import('@/components/forms/ListingToggle.vue')
 
 export default {
 	name: "SavedView",

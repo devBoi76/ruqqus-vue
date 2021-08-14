@@ -261,14 +261,15 @@
 
 <script>
 // Import components
+import { defineAsyncComponent } from 'vue'
 import { getPostComments } from '../../../api/Post.js';
 import { getComment } from '../../../api/Comment.js';
 
-const CommentWrite = () => import('@/components/comment/CommentWrite.vue')
-const CommentSort = () => import('@/components/comment/CommentSort.vue')
-const CommentList = () => import('@/components/comment/CommentList.vue')
+const CommentWrite = defineAsyncComponent(() => import('@/components/comment/CommentWrite.vue'));
+const CommentSort = defineAsyncComponent(() => import('@/components/comment/CommentSort.vue'));
+const CommentList = defineAsyncComponent(() => import('@/components/comment/CommentList.vue'));
 
-const EmbedLink = () => import('@/components/embeds/Link.vue')
+const EmbedLink = defineAsyncComponent(() => import('@/components/embeds/Link.vue'));
 
 //import state
 import { mapState, mapActions, mapGetters } from "vuex";

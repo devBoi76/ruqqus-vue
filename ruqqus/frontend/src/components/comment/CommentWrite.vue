@@ -32,7 +32,8 @@
 
 <script>
 // Import components
-const Editor = () => import('@/components/editors/Editor_V2.vue')
+import { defineAsyncComponent } from 'vue'
+const Editor = defineAsyncComponent(() => import('@/components/editors/Editor_V2.vue'));
 
 import { mapState } from "vuex";
 

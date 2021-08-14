@@ -80,7 +80,7 @@ export default {
     darkMode() {
       return this.$store.state.persist.darkMode
     },
-    logIcon() {
+    logIcon() { // replace with object lookups
       if (this.log.kind == 'kick_post') {
         return 'fa-ban text-red-500 dark:text-red-400'
       } else if (this.log.kind == 'exile_user') {

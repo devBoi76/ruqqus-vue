@@ -289,14 +289,15 @@
 </template>
 
 <script>
+import { defineAsyncComponent } from 'vue'
 // Import our components
-const ItemList = () => import('@/views/ItemList.vue')
+const ItemList = defineAsyncComponent(() => import('@/views/ItemList.vue'))
 //const ItemListingTiny = () => import('@/components/item/ItemListingTiny.vue')
 
-const ItemSort = () => import('@/components/dropdowns/ItemSort.vue')
-const ListingToggle = () => import('@/components/forms/ListingToggle.vue')
+const ItemSort = defineAsyncComponent(() => import('@/components/dropdowns/ItemSort.vue'))
+const ListingToggle = defineAsyncComponent(() => import('@/components/forms/ListingToggle.vue'))
 
-const SidebarSection = () => import('@/components/navigation/vertical/SidebarSection.vue')
+const SidebarSection = defineAsyncComponent(() => import('@/components/navigation/vertical/SidebarSection.vue'))
 
 import { mapState } from "vuex";
 

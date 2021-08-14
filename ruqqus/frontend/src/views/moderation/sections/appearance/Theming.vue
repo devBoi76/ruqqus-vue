@@ -123,8 +123,9 @@
 
 <script>
 // Import components
-const Toggle = () => import('@/components/Toggle.vue')
-const VSwatches = () => import('vue-swatches')
+import { defineAsyncComponent } from 'vue'
+const Toggle = defineAsyncComponent(() => import('@/components/Toggle.vue'));
+const VSwatches = defineAsyncComponent(() => import('vue-swatches'));
 
 // Import styles
 import 'vue-swatches/dist/vue-swatches.css'

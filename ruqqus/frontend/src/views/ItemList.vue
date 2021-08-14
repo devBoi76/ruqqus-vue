@@ -70,10 +70,11 @@
 </template>
 
 <script>
+	import { defineAsyncComponent } from 'vue'
 	import { mapState } from "vuex";
 
-	const ItemListing = () => import('@/components/item/ItemListing.vue')
-	const ItemListingCompact = () => import('@/components/item/ItemListingCompact.vue')
+	const ItemListing = defineAsyncComponent(() => import('@/components/item/ItemListing.vue'))
+	const ItemListingCompact = defineAsyncComponent(() => import('@/components/item/ItemListingCompact.vue'))
 
 	//import ItemListingCompact from "@/components/item/ItemListingCompact.vue";
 

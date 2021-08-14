@@ -171,8 +171,9 @@
 
 <script>
 // Import components
-const Toggle = () => import('@/components/Toggle.vue')
-const Editor = () => import('@/components/editors/Editor_V2.vue')
+import { defineAsyncComponent } from 'vue'
+const Toggle = defineAsyncComponent(() => import('@/components/Toggle.vue'));
+const Editor = defineAsyncComponent(() => import('@/components/editors/Editor_V2.vue'));
 
 export default {
 	name: "UserSettingsBasicInfoView",

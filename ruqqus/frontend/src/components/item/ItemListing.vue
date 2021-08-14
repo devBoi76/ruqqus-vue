@@ -214,9 +214,10 @@
 
 <script>
 //import components
+import { defineAsyncComponent } from 'vue'
 import { mapState, mapGetters } from "vuex";
 import ItemActions from "@/components/item/ItemActions.vue";
-const EmbedLink = () => import('@/components/embeds/Link.vue')
+const EmbedLink = defineAsyncComponent(() => import('@/components/embeds/Link.vue'));
 //import date-fns
 import { isValid, formatDistanceToNowStrict } from '../../../node_modules/date-fns'
 

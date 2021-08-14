@@ -143,12 +143,13 @@
 
 <script>
 //import components
+import { defineAsyncComponent } from 'vue'
 import { mapState } from "vuex"
 
 import Options from "../dropdowns/CommentOptions.vue"
 
-const CommentList = () => import('@/components/comment/CommentList.vue')
-const WriteComment = () => import('@/components/comment/CommentWrite.vue')
+const CommentList = defineAsyncComponent(() => import('@/components/comment/CommentList.vue'));
+const WriteComment = defineAsyncComponent(() => import('@/components/comment/CommentWrite.vue'));
 
 //import date-fns
 import { isValid, formatDistanceToNow } from '../../../node_modules/date-fns'

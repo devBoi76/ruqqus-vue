@@ -74,7 +74,8 @@
 
 <script>
 // import components
-const draggable = () => import('vuedraggable')
+import { defineAsyncComponent } from 'vue'
+const draggable = defineAsyncComponent(() => import('vuedraggable'));
 
 export default {
 	props: {

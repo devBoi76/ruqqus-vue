@@ -46,12 +46,13 @@
 
 <script>
 // Import our components
+import { defineAsyncComponent } from 'vue'
 import { mapState } from "vuex";
 
-const ItemList = () => import('@/views/ItemList.vue')
+const ItemList = defineAsyncComponent(() => import('@/views/ItemList.vue'))
 
-const ItemSort = () => import('@/components/dropdowns/ItemSort.vue')
-const ListingToggle = () => import('@/components/forms/ListingToggle.vue')
+const ItemSort = defineAsyncComponent(() => import('@/components/dropdowns/ItemSort.vue'))
+const ListingToggle = defineAsyncComponent(() => import('@/components/forms/ListingToggle.vue'))
 
 export default {
 	name: "PostsView",
