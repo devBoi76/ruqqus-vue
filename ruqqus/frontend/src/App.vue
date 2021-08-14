@@ -16,24 +16,25 @@
 
 <script>
 // Import components
+import { defineAsyncComponent } from 'vue'
 import { mapState, mapGetters } from "vuex";
 
-const Navbar = () => import('@/components/navigation/horizontal/Navbar.vue')
-const NavbarAuth = () => import('@/components/navigation/horizontal/NavbarAuthenticated.vue')
-const NavbarOnboarding = () => import('@/components/navigation/horizontal/NavbarOnboarding.vue')
+const Navbar = defineAsyncComponent(() => import('@/components/navigation/horizontal/Navbar.vue'))
+const NavbarAuth = defineAsyncComponent(() => import('@/components/navigation/horizontal/NavbarAuthenticated.vue'))
+const NavbarOnboarding = defineAsyncComponent(() => import('@/components/navigation/horizontal/NavbarOnboarding.vue'))
 
 import Leftbar from "@/components/navigation/vertical/Leftbar.vue"
 
-const NotificationsList = () => import('@/components/notifications/ToastList.vue')
+const NotificationsList = defineAsyncComponent(() => import('@/components/notifications/ToastList.vue'))
 
-const DropAnImage = () => import('@/components/DropAnImage.vue')
+const DropAnImage = defineAsyncComponent(() => import('@/components/DropAnImage.vue'))
 
 export default {
   name: "App",
   components: {
+    Navbar,
     NavbarOnboarding,
     NavbarAuth,
-    Navbar,
     Leftbar,
     NotificationsList,
     DropAnImage
@@ -43,7 +44,7 @@ export default {
   },
   computed: {
     ...mapState("persist", ["is_authenticated", "darkMode"]),
-    ...mapGetters("notifications", ["toastsLength"]),
+    ...mapGetters("toasts", ["toastsLength"]),
     isOnboarding() {
       return this.$route.path.startsWith('/welcome');
     },
