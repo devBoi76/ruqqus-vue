@@ -14,17 +14,17 @@
 								<label class="label" label-for="username-desktop">
 									Username or Email
 								</label>
-								<input type="text" placeholder="Your username or email" name="username-desktop" v-model="form.name"/>
+								<input type="text" class="form-input" placeholder="Your username or email" name="username-desktop" v-model="form.name"/>
 							</div>
 							<div>
 								<label class="label" label-for="password-desktop">
 									Password
 								</label>
-								<input type="password" placeholder="Your password" required name="password-desktop" v-model="form.password"/>
+								<input type="password" class="form-input" placeholder="Your password" required name="password-desktop" v-model="form.password"/>
 								<a href="/register" class="block mt-2 text-xs text-purple-500 hover:text-purple-600">Forgot password?</a>
 							</div>
 						</div>
-						<button class="w-full mt-6" @click="auth_v(form)">
+						<button class="button w-full mt-6" @click="auth_v(form)">
 							Log in
 						</button>
 					</div>
@@ -46,8 +46,8 @@
 						<label class="block mb-1 text-black text-xs uppercase tracking-wide font-medium" label-for="mfa">
 							Authentication Code
 						</label>
-						<input id="input-4" v-model="form.mfa" type="numbers" required placeholder="123456" name="mfa"/>
-						<button class="w-full mt-4" @click="verify_mfa(form)">
+						<input id="input-4" class="form-input" v-model="form.mfa" type="number" required placeholder="123456" name="mfa"/>
+						<button class="button button-primary w-full mt-4" @click="verify_mfa(form)">
 							Log in
 						</button>
 					</div>

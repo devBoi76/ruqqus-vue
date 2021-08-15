@@ -8,12 +8,12 @@
             </div>
           </div>
           <div class="hidden md:flex space-x-2">
-            <t-button @click="logout()" variant="outlinePurple500">
+            <button @click="logout()" class="button text-primary bg-transparent border border-primary hover:bg-primary hover:text-white">
               Log in
-            </t-button>
-            <t-button @click="logout()" variant="purple500">
+            </button>
+            <button @click="logout()" class="button bg-primary hover:bg-opacity-70">
               Sign up
-            </t-button>
+            </button>
           </div>
           <div class="-mr-2 flex md:hidden">
             <!-- Mobile menu button -->
