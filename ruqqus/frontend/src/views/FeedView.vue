@@ -200,7 +200,7 @@
 								</div>
 							</template>
 						</SidebarSection>
-						<SidebarSection title="Featured Guilds" class="mb-6">
+						<!-- <SidebarSection title="Featured Guilds" class="mb-6">
 							<template v-slot:body>
 								<div class="p-4 bg-white dark:bg-gray-800 shadow-xs rounded-sm">
 									<ul class="mb-5 space-y-3">
@@ -224,7 +224,7 @@
 									</t-button>
 								</div>
 							</template>
-						</SidebarSection>
+						</SidebarSection> -->
 						<SidebarSection title="Support Ruqqus">
 							<template v-slot:body>
 								<ul class="mb-0 p-4 space-y-3 bg-white dark:bg-gray-800 shadow-xs rounded-sm">
@@ -292,8 +292,6 @@
 import { defineAsyncComponent } from 'vue'
 // Import our components
 const ItemList = defineAsyncComponent(() => import('@/views/ItemList.vue'))
-//const ItemListingTiny = () => import('@/components/item/ItemListingTiny.vue')
-
 const ItemSort = defineAsyncComponent(() => import('@/components/dropdowns/ItemSort.vue'))
 const ListingToggle = defineAsyncComponent(() => import('@/components/forms/ListingToggle.vue'))
 
@@ -314,61 +312,32 @@ export default {
 				sort: this.$route.query.sort || 'hot',
 				t: this.$route.query.t || 'all'
 			},
-			featured: [
-			{
-				id: 1,
-				name: 'ruqqus',
-				profile_url: 'https://i.ruqqus.com/board/ruqqus/profile-3.png',
-				subscription_count: 4503
-			},
-			{
-				id: 2,
-				name: 'gaming',
-				profile_url: 'https://i.ruqqus.com/board/gaming/profile-2.png',
-				subscription_count: 4500
-			},
-			{
-				id: 3,
-				name: 'politicalcompassmemes',
-				profile_url: 'https://i.ruqqus.com/board/politicalcompassmemes/profile-7.png',
-				subscription_count: 503
-			},
-			{
-				id: 4,
-				name: 'technology',
-				profile_url: 'https://i.ruqqus.com/board/technology/profile-3.png',
-				subscription_count: 1010
-			}
-			],
-			itemsFollowing: [
-			{
-				id: 1,
-				title: '[OC] The Upvooter',
-				created_utc: 1621042047,
-				author: {
-					username: 'drakus_',
-					profile_url: 'https://i.ruqqus.com/users/Drakus_/profile-7.png'
-				}
-			},
-			{
-				id: 2,
-				title: 'Cap depreciation thread',
-				created_utc: 1621042047,
-				author: {
-					username: 'RoyBatty',
-					profile_url: 'https://i.ruqqus.com/uid/1ags/profile-4.png'
-				}
-			},
-			{
-				id: 3,
-				title: 'ｔｈｅ💙ｉｄｅａｌｉｓｔ',
-				created_utc: 1621042047,
-				author: {
-					username: 'BlackWindow',
-					profile_url: 'https://i.ruqqus.com/users/BlackWindow/profile-2.png'
-				}
-			}
-			]
+			// featured: [
+			// {
+			// 	id: 1,
+			// 	name: 'ruqqus',
+			// 	profile_url: 'https://i.ruqqus.com/board/ruqqus/profile-3.png',
+			// 	subscription_count: 4503
+			// },
+			// {
+			// 	id: 2,
+			// 	name: 'gaming',
+			// 	profile_url: 'https://i.ruqqus.com/board/gaming/profile-2.png',
+			// 	subscription_count: 4500
+			// },
+			// {
+			// 	id: 3,
+			// 	name: 'politicalcompassmemes',
+			// 	profile_url: 'https://i.ruqqus.com/board/politicalcompassmemes/profile-7.png',
+			// 	subscription_count: 503
+			// },
+			// {
+			// 	id: 4,
+			// 	name: 'technology',
+			// 	profile_url: 'https://i.ruqqus.com/board/technology/profile-3.png',
+			// 	subscription_count: 1010
+			// }
+			// ]
 		};
 	},
 	computed:{
@@ -398,7 +367,6 @@ export default {
 	},
 	components: {
 		ItemList,
-		//ItemListingTiny,
 		ItemSort,
 		ListingToggle,
 		SidebarSection
