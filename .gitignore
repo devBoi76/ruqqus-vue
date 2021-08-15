@@ -123,5 +123,6 @@ package-lock.json
 *.css.map
 *.map
 local.txt
+yarn.lock
 
 

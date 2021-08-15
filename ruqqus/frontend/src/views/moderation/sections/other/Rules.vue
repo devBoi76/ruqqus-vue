@@ -108,7 +108,7 @@
 												<div class="grid grid-cols-3 gap-6">
 													<div class="col-span-full md:col-span-2 lg:col-span-1">
 														<div class="relative">
-															<t-input v-model="rule.name" type="text" placeholder="Enter a name..." maxlength="32"/>
+															<input class="form-input" v-model="rule.name" type="text" placeholder="Enter a name..." maxlength="32"/>
 															<div v-if="rule.name" class="absolute text-xs font-semibold text-gray-400 right-3 bottom-2" :class="{'text-red-500':rule.name.length >= 32}">
 																{{ 32 - rule.name.length }}
 															</div>

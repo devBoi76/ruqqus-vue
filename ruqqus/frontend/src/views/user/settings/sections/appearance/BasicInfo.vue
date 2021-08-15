@@ -182,7 +182,7 @@
 								Total referalls: <span class="text-purple-500 font-bond">{{ v.referral_count || 0 }}</span>
 							</div>
 						</div>
-						<t-input disabled :value="`https://ruqqus.com/signup?ref=${v.username}`" type="text"/>
+						<input class="form-input" disabled :value="`https://ruqqus.com/signup?ref=${v.username}`" type="text"/>
 						<p class="mt-2 text-sm text-gray-500">
 							Share this link with anyone and unlock cosmetics for your profile.
 							<a class="text-purple-500 hover:underline" href="/help/referalls">

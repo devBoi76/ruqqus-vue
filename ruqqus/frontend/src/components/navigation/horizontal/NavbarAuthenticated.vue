@@ -9,7 +9,7 @@
 					<div class="hidden md:block w-1/3">
 						<div class="ml-4 flex items-baseline space-x-4">
 							<!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-							<t-input v-model="searchTerm" placeholder="Search posts, +guilds, or @users" @keyup.enter="search()"/>
+							<input class="form-input" v-model="searchTerm" placeholder="Search posts, +guilds, or @users" @keyup.enter="search()"/>
 						</div>
 					</div>
 				</div>
@@ -159,7 +159,7 @@
 					<!-- Menu Icon -->
 					<i class="far fa-long-arrow-left fa-fw fa-lg"></i>
 				</button>
-				<t-input v-model="searchTerm" placeholder="Search Ruqqus..." @keyup.enter="search(); searchDrawer()"/>
+				<input class="form-input" v-model="searchTerm" placeholder="Search Ruqqus..." @keyup.enter="search(); searchDrawer()"/>
 			</div>
 		</aside>
 	</nav>

@@ -36,14 +36,14 @@
 								<template v-slot:form>
 									<div class="px-4 py-5 md:p-5 space-y-4">
 										<t-input-group label="Username" class="relative">
-											<t-input variant="purple500" v-model="v.username" :placeholder="v.username" type="text" disabled/>
+											<input class="form-input purple500" v-model="v.username" :placeholder="v.username" type="text" disabled/>
 										</t-input-group>
 										<t-input-group label="App Name" class="relative">
-											<t-input variant="purple500" v-model="app.name" placeholder="Give your app a name" type="text"/>
+											<input class="form-input purple500" v-model="app.name" placeholder="Give your app a name" type="text"/>
 										</t-input-group>
 										<div>
 											<t-input-group label="Redirect URI" class="relative">
-												<t-input variant="purple500" v-model="app.uri" placeholder="Enter a redirect URI" type="text"/>
+												<input class="form-input purple500" v-model="app.uri" placeholder="Enter a redirect URI" type="text"/>
 											</t-input-group>
 											<p class="mt-2 text-sm text-gray-500">
 												A custom URI scheme can be used. Seperate options with a comma.

@@ -53,14 +53,14 @@
 										</div>
 									</div>
 									<t-input-group class="relative">
-										<t-input v-model="submission.title" placeholder="Give your post a title"/>
+										<input class="form-input" v-model="submission.title" placeholder="Give your post a title"/>
 										<div v-if="submission.title" class="absolute text-xs font-semibold text-gray-400 right-3 bottom-2" :class="{'text-red-500':submission.title.length >= 32}">
 											{{32 - submission.title.length}}
 										</div>
 									</t-input-group>
 
 									<t-input-group v-show="!submission.image.source">
-										<t-input v-model="submission.link" placeholder="Add a link to something cool (optional)"/>
+										<input class="form-input" v-model="submission.link" placeholder="Add a link to something cool (optional)"/>
 									</t-input-group>
 
 									<iframe v-if="embed" :src="embed" width="100%" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"/>

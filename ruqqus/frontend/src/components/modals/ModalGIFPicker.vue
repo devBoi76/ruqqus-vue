@@ -29,7 +29,7 @@
 		<div class="font-bold text-lg">Find a GIF</div>
 	</template>
 	<div class="mt-4 px-4">
-		<t-input v-model="searchTerm" placeholder="Search for that perfect gif"/> <!-- Add debounce function -->
+		<input v-model="searchTerm" placeholder="Search for that perfect gif" class="font-input"/> <!-- Add debounce function -->
 	</div>
 	<div v-show="searchTerm" class="p-4">
 		<div v-if="gifs" class="masonry mb-4">

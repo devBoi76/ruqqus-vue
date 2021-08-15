@@ -9,7 +9,7 @@
 						Members
 					</h1>
 					<div v-show="!loading && !errored" class="flex space-x-2">
-						<t-input placeholder="Search members" type="text"/>
+						<input class="form-input" placeholder="Search members" type="text"/>
 					</div>
 				</div>
 			</div>

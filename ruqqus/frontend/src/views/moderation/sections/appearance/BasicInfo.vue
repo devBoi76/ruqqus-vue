@@ -67,7 +67,7 @@
 												<div v-if="active" class="space-y-6 mt-6">
 													<div class="grid grid-cols-3 gap-6">
 														<div class="col-span-3 sm:col-span-2">
-															<t-input v-model="g.name" :placeholder="$route.params.name" type="text"/>
+															<input class="form-input" v-model="g.name" :placeholder="$route.params.name" type="text"/>
 															<p class="text-sm text-gray-500 mt-1">
 																You may only change the capitalization
 															</p>

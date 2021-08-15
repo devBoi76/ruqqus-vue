@@ -36,7 +36,7 @@
 								<template v-slot:form>
 									<div class="px-4 py-5 md:p-5">
 										<t-input-group label="Email" class="relative">
-											<t-input variant="purple500" v-model="v.email" :placeholder="v.email || 'ruqqie@example.com'" type="text"/>
+											<input class="form-input purple500" v-model="v.email" :placeholder="v.email || 'ruqqie@example.com'" type="text"/>
 										</t-input-group>
 										<p class="mt-2 text-sm text-gray-500">
 											Only the guild name capitalization can be changed.
@@ -53,10 +53,10 @@
 								<template v-slot:form>
 									<div class="px-4 py-5 md:p-5">
 										<t-input-group label="Current Password">
-											<t-input value="" placeholder="Enter your current password" type="password"/>
+											<input class="form-inpu" placeholder="Enter your current password" type="password"/>
 										</t-input-group>
 										<t-input-group label="New Password" class="relative mt-4">
-											<t-input v-model="newPassword" placeholder="Enter a new password" :type="showPassword ? 'text' : 'password'"/>
+											<input class="form-input" v-model="newPassword" placeholder="Enter a new password" :type="showPassword ? 'text' : 'password'"/>
 											<button type="button" class="flex items-center absolute text-gray-400 right-1 bottom-0 p-2 transform active:scale-95 origin-center" @click="showPassword = !showPassword">
 												{{ showPassword ? '&#128585;' : '&#128584;' }}
 											</button>

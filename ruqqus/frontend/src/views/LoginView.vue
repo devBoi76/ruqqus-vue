@@ -38,13 +38,13 @@
 										<label class="label" label-for="username-desktop">
 											Username or Email
 										</label>
-										<t-input placeholder="Your username or email" name="username-desktop" v-model="form.name"/>
+										<input class="form-input" placeholder="Your username or email" name="username-desktop" v-model="form.name"/>
 									</div>
 									<div>
 										<label class="label" label-for="password-desktop">
 											Password
 										</label>
-										<t-input placeholder="Your password" type="password" required name="password-desktop" v-model="form.password"/>
+										<input class="form-input" placeholder="Your password" type="password" required name="password-desktop" v-model="form.password"/>
 										<a href="/register" class="block mt-2 text-xs text-purple-500 hover:text-purple-600">Forgot password?</a>
 									</div>
 								</div>
@@ -55,7 +55,7 @@
 								<label class="block mb-1 text-black text-xs uppercase tracking-wide font-medium" label-for="mfa">
 									Authentication Code
 								</label>
-								<t-input id="input-4" v-model="form.mfa" type="numbers" required placeholder="123456" name="mfa"/>
+								<input class="form-input" id="input-4" v-model="form.mfa" type="numbers" required placeholder="123456" name="mfa"/>
 								<t-button class="w-full mt-4" @click="verify_mfa(form)">Log in</t-button>
 							</div>
 
@@ -92,13 +92,13 @@
 										<label class="block mb-1 text-black text-xs uppercase tracking-wide font-medium" label-for="username-desktop">
 											Username or Email
 										</label>
-										<t-input placeholder="Your username or email" name="username-desktop" v-model="form.name"/>
+										<input class="form-input" placeholder="Your username or email" name="username-desktop" v-model="form.name"/>
 									</div>
 									<div>
 										<label class="block mb-1 text-black text-xs uppercase tracking-wide font-medium" label-for="password-desktop">
 											Password
 										</label>
-										<t-input placeholder="Your password" type="password" required name="password-desktop" v-model="form.password"/>
+										<input class="form-input" placeholder="Your password" type="password" required name="password-desktop" v-model="form.password"/>
 										<a href="/register" class="block mt-2 text-xs text-purple-500 hover:text-purple-600">Forgot password?</a>
 									</div>
 								</div>
@@ -111,7 +111,7 @@
 								<label class="block mb-1 text-black text-xs uppercase tracking-wide font-medium" label-for="mfa">
 									Authentication Code
 								</label>
-								<t-input id="input-4" v-model="form.mfa" type="numbers" required placeholder="123456" name="mfa"/>
+								<input class="form-input" id="input-4" v-model="form.mfa" type="numbers" required placeholder="123456" name="mfa"/>
 								<t-button class="w-full mt-4" @click="verify_mfa(form)">Log in</t-button>
 							</div>
 
