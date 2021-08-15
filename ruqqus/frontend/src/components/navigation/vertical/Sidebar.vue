@@ -3,7 +3,7 @@
 
 	<slot name="header" v-if="stickyHeader"/>
 
-	<div class="overflow-y-auto scrollbar-hidden py-2">
+	<div class="w-full py-2 overflow-y-auto scrollbar-hidden">
 
 		<slot name="header" v-if="!stickyHeader"/>
 
@@ -51,8 +51,6 @@
 
 <script>
 // import components
-import { defineAsyncComponent } from 'vue'
-
 export default {
 	props: {
 		menu: {
@@ -72,12 +70,8 @@ export default {
 			type: Boolean,
 			default: false
 		}
-	},
-	data() {
-		return {
-		};
 	}
-};
+}
 </script>
 
 <style scoped>
