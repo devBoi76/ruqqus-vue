@@ -32,8 +32,8 @@
 				<!-- 2-step form -->
 				<div v-show="mfa">
 					<div>
-						<div class="flex items-center justify-center w-12 h-12 mx-auto mb-3 rounded-sm-lg bg-purple-100">
-							<i class="fas fa-lock-alt text-purple-400"></i>
+						<div class="flex items-center justify-center w-12 h-12 mx-auto mb-6 rounded-sm bg-gray-100">
+							<i class="fas fa-lock-alt text-purple-500"></i>
 						</div>
 						<h5>
 							2 Step Authentication
@@ -46,7 +46,7 @@
 						<label class="block mb-1 text-black text-xs uppercase tracking-wide font-medium" label-for="mfa">
 							Authentication Code
 						</label>
-						<input id="input-4" class="form-input" v-model="form.mfa" type="number" required placeholder="123456" name="mfa"/>
+						<input id="input-4" class="form-input" v-model="form.mfa" type="number" required placeholder="123456" maxlength="6" name="mfa"/>
 						<button class="button bg-primary hover:bg-opacity-70 w-full mt-4" @click="verify_mfa(form)">
 							Log in
 						</button>
