@@ -20,9 +20,10 @@
 					</div>
 				</div>
 				<div v-if="!item.header">
-					<router-link custom :to="item.route" v-slot="{ href, navigate, isActive }">
-						<a :href="href" @click="navigate" class="relative block px-4 py-2 text-left transition duration-100" :class="isActive ? 'text-gray-900 font-medium bg-gray-100' : 'text-gray-700 hover:bg-gray-100'">
-							<!-- <span v-if="!item.icon">
+					<router-link custom :to="item.route" v-slot="{ href, navigate }">
+						<a :href="href" @click="navigate" class="relative block px-4 py-2 text-left transition duration-100">
+							<!-- <a :href="href" @click="navigate" class="relative block px-4 py-2 text-left transition duration-100" :class="isActive ? 'text-gray-900 font-medium bg-gray-100' : 'text-gray-700 hover:bg-gray-100'"> -->
+							<span v-if="!item.icon">
 								<img
 								:id="item.id"
 								v-lazy="item.src"
@@ -30,14 +31,14 @@
 								:alt="item.alt"
 								/>
 								<span class="pl-3">+{{ item.name }}</span>
-							</span> -->
-							<span>
+							</span>
+							<span v-else>
 								<i class="far fa-fw mr-1" :class="[item.icon,isActive ? 'text-gray-900' : 'text-gray-400']"></i>
 								<span :class="item.textCase">
 									{{ item.name }}
 								</span>
 							</span>
-							<span v-show="isActive" class="arrow"/>
+							<!-- <span v-show="isActive" class="arrow"/> -->
 						</a>
 					</router-link>
 				</div>
