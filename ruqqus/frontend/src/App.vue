@@ -4,7 +4,6 @@
     <component :is="navbarComponent"/>
     <!-- Main content -->
     <div class="flex h-screen pt-12 sm:pt-14 bg-gray-50 sm:bg-gray-100 dark:bg-gray-950">
-      <Leftbar v-show="showSidebar" sidebar-color="white"/>
       <router-view ></router-view>
     </div>
 
@@ -22,8 +21,6 @@ import { mapState, mapGetters } from "vuex";
 const Navbar = defineAsyncComponent(() => import('@/components/navigation/horizontal/Navbar.vue'))
 const NavbarAuth = defineAsyncComponent(() => import('@/components/navigation/horizontal/NavbarAuthenticated.vue'))
 const NavbarOnboarding = defineAsyncComponent(() => import('@/components/navigation/horizontal/NavbarOnboarding.vue'))
-
-import Leftbar from "@/components/navigation/vertical/Leftbar.vue"
 
 const NotificationsList = defineAsyncComponent(() => import('@/components/notifications/ToastList.vue'))
 
@@ -67,9 +64,6 @@ export default {
       set (value) {
         this.$store.commit('create/SET_SUBMISSION', {submission: value})
       }
-    },
-    showSidebar() {
-      return this.$route.meta.sidebar !== false
     }
   },
   methods: {
