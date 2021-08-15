@@ -32,7 +32,6 @@ export default {
     Navbar,
     NavbarOnboarding,
     NavbarAuth,
-    Leftbar,
     NotificationsList,
     DropAnImage
   },
