@@ -88,21 +88,21 @@ import { store } from "@/store";
 const routes = [
 
 	// Home View
-	{ path: '/', name: 'HomeView', component: FeedView, props: true, meta: {title: 'home', requiresAuth: true} },
+	{ path: '/', name: 'HomeView', component: FeedView, props: true, meta: {title: 'home', sidebar: false, requiresAuth: true} },
 	// Starred View
-	{ path: '/stargazed', name: 'StargazedView', component: FeedView, props: true, meta: {title: 'stargazed', requiresAuth: true} },
-	{ path: '/trending', name: 'TrendingView', component: FeedView, props: true, meta: {title: 'trending', requiresAuth: true} },
-	{ path: '/all', name: 'AllView', component: FeedView, props: true, meta: {title: 'all', requiresAuth: true} },
+	{ path: '/stargazed', name: 'StargazedView', component: FeedView, props: true, meta: {title: 'stargazed', sidebar: false, requiresAuth: true} },
+	{ path: '/trending', name: 'TrendingView', component: FeedView, props: true, meta: {title: 'trending', sidebar: false, requiresAuth: true} },
+	{ path: '/all', name: 'AllView', component: FeedView, props: true, meta: {title: 'all', sidebar: false, requiresAuth: true} },
 	// Guild View
 	{
-		path: '/+:name', component: GuildView, props: true, meta: {requiresAuth: true},
+		path: '/+:name', component: GuildView, props: true, meta: {sidebar: false, requiresAuth: true},
 		children: [
-		{ path: '', name: 'guild-posts-view', component: GuildPostsView, props: true, meta: {requiresAuth: true} },
-		{ path: '/+:name/post/:id/:title?/:commentId?', name: 'guild-item-view', component: GuildThreadView, props: true, meta: {requiresAuth: true} },
-		{ path: '/+:name/about', component: GuildAboutView, name: 'guild-about-view', props: true, meta: {requiresAuth: true} },
-		{ path: '/+:name/members', component: GuildMembersView, name: 'guild-members-view', props: true, meta: {requiresAuth: true} },
-		{ path: '/+:name/logs', component: GuildAuditLogView, name: 'guild-logs-view', props: true, meta: {requiresAuth: true} },
-		{ path: '/+:name/saved', alias: '/+:name/ruqqsack', component: GuildSavedView, name: 'guild-saved-view', props: true, meta: {requiresAuth: true} }
+		{ path: '', name: 'guild-posts-view', component: GuildPostsView, props: true, meta: {sidebar: false, requiresAuth: true} },
+		{ path: '/+:name/post/:id/:title?/:commentId?', name: 'guild-item-view', component: GuildThreadView, props: true, meta: {sidebar: false, requiresAuth: true} },
+		{ path: '/+:name/about', component: GuildAboutView, name: 'guild-about-view', props: true, meta: {sidebar: false, requiresAuth: true} },
+		{ path: '/+:name/members', component: GuildMembersView, name: 'guild-members-view', props: true, meta: {sidebar: false, requiresAuth: true} },
+		{ path: '/+:name/logs', component: GuildAuditLogView, name: 'guild-logs-view', props: true, meta: {sidebar: false, requiresAuth: true} },
+		{ path: '/+:name/saved', alias: '/+:name/ruqqsack', component: GuildSavedView, name: 'guild-saved-view', props: true, meta: {sidebar: false, requiresAuth: true} }
 		]
 	},
 
@@ -120,31 +120,31 @@ const routes = [
 		{
 			path: '/dashboard', component: UserView, props: true, meta: {requiresAuth: true},
 			children: [
-			{ path: '/following', component: UserFollowingView, name: 'user-following-view', props: true, meta: {requiresAuth: true} },
-			{ path: '/notifications', alias: ['/notifications/all','/inbox','/inbox/all'], component: UserInboxView, name: 'user-inbox-view', props: { sort: 'all' }, meta: {requiresAuth: true} },
-			{ path: '/notifications/unread', alias: '/inbox/unread', component: UserInboxView, name: 'user-inbox-unread-view', props: { sort: 'unread' }, meta: {requiresAuth: true} },
-			{ path: '/notifications/replies', alias: '/inbox/replies', component: UserInboxView, name: 'user-inbox-replies-view', props: { sort: 'replies' }, meta: {requiresAuth: true} },
-			{ path: '/notifications/mentions', alias: '/inbox/mentions', component: UserInboxView, name: 'user-inbox-mentions-view', props: { sort: 'mentions' }, meta: {requiresAuth: true} },
-			{ path: '/notifications/posts', alias: '/inbox/posts', component: UserInboxView, name: 'user-inbox-posts-view', props: { sort: 'posts' }, meta: {requiresAuth: true} },
-			{ path: '/notifications/system', alias: '/inbox/system', component: UserInboxView, name: 'user-inbox-system-view', props: { sort: 'system' }, meta: {requiresAuth: true} },
+			{ path: '/following', component: UserFollowingView, name: 'user-following-view', props: true, meta: {sidebar: false, requiresAuth: true} },
+			{ path: '/notifications', alias: ['/notifications/all','/inbox','/inbox/all'], component: UserInboxView, name: 'user-inbox-view', props: { sort: 'all' }, meta: {sidebar: false, requiresAuth: true} },
+			{ path: '/notifications/unread', alias: '/inbox/unread', component: UserInboxView, name: 'user-inbox-unread-view', props: { sort: 'unread' }, meta: {sidebar: false, requiresAuth: true} },
+			{ path: '/notifications/replies', alias: '/inbox/replies', component: UserInboxView, name: 'user-inbox-replies-view', props: { sort: 'replies' }, meta: {sidebar: false, requiresAuth: true} },
+			{ path: '/notifications/mentions', alias: '/inbox/mentions', component: UserInboxView, name: 'user-inbox-mentions-view', props: { sort: 'mentions' }, meta: {sidebar: false, requiresAuth: true} },
+			{ path: '/notifications/posts', alias: '/inbox/posts', component: UserInboxView, name: 'user-inbox-posts-view', props: { sort: 'posts' }, meta: {sidebar: false, requiresAuth: true} },
+			{ path: '/notifications/system', alias: '/inbox/system', component: UserInboxView, name: 'user-inbox-system-view', props: { sort: 'system' }, meta: {sidebar: false, requiresAuth: true} },
 			// {
 			// 	path: '/messages', component: UserMessagesView, props: true, meta: {requiresAuth: true, sidebar: false},
 			// 	children: [
 			// 	{ path: '/messages/:person?', alias:'/', component: UserChatView, name: 'user-chat-view', props: true, meta: {requiresAuth: true} },
 			// 	]
 			// },
-			{ path: '/saved', alias:'/ruqqsack', name: 'user-saved-view', component: UserSavedView, props: true, meta: {requiresAuth: true} },
+			{ path: '/saved', alias:'/ruqqsack', name: 'user-saved-view', component: UserSavedView, props: true, meta: {sidebar: false, requiresAuth: true} },
 			{
-				path: '/settings', component: UserSettingsView, props: true, meta: {requiresAuth: true},
+				path: '/settings', component: UserSettingsView, props: true, meta: {sidebar: false, requiresAuth: true},
 				children: [
-				{ path: '', alias:'/settings/profile', component: UserProfileSettings, name: 'user-settings-profile-view', props: true, meta: {requiresAuth: true} },
-				{ path: '/settings/notifications', component: UserNotificationsSettings, name: 'user-settings-notifications-view', props: true, meta: {requiresAuth: true}},
-				{ path: '/settings/security', component: UserSecuritySettings, name: 'user-settings-security-view', props: true, meta: {requiresAuth: true} },
-				{ path: '/settings/apps', component: UserAppsSettings, name: 'user-settings-apps-view', props: true, meta: {requiresAuth: true} },
-				{ path: '/settings/filters', component: UserContentSettings, name: 'user-settings-content-view', props: true, meta: {requiresAuth: true} }
+				{ path: '', alias:'/settings/profile', component: UserProfileSettings, name: 'user-settings-profile-view', props: true, meta: {sidebar: false, requiresAuth: true} },
+				{ path: '/settings/notifications', component: UserNotificationsSettings, name: 'user-settings-notifications-view', props: true, meta: {sidebar: false, requiresAuth: true}},
+				{ path: '/settings/security', component: UserSecuritySettings, name: 'user-settings-security-view', props: true, meta: {sidebar: false, requiresAuth: true} },
+				{ path: '/settings/apps', component: UserAppsSettings, name: 'user-settings-apps-view', props: true, meta: {sidebar: false, requiresAuth: true} },
+				{ path: '/settings/filters', component: UserContentSettings, name: 'user-settings-content-view', props: true, meta: {sidebar: false, requiresAuth: true} }
 				]
 			},
-			{ path: '/guilds/:sort?', name: 'user-guilds-view', component: UserGuildsView, props: true, meta: {requiresAuth: true} }
+			{ path: '/guilds/:sort?', name: 'user-guilds-view', component: UserGuildsView, props: true, meta: {sidebar: false, requiresAuth: true} }
 			]
 		},
 
