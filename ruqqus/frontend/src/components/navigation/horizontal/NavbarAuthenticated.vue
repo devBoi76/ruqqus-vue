@@ -16,6 +16,16 @@
 				<div class="hidden md:block">
 					<div class="ml-4 flex items-center space-x-2 md:ml-6">
 
+						<router-link to="/browse" tag="button" class="flex items-center justify-center px-2 w-8 h-8 text-xl text-gray-600 dark:text-gray-400 hover:text-purple-500 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white rounded-sm" content="Explore" v-tippy="{ placement: 'bottom', delay: [1000,0] }">
+							<span class="sr-only">Home</span>
+							<i class="far fa-home-lg-alt"></i>
+						</router-link>
+
+						<router-link to="/browse" tag="button" class="flex items-center justify-center px-2 w-8 h-8 text-xl text-gray-600 dark:text-gray-400 hover:text-purple-500 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white rounded-sm" content="Explore" v-tippy="{ placement: 'bottom', delay: [1000,0] }">
+							<span class="sr-only">New</span>
+							<i class="far fa-bolt"></i>
+						</router-link>
+
 						<router-link to="/admin" tag="button" class="flex items-center justify-center px-2 w-8 h-8 text-xl text-gray-600 dark:text-gray-400 hover:text-purple-500 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white rounded-sm" content="Admin tools" v-tippy="{ placement: 'bottom', delay: [1000,0] }">
 							<span class="sr-only">View admin tools</span>
 							<i class="far fa-shield"></i>
@@ -24,11 +34,6 @@
 						<router-link to="/moderation" tag="button" class="flex items-center justify-center px-2 w-8 h-8 text-xl text-gray-600 dark:text-gray-400 hover:text-purple-500 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white rounded-sm" content="Mod tools" v-tippy="{ placement: 'bottom', delay: [1000,0] }">
 							<span class="sr-only">View moderation tools</span>
 							<i class="far fa-crown"></i>
-						</router-link>
-
-						<router-link to="/browse" tag="button" class="flex items-center justify-center px-2 w-8 h-8 text-xl text-gray-600 dark:text-gray-400 hover:text-purple-500 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white rounded-sm" content="Explore" v-tippy="{ placement: 'bottom', delay: [1000,0] }">
-							<span class="sr-only">Browse communities</span>
-							<i class="far fa-compass"></i>
 						</router-link>
 
 						<!-- Notifications dropdown -->
