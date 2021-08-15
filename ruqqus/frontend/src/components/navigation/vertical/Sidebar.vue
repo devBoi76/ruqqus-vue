@@ -1,6 +1,5 @@
 <template>
-	<div class="hidden md:flex items-center flex-col flex-shrink-0 w-64 dark:bg-gray-750 dark:border-white-13"
-	:class="['bg-'+this.sidebarColor, {'border-r':border}]">
+	<div class="hidden md:flex items-center flex-col flex-shrink-0 w-64 dark:bg-gray-750 dark:border-white-13" :class="['bg-'+sidebarColor, {'border-r':border}]">
 
 	<slot name="header" v-if="stickyHeader"/>
 
@@ -9,7 +8,7 @@
 		<slot name="header" v-if="!stickyHeader"/>
 
 		<ul v-for="(section, index) in menu" :key="index" class="-mt-2 mb-5 last:mb-0 list-unstyled border-gray-200 dark:border-white-13" :class="{'pb-2 border-b':section.divider}">
-			<li v-if="section.header" class="z-10 sticky top-0 py-1 dark:bg-gray-750 dark:border-white-13" :class="'bg-'+sidebarColor">
+			<li v-if="section.header" class="z-10 sticky top-0 py-1 dark:bg-gray-750 dark:border-white-13" :class="`bg-${sidebarColor}`">
 				<div class="px-4 text-xs tracking-wider font-medium uppercase text-gray-500">
 					{{ section.name }}
 				</div>
