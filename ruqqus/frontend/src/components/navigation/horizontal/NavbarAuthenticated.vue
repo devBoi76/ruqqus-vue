@@ -198,19 +198,15 @@
 			isOpen: {
 				immediate: true,
 				handler(isOpen) {
-					if (process.client) {
-						if (isOpen) document.body.style.setProperty("overflow", "hidden");
-						else document.body.style.removeProperty("overflow");
-					}
+					if (isOpen) document.body.style.setProperty("overflow", "hidden");
+					else document.body.style.removeProperty("overflow");
 				}
 			},
 			isSearch: {
 				immediate: true,
 				handler(isSearch) {
-					if (process.client) {
-						if (isSearch) document.body.style.setProperty("overflow", "hidden");
-						else document.body.style.removeProperty("overflow");
-					}
+					if (isSearch) document.body.style.setProperty("overflow", "hidden");
+					else document.body.style.removeProperty("overflow");
 				}
 			}
 		},

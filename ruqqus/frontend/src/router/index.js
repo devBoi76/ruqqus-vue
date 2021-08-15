@@ -248,12 +248,12 @@ const routes = [
 							name: "LoginView"
 						})
 					}
-					else if (store.state.persist.v.admin_level != -1 && store.state.persist.v.admin_level != 6){
-						console.log(`only admins allowed | redirecting to login`)
-						next({
-							name: "LoginView"
-						})
-					}
+					// else if (store.state.persist.v.admin_level != -1 && store.state.persist.v.admin_level != 6){
+					// 	console.log(`only admins allowed | redirecting to login`)
+					// 	next({
+					// 		name: "LoginView"
+					// 	})
+					// }
 					else{next();}
 				}else{next();}
 			})
