@@ -58,6 +58,7 @@ export const store = createStore({
     items: items,
     moderation: moderation,
     notifications: notifications,
+    onboarding: onboarding,
     persist: persist,
     toasts: toasts
   },
