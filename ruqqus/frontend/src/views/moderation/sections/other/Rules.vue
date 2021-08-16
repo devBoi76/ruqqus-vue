@@ -9,16 +9,16 @@
 						Rules
 					</h1>
 					<div v-show="!loading && !errored" class="flex space-x-2">
-						<t-button v-show="reorder" variant="green500" @click="reorder = !reorder">
+						<button v-show="reorder" class="button green500" @click="reorder = !reorder">
 							Done
-						</t-button>
-						<t-button v-show="!reorder" variant="white" @click="reorder = !reorder">
+						</button>
+						<button v-show="!reorder" class="button white" @click="reorder = !reorder">
 							Reorder
-						</t-button>
-						<t-button v-show="!reorder" variant="purple500" @click="addRow()">
+						</button>
+						<button v-show="!reorder" class="button purple500" @click="addRow()">
 							<i class="far fa-plus fa-fw mr-1"></i>
 							New rule
-						</t-button>
+						</button>
 					</div>
 				</div>
 			</div>
@@ -121,7 +121,7 @@
 												<div class="grid grid-cols-3 gap-6">
 													<div class="col-span-full md:col-span-2 lg:col-span-1">
 														<div class="relative">
-															<t-textarea v-model="rule.description" type="text" rows="3" maxlength="140" placeholder="Enter a description..."/>
+															<textarea class="form-textarea" v-model="rule.description" type="text" rows="3" maxlength="140" placeholder="Enter a description..."/>
 															<div v-if="rule.description" class="absolute text-xs font-semibold text-gray-400 right-3 bottom-2" :class="{'text-red-500':rule.description.length >= 280}">
 																{{ 280 - rule.description.length }}
 															</div>
@@ -134,12 +134,12 @@
 												<div class="grid grid-cols-3 gap-6">
 													<div class="col-span-full md:col-span-2 lg:col-span-1">
 														<div class="flex space-x-2">
-															<t-button variant="purple500">
+															<button class="button purple500">
 																Save
-															</t-button>
-															<t-button variant="gray100" @click="cancel(index)">
+															</button>
+															<button class="button gray100" @click="cancel(index)">
 																Cancel
-															</t-button>
+															</button>
 														</div>
 													</div>
 												</div>

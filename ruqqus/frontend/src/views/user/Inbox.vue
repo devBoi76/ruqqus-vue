@@ -5,9 +5,9 @@
 		<div class="flex flex-shrink-0 w-full items-center h-16 px-4 bg-white border-b dark:border-white dark:border-opacity-10 dark:bg-gray-700">
 			<h1 class="text-xl font-medium mb-0">Notifications</h1>
 			<div class="hidden ml-auto">
-				<t-button variant="white" @click="getNotifications()">
+				<button class="button white" @click="getNotifications()">
 					<i class="far fa-redo-alt"></i>
-				</t-button>
+				</button>
 			</div>
 		</div>
 
@@ -40,10 +40,10 @@
 						<p class="text-sm text-gray-400">
 							Sorry, we're unable to fetch your notifications right now.
 						</p>
-						<t-button variant="outlineGray200" class="mt-3" @click="getNotifications()">
+						<button class="button outlineGray200 mt-3" @click="getNotifications()">
 							<i class="far fa-redo-alt pr-2"></i>
 							Try again
-						</t-button>
+						</button>
 					</div>
 				</div>
 				<NotificationList v-if="notifications.length" :notifications="notifications"/>
@@ -52,9 +52,9 @@
 					<i class="block fad fa-bell text-gray-400 text-4xl mb-5"></i>
 					<div class="h5">No Unread Notifications</div>
 					<p class="text-sm text-gray-400">You're all caught up! Time for a coffee break? 🧙</p>
-					<t-button variant="outlinePurple500" class="mt-3">
+					<button class="button outlinePurple500 mt-3">
 						View all
-					</t-button>
+					</button>
 				</div>
 			</div>
 		</div>

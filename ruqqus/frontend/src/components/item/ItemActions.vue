@@ -26,27 +26,27 @@
     </div>
     <!-- Repost Button -->
     <div v-if="repost" class="mb-1 text-center">
-      <t-button variant="link" size="lg" class="text-gray-400" v-b-tooltip.hover.left title="Repost">
+      <button size="lg" class="button link text-gray-400" v-b-tooltip.hover.left title="Repost">
         <i class="far fa-retweet"></i>
-      </t-button>
+      </button>
     </div>
     <!-- Share Button -->
     <div v-if="share" class="mb-1 text-center">
-      <t-button variant="link" size="lg" class="text-gray-400" v-b-tooltip.hover.left title="Share post">
+      <button size="lg" class="button link text-gray-400" v-b-tooltip.hover.left title="Share post">
         <i class="far fa-share-alt"></i>
-      </t-button>
+      </button>
     </div>
     <!-- Save Button -->
     <div v-if="save" class="mb-1 text-center">
-      <t-button variant="link" size="lg" class="text-gray-400" v-b-tooltip.hover.left title="Save post">
+      <button size="lg" class="button link text-gray-400" v-b-tooltip.hover.left title="Save post">
         <i class="far fa-bookmark"></i>
-      </t-button>
+      </button>
     </div>
     <!-- Report Button -->
     <div v-if="report" class="mb-1 text-center">
-      <t-button variant="link" size="lg" class="text-gray-400" v-b-tooltip.hover.left title="Report post">
+      <button size="lg" class="button link text-gray-400" v-b-tooltip.hover.left title="Report post">
         <i class="far fa-flag"></i>
-      </t-button>
+      </button>
     </div>
   </div>
 </template>

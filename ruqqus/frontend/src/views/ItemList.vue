@@ -41,11 +41,11 @@
 		</div>
 
 		<div v-show="items.length" class="flex w-full justify-center mt-4 px-4 sm:px-8">
-			<t-button variant="gray200" @click="loadMore()">
+			<button class="button gray200" @click="loadMore()">
 				<span :class="{'animate-pulse':loading}">
 					{{ loading ? 'Loading...' : 'Load more posts' }}
 				</span>
-			</t-button>
+			</button>
 		</div>
 
 		<!-- <virtual-list

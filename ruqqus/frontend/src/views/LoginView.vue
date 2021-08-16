@@ -48,7 +48,7 @@
 										<a href="/register" class="block mt-2 text-xs text-purple-500 hover:text-purple-600">Forgot password?</a>
 									</div>
 								</div>
-								<t-button class="w-full mt-6" @click="auth_v(form)">Log in</t-button>
+								<button class="button w-full mt-6" @click="auth_v(form)">Log in</button>
 							</div>
 
 							<div v-show="mfa" class="mt-4 text-left">
@@ -56,7 +56,7 @@
 									Authentication Code
 								</label>
 								<input class="form-input" id="input-4" v-model="form.mfa" type="numbers" required placeholder="123456" name="mfa"/>
-								<t-button class="w-full mt-4" @click="verify_mfa(form)">Log in</t-button>
+								<button class="button w-full mt-4" @click="verify_mfa(form)">Log in</button>
 							</div>
 
 							<div class="mt-6 text-gray-500 text-sm">
@@ -103,7 +103,7 @@
 									</div>
 								</div>
 
-								<t-button class="w-full mt-4" @click="auth_v(form)">Log in</t-button>
+								<button class="button w-full mt-4" @click="auth_v(form)">Log in</button>
 
 							</div>
 
@@ -112,7 +112,7 @@
 									Authentication Code
 								</label>
 								<input class="form-input" id="input-4" v-model="form.mfa" type="numbers" required placeholder="123456" name="mfa"/>
-								<t-button class="w-full mt-4" @click="verify_mfa(form)">Log in</t-button>
+								<button class="button w-full mt-4" @click="verify_mfa(form)">Log in</button>
 							</div>
 
 							<div class="mt-6 text-gray-500 text-sm">

@@ -16,13 +16,13 @@
           <Editor @input="getEditorContent" :limit="5000"/>
           <div class="flex items-center justify-end mt-3">
             <!-- Close Button -->
-            <t-button variant="linkGray500" class="w-24" @click="$emit('change', false)">
+            <button class="button linkGray500 w-24" @click="$emit('change', false)">
               Close
-            </t-button>
+            </button>
             <!-- Submit Button -->
-            <t-button variant="primary" class="w-24">
+            <button class="button primary w-24">
               {{ is_reply ? 'Reply' : 'Comment' }}
-            </t-button>
+            </button>
           </div>
         </div>
       </div>

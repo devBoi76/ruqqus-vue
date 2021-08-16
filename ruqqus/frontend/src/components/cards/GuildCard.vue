@@ -21,7 +21,7 @@
 					<i class="far fa-hashtag fa-sm fa-fw pr-1"></i>{{ guild.category || 'Uncategorized' }}
 				</span>
 			</div>
-			<t-button variant="outlineGray200" class="hidden w-full">Join</t-button>
+			<button  class="button outlineGray200 hidden w-full">Join</button>
 		</div>
 	</router-link>
 </template>

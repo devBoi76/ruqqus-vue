@@ -39,7 +39,9 @@
 
       <div v-show="$route.name != 'guild-item-view'" class="flex flex-wrap items-center space-x-6">
         <div class="md:hidden">
-          <t-select @change="routeChange" v-model="selected" :options="options"></t-select>
+          <select class="form-select" @change="routeChange" v-model="selected">
+			  <option v-for="option in options" :value="option.value">{{ option.text }}</option>
+		  </select>
         </div>
         <div class="hidden md:block">
           <!-- <t-dropdown 

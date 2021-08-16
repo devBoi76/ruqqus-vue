@@ -2,7 +2,7 @@
 	<div class="relative bg-white border-t border-b border-gray-100 dark:border-transparent sm:border-0 sm:shadow-xs sm:rounded-sm dark:bg-gray-800" :class="pinned ? 'hidden' : 'flex'">
 		<!-- Moderator Mode Checkbox -->
 		<label v-if="moderating" class="flex flex-col flex-shrink-0 items-center w-9 py-2 bg-gray-50 border-r rounded-tl-sm rounded-bl-sm cursor-pointer">
-			<t-checkbox name="item_checkbox" v-model="selected" :value="item.id"/>
+			<input type="radio" class="form-checkbox" name="item_checkbox" v-model="selected" :value="item.id"/>
 		</label>
 		<div class="flex flex-grow">
 			<!-- Post Details -->

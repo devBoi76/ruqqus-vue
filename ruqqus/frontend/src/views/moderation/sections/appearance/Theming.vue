@@ -8,9 +8,9 @@
 					<h1 class="text-2xl capitalize mb-0">
 						Theming
 					</h1>
-					<t-button v-if="!loading && !errored" variant="purple500">
+					<button v-if="!loading && !errored" class="button purple500">
 						Save
-					</t-button>
+					</button>
 				</div>
 			</div>
 		</div>

@@ -78,13 +78,13 @@
 			</div>
 
 			<div class="flex items-center space-x-2">
-				<t-button type="submit" :variant="saveColor" :disabled="!titleValidation || !repValidation || disabled" :class="{ 'cursor-not-allowed':disabled }">
+				<button type="submit" class="button" :disabled="!titleValidation || !repValidation || disabled" :class="[{ 'cursor-not-allowed':disabled }], saveColor">
 					<i v-show="success" class="fas fa-check fa-sm fa-fw pr-2"></i>
 					{{ saveText }}
-				</t-button>
-				<t-button type="reset" variant="linkGray500" @click="reset()">
+				</button>
+				<button type="reset" class="button linkGray500" @click="reset()">
 					Cancel
-				</t-button>
+				</button>
 			</div>
 		</form>
 

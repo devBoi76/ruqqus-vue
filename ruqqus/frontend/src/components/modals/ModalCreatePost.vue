@@ -117,12 +117,12 @@
         />
       </div>
       <div class="flex items-center space-x-1">
-        <t-button type="button" @click="showModal=false" variant="linkGray500">
+        <button type="button" @click="showModal=false" class="button linkGray500">
           Cancel
-        </t-button>
-        <t-button type="button" variant="primary" @click="createPost()">
+        </button>
+        <button type="button" class="button primary" @click="createPost()">
           Create post
-        </t-button>
+        </button>
       </div>
     </div>
   </template>

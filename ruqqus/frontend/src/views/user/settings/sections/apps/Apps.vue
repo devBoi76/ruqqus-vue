@@ -51,7 +51,7 @@
 										</div>
 										<div>
 											<t-input-group label="Short Description" class="relative">
-												<t-textarea variant="purple500" v-model="app.description" type="text" rows="3" maxlength="140" placeholder="Briefly describe your app..."/>
+												<textarea class="form-textarea purple500" v-model="app.description" type="text" rows="3" maxlength="140" placeholder="Briefly describe your app..."/>
 												<div v-if="app.description" class="absolute text-xs font-semibold text-gray-400 right-3 bottom-2 select-none" :class="{'text-red-500':app.description.length >= 140}">
 													{{ 140 - app.description.length }}
 												</div>

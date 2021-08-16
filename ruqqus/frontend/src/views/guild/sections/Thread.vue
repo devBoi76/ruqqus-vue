@@ -194,12 +194,12 @@
 					Create a Ruqqus account to join the discussion, vote on content, and more!
 				</p>
 				<div class="flex items-center space-x-2">
-					<t-button variant="primary" to="/register">
+					<button class="button primary" to="/register">
 						Sign up
-					</t-button>
-					<t-button variant="outlinePrimary" to="/login">
+					</button>
+					<button class="button outlinePrimary" to="/login">
 						Log in
-					</t-button>
+					</button>
 				</div>
 			</div>
 
@@ -229,12 +229,12 @@
 						Create a Ruqqus account to join the discussion, vote on content, and more!
 					</p>
 					<div class="flex items-center space-x-2">
-						<t-button variant="primary" to="/register">
+						<button class="button primary" to="/register">
 							Sign up
-						</t-button>
-						<t-button variant="outlinePrimary" to="/login">
+						</button>
+						<button class="button outlinePrimary" to="/login">
 							Log in
-						</t-button>
+						</button>
 					</div>
 				</div>
 

@@ -117,6 +117,163 @@
 		@apply text-gray-200 placeholder-gray-300 bg-gray-800 border-gray-900 focus:bg-white focus:border-primary focus:ring-white
 	}
 
+	.form-textarea {
+		@apply block w-full px-3 py-1.5 transition duration-100 ease-in-out border rounded-sm focus:ring-2 focus:outline-none focus:ring-opacity-50 disabled:opacity-50
+	}
+	.form-textarea:default {
+		@apply text-gray-900 placeholder-gray-400 bg-gray-50 border-gray-200 focus:bg-white focus:border-primary focus:ring-primary
+	}
+	.form-textarea .purple500 {
+		@apply text-gray-900 placeholder-gray-400 bg-gray-50 border-gray-200 focus:bg-white focus:border-purple-500 focus:ring-purple-500
+	}
+	.form-textarea .danger {
+		@apply border-red-200 bg-red-50 placeholder-red-200 text-red-900 focus:bg-white focus:border-red-500 focus:ring-red-500
+	}
+	.form-textarea .success {
+		@apply border-green-200 bg-green-50 placeholder-gray-400 text-green-900 focus:bg-white focus:border-green-500 focus:ring-green-500
+	}
+
+	.form-select {
+		@apply block w-full pl-3 pr-8 py-1 h-8 transition duration-100 ease-in-out border rounded-sm focus:ring-2 focus:ring-purple-500 focus:outline-none focus:ring-opacity-50 disabled:opacity-50
+	}
+	.form-select:default {
+		@apply text-gray-900 placeholder-gray-400 bg-white border-gray-200 focus:border-purple-500
+	}
+	.form-select .white {
+		@apply border-gray-200 bg-white placeholder-gray-500 text-gray-900
+	}
+	.form-select .light {
+		@apply border-gray-200 bg-gray-50 placeholder-gray-500 text-gray-900
+	}
+	.form-select .danger {
+		@apply border-red-300 bg-red-50 placeholder-red-200 text-red-900
+	}
+	.form-select .success {
+		@apply border-green-300 bg-green-50 placeholder-gray-400 text-green-900
+	}
+
+	.form-radio {
+		@apply transition duration-100 ease-in-out shadow-sm focus:border-purple-500 focus:ring-2 focus:ring-purple-500 focus:outline-none focus:ring-opacity-50 focus:ring-offset-0  disabled:opacity-50
+	}
+	.form-radio:default {
+		@apply text-purple-500 border-gray-300
+	}
+	.form-radio .error {
+		@apply text-red-500 border-red-300 focus:border-red-500 focus:ring-red-500
+	}
+	.form-radio .success {
+		@apply text-green-500 border-gray-300 focus:border-green-500 focus:ring-green-500
+	}
+	.form-radio .warning {
+		@apply text-yellow-500 border-yellow-300 focus:border-yellow-500 focus:ring-yellow-500
+	}
+
+	.form-checkbox {
+		@apply transition duration-100 ease-in-out rounded-sm focus:border-purple-500 focus:ring-2 focus:ring-purple-500 focus:outline-none focus:ring-opacity-50 focus:ring-offset-0 disabled:opacity-50
+	}
+	.form-checkbox:default {
+		@apply text-purple-500 border-gray-300
+	}
+	.form-checkbox .error {
+		@apply text-red-500 border-red-300
+	}
+	.form-checkbox .red500 {
+		@apply text-red-500 border-gray-300
+	}
+	.form-checkbox .green500 {
+		@apply text-green-500 border-gray-300
+	}
+	.form-checkbox .success {
+		@apply text-green-500 border-green-300
+	}
+	.form-checkbox .gray900 {
+		@apply text-green-900 border-gray-300
+	}
+
+	.button {
+		@apply block px-4 py-1.5 h-8 rounded-sm transition text-sm leading-4 font-bold duration-100 ease-in-out focus:border-purple-500 focus:ring-2 focus:ring-purple-500 focus:outline-none focus:ring-opacity-50 disabled:opacity-50
+	}
+	.button:default {
+		@apply text-white bg-purple-500 border border-transparent hover:bg-purple-600
+	}
+	.button .primary {
+		@apply text-white bg-primary border border-black border-opacity-10 hover:bg-opacity-70 hover:border-transparent shadow-inner-white
+	}
+	.button .secondary {
+		@apply text-white bg-secondary border border-black border-opacity-10 hover:bg-opacity-70 hover:border-transparent shadow-inner-white
+	}
+	.button .error {
+		@apply text-white bg-red-500 border border-red-600 hover:bg-red-600 shadow-inner-white
+	}
+	.button .success {
+		@apply text-white bg-green-500 border border-transparent hover:bg-green-600 shadow-inner-white
+	}
+	.button .white {
+		@apply text-gray-700 bg-white border border-transparent hover:bg-gray-100 shadow-inner-white
+	}
+	.button .gray100 {
+		@apply text-gray-600 bg-gray-100 border border-gray-200 hover:bg-gray-200 shadow-inner-white
+	}
+	.button .gray200 {
+		@apply text-gray-600 bg-gray-200 border border-gray-300 hover:bg-gray-300 shadow-inner-white
+	}
+	.button .gray300 {
+		@apply text-gray-600 bg-gray-300 border border-gray-400 hover:bg-gray-400 shadow-inner-white
+	}
+	.button .gray400 {
+		@apply text-white bg-gray-400 border border-gray-500 hover:bg-gray-500 shadow-inner-white
+	}
+	.button .gray500 {
+		@apply text-white bg-gray-500 border border-gray-600 hover:bg-gray-600 shadow-inner-white
+	}
+	.button .gray600 {
+		@apply text-white bg-gray-600 border border-gray-700 hover:bg-gray-700 shadow-inner-white
+	}
+	.button .outlineWhite {
+		@apply text-white bg-transparent border-2 md:border border-white hover:bg-white hover:text-gray-900
+	}
+	.button .outlinePrimary {
+		@apply text-primary bg-transparent border-2 md:border border-primary hover:bg-primary hover:text-white
+	}
+	.button .outlineGray200 {
+		@apply text-gray-700 bg-transparent border-2 md:border hover:bg-gray-100
+	}
+	.button .outlinePurple500 {
+		@apply text-purple-500 bg-transparent border-2 sm:border border-purple-500 hover:bg-purple-500 hover:text-white
+	}
+	.button .purple500 {
+		@apply text-white bg-purple-500 border border-purple-600 hover:bg-purple-600 shadow-inner-white
+	}
+	.button .outlineRed500 {
+		@apply text-red-500 bg-transparent border-2 md:border border-red-600 hover:bg-red-500 hover:text-white
+	}
+	.button .red500 {
+		@apply text-white bg-red-500 border border-red-600 hover:bg-red-600 shadow-inner-white
+	}
+	.button .green500 {
+		@apply text-white bg-green-500 border border-green-600 hover:bg-green-600 shadow-inner-white
+	}
+	.button .black {
+		@apply text-white bg-black border border-white border-opacity-05 hover:bg-gray-900 hover:border-transparent shadow-inner-white
+	}
+	.button .black30 {
+		@apply text-white bg-black border border-transparent bg-opacity-30 hover:bg-opacity-50 shadow-inner-white
+	}
+	.button .link {
+		@apply text-purple-500 hover:text-purple-600
+	}
+	.button .linkWhite {
+		@apply text-white
+	}
+	.button .linkGray400 {
+		@apply text-gray-400 hover:text-gray-500
+	}
+	.button .linkGray500 {
+		@apply text-gray-500 hover:text-gray-600
+	}
+	.button .linkGray600 {
+		@apply text-gray-600 hover:text-gray-700
+	}
 
 }
 

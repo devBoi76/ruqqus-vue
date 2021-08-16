@@ -54,12 +54,12 @@
 							{{ g.name }}
 						</router-link>
 						<div v-show="!isThread" class="flex flex-shrink-0 items-center space-x-2.5 ml-auto">
-							<t-button variant="outlineWhite">
+							<button class="button outlineWhite">
 								New post
-							</t-button>
-							<t-button variant="white">
+							</button>
+							<button class="button white">
 								Join
-							</t-button>
+							</button>
 						</div>
 					</div>
 				</div>
@@ -79,12 +79,12 @@
 								{{ g.subscriber_count === 1 ? '1 member' : `${Number(g.subscriber_count).toLocaleString()} members` }}
 							</p>
 							<div class="hidden space-x-2">
-								<t-button variant="outlinePrimary" class="w-full" :to="`/submit?g=${$route.params.name}`">
+								<button class="button outlinePrimary w-full" :to="`/submit?g=${$route.params.name}`">
 									Create post
-								</t-button>
-								<t-button variant="primary" class="w-full">
+								</button>
+								<button class="button primary w-full">
 									Join
-								</t-button>
+								</button>
 							</div>
 						</div>
 					</div>
@@ -175,12 +175,12 @@
 						</div>
 						<div class="hidden lg:flex flex-shrink-0 items-center space-x-2">
 							<Options/>
-							<t-button variant="outlinePrimary" :to="`/submit?g=${$route.params.name}`">
+							<button class="button outlinePrimary" :to="`/submit?g=${$route.params.name}`">
 								Create post
-							</t-button>
-							<t-button variant="primary">
+							</button>
+							<button class="button primary">
 								Join +{{ g.name }}
-							</t-button>
+							</button>
 						</div>
 					</div>
 				</div>
@@ -272,12 +272,12 @@
 								</div>
 							</div>
 							<div>
-								<t-button variant="outlinePrimary" class="w-full" :to="`/submit?g=${$route.params.name}`">
+								<button class="button outlinePrimary w-full" :to="`/submit?g=${$route.params.name}`">
 									Create post
-								</t-button>
-								<t-button variant="primary" class="w-full mt-2">
+								</button>
+								<button class="button primary w-full mt-2">
 									Join +{{ g.name }}
-								</t-button>
+								</button>
 							</div>
 						</div>
 					</div>

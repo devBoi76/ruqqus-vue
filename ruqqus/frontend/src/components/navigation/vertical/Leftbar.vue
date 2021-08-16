@@ -14,9 +14,9 @@
       </div>
       <!-- Expand toggle -->
       <div v-if="!disableToggle" class="mt-3 px-3" :class="{'flex items-center justify-between w-full':!collapsed}">
-        <t-button @click="toggleBar" variant="transparent">
+        <button @click="toggleBar" class="button transparent">
           <i class="far " :class="!collapsed ? 'fa-arrow-to-left' : 'fa-arrow-from-left'"></i>
-        </t-button>
+        </button>
       </div>
     </div>
 
@@ -44,10 +44,10 @@
     <div v-show="expanded">
       <ul class="mt-n2 mb-4 pb-2 border-b dark:border-gray-800">
         <li v-for="link of links.slice(0, 3)" :key="link.id">
-          <t-button block :variant="darkMode ? 'gray-800' : sidebarColor" :to="link.route" class="py-2 text-left">
+          <button block :class="[darkMode ? 'gray-800' : sidebarColor]" :to="link.route" class="button py-2 text-left">
             <i class="text-sm mr-3 w-6 text-center" :class="[link.icon, darkMode ? 'far text-gray-100' : 'far']"></i>
             <span class="text-capitalize">{{ link.name }}</span>
-          </t-button>
+          </button>
         </li>
       </ul>
     </div>
@@ -61,10 +61,10 @@
     <div v-show="expanded">
       <ul class="mb-4 pb-2 border-b dark:border-white">
         <li v-for="link of links.slice(3, 6)" :key="link.id">
-          <t-button block :variant="darkMode ? 'gray-800' : 'white'" :to="link.route" class="py-2 text-left">
+          <button block :class="[darkMode ? 'gray-800' : 'white']" :to="link.route" class="button py-2 text-left">
             <i class="text-sm mr-3 w-6 text-center" :class="[link.icon, darkMode ? 'far text-gray-100' : 'far']"></i>
             <span class="text-capitalize">{{ link.name }}</span>
-          </t-button>
+          </button>
         </li>
       </ul>
     </div>
@@ -125,7 +125,7 @@ class="mb-3"
     v-bind="{ghostClass: 'ghost', chosenClass: 'chosen', dragClass: 'drag'}"
     >
     <li v-for="guild in v.boards_subscribed" :key="guild.name">
-      <t-button block :variant="darkMode ? 'gray-800' : 'white'" :to="'/+' + guild.name" class="flex items-center py-2 text-left"
+      <button block :class="[darkMode ? 'gray-800' : 'white']" :to="'/+' + guild.name" class="button flex items-center py-2 text-left"
       active-class="text-purple-500 bg-white-10">
       <b-avatar
       :id="`guild-icon-` + guild.name"
@@ -137,7 +137,7 @@ class="mb-3"
       alt="Guild icon"
       ></b-avatar>
       <span class="pl-3">+{{ guild.name }}</span>
-    </t-button>
+    </button>
   </li>
 </draggable>
 </ul>
