@@ -22,6 +22,7 @@
 }
 
 @layer components {
+	/*Headings */
 	h1, .h1 {
 		@apply text-5xl font-bold leading-10 mb-2;
 	}
@@ -40,6 +41,7 @@
 	h6, .h6 {
 		@apply text-base font-bold leading-4 mb-2;
 	}
+	/*Typography*/
 	p {
 		@apply mb-3 last:mb-0;
 	}
@@ -71,9 +73,11 @@
 	blockquote {
 		@apply px-3 py-2 mb-3 last:mb-0 border-l-3 border-primary text-gray-600 dark:text-gray-200;
 	}
+	/*Image*/
 	img[lazy=loading] {
 		@apply animate-pulse;
 	}
+	/*Inputs*/
 	input[type], select, textarea {
 		@apply text-lg sm:text-base leading-5
 	}
@@ -116,7 +120,7 @@
 	.form-input .black {
 		@apply text-gray-200 placeholder-gray-300 bg-gray-800 border-gray-900 focus:bg-white focus:border-primary focus:ring-white
 	}
-
+	/*Text area*/
 	.form-textarea {
 		@apply block w-full px-3 py-1.5 transition duration-100 ease-in-out border rounded-sm focus:ring-2 focus:outline-none focus:ring-opacity-50 disabled:opacity-50
 	}
@@ -132,7 +136,7 @@
 	.form-textarea .success {
 		@apply border-green-200 bg-green-50 placeholder-gray-400 text-green-900 focus:bg-white focus:border-green-500 focus:ring-green-500
 	}
-
+	/*Select*/
 	.form-select {
 		@apply block w-full pl-3 pr-8 py-1 h-8 transition duration-100 ease-in-out border rounded-sm focus:ring-2 focus:ring-purple-500 focus:outline-none focus:ring-opacity-50 disabled:opacity-50
 	}
@@ -151,7 +155,7 @@
 	.form-select .success {
 		@apply border-green-300 bg-green-50 placeholder-gray-400 text-green-900
 	}
-
+	/*Radio*/
 	.form-radio {
 		@apply transition duration-100 ease-in-out shadow-sm focus:border-purple-500 focus:ring-2 focus:ring-purple-500 focus:outline-none focus:ring-opacity-50 focus:ring-offset-0  disabled:opacity-50
 	}
@@ -167,7 +171,7 @@
 	.form-radio .warning {
 		@apply text-yellow-500 border-yellow-300 focus:border-yellow-500 focus:ring-yellow-500
 	}
-
+	/*Checkbox*/
 	.form-checkbox {
 		@apply transition duration-100 ease-in-out rounded-sm focus:border-purple-500 focus:ring-2 focus:ring-purple-500 focus:outline-none focus:ring-opacity-50 focus:ring-offset-0 disabled:opacity-50
 	}
@@ -189,7 +193,7 @@
 	.form-checkbox .gray900 {
 		@apply text-green-900 border-gray-300
 	}
-
+	/*Button*/
 	.button {
 		@apply block px-4 py-1.5 h-8 rounded-sm transition text-sm leading-4 font-bold duration-100 ease-in-out focus:border-purple-500 focus:ring-2 focus:ring-purple-500 focus:outline-none focus:ring-opacity-50 disabled:opacity-50
 	}

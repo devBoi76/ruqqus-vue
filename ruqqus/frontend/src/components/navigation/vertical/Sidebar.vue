@@ -1,53 +1,52 @@
 <template>
 	<div class="hidden md:flex items-center flex-col flex-shrink-0 w-64 dark:bg-gray-750 dark:border-white-13" :class="['bg-'+sidebarColor, {'border-r':border}]">
 
-	<slot name="header" v-if="stickyHeader"/>
+		<slot name="header" v-if="stickyHeader"/>
 
-	<div class="w-full py-2 overflow-y-auto scrollbar-hidden">
+		<div class="w-full py-2 overflow-y-auto scrollbar-hidden">
 
-		<slot name="header" v-if="!stickyHeader"/>
+			<slot name="header" v-if="!stickyHeader"/>
 
-		<ul v-for="(section, index) in menu" :key="index" class="-mt-2 mb-5 last:mb-0 list-unstyled border-gray-200 dark:border-white-13" :class="{'pb-2 border-b':section.divider}">
-			<li v-if="section.header" class="z-10 sticky top-0 py-1 dark:bg-gray-750 dark:border-white-13" :class="`bg-${sidebarColor}`">
-				<div class="px-4 text-xs tracking-wider font-medium uppercase text-gray-500">
-					{{ section.name }}
-				</div>
-			</li>
-			<li v-for="(item, index) in section.items" :key="index" class="item">
-				<div v-if="item.header" class="mt-4 mb-2">
-					<div class="text-xs tracking-wider font-medium uppercase text-gray-500 dark:text-gray-400">
-						{{ item.name }}
+			<ul v-for="(section, index) in menu" :key="index" class="-mt-2 mb-5 last:mb-0 list-unstyled border-gray-200 dark:border-white-13" :class="{'pb-2 border-b':section.divider}">
+				<li v-if="section.header" class="z-10 sticky top-0 py-1 dark:bg-gray-750 dark:border-white-13" :class="`bg-${sidebarColor}`">
+					<div class="px-4 text-xs tracking-wider font-medium uppercase text-gray-500">
+						{{ section.name }}
 					</div>
-				</div>
-				<div v-if="!item.header">
-					<router-link custom :to="item.route" v-slot="{ href, navigate, isActive }">
-						<a :href="href" @click="navigate" class="relative block px-4 py-2 text-left transition duration-100" :class="{'bg-blue-500':isActive}">
-							<!-- <a :href="href" @click="navigate" class="relative block px-4 py-2 text-left transition duration-100" :class="isActive ? 'text-gray-900 font-medium bg-gray-100' : 'text-gray-700 hover:bg-gray-100'"> -->
-							<span v-if="!item.icon">
-								<img
-								:id="item.id"
-								v-lazy="item.src"
-								class="w-12 h-12 object-fit bg-gray-200 dark:bg-gray-700 rouned-sm"
-								:alt="item.alt"
-								/>
-								<span class="pl-3">+{{ item.name }}</span>
-							</span>
-							<span v-else>
-								<i class="far fa-fw mr-1" :class="item.icon"></i>
-								<span :class="item.textCase">
-									{{ item.name }}
+				</li>
+				<li v-for="(item, index) in section.items" :key="index" class="item">
+					<div v-if="item.header" class="mt-4 mb-2">
+						<div class="text-xs tracking-wider font-medium uppercase text-gray-500 dark:text-gray-400">
+							{{ item.name }}
+						</div>
+					</div>
+					<div v-if="!item.header">
+						<router-link custom :to="item.route" v-slot="{ href, navigate, isActive }">
+							<a :href="href" @click="navigate" class="relative block px-4 py-2 text-left transition duration-100" :class="isActive ? 'text-gray-900 font-medium bg-gray-100' : 'text-gray-700 hover:bg-gray-100'">
+								<span v-if="!item.icon">
+									<img
+									:id="item.id"
+									v-lazy="item.src"
+									class="w-12 h-12 object-fit bg-gray-200 dark:bg-gray-700 rouned-sm"
+									:alt="item.alt"
+									/>
+									<span class="pl-3">+{{ item.name }}</span>
 								</span>
-							</span>
-							<!-- <span v-show="isActive" class="arrow"/> -->
-						</a>
-					</router-link>
-				</div>
-			</li>
-		</ul>
-	</div>
+								<span v-else>
+									<i class="far fa-fw mr-1" :class="item.icon"></i>
+									<span :class="item.textCase">
+										{{ item.name }}
+									</span>
+								</span>
+								<!-- <span v-show="isActive" class="arrow"/> -->
+							</a>
+						</router-link>
+					</div>
+				</li>
+			</ul>
+		</div>
 
-	<slot name="footer"/>
-</div>
+		<slot name="footer"/>
+	</div>
 </template>
 
 <script>
