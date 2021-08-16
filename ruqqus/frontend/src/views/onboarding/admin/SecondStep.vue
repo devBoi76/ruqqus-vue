@@ -3,11 +3,11 @@
 		<h1 class="h2">
 			Create an account
 		</h1>
-		<div class="w-96 bg-white border shadow-xs rounded overflow-hidden">
+		<div class="w-96 bg-white border shadow-xs rounded md:p-8">
 			<div class="flex justify-center w-full -mt-10">
 				<img :src="avatar" class="w-16 h-16 rounded-sm"/>
 			</div>
-			<div class="flex flex-col md:p-5 space-y-4 mb-6">
+			<div class="flex flex-col space-y-4 mb-6">
 				<div>
 					<label class="label">
 						Community name

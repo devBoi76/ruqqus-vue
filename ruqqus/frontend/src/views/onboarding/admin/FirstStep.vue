@@ -4,7 +4,7 @@
 			Welcome to Ruqqus
 		</h1>
 		<p class="mt-1 text-gray-600">
-			Glad to have you here. Let's get your community rolling.
+			Glad to have you here. Let's get your community up and running.
 		</p>
 		<div class="mt-6 mb-8 w-full text-left overflow-hidden">
 			<div class="h-full relative bg-white shadow-xl rounded-lg overflow-hidden">
