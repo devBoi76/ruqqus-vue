@@ -73,12 +73,18 @@ const CreateGuildThirdStep = () => import ('../views/create/guild/ThirdStep.vue'
 const CreateGuildFourthStep = () => import ('../views/create/guild/FourthStep.vue')
 //const CreateGuildFifthStep = () => import ('../views/create/guild/FifthStep.vue')
 
+// Setup
+const SetupView = () => import ('../views/onboarding/admin/Setup.vue')
+const SetupFirstStep = () => import ('../views/onboarding/admin/FirstStep.vue')
+const SetupSecondStep = () => import ('../views/onboarding/admin/SecondStep.vue')
+const SetupThirdStep = () => import ('../views/onboarding/admin/ThirdStep.vue')
+
 // Onboarding
-const OnboardingView = () => import ('../views/onboarding_V2/user/OnboardUser_V2.vue')
-const OnboardingFirstStep = () => import ('../views/onboarding_V2/user/FirstStep_V2.vue')
-const OnboardingSecondStep = () => import ('../views/onboarding_V2/user/SecondStep.vue')
-const OnboardingThirdStep = () => import ('../views/onboarding_V2/user/ThirdStep.vue')
-const OnboardingFourthStep = () => import ('../views/onboarding_V2/user/FourthStep.vue')
+const OnboardingView = () => import ('../views/onboarding/user/OnboardUser_V2.vue')
+const OnboardingFirstStep = () => import ('../views/onboarding/user/FirstStep_V2.vue')
+const OnboardingSecondStep = () => import ('../views/onboarding/user/SecondStep.vue')
+const OnboardingThirdStep = () => import ('../views/onboarding/user/ThirdStep.vue')
+const OnboardingFourthStep = () => import ('../views/onboarding/user/FourthStep.vue')
 
 // Admin
 const AdminView = () => import ('../views/admin/AdminView.vue')
@@ -171,6 +177,16 @@ const routes = [
 
 		// Search View
 		{ path: '/search', name: 'SearchView', component: SearchView, props: true, meta: {requiresAuth: true} },
+
+		// Onboarding Admin View
+		{
+			path: '/setup', component: SetupView, props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false},
+			children: [
+			{ path: '', alias: ['/setup/intro','/setup/1'], component: SetupFirstStep, name: 'onboard-admin-first-step', props: { currentStep: 1 }, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
+			{ path: '/setup/profile', alias: '/setup/2', component: SetupSecondStep, name: 'onboard-admin-second-step', props: { currentStep: 2 }, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
+			{ path: '/setup/extra', alias: '/welcome/3', component: SetupThirdStep, name: 'onboard-admin-third-step', props: { currentStep: 3 }, meta: {requiresAuth: true, sidebar: false, dropImage: false} }
+			]
+		},
 
 		// Onboarding View
 		{
