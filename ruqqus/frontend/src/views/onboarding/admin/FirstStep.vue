@@ -1,6 +1,6 @@
 <template>
 	<div class="flex flex-col flex-grow items-center">
-		<h1 class="h2">
+		<h1 class="text-4xl font-medium">
 			Welcome to Ruqqus
 		</h1>
 		<p class="mt-1 text-gray-600">
