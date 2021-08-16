@@ -73,13 +73,12 @@ const CreateGuildThirdStep = () => import ('../views/create/guild/ThirdStep.vue'
 const CreateGuildFourthStep = () => import ('../views/create/guild/FourthStep.vue')
 //const CreateGuildFifthStep = () => import ('../views/create/guild/FifthStep.vue')
 
-// Setup
+// Onboarding Admin
 const SetupView = () => import ('../views/onboarding/admin/Setup.vue')
 const SetupFirstStep = () => import ('../views/onboarding/admin/FirstStep.vue')
 const SetupSecondStep = () => import ('../views/onboarding/admin/SecondStep.vue')
-const SetupThirdStep = () => import ('../views/onboarding/admin/ThirdStep.vue')
 
-// Onboarding
+// Onboarding Users
 const OnboardingView = () => import ('../views/onboarding/user/OnboardUser_V2.vue')
 const OnboardingFirstStep = () => import ('../views/onboarding/user/FirstStep_V2.vue')
 const OnboardingSecondStep = () => import ('../views/onboarding/user/SecondStep.vue')
@@ -183,8 +182,7 @@ const routes = [
 			path: '/setup', component: SetupView, props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false},
 			children: [
 			{ path: '', alias: ['/setup/intro','/setup/1'], component: SetupFirstStep, name: 'onboard-admin-first-step', props: { currentStep: 1 }, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
-			{ path: '/setup/profile', alias: '/setup/2', component: SetupSecondStep, name: 'onboard-admin-second-step', props: { currentStep: 2 }, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
-			{ path: '/setup/extra', alias: '/welcome/3', component: SetupThirdStep, name: 'onboard-admin-third-step', props: { currentStep: 3 }, meta: {requiresAuth: true, sidebar: false, dropImage: false} }
+			{ path: '/setup/profile', alias: '/setup/2', component: SetupSecondStep, name: 'onboard-admin-second-step', props: { currentStep: 2 }, meta: {requiresAuth: true, sidebar: false, dropImage: false} }
 			]
 		},
 

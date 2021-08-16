@@ -5,9 +5,9 @@
 				Welcome to Ruqqus
 			</h1>
 			<p class="mt-1">
-				descriptive copy text
+				Glad to have you here. Let's get your community rolling.
 			</p>
-			<button class="button primary">
+			<button class="button primary" @click="router.push('/setup/2')">
 				Get started
 				<i class="far fa-long-arrow-right pl-2"></i>
 			</button>
@@ -19,18 +19,14 @@
 	import { mapState, mapGetters } from "vuex"
 
 	import Navigation from '@/components/navigation/OnboardUserButtons.vue';
-	import CategoryTile from "@/components/cards/CategoryTile.vue";
 
 	export default {
 		data() {
 			return {
-				loading: false,
-				errored: false,
 			}
 		},
 		components: {
-			Navigation,
-			CategoryTile
+			Navigation
 		},
 		computed: {
 			...mapState("persist", ["v"]),

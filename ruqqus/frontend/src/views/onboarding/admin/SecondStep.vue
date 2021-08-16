@@ -30,7 +30,7 @@
 					<input type="password" v-model="password" class="form-input w-full"/>
 				</div>
 			</div>
-			<button class="button primary">
+			<button class="button primary" @click="router.push('/admin')">
 				Continue
 				<i class="far fa-long-arrow-right pl-2"></i>
 			</button>
