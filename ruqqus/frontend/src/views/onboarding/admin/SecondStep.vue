@@ -4,7 +4,7 @@
 			Create an account
 		</h1>
 		<div class="w-96 bg-white border shadow-xs rounded md:p-8 md:mt-10">
-			<div class="flex justify-center w-full -mt-16">
+			<div class="flex justify-center w-full -mt-16 mb-3">
 				<img :src="avatar" class="w-16 h-16 rounded-sm"/>
 			</div>
 			<div class="flex flex-col space-y-4 mb-8">
@@ -13,7 +13,7 @@
 						Community name
 					</label>
 					<input type="text" v-model="name" placeholder="i.e. The Guild" class="form-input w-full"/>
-					<p class="mt-2 text-xs text-gray-400">
+					<p class="mt-2 text-xs text-gray-500">
 						You can set up your custom domain later.
 					</p>
 				</div>

@@ -6,7 +6,7 @@
 		<p class="mt-1 text-gray-600">
 			Glad to have you here. Let's get your community up and running.
 		</p>
-		<div class="mt-6 mb-8 w-full text-left overflow-hidden">
+		<div class="mt-6 mb-8 w-full text-left px-24">
 			<div class="h-full relative bg-white shadow-xl rounded-lg overflow-hidden">
 				<div class="flex items-center justify-center w-full h-14 bg-gradient-to-t from-gray-200 to-gray-100 border-b px-4">
 					<div class="flex space-x-1.5 mr-4">
@@ -18,7 +18,7 @@
 						https://www.ruqqus.com/+ruqqus
 					</div>
 				</div>
-				<div class="px-5 py-5 border">
+				<div class="px-5 py-5 border rounded-b-lg">
 					<div class="grid grid-cols-8 gap-5">
 						<div class="col-span-full p-5 rounded border-2 border-purple-400 bg-purple-100">
 							<div class="flex items-center">
