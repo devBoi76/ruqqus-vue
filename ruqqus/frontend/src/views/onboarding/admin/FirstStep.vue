@@ -6,7 +6,7 @@
 		<p class="mt-1 text-gray-600">
 			Glad to have you here. Let's get your community up and running.
 		</p>
-		<div class="mt-6 mb-8 w-full text-left px-20">
+		<div class="mt-6 mb-8 w-full text-left px-16">
 			<div class="h-full relative bg-white shadow-xl rounded-lg overflow-hidden">
 				<div class="flex items-center justify-center w-full h-14 bg-gradient-to-t from-gray-200 to-gray-100 border-b px-4">
 					<div class="flex space-x-1.5 mr-4">
