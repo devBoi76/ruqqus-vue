@@ -104,10 +104,12 @@
 				</div>
 			</div>
 		</div>
-		<button class="button primary" @click="router.push('/setup/2')">
-			Get started
-			<i class="far fa-long-arrow-right pl-2"></i>
-		</button>
+		<router-link to="/setup/2" custom v-slot="{ navigate }">
+			<button class="button primary w-full" @click="navigate" @keypress.enter="navigate" role="link">
+				Get started
+				<i class="far fa-long-arrow-right pl-2"></i>
+			</button>
+		</router-link>
 	</div>
 </template>
 

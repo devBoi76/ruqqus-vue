@@ -36,10 +36,11 @@
 					<input type="password" v-model="password" placeholder="At least 10 characters" class="form-input w-full"/>
 				</div>
 			</div>
-			<button class="button primary w-full" @click="router.push('/admin')">
-				Continue
-				<i class="far fa-long-arrow-right pl-2"></i>
-			</button>
+			<router-link to="/admin" custom v-slot="{ navigate }">
+				<button class="button primary w-full" @click="navigate" @keypress.enter="navigate" role="link">
+					Finish setup
+				</button>
+			</router-link>
 		</div>
 	</div>
 </template>
