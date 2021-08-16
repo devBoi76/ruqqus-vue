@@ -13,6 +13,9 @@
 						Community name
 					</label>
 					<input type="text" v-model="name" placeholder="i.e. The Guild" class="form-input w-full"/>
+					<p class="mt-2 text-xs text-gray-400">
+						You can set up your custom domain later.
+					</p>
 				</div>
 				<div>
 					<label class="label">
