@@ -1,9 +1,9 @@
 <template>
 	<div class="flex flex-col flex-grow items-center">
-		<h1 class="h2">
+		<h1 class="h2 font-medium">
 			Create an account
 		</h1>
-		<div class="w-96 bg-white border shadow-xs rounded md:p-8">
+		<div class="w-96 bg-white border shadow-xs rounded md:p-8 md:mt-3">
 			<div class="flex justify-center w-full -mt-10">
 				<img :src="avatar" class="w-16 h-16 rounded-sm"/>
 			</div>
