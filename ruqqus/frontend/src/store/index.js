@@ -10,6 +10,7 @@ import * as Cookies from 'js-cookie'
 import base from './modules/base'
 import comments from './modules/comments'
 import create from "./modules/create"
+import guild from "./modules/guild"
 import items from "./modules/items"
 import moderation from "./modules/items"
 import notifications from "./modules/notifications"
@@ -55,6 +56,7 @@ export const store = createStore({
     base: base,
     comments: comments,
     create: create,
+    guild: guild,
     items: items,
     moderation: moderation,
     notifications: notifications,
