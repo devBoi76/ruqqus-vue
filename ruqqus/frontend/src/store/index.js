@@ -13,6 +13,7 @@ import create from "./modules/create"
 import items from "./modules/items"
 import moderation from "./modules/items"
 import notifications from "./modules/notifications"
+import onboarding from "./modules/onboarding"
 import persist from "./modules/persist"
 import toasts from "./modules/toasts"
 

@@ -201,20 +201,6 @@ export default {
 	},
 	created() {
 		document.documentElement.style.setProperty('--color-primary', `139, 92, 246`)
-		axios
-		.get(`/api/vue/core/+${this.$route.params.name}`)
-		.then(response => {
-			this.g = response.data.data
-		})
-		.catch(error => {
-			console.log(error)
-			this.errored = true
-		})
-		.finally(() => this.loading = false)
 	}
 }
 </script>
-
-<style scoped>
-
-</style>
