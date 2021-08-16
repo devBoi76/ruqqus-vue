@@ -5,7 +5,7 @@ import router from './router'
 import App from './App.vue'
 import axios from "axios"
 import interceptors from './helpers/interceptors.js'
-import { LazyLoad } from '@vant/lazyload'
+import * as LazyLoad from '@vant/lazyload'
 import VueTippy from '../node_modules/vue-tippy'
 
 // Import CSS files
