@@ -56,7 +56,7 @@
 							:swatch-style="{ marginRight: '10px', marginBottom: '10px', borderRadius: '3px', boxShadow: 'none' }"
 							></v-swatches>
 							<div class="w-full md:w-3/4">
-								<input v-model="model.titleColor" :placeholder="model.titleColor" class="form-input"></input>
+								<input v-model="model.titleColor" :placeholder="model.titleColor" class="form-input"/>
 							</div>
 						</div>
 					</div>
