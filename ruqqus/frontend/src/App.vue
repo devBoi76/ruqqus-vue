@@ -42,8 +42,7 @@ export default {
     ...mapState("persist", ["is_authenticated", "darkMode"]),
     ...mapGetters("toasts", ["toastsLength"]),
     isOnboarding() {
-      const paths = '/welcome' || '/setup'
-      return this.$route.path.startsWith(paths);
+      return this.$route.path.startsWith('/welcome') || this.$route.path.startsWith('/setup')
     },
     navbarComponent() {
       if (this.isOnboarding) {
