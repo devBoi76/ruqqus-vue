@@ -7,7 +7,7 @@
 			<div class="flex justify-center w-full -mt-16">
 				<img :src="avatar" class="w-16 h-16 rounded-sm"/>
 			</div>
-			<div class="flex flex-col space-y-4 mb-6">
+			<div class="flex flex-col space-y-4 mb-8">
 				<div>
 					<label class="label">
 						Community name
@@ -33,7 +33,7 @@
 					<input type="password" v-model="password" class="form-input w-full"/>
 				</div>
 			</div>
-			<button class="button primary" @click="router.push('/admin')">
+			<button class="button primary w-full" @click="router.push('/admin')">
 				Continue
 				<i class="far fa-long-arrow-right pl-2"></i>
 			</button>
