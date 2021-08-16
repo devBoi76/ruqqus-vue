@@ -12,25 +12,25 @@
 					<label class="label">
 						Community name
 					</label>
-					<input type="text" v-model="name" class="form-input w-full"/>
+					<input type="text" v-model="name" placeholder="i.e. The Guild" class="form-input w-full"/>
 				</div>
 				<div>
 					<label class="label">
 						Username
 					</label>
-					<input type="text" v-model="username" class="form-input w-full"/>
+					<input type="text" v-model="username" placeholder="i.e. ruqqie" class="form-input w-full"/>
 				</div>
 				<div>
 					<label class="label">
 						Email address
 					</label>
-					<input type="email" v-model="email" class="form-input w-full"/>
+					<input type="email" v-model="email" placeholder="john@example.com" class="form-input w-full"/>
 				</div>
 				<div>
 					<label class="label">
 						Password
 					</label>
-					<input type="password" v-model="password" class="form-input w-full"/>
+					<input type="password" v-model="password" placeholder="At least 10 characters" class="form-input w-full"/>
 				</div>
 			</div>
 			<button class="button primary w-full" @click="router.push('/admin')">
