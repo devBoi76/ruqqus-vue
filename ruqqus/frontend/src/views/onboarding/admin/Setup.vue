@@ -22,9 +22,6 @@ export default {
 			}
 		};
 	},
-	components: {
-		Navigation
-	},
 	computed: {
 		isFirst() {
 			return this.$route.name === 'onboard-user-first-step'
