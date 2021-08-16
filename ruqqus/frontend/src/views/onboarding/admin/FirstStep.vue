@@ -27,7 +27,7 @@
 									<span class="w-8 h-3 bg-purple-200 rounded-full"></span>
 									<span class="w-8 h-3 bg-purple-200 rounded-full"></span>
 									<span class="w-8 h-3 bg-purple-200 rounded-full"></span>
-									<div class="w-6 h-6 rounded bg-green-300"></div>
+									<div class="w-6 h-6 flex-shrink-0 rounded bg-green-300"></div>
 								</div>
 							</div>
 						</div>
@@ -79,7 +79,7 @@
 							</ul>
 							<ul>
 								<li class="flex items-center space-x-2 py-2">
-									<div class="w-8 h-8 rounded bg-green-300"></div>
+									<div class="w-8 h-8 flex-shrink-0 rounded bg-green-300"></div>
 									<span class="w-3/4 h-3 bg-purple-200 rounded-full"></span>
 								</li>
 							</ul>
