@@ -22,16 +22,16 @@
 									</h1>
 
 									<div v-if="v" class="mt-4">
-										<t-button v-if="v.username === u.username" variant="black" to="/settings">
+										<button v-if="v.username === u.username" class="button black" to="/settings">
 											Edit Profile
-										</t-button>
+										</button>
 										<div v-if="v.username !== u.username && !u.is_private" class="flex space-x-2">
-											<t-button variant="black" class="w-full">
+											<button class="button black w-full">
 												Follow
-											</t-button>
-											<t-button variant="black" class="w-full">
+											</button>
+											<button class="button black w-full">
 												Message
-											</t-button>
+											</button>
 										</div>
 									</div>
 								</div>

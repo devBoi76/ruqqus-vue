@@ -38,10 +38,10 @@
             <p class="text-sm text-gray-400">
               Sorry, we're unable to fetch your guilds right now.
             </p>
-            <t-button variant="outlineGray200" class="mt-3" @click="reloadPage()">
+            <button class="button outlineGray200 mt-3" @click="reloadPage()">
               <i class="far fa-redo-alt pr-2"></i>
               Try again
-            </t-button>
+            </button>
           </div>
         </div>
         <GuildList v-if="guilds" :guilds="guilds"/>
@@ -50,9 +50,9 @@
           <i class="block fad fa-bell text-gray-400 text-4xl mb-5"></i>
           <div class="h5">No Guilds</div>
           <p class="text-sm text-gray-400">You need to join some guilds first!</p>
-          <t-button variant="outlinePurple500" class="mt-3" to="/browse">
+          <button class="button outlinePurple500 mt-3" to="/browse">
             Explore guilds
-          </t-button>
+          </button>
         </div>
       </div>
     </div>

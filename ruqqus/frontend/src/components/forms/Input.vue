@@ -4,10 +4,10 @@
 		<slot name="form"/>
 		<div class="flex items-center justify-end mt-5">
 			<!-- Submit Button -->
-			<t-button type="submit" :variant="saveColor" :disabled="disabled" :class="{ 'cursor-not-allowed':disabled }">
+			<button class="button" type="submit" :disabled="disabled" :class="[{ 'cursor-not-allowed':disabled }, saveColor]">
 				<i v-show="success && !changed" class="fas fa-check fa-sm fa-fw pr-2"></i>
 				{{ saveText }}
-			</t-button>
+			</button>
 		</div>
 	</form>
 </template>

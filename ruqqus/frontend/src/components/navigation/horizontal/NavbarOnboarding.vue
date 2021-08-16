@@ -12,9 +12,9 @@
 						<span class="text-gray-400 text-xs">You must complete the walkthrough before entering Ruqqus.</span>
 					</div> -->
 					<div class="hidden md:flex">
-						<t-button @click="logout()" variant="linkGray400">
+						<button @click="logout()" class="button linkGray400">
 							Log Out
-						</t-button>
+						</button>
 					</div>
 					<div class="-mr-2 flex md:hidden">
 						<!-- Mobile menu button -->

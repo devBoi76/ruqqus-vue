@@ -27,14 +27,14 @@
     </div>
 
     <div class="ml-auto">
-      <t-button variant="link" size="lg" class="px-1 py-0 text-decoration-none text-gray-400 dark:text-gray-100" v-b-tooltip.hover title="Edit lodge" @click="showDetails">
+      <button size="lg" class="button link px-1 py-0 text-decoration-none text-gray-400 dark:text-gray-100" v-b-tooltip.hover title="Edit lodge" @click="showDetails">
       <i class="far fa-edit w-8"></i>
-    </t-button>
+    </button>
 
-    <t-button variant="link" size="lg" class="px-1 py-0 text-decoration-none text-gray-400 dark:text-gray-100"
+    <button size="lg" class="button link px-1 py-0 text-decoration-none text-gray-400 dark:text-gray-100"
      v-b-tooltip.hover title="Delete lodge">
     <i class="far fa-trash-alt w-8"></i>
-  </t-button>
+  </button>
 </div>
 
 </div>
@@ -94,15 +94,14 @@
   </b-form-group>
 
 
-  <t-button type="submit" variant="primary" v-show="lodgeValidation">Save</t-button>
-  <t-button variant="gray-300" disabled v-show="!lodgeValidation">Save</t-button>
+  <button type="submit" class="button primary" v-show="lodgeValidation">Save</button>
+  <button class="button gray-300" disabled v-show="!lodgeValidation">Save</button>
 
-  <t-button
+  <button
   type="reset"
-  variant="link"
-  class="font-bold text-white text-opacity-60"
+  class="button link font-bold text-white text-opacity-60"
   @click="showDetails"
-  >Cancel</t-button>
+  >Cancel</button>
 </b-form>
 
 <div class="text-sm text-muted d-none">

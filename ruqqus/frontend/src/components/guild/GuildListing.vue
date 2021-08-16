@@ -20,12 +20,12 @@
     </div>
     <div class="pl-4 md:pl-3">
       <!-- Join Button -->
-      <t-button v-if="guild.name === 'ruqqus'" variant="purple500">
+      <button class="button purple500" v-if="guild.name === 'ruqqus'">
         Joined
-      </t-button>
-      <t-button v-else variant="outlineGray200">
+      </button>
+      <button v-else class="button outlineGray200">
         Join
-      </t-button>
+      </button>
     </div>
   </div>
 </template>

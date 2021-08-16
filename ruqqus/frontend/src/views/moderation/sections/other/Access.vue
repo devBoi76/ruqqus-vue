@@ -12,9 +12,9 @@
 						<div v-show="changed" class="text-xs text-gray-400">
 							You have unsaved changes!
 						</div>
-						<t-button v-if="!loading && !errored" :disabled="!changed" variant="purple500" @click="save()">
+						<button v-if="!loading && !errored" :disabled="!changed" class="button purple500" @click="save()">
 							Save
-						</t-button>
+						</button>
 					</div>
 				</div>
 			</div>

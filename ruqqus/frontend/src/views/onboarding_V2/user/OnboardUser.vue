@@ -25,9 +25,9 @@
 						<p class="text-white text-opacity-90">
 							Woohoo, happy to have you here {{ v.username }}! We'll walk you through a few easy steps to get familiar with Ruqqus.
 						</p>
-						<t-button variant="white" class="relative mt-8 w-full animate-pulse" @click="begin = true">
+						<button class="button white relative mt-8 w-full animate-pulse" @click="begin = true">
 							Begin
-						</t-button>
+						</button>
 					</div>
 					<!-- Show on first step after clicking "begin" -->
 					<div v-show="isFirst && begin" class="h-48">

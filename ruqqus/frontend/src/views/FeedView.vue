@@ -63,9 +63,9 @@
 										<p class="text-gray-700">
 											When you join some communities, their posts show up here!
 										</p>
-										<t-button variant="purple500" class="mt-2">
+										<button class="button purple500 mt-2">
 											Explore Guilds
-										</t-button>
+										</button>
 									</div>
 									<div v-else class="p-40">
 									</div>
@@ -82,9 +82,9 @@
 									<p class="text-gray-700">
 										When you join some communities, their posts show up here!
 									</p>
-									<t-button variant="purple500" class="mt-2">
+									<button class="button purple500 mt-2">
 										Explore Guilds
-									</t-button>
+									</button>
 								</div>
 								<div v-else class="p-24">
 								</div>
@@ -191,12 +191,12 @@
 									<p class="text-sm text-gray-600 dark:text-gray-200">
 										Your personal Ruqqus homepage. Check here for content from your communities and people you follow.
 									</p>
-									<t-button variant="purple500" class="w-full" to="/submit">
+									<button class="button purple500 w-full" to="/submit">
 										Create post
-									</t-button>
-									<t-button variant="outlinePurple500" class="mt-2 w-full">
+									</button>
+									<button class="button outlinePurple500 mt-2 w-full">
 										Find Communities
-									</t-button>
+									</button>
 								</div>
 							</template>
 						</SidebarSection>

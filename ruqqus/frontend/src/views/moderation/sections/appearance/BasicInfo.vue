@@ -8,9 +8,9 @@
 					<h1 class="text-2xl mb-0">
 						General
 					</h1>
-					<t-button v-if="!loading && !errored" variant="purple500">
+					<button v-if="!loading && !errored" class="button purple500">
 						Save
-					</t-button>
+					</button>
 				</div>
 			</div>
 		</div>
@@ -67,7 +67,7 @@
 												<div v-if="active" class="space-y-6 mt-6">
 													<div class="grid grid-cols-3 gap-6">
 														<div class="col-span-3 sm:col-span-2">
-															<t-input v-model="g.name" :placeholder="$route.params.name" type="text"/>
+															<input class="form-input" v-model="g.name" :placeholder="$route.params.name" type="text"/>
 															<p class="text-sm text-gray-500 mt-1">
 																You may only change the capitalization
 															</p>
@@ -76,7 +76,7 @@
 													<div class="grid grid-cols-3 gap-6">
 														<div class="col-span-3 sm:col-span-2">
 															<div class="relative">
-																<t-textarea v-model="g.description_short" type="text" rows="3" maxlength="140" placeholder="A community residing on the world wide web."/>
+																<textarea class="form-textarea" v-model="g.description_short" type="text" rows="3" maxlength="140" placeholder="A community residing on the world wide web."/>
 																<div v-if="g.description_short" class="absolute text-xs font-semibold text-gray-400 right-3 bottom-2" :class="{'text-red-500':g.description_short.length >= 140}">
 																	{{ 140 - g.description_short.length }}
 																</div>

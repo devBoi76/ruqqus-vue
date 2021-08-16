@@ -72,7 +72,7 @@
   </div>
   <div class="bg-white px-4 py-6 flex flex-col space-y-6">
     <t-input-group label="Title" class="relative">
-      <t-input v-model="submission.title" variant="white" placeholder="Give your post a cool title \o/"/>
+      <input v-model="submission.title" class="form-input white" placeholder="Give your post a cool title \o/"/>
       <div v-if="submission.title" class="absolute text-xs font-semibold text-gray-400 right-3 bottom-2" :class="{'text-red-500':submission.title.length >= 32}">
         {{32 - submission.title.length}}
       </div>
@@ -117,12 +117,12 @@
         />
       </div>
       <div class="flex items-center space-x-1">
-        <t-button type="button" @click="showModal=false" variant="linkGray500">
+        <button type="button" @click="showModal=false" class="button linkGray500">
           Cancel
-        </t-button>
-        <t-button type="button" variant="primary" @click="createPost()">
+        </button>
+        <button type="button" class="button primary" @click="createPost()">
           Create post
-        </t-button>
+        </button>
       </div>
     </div>
   </template>

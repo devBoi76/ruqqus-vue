@@ -14,7 +14,7 @@
 			</div>
 			<div class="flex flex-col">
 				<div class="p-4 border-b">
-					<t-input placeholder="Search for Guilds"/>
+					<input class="form-input" placeholder="Search for Guilds"/>
 				</div>
 				<GuildList :guilds="guilds"/>
 			</div>

@@ -1,12 +1,12 @@
 <template>
 	<div class="flex items-center space-x-2">
-		<t-button variant="linkGray500" @click="navigatePrevious()" v-show="!isFirst">
+		<button class="button linkGray500" @click="navigatePrevious()" v-show="!isFirst">
 			Back
-		</t-button>
-		<t-button class="ml-auto" :variant="skippable ? 'white' : 'purple500'" :disabled="!validated" @click="navigateNext()">
+		</button>
+		<button class="button ml-auto" :class="[skippable ? 'white' : 'purple500']" :disabled="!validated" @click="navigateNext()">
 			{{ nextButtonText }}
 			<i class="fas fa-long-arrow-right pl-2" v-show="!isLast"></i>
-		</t-button>
+		</button>
 	</div>
 </template>
 

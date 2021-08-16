@@ -9,7 +9,7 @@
 						Members
 					</h1>
 					<div v-show="!loading && !errored" class="flex space-x-2">
-						<t-input placeholder="Search members" type="text"/>
+						<input class="form-input" placeholder="Search members" type="text"/>
 					</div>
 				</div>
 			</div>
@@ -44,15 +44,19 @@
 			<div v-if="!loading && !errored" class="col-span-full mt-1">
 				<div class="flex items-center px-4">
 					<div class="flex space-x-4">
-						<t-select v-model="sort" :options="routes" class="capitalize"/>
+						<select class="form-select capitalize" v-model="sort" :options="routes" >
+							<option v-for="route in routes" :value="route.id">{{ route.text }}</option>
+						</select>
 						<div class="flex flex-shrink-0 space-x-2">
-							<t-select placeholder="Change role" :disabled="!selected.length" v-model="selectedRole" :options="roles"/>
-							<t-button v-show="!confirmation || !selected.length" :disabled="!selectedRole || !selected.length" variant="gray200" @click="confirmation = true">
+							<select class="form-select" placeholder="Change role" :disabled="!selected.length" v-model="selectedRole">
+								<option v-for="role in roles" :value="role.id">{{ role.text }}</option>
+							</select>
+							<button class="button gray200" v-show="!confirmation || !selected.length" :disabled="!selectedRole || !selected.length"  @click="confirmation = true">
 								Change
-							</t-button>
-							<t-button v-if="confirmation && selected.length" variant="green500" @click="confirm(exile)" class="flex-shrink-0">
+							</button>
+							<button v-if="confirmation && selected.length" @click="confirm(exile)" class="button green500 flex-shrink-0">
 								Confirm change
-							</t-button>
+							</button>
 						</div>
 					</div>
 					<t-pagination
@@ -73,7 +77,7 @@
 							<thead class="bg-gray-50 border-b rounded-t-sm">
 								<tr>
 									<th class="pl-6 pr-3 py-3">
-										<t-checkbox v-model="selectAll"/>
+										<input type="radio" class="form-checkbox" v-model="selectAll"/>
 									</th>
 									<th class="w-1/5 pl-3 pr-6 py-3 text-xs font-medium uppercase tracking-wider text-left text-gray-400 dark:text-gray-400">
 										{{ g.subscriber_count === 1 ? '1 Member' : `${g.subscriber_count} Members` }}
@@ -97,7 +101,7 @@
 									<tr class="border-t first:border-0 hover:bg-gray-50">
 										<td class="pl-6 pr-3 py-3">
 											<div class="flex items-center">
-												<t-checkbox v-model="selected" :value="member.id"/>
+												<input type="radio" class="form-checkbox" v-model="selected" :value="member.id"/>
 											</div>
 										</td>
 										<td class="pl-3 pr-6 py-3 whitespace-no-wrap">

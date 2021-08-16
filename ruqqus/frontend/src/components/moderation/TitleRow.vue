@@ -35,7 +35,7 @@
 
 					<t-input-group class="relative" label="Title Text">
 						<div class="w-full md:w-3/4">
-							<t-input type="text" :variant="{ 'danger':!titleValidation }" v-model="model.titleText" :placeholder="model.titleText" required maxlength="32"/>
+							<input type="text" class="form-input" :class="{ 'danger':!titleValidation }" v-model="model.titleText" :placeholder="model.titleText" required maxlength="32"/>
 						</div>
 						<div class="text-xs text-gray-500 mt-1">
 							{{ 32 - model.titleText.length }}/32
@@ -56,7 +56,7 @@
 							:swatch-style="{ marginRight: '10px', marginBottom: '10px', borderRadius: '3px', boxShadow: 'none' }"
 							></v-swatches>
 							<div class="w-full md:w-3/4">
-								<t-input v-model="model.titleColor" :placeholder="model.titleColor"></t-input>
+								<input v-model="model.titleColor" :placeholder="model.titleColor" class="form-input"></input>
 							</div>
 						</div>
 					</div>
@@ -67,7 +67,7 @@
 					<t-input-group class="relative select-none" label="Guild Rep Requirement">
 						<t-toggle v-model="model.repCheck"/>
 						<div class="mt-2" v-show="model.repCheck">
-							<t-input type="number" :variant="{ 'danger':!repValidation }" v-model="model.titleReq" :placeholder="model.titleReq" :required="model.repCheck" maxlength="32"/>
+							<input type="number" class="form-input" :class="{ 'danger':!repValidation }" v-model="model.titleReq" :placeholder="model.titleReq" :required="model.repCheck" maxlength="32"/>
 							<div v-show="repValidation" class="text-sm text-red-500 mt-1">
 								Hold up. Rep requirements must be greater than zero
 							</div>
@@ -78,13 +78,13 @@
 			</div>
 
 			<div class="flex items-center space-x-2">
-				<t-button type="submit" :variant="saveColor" :disabled="!titleValidation || !repValidation || disabled" :class="{ 'cursor-not-allowed':disabled }">
+				<button type="submit" class="button" :disabled="!titleValidation || !repValidation || disabled" :class="[{ 'cursor-not-allowed':disabled }], saveColor">
 					<i v-show="success" class="fas fa-check fa-sm fa-fw pr-2"></i>
 					{{ saveText }}
-				</t-button>
-				<t-button type="reset" variant="linkGray500" @click="reset()">
+				</button>
+				<button type="reset" class="button linkGray500" @click="reset()">
 					Cancel
-				</t-button>
+				</button>
 			</div>
 		</form>
 

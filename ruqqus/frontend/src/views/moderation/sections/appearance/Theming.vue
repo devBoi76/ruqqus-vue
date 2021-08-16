@@ -8,9 +8,9 @@
 					<h1 class="text-2xl capitalize mb-0">
 						Theming
 					</h1>
-					<t-button v-if="!loading && !errored" variant="purple500">
+					<button v-if="!loading && !errored" class="button purple500">
 						Save
-					</t-button>
+					</button>
 				</div>
 			</div>
 		</div>
@@ -77,7 +77,7 @@
 																:swatch-style="{ marginRight: '10px', marginBottom: '10px', borderRadius: '3px', boxShadow: 'none' }"
 																></v-swatches>
 																<div class="max-w-xs">
-																	<t-input v-model="primaryColor" placeholder="#FFFFFF" class="max-w-xs"></t-input>
+																	<input v-model="primaryColor" placeholder="#FFFFFF" class="form-input max-w-xs"></input>
 																</div>
 															</div>
 															<p class="text-sm text-gray-500 mt-1">
@@ -97,7 +97,7 @@
 																:swatch-style="{ marginRight: '10px', marginBottom: '10px', borderRadius: '3px', boxShadow: 'none' }"
 																></v-swatches>
 																<div class="max-w-xs">
-																	<t-input v-model="secondaryColor" placeholder="#000000"></t-input>
+																	<input class="form-input" v-model="secondaryColor" placeholder="#000000"></input>
 																</div>
 															</div>
 															<p class="text-sm text-gray-500 mt-1">

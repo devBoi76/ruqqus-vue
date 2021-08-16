@@ -28,10 +28,10 @@
 
 			<div class="relative">
 				<div class="z-10 absolute top-4 right-4">
-					<t-button v-show="!editAppearance" type="button" variant="white" @click="toggleAppearance">Edit appearance</t-button>
+					<button v-show="!editAppearance" type="button" class="button white" @click="toggleAppearance">Edit appearance</button>
 					<div v-show="editAppearance" class="flex items-center space-x-2">
-						<t-button type="button" variant="black30" @click="toggleAppearance" tabindex="0">Cancel</t-button>
-						<t-button type="button" variant="white" tabindex="0">Save</t-button>
+						<button type="button" class="button black30" @click="toggleAppearance" tabindex="0">Cancel</button>
+						<button type="button" class="button white" tabindex="0">Save</button>
 					</div>
 				</div>
 				<div class="relative">
@@ -71,7 +71,7 @@
 					<Form :model="{ bio:v.bio }" :post-url="endpoint" @success="onSuccess">
 						<template v-slot:form>
 							<t-input-group label="Bio" class="relative">
-								<t-textarea v-model="v.bio" type="text" rows="4" placeholder="An extraordinary stranger surfing the cybers."/>
+								<textarea class="form-textarea" v-model="v.bio" type="text" rows="4" placeholder="An extraordinary stranger surfing the cybers."/>
 								<div v-if="v.bio" class="absolute text-xs font-semibold text-gray-400 right-3 bottom-2 select-none" :class="{'text-red-500':v.bio.length >= 256}">
 									{{ 256 - v.bio.length }}
 								</div>
@@ -150,9 +150,9 @@
 									</div>
 								</div>
 							</div>
-							<t-button variant="outlineRed500" class="ml-auto">
+							<button class="button outlineRed500 ml-auto">
 								Disconnect
-							</t-button>
+							</button>
 						</li>
 					</ul>
 					<div v-else class="text-center text-gray-500">
@@ -182,7 +182,7 @@
 								Total referalls: <span class="text-purple-500 font-bond">{{ v.referral_count || 0 }}</span>
 							</div>
 						</div>
-						<t-input disabled :value="`https://ruqqus.com/signup?ref=${v.username}`" type="text"/>
+						<input class="form-input" disabled :value="`https://ruqqus.com/signup?ref=${v.username}`" type="text"/>
 						<p class="mt-2 text-sm text-gray-500">
 							Share this link with anyone and unlock cosmetics for your profile.
 							<a class="text-purple-500 hover:underline" href="/help/referalls">

@@ -8,7 +8,7 @@
 			<div class="flex flex-grow flex-col space-y-4">
 				<div>
 					<label for="guild-name" class="block uppercase text-gray-900 text-xs tracking-wide font-bold mb-1">Guild Name</label>
-					<t-input name="guildName" v-model="guildName" maxlength="25" placeholder="Ex. MyAwesomeGuild" variant="light" @focus="formFocused = true"/>
+					<input class="form-input light" name="guildName" v-model="guildName" maxlength="25" placeholder="Ex. MyAwesomeGuild" @focus="formFocused = true"/>
 					<div v-show="guildName.length > 25" class="mt-1 text-xs text-red-500">
 						Must be 25 characters or less, no spaces
 					</div>

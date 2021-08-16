@@ -70,7 +70,7 @@
                   </div>
                 </div>
                 <div class="flex items-center justify-end px-4 py-3 bg-gray-100 md:px-5 md:py-4">
-                  <t-button type="submit" variant="purple500">Save</t-button>
+                  <button type="submit" class="button purple500">Save</button>
                 </div>
               </div>
             </form>
@@ -82,7 +82,7 @@
                 <div class="px-4 py-5 space-y-6 md:p-5">
                 </div>
                 <div class="flex items-center justify-end px-4 py-3 bg-gray-100 md:px-5 md:py-4">
-                  <t-button type="submit" variant="purple500">Save</t-button>
+                  <button type="submit" class="button purple500">Save</button>
                 </div>
               </div>
             </form>

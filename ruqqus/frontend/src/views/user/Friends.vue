@@ -26,7 +26,7 @@
 		<vue-scroll>
 			<div class="grid grid-cols-12 gap-8 px-4 my-4">
 				<div class="col-span-full dark:text-gray-100">
-					<t-input placeholder="Filter friends by name"/>
+					<input class="form-input" placeholder="Filter friends by name"/>
 				</div>
 				<div class="col-span-full dark:text-gray-100">
 					<div class="mb-1 text-sm font-medium text-gray-700 capitalize">

@@ -30,7 +30,7 @@
 								<div class="flex">
 									<img :src="v.profile_url" class="w-16 h-16 object-fit rounded-sm" alt="profile picture"/>
 									<div class="ml-3">
-										<t-button variant="outlineGray200">Randomize</t-button>
+										<button class="button outlineGray200">Randomize</button>
 										<p class="text-sm text-gray-600 mt-2 leading-none">
 											Note: You can upload a custom image later on.
 										</p>
@@ -39,7 +39,7 @@
 							</div>
 							<div>
 								<t-input-group label="Bio" class="relative">
-									<t-textarea v-model="v.bio" type="text" rows="4" placeholder="An extraordinary stranger surfing the cybers. Markdown supported :)"/>
+									<textarea class="form-textarea" v-model="v.bio" type="text" rows="4" placeholder="An extraordinary stranger surfing the cybers. Markdown supported :)"/>
 									<div v-if="v.bio" class="absolute text-xs font-semibold text-gray-400 right-3 bottom-2 select-none" :class="{'text-red-500':v.bio.length >= 256}">
 										{{ 256 - v.bio.length }}
 									</div>
@@ -54,10 +54,10 @@
 						<div class="border-t border-gray-200"></div>
 					</div>
 					<div class="-mt-12 bg-white">
-						<t-button class="w-44" variant="outlineGray200" @click="showMore = !showMore">
+						<button class="button outlineGray200 w-44" @click="showMore = !showMore">
 							<i class="far fa-sm pr-2" :class="showMore ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
 							{{ showMore ? 'Hide' : 'Show' }} advanced
-						</t-button>
+						</button>
 					</div>
 				</div>
 

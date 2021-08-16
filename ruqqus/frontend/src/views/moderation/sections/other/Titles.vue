@@ -10,15 +10,15 @@
           </h1>
           <div v-show="!loading && !errored" class="col-span-full mt-4 px-4">
             <div class="flex space-x-2">
-              <t-button v-show="!reorder" variant="white" @click="reorderTitles">
+              <button v-show="!reorder" class="button white" @click="reorderTitles">
                 Reorder
-              </t-button>
-              <t-button v-show="reorder" variant="green500" @click="reorderTitles">
+              </button>
+              <button v-show="reorder" class="button green500" @click="reorderTitles">
                 Done
-              </t-button>
-              <t-button>
+              </button>
+              <button>
                 <i class="far fa-feather mr-2"></i>Create new title
-              </t-button>
+              </button>
             </div>
           </div>
         </div>

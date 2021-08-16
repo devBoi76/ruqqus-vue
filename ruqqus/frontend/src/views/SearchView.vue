@@ -72,12 +72,12 @@
 								<p class="text-sm text-gray-600">
 									Not finding the content you are looking for? Create a new post or community today!
 								</p>
-								<t-button variant="purple500" class="w-full">
+								<button class="button purple500 w-full">
 									Create post
-								</t-button>
-								<t-button variant="outlinePurple500" class="mt-2 w-full">
+								</button>
+								<button class="button outlinePurple500 mt-2 w-full">
 									Create guild
-								</t-button>
+								</button>
 							</div>
 						</template>
 					</SidebarSection>
