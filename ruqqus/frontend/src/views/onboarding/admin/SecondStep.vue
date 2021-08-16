@@ -3,7 +3,7 @@
 		<h1 class="text-4xl font-medium">
 			Create an account
 		</h1>
-		<div class="w-96 bg-white border shadow-xs rounded md:p-8 md:mt-10">
+		<div class="w-96 bg-white border shadow-sm rounded md:p-8 md:mt-10">
 			<div class="flex justify-center w-full -mt-16 mb-3">
 				<!-- <img :src="avatar" class="w-16 h-16 rounded-sm"/> -->
 				<div class="w-16 h-16 flex items-center justify-center rounded-sm bg-gray-200 overflow-hidden shadow-inner">
