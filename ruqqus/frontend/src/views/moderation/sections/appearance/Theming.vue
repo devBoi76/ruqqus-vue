@@ -97,7 +97,7 @@
 																:swatch-style="{ marginRight: '10px', marginBottom: '10px', borderRadius: '3px', boxShadow: 'none' }"
 																></v-swatches>
 																<div class="max-w-xs">
-																	<input class="form-input" v-model="secondaryColor" placeholder="#000000"></input>
+																	<input class="form-input" v-model="secondaryColor" placeholder="#000000"/>
 																</div>
 															</div>
 															<p class="text-sm text-gray-500 mt-1">
