@@ -5,7 +5,7 @@
 		</h1>
 		<div class="w-96 bg-white border shadow-xs rounded md:p-8 md:mt-10">
 			<div class="flex justify-center w-full -mt-16 mb-3">
-				<img :src="avatar" class="w-16 h-16 rounded-sm"/>
+				<!-- <img :src="avatar" class="w-16 h-16 rounded-sm"/> -->
 				<div class="w-16 h-16 flex items-center justify-center rounded-sm bg-gray-200 overflow-hidden shadow-inner">
 					<span class="-mb-8">
 						<i class="fas fa-user text-6xl text-gray-400"></i>
