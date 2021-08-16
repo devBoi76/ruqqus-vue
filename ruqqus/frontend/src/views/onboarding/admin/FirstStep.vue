@@ -31,23 +31,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="hidden md:block col-span-2 p-5 rounded border-2 border-purple-400 bg-purple-100">
-							<ul>
-								<li class="flex items-center text-purple-400 py-2">
-									<span class="w-1/3 h-3 bg-purple-200 rounded-full"></span>
-								</li>
-								<li class="flex items-center text-purple-400 py-2">
-									<span class="w-4/5 h-3 bg-purple-200 rounded-full"></span>
-								</li>
-								<li class="flex items-center text-purple-400 py-2">
-									<span class="w-2/4 h-3 bg-purple-200 rounded-full"></span>
-								</li>
-								<li class="flex items-center text-purple-400 py-2">
-									<span class="w-3/5 h-3 bg-purple-200 rounded-full"></span>
-								</li>
-							</ul>
-						</div>
-						<div class="col-span-full md:col-span-4 p-5 h-auto rounded border-2 border-purple-400 bg-purple-100">
+						<div class="col-span-full md:col-span-6 p-5 h-auto rounded border-2 border-purple-400 bg-purple-100">
 							<div class="flex flex-col space-y-8">
 								<div class="flex w-full space-x-5">
 									<div class="flex flex-col items-center space-y-2">
