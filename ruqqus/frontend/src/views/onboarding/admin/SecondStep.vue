@@ -38,7 +38,8 @@
 			</div>
 			<router-link to="/admin" custom v-slot="{ navigate }">
 				<button class="button primary w-full" @click="navigate" @keypress.enter="navigate" role="link">
-					Finish setup
+					Continue
+					<i class="far fa-long-arrow-right pl-2"></i>
 				</button>
 			</router-link>
 		</div>
