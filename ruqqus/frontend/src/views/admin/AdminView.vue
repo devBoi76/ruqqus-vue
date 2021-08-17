@@ -62,20 +62,6 @@ export default {
 			errored: false,
 			g: [],
 			menu: [
-			{	
-				mobileDivider: true,
-				items: [
-				{
-					name: 'dashboard',
-					route: {
-						name: 'admin-overview-view',
-						params: { filter: 'reports' }
-					},
-					icon: 'fa-columns',
-					textCase: 'capitalize'
-				}
-				]
-			},
 			{
 				header: true,
 				mobileDivider: true,
@@ -113,30 +99,12 @@ export default {
 					textCase: 'capitalize'
 				},
 				{
-					name: 'spam',
-					route: {
-						name: 'admin-queue-view',
-						params: { filter: 'spam' }
-					},
-					icon: 'fa-bomb',
-					textCase: 'capitalize'
-				},
-				{
 					name: 'all',
 					route: {
 						name: 'admin-queue-view',
 						params: { filter: 'unmoderated' }
 					},
 					icon: 'fa-question-circle',
-					textCase: 'capitalize'
-				},
-				{
-					name: 'approved',
-					route: {
-						name: 'admin-queue-view',
-						params: { filter: 'approved' }
-					},
-					icon: 'fa-check-circle',
 					textCase: 'capitalize'
 				},
 				{
@@ -174,16 +142,7 @@ export default {
 					textCase: 'capitalize'
 				},
 				{
-					name: 'approved',
-					route: {
-						name: 'admin-user-management-view',
-						params: { sort: 'approved' }
-					},
-					icon: 'fa-heart',
-					textCase: 'capitalize'
-				},
-				{
-					name: 'guild masters',
+					name: 'staff',
 					route: {
 						name: 'admin-user-management-view',
 						params: { sort: 'staff' }
@@ -198,11 +157,11 @@ export default {
 				name: 'customization',
 				items: [
 				{
-					name: 'theming',
+					name: 'design',
 					route: {
 						name: 'admin-theming-view'
 					},
-					icon: 'fa-palette',
+					icon: 'fa-paint-roller',
 					textCase: 'capitalize'
 				},
 				{
