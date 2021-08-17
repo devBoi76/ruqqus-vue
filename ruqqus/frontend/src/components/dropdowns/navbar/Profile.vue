@@ -21,9 +21,9 @@
   <MenuItems
   class="absolute right-0 w-56 mt-4 origin-top-right bg-white divide-y divide-gray-100 rounded shadow-lg border focus:outline-none"
   >
-  <div>
+  <div class="py-2">
     <!-- User Details -->
-    <router-link :to="`/${v.username}`" class="flex items-center p-4">
+    <router-link :to="`/${v.username}`" class="flex items-center px-4 pt-4 pb-2">
       <!-- User Avatar -->
       <img class="w-10 h-10 object-cover rounded-sm" :src="v.profile_url" alt="user avatar"/>
       <div class="pl-3 truncate">
@@ -87,7 +87,7 @@
       </button>
     </MenuItem>
   </div>
-  <div>
+  <div class="py-2">
     <!-- Sign Out -->
     <MenuItem v-slot="{ active }">
       <button :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-2 text-sm',]">
