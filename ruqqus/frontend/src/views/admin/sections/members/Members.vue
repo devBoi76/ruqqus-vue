@@ -79,19 +79,19 @@
 									<th class="pl-6 pr-3 py-3">
 										<input type="radio" class="form-checkbox" v-model="selectAll"/>
 									</th>
-									<th class="w-1/5 pl-3 pr-6 py-3 text-xs font-medium uppercase tracking-wider text-left text-gray-400 dark:text-gray-400">
+									<th class="w-1/5 pl-3 pr-6 py-3 text-xs font-semibold uppercase tracking-wider text-left text-gray-400 dark:text-gray-400">
 										{{ subscriber_count === 1 ? '1 Member' : `${subscriber_count} Members` }}
 									</th>
-									<th class="w-1/5 px-6 py-3 text-xs font-medium uppercase tracking-wider text-left text-gray-400 dark:text-gray-400">
+									<th class="w-1/5 px-6 py-3 text-xs font-semibold uppercase tracking-wider text-left text-gray-400 dark:text-gray-400">
 										Roles
 									</th>
-									<th class="w-1/5 px-6 py-3 text-xs font-medium uppercase tracking-wider text-left text-gray-400 dark:text-gray-400">
+									<th class="w-1/5 px-6 py-3 text-xs font-semibold uppercase tracking-wider text-left text-gray-400 dark:text-gray-400">
 										Joined
 									</th>
-									<th class="w-1/5 px-6 py-3 text-xs font-medium uppercase tracking-wider text-left text-gray-400 dark:text-gray-400">
+									<th class="w-1/5 px-6 py-3 text-xs font-semibold uppercase tracking-wider text-left text-gray-400 dark:text-gray-400">
 										Posts
 									</th>
-									<th class="w-1/5 px-6 py-3 text-xs font-medium uppercase tracking-wider text-left text-gray-400 dark:text-gray-400">
+									<th class="w-1/5 px-6 py-3 text-xs font-semibold uppercase tracking-wider text-left text-gray-400 dark:text-gray-400">
 										Comments
 									</th>
 								</tr>
