@@ -83,7 +83,7 @@
     <!-- Dark Theme Link -->
     <MenuItem v-slot="{ active }">
       <button :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-2 text-sm',]">
-        <i class="far text-center fa-fw mr-3" :class="dark ? 'fa-sun' : 'fa-moon'"></i><span>Dark Theme</span>
+        <i class="far text-center fa-fw mr-2" :class="dark ? 'fa-sun' : 'fa-moon'"></i><span>Dark Theme</span>
       </button>
     </MenuItem>
   </div>
@@ -91,7 +91,7 @@
     <!-- Sign Out -->
     <MenuItem v-slot="{ active }">
       <button :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-2 text-sm',]">
-        <i class="far fa-sign-out fa-rotate-180 text-center fa-fw mr-2"></i><span>Sign Out</span>
+        <i class="far fa-sign-out text-center fa-fw mr-2"></i><span>Sign Out</span>
       </button>
     </MenuItem>
   </div>
