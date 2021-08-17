@@ -24,9 +24,9 @@
 							/>
 						</router-link>
 						<div class="pl-3">
-							<router-link class="text-gray-900 font-medium">
+							<div class="text-gray-900 font-medium">
 								Community Name
-							</router-link>
+							</div>
 							<div class="text-2xs text-gray-500">
 								503 members
 							</div>
