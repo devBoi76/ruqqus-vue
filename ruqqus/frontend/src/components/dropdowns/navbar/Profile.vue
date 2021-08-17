@@ -66,12 +66,6 @@
         </MenuItem>
       </div>
       <div class="py-2">
-        <!-- Invite Friends Link -->
-        <MenuItem v-slot="{ active }">
-          <button :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-2']">
-            <i class="far fa-user-plus text-center fa-fw mr-2"></i><span>Invite Friends</span>
-          </button>
-        </MenuItem>
         <!-- Dark Theme Link -->
         <MenuItem v-slot="{ active }">
           <button :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-2']">
