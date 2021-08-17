@@ -56,12 +56,12 @@ const SetupView = () => import ('../views/onboarding/admin/Setup.vue')
 const SetupFirstStep = () => import ('../views/onboarding/admin/FirstStep.vue')
 const SetupSecondStep = () => import ('../views/onboarding/admin/SecondStep.vue')
 
-// Onboarding Users
-const OnboardingView = () => import ('../views/onboarding/user/OnboardUser_V2.vue')
-const OnboardingFirstStep = () => import ('../views/onboarding/user/FirstStep_V2.vue')
-const OnboardingSecondStep = () => import ('../views/onboarding/user/SecondStep.vue')
-const OnboardingThirdStep = () => import ('../views/onboarding/user/ThirdStep.vue')
-const OnboardingFourthStep = () => import ('../views/onboarding/user/FourthStep.vue')
+// // Onboarding User
+// const OnboardingView = () => import ('../views/onboarding/user/OnboardUser_V2.vue')
+// const OnboardingFirstStep = () => import ('../views/onboarding/user/FirstStep_V2.vue')
+// const OnboardingSecondStep = () => import ('../views/onboarding/user/SecondStep.vue')
+// const OnboardingThirdStep = () => import ('../views/onboarding/user/ThirdStep.vue')
+// const OnboardingFourthStep = () => import ('../views/onboarding/user/FourthStep.vue')
 
 // Admin
 const AdminView = () => import ('../views/admin/AdminView.vue')
@@ -142,16 +142,16 @@ const routes = [
 			]
 		},
 
-		// Onboarding View
-		{
-			path: '/welcome', component: OnboardingView, props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false},
-			children: [
-			{ path: '', alias: ['/welcome/interests','/welcome/1'], component: OnboardingFirstStep, name: 'onboard-user-first-step', props: { currentStep: 1 }, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
-			{ path: '/welcome/guilds', alias: '/welcome/2', component: OnboardingSecondStep, name: 'onboard-user-second-step', props: { currentStep: 2 }, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
-			{ path: '/welcome/profile', alias: '/welcome/3', component: OnboardingThirdStep, name: 'onboard-user-third-step', props: { currentStep: 3 }, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
-			{ path: '/welcome/extra', alias: '/welcome/4', component: OnboardingFourthStep, name: 'onboard-user-fourth-step', props: { currentStep: 4 }, meta: {requiresAuth: true, sidebar: false, dropImage: false} }
-			]
-		},
+		// // Onboarding User View
+		// {
+		// 	path: '/welcome', component: OnboardingView, props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false},
+		// 	children: [
+		// 	{ path: '', alias: ['/welcome/interests','/welcome/1'], component: OnboardingFirstStep, name: 'onboard-user-first-step', props: { currentStep: 1 }, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
+		// 	{ path: '/welcome/guilds', alias: '/welcome/2', component: OnboardingSecondStep, name: 'onboard-user-second-step', props: { currentStep: 2 }, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
+		// 	{ path: '/welcome/profile', alias: '/welcome/3', component: OnboardingThirdStep, name: 'onboard-user-third-step', props: { currentStep: 3 }, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
+		// 	{ path: '/welcome/extra', alias: '/welcome/4', component: OnboardingFourthStep, name: 'onboard-user-fourth-step', props: { currentStep: 4 }, meta: {requiresAuth: true, sidebar: false, dropImage: false} }
+		// 	]
+		// },
 
 		// Admin view
 		{
