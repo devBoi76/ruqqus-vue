@@ -51,7 +51,7 @@
 
 							<div>
 								<div class="text-xs font-medium uppercase tracking-wider text-gray-400 dark:text-gray-400 mb-2">
-									Community Visibility
+									Community Privacy
 								</div>
 								<div class="sm:rounded-sm sm:shadow-xs border-t border-b sm:border-0 bg-white">
 									<div class="p-4 border-b">
@@ -61,7 +61,7 @@
 													Private
 												</div>
 												<p class="text-sm text-gray-500 mt-1">
-													Hide your community's content from non-members and disable new membership. Content posted prior to the guild being set to private will remain public.
+													Require an account to view your community's content.
 												</p>
 											</div>
 											<t-toggle v-model="g.is_private"/>
@@ -71,10 +71,10 @@
 										<div class="flex flex-grow items-center justify-between">
 											<div>
 												<div class="font-medium leading-tight">
-													Discovery Opt-Out
+													Disable Sign-Ups
 												</div>
 												<p class="text-sm text-gray-500 mt-1">
-													Hide your community (including its content) from appearing in feeds and /browse.
+													This will disable any new account creation.
 												</p>
 											</div>
 											<t-toggle v-model="g.is_all"/>
