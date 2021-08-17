@@ -33,112 +33,68 @@
         </div>
         <div class="text-2xs text-gray-600 mt-1">
           <!-- User Reputation -->
-          <i class="fas fa-circle text-yellow-700 pr-1"></i>{{ v.post_rep + v.comment_rep }} rep
+          <span class="w-2 h-2 rounded-full bg-yellow-600 mr-1"></span>
+          {{ v.post_rep + v.comment_rep }} rep
         </div>
       </div>
     </router-link>
     <!-- Following Link -->
     <MenuItem v-slot="{ active }">
-      <button
-      :class="[
-      active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-      'group flex items-center w-full px-4 py-2 text-sm',
-      ]"
-      >
-      <i class="far fa-user text-center fa-fw mr-2"></i><span>Following</span>
-    </button>
-  </MenuItem>
-  <!-- Guilds Link -->
-  <MenuItem v-slot="{ active }">
-    <button
-    :class="[
-    active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-    'group flex items-center w-full px-4 py-2 text-sm',
-    ]"
-    >
-    <i class="far fa-users-crown text-center fa-fw mr-2"></i><span>Guilds</span>
-  </button>
-</MenuItem>
-<!-- Saved Link -->
-<MenuItem v-slot="{ active }">
-  <button
-  :class="[
-  active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-  'group flex items-center w-full px-4 py-2 text-sm',
-  ]"
-  >
-  <i class="far fa-bookmark text-center fa-fw mr-2"></i><span>Saved</span>
-</button>
-</MenuItem>
-<!-- User Settings Link -->
-<MenuItem v-slot="{ active }">
-  <button
-  :class="[
-  active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-  'group flex items-center w-full px-4 py-2 text-sm',
-  ]"
-  >
-  <i class="far fa-cog text-center fa-fw mr-2"></i><span>Settings</span>
-</button>
-</MenuItem>
-<!-- Moderation Link -->
-<MenuItem v-slot="{ active }">
-  <button
-  :class="[
-  active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-  'group flex items-center w-full px-4 py-2 text-sm',
-  ]"
-  >
-  <i class="far fa-crown text-center fa-fw mr-2"></i><span>Moderation</span>
-</button>
-</MenuItem>
-<!-- Create New Community Link -->
-<MenuItem v-slot="{ active }">
-  <button
-  :class="[
-  active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-  'group flex items-center w-full px-4 py-2 text-sm',
-  ]"
-  >
-  <i class="far fa-swords text-center fa-fw mr-2"></i><span>Create New Guild</span>
-</button>
-</MenuItem>
-<!-- Invite Friends Link -->
-<MenuItem v-slot="{ active }">
-  <button
-  :class="[
-  active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-  'group flex items-center w-full px-4 py-2 text-sm',
-  ]"
-  >
-  <i class="far fa-user-plus text-center fa-fw mr-2"></i><span>Invite Friends</span>
-</button>
-</MenuItem>
-<!-- Dark Theme Link -->
-<MenuItem v-slot="{ active }">
-  <button
-  :class="[
-  active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-  'group flex items-center w-full px-4 py-2 text-sm',
-  ]"
-  >
-  <i class="far text-center fa-fw mr-3" :class="dark ? 'fa-sun' : 'fa-moon'"></i><span>Dark Theme</span>
-</button>
-</MenuItem>
-</div>
-<div class="px-1 py-1">
-  <!-- Sign Out -->
-  <MenuItem v-slot="{ active }">
-    <button
-    :class="[
-    active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-    'group flex items-center w-full px-4 py-2 text-sm',
-    ]"
-    >
-    <i class="far fa-sign-out fa-rotate-180 text-center fa-fw mr-2"></i><span>Sign Out</span>
-  </button>
-</MenuItem>
-</div>
+      <button :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-2 text-sm',]">
+        <i class="far fa-user text-center fa-fw mr-2"></i><span>Following</span>
+      </button>
+    </MenuItem>
+    <!-- Guilds Link -->
+    <MenuItem v-slot="{ active }">
+      <button :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-2 text-sm',]">
+        <i class="far fa-users-crown text-center fa-fw mr-2"></i><span>Guilds</span>
+      </button>
+    </MenuItem>
+    <!-- Saved Link -->
+    <MenuItem v-slot="{ active }">
+      <button :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-2 text-sm',]">
+        <i class="far fa-bookmark text-center fa-fw mr-2"></i><span>Saved</span>
+      </button>
+    </MenuItem>
+    <!-- User Settings Link -->
+    <MenuItem v-slot="{ active }">
+      <button :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-2 text-sm',]">
+        <i class="far fa-cog text-center fa-fw mr-2"></i><span>Settings</span>
+      </button>
+    </MenuItem>
+    <!-- Moderation Link -->
+    <MenuItem v-slot="{ active }">
+      <button :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-2 text-sm',]">
+        <i class="far fa-crown text-center fa-fw mr-2"></i><span>Moderation</span>
+      </button>
+    </MenuItem>
+    <!-- Create New Community Link -->
+    <MenuItem v-slot="{ active }">
+      <button :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-2 text-sm',]">
+        <i class="far fa-swords text-center fa-fw mr-2"></i><span>Create New Guild</span>
+      </button>
+    </MenuItem>
+    <!-- Invite Friends Link -->
+    <MenuItem v-slot="{ active }">
+      <button :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-2 text-sm',]">
+        <i class="far fa-user-plus text-center fa-fw mr-2"></i><span>Invite Friends</span>
+      </button>
+    </MenuItem>
+    <!-- Dark Theme Link -->
+    <MenuItem v-slot="{ active }">
+      <button :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-2 text-sm',]">
+        <i class="far text-center fa-fw mr-3" :class="dark ? 'fa-sun' : 'fa-moon'"></i><span>Dark Theme</span>
+      </button>
+    </MenuItem>
+  </div>
+  <div>
+    <!-- Sign Out -->
+    <MenuItem v-slot="{ active }">
+      <button :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-2 text-sm',]">
+        <i class="far fa-sign-out fa-rotate-180 text-center fa-fw mr-2"></i><span>Sign Out</span>
+      </button>
+    </MenuItem>
+  </div>
 </MenuItems>
 </transition>
 </Menu>
