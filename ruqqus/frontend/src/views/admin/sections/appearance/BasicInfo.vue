@@ -161,6 +161,27 @@
 								</div>
 							</div>
 
+							<div>
+								<div class="text-xs font-medium uppercase tracking-wider text-gray-400 dark:text-gray-400 mb-2">
+									Miscellaneous
+								</div>
+								<div class="sm:rounded-sm sm:shadow-xs border-t border-b sm:border-0 bg-white">
+									<div class="p-4">
+										<div class="flex flex-grow items-center justify-between">
+											<div>
+												<div class="font-bold leading-tight">
+													Disable Downvotes
+												</div>
+												<p class="text-sm text-gray-500 mt-1">
+													Removes downvote buttons from all content: posts and comments.
+												</p>
+											</div>
+											<t-toggle v-model="g.over_18"/>
+										</div>
+									</div>
+								</div>
+							</div>
+
 						</div>
 					</div>
 				</div>
