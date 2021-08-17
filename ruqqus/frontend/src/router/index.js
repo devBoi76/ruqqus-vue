@@ -87,6 +87,14 @@ const OnboardingFourthStep = () => import ('../views/onboarding/user/FourthStep.
 
 // Admin
 const AdminView = () => import ('../views/admin/AdminView.vue')
+const AdminOverviewView = () => import ('../views/admin/sections/other/Overview.vue')
+const AdminQueueView = () => import ('../views/admin/sections/queue/Queue.vue')
+const AdminBasicInfoView = () => import ('../views/admin/sections/appearance/BasicInfo.vue')
+const AdminThemingView = () => import ('../views/admin/sections/appearance/Theming.vue')
+const AdminUserManagementView = () => import ('../views/admin/sections/members/Members.vue')
+const AdminAccessView = () => import ('../views/admin/sections/other/Access.vue')
+const AdminRulesView = () => import ('../views/admin/sections/other/Rules.vue')
+const AdminTitlesView = () => import ('../views/admin/sections/other/Titles.vue')
 
 import { store } from "@/store";
 
@@ -213,10 +221,24 @@ const routes = [
 		// Admin view
 		{
 			path: '/admin', component: AdminView, props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false}
-			// children: [
-			// { path: '', component: ModerationOverviewView, name: 'moderation-overview-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
-			// { path: '/+:name/settings/queue/:filter?', component: ModerationQueueView, name: 'moderation-queue-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
-			// ]
+			children: [
+			{ path: '', component: AdminOverviewView, name: 'admin-dashboard-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
+			]
+		},
+
+		// Admin view
+		{
+			path: '/admin', component: AdminView, props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false},
+			children: [
+			{ path: '', component: AdminOverviewView, name: 'admin-overview-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
+			{ path: '/admin/queue/:filter?', component: AdminQueueView, name: 'admin-queue-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
+			{ path: '/admin/general', component: AdminBasicInfoView, name: 'admin-general-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
+			{ path: '/admin/theming', component: AdminThemingView, name: 'admin-theming-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
+			{ path: '/admin/members/:sort?', component: AdminUserManagementView, name: 'admin-user-management-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
+			{ path: '/admin/access', component: AdminAccessView, name: 'admin-access-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
+			{ path: '/admin/rules', component: AdminRulesView, name: 'admin-rules-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
+			{ path: '/admin/titles', component: AdminTitlesView, name: 'admin-titles-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} }
+			]
 		},
 
 		// Route level code-splitting this generates a separate chunk (about.[hash].js) for this route which is lazy-loaded when the route is visited.

@@ -58,6 +58,7 @@ export default {
 	},
 	data() {
 		return {
+			{ name: 'user', params: { userId: '123' }}
 			loading: true,
 			errored: false,
 			g: [],
