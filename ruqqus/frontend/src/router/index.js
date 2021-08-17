@@ -19,18 +19,6 @@ const GuildMembersView = () => import ('../views/guild/sections/AboutV2_2.vue')
 const GuildAuditLogView = () => import ('../views/guild/sections/LogsV2.vue')
 const GuildSavedView = () => import ('../views/guild/sections/Saved.vue')
 
-// Guild Moderation and Settings
-const ModerationView = () => import ('../views/moderation/ModeratorView.vue')
-const ModerationOverviewView = () => import ('../views/moderation/sections/other/Overview.vue')
-const ModerationQueueView = () => import ('../views/moderation/sections/queue/Queue.vue')
-const ModerationBasicInfoView = () => import ('../views/moderation/sections/appearance/BasicInfo.vue')
-const ModerationThemingView = () => import ('../views/moderation/sections/appearance/Theming.vue')
-const ModerationUserManagementView = () => import ('../views/moderation/sections/members/Members.vue')
-const ModerationAccessView = () => import ('../views/moderation/sections/other/Access.vue')
-const ModerationRulesView = () => import ('../views/moderation/sections/other/Rules.vue')
-const ModerationTitlesView = () => import ('../views/moderation/sections/other/Titles.vue')
-const ModerationLodgesView = () => import ('../views/moderation/sections/other/Lodges.vue')
-
 // Profile
 const ProfileView = () => import ('../views/profile/ProfileView_V4.vue')
 const UserOverviewView = () => import ('../views/profile/sections/Overview.vue')
@@ -57,7 +45,6 @@ const UserContentSettings = () => import ('../views/user/settings/sections/filte
 
 // Search and Discover
 const SearchView = () => import ('../views/SearchView.vue')
-const BrowseView = () => import ('../views/BrowseView_V2.vue')
 
 // Submit
 const SubmitView = () => import ('../views/SubmitView.vue')
@@ -159,22 +146,6 @@ const routes = [
 			]
 		},
 
-		// Moderation view
-		{
-			path: '/+:name/settings', component: ModerationView, props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false},
-			children: [
-			{ path: '', component: ModerationOverviewView, name: 'moderation-overview-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
-			{ path: '/+:name/settings/queue/:filter?', component: ModerationQueueView, name: 'moderation-queue-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
-			{ path: '/+:name/settings/general', component: ModerationBasicInfoView, name: 'moderation-general-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
-			{ path: '/+:name/settings/theming', component: ModerationThemingView, name: 'moderation-theming-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
-			{ path: '/+:name/settings/members/:sort?', component: ModerationUserManagementView, name: 'moderation-user-management-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
-			{ path: '/+:name/settings/access', component: ModerationAccessView, name: 'moderation-access-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
-			{ path: '/+:name/settings/rules', component: ModerationRulesView, name: 'moderation-rules-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
-			{ path: '/+:name/settings/titles', component: ModerationTitlesView, name: 'moderation-titles-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
-			{ path: '/+:name/settings/lodges', component: ModerationLodgesView, name: 'moderation-lodges-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} }
-			]
-		},
-		
 		{ path: '/create/post', alias: '/submit', name: 'SubmitView', component: SubmitView, props: true, meta: {requiresAuth: true, sidebar: false} },
 		{ path: '/register', name: 'RegisterView', component: RegisterView, props: true, meta: {sidebar: false, dropImage: false} },
 		{ path: '/login', name: 'LoginView', component: LoginView, props: true, meta: {sidebar: false, dropImage: false} },
