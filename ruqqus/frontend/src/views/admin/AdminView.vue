@@ -20,15 +20,15 @@
 							<img
 							:src="v.profile_url"
 							class="w-10 h-10 rounded-sm bg-white bg-opacity-20"
-							alt="User avatar"
+							alt="Community icon"
 							/>
 						</router-link>
 						<div class="pl-3">
 							<router-link :to="v.permalink" class="font-medium">
-								{{ v.username }}
+								Community Name
 							</router-link>
 							<div v-if="v.email" class="text-2xs text-gray-500">
-								{{ v.email }}
+								503 members
 							</div>
 						</div>
 					</div>
