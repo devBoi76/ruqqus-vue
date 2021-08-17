@@ -46,7 +46,6 @@ const UserInboxView = () => import ('../views/user/Inbox.vue')
 //const UserMessagesView = () => import (/* webpackChunkName: "group-user" */ '../views/user/messages/Messages.vue')
 //const UserChatView = () => import (/* webpackChunkName: "group-user" */ '../views/user/messages/Chat.vue')
 const UserSavedView = () => import ('../views/user/Saved.vue')
-const UserGuildsView = () => import ('../views/user/Guilds.vue')
 
 // User Settings
 const UserSettingsView = () => import ('../views/user/settings/UserSettings_V2.vue')
@@ -68,14 +67,6 @@ const FeedView = () => import ('../views/FeedView.vue')
 
 const RegisterView = () => import ('../views/LoginView.vue')
 const LoginView = () => import ('../views/LoginView_V2.vue')
-
-// Create Guild
-const CreateGuildView = () => import ('../views/create/guild/CreateGuild.vue')
-const CreateGuildFirstStep = () => import ('../views/create/guild/FirstStep.vue')
-const CreateGuildSecondStep = () => import ('../views/create/guild/SecondStep.vue')
-const CreateGuildThirdStep = () => import ('../views/create/guild/ThirdStep.vue')
-const CreateGuildFourthStep = () => import ('../views/create/guild/FourthStep.vue')
-//const CreateGuildFifthStep = () => import ('../views/create/guild/FifthStep.vue')
 
 // Onboarding Admin
 const SetupView = () => import ('../views/onboarding/admin/Setup.vue')
@@ -164,8 +155,7 @@ const routes = [
 				{ path: '/settings/apps', component: UserAppsSettings, name: 'user-settings-apps-view', props: true, meta: {sidebar: false, requiresAuth: true} },
 				{ path: '/settings/filters', component: UserContentSettings, name: 'user-settings-content-view', props: true, meta: {sidebar: false, requiresAuth: true} }
 				]
-			},
-			{ path: '/guilds/:sort?', name: 'user-guilds-view', component: UserGuildsView, props: true, meta: {sidebar: false, requiresAuth: true} }
+			}
 			]
 		},
 
@@ -184,8 +174,7 @@ const routes = [
 			{ path: '/+:name/settings/lodges', component: ModerationLodgesView, name: 'moderation-lodges-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} }
 			]
 		},
-
-		{ path: '/browse/:category', name: 'BrowseView', component: BrowseView, props: true, meta: {requiresAuth: true} },
+		
 		{ path: '/create/post', alias: '/submit', name: 'SubmitView', component: SubmitView, props: true, meta: {requiresAuth: true, sidebar: false} },
 		{ path: '/register', name: 'RegisterView', component: RegisterView, props: true, meta: {sidebar: false, dropImage: false} },
 		{ path: '/login', name: 'LoginView', component: LoginView, props: true, meta: {sidebar: false, dropImage: false} },
@@ -210,19 +199,6 @@ const routes = [
 			{ path: '/welcome/guilds', alias: '/welcome/2', component: OnboardingSecondStep, name: 'onboard-user-second-step', props: { currentStep: 2 }, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
 			{ path: '/welcome/profile', alias: '/welcome/3', component: OnboardingThirdStep, name: 'onboard-user-third-step', props: { currentStep: 3 }, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
 			{ path: '/welcome/extra', alias: '/welcome/4', component: OnboardingFourthStep, name: 'onboard-user-fourth-step', props: { currentStep: 4 }, meta: {requiresAuth: true, sidebar: false, dropImage: false} }
-			]
-		},
-
-		// Create Guild View
-		{
-			path: '/create/guild', component: CreateGuildView, meta: {requiresAuth: true, sidebar: false},
-			children: [
-			{ path: '/create/guild/name', alias: '/create/guild/1', component: CreateGuildFirstStep, name: 'create-guild-first-step', props: { currentStep: 1 }, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
-			{ path: '/create/guild/about', alias: '/create/guild/2', component: CreateGuildSecondStep, name: 'create-guild-second-step', props: { currentStep: 2 }, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
-			{ path: '/create/guild/details', alias: '/create/guild/3', component: CreateGuildThirdStep, name: 'create-guild-third-step', props: { currentStep: 3 }, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
-			{ path: '/create/guild/invite', alias: '/create/guild/4', component: CreateGuildFourthStep, name: 'create-guild-fourth-step', props: { currentStep: 4 }, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
-			//{ path: '/create/guild/go', alias: '/create/guild/5', component: CreateGuildFifthStep, name: 'create-guild-fifth-step', props: { currentStep: 5 } },
-			//{ path: '/welcome/account', component: OnboardingAccountView, name: 'onboarding-account-view', props: true }
 			]
 		},
 

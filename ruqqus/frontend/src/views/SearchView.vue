@@ -172,9 +172,9 @@ export default {
 			},
 			{
 				id: 2,
-				name: "communities",
+				name: "comments",
 				route: {
-					name: 'guild-about-view',
+					name: 'SearchView',
 				},
 				exact: true
 			},
@@ -182,7 +182,7 @@ export default {
 				id: 3,
 				name: "people",
 				route: {
-					name: 'guild-members-view',
+					name: 'SearchView',
 				},
 				exact: true,
 				number: "250 online"
