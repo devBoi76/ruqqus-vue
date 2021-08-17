@@ -173,7 +173,7 @@
 													Disable Downvotes
 												</div>
 												<p class="text-sm text-gray-500 mt-1">
-													Removes downvote buttons from all content: posts and comments.
+													Removes downvote buttons from all content (posts and comments)
 												</p>
 											</div>
 											<t-toggle v-model="g.over_18"/>

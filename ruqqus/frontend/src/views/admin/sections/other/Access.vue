@@ -61,7 +61,7 @@
 													Private
 												</div>
 												<p class="text-sm text-gray-500 mt-1">
-													Require an account to view your community's content.
+													Require an account to view your community
 												</p>
 											</div>
 											<t-toggle v-model="g.is_private"/>
@@ -74,7 +74,7 @@
 													Disable Sign-Ups
 												</div>
 												<p class="text-sm text-gray-500 mt-1">
-													This will disable any new account creation.
+													Disable any new account creation
 												</p>
 											</div>
 											<t-toggle v-model="g.is_all"/>
@@ -95,7 +95,7 @@
 													Restricted Posting
 												</div>
 												<p class="text-sm text-gray-500 mt-1">
-													Restrict posting to approved users only.
+													Restrict posting to approved users only
 												</p>
 											</div>
 											<Toggle v-model="g.is_restricted"/>
@@ -108,7 +108,7 @@
 													Restricted Commenting
 												</div>
 												<p class="text-sm text-gray-500 mt-1">
-													Restrict commenting to approved users only.
+													Restrict commenting to approved users only
 												</p>
 											</div>
 											<t-toggle v-model="g.is_restricted"/>
@@ -121,7 +121,7 @@
 													Restricted Voting
 												</div>
 												<p class="text-sm text-gray-500 mt-1">
-													Restrict voting to approved users only.
+													Restrict voting to approved users only
 												</p>
 											</div>
 											<t-toggle v-model="g.is_restricted"/>
