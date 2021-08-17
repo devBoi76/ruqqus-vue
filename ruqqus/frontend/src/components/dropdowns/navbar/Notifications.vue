@@ -23,7 +23,7 @@
       leave-from-class="transform scale-100 opacity-100"
       leave-to-class="transform scale-95 opacity-0"
     >
-      <MenuItems class="absolute right-0 w-96 mt-4 origin-top-right bg-white divide-y divide-gray-100 rounded shadow-lg border focus:outline-none">
+      <MenuItems class="absolute right-0 w-96 mt-5 origin-top-right bg-white divide-y divide-gray-100 rounded shadow-lg border focus:outline-none overflow-hidden">
         <div>
           <div class="flex items-center justify-between p-4 bg-white dark:bg-gray-900 border-b dark:border-gray-800">
             <div class="text-2xs font-bold uppercase tracking-wider text-gray-700 dark:text-gray-400">Notifications</div>
