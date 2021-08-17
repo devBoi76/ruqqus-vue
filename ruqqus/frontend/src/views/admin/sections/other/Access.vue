@@ -58,7 +58,7 @@
 										<div class="flex flex-grow items-center justify-between">
 											<div>
 												<div class="font-medium leading-tight">
-													Private
+													Make this community private
 												</div>
 												<p class="text-sm text-gray-500 mt-1">
 													Require an account to view your community
