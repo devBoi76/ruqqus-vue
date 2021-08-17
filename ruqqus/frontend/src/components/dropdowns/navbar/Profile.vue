@@ -36,49 +36,49 @@
       <div class="py-2">
         <!-- Following Link -->
         <MenuItem v-slot="{ active }">
-          <button :class="active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-2 text-sm'">
+          <button :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-2']">
             <i class="far fa-user text-center fa-fw mr-2"></i><span>Following</span>
           </button>
         </MenuItem>
         <!-- Guilds Link -->
         <MenuItem v-slot="{ active }">
-          <button :class="active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-2'">
+          <button :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-2']">
             <i class="far fa-users-crown text-center fa-fw mr-2"></i><span>Guilds</span>
           </button>
         </MenuItem>
         <!-- Saved Link -->
         <MenuItem v-slot="{ active }">
-          <button :class="active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-2'">
+          <button :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-2']">
             <i class="far fa-bookmark text-center fa-fw mr-2"></i><span>Saved</span>
           </button>
         </MenuItem>
         <!-- User Settings Link -->
         <MenuItem v-slot="{ active }">
-          <button :class="active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-2'">
+          <button :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-2']">
             <i class="far fa-cog text-center fa-fw mr-2"></i><span>Settings</span>
           </button>
         </MenuItem>
         <!-- Moderation Link -->
         <MenuItem v-slot="{ active }">
-          <button :class="active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-2'">
+          <button :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-2']">
             <i class="far fa-crown text-center fa-fw mr-2"></i><span>Moderation</span>
           </button>
         </MenuItem>
         <!-- Create New Community Link -->
         <MenuItem v-slot="{ active }">
-          <button :class="active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-2'">
+          <button :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-2']">
             <i class="far fa-swords text-center fa-fw mr-2"></i><span>Create New Guild</span>
           </button>
         </MenuItem>
         <!-- Invite Friends Link -->
         <MenuItem v-slot="{ active }">
-          <button :class="active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-2'">
+          <button :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-2']">
             <i class="far fa-user-plus text-center fa-fw mr-2"></i><span>Invite Friends</span>
           </button>
         </MenuItem>
         <!-- Dark Theme Link -->
         <MenuItem v-slot="{ active }">
-          <button :class="active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-2'">
+          <button :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-2']">
             <i class="far text-center fa-fw mr-2" :class="dark ? 'fa-sun' : 'fa-moon'"></i><span>Dark Theme</span>
           </button>
         </MenuItem>
@@ -86,7 +86,7 @@
       <div class="py-2">
         <!-- Sign Out -->
         <MenuItem v-slot="{ active }">
-          <button :class="active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-2'">
+          <button :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-2']">
             <i class="far fa-sign-out text-center fa-fw mr-2"></i><span>Sign Out</span>
           </button>
         </MenuItem>
