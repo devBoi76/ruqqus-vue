@@ -114,38 +114,36 @@
 					<!-- Right Bar -->
 					<div class="hidden lg:block flex-shrink-0 w-80">
 						<div class="space-y-4">
-							<SidebarSection>
-								<template v-slot:body>
-									<div class="bg-white border shadow-xs rounded-sm">
-										<Toggle @change="handleChange">
-											<template v-slot:default="{active, toggle}">
-												<div class="p-4">
-													<div class="flex items-center justify-between">
-														<div class="text-lg font-bold">
-															Advanced Options
-														</div>
-														<button @click="toggle">
-															<i class="far fa-fw text-gray-600" :class="active ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
-														</button>
+							<div class="flex flex-col">
+								<div class="bg-white border shadow-xs rounded-sm">
+									<Toggle @change="handleChange">
+										<template v-slot:default="{active, toggle}">
+											<div class="p-4">
+												<div class="flex items-center justify-between">
+													<div class="text-lg font-bold">
+														Advanced Options
 													</div>
-													<div v-if="active" class="mt-3 space-y-3">
-														<label class="flex items-center justify-between">
-															<span class="text-xs text-gray-600 leading-none">
-																<i class="fas fa-thumbtack fa-fw fa-sm text-green-500 mr-1"></i>
-																Pin this post to the guild
-															</span>
-															<input type="radio" class="form-checkbox green500" name="pin" value="pin"/>
-														</label>
-														<select placeholder="Select rating" v-model="rating" class="form-select capitalize">
-															<option v-for="rating in ratings" :value="rating">{{ rating }}</option>
-														</select>
-													</div>
+													<button @click="toggle">
+														<i class="far fa-fw text-gray-600" :class="active ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+													</button>
 												</div>
-											</template>
-										</Toggle>
-									</div>
-								</template>
-							</SidebarSection>
+												<div v-if="active" class="mt-3 space-y-3">
+													<label class="flex items-center justify-between">
+														<span class="text-xs text-gray-600 leading-none">
+															<i class="fas fa-thumbtack fa-fw fa-sm text-green-500 mr-1"></i>
+															Pin this post to the guild
+														</span>
+														<input type="radio" class="form-checkbox green500" name="pin" value="pin"/>
+													</label>
+													<select placeholder="Select rating" v-model="rating" class="form-select capitalize">
+														<option v-for="rating in ratings" :value="rating">{{ rating }}</option>
+													</select>
+												</div>
+											</div>
+										</template>
+									</Toggle>
+								</div>
+							</div>
 						</div>
 					</div>
 					<!-- End Right bar -->
@@ -163,14 +161,12 @@
 
 	const LinkPreview = () => import('@/components/embeds/Link.vue')
 
-	import SidebarSection from "@/components/navigation/vertical/SidebarSection.vue";
 	import Toggle from '@/components/Toggle.vue';
 
 	export default {
 		components: {
 			Editor,
 			LinkPreview,
-			SidebarSection,
 			Toggle
 		},
 		data() {
