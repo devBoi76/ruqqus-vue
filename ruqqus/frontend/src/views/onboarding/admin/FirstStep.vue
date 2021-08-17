@@ -1,22 +1,22 @@
 <template>
 	<div class="flex flex-col flex-grow items-center">
+		<ul class="flex space-x-1 mb-4">
+			<li>
+				<div class="w-10 h-1 rounded-full bg-purple-300"/>
+			</li>
+			<li>
+				<div class="w-10 h-1 rounded-full bg-purple-100"/>
+			</li>
+			<li>
+				<div class="w-10 h-1 rounded-full bg-purple-100"/>
+			</li>
+		</ul>
 		<h1 class="text-4xl font-medium">
 			Welcome to Ruqqus
 		</h1>
 		<p class="mt-1 text-gray-600">
 			Glad to have you here. Let's get your community up and running.
 		</p>
-		<ul class="flex space-x-1 my-3">
-			<li>
-				<div class="w-10 h-1 rounded-full bg-purple-500"/>
-			</li>
-			<li>
-				<div class="w-10 h-1 rounded-full bg-purple-200"/>
-			</li>
-			<li>
-				<div class="w-10 h-1 rounded-full bg-purple-200"/>
-			</li>
-		</ul>
 		<div class="mt-6 mb-8 w-full text-left px-16">
 			<div class="h-full relative bg-white shadow-xl rounded-lg overflow-hidden">
 				<div class="flex items-center justify-center w-full h-14 bg-gradient-to-t from-gray-200 to-gray-100 border-b px-4">

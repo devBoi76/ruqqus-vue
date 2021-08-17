@@ -1,19 +1,19 @@
 <template>
 	<div class="flex flex-col flex-grow items-center">
+		<ul class="flex space-x-1 mb-4">
+			<li>
+				<div class="w-10 h-1 rounded-full bg-purple-100"/>
+			</li>
+			<li>
+				<div class="w-10 h-1 rounded-full bg-purple-300"/>
+			</li>
+			<li>
+				<div class="w-10 h-1 rounded-full bg-purple-100"/>
+			</li>
+		</ul>
 		<h1 class="text-4xl font-medium">
 			Create an account
 		</h1>
-		<ul class="flex space-x-1 my-3">
-			<li>
-				<div class="w-10 h-1 rounded-full bg-purple-200"/>
-			</li>
-			<li>
-				<div class="w-10 h-1 rounded-full bg-purple-500"/>
-			</li>
-			<li>
-				<div class="w-10 h-1 rounded-full bg-purple-200"/>
-			</li>
-		</ul>
 		<div class="w-96 bg-white border shadow-sm rounded md:p-8 md:mt-10">
 			<div class="flex justify-center w-full -mt-16 mb-3">
 				<!-- <img :src="avatar" class="w-16 h-16 rounded-sm"/> -->
