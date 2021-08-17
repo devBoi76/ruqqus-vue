@@ -2,7 +2,7 @@
 	<div class="mb-2 md:mb-4 last:mb-0" :class="pinned ? 'hidden' : 'flex'">
 		<!-- Item Actions -->
 		<ItemActions avatar stickyPos :author="this.item.author" :score="this.item.score" :id="this.item.id"/>
-		<div class="relative flex w-full bg-white dark:bg-gray-800 border-t border-b border-gray-100 dark:border-transparent sm:border-0 sm:shadow-xs sm:rounded-sm dark:text-gray-100">
+		<div class="relative flex w-full bg-white dark:bg-gray-800 border-t border-b border-gray-100 dark:border-transparent sm:border-0 sm:rounded-sm dark:text-gray-100">
 			<!-- Post Details -->
 			<div class="flex flex-col flex-grow">
 				<div class="flex flex-shrink-0 items-center justify-between p-2.5 border-b dark:border-gray-700 dark:border-opacity-70" :class="{ 'border-green-400':pinned }">
