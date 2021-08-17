@@ -68,7 +68,7 @@ export default {
 				{
 					name: 'dashboard',
 					route: {
-						name: 'admin-dashboard-view',
+						name: 'admin-overview-view',
 						params: { filter: 'reports' }
 					},
 					icon: 'fa-columns',
@@ -84,7 +84,7 @@ export default {
 				{
 					name: 'general',
 					route: {
-						name: 'admin-basic-info-view'
+						name: 'admin-general-view'
 					},
 					icon: 'fa-cog',
 					textCase: 'capitalize'
@@ -92,7 +92,7 @@ export default {
 				{
 					name: 'security',
 					route: {
-						name: 'admin-security-view'
+						name: 'admin-access-view'
 					},
 					icon: 'fa-lock-alt',
 					textCase: 'capitalize'
@@ -106,23 +106,44 @@ export default {
 				{
 					name: 'flagged',
 					route: {
-						name: 'admin-flagged-view'
+						name: 'moderation-queue-view',
+						params: { filter: 'reports' }
 					},
 					icon: 'fa-flag',
 					textCase: 'capitalize'
 				},
 				{
+					name: 'spam',
+					route: {
+						name: 'moderation-queue-view',
+						params: { filter: 'spam' }
+					},
+					icon: 'fa-bomb',
+					textCase: 'capitalize'
+				},
+				{
 					name: 'all',
 					route: {
-						name: 'admin-flagged-view'
+						name: 'moderation-queue-view',
+						params: { filter: 'unmoderated' }
 					},
-					icon: 'fa-globe',
+					icon: 'fa-question-circle',
+					textCase: 'capitalize'
+				},
+				{
+					name: 'approved',
+					route: {
+						name: 'moderation-queue-view',
+						params: { filter: 'approved' }
+					},
+					icon: 'fa-check-circle',
 					textCase: 'capitalize'
 				},
 				{
 					name: 'media uploads',
 					route: {
-						name: 'admin-media-view'
+						name: 'moderation-queue-view',
+						params: { filter: 'approved' }
 					},
 					icon: 'fa-image',
 					textCase: 'capitalize'
@@ -137,28 +158,37 @@ export default {
 				{
 					name: 'all',
 					route: {
-						name: 'admin-users-view',
-						params: { filter: 'exiles' }
+						name: 'admin-user-management-view',
+						params: { sort: 'all' }
 					},
-					icon: 'fa-users-crown',
+					icon: 'fa-user',
 					textCase: 'capitalize'
 				},
 				{
-					name: 'banned',
+					name: 'exiles',
 					route: {
-						name: 'admin-users-view',
-						params: { filter: 'approved' }
+						name: 'admin-user-management-view',
+						params: { sort: 'banned' }
 					},
-					icon: 'fa-user-slash',
+					icon: 'fa-gavel',
 					textCase: 'capitalize'
 				},
 				{
-					name: 'suspect',
+					name: 'approved',
 					route: {
-						name: 'admin-users-view',
-						params: { filter: 'mods' }
+						name: 'admin-user-management-view',
+						params: { sort: 'approved' }
 					},
-					icon: 'fa-user-secret',
+					icon: 'fa-heart',
+					textCase: 'capitalize'
+				},
+				{
+					name: 'guild masters',
+					route: {
+						name: 'admin-user-management-view',
+						params: { sort: 'staff' }
+					},
+					icon: 'fa-crown',
 					textCase: 'capitalize'
 				}
 				]

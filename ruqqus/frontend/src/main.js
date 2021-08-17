@@ -10,8 +10,8 @@ import VueTippy from '../node_modules/vue-tippy'
 
 // Import CSS files
 import "./assets/fontawesome/css/all.css";
-import "../node_modules/tailwindcss/tailwind.css"
-import "./assets/style/styles.css"
+import "../node_modules/tailwindcss/tailwind.css";
+import "./assets/style/styles.css";
 
 const app = createApp(App)
 
