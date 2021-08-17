@@ -308,7 +308,7 @@
 	}
 }
 /* Hide scrollbar for Chrome, Safari and Opera */
-.scollbar-hidden::-webkit-scrollbar {
+.scrollbar-hidden::-webkit-scrollbar {
 	display: none;
 }
 /* Hide scrollbar for IE, Edge and Firefox */
