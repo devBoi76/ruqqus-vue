@@ -175,9 +175,6 @@
 									<button class="button purple500 w-full" to="/submit">
 										Create post
 									</button>
-									<button class="button outlinePurple500 mt-2 w-full">
-										Find Communities
-									</button>
 								</div>
 							</template>
 						</SidebarSection>
