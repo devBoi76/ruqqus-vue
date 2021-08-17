@@ -45,9 +45,8 @@
 			</div>
 		</template>
 
-
 		<!-- Main content section -->
-		<keep-alive max=5>
+		<keep-alive :max='10'>
 			<router-view></router-view>
 		</keep-alive>
 

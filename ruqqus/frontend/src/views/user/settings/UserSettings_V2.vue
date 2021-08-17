@@ -18,7 +18,7 @@
     </div>
 
     <!-- Main content section -->
-    <keep-alive max=5>
+    <keep-alive :max='5'>
       <router-view :key="$route.fullPath"></router-view>
     </keep-alive>
 

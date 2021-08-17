@@ -5,7 +5,7 @@
 				<div class="col-span-full xl:col-start-2 xl:col-end-7 flex gap-6 md:p-4 xl:p-0 xl:my-4">
 					<!-- Main content section -->
 					<div class="w-full">
-						<keep-alive max=5>
+						<keep-alive :max='5'>
 							<router-view :key="$route.fullPath"></router-view>
 						</keep-alive>
 					</div>
