@@ -34,10 +34,22 @@
         </div>
       </router-link>
       <div class="py-2">
+        <!-- Profile Link -->
+        <MenuItem v-slot="{ active }">
+          <button :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-2']">
+            <i class="far fa-user text-center fa-fw mr-2"></i><span>My Profile</span>
+          </button>
+        </MenuItem>
+        <!-- Posts Link -->
+        <MenuItem v-slot="{ active }">
+          <button :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-2']">
+            <i class="far fa-pencil text-center fa-fw mr-2"></i><span>Posts</span>
+          </button>
+        </MenuItem>
         <!-- Following Link -->
         <MenuItem v-slot="{ active }">
           <button :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-2']">
-            <i class="far fa-user text-center fa-fw mr-2"></i><span>Following</span>
+            <i class="far fa-heart text-center fa-fw mr-2"></i><span>Following</span>
           </button>
         </MenuItem>
         <!-- Saved Link -->
