@@ -133,7 +133,7 @@ export default {
 					textCase: 'capitalize'
 				},
 				{
-					name: 'exiles',
+					name: 'banned',
 					route: {
 						name: 'admin-user-management-view',
 						params: { sort: 'banned' }
