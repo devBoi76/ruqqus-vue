@@ -33,7 +33,7 @@
         </div>
         <div class="text-2xs text-gray-600 mt-1">
           <!-- User Reputation -->
-          <span class="w-2 h-2 rounded-full bg-yellow-600 mr-1"></span>
+          <span class="w-2 h-2 rounded-full bg-yellow-500 mr-1"></span>
           {{ v.post_rep + v.comment_rep }} rep
         </div>
       </div>
