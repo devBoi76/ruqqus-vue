@@ -1,57 +1,21 @@
 <template>
-  <div class="bg-white dark:bg-gray-800 dark:text-gray-100" :class="customInputClass">
-    <div class="flex justify-between items-center">
-      <div class="flex-grow">
-        <div class="text-lg ont-medium mb-2"><slot name="name"/></div>
-        <p class="mb-0 text-gray-600 dark:text-white dark:text-opacity-70"><slot name="description"/></p>
-      </div>
-      <div class="ml-3">
-        <t-toggle/>
-      </div>
-    </div>
-  </div>
+  <Switch v-model="enabled" :class="enabled ? 'bg-teal-900' : 'bg-teal-700'" class="relative inline-flex flex-shrink-0 h-[38px] w-[74px] border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
+    <span class="sr-only">Use setting</span>
+    <span aria-hidden="true" :class="enabled ? 'translate-x-9' : 'translate-x-0'" class="pointer-events-none inline-block h-[34px] w-[34px] rounded-full bg-white shadow-lg transform ring-0 transition ease-in-out duration-200"/>
+  </Switch>
 </template>
 
 <script>
+  import { ref } from 'vue'
+  import { Switch } from '@headlessui/vue'
+
   export default {
-    props: {
-      customClass: String
+    components: { Switch },
+
+    setup() {
+      const enabled = ref(false)
+
+      return { enabled }
     },
-    data() {
-      return {
-        form: {
-          email: "",
-          name: "",
-          food: null,
-          checked: []
-        },
-        show: true
-      };
-    },
-    computed: {
-      darkMode() {
-        return this.$store.state.persist.darkMode;
-      },
-      customInputClass() {
-        return this.customClass ? this.customClass : 'px-4 py-3 mb-1 rounded-sm'
-      }
-    },
-    methods: {
-      onSubmit(evt) {
-        evt.preventDefault();
-        alert(JSON.stringify(this.form));
-      },
-      onReset(evt) {
-        evt.preventDefault();
-      // Reset our form values
-      this.form.email = "";
-      this.form.name = "";
-      // Trick to reset/clear native browser form validation state
-      this.show = false;
-      this.$nextTick(() => {
-        this.show = true;
-      });
-    }
   }
-};
 </script>

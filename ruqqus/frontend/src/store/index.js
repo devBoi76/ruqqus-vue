@@ -12,7 +12,7 @@ import comments from './modules/comments'
 import create from "./modules/create"
 import guild from "./modules/guild"
 import items from "./modules/items"
-import moderation from "./modules/items"
+import moderation from "./modules/moderation"
 import notifications from "./modules/notifications"
 import onboarding from "./modules/onboarding"
 import persist from "./modules/persist"
