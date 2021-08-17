@@ -39,7 +39,7 @@
     <MenuItem v-slot="{ active }">
       <button
       :class="[
-      active ? 'bg-violet-500 text-white' : 'text-gray-700 hover:text-gray-900',
+      active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
       'group flex rounded-md items-center w-full px-2 py-2 text-sm',
       ]"
       >
@@ -50,7 +50,7 @@
   <MenuItem v-slot="{ active }">
     <button
     :class="[
-    active ? 'bg-violet-500 text-white' : 'text-gray-700 hover:text-gray-900',
+    active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
     'group flex rounded-md items-center w-full px-2 py-2 text-sm',
     ]"
     >
@@ -61,7 +61,7 @@
 <MenuItem v-slot="{ active }">
   <button
   :class="[
-  active ? 'bg-violet-500 text-white' : 'text-gray-700 hover:text-gray-900',
+  active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
   'group flex rounded-md items-center w-full px-2 py-2 text-sm',
   ]"
   >
@@ -72,7 +72,7 @@
 <MenuItem v-slot="{ active }">
   <button
   :class="[
-  active ? 'bg-violet-500 text-white' : 'text-gray-700 hover:text-gray-900',
+  active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
   'group flex rounded-md items-center w-full px-2 py-2 text-sm',
   ]"
   >
@@ -83,7 +83,7 @@
 <MenuItem v-slot="{ active }">
   <button
   :class="[
-  active ? 'bg-violet-500 text-white' : 'text-gray-700 hover:text-gray-900',
+  active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
   'group flex rounded-md items-center w-full px-2 py-2 text-sm',
   ]"
   >
@@ -94,7 +94,7 @@
 <MenuItem v-slot="{ active }">
   <button
   :class="[
-  active ? 'bg-violet-500 text-white' : 'text-gray-700 hover:text-gray-900',
+  active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
   'group flex rounded-md items-center w-full px-2 py-2 text-sm',
   ]"
   >
@@ -105,7 +105,7 @@
 <MenuItem v-slot="{ active }">
   <button
   :class="[
-  active ? 'bg-violet-500 text-white' : 'text-gray-700 hover:text-gray-900',
+  active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
   'group flex rounded-md items-center w-full px-2 py-2 text-sm',
   ]"
   >
@@ -116,7 +116,7 @@
 <MenuItem v-slot="{ active }">
   <button
   :class="[
-  active ? 'bg-violet-500 text-white' : 'text-gray-700 hover:text-gray-900',
+  active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
   'group flex rounded-md items-center w-full px-2 py-2 text-sm',
   ]"
   >
@@ -129,7 +129,7 @@
   <MenuItem v-slot="{ active }">
     <button
     :class="[
-    active ? 'bg-violet-500 text-white' : 'text-gray-700 hover:text-gray-900',
+    active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
     'group flex rounded-md items-center w-full px-2 py-2 text-sm',
     ]"
     >
