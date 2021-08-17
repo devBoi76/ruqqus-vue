@@ -40,12 +40,6 @@
             <i class="far fa-user text-center fa-fw mr-2"></i><span>Following</span>
           </button>
         </MenuItem>
-        <!-- Guilds Link -->
-        <MenuItem v-slot="{ active }">
-          <button :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-2']">
-            <i class="far fa-users-crown text-center fa-fw mr-2"></i><span>Guilds</span>
-          </button>
-        </MenuItem>
         <!-- Saved Link -->
         <MenuItem v-slot="{ active }">
           <button :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-2']">
@@ -56,18 +50,6 @@
         <MenuItem v-slot="{ active }">
           <button :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-2']">
             <i class="far fa-cog text-center fa-fw mr-2"></i><span>Settings</span>
-          </button>
-        </MenuItem>
-        <!-- Moderation Link -->
-        <MenuItem v-slot="{ active }">
-          <button :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-2']">
-            <i class="far fa-crown text-center fa-fw mr-2"></i><span>Moderation</span>
-          </button>
-        </MenuItem>
-        <!-- Create New Community Link -->
-        <MenuItem v-slot="{ active }">
-          <button :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-2']">
-            <i class="far fa-swords text-center fa-fw mr-2"></i><span>Create New Guild</span>
           </button>
         </MenuItem>
         <!-- Invite Friends Link -->
