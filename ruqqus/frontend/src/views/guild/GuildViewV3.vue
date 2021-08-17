@@ -290,7 +290,6 @@
 
 <script>
 // Import Components
-import Options from '@/components/dropdowns/GuildOptions.vue'
 import LoaderScreen from '@/components/empty-state/LoaderScreen.vue'
 
 import { mapState } from 'vuex';
@@ -299,7 +298,6 @@ import { mapState } from 'vuex';
 export default {
 	name: "guild-view",
 	components: {
-		Options,
 		LoaderScreen
 		//ItemListingTiny
 	},
