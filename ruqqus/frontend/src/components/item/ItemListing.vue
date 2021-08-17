@@ -31,12 +31,12 @@
 									</span>
 								</span>
 								<!-- Community Name -->
-								<span v-show="$route.meta.guild">
+								<!-- <span v-show="$route.meta.guild">
 									<span class="font-black text-gray-400 dark:text-gray-500">·</span>
 									<router-link :to="`/+${item.guild_name}`">
 										+{{ item.guild_name }}
 									</router-link>
-								</span>
+								</span> -->
 							</div>
 						</div>
 					</div>
