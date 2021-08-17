@@ -50,7 +50,7 @@
 						<div class="mt-5 md:mt-0 md:col-span-3 space-y-8">
 
 							<div>
-								<div class="text-xs font-medium uppercase tracking-wider text-gray-400 dark:text-gray-400 mb-2">
+								<div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
 									Community Privacy
 								</div>
 								<div class="sm:rounded-sm sm:shadow-xs border-t border-b sm:border-0 bg-white">
@@ -84,7 +84,7 @@
 							</div>
 
 							<div>
-								<div class="text-xs font-medium uppercase tracking-wider text-gray-400 dark:text-gray-400 mb-2">
+								<div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
 									Moderation
 								</div>
 								<div class="sm:rounded-sm sm:shadow-xs border-t border-b sm:border-0 bg-white">
