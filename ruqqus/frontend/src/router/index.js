@@ -27,12 +27,8 @@ const UserCommentsView = () => import ('../views/profile/sections/Comments.vue')
 
 // User
 const UserView = () => import ('../views/user/UserView.vue')
-
-//const UserFriendsView = () => import ('../views/user/Friends.vue')
 const UserFollowingView = () => import ('../views/user/Following.vue')
 const UserInboxView = () => import ('../views/user/Inbox.vue')
-//const UserMessagesView = () => import (/* webpackChunkName: "group-user" */ '../views/user/messages/Messages.vue')
-//const UserChatView = () => import (/* webpackChunkName: "group-user" */ '../views/user/messages/Chat.vue')
 const UserSavedView = () => import ('../views/user/Saved.vue')
 
 // User Settings
@@ -105,16 +101,6 @@ const routes = [
 		]
 	},
 
-		// // Dashboard view
-		// {
-		//   path: '/settings', component: UserSettingsView, props: true,
-		//   children: [
-		//   { path: '', component: UserProfileSettings, name: 'user-settings', props: true },
-		//   { path: '/settings/profile', component: UserProfileSettings, name: 'user-settings-profile-view', props: true },
-		//   { path: '/settings/filters', alias: '/settings/content', component: UserContentSettings, name: 'user-settings-content-view', props: true }
-		//   ]
-		// },
-
 		// User Personal view
 		{
 			path: '/dashboard', component: UserView, props: true, meta: {requiresAuth: true},
@@ -126,12 +112,6 @@ const routes = [
 			{ path: '/notifications/mentions', alias: '/inbox/mentions', component: UserInboxView, name: 'user-inbox-mentions-view', props: { sort: 'mentions' }, meta: {sidebar: false, requiresAuth: true} },
 			{ path: '/notifications/posts', alias: '/inbox/posts', component: UserInboxView, name: 'user-inbox-posts-view', props: { sort: 'posts' }, meta: {sidebar: false, requiresAuth: true} },
 			{ path: '/notifications/system', alias: '/inbox/system', component: UserInboxView, name: 'user-inbox-system-view', props: { sort: 'system' }, meta: {sidebar: false, requiresAuth: true} },
-			// {
-			// 	path: '/messages', component: UserMessagesView, props: true, meta: {requiresAuth: true, sidebar: false},
-			// 	children: [
-			// 	{ path: '/messages/:person?', alias:'/', component: UserChatView, name: 'user-chat-view', props: true, meta: {requiresAuth: true} },
-			// 	]
-			// },
 			{ path: '/saved', alias:'/ruqqsack', name: 'user-saved-view', component: UserSavedView, props: true, meta: {sidebar: false, requiresAuth: true} },
 			{
 				path: '/settings', component: UserSettingsView, props: true, meta: {sidebar: false, requiresAuth: true},

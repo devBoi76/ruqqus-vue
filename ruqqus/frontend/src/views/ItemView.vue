@@ -262,8 +262,8 @@
 <script>
 // Import components
 import { defineAsyncComponent } from 'vue'
-import { getPostComments } from '../../../api/Post.js';
-import { getComment } from '../../../api/Comment.js';
+import { getPostComments } from '../../api/Post.js';
+import { getComment } from '../../api/Comment.js';
 
 const CommentWrite = defineAsyncComponent(() => import('@/components/comment/CommentWrite.vue'));
 const CommentSort = defineAsyncComponent(() => import('@/components/comment/CommentSort.vue'));
@@ -275,7 +275,7 @@ const EmbedLink = defineAsyncComponent(() => import('@/components/embeds/Link.vu
 import { mapState, mapActions, mapGetters } from "vuex";
 
 //import date-fns
-import { isValid, formatDistanceToNowStrict } from '../../../../node_modules/date-fns'
+import { isValid, formatDistanceToNowStrict } from '../../../node_modules/date-fns'
 
 export default {
 	name: "item-view",
