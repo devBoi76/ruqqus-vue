@@ -24,10 +24,10 @@
 							/>
 						</router-link>
 						<div class="pl-3">
-							<router-link :to="v.permalink" class="font-medium text-white">
+							<router-link :to="v.permalink" class="font-medium">
 								{{ v.username }}
 							</router-link>
-							<div v-if="v.email" class="text-2xs text-white text-opacity-80">
+							<div v-if="v.email" class="text-2xs text-gray-500">
 								{{ v.email }}
 							</div>
 						</div>
