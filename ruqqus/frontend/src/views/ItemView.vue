@@ -1,6 +1,6 @@
 <template>
-	<div class="relative grid grid-cols-12">
-		<div class="relative col-span-full flex gap-6 sm:p-6">
+	<div class="grid grid-cols-12 overflow-y-auto">
+		<div class="col-span-full flex gap-6 sm:p-6 my-2.5 sm:my-0">
 
 			<!-- Main Content Section -->
 			<div class="w-full">
