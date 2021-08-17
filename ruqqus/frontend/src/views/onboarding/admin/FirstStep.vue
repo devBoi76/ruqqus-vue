@@ -6,6 +6,17 @@
 		<p class="mt-1 text-gray-600">
 			Glad to have you here. Let's get your community up and running.
 		</p>
+		<ul class="flex space-x-1 mb-3">
+			<li>
+				<div class="w-10 h-1 rounded-full" :class="(isFirst || isSecond) ? 'bg-purple-500' : 'bg-purple-200'"/>
+			</li>
+			<li>
+				<div class="w-10 h-1 rounded-full" :class="isSecond ? 'bg-purple-500' : 'bg-purple-200'"/>
+			</li>
+			<li>
+				<div class="w-10 h-1 rounded-full" :class="isThird ? 'bg-purple-500' : 'bg-purple-200'"/>
+			</li>
+		</ul>
 		<div class="mt-6 mb-8 w-full text-left px-16">
 			<div class="h-full relative bg-white shadow-xl rounded-lg overflow-hidden">
 				<div class="flex items-center justify-center w-full h-14 bg-gradient-to-t from-gray-200 to-gray-100 border-b px-4">
