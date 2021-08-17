@@ -275,7 +275,7 @@ const EmbedLink = defineAsyncComponent(() => import('@/components/embeds/Link.vu
 import { mapState, mapActions, mapGetters } from "vuex";
 
 //import date-fns
-import { isValid, formatDistanceToNowStrict } from '../../../node_modules/date-fns'
+import { isValid, formatDistanceToNowStrict } from '../../node_modules/date-fns'
 
 export default {
 	name: "item-view",
