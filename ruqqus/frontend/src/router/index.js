@@ -48,8 +48,8 @@ const SubmitView = () => import ('../views/SubmitView.vue')
 // Misc
 const FeedView = () => import ('../views/FeedView.vue')
 
-const RegisterView = () => import ('../views/LoginView.vue')
-const LoginView = () => import ('../views/LoginView_V2.vue')
+const RegisterView = () => import ('../views/RegisterView.vue')
+const LoginView = () => import ('../views/LoginView.vue')
 
 // Onboarding Admin
 const SetupView = () => import ('../views/onboarding/admin/Setup.vue')

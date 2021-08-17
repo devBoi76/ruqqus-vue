@@ -6,15 +6,21 @@
 				<!-- Username and password form -->
 				<div v-show="!mfa">
 					<h1 class="text-4xl font-medium mb-5">
-						Welcome back!
+						Create an account
 					</h1>
 					<div class="mt-3">
 						<div class="flex flex-col space-y-3 mb-3">
 							<div>
 								<label class="label" label-for="username-desktop">
-									Username or Email
+									Username
 								</label>
 								<input type="text" class="form-input" placeholder="Your username or email" name="username-desktop" v-model="form.name"/>
+							</div>
+							<div>
+								<label class="label" label-for="username-desktop">
+									Email address
+								</label>
+								<input type="text" class="form-input" placeholder="john@example.com (optional)" name="username-desktop" v-model="form.email"/>
 							</div>
 							<div>
 								<label class="label" label-for="password-desktop">
@@ -25,36 +31,13 @@
 							</div>
 						</div>
 						<button class="button bg-primary hover:bg-opacity-70 w-full mt-6" @click="auth_v(form)">
-							Log in
-						</button>
-					</div>
-				</div>
-				<!-- 2-step form -->
-				<div v-show="mfa">
-					<div>
-						<div class="flex items-center justify-center w-12 h-12 mx-auto mb-6 rounded-sm bg-gray-100">
-							<i class="fas fa-lock-alt text-purple-500"></i>
-						</div>
-						<h5>
-							2 Step Authentication
-						</h5>
-						<p class="text-gray-400">
-							Enter the 6-digit login code from your authenticator app.
-						</p>
-					</div>
-					<div class="mt-4">
-						<label class="block mb-1 text-black text-xs uppercase tracking-wide font-medium" label-for="mfa">
-							Authentication Code
-						</label>
-						<input id="input-4" class="form-input" v-model="form.mfa" type="number" required placeholder="123456" maxlength="6" name="mfa"/>
-						<button class="button bg-primary hover:bg-opacity-70 w-full mt-4" @click="verify_mfa(form)">
-							Log in
+							Create account
 						</button>
 					</div>
 				</div>
 				<!-- Sign up micro CTA -->
 				<div class="mt-6 text-gray-700 text-sm">
-					Not on Ruqqus? <a href="/register" class="text-purple-500 font-medium">Create an account</a>
+					Already made a Ruqqus? <a href="/register" class="text-purple-500 font-medium">Log in</a>
 				</div>
 			</div>
 		</div>
