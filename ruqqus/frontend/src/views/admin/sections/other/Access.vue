@@ -71,7 +71,7 @@
 										<div class="flex flex-grow items-center justify-between">
 											<div>
 												<div class="font-medium leading-tight">
-													Disable Sign-Ups
+													Disable sign ups
 												</div>
 												<p class="text-sm text-gray-500 mt-1">
 													Disable any new account creation
