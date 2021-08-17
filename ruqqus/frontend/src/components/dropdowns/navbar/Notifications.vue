@@ -23,8 +23,8 @@
       leave-from-class="transform scale-100 opacity-100"
       leave-to-class="transform scale-95 opacity-0"
     >
-      <MenuItems class="absolute right-0 w-80 mt-2 origin-top-right bg-white divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-        <div class="py-2">
+      <MenuItems class="absolute right-0 w-96 mt-4 origin-top-right bg-white divide-y divide-gray-100 rounded shadow-lg border focus:outline-none">
+        <div>
           <div class="flex items-center justify-between p-4 bg-white dark:bg-gray-900 border-b dark:border-gray-800">
             <div class="text-2xs font-bold uppercase tracking-wider text-gray-700 dark:text-gray-400">Notifications</div>
             <div class="flex items-center space-x-2 leading-tight">
@@ -55,9 +55,8 @@
           <div class="overflow-y-auto" :class="{'opacity-50 pointer-events-none':showSettings}">
             <div class="flex flex-col items-center justify-center">
               <!-- Loading State -->
-              <div v-show="loading && !errored && !notifications.length" class="w-full space-y-5 py-4">
-                <div v-for="i in 5" :key="i" class="flex px-4 space-x-3 animate-pulse">
-                  <div class="rounded-sm bg-gray-200 dark:bg-white dark:bg-opacity-20 w-8 h-8 flex-shrink-0"></div>
+              <div v-show="loading && !errored && !notifications.length" class="w-full space-y-4 py-4">
+                <div v-for="i in 5" :key="i" class="px-4 animate-pulse">
                   <div class="rounded-sm bg-gray-200 dark:bg-white dark:bg-opacity-20 w-full h-8"></div>
                 </div>
               </div>
