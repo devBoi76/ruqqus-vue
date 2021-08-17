@@ -52,6 +52,8 @@
             <i class="far fa-cog text-center fa-fw mr-2"></i><span>Settings</span>
           </button>
         </MenuItem>
+      </div>
+      <div class="py-2">
         <!-- Invite Friends Link -->
         <MenuItem v-slot="{ active }">
           <button :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-2']">
@@ -62,6 +64,26 @@
         <MenuItem v-slot="{ active }">
           <button :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-2']">
             <i class="far text-center fa-fw mr-2" :class="dark ? 'fa-sun' : 'fa-moon'"></i><span>Dark Theme</span>
+          </button>
+        </MenuItem>
+      </div>
+      <div class="py-2">
+        <!-- Rules -->
+        <MenuItem v-slot="{ active }">
+          <button :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-2']">
+            <i class="far fa-scroll-old text-center fa-fw mr-2"></i><span>Rules</span>
+          </button>
+        </MenuItem>
+        <!-- Github -->
+        <MenuItem v-slot="{ active }">
+          <button :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-2']">
+            <i class="fab fa-github text-center fa-fw mr-2"></i><span>Source code</span>
+          </button>
+        </MenuItem>
+        <!-- Discord -->
+        <MenuItem v-slot="{ active }">
+          <button :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-2']">
+            <i class="fab fa-discord text-center fa-fw mr-2"></i><span>Discord</span>
           </button>
         </MenuItem>
       </div>
