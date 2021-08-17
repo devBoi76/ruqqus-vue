@@ -34,16 +34,15 @@
 					</div>
 				</div>
 			</template>
+			<template v-slot:footer>
+				<div class="flex items-center justify-center w-full px-4 py-3 border-t">
+					<a href="https://github.com/ruqqus/ruqqus" target="_blank" class="text-xs text-gray-400 hover:underline">
+						View site
+						<i class="far fa-external-link pl-1"></i>
+					</a>
+				</div>
+			</template>
 		</Sidebar>
-
-		<template v-slot:footer>
-			<div class="flex items-center justify-center w-full px-4 py-3 border-t">
-				<a href="https://github.com/ruqqus/ruqqus" target="_blank" class="text-xs text-gray-400 hover:underline">
-					View site
-					<i class="far fa-external-link pl-1"></i>
-				</a>
-			</div>
-		</template>
 
 		<!-- Main content section -->
 		<keep-alive :max="10">
