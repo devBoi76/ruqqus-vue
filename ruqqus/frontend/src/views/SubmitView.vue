@@ -52,16 +52,16 @@
 											</button>
 										</div>
 									</div>
-									<t-input-group class="relative">
+									<div class="relative">
 										<input class="form-input" v-model="submission.title" placeholder="Give your post a title"/>
 										<div v-if="submission.title" class="absolute text-xs font-semibold text-gray-400 right-3 bottom-2" :class="{'text-red-500':submission.title.length >= 32}">
 											{{32 - submission.title.length}}
 										</div>
-									</t-input-group>
+									</div>
 
-									<t-input-group v-show="!submission.image.source">
+									<div v-show="!submission.image.source">
 										<input class="form-input" v-model="submission.link" placeholder="Add a link to something cool (optional)"/>
-									</t-input-group>
+									</div>
 
 									<iframe v-if="embed" :src="embed" width="100%" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"/>
 
@@ -117,18 +117,6 @@
 							<SidebarSection>
 								<template v-slot:body>
 									<div class="bg-white border shadow-xs rounded-sm">
-										<div class="p-4">
-											<div class="text-lg font-bold mb-2">
-												Choose a community
-											</div>
-											<p class="text-sm text-gray-600">
-												All content posted to ruqqus belongs to a community or "guild".
-											</p>
-											<div class="text-2xs font-bold uppercase tracking-wider text-gray-400 dark:text-gray-400 mb-2">
-												Guild
-											</div>
-										</div>
-										<div class="border-b dark:border-gray-700 dark:border-opacity-70"/>
 										<Toggle @change="handleChange">
 											<template v-slot:default="{active, toggle}">
 												<div class="p-4">

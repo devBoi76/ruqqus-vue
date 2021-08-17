@@ -60,12 +60,6 @@
 										<div class="h4">
 											Welcome to your Home Feed
 										</div>
-										<p class="text-gray-700">
-											When you join some communities, their posts show up here!
-										</p>
-										<button class="button purple500 mt-2">
-											Explore Guilds
-										</button>
 									</div>
 									<div v-else class="p-40">
 									</div>
@@ -82,11 +76,6 @@
 									<p class="text-gray-700">
 										When you join some communities, their posts show up here!
 									</p>
-									<button class="button purple500 mt-2">
-										Explore Guilds
-									</button>
-								</div>
-								<div v-else class="p-24">
 								</div>
 							</div>
 						</div>
@@ -135,14 +124,6 @@
 							<template v-slot:body>
 								<div class="p-4 bg-white dark:bg-gray-800 shadow-xs rounded-sm">
 									<ul class="mb-0 space-y-4">
-										<li>
-											<a href="https://github.com/ruqqus/ruqqus" class="group flex items-center">
-												<i class="far fa-check text-green-500 fa-fw"></i>
-												<span class="text-gray-500 line-through pl-2">
-													Join 5 more guilds
-												</span>
-											</a>
-										</li>
 										<li>
 											<a href="https://github.com/ruqqus/ruqqus" class="group flex items-center">
 												<i class="far fa-check text-green-500 fa-fw"></i>
@@ -200,31 +181,6 @@
 								</div>
 							</template>
 						</SidebarSection>
-						<!-- <SidebarSection title="Featured Guilds" class="mb-6">
-							<template v-slot:body>
-								<div class="p-4 bg-white dark:bg-gray-800 shadow-xs rounded-sm">
-									<ul class="mb-5 space-y-3">
-										<li v-for="guild in featured" :key="guild.id" class="border-b border-gray-100 dark:border-gray-700 dark:border-opacity-70 pb-3 last:border-b-0 last:pb-0">
-											<a href="https://github.com/ruqqus/ruqqus" class="group flex items-center">
-												<img :src="guild.profile_url" class="w-8 h-8 rounded-sm bg-gray-100 dark:bg-gray-800 object-cover"/>
-												<div class="pl-3">
-													<div class="text-sm text-gray-900 dark:text-gray-200 font-bold">
-														+{{ guild.name }}
-													</div>
-													<p class="text-2xs text-gray-500 dark:text-white dark:text-opacity-65">
-														{{ guild.subscription_count }}
-														{{ guild.subscription_count === 1 ? 'member' : 'members' }}
-													</p>
-												</div>
-											</a>
-										</li>
-									</ul>
-									<t-button variant="outlinePurple500" class="w-full">
-										View more
-									</t-button>
-								</div>
-							</template>
-						</SidebarSection> -->
 						<SidebarSection title="Support Ruqqus">
 							<template v-slot:body>
 								<ul class="mb-0 p-4 space-y-3 bg-white dark:bg-gray-800 shadow-xs rounded-sm">

@@ -187,9 +187,9 @@
 		<!-- Comment section -->
 		<div v-if="item" class="bg-white dark:bg-gray-800 border-t border-gray-100 dark:border-0 sm:border-0 sm:shadow-xs sm:rounded-sm mt-3">
 
-			<CommentWrite v-if="v" :visible="replying" @change="toggleReplying" class="relative hidden md:flex p-4 bg-gray-50 dark:bg-gray-800 border-b dark:border-gray-700 dark:border-opacity-70 z-20 rounded-t-sm"/>
+			<CommentWrite v-if="v" :visible="replying" @change="toggleReplying" class="relative hidden md:flex p-4 bg-white dark:bg-gray-800 border-b dark:border-gray-700 dark:border-opacity-70 z-20 rounded-t-sm"/>
 
-			<div v-else class="relative hidden md:flex justify-between p-2.5 sm:p-4 bg-gray-50 border-b z-20">
+			<div v-else class="relative hidden md:flex justify-between p-2.5 sm:p-4 bg-white border-b z-20">
 				<p>
 					Create a Ruqqus account to join the discussion, vote on content, and more!
 				</p>
@@ -238,22 +238,22 @@
 					</div>
 				</div>
 
-				<div v-if="comments.length" class="px-2.5 py-3 sm:p-4">
+				<div v-if="item.comment_count > 0" class="px-2.5 py-3 sm:p-4">
 					<CommentList :comments="comments" :offset="offset"/>
 				</div>
 
 				<!-- Empty state -->
-				<div v-if="item.comment_count === 0" class="flex flex-col items-center w-full px-4 py-12">
+				<div v-else class="flex flex-col items-center w-full px-4 py-12">
 					<i class="block fad fa-comment-alt-smile text-primary text-opacity-60 text-4xl mb-3"></i>
 					<div class="h6 text-gray-400 dark:text-gray-600">Be the first to comment!</div>
 				</div>
 
-				<!-- Loading state -->
-				<div v-if="item.comment_count > 0 && !comments.length" class="p-3 md:p-4">
+				<!-- Loading state
+				<div v-if="item.comment_count > 0 && !comments.length" class="p-3 md:px-4 md:pt-4 pb-48">
 					<span class="loading text-gray-400 text-sm">
 						{{loadingCopy[Math.floor(Math.random() * loadingCopy.length)]}}
 					</span>
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</div>
@@ -262,20 +262,20 @@
 <script>
 // Import components
 import { defineAsyncComponent } from 'vue'
-import { getPostComments } from '../api/Post.js';
-import { getComment } from '../api/Comment.js';
+import { getPostComments } from '../../../api/Post.js';
+import { getComment } from '../../../api/Comment.js';
 
-const CommentWrite = defineAsyncComponent(() => import('@/components/comment/CommentWrite.vue'))
-const CommentSort = defineAsyncComponent(() => import('@/components/comment/CommentSort.vue'))
-const CommentList = defineAsyncComponent(() => import('@/components/comment/CommentList.vue'))
+const CommentWrite = defineAsyncComponent(() => import('@/components/comment/CommentWrite.vue'));
+const CommentSort = defineAsyncComponent(() => import('@/components/comment/CommentSort.vue'));
+const CommentList = defineAsyncComponent(() => import('@/components/comment/CommentList.vue'));
 
-const EmbedLink = () => import('@/components/embeds/Link.vue')
+const EmbedLink = defineAsyncComponent(() => import('@/components/embeds/Link.vue'));
 
 //import state
-import { mapState, mapActions } from "vuex";
+import { mapState, mapActions, mapGetters } from "vuex";
 
 //import date-fns
-import { isValid, formatDistanceToNowStrict } from '../../node_modules/date-fns'
+import { isValid, formatDistanceToNowStrict } from '../../../../node_modules/date-fns'
 
 export default {
 	name: "item-view",
@@ -314,6 +314,14 @@ export default {
 		CommentList
 	},
 	watch: {
+		'$route.params.id': {
+			handler() {
+				if (this.item == null) {
+					this.getPost()
+				}
+			},
+			immediate: true
+		},
 		'$route.params.commentId': {
 			handler() {
 				if (this.$route.params.commentId) {
@@ -324,8 +332,8 @@ export default {
 			immediate: true
 		},
 		'item': { // get replies when item changes
-			handler() {
-				if (this.item && !this.$route.params.commentId) {
+			handler(newVal) {
+				if (newVal !== undefined && !this.$route.params.commentId) {
 					this.comments = []
 					this.getReplies()
 				}
@@ -333,8 +341,10 @@ export default {
 			immediate: true
 		},
 		'comments': { // set mentions when comments array changes
-			handler() {
-				this.setMentions()
+			handler(newVal) {
+				if (newVal !== undefined) {
+					this.setMentions()
+				}
 			}
 		},
 		itemVoteActionStatus(newVal, oldVal) {
@@ -347,8 +357,9 @@ export default {
 	computed: {
 		...mapState("persist", ["v"]),
 		...mapState("comments", ["mentions"]),
-		item() {
-			return this.$store.getters['items/getItem'](this.$route.params.id);
+		...mapGetters("items", ["getItem"]),
+		item: function() {
+			return this.getItem(this.$route.params.id);
 		},
 		voteType: {
 			get() {
@@ -376,7 +387,11 @@ export default {
 			}
 		},
 		offset() {
-			return this.comments[0].level - 1
+			if (this.comments.length) {
+				return this.comments[0].level - 1
+			} else {
+				return 0
+			}
 		},
 		author() {
 			return this.v && this.v.username === this.item.author.username
@@ -397,6 +412,20 @@ export default {
 			this.voteType = this.voteType === type ? 0 : type;
 			this.votePost({post_id: this.item.id, vote: type})
 		},
+		getPost() {
+			console.log('get post method triggered')
+			let id = this.$route.params.id;
+			this.$store.dispatch('items/fetchPost', id)
+			.then(() => {
+				console.log("getPost dispatch successful")
+			})
+			.catch(error => {
+				console.error(error)
+				this.errored = true
+
+			})
+			.finally(() => this.loading = false)
+		},
 		setMentions() {
 			let users = this.comments.map(function(obj) {
 				return {
@@ -413,7 +442,7 @@ export default {
 
 			getPostComments(id)
 			.then(response => {
-				this.comments = response.data.data;
+				this.comments = response.data.results
 			})
 			.catch(error => {
 				console.error(error)

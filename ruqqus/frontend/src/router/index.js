@@ -4,6 +4,10 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 // Components
 
+// Thread
+
+const ThreadView = () => import('../views/ItemView.vue')
+
 // Guild
 const GuildView = () => import('../views/guild/GuildViewV3.vue')
 const GuildPostsView = () => import('../views/guild/sections/PostsV3.vue')
@@ -106,6 +110,10 @@ const routes = [
 	{ path: '/stargazed', name: 'StargazedView', component: FeedView, props: true, meta: {title: 'stargazed', sidebar: false, requiresAuth: true} },
 	{ path: '/trending', name: 'TrendingView', component: FeedView, props: true, meta: {title: 'trending', sidebar: false, requiresAuth: true} },
 	{ path: '/all', name: 'AllView', component: FeedView, props: true, meta: {title: 'all', sidebar: false, requiresAuth: true} },
+
+	// Thread View
+	{ path: '/post/:id/:title?/:commentId?', name: 'item-view', component: ThreadView, props: true, meta: {sidebar: false, requiresAuth: false} },
+
 	// Guild View
 	{
 		path: '/+:name', component: GuildView, props: true, meta: {sidebar: false, requiresAuth: true},
