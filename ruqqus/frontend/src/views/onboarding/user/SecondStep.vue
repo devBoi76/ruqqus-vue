@@ -16,7 +16,6 @@
 				<div class="p-4 border-b">
 					<input class="form-input" placeholder="Search for Guilds"/>
 				</div>
-				<GuildList :guilds="guilds"/>
 			</div>
 		</div>
 	</div>
@@ -26,7 +25,6 @@
 	import { mapState } from "vuex"
 
 	import Navigation from '@/components/navigation/OnboardUserButtons.vue';
-	import GuildList from '@/components/guild/GuildList.vue';
 
 	export default {
 		data() {
@@ -82,8 +80,7 @@
 		props: {
 		},
 		components: {
-			Navigation,
-			GuildList
+			Navigation
 		},
 		watch: {
 		},

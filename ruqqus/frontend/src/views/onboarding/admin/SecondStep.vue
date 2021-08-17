@@ -66,7 +66,6 @@
 	import { mapState } from "vuex"
 
 	import Navigation from '@/components/navigation/OnboardUserButtons.vue';
-	import GuildList from '@/components/guild/GuildList.vue';
 
 	export default {
 		data() {
@@ -78,8 +77,7 @@
 		props: {
 		},
 		components: {
-			Navigation,
-			GuildList
+			Navigation
 		},
 		watch: {
 		},
