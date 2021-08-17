@@ -28,7 +28,7 @@
           </div>
           <div class="text-2xs text-gray-600 mt-1">
             <!-- User Reputation -->
-            <span class="w-2 h-2 rounded-full bg-yellow-500 mr-1"></span>
+            <div class="inline-block w-1.5 h-1.5 rounded-full bg-yellow-500 mr-1"></div>
             {{ v.post_rep + v.comment_rep }} rep
           </div>
         </div>
