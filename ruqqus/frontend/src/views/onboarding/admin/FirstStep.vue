@@ -6,15 +6,15 @@
 		<p class="mt-1 text-gray-600">
 			Glad to have you here. Let's get your community up and running.
 		</p>
-		<ul class="flex space-x-1 mb-3">
+		<ul class="flex space-x-1 my-3">
 			<li>
-				<div class="w-10 h-1 rounded-full" :class="(isFirst || isSecond) ? 'bg-purple-500' : 'bg-purple-200'"/>
+				<div class="w-10 h-1 rounded-full bg-purple-500"/>
 			</li>
 			<li>
-				<div class="w-10 h-1 rounded-full" :class="isSecond ? 'bg-purple-500' : 'bg-purple-200'"/>
+				<div class="w-10 h-1 rounded-full bg-purple-200"/>
 			</li>
 			<li>
-				<div class="w-10 h-1 rounded-full" :class="isThird ? 'bg-purple-500' : 'bg-purple-200'"/>
+				<div class="w-10 h-1 rounded-full bg-purple-200"/>
 			</li>
 		</ul>
 		<div class="mt-6 mb-8 w-full text-left px-16">
