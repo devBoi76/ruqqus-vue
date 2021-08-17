@@ -3,7 +3,7 @@
 
 		<slot name="header" v-if="stickyHeader"/>
 
-		<div class="w-full py-2 overflow-y-auto scrollbar-hidden">
+		<div class="w-full py-4 overflow-y-auto scrollbar-hidden">
 
 			<slot name="header" v-if="!stickyHeader"/>
 
