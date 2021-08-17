@@ -24,10 +24,10 @@
 							/>
 						</router-link>
 						<div class="pl-3">
-							<router-link :to="v.permalink" class="font-medium">
+							<router-link class="text-gray-900 font-medium">
 								Community Name
 							</router-link>
-							<div v-if="v.email" class="text-2xs text-gray-500">
+							<div class="text-2xs text-gray-500">
 								503 members
 							</div>
 						</div>
@@ -35,6 +35,16 @@
 				</div>
 			</template>
 		</Sidebar>
+
+		<template v-slot:footer>
+			<div class="flex items-center justify-center w-full px-4 py-3 border-t">
+				<a :href="`/`" target="_blank" class="text-xs text-gray-400 hover:underline">
+					View site
+					<i class="far fa-external-link pl-1"></i>
+				</a>
+			</div>
+		</template>
+
 
 		<!-- Main content section -->
 		<keep-alive max=5>
