@@ -163,7 +163,6 @@
 
 	const LinkPreview = () => import('@/components/embeds/Link.vue')
 
-	import Select from "@/components/select/SelectRepo.vue";
 	import SidebarSection from "@/components/navigation/vertical/SidebarSection.vue";
 	import Toggle from '@/components/Toggle.vue';
 
@@ -171,7 +170,6 @@
 		components: {
 			Editor,
 			LinkPreview,
-			Select,
 			SidebarSection,
 			Toggle
 		},
