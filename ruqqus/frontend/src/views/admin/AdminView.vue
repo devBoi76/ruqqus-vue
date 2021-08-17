@@ -106,7 +106,7 @@ export default {
 				{
 					name: 'flagged',
 					route: {
-						name: 'moderation-queue-view',
+						name: 'admin-queue-view',
 						params: { filter: 'reports' }
 					},
 					icon: 'fa-flag',
@@ -115,7 +115,7 @@ export default {
 				{
 					name: 'spam',
 					route: {
-						name: 'moderation-queue-view',
+						name: 'admin-queue-view',
 						params: { filter: 'spam' }
 					},
 					icon: 'fa-bomb',
@@ -124,7 +124,7 @@ export default {
 				{
 					name: 'all',
 					route: {
-						name: 'moderation-queue-view',
+						name: 'admin-queue-view',
 						params: { filter: 'unmoderated' }
 					},
 					icon: 'fa-question-circle',
@@ -133,7 +133,7 @@ export default {
 				{
 					name: 'approved',
 					route: {
-						name: 'moderation-queue-view',
+						name: 'admin-queue-view',
 						params: { filter: 'approved' }
 					},
 					icon: 'fa-check-circle',
@@ -142,8 +142,8 @@ export default {
 				{
 					name: 'media uploads',
 					route: {
-						name: 'moderation-queue-view',
-						params: { filter: 'approved' }
+						name: 'admin-queue-view',
+						params: { filter: 'media' }
 					},
 					icon: 'fa-image',
 					textCase: 'capitalize'
