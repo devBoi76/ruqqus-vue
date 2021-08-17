@@ -23,19 +23,8 @@
       leave-from-class="transform scale-100 opacity-100"
       leave-to-class="transform scale-95 opacity-0"
     >
-      <MenuItems class="absolute right-0 w-56 mt-2 origin-top-right bg-white divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-        <div class="px-1 py-1">
-          <MenuItem v-slot="{ active }">
-            <button :class="[active ? 'bg-violet-500 text-white' : 'text-gray-900','group flex rounded-md items-center w-full px-2 py-2 text-sm',]">
-              <i class="far fa-sliders-h text-center fa-fw mr-2"></i><span>Your Preferences</span>
-            </button>
-          </MenuItem>
-          <MenuItem v-slot="{ active }">
-            <button :class="[active ? 'bg-violet-500 text-white' : 'text-gray-900','group flex rounded-md items-center w-full px-2 py-2 text-sm',]">
-              <i class="far fa-sign-out fa-rotate-180 text-center fa-fw mr-2"></i><span>Leave Guild</span>
-            </button>
-          </MenuItem>
-
+      <MenuItems class="absolute right-0 w-80 mt-2 origin-top-right bg-white divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+        <div class="py-2">
           <div class="flex items-center justify-between p-4 bg-white dark:bg-gray-900 border-b dark:border-gray-800">
             <div class="text-2xs font-bold uppercase tracking-wider text-gray-700 dark:text-gray-400">Notifications</div>
             <div class="flex items-center space-x-2 leading-tight">
