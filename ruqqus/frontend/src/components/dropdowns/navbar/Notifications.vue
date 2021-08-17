@@ -2,7 +2,7 @@
   <Menu as="div" class="relative inline-block text-left">
     <div>
       <MenuButton
-        class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-black rounded-md bg-opacity-20 hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
+        class="relative flex items-center justify-center px-2 w-8 h-8 text-xl text-gray-600 dark:text-gray-400 hover:text-purple-500 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white rounded-sm focus:bg-gray-100 dark:focus:bg-gray-700">
         <span class="sr-only">View notifications</span>
         <!-- Button Icon -->
         <i class="far fa-bell"></i>

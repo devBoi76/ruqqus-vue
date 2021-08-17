@@ -2,7 +2,7 @@
   <Menu as="div" class="relative inline-block text-left">
     <div>
       <MenuButton
-      class="flex items-center p-1 text-sm text-gray-900 font-bold bg-white dark:bg-gray-800 rounded-sm hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:shadow-solid focus:outline-none focus:shadow-solid active:bg-gray-100 active:dark:bg-gray-700"
+      class="flex items-center p-1 text-sm text-gray-900 font-bold bg-white dark:bg-gray-800 rounded-sm hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:shadow-solid focus:outline-none focus:shadow-solid focus:bg-gray-100 dark:focus:bg-gray-700"
       >
       <!-- User Avatar -->
       <img class="w-8 h-8 object-cover rounded-sm mr-2" :src="v.profile_url" alt="user avatar"/>
