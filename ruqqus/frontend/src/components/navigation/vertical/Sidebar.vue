@@ -32,7 +32,7 @@
 									<span class="pl-3">+{{ item.name }}</span>
 								</span>
 								<span v-else>
-									<i class="far fa-fw mr-2" :class="item.icon"></i>
+									<i class="far fa-fw mr-2" :class="[item.icon, isActive ? 'text-gray-900' : 'text-gray-500']"></i>
 									<span :class="item.textCase">
 										{{ item.name }}
 									</span>
