@@ -8,8 +8,8 @@
 			<slot name="header" v-if="!stickyHeader"/>
 
 			<ul v-for="(section, index) in menu" :key="index" class="-mt-2 mb-5 last:mb-0 list-unstyled border-gray-200 dark:border-white-13" :class="{'pb-2 border-b':section.divider}">
-				<li v-if="section.header" class="z-10 sticky -top-4 pt-2 dark:bg-gray-750 dark:border-white-13" :class="`bg-${sidebarColor}`">
-					<div class="px-4 text-xs tracking-wider font-medium uppercase text-gray-500">
+				<li v-if="section.header" class="z-10 sticky -top-4 py-2 dark:bg-gray-750 dark:border-white-13" :class="`bg-${sidebarColor}`">
+					<div class="px-4 uppercase tracking-wide font-semibold text-sm lg:text-xs text-gray-500">
 						{{ section.name }}
 					</div>
 				</li>
@@ -32,7 +32,7 @@
 									<span class="pl-3">+{{ item.name }}</span>
 								</span>
 								<span v-else>
-									<i class="far fa-fw mr-1" :class="item.icon"></i>
+									<i class="far fa-fw mr-2" :class="item.icon"></i>
 									<span :class="item.textCase">
 										{{ item.name }}
 									</span>
