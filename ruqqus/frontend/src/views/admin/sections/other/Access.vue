@@ -98,7 +98,7 @@
 													Restrict posting to approved users only.
 												</p>
 											</div>
-											<t-toggle v-model="g.is_restricted"/>
+											<Toggle v-model="g.is_restricted"/>
 										</div>
 									</div>
 									<div class="p-4 border-b">
@@ -142,6 +142,8 @@
 // Import components
 import { getGuild } from '@/api/Guild.js';
 
+import Toggle from "@/components/forms/Toggle.vue";
+
 export default {
 	name: "UserSettingsBasicInfoView",
 	data() {
@@ -152,6 +154,9 @@ export default {
 			saved: {},
 			g: {}
 		}
+	},
+	components: {
+		Toggle
 	},
 	watch: {
 		'$route.params.name': { // get guild info and posts if guild changes
