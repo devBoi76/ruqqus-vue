@@ -7,7 +7,7 @@
 				<div class="w-full">
 
 					<!-- Post Creation -->
-					<div class="hidden sm:flex flex-col space-y-2 mb-4 px-4 py-3 bg-white dark:bg-gray-800 sm:shadow-xs sm:rounded-sm">
+					<div class="hidden sm:flex flex-col space-y-2 mb-4 px-4 py-3 bg-white dark:bg-gray-800 sm:rounded-sm">
 						<div class="flex items-center space-x-2">
 							<img :src="v.profile_url" class="flex-shrink-0 w-6 h-6 object-fit rounded-sm bg-gray-200 dark:bg-gray-800">
 							<div class="font-bold text-sm">
@@ -30,7 +30,7 @@
 					<!-- End Post Creation -->
 
 					<!-- Post Sorting and Display Toggle -->
-					<div class="flex items-center flex-shrink-0 sm:rounded-sm sm:shadow-xs mb-2.5 sm:mb-4 px-4 py-3 bg-white dark:bg-gray-800">
+					<div class="flex items-center flex-shrink-0 sm:rounded-sm mb-2.5 sm:mb-4 px-4 py-3 bg-white dark:bg-gray-800">
 						<div class="flex items-center justify-between flex-grow">
 							<div class="text-xl font-bold capitalize leading-none dark:text-gray-200">
 								{{ $route.meta.title }} Feed
@@ -122,7 +122,7 @@
 					<div v-if="!loading" class="space-y-4">
 						<SidebarSection title="Improve your acount">
 							<template v-slot:body>
-								<div class="p-4 bg-white dark:bg-gray-800 shadow-xs rounded-sm">
+								<div class="p-4 bg-white dark:bg-gray-800 rounded-sm">
 									<ul class="mb-0 space-y-4">
 										<li>
 											<a href="https://github.com/ruqqus/ruqqus" class="group flex items-center">
@@ -162,7 +162,7 @@
 						</SidebarSection>
 						<SidebarSection>
 							<template v-slot:body>
-								<div class="p-4 bg-white dark:bg-gray-800 shadow-xs rounded-sm">
+								<div class="p-4 bg-white dark:bg-gray-800 rounded-sm">
 									<div class="flex items-center mb-2">
 										<img src="https://i.ruqqus.com/board/ruqqus/profile-3.png" class="w-8 h-8 rounded-sm bg-gray-100 dark:bg-gray-800 object-cover">
 										<div class="pl-3 font-bold">
@@ -183,7 +183,7 @@
 						</SidebarSection>
 						<SidebarSection title="Support Ruqqus">
 							<template v-slot:body>
-								<ul class="mb-0 p-4 space-y-3 bg-white dark:bg-gray-800 shadow-xs rounded-sm">
+								<ul class="mb-0 p-4 space-y-3 bg-white dark:bg-gray-800 rounded-sm">
 									<li>
 										<a href="https://github.com/ruqqus/ruqqus" class="group flex items-center justify-between">
 											<div class="pr-3">
