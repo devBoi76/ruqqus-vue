@@ -220,14 +220,6 @@ const routes = [
 
 		// Admin view
 		{
-			path: '/admin', component: AdminView, props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false}
-			children: [
-			{ path: '', component: AdminOverviewView, name: 'admin-dashboard-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
-			]
-		},
-
-		// Admin view
-		{
 			path: '/admin', component: AdminView, props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false},
 			children: [
 			{ path: '', component: AdminOverviewView, name: 'admin-overview-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
