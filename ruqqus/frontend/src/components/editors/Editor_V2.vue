@@ -67,7 +67,7 @@
 			</div>
 		</div>
 
-		<GIFPicker v-on:select-gif="addGif" :show-modal="show" :key="count"/>
+		<!-- <GIFPicker v-on:select-gif="addGif" :show-modal="show" :key="count"/> -->
 
 	</div>
 </template>
@@ -83,12 +83,12 @@
 	import Placeholder from '@tiptap/extension-placeholder'
 	import Dropcursor from '@tiptap/extension-dropcursor'
 	import Image from '@tiptap/extension-image'
-	import GIFPicker from "@/components/modals/ModalGIFPicker.vue"
+	//import GIFPicker from "@/components/modals/ModalGIFPicker.vue"
 
 	export default {
 		components: {
 			EditorContent,
-			GIFPicker
+			//GIFPicker
 		},
 		props: {
 			value: {
