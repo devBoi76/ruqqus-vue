@@ -193,6 +193,7 @@ module.exports = {
 			backgroundColor: ['active'],
 			borderWidth: ['dark', 'first', 'last', 'active'],
 			borderRadius: ['first', 'last', 'hover', 'focus'],
+			borderColor: ['checked'],
 			boxShadow: ['active'],
 			inset: ['active', 'group-hover'],
 			opacity: ['dark', 'visited', 'disabled'],
