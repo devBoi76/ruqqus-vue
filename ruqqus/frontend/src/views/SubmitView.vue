@@ -121,7 +121,7 @@
 										<div class="flex flex-col space-y-5 mt-3 pt-5">
 											<div class="flex flex-col space-y-5">
 												<label class="inline-flex">
-													<input type="radio" class="form-radio primary" name="publishType" value="immediately">
+													<input type="radio" class="form-radio primary" name="publishType" value="immediately" checked>
 													<div class="ml-3 -mt-0.5">
 														<div class="text-sm text-gray-900 font-bold select-none">
 															Publish now
