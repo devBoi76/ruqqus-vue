@@ -76,7 +76,6 @@ const routes = [
 	// Thread View
 	{ path: '/post/:id/:title?/:commentId?', name: 'item-view', component: ThreadView, props: true, meta: {sidebar: false, requiresAuth: false} },
 
-
 		// User Personal view
 		{
 			path: '/dashboard', component: UserView, props: true, meta: {requiresAuth: true},
@@ -171,31 +170,31 @@ const routes = [
 				routes
 			})
 
-			router.beforeEach((to , from, next) => {
-				console.log(`Coming from : ${from.path} | going to ${to.path}`)
-				console.log(from.fullPath)
-				if (to.matched.some(record => record.meta.requiresAuth)) {
-					if (!store.state.persist.is_authenticated) {
-						console.log(`is_authenticated : ${store.state.persist.is_authenticated} | Redirecting to login`)
-						next({
-							name: "LoginView"
-						})
-					}
-					else if (!store.state.persist.v){
-						console.log(`v doesn't exist | Redirecting to login`)
-						next({
-							name: "LoginView"
-						})
-					}
-					// else if (store.state.persist.v.admin_level != -1 && store.state.persist.v.admin_level != 6){
-					// 	console.log(`only admins allowed | redirecting to login`)
-					// 	next({
-					// 		name: "LoginView"
-					// 	})
-					// }
-					else{next();}
-				}else{next();}
-			})
+			// router.beforeEach((to , from, next) => {
+			// 	console.log(`Coming from : ${from.path} | going to ${to.path}`)
+			// 	console.log(from.fullPath)
+			// 	if (to.matched.some(record => record.meta.requiresAuth)) {
+			// 		if (!store.state.persist.is_authenticated) {
+			// 			console.log(`is_authenticated : ${store.state.persist.is_authenticated} | Redirecting to login`)
+			// 			next({
+			// 				name: "LoginView"
+			// 			})
+			// 		}
+			// 		else if (!store.state.persist.v){
+			// 			console.log(`v doesn't exist | Redirecting to login`)
+			// 			next({
+			// 				name: "LoginView"
+			// 			})
+			// 		}
+			// 		// else if (store.state.persist.v.admin_level != -1 && store.state.persist.v.admin_level != 6){
+			// 		// 	console.log(`only admins allowed | redirecting to login`)
+			// 		// 	next({
+			// 		// 		name: "LoginView"
+			// 		// 	})
+			// 		// }
+			// 		else{next();}
+			// 	}else{next();}
+			// })
 
 			// Cancel all pending API requests on route change
 			router.beforeEach((to, from, next) => {
