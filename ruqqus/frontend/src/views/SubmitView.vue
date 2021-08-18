@@ -159,7 +159,7 @@
 												</label>
 											</div>
 										</div>
-										<div class="flex justify-end space-x-2 mt-5 pt-5">
+										<div class="flex justify-end mt-5 pt-5">
 											<button type="button" class="button linkGray400">
 												Save as Draft
 											</button>
