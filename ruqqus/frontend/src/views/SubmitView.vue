@@ -132,7 +132,7 @@
 													</div>
 												</label>
 												<label class="inline-flex">
-													<input type="radio" class="form-radio primary" v-model="publishType" value="immediately">
+													<input type="radio" class="form-radio primary" v-model="publishType" value="scheduled">
 													<div class="ml-3 -mt-0.5">
 														<div class="text-sm text-gray-900 font-bold select-none">
 															Schedule for later
