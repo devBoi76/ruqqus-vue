@@ -8,7 +8,7 @@
     leave-class="opacity-100 scale-100"
     leave-to-class="opacity-0 scale-60"
     >
-    <div v-if="canDropImage && showDropzone" class="absolute flex items-center justify-center overflow-hidden w-full h-screen z-100 bg-opacity-90" :class="wrapperClass" @drop.prevent="drop($event)" @click.self="wrongFileReset()" @keydown.esc="showDropzone=false; reset()" tabindex="0">
+    <div v-if="canDropImage && showDropzone" class="absolute flex items-center justify-center overflow-hidden w-full h-screen z-100 bg-opacity-80" :class="wrapperClass" @drop.prevent="drop($event)" @click.self="wrongFileReset()" @keydown.esc="showDropzone=false; reset()" tabindex="0">
       <div class="rounded-lg sm:w-2/4 md:1/4 lg:w-1/3 bg-white shadow transition duration-200 ease-in transform" :class="{ 'animate-shake':wrongFile }">
         <div class="w-full p-3">
           <div class="border-2 border-dashed py-16 rounded text-center select-none">
