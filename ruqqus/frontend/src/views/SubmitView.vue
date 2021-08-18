@@ -240,7 +240,7 @@
 				if (this.publishType === 'immediately') {
 					return 'Post'
 				} else {
-					return 'Schedule post'
+					return 'Schedule Post'
 				}
 			}
 		},
