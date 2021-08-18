@@ -65,7 +65,7 @@
 
 									<iframe v-if="embed" :src="embed" width="100%" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"/>
 
-									<Editor @input="getEditorContent" min-height="13rem" :limit="10000"/>
+									<Editor @input="getEditorContent" min-height="14rem" :limit="10000"/>
 									<!-- Image upload -->
 									<div :class="{'opacity-50':link}" class="hidden">
 										<div class="rounded-sm w-28 h-28 border border-gray-300 border-dashed flex items-center justify-center cursor-pointer text-sm text-gray-400 bg-gray-50 hover:bg-gray-100" @click="chooseImage">
