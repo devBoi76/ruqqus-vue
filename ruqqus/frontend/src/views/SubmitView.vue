@@ -121,7 +121,7 @@
 										<div class="flex flex-col space-y-5 mt-3 pt-4">
 											<div class="flex flex-col space-y-5">
 												<label class="inline-flex">
-													<input type="radio" class="form-radio primary" name="publishType" value="immediately" checked>
+													<input type="radio" class="form-radio primary" v-model="publishType" value="immediately" checked>
 													<div class="ml-3 -mt-0.5">
 														<div class="text-sm text-gray-900 font-bold select-none">
 															Publish now
@@ -132,7 +132,7 @@
 													</div>
 												</label>
 												<label class="inline-flex">
-													<input type="radio" class="form-radio primary" name="publishType" value="immediately">
+													<input type="radio" class="form-radio primary" v-model="publishType" value="immediately">
 													<div class="ml-3 -mt-0.5">
 														<div class="text-sm text-gray-900 font-bold select-none">
 															Schedule for later
@@ -144,7 +144,7 @@
 													</div>
 												</label>
 												<label class="inline-flex">
-													<input type="radio" class="form-radio primary" name="publishType" value="draft">
+													<input type="radio" class="form-radio primary" v-model="publishType" value="draft">
 													<div class="ml-3 -mt-0.5">
 														<div class="text-sm text-gray-900 font-bold select-none">
 															Save as draft
@@ -175,7 +175,7 @@
 												Cancel
 											</button>
 											<button type="button" class="button purple500" @click="createPost()">
-												Post
+												{{ buttonText }}
 											</button>
 										</div>
 									</div>
@@ -208,6 +208,7 @@
 		},
 		data() {
 			return {
+				publishType: 'immediately',
 				embed: null,
 				poll: false,
 				pin: false,
@@ -245,6 +246,15 @@
 			...mapState("persist", ["v"]),
 			submission() {
 				return this.$store.state.create.post.submission
+			},
+			buttonText() {
+				if (publishType === 'immediately') {
+					return 'Post'
+				} else if (publishType === 'draft') {
+					return 'Save as draft'
+				} else {
+					return 'Schedule post'
+				}
 			}
 		},
 		watch: {
