@@ -22,6 +22,9 @@
 	body.using-mouse :focus {
 		outline: none!important;
 	}
+	::-webkit-datetime-edit {
+		padding: 0!important;
+	}
 }
 
 @layer components {
@@ -86,9 +89,6 @@
 	}
 	[type=date], [type=datetime-local], [type=email], [type=month], [type=number], [type=password], [type=search], [type=text], [type=time], [type=url], [type=week], select, textarea {
 		@apply text-lg sm:text-base leading-5
-	}
-	::-webkit-datetime-edit {
-		@apply p-0 text-lg sm:text-base leading-5
 	}
 	.label {
 		@apply block text-sm font-medium text-gray-900 mb-1;
