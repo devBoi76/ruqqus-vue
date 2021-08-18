@@ -38,7 +38,7 @@
 										/>
 									</div>
 								</div>
-								<div class="p-2.5 space-y-2.5">
+								<div class="p-2.5 space-y-2.5 sm:p-4 sm:space-y-3">
 									<div class="flex items-center justify-between">
 										<div class="flex items-center">
 											<img class="w-9 h-9 md:w-8 md:h-8 object-cover mr-2 rounded-sm bg-gray-100 dark:bg-gray-700" :src="v.profile_url"/>
@@ -114,11 +114,11 @@
 						<div class="space-y-4">
 							<div class="flex flex-col">
 								<div class="bg-white rounded-sm">
-									<div class="p-4 md:p-5 divide-y">
+									<div class="p-4 divide-y">
 										<div class="text-lg font-medium">
 											Post options
 										</div>
-										<div class="flex flex-col space-y-5 mt-3 pt-4">
+										<div class="flex flex-col space-y-5 mt-4 pt-5">
 											<div class="flex flex-col space-y-5">
 												<label class="inline-flex">
 													<input type="radio" class="form-radio primary" v-model="publishType" value="immediately" checked>
@@ -159,7 +159,7 @@
 												</label>
 											</div>
 										</div>
-										<div class="flex justify-end space-x-2 mt-4 pt-4">
+										<div class="flex justify-end space-x-2 mt-5 pt-5">
 											<button type="button" class="button linkGray400">
 												Save as Draft
 											</button>
