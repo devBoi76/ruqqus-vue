@@ -17,7 +17,7 @@
 				type: Object,
 				default: function () {
 					return {
-						image: 'https://i.imgur.com/tGZymeK.jpg',
+						image: 'https://i.imgur.com/tCYedPn.jpg',
 						title: 'Ruqqus',
 						subtitle: 'The open-source platform for independent communities'
 					}
