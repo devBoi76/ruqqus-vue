@@ -118,7 +118,7 @@
 										<div class="text-lg font-medium">
 											Post options
 										</div>
-										<div class="flex flex-col space-y-5 mt-3 pt-5">
+										<div class="flex flex-col space-y-5 mt-3 pt-4">
 											<div class="flex flex-col space-y-5">
 												<label class="inline-flex">
 													<input type="radio" class="form-radio primary" name="publishType" value="immediately" checked>
@@ -150,7 +150,7 @@
 															Save as draft
 														</div>
 														<div class="text-xs text-gray-500">
-															Manually publish the post some other time
+															Save this post for later
 														</div>
 													</div>
 												</label>
@@ -170,7 +170,7 @@
 												</label>
 											</div>
 										</div>
-										<div class="flex justify-end space-x-2 mt-5 pt-5">
+										<div class="flex justify-end space-x-2 mt-4 pt-4">
 											<button type="button" class="button linkGray400">
 												Cancel
 											</button>
