@@ -117,25 +117,25 @@
 							<div class="flex flex-col">
 								<div class="bg-white rounded-sm">
 									<div class="p-4">
-										<div class="text-lg font-semibold">
+										<div class="text-lg font-medium">
 											Post options
 										</div>
 										<div class="mt-3 space-y-3">
 											<div>
-												<label class="tag">
+												<label class="label">
 													Tag
 												</label>
 											</div>
 											<div class="flex flex-col space-y-2">
 												<label class="flex items-center">
 													<input type="checkbox" class="form-checkbox green500" name="pin" value="pin"/>
-													<span class="pl-2 text-sm text-gray-600 select-none">
+													<span class="pl-2 text-sm text-gray-700 select-none">
 														Pin this post
 													</span>
 												</label>
 												<label class="flex items-center">
 													<input type="checkbox" class="form-checkbox red500" name="pin" value="pin"/>
-													<span class="pl-2 text-sm text-gray-600 select-none">
+													<span class="pl-2 text-sm text-gray-700 select-none">
 														Mark as NSFW
 													</span>
 												</label>
