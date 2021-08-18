@@ -6,6 +6,7 @@ module.exports = {
 		strategy: 'class',
 	})
 	],
+	mode: 'jit',
 	purge: [
 	'./src/**/*.vue',
 	'./src/**/*.js',
