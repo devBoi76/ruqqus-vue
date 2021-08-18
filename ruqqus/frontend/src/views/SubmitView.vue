@@ -1,8 +1,8 @@
 <template>
 	<div class="w-full overflow-y-auto">
-		<div class="grid grid-cols-12 xl:grid-cols-10">
+		<div class="grid grid-cols-12">
 
-			<div class="col-span-full xl:col-start-2 xl:col-end-10 sm:p-4 xl:p-0 my-2.5 sm:my-8">
+			<div class="col-span-full xl:col-start-3 xl:col-end-11 sm:p-4 xl:p-0 my-2.5 sm:my-8">
 
 				<div class="mb-4 md:mb-6">
 					<h1 class="h3">
