@@ -63,22 +63,6 @@
 										<input type="text" class="form-input light" v-model="submission.link" placeholder="Add a link to something cool (optional)"/>
 									</div>
 
-									<!-- Other post types -->
-									<div class="flex items-center space-x-1">
-										<button class="-ml-2 flex items-center px-2 h-8 rounded-sm transition text-sm text-gray-400 hover:text-gray-500 leading-4 font-bold duration-100 ease-in-out focus:border-purple-500 focus:ring-2 focus:ring-purple-500 focus:outline-none focus:ring-opacity-50 disabled:opacity-50">
-											<i class="far fa-image fa-fw text-lg mr-2"></i>
-											Photo
-										</button>
-										<button class="flex items-center px-2 h-8 rounded-sm transition text-sm text-gray-400 hover:text-gray-500 leading-4 font-bold duration-100 ease-in-out focus:border-purple-500 focus:ring-2 focus:ring-purple-500 focus:outline-none focus:ring-opacity-50 disabled:opacity-50">
-											<i class="far fa-poll-h fa-fw text-lg mr-2"></i>
-											Poll
-										</button>
-										<button class="flex items-center px-2 h-8 rounded-sm transition text-sm text-gray-400 hover:text-gray-500 leading-4 font-bold duration-100 ease-in-out focus:border-purple-500 focus:ring-2 focus:ring-purple-500 focus:outline-none focus:ring-opacity-50 disabled:opacity-50">
-											<i class="far fa-waveform fa-fw text-lg mr-2"></i>
-											Audio
-										</button>
-									</div>
-
 									<iframe v-if="embed" :src="embed" width="100%" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"/>
 
 									<Editor @input="getEditorContent" min-height="9rem" :limit="10000"/>
@@ -102,6 +86,23 @@
 										</button>
 										<img :src="submission.image.source" class="w-full h-full object-cover rounded-sm">
 									</div>
+
+									<!-- Other post types -->
+									<div class="flex items-center space-x-1">
+										<button class="-ml-2 flex items-center px-2 h-8 rounded-sm transition text-sm text-gray-400 hover:text-gray-500 leading-4 font-bold duration-100 ease-in-out focus:border-purple-500 focus:ring-2 focus:ring-purple-500 focus:outline-none focus:ring-opacity-50 disabled:opacity-50">
+											<i class="far fa-image fa-fw text-lg mr-2"></i>
+											Photo
+										</button>
+										<button class="flex items-center px-2 h-8 rounded-sm transition text-sm text-gray-400 hover:text-gray-500 leading-4 font-bold duration-100 ease-in-out focus:border-purple-500 focus:ring-2 focus:ring-purple-500 focus:outline-none focus:ring-opacity-50 disabled:opacity-50">
+											<i class="far fa-poll-h fa-fw text-lg mr-2"></i>
+											Poll
+										</button>
+										<button class="flex items-center px-2 h-8 rounded-sm transition text-sm text-gray-400 hover:text-gray-500 leading-4 font-bold duration-100 ease-in-out focus:border-purple-500 focus:ring-2 focus:ring-purple-500 focus:outline-none focus:ring-opacity-50 disabled:opacity-50">
+											<i class="far fa-waveform fa-fw text-lg mr-2"></i>
+											Audio
+										</button>
+									</div>
+
 								</div>
 							</div>
 						</div>
