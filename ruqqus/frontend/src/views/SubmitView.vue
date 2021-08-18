@@ -128,13 +128,13 @@
 											</div>
 											<label class="flex items-center justify-between">
 												<input type="checkbox" class="form-checkbox green500" name="pin" value="pin"/>
-												<span class="pl-2 text-gray-600">
+												<span class="pl-2 text-gray-600 select-none">
 													Pin this post
 												</span>
 											</label>
 											<label class="flex items-center justify-between">
 												<input type="checkbox" class="form-checkbox red500" name="pin" value="pin"/>
-												<span class="pl-2 text-gray-600">
+												<span class="pl-2 text-gray-600 select-none">
 													Mark as NSFW
 												</span>
 											</label>
