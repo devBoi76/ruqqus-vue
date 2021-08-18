@@ -84,7 +84,7 @@
 	input[type], select, textarea {
 		@apply text-lg sm:text-base leading-5
 	}
-	[type=date], [type=email], [type=month], [type=number], [type=password], [type=search], [type=text], [type=time], [type=url], [type=week], select, textarea {
+	[type=date], [type=email], [type=month], [type=number], [type=password], [type=search], [type=text], [type=datetime-local], [type=time], [type=url], [type=week], select, textarea {
 		@apply text-lg sm:text-base leading-5
 	}
 	.label {

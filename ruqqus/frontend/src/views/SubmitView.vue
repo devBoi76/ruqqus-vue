@@ -120,21 +120,23 @@
 										<div class="text-lg font-medium">
 											Post options
 										</div>
-										<div class="mt-3 space-y-3">
-											<div>
-												<label class="inline-flex items-center ml-6">
+										<div class="divide-y">
+											<div class="flex flex-col space-y-5 py-4">
+												<label class="inline-flex">
 													<input type="radio" class="form-radio" name="publishType" value="immediately">
-													<div class="ml-2">
-														<div class="text-sm text-gray-900 font-bold capitalize">
+													<div class="ml-3 -mt-0.5">
+														<div class="text-sm text-gray-900 font-bold">
 															Publish immediately
 														</div>
-														<div class="text-xs text-gray-500">Goes live when you click post</div>
+														<div class="text-xs text-gray-500">
+															Goes live when you click post
+														</div>
 													</div>
 												</label>
-												<label class="inline-flex items-center ml-6">
+												<label class="inline-flex">
 													<input type="radio" class="form-radio" name="publishType" value="immediately">
-													<div class="ml-2">
-														<div class="text-sm text-gray-900 font-bold capitalize">
+													<div class="ml-3 -mt-0.5">
+														<div class="text-sm text-gray-900 font-bold">
 															Schedule for later
 														</div>
 														<input type="datetime-local" id="time" name="time" class="form-input light"/>
@@ -144,7 +146,7 @@
 													</div>
 												</label>
 											</div>
-											<div class="flex flex-col space-y-2">
+											<div class="flex flex-col space-y-2 pt-4">
 												<label class="flex items-center">
 													<input type="checkbox" class="form-checkbox green500" name="pin" value="pin"/>
 													<span class="pl-2 text-sm text-gray-700 select-none">
