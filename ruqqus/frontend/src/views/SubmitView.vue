@@ -122,8 +122,26 @@
 										</div>
 										<div class="mt-3 space-y-3">
 											<div>
-												<label class="label">
-													Tag
+												<label class="inline-flex items-center ml-6">
+													<input type="radio" class="form-radio" name="publishType" value="immediately">
+													<div class="ml-2">
+														<div class="text-sm text-gray-900 font-bold capitalize">
+															Publish immediately
+														</div>
+														<div class="text-xs text-gray-500">Goes live when you click post</div>
+													</div>
+												</label>
+												<label class="inline-flex items-center ml-6">
+													<input type="radio" class="form-radio" name="publishType" value="immediately">
+													<div class="ml-2">
+														<div class="text-sm text-gray-900 font-bold capitalize">
+															Schedule for later
+														</div>
+														<input type="datetime-local" id="time" name="time" class="form-input light"/>
+														<div class="mt-2 text-xs text-gray-500">
+															Post will automatically publish itself
+														</div>
+													</div>
 												</label>
 											</div>
 											<div class="flex flex-col space-y-2">
