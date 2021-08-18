@@ -1,7 +1,7 @@
 #!/bin/bash
 cd ~/app/ruqqus-vue/
-echo "Pulling in Frontend changes"
-git pull
+#echo "Pulling in Frontend changes"
+#git pull
 echo "Install Frontend Reqs"
 sudo npm install --unsafe-perm=true --allow-root
 sudo npm audit fix
