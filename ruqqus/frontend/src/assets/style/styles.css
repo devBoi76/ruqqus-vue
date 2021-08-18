@@ -22,7 +22,7 @@
 	body.using-mouse :focus {
 		outline: none!important;
 	}
-	::-webkit-datetime-edit {
+	input::-webkit-datetime-edit {
 		padding: 0!important;
 	}
 }
