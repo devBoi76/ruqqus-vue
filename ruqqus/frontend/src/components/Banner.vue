@@ -1,0 +1,28 @@
+<template>
+	<div class="flex flex-col items-center justify-center text-center min-h-[270px] max-h-[340px] z-50">
+		<img class="absolute w-full h-full bottom-0 top-0 left-0 right-0 object-cover" :src="image" alt="banner">
+		<h1 class="z-10">
+			{{ title }}
+		</h1>
+		<p class="z-10 text-white text-opacity-80 max-w-[600px] mx-auto">
+			{{ subtitle }}
+		</p>
+	</div>
+</template>
+
+<script>
+	export default {
+		props: {
+			banner: {
+				type: Object,
+				default: function () {
+					return {
+						image: 'https://i.imgur.com/tGZymeK.jpg',
+						title: 'Ruqqus',
+						subtitle: 'The open-source platform for independent communities'
+					}
+				}
+			}
+		}
+	}
+</script>
