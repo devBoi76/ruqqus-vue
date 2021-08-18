@@ -161,19 +161,19 @@
 	}
 	/* Radio */
 	.form-radio {
-		@apply transition duration-100 ease-in-out shadow-sm focus:border-purple-500 focus:ring-2 focus:ring-purple-500 focus:outline-none focus:ring-opacity-50 focus:ring-offset-0  disabled:opacity-50
+		@apply transition duration-100 ease-in-out shadow-sm border-gray-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-500 focus:outline-none focus:ring-opacity-50 focus:ring-offset-0  disabled:opacity-50
 	}
 	.form-radio:default {
-		@apply text-purple-500 border-gray-300
+		@apply text-purple-500 checked:border-purple-600 focus:border-purple-600 focus:ring-purple-600
 	}
 	.form-radio.error {
-		@apply text-red-500 border-red-300 focus:border-red-500 focus:ring-red-500
+		@apply text-red-500 checked:border-red-600 focus:border-red-600 focus:ring-red-600
 	}
 	.form-radio.success {
-		@apply text-green-500 border-gray-300 focus:border-green-500 focus:ring-green-500
+		@apply text-green-500 checked:border-gray-600 focus:border-green-600 focus:ring-green-600
 	}
 	.form-radio.warning {
-		@apply text-yellow-500 border-yellow-300 focus:border-yellow-500 focus:ring-yellow-500
+		@apply text-yellow-500 checked:border-yellow-600 focus:border-yellow-600 focus:ring-yellow-600
 	}
 	/* Checkbox */
 	.form-checkbox {
