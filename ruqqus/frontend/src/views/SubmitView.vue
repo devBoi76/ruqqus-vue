@@ -17,7 +17,7 @@
 							<div class="hidden md:block flex-shrink-0 w-16 h-16 mr-4 rounded-sm overflow-hidden">
 								<img class="w-full h-full object-cover bg-white dark:bg-gray-700" :src="v.profile_url"/>
 							</div>
-							<div class="w-full bg-white dark:bg-gray-800 border sm:shadow-xs sm:rounded-sm">
+							<div class="w-full bg-white dark:bg-gray-800 sm:rounded-sm">
 								<div v-if="showLinkInput && !submission.image.source" class="relative bg-white border-t-2 border-b-2 border-dashed bg-gray-100 -mt-0.5">
 									<div v-show="!submission.link" class="absolute w-full px-10 py-12 text-gray-500 pointer-events-none">
 										Type or paste a link
@@ -53,14 +53,14 @@
 										</div>
 									</div>
 									<div class="relative">
-										<input class="form-input" v-model="submission.title" placeholder="Give your post a title"/>
+										<input type="text" class="form-input light" v-model="submission.title" placeholder="Give your post a title"/>
 										<div v-if="submission.title" class="absolute text-xs font-semibold text-gray-400 right-3 bottom-2" :class="{'text-red-500':submission.title.length >= 32}">
 											{{32 - submission.title.length}}
 										</div>
 									</div>
 
 									<div v-show="!submission.image.source">
-										<input class="form-input" v-model="submission.link" placeholder="Add a link to something cool (optional)"/>
+										<input type="text" class="form-input light" v-model="submission.link" placeholder="Add a link to something cool (optional)"/>
 									</div>
 
 									<iframe v-if="embed" :src="embed" width="100%" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"/>
@@ -115,33 +115,31 @@
 					<div class="hidden lg:block flex-shrink-0 w-80">
 						<div class="space-y-4">
 							<div class="flex flex-col">
-								<div class="bg-white border shadow-xs rounded-sm">
-									<Toggle @change="handleChange">
-										<template v-slot:default="{active, toggle}">
-											<div class="p-4">
-												<div class="flex items-center justify-between">
-													<div class="text-lg font-bold">
-														Advanced Options
-													</div>
-													<button @click="toggle">
-														<i class="far fa-fw text-gray-600" :class="active ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
-													</button>
-												</div>
-												<div v-if="active" class="mt-3 space-y-3">
-													<label class="flex items-center justify-between">
-														<span class="text-xs text-gray-600 leading-none">
-															<i class="fas fa-thumbtack fa-fw fa-sm text-green-500 mr-1"></i>
-															Pin this post to the guild
-														</span>
-														<input type="radio" class="form-checkbox green500" name="pin" value="pin"/>
-													</label>
-													<select placeholder="Select rating" v-model="rating" class="form-select capitalize">
-														<option v-for="rating in ratings" :value="rating">{{ rating }}</option>
-													</select>
-												</div>
+								<div class="bg-white rounded-sm">
+									<div class="p-4">
+										<div class="text-lg font-semibold">
+											Post options
+										</div>
+										<div class="mt-3 space-y-3">
+											<div>
+												<label class="tag">
+													Tag
+												</label>
 											</div>
-										</template>
-									</Toggle>
+											<label class="flex items-center justify-between">
+												<input type="checkbox" class="form-checkbox green500" name="pin" value="pin"/>
+												<span class="pl-2 text-gray-600">
+													Pin this post
+												</span>
+											</label>
+											<label class="flex items-center justify-between">
+												<input type="checkbox" class="form-checkbox red500" name="pin" value="pin"/>
+												<span class="pl-2 text-gray-600">
+													Mark as NSFW
+												</span>
+											</label>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
