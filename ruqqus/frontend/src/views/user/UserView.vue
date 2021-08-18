@@ -1,6 +1,6 @@
 <template>
 	<div class="flex flex-grow">
-		<vue-scroll>
+		<div class="w-full">
 			<div class="grid grid-cols-12 xl:grid-cols-7">
 				<div class="col-span-full xl:col-start-2 xl:col-end-7 flex gap-6 md:p-4 xl:p-0 xl:my-4">
 					<!-- Main content section -->
@@ -33,7 +33,7 @@
 					<!-- End Right bar -->
 				</div>
 			</div>
-		</vue-scroll>
+		</div>
 	</div>
 </template>
 
@@ -46,12 +46,6 @@ export default {
 	data() {
 		return {
 			navigation: [
-				// {
-				// 	name: 'overview',
-				// 	route: '/overview',
-				// 	icon: 'fa-home-alt',
-				// 	textCase: 'capitalize'
-				// },
 				{
 					name: 'notifications',
 					description: 'Activity, replies, and more',
@@ -61,15 +55,6 @@ export default {
 					icon: 'fa-bell',
 					textCase: 'capitalize'
 				},
-				// {
-				// 	name: 'direct messages',
-				// 	description: 'The conversations',
-				// 	route: {
-				// 		path: '/messages'
-				// 	},
-				// 	icon: 'fa-envelope',
-				// 	textCase: 'capitalize'
-				// },
 				{
 					name: 'following',
 					description: 'Your favorite ruqqies',
@@ -80,16 +65,7 @@ export default {
 					textCase: 'capitalize'
 				},
 				{
-					name: 'guilds',
-					description: 'Manage your communities',
-					route: {
-						path: '/guilds'
-					},
-					icon: 'fa-chess-rook',
-					textCase: 'capitalize'
-				},
-				{
-					name: 'ruqqsack',
+					name: 'saved',
 					description: 'Saved content',
 					route: {
 						path: '/saved'
