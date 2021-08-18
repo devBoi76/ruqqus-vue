@@ -14,9 +14,6 @@
 					<!-- Main Content Section -->
 					<div class="w-full">
 						<div class="flex flex-grow">
-							<div class="hidden md:block flex-shrink-0 w-16 h-16 mr-4 rounded-sm overflow-hidden">
-								<img class="w-full h-full object-cover bg-white dark:bg-gray-700" :src="v.profile_url"/>
-							</div>
 							<div class="w-full bg-white dark:bg-gray-800 sm:rounded-sm">
 								<div v-if="showLinkInput && !submission.image.source" class="relative bg-white border-t-2 border-b-2 border-dashed bg-gray-100 -mt-0.5">
 									<div v-show="!submission.link" class="absolute w-full px-10 py-12 text-gray-500 pointer-events-none">
@@ -43,8 +40,11 @@
 								</div>
 								<div class="p-2.5 space-y-2.5">
 									<div class="flex items-center justify-between border-l border-r border-transparent">
-										<div class="font-bold text-sm">
-											{{ v.username }}
+										<div class="flex items-center">
+											<img class="w-9 h-9 md:w-8 md:h-8 object-cover mr-2 rounded-sm bg-gray-100 dark:bg-gray-700" :src="v.profile_url"/>
+											<div class="font-bold text-sm">
+												{{ v.username }}
+											</div>
 										</div>
 										<div class="-ml-2 flex items-center">
 											<button class="flex items-center justify-center px-2 w-8 h-8 text-xl text-gray-600 dark:text-gray-400 hover:text-purple-500 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white rounded-sm" :class="{'bell':notifications}" :content="notifications ? 'Notifications on' : 'Notifications off'" v-tippy @click="notifications = !notifications">
@@ -129,7 +129,7 @@
 															Publish immediately
 														</div>
 														<div class="text-xs text-gray-500">
-															Goes live when you click post
+															Post goes live when you click "post"
 														</div>
 													</div>
 												</label>
