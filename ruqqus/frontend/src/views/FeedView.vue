@@ -90,13 +90,11 @@
 </template>
 
 <script>
-import { defineAsyncComponent } from 'vue'
+	import { defineAsyncComponent } from 'vue'
 // Import our components
 const ItemList = defineAsyncComponent(() => import('@/views/ItemList.vue'))
 const ItemSort = defineAsyncComponent(() => import('@/components/dropdowns/ItemSort.vue'))
 const ListingToggle = defineAsyncComponent(() => import('@/components/forms/ListingToggle.vue'))
-
-const SidebarSection = defineAsyncComponent(() => import('@/components/navigation/vertical/SidebarSection.vue'))
 
 import { mapState } from "vuex";
 
@@ -112,34 +110,13 @@ export default {
 				page: this.$route.query.page || 1,
 				sort: this.$route.query.sort || 'hot',
 				t: this.$route.query.t || 'all'
-			},
-			// featured: [
-			// {
-			// 	id: 1,
-			// 	name: 'ruqqus',
-			// 	profile_url: 'https://i.ruqqus.com/board/ruqqus/profile-3.png',
-			// 	subscription_count: 4503
-			// },
-			// {
-			// 	id: 2,
-			// 	name: 'gaming',
-			// 	profile_url: 'https://i.ruqqus.com/board/gaming/profile-2.png',
-			// 	subscription_count: 4500
-			// },
-			// {
-			// 	id: 3,
-			// 	name: 'politicalcompassmemes',
-			// 	profile_url: 'https://i.ruqqus.com/board/politicalcompassmemes/profile-7.png',
-			// 	subscription_count: 503
-			// },
-			// {
-			// 	id: 4,
-			// 	name: 'technology',
-			// 	profile_url: 'https://i.ruqqus.com/board/technology/profile-3.png',
-			// 	subscription_count: 1010
-			// }
-			// ]
+			}
 		};
+	},
+	components: {
+		ItemList,
+		ItemSort,
+		ListingToggle,
 	},
 	computed:{
 		...mapState("persist", ["v", "isCard"]),
@@ -165,12 +142,6 @@ export default {
 				this.getFeed()
 			}
 		}
-	},
-	components: {
-		ItemList,
-		ItemSort,
-		ListingToggle,
-		SidebarSection
 	},
 	methods: {
 		getFeed() {
