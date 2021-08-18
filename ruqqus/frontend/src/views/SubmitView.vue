@@ -88,12 +88,12 @@
 									</div>
 
 									<!-- Other post types -->
-									<div class="flex items-center">
-										<button class="-ml-[10px] mr-1 flex items-center px-2 h-8 rounded-sm transition text-sm text-gray-400 hover:text-gray-500 leading-4 font-bold duration-100 ease-in-out focus:border-purple-500 focus:ring-2 focus:ring-purple-500 focus:outline-none focus:ring-opacity-50 disabled:opacity-50">
+									<div class="flex items-center space-x-1">
+										<button class="ml-[-10px] flex items-center px-2 h-8 rounded-sm transition text-sm text-gray-400 hover:text-gray-500 leading-4 font-bold duration-100 ease-in-out focus:border-purple-500 focus:ring-2 focus:ring-purple-500 focus:outline-none focus:ring-opacity-50 disabled:opacity-50">
 											<i class="far fa-image fa-fw text-lg mr-2"></i>
 											Photo
 										</button>
-										<button class="mr-1 flex items-center px-2 h-8 rounded-sm transition text-sm text-gray-400 hover:text-gray-500 leading-4 font-bold duration-100 ease-in-out focus:border-purple-500 focus:ring-2 focus:ring-purple-500 focus:outline-none focus:ring-opacity-50 disabled:opacity-50">
+										<button class="flex items-center px-2 h-8 rounded-sm transition text-sm text-gray-400 hover:text-gray-500 leading-4 font-bold duration-100 ease-in-out focus:border-purple-500 focus:ring-2 focus:ring-purple-500 focus:outline-none focus:ring-opacity-50 disabled:opacity-50">
 											<i class="far fa-poll-h fa-fw text-lg mr-2"></i>
 											Poll
 										</button>
