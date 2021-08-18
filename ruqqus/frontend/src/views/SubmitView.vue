@@ -136,7 +136,7 @@
 												<label class="flex items-center">
 													<input type="checkbox" class="form-checkbox red500" name="pin" value="pin"/>
 													<span class="pl-2 text-sm text-gray-700 select-none">
-														Mark as NSFW
+														Mark as mature content
 													</span>
 												</label>
 											</div>
