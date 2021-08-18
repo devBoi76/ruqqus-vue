@@ -139,7 +139,7 @@
 														<div class="text-sm text-gray-900 font-bold">
 															Schedule for later
 														</div>
-														<input type="datetime-local" id="time" name="time" class="form-input light mt-2"/>
+														<input type="datetime-local" id="time" name="time" class="flex items-center form-input light mt-2"/>
 														<div class="mt-2 text-xs text-gray-500">
 															Post will automatically publish itself
 														</div>
