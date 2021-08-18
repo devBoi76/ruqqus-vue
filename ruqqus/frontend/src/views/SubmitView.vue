@@ -125,7 +125,7 @@
 												<label class="inline-flex">
 													<input type="radio" class="form-radio purple500" name="publishType" value="immediately">
 													<div class="ml-3 -mt-0.5">
-														<div class="text-sm text-gray-900 font-bold">
+														<div class="text-sm text-gray-900 font-bold select-none">
 															Publish immediately
 														</div>
 														<div class="text-xs text-gray-500">
@@ -136,7 +136,7 @@
 												<label class="inline-flex">
 													<input type="radio" class="form-radio purple500" name="publishType" value="immediately">
 													<div class="ml-3 -mt-0.5">
-														<div class="text-sm text-gray-900 font-bold">
+														<div class="text-sm text-gray-900 font-bold select-none">
 															Schedule for later
 														</div>
 														<input type="datetime-local" id="time" name="time" class="flex items-center form-input light mt-2"/>
