@@ -1,17 +1,12 @@
-FROM ubuntu:18.04
+FROM node:latest as build
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY ./ .
+RUN npm run build
 
-COPY supervisord.conf /etc/supervisord.conf
+FROM nginx as deploy
+RUN mkdir /app
+COPY --from=build /app/dist /app
+COPY nginx.conf /etc/nginx/nginx.conf
 
-RUN apt update \
-    && apt install -y python3.7 python3-pip supervisor
-
-RUN mkdir -p /opt/ruqqus/service
-
-COPY requirements.txt /opt/ruqqus/service/requirements.txt
-
-RUN cd /opt/ruqqus/service \
-    && pip3 install -r requirements.txt
-
-EXPOSE 80/tcp
-
-CMD [ "/usr/bin/supervisord", "-c", "/etc/supervisord.conf" ]
