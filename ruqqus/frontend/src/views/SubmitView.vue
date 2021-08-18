@@ -123,7 +123,7 @@
 										<div class="divide-y">
 											<div class="flex flex-col space-y-5 py-4">
 												<label class="inline-flex">
-													<input type="radio" class="form-radio" name="publishType" value="immediately">
+													<input type="radio" class="form-radio purple500" name="publishType" value="immediately">
 													<div class="ml-3 -mt-0.5">
 														<div class="text-sm text-gray-900 font-bold">
 															Publish immediately
@@ -134,12 +134,12 @@
 													</div>
 												</label>
 												<label class="inline-flex">
-													<input type="radio" class="form-radio" name="publishType" value="immediately">
+													<input type="radio" class="form-radio purple500" name="publishType" value="immediately">
 													<div class="ml-3 -mt-0.5">
 														<div class="text-sm text-gray-900 font-bold">
 															Schedule for later
 														</div>
-														<input type="datetime-local" id="time" name="time" class="form-input light"/>
+														<input type="datetime-local" id="time" name="time" class="form-input light mt-2"/>
 														<div class="mt-2 text-xs text-gray-500">
 															Post will automatically publish itself
 														</div>
