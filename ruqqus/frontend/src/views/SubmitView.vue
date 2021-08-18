@@ -248,9 +248,9 @@
 				return this.$store.state.create.post.submission
 			},
 			buttonText() {
-				if (publishType === 'immediately') {
+				if (this.publishType === 'immediately') {
 					return 'Post'
-				} else if (publishType === 'draft') {
+				} else if (this.publishType === 'draft') {
 					return 'Save as draft'
 				} else {
 					return 'Schedule post'
