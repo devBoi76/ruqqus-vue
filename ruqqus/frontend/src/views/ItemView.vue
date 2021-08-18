@@ -1,5 +1,6 @@
 <template>
 	<div class="w-full overflow-y-auto">
+		<Banner/>
 		<div class="grid grid-cols-12">
 			<div class="col-span-full xl:col-start-2 xl:col-end-12 flex gap-6 sm:p-6 my-2.5 sm:my-0">
 
@@ -274,6 +275,8 @@ import { defineAsyncComponent } from 'vue'
 import { getPostComments } from '../api/Post.js';
 import { getComment } from '../api/Comment.js';
 
+import Banner from '@/components/Banner.vue';
+
 const CommentWrite = defineAsyncComponent(() => import('@/components/comment/CommentWrite.vue'));
 const CommentSort = defineAsyncComponent(() => import('@/components/comment/CommentSort.vue'));
 const CommentList = defineAsyncComponent(() => import('@/components/comment/CommentList.vue'));
@@ -317,6 +320,7 @@ export default {
 		};
 	},
 	components: {
+		Banner,
 		EmbedLink,
 		CommentSort,
 		CommentWrite,
