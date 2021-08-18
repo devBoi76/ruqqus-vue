@@ -39,7 +39,7 @@
 									</div>
 								</div>
 								<div class="p-2.5 space-y-2.5">
-									<div class="flex items-center justify-between border-l border-r border-transparent">
+									<div class="flex items-center justify-between">
 										<div class="flex items-center">
 											<img class="w-9 h-9 md:w-8 md:h-8 object-cover mr-2 rounded-sm bg-gray-100 dark:bg-gray-700" :src="v.profile_url"/>
 											<div class="font-bold text-sm">
