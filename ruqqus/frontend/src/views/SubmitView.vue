@@ -122,7 +122,7 @@
 											<div class="flex flex-col space-y-5">
 												<label class="inline-flex">
 													<input type="radio" class="form-radio primary" v-model="publishType" value="immediately" checked>
-													<div class="ml-3 -mt-0.5">
+													<div class="ml-3 -mt-0.5 w-full">
 														<div class="text-sm text-gray-900 font-bold select-none">
 															Publish now
 														</div>
@@ -133,7 +133,7 @@
 												</label>
 												<label class="inline-flex">
 													<input type="radio" class="form-radio primary" v-model="publishType" value="scheduled">
-													<div class="ml-3 -mt-0.5">
+													<div class="ml-3 -mt-0.5 w-full">
 														<div class="text-sm text-gray-900 font-bold select-none">
 															Schedule for later
 														</div>
@@ -145,7 +145,7 @@
 												</label>
 												<label class="inline-flex">
 													<input type="radio" class="form-radio primary" v-model="publishType" value="draft">
-													<div class="ml-3 -mt-0.5">
+													<div class="ml-3 -mt-0.5 w-full">
 														<div class="text-sm text-gray-900 font-bold select-none">
 															Save as draft
 														</div>
