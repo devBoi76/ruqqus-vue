@@ -143,17 +143,6 @@
 														</div>
 													</div>
 												</label>
-												<label class="inline-flex">
-													<input type="radio" class="form-radio primary" v-model="publishType" value="draft">
-													<div class="ml-3 -mt-0.5 w-full">
-														<div class="text-sm text-gray-900 font-bold select-none">
-															Save as draft
-														</div>
-														<div class="text-xs text-gray-500">
-															Save this post for later
-														</div>
-													</div>
-												</label>
 											</div>
 											<div class="flex flex-col space-y-2">
 												<label class="flex items-center">
@@ -172,7 +161,7 @@
 										</div>
 										<div class="flex justify-end space-x-2 mt-4 pt-4">
 											<button type="button" class="button linkGray400">
-												Cancel
+												Save as Draft
 											</button>
 											<button type="button" class="button purple500" @click="createPost()">
 												{{ buttonText }}
@@ -250,8 +239,6 @@
 			buttonText() {
 				if (this.publishType === 'immediately') {
 					return 'Post'
-				} else if (this.publishType === 'draft') {
-					return 'Save as draft'
 				} else {
 					return 'Schedule post'
 				}
