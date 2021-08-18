@@ -126,10 +126,10 @@
 													<input type="radio" class="form-radio purple500" name="publishType" value="immediately">
 													<div class="ml-3 -mt-0.5">
 														<div class="text-sm text-gray-900 font-bold select-none">
-															Publish immediately
+															Publish now
 														</div>
 														<div class="text-xs text-gray-500">
-															Post goes live when you click "post"
+															Publish the post immediately
 														</div>
 													</div>
 												</label>
@@ -141,7 +141,7 @@
 														</div>
 														<input type="datetime-local" id="time" name="time" class="flex items-center form-input light mt-2"/>
 														<div class="mt-2 text-xs text-gray-500">
-															Post will automatically publish itself
+															Automatically publish the post later on
 														</div>
 													</div>
 												</label>
