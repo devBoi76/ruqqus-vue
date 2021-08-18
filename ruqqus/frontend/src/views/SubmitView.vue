@@ -143,6 +143,17 @@
 														</div>
 													</div>
 												</label>
+												<label class="inline-flex">
+													<input type="radio" class="form-radio primary" name="publishType" value="draft">
+													<div class="ml-3 -mt-0.5">
+														<div class="text-sm text-gray-900 font-bold select-none">
+															Save as draft
+														</div>
+														<div class="text-xs text-gray-500">
+															Manually publish the post some other time
+														</div>
+													</div>
+												</label>
 											</div>
 											<div class="flex flex-col space-y-2">
 												<label class="flex items-center">
