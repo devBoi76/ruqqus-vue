@@ -108,11 +108,11 @@
 						<div class="space-y-4">
 							<div class="flex flex-col">
 								<div class="bg-white rounded-sm">
-									<div class="p-4 md:p-5">
+									<div class="p-4 md:p-5 divide-y">
 										<div class="text-lg font-medium">
 											Post options
 										</div>
-										<div class="flex flex-col space-y-5">
+										<div class="flex flex-col space-y-5 mt-3 pt-5">
 											<div class="flex flex-col space-y-5">
 												<label class="inline-flex">
 													<input type="radio" class="form-radio purple500" name="publishType" value="immediately">
@@ -152,14 +152,14 @@
 													</span>
 												</label>
 											</div>
-											<div class="flex justify-between pt-5 border-t">
-												<button type="button" class="button purple500" @click="createPost()">
-													Post
-												</button>
-												<button type="button" class="button gray100">
-													Discard
-												</button>
-											</div>
+										</div>
+										<div class="flex justify-between mt-5 pt-5">
+											<button type="button" class="button purple500" @click="createPost()">
+												Post
+											</button>
+											<button type="button" class="button gray100">
+												Discard
+											</button>
 										</div>
 									</div>
 								</div>
