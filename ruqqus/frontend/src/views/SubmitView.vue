@@ -153,12 +153,12 @@
 												</label>
 											</div>
 										</div>
-										<div class="flex justify-between mt-5 pt-5">
+										<div class="flex justify-end space-x-2 mt-5 pt-5">
+											<button type="button" class="button linkGray400">
+												Cancel
+											</button>
 											<button type="button" class="button purple500" @click="createPost()">
 												Post
-											</button>
-											<button type="button" class="button gray100">
-												Discard
 											</button>
 										</div>
 									</div>
