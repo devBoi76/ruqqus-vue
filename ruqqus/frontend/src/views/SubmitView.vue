@@ -98,14 +98,6 @@
 										<i class="far fa-waveform fa-fw text-lg"></i>
 									</button>
 								</div>
-								<div class="flex justify-between p-2.5 border-t">
-									<button type="button" class="button purple500" @click="createPost()">
-										Post
-									</button>
-									<button type="button" class="button gray100">
-										Discard
-									</button>
-								</div>
 							</div>
 						</div>
 					</div>
@@ -116,12 +108,12 @@
 						<div class="space-y-4">
 							<div class="flex flex-col">
 								<div class="bg-white rounded-sm">
-									<div class="p-4">
+									<div class="p-4 md:p-5">
 										<div class="text-lg font-medium">
 											Post options
 										</div>
-										<div class="divide-y">
-											<div class="flex flex-col space-y-5 py-4">
+										<div class="flex flex-col space-y-5">
+											<div class="flex flex-col space-y-5">
 												<label class="inline-flex">
 													<input type="radio" class="form-radio purple500" name="publishType" value="immediately">
 													<div class="ml-3 -mt-0.5">
@@ -146,7 +138,7 @@
 													</div>
 												</label>
 											</div>
-											<div class="flex flex-col space-y-2 pt-4">
+											<div class="flex flex-col space-y-2">
 												<label class="flex items-center">
 													<input type="checkbox" class="form-checkbox green500" name="pin" value="pin"/>
 													<span class="pl-2 text-sm text-gray-700 select-none">
@@ -159,6 +151,14 @@
 														Mark as mature content
 													</span>
 												</label>
+											</div>
+											<div class="flex justify-between pt-5 border-t">
+												<button type="button" class="button purple500" @click="createPost()">
+													Post
+												</button>
+												<button type="button" class="button gray100">
+													Discard
+												</button>
 											</div>
 										</div>
 									</div>
