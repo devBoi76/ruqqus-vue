@@ -87,7 +87,7 @@
 	[type=date], [type=datetime-local], [type=email], [type=month], [type=number], [type=password], [type=search], [type=text], [type=time], [type=url], [type=week], select, textarea {
 		@apply text-lg sm:text-base leading-5
 	}
-	input::-webkit-datetime-edit {
+	::-webkit-datetime-edit {
 		@apply p-0 text-lg sm:text-base leading-5
 	}
 	.label {
