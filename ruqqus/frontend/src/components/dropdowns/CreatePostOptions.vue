@@ -4,7 +4,7 @@
       <i class="far fa-cog fa-fw text-lg"></i>
     </PopoverButton>
 
-    <PopoverPanel class="absolute right-0 w-72 z-10 bg-white border shadow-lg">
+    <PopoverPanel class="absolute right-0 w-72 z-10 mt-4 bg-white border rounded shadow-lg">
       <div class="p-4 divide-y">
         <div class="text-lg font-medium">
           Post options
@@ -37,15 +37,21 @@
           </div>
           <div class="flex flex-col space-y-2">
             <label class="flex items-center">
-              <input type="checkbox" class="form-checkbox green500" name="pin" value="pin"/>
+              <input type="checkbox" class="form-checkbox green500" name="options" value="pin"/>
               <span class="pl-2 text-sm text-gray-700 select-none">
                 Pin this post
               </span>
             </label>
             <label class="flex items-center">
-              <input type="checkbox" class="form-checkbox red500" name="pin" value="pin"/>
+              <input type="checkbox" class="form-checkbox red500" name="options" value="nsfw"/>
               <span class="pl-2 text-sm text-gray-700 select-none">
                 Mark as mature content
+              </span>
+            </label>
+            <label class="flex items-center">
+              <input type="checkbox" class="form-checkbox primary" name="options" value="notifications"/>
+              <span class="pl-2 text-sm text-gray-700 select-none">
+                Turn off notifications
               </span>
             </label>
           </div>
