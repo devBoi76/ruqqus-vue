@@ -15,7 +15,7 @@
 								<p class="text-gray-400 group-hover:text-gray-500 dark:group-hover:text-gray-200 mb-0">
 									Create a new post...
 								</p>
-								<div class="items-center space-x-2 ml-auto text-sm">
+								<div class="items-center space-x-2 ml-auto">
 									<i class="far fa-text fa-fw text-gray-300 group-hover:text-gray-400"></i>
 									<i class="far fa-link fa-fw text-gray-300 group-hover:text-gray-400"></i>
 									<i class="far fa-image fa-fw text-gray-300 group-hover:text-gray-400"></i>
