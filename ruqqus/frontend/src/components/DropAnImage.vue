@@ -32,7 +32,7 @@
               <div class="absolute left-4 top-[6px]">
                 <i class="far fa-link fa-fw text-sm text-gray-400"></i>
               </div>
-              <input type="text" class="form-input light pl-10" v-model="url" placeholder="or paste an image or URL here"/>
+              <input type="text" class="form-input light pl-10" v-model="url" placeholder="Paste a URL or image here"/>
             </div>
           </div>
         </div>
