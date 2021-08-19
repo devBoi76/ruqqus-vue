@@ -76,6 +76,10 @@
 
   export default {
     components: { Popover, PopoverButton, PopoverPanel },
+    props: {
+      time: String,
+      Options: Object
+    },
     data() {
       return {
         time: 'immediately',

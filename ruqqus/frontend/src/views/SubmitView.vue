@@ -164,7 +164,9 @@
 											</div>
 										</div>
 										<div class="flex justify-end mt-5 pt-5">
-											<span>{{ time }}</span>
+											<span>
+												time: {{ time }}
+											</span>
 											<button type="button" class="button linkGray400">
 												Save as Draft
 											</button>
