@@ -33,7 +33,7 @@
 				<div class="w-full">
 
 					<!-- Post Sorting and Display Toggle -->
-					<div v-if="posts" class="flex items-center flex-shrink-0 sm:rounded-sm mb-2.5 sm:mb-4 px-4 py-3 bg-white dark:bg-gray-800">
+					<div v-if="getItemsLength" class="flex items-center flex-shrink-0 sm:rounded-sm mb-2.5 sm:mb-4 px-4 py-3 bg-white dark:bg-gray-800">
 						<div class="flex items-center justify-between flex-grow">
 							<div class="text-gray-500">
 									{{ getItemsLength === 1 ? '1 Result' : `${getItemsLength} Results` }}
