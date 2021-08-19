@@ -46,7 +46,7 @@
 												{{ v.username }}
 											</div>
 										</div>
-										<CreatePostOptions @changeTime="getTime()" @changeOptions="getOptions()"/>
+										<CreatePostOptions @change-time="setTime" @change-options="setOptions"/>
 									</div>
 									<div class="relative">
 										<input type="text" class="form-input light" v-model="submission.title" placeholder="Give your post a title"/>
@@ -282,13 +282,13 @@
 				this.$store.commit('create/SET_SUBMISSION', {submission: this.submission})
 				this.submitPost()
 			},
-			getTime(value) {
-				console.log('getTime method triggered')
-				this.time = value;
+			setTime(time) {
+				console.log('setTime method triggered')
+				this.time = time;
 			},
-			getOptions(value) {
-				console.log('getOptions method triggered')
-				this.options = value;
+			setOptions(options) {
+				console.log('setOptions method triggered')
+				this.options = Object.assign({}, options)
 			},
 			getEditorContent(value) {
 				this.submission.body = value;
