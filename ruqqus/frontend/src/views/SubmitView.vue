@@ -105,6 +105,14 @@
 									</div>
 
 								</div>
+								<div class="flex justify-end p-4 border-t">
+									<button type="button" class="button linkGray400">
+										Save as Draft
+									</button>
+									<button type="button" class="button purple500" @click="createPost()">
+										{{ buttonText }}
+									</button>
+								</div>
 							</div>
 						</div>
 					</div>
