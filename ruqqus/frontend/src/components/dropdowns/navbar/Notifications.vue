@@ -26,7 +26,7 @@
       <MenuItems class="absolute right-0 w-96 mt-5 origin-top-right bg-white divide-y divide-gray-100 rounded shadow-lg border focus:outline-none overflow-hidden">
         <div>
           <div class="flex items-center justify-between p-4 bg-white dark:bg-gray-900 border-b dark:border-gray-800">
-            <div class="text-2xs font-bold uppercase tracking-wider text-gray-700 dark:text-gray-400">Notifications</div>
+            <div class="uppercase tracking-wide font-semibold leading-none text-2xs text-gray-700">Notifications</div>
             <div class="flex items-center space-x-2 leading-tight">
               <!-- Mark As Read Button -->
               <button :disabled="!notifications.length" class="text-sm text-gray-500 hover:text-gray-700 disabed:opacity-50">
