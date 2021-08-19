@@ -14,8 +14,8 @@
 			leave-to-class="transform scale-95 opacity-0"
 			>
 			<PopoverPanel class="absolute right-0 w-72 z-10  bg-white border rounded shadow-lg">
-				<div class="p-4 divide-y">
-					<div class="uppercase tracking-wide font-semibold leading-none text-2xs border-b text-gray-500 px-4 py-3">
+				<div class="divide-y">
+					<div class="uppercase tracking-wide font-semibold leading-none text-2xs text-gray-500 px-4 py-3">
 						Post options
 					</div>
 					<div class="flex flex-col space-y-5 p-4">
