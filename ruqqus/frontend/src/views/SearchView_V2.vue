@@ -11,17 +11,13 @@
 		<!-- Search Bar -->
 		<div class="grid grid-cols-12 -mt-8">
 			<div class="col-span-full xl:col-start-2 xl:col-end-12 px-6 z-75">
-				<div class="hidden sm:flex items-center p-5 bg-white dark:bg-gray-800 sm:rounded-sm shadow">
-					<i class="far fa-search fa-fw text-lg text-gray-400 mr-3"></i>
-					<div class="group flex-grow overflow-hidden">
-						<router-link to="/submit" class="flex items-center h-full">
-							<p class="text-gray-400 group-hover:text-gray-500 dark:group-hover:text-gray-200 mb-0">
-								{{ $route.query.q || 'Search posts, comments, and @members' }}
-							</p>
-							<div class="ml-auto">
-								<i class="far fa-times-circle fa-fw text-lg text-gray-400"></i>
-							</div>
-						</router-link>
+				<div class="relative">
+					<div class="absolute left-4 top-[1.375rem]">
+						<i class="far fa-search fa-fw text-lg text-gray-400"></i>
+					</div>
+					<input type="text" class="form-input white pl-12 pr-5 py-5" :placeholder="$route.query.q || 'Search posts, comments, and @members'">
+					<div class="absolute right-4 top-[1.375rem]">
+						<i class="far fa-times-circle fa-fw text-lg text-gray-400"></i>
 					</div>
 				</div>
 			</div>
