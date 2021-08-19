@@ -33,12 +33,10 @@
 				<div class="w-full">
 
 					<!-- Post Sorting and Display Toggle -->
-					<div class="flex items-center flex-shrink-0 sm:rounded-sm mb-2.5 sm:mb-4 px-4 py-3 bg-white dark:bg-gray-800">
+					<div v-if="posts" class="flex items-center flex-shrink-0 sm:rounded-sm mb-2.5 sm:mb-4 px-4 py-3 bg-white dark:bg-gray-800">
 						<div class="flex items-center justify-between flex-grow">
 							<div class="text-gray-500">
-								<span v-if="getItemsLength">
 									{{ getItemsLength === 1 ? '1 Result' : `${getItemsLength} Results` }}
-								</span>
 							</div>
 							<div class="flex flex-wrap items-center space-x-6">
 								<ItemSort/>
@@ -51,41 +49,6 @@
 					<!-- List of Posts -->
 					<ItemList v-if="posts" :loading="loading"/>
 					<!-- End List of Posts -->
-
-					<!-- Home Feed Empty State -->
-					<div v-if="$route.name === 'HomeView'" v-show="!posts" class="relative">
-						<div v-if="isCard">
-							<div v-for="i in 3" :key="i" class="flex mb-4 last:mb-0">
-								<div class="mr-4">
-									<div class="border-2 border-gray-300 border-dashed dark:bg-white dark:bg-opacity-20 rounded-sm w-16 h-16"></div>
-								</div>
-								<div class="w-full p-4 rounded-sm border-2 border-gray-300 border-dashed dark:bg-gray-800">
-									<div v-if="i === 1" class="flex flex-col items-center p-20">
-										<i class="block fal fa-home-lg-alt text-gray-300 text-5xl mb-3"></i>
-										<div class="h4">
-											Welcome to your Home Feed
-										</div>
-									</div>
-									<div v-else class="p-40">
-									</div>
-								</div>
-							</div>
-						</div>
-						<div v-else>
-							<div v-for="i in 4" :key="i" class="mb-2 last:mb-0 px-4 py-3 rounded-sm border-2 border-gray-300 border-dashed dark:bg-gray-800">
-								<div v-if="i === 1" class="flex flex-col items-center p-4">
-									<i class="block fal fa-home-lg-alt text-gray-300 text-5xl mb-3"></i>
-									<div class="h4">
-										Welcome to your Home Feed
-									</div>
-									<p class="text-gray-700">
-										When you join some communities, their posts show up here!
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- End Home Feed Empty State -->
 
 				</div>
 				<!-- End Main Content Section -->
