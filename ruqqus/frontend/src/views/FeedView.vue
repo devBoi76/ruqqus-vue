@@ -8,22 +8,17 @@
 				<div class="w-full">
 
 					<!-- Post Creation -->
-					<div class="hidden sm:flex flex-col space-y-2 mb-4 px-4 py-3 bg-white dark:bg-gray-800 sm:rounded-sm">
-						<div class="flex items-center space-x-2">
-							<img :src="v.profile_url" class="flex-shrink-0 w-6 h-6 object-fit rounded-sm bg-gray-200 dark:bg-gray-800">
-							<div class="font-bold text-sm">
-								{{ v.username || 'Ruqqie' }}
-							</div>
-						</div>
+					<div class="hidden sm:flex items-center mb-4 p-4 bg-white dark:bg-gray-800 sm:rounded-sm">
+						<img :src="v.profile_url" class="flex-shrink-0 w-9 h-9 object-fit mr-3 rounded-sm bg-gray-200 dark:bg-gray-800">
 						<div class="group flex-grow overflow-hidden">
 							<router-link to="/submit" tag="div" class="flex items-center h-full">
 								<p class="text-gray-400 text-lg group-hover:text-gray-500 dark:group-hover:text-gray-200 mb-0">
 									Create a new post...
 								</p>
-								<div class="hidden items-center space-x-2 ml-auto text-sm">
-									<i class="fas fa-text fa-fw text-gray-300 group-hover:text-gray-400"></i>
-									<i class="fas fa-link fa-fw text-gray-300 group-hover:text-gray-400"></i>
-									<i class="fas fa-image fa-fw text-gray-300 group-hover:text-gray-400"></i>
+								<div class="items-center space-x-2 ml-auto text-sm">
+									<i class="far fa-text fa-fw text-gray-300 group-hover:text-gray-400"></i>
+									<i class="far fa-link fa-fw text-gray-300 group-hover:text-gray-400"></i>
+									<i class="far fa-image fa-fw text-gray-300 group-hover:text-gray-400"></i>
 								</div>
 							</router-link>
 						</div>
