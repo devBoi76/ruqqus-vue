@@ -14,7 +14,7 @@
 				<div class="hidden sm:flex items-center p-5 bg-white dark:bg-gray-800 sm:rounded-sm shadow">
 					<i class="far fa-search fa-fw text-lg text-gray-400 pr-3"></i>
 					<div class="group flex-grow overflow-hidden">
-						<router-link to="/submit" tag="div" class="flex items-center h-full">
+						<router-link to="/submit" class="flex items-center h-full">
 							<p class="text-gray-400 group-hover:text-gray-500 dark:group-hover:text-gray-200 mb-0">
 								{{ $route.query.q || 'Search posts, comments, and @members' }}
 							</p>
@@ -54,7 +54,7 @@
 					<!-- End Post Sorting and Display Toggle -->
 
 					<!-- List of Posts -->
-					<ItemList v-if="posts" :loading="loading" @paginate="paginated()"/>
+					<ItemList v-if="posts" :loading="loading"/>
 					<!-- End List of Posts -->
 
 					<!-- Home Feed Empty State -->
@@ -128,17 +128,6 @@ export default {
 	computed:{
 		...mapState("persist", ["v", "isCard"]),
 		...mapGetters('items', ['getItems','getItemsLength'])
-		feedIcon() {
-			if (this.$route.name === 'HomeView') {
-				return 'fa-home-lg-alt'
-			} else if (this.$route.name === 'StargazedView') {
-				return 'fa-stars'
-			} else if (this.$route.name === 'TrendingView') {
-				return 'fa-fire'
-			} else {
-				return 'fa-layer-group'
-			}
-		}
 	},
 	watch: {
 		'$route.query': {
@@ -159,10 +148,6 @@ export default {
 				this.errored = true
 			})
 			.finally(() => this.loading = false)
-		}
-		paginated() {
-			console.log(`pagination works! ${this.page++}`)
-			this.$router.replace({query: {page: this.page++ }})
 		}
 	},
 	created() {
