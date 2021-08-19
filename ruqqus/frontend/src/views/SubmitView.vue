@@ -208,11 +208,7 @@
 		data() {
 			return {
 				time: 'immediately',
-				options: {
-					pin: false,
-					nsfw: false,
-					notifications: false
-				},
+				options: [],
 				embed: null,
 				poll: false,
 				pin: false,
