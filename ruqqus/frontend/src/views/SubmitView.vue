@@ -50,6 +50,7 @@
 											<button class="flex items-center justify-center px-2 w-8 h-8 text-xl text-gray-600 dark:text-gray-400 hover:text-purple-500 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white rounded-sm" :class="{'bell':notifications}" :content="notifications ? 'Notifications on' : 'Notifications off'" v-tippy @click="notifications = !notifications">
 												<i class="far fa-fw text-lg" :class="notifications ? 'fa-bell' : 'fa-bell-slash'"></i>
 											</button>
+											<CreatePostOptions/>
 										</div>
 									</div>
 									<div class="relative">
@@ -110,7 +111,7 @@
 					<!-- End Main Content Section -->
 
 					<!-- Right Bar -->
-					<div class="hidden lg:block flex-shrink-0 w-80">
+					<div class="hidden flex-shrink-0 w-80">
 						<div class="space-y-4">
 							<div class="flex flex-col">
 								<div class="bg-white rounded-sm">
@@ -185,12 +186,15 @@
 	import MediaFormat from '../helpers/media-format.js'
 	import Editor from "@/components/editors/Editor_V2.vue";
 
+	import CreatePostOptions from "@/components/dropdowns/CreatePostOptions.vue";
+
 	const LinkPreview = () => import('@/components/embeds/Link.vue')
 
 	import Toggle from '@/components/Toggle.vue';
 
 	export default {
 		components: {
+			CreatePostOptions,
 			Editor,
 			LinkPreview,
 			Toggle
