@@ -37,9 +37,6 @@
 								<span v-if="getItemsLength">
 									{{ getItemsLength === 1 ? '1 Result' : `${getItemsLength} Results` }}
 								</span>
-								<span v-else>
-									Fetching results...
-								</span>
 							</div>
 							<div class="flex flex-wrap items-center space-x-6">
 								<ItemSort/>
