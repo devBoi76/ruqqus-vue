@@ -281,7 +281,7 @@
 			},
 			setOptions(options) {
 				console.log('setOptions method triggered')
-				this.options = Object.assign({}, options)
+				this.options = options
 			},
 			getEditorContent(value) {
 				this.submission.body = value;
