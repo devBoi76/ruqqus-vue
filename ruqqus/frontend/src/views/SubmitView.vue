@@ -209,8 +209,8 @@
 			return {
 				time: 'immediately',
 				options: {
-					pin: true,
-					nsfw: true,
+					pin: false,
+					nsfw: false,
 					notifications: false
 				},
 				embed: null,
