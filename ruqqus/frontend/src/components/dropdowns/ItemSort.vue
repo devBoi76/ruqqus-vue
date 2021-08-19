@@ -1,7 +1,7 @@
 <template>
     <Menu as="div" class="relative inline-block text-left">
       <div>
-        <MenuButton class="capitalize text-sm text-gray-500">
+        <MenuButton class="capitalize text-gray-500">
           <!-- Current Sort -->
           <!-- Sorting defaults to "hot" otherwise pull query from URL -->
           <span>{{ $route.query.sort || 'hot' }}</span>

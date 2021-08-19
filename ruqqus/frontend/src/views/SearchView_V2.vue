@@ -9,10 +9,10 @@
 		</div>
 
 		<!-- Search Bar -->
-		<div class="grid grid-cols-12 z-75 mt-[-58px]">
-			<div class="col-span-full xl:col-start-2 xl:col-end-12 flex gap-6 sm:p-6 my-2.5 sm:my-0">
+		<div class="grid grid-cols-12 -mt-8">
+			<div class="col-span-full xl:col-start-2 xl:col-end-12 px-6 z-75">
 				<div class="hidden sm:flex items-center p-5 bg-white dark:bg-gray-800 sm:rounded-sm shadow">
-					<i class="far fa-search fa-fw text-lg text-gray-400 pr-3"></i>
+					<i class="far fa-search fa-fw text-lg text-gray-400 mr-3"></i>
 					<div class="group flex-grow overflow-hidden">
 						<router-link to="/submit" class="flex items-center h-full">
 							<p class="text-gray-400 group-hover:text-gray-500 dark:group-hover:text-gray-200 mb-0">
@@ -37,7 +37,7 @@
 					<!-- Post Sorting and Display Toggle -->
 					<div class="flex items-center flex-shrink-0 sm:rounded-sm mb-2.5 sm:mb-4 px-4 py-3 bg-white dark:bg-gray-800">
 						<div class="flex items-center justify-between flex-grow">
-							<div class="text-xs text-gray-500">
+							<div class="text-gray-500">
 								<span v-if="getItemsLength">
 									{{ getItemsLength === 1 ? '1 Result' : `${getItemsLength} Results` }}
 								</span>
