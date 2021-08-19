@@ -17,7 +17,9 @@
 					</div>
 					<input type="text" class="form-input white pl-12 pr-5 py-5" v-model="searchTerm" placeholder="Search posts, comments, and @members" @keyup.enter="search()">
 					<div class="absolute right-4 top-[1.375rem]">
-						<i class="far fa-times-circle fa-fw text-lg text-gray-400"></i>
+						<button @click="searchTerm = ''">
+							<i class="far fa-times-circle fa-fw text-lg text-gray-400"></i>
+						</button>
 					</div>
 				</div>
 			</div>
