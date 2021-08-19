@@ -100,7 +100,7 @@
 </template>
 
 <script>
-	import { defineAsyncComponent } from 'vue'
+import { defineAsyncComponent } from 'vue'
 // Import our components
 const ItemList = defineAsyncComponent(() => import('@/views/ItemList.vue'))
 const ItemSort = defineAsyncComponent(() => import('@/components/dropdowns/ItemSort.vue'))
@@ -115,22 +115,20 @@ export default {
 		return {
 			loading: false,
 			errored: false,
-			items: [],
-			params: {
-				page: this.$route.query.page || 1,
-				sort: this.$route.query.sort || 'hot',
-				t: this.$route.query.t || 'all'
+			page: 1,
+			fallback: {
+				q: '503'
 			}
 		};
 	},
 	components: {
 		ItemList,
 		ItemSort,
-		ListingToggle,
+		ListingToggle
 	},
 	computed:{
 		...mapState("persist", ["v", "isCard"]),
-		...mapState("items", ["posts"]),
+		...mapGetters('items', ['getItems','getItemsLength'])
 		feedIcon() {
 			if (this.$route.name === 'HomeView') {
 				return 'fa-home-lg-alt'
@@ -144,40 +142,32 @@ export default {
 		}
 	},
 	watch: {
-		// call again the method if the route changes
-		'$route': {
+		'$route.query': {
 			handler() {
-				this.loading = true;
-				this.errored = false;
-				this.getFeed()
+				this.search()
 			}
 		}
 	},
 	methods: {
-		getFeed() {
-			let payload = {
-				feed: this.$route.meta.title,
-				params: this.params
-			}
-			this.$store.dispatch('items/fetchFeed', payload)
+		search() {
+			let query = this.$route.query || this.fallback
+			this.$store.dispatch('items/fetchSearch', query)
 			.then(() => {
-				console.log("getFeed dispatch successful")
+				console.log("fetchSearch dispatch successful")
 			})
 			.catch(error => {
 				console.error(error)
 				this.errored = true
-
 			})
 			.finally(() => this.loading = false)
-		},
+		}
 		paginated() {
 			console.log(`pagination works! ${this.page++}`)
 			this.$router.replace({query: {page: this.page++ }})
 		}
 	},
 	created() {
-		this.getFeed()
-		//document.documentElement.style.setProperty('--color-primary', `139, 92, 246`)
+		document.documentElement.style.setProperty('--color-primary', `139, 92, 246`)
 	}
 };
 </script>

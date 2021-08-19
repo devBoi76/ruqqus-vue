@@ -4,11 +4,9 @@
 		<div class="flex flex-col flex-grow">
 			<!-- Header content section -->
 			<div class="flex items-center justify-between flex-shrink-0 p-4 md:px-4 md:py-8 border-b bg-white dark:border-white dark:border-opacity-10 dark:bg-gray-700">
-				<div class="grid grid-cols-12">
-					<div class="col-span-full xl:col-start-2 xl:col-end-12">
-						<div class="text-xl font-bold dark:text-gray-100">
-							Search results for "{{ this.$route.query.q || this.fallback.q }}"
-						</div>
+				<div class="mx-auto">
+					<div class="text-xl font-bold dark:text-gray-100">
+						Search results for "{{ this.$route.query.q || this.fallback.q }}"
 					</div>
 				</div>
 			</div>
