@@ -12,7 +12,7 @@
 					<!-- Main Content Section -->
 					<div class="w-full">
 						<div class="flex flex-grow">
-							<div class="w-full bg-white dark:bg-gray-800 sm:rounded-sm">
+							<div class="w-full bg-white dark:bg-gray-800 sm:rounded-sm sm:border">
 								<div v-if="showLinkInput && !submission.image.source" class="relative bg-white border-t-2 border-b-2 border-dashed bg-gray-100 -mt-0.5">
 									<div v-show="!submission.link" class="absolute w-full px-10 py-12 text-gray-500 pointer-events-none">
 										Type or paste a link

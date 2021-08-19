@@ -8,7 +8,7 @@
 				<div class="w-full">
 
 					<!-- Post Creation -->
-					<div class="hidden sm:flex items-center mb-4 px-4 py-3 bg-white dark:bg-gray-800 sm:rounded-sm">
+					<div class="hidden sm:flex items-center mb-4 px-4 py-3 bg-white dark:bg-gray-800 sm:border sm:rounded-sm">
 						<img :src="v.profile_url" class="flex-shrink-0 w-6 h-6 object-fit mr-3 rounded-sm bg-gray-200 dark:bg-gray-800">
 						<div class="group flex-grow overflow-hidden">
 							<router-link to="/submit" tag="div" class="flex items-center h-full">
@@ -26,7 +26,7 @@
 					<!-- End Post Creation -->
 
 					<!-- Post Sorting and Display Toggle -->
-					<div class="flex items-center flex-shrink-0 sm:rounded-sm mb-2.5 sm:mb-4 px-4 py-3 bg-white dark:bg-gray-800">
+					<div class="flex items-center flex-shrink-0 sm:rounded-sm sm:border mb-2.5 sm:mb-4 px-4 py-3 bg-white dark:bg-gray-800">
 						<div class="flex items-center justify-between flex-grow">
 							<div class="text-xl font-bold capitalize leading-none dark:text-gray-200">
 								{{ $route.meta.title }} Feed
