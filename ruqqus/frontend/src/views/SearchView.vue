@@ -5,7 +5,7 @@
 			<!-- Header content section -->
 			<div class="flex items-center justify-between flex-shrink-0 p-4 md:px-4 md:py-8 border-b bg-white dark:border-white dark:border-opacity-10 dark:bg-gray-700">
 				<div class="grid grid-cols-12">
-					<div class="col-span-full xl:col-start-2 xl:col-end-12 flex gap-6 sm:p-6 my-2.5 sm:my-0">
+					<div class="col-span-full xl:col-start-2 xl:col-end-12">
 						<div class="text-xl font-bold dark:text-gray-100">
 							Search results for "{{ this.$route.query.q || this.fallback.q }}"
 						</div>
@@ -16,7 +16,7 @@
 			<!-- Tabs -->
 			<div class="flex flex-shrink-0 w-full items-end h-12 px-4 border-b dark:border-white dark:border-opacity-10 dark:bg-gray-700">
 				<div class="grid grid-cols-12">
-					<div class="col-span-full xl:col-start-2 xl:col-end-12 flex gap-6 sm:p-6 my-2.5 sm:my-0">
+					<div class="col-span-full xl:col-start-2 xl:col-end-12">
 						<router-link v-for="tab in tabs" :key="tab.name" v-slot="{ href, navigate, isExactActive }" :to="tab.route">
 							<a :href="href" @click="navigate" class="group">
 								<div class="border-b-2 px-4 pb-3 capitalize" :class="isExactActive ? 'text-purple-500 border-purple-500' : 'text-gray-500 hover:text-gray-700 border-transparent'">
@@ -30,7 +30,7 @@
 
 			<!-- Main Content Desktop -->
 			<div class="grid grid-cols-12">
-				<div class="col-span-full xl:col-start-2 xl:col-end-12 flex gap-6 sm:p-6 my-2.5 sm:my-0">
+				<div class="col-span-full xl:col-start-2 xl:col-end-12">
 					<div v-if="getItems" class="md:px-4 py-4">
 						<div class="flex space-x-4">
 							<div class="w-full">
