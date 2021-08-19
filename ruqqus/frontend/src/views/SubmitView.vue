@@ -169,6 +169,7 @@
 											</button>
 											<button type="button" class="button purple500" @click="createPost()">
 												{{ buttonText }}
+												{{ time }}
 											</button>
 										</div>
 									</div>
