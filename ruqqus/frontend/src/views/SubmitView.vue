@@ -46,7 +46,7 @@
 												{{ v.username }}
 											</div>
 										</div>
-										<CreatePostOptions @change-time="setTime" @change-options="setOptions"/>
+										<CreatePostOptions @change-time="setTime" @change-options="setOptions" :time="time" :options="options"/>
 									</div>
 									<div class="relative">
 										<input type="text" class="form-input light" v-model="submission.title" placeholder="Give your post a title"/>
