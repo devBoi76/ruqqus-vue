@@ -4,60 +4,70 @@
       <i class="far fa-cog fa-fw text-lg"></i>
     </PopoverButton>
 
-    <PopoverPanel class="absolute right-0 w-72 z-10 mt-4 bg-white border rounded shadow-lg">
-      <div class="p-4 divide-y">
-        <div class="text-lg font-medium">
-          Post options
-        </div>
-        <div class="flex flex-col space-y-5 mt-4 pt-5">
-          <div class="flex flex-col space-y-5">
-            <label class="inline-flex">
-              <input type="radio" class="form-radio primary" v-model="publishType" value="immediately" checked>
-              <div class="ml-3 -mt-0.5 w-full">
-                <div class="text-sm text-gray-900 font-bold select-none">
-                  Publish now
-                </div>
-                <div class="text-xs text-gray-500">
-                  Publish the post immediately
-                </div>
-              </div>
-            </label>
-            <label class="inline-flex">
-              <input type="radio" class="form-radio primary" v-model="publishType" value="scheduled">
-              <div class="ml-3 -mt-0.5 w-full">
-                <div class="text-sm text-gray-900 font-bold select-none">
-                  Schedule for later
-                </div>
-                <input type="datetime-local" id="time" name="time" class="flex items-center form-input light mt-2"/>
-                <div class="mt-2 text-xs text-gray-500">
-                  Automatically publish the post later on
-                </div>
-              </div>
-            </label>
+    <!-- Use the built-in <transition> component to add transitions. -->
+      <transition
+      enter-active-class="transition duration-100 ease-out"
+      enter-from-class="transform scale-95 opacity-0"
+      enter-to-class="transform scale-100 opacity-100"
+      leave-active-class="transition duration-75 ease-in"
+      leave-from-class="transform scale-100 opacity-100"
+      leave-to-class="transform scale-95 opacity-0"
+      >
+      <PopoverPanel class="absolute right-0 w-72 z-10 mt-2 bg-white border rounded shadow-lg">
+        <div class="p-4 divide-y">
+          <div class="text-lg font-medium">
+            Post options
           </div>
-          <div class="flex flex-col space-y-2">
-            <label class="flex items-center">
-              <input type="checkbox" class="form-checkbox green500" name="options" value="pin"/>
-              <span class="pl-2 text-sm text-gray-700 select-none">
-                Pin this post
-              </span>
-            </label>
-            <label class="flex items-center">
-              <input type="checkbox" class="form-checkbox red500" name="options" value="nsfw"/>
-              <span class="pl-2 text-sm text-gray-700 select-none">
-                Mark as mature content
-              </span>
-            </label>
-            <label class="flex items-center">
-              <input type="checkbox" class="form-checkbox primary" name="options" value="notifications"/>
-              <span class="pl-2 text-sm text-gray-700 select-none">
-                Turn off notifications
-              </span>
-            </label>
+          <div class="flex flex-col space-y-5 mt-4 pt-5">
+            <div class="flex flex-col space-y-5">
+              <label class="inline-flex">
+                <input type="radio" class="form-radio primary" v-model="publishType" value="immediately" checked>
+                <div class="ml-3 -mt-0.5 w-full">
+                  <div class="text-sm text-gray-900 font-bold select-none">
+                    Publish now
+                  </div>
+                  <div class="text-xs text-gray-500">
+                    Publish the post immediately
+                  </div>
+                </div>
+              </label>
+              <label class="inline-flex">
+                <input type="radio" class="form-radio primary" v-model="publishType" value="scheduled">
+                <div class="ml-3 -mt-0.5 w-full">
+                  <div class="text-sm text-gray-900 font-bold select-none">
+                    Schedule for later
+                  </div>
+                  <input type="datetime-local" id="time" name="time" class="flex items-center form-input light mt-2"/>
+                  <div class="mt-2 text-xs text-gray-500">
+                    Automatically publish the post later on
+                  </div>
+                </div>
+              </label>
+            </div>
+            <div class="flex flex-col space-y-2">
+              <label class="flex items-center">
+                <input type="checkbox" class="form-checkbox green500" name="options" value="pin"/>
+                <span class="pl-2 text-sm text-gray-700 select-none">
+                  Pin this post
+                </span>
+              </label>
+              <label class="flex items-center">
+                <input type="checkbox" class="form-checkbox red500" name="options" value="nsfw"/>
+                <span class="pl-2 text-sm text-gray-700 select-none">
+                  Mark as mature content
+                </span>
+              </label>
+              <label class="flex items-center">
+                <input type="checkbox" class="form-checkbox primary" name="options" value="notifications"/>
+                <span class="pl-2 text-sm text-gray-700 select-none">
+                  Turn off notifications
+                </span>
+              </label>
+            </div>
           </div>
         </div>
-      </div>
-    </PopoverPanel>
+      </PopoverPanel>
+    </transition>
   </Popover>
 </template>
 
