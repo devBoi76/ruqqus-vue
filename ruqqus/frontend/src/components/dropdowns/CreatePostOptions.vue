@@ -46,13 +46,13 @@
             </div>
             <div class="flex flex-col space-y-2">
               <label class="flex items-center">
-                <input type="checkbox" class="form-checkbox green500" v-model="options.pin" value="pin"/>
+                <input type="checkbox" class="form-checkbox primary" v-model="options.pin" value="pin"/>
                 <span class="pl-2 text-sm text-gray-700 select-none">
                   Pin this post
                 </span>
               </label>
               <label class="flex items-center">
-                <input type="checkbox" class="form-checkbox red500" v-model="options.nsfw" value="nsfw"/>
+                <input type="checkbox" class="form-checkbox primary" v-model="options.nsfw" value="nsfw"/>
                 <span class="pl-2 text-sm text-gray-700 select-none">
                   Mark as mature content
                 </span>
@@ -88,9 +88,11 @@
     },
     watch: {
       time(value) {
+        console.log('time changed');
         this.$emit('changeTime', value);
       },
       options(value) {
+        console.log('options changed');
         this.$emit('changeOptions', value);
       }
     }
