@@ -277,9 +277,11 @@
 				this.submitPost()
 			},
 			getTime(value) {
+				console.log('getTime method triggered')
 				this.time = value;
 			},
 			getOptions(value) {
+				console.log('getOptions method triggered')
 				this.options = value;
 			},
 			getEditorContent(value) {
