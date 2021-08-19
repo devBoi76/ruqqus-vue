@@ -131,8 +131,8 @@
 				<t-toggle v-model="online" variant="success" class="ml-auto"/>
 			</div> -->
 			<button class="flex items-center px-4 py-2 text-lg text-gray-700 dark:text-gray-200" @click="dark = !dark">
-				<i class="far text-center fa-fw mr-3" :class="dark ? 'fa-sun' : 'fa-moon'"></i>
-				<span>{{ dark ? 'Light Theme' : 'Dark THeme'}}</span>
+				<i class="far text-center fa-fw mr-3" :class="dark ? 'fa-sunglasses' : 'fa-moon'"></i>
+				<span>{{ dark ? 'Light Theme' : 'Dark Theme'}}</span>
 			</button>
 			<hr class="my-2 dark:border-gray-700 dark:border-opacity-70">
 			<router-link to="#" class="block px-4 py-2 text-lg text-red-500" role="menuitem" @click="isOpen = false">
