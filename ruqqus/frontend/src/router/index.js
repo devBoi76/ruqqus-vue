@@ -28,7 +28,7 @@ const UserAppsSettings = () => import ('../views/user/settings/sections/apps/App
 const UserContentSettings = () => import ('../views/user/settings/sections/filters/Filters.vue')
 
 // Search and Discover
-const SearchView = () => import ('../views/SearchView.vue')
+const SearchView = () => import ('../views/SearchView_V2.vue')
 
 // Submit
 const SubmitView = () => import ('../views/SubmitView.vue')
