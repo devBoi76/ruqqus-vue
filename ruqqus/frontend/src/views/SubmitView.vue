@@ -101,6 +101,9 @@
 
 								</div>
 								<div class="flex justify-end p-4 border-t">
+									<span>
+										time: {{ time }}
+									</span>
 									<button type="button" class="button linkGray400">
 										Save as Draft
 									</button>
