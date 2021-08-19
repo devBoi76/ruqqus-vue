@@ -78,17 +78,7 @@
     components: { Popover, PopoverButton, PopoverPanel },
     props: {
       time: String,
-      Options: Object
-    },
-    data() {
-      return {
-        time: 'immediately',
-        options: {
-          pin: false,
-          nsfw: false,
-          notifications: false
-        }
-      }
+      options: Object
     }
   }
 </script>
