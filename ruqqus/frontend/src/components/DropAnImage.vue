@@ -13,16 +13,14 @@
         <div class="w-full p-4">
           <div class="flex flex-col space-y-5 border-2 border-dashed py-12 text-center select-none">
             <!-- Wrong file icon -->
-            <div v-show="wrongFile" class="flex items-center justify-center w-10 h-10 bg-red-100 rounded mx-auto mb-5">
+            <div v-if="wrongFile" class="flex items-center justify-center w-10 h-10 bg-red-100 rounded mx-auto mb-5">
               <i class="far fa-frown fa-lg text-red-400"></i>
             </div>
             <!-- Correct file icon -->
-            <div v-show="!wrongFile" class="flex items-center justify-center w-24 h-24 mx-auto mb-5">
-              <div class="relative">
-                <div class="z-0 absolute left-0 bottom-0 w-[60px] h-[42px] transform rotate-[5deg]"></div>
-                <div class="z-0 absolute bg-gray-200 border-3 border-white shadow left-0 bottom-0 w-[72px] h-[50px] transform rotate-[5deg]"></div>
-                <div class="z-0 absolute bg-gray-200 border-3 border-white shadow-xs left-0 bottom-0 w-[72px] h-[50px] transform rotate-[10deg]"></div>
-              </div>
+            <div v-if="!wrongFile" class="relative w-[72px] h-[50px] mx-auto">
+              <div class="z-0 absolute left-0 bottom-0 w-[60px] h-[42px] transform rotate-[5deg]"></div>
+              <div class="z-0 absolute bg-gray-200 border-3 border-white shadow left-0 bottom-0 w-[72px] h-[50px] transform rotate-[5deg]"></div>
+              <div class="z-0 absolute bg-gray-200 border-3 border-white shadow-xs left-0 bottom-0 w-[72px] h-[50px] transform rotate-[10deg]"></div>
             </div>
             <div class="h4 w-3/4 mx-auto">
               {{ wrongFile ? 'Wrong file type. Try again.' : 'Drag and drop an image here to create a post' }}
@@ -31,10 +29,10 @@
               or
             </p>
             <div class="relative w-3/4 mx-auto">
-              <div class="absolute left-3 top-[6px]">
+              <div class="absolute left-4 top-[6px]">
                 <i class="far fa-link fa-fw text-sm text-gray-400"></i>
               </div>
-              <input type="text" class="form-input light" v-model="url" placeholder="or paste an image or URL here"/>
+              <input type="text" class="form-input light pl-10" v-model="url" placeholder="or paste an image or URL here"/>
             </div>
           </div>
         </div>
