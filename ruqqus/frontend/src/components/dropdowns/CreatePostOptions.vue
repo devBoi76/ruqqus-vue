@@ -46,9 +46,15 @@
 						</div>
 						<div class="flex flex-col space-y-2">
 							<label class="flex items-center">
+								<input type="checkbox" class="form-checkbox primary" id="feature" value="feature" v-model="computedOptions"/>
+								<span class="pl-2 text-sm text-gray-700 select-none">
+									Feature this post
+								</span>
+							</label>
+							<label class="flex items-center">
 								<input type="checkbox" class="form-checkbox primary" id="pin" value="pin" v-model="computedOptions"/>
 								<span class="pl-2 text-sm text-gray-700 select-none">
-									Pin this post
+									Pin to profile
 								</span>
 							</label>
 							<label class="flex items-center">
