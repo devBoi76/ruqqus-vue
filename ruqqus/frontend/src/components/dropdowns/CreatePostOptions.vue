@@ -46,19 +46,19 @@
             </div>
             <div class="flex flex-col space-y-2">
               <label class="flex items-center">
-                <input type="checkbox" class="form-checkbox primary" v-model="computedOptions.pin"/>
+                <input type="checkbox" class="form-checkbox primary" value="pin" v-model="computedOptions"/>
                 <span class="pl-2 text-sm text-gray-700 select-none">
                   Pin this post
                 </span>
               </label>
               <label class="flex items-center">
-                <input type="checkbox" class="form-checkbox primary" v-model="computedOptions.nsfw" :checked="computedOptions.nsfw"/>
+                <input type="checkbox" class="form-checkbox primary" value="nsfw" v-model="computedOptions" :checked="computedOptions.nsfw"/>
                 <span class="pl-2 text-sm text-gray-700 select-none">
                   Mark as mature content
                 </span>
               </label>
               <label class="flex items-center">
-                <input type="checkbox" class="form-checkbox primary" v-model="computedOptions.notifications"/>
+                <input type="checkbox" class="form-checkbox primary" value="notifications" v-model="computedOptions"/>
                 <span class="pl-2 text-sm text-gray-700 select-none">
                   Turn off notifications
                 </span>
