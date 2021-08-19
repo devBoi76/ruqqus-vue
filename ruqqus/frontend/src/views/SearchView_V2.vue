@@ -15,7 +15,7 @@
 					<div class="absolute left-4 top-[1.375rem]">
 						<i class="far fa-search fa-fw text-lg text-gray-400"></i>
 					</div>
-					<input type="text" class="form-input white pl-12 pr-5 py-5" :placeholder="$route.query.q || 'Search posts, comments, and @members'">
+					<input type="text" class="form-input white pl-12 pr-5 py-5" v-model="searchTerm" placeholder="Search posts, comments, and @members" @keyup.enter="search()">
 					<div class="absolute right-4 top-[1.375rem]">
 						<i class="far fa-times-circle fa-fw text-lg text-gray-400"></i>
 					</div>
@@ -108,6 +108,7 @@ export default {
 	name: "SearchView",
 	data() {
 		return {
+			searchTerm: this.$route.query.q,
 			loading: false,
 			errored: false,
 			page: 1,
@@ -129,12 +130,15 @@ export default {
 	watch: {
 		'$route.query': {
 			handler() {
-				this.search()
+				this.fetchResults()
 			}
 		}
 	},
 	methods: {
 		search() {
+			this.$router.push("/search?q="+this.searchTerm);
+		},
+		fetchResults() {
 			let query = this.$route.query || this.fallback
 			this.$store.dispatch('items/fetchSearch', query)
 			.then(() => {
