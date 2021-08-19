@@ -19,8 +19,8 @@
             <!-- Correct file icon -->
             <div v-if="!wrongFile" class="relative w-[72px] h-[50px] mx-auto">
               <div class="z-0 absolute left-0 bottom-0 w-[60px] h-[42px] transform rotate-[5deg]"></div>
-              <div class="z-0 absolute bg-gray-200 border-3 border-white shadow left-0 bottom-0 w-[72px] h-[50px] transform rotate-[5deg]"></div>
-              <div class="z-0 absolute bg-gray-200 border-3 border-white shadow-xs left-0 bottom-0 w-[72px] h-[50px] transform rotate-[10deg]"></div>
+              <div class="z-0 absolute bg-gray-200 left-0 bottom-0 w-[72px] h-[50px] transform rotate-[-10deg]"></div>
+              <div class="z-0 absolute bg-gray-200 border-3 border-white shadow left-0 bottom-0 w-[72px] h-[50px] transform"></div>
             </div>
             <div class="h4 w-3/4 mx-auto">
               {{ wrongFile ? 'Wrong file type. Try again.' : 'Drag and drop an image here to create a post' }}
