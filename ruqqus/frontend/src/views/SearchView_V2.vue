@@ -2,7 +2,7 @@
 	<!-- Banner -->
 	<div class="w-full overflow-y-auto">
 		<div class="relative flex flex-col items-center justify-center text-center min-h-[100px] max-h-[140px] sm:min-h-[270px] sm:max-h-[340px] z-50">
-			<img class="absolute w-full h-full bottom-0 top-0 left-0 right-0 object-cover" :src="banner.image" alt="banner">
+			<img class="absolute w-full h-full bottom-0 top-0 left-0 right-0 object-cover" src="https://i.imgur.com/AgS5BXJ.jpg" alt="banner">
 			<h1 class="hidden sm:block z-10 h2 text-white">
 				Search results for "{{ this.$route.query.q || this.fallback.q }}"
 			</h1>
