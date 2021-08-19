@@ -9,9 +9,9 @@
     leave-to-class="opacity-0 scale-60"
     >
     <div v-if="canDropImage && showDropzone" class="absolute flex items-center justify-center overflow-hidden w-full h-screen z-100 bg-opacity-80" :class="wrapperClass" @drop.prevent="drop($event)" @click.self="wrongFileReset()" @keydown.esc="showDropzone=false; reset()" tabindex="0">
-      <div class="rounded-lg sm:w-2/4 md:1/4 lg:w-1/3 bg-white shadow transition duration-200 ease-in transform" :class="{ 'animate-shake':wrongFile }">
+      <div class="rounded sm:w-2/4 md:1/4 lg:w-1/3 bg-white shadow transition duration-200 ease-in transform" :class="{ 'animate-shake':wrongFile }">
         <div class="w-full p-4">
-          <div class="flex flex-col space-y-5 border-2 border-dashed py-12 rounded text-center select-none">
+          <div class="flex flex-col space-y-5 border-2 border-dashed py-12 text-center select-none">
             <!-- Wrong file icon -->
             <div v-show="wrongFile" class="flex items-center justify-center w-10 h-10 bg-red-100 rounded mx-auto mb-5">
               <i class="far fa-frown fa-lg text-red-400"></i>
