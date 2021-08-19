@@ -4,7 +4,7 @@
 
 			<div class="col-span-full xl:col-start-4 xl:col-end-10 sm:p-4 xl:p-0 my-2.5 sm:my-8">
 
-				<div class="mb-4 md:mb-6">
+				<div class="mb-4">
 					<h1 class="h3">
 						Create post
 					</h1>
