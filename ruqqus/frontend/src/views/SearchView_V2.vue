@@ -127,6 +127,7 @@ export default {
 	},
 	computed:{
 		...mapState("persist", ["v", "isCard"]),
+		...mapState("items", ["posts"]),
 		...mapGetters('items', ['getItems','getItemsLength'])
 	},
 	watch: {
