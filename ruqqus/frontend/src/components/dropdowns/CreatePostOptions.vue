@@ -21,7 +21,7 @@
           <div class="flex flex-col space-y-5 mt-4 pt-5">
             <div class="flex flex-col space-y-5">
               <label class="inline-flex">
-                <input type="radio" class="form-radio primary" v-model="publishType" value="immediately" checked>
+                <input type="radio" class="form-radio primary" v-model="time" value="immediately" checked>
                 <div class="ml-3 -mt-0.5 w-full">
                   <div class="text-sm text-gray-900 font-bold select-none">
                     Publish now
@@ -32,7 +32,7 @@
                 </div>
               </label>
               <label class="inline-flex">
-                <input type="radio" class="form-radio primary" v-model="publishType" value="scheduled">
+                <input type="radio" class="form-radio primary" v-model="time" value="scheduled">
                 <div class="ml-3 -mt-0.5 w-full">
                   <div class="text-sm text-gray-900 font-bold select-none">
                     Schedule for later
@@ -46,19 +46,19 @@
             </div>
             <div class="flex flex-col space-y-2">
               <label class="flex items-center">
-                <input type="checkbox" class="form-checkbox green500" name="options" value="pin"/>
+                <input type="checkbox" class="form-checkbox green500" v-model="options.pin" value="pin"/>
                 <span class="pl-2 text-sm text-gray-700 select-none">
                   Pin this post
                 </span>
               </label>
               <label class="flex items-center">
-                <input type="checkbox" class="form-checkbox red500" name="options" value="nsfw"/>
+                <input type="checkbox" class="form-checkbox red500" v-model="options.nsfw" value="nsfw"/>
                 <span class="pl-2 text-sm text-gray-700 select-none">
                   Mark as mature content
                 </span>
               </label>
               <label class="flex items-center">
-                <input type="checkbox" class="form-checkbox primary" name="options" value="notifications"/>
+                <input type="checkbox" class="form-checkbox primary" v-model="options.notifications" value="notifications"/>
                 <span class="pl-2 text-sm text-gray-700 select-none">
                   Turn off notifications
                 </span>
@@ -76,5 +76,23 @@
 
   export default {
     components: { Popover, PopoverButton, PopoverPanel },
+    data() {
+      return {
+        time: 'immediately',
+        options: {
+          pin: false,
+          nsfw: false,
+          notifications: false
+        }
+      }
+    },
+    watch: {
+      time(value) {
+        this.$emit('changeTime', value);
+      },
+      options(value) {
+        this.$emit('changeOptions', value);
+      }
+    }
   }
 </script>

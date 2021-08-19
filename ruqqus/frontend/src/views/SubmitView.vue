@@ -46,7 +46,7 @@
 												{{ v.username }}
 											</div>
 										</div>
-										<CreatePostOptions/>
+										<CreatePostOptions @changeTime="getTime()" @changeOptions="getOptions()"/>
 									</div>
 									<div class="relative">
 										<input type="text" class="form-input light" v-model="submission.title" placeholder="Give your post a title"/>
@@ -61,7 +61,7 @@
 
 									<iframe v-if="embed" :src="embed" width="100%" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"/>
 
-									<Editor @input="getEditorContent" min-height="14rem" :limit="10000"/>
+									<Editor @input="getEditorContent()" min-height="14rem" :limit="10000"/>
 									<!-- Image upload -->
 									<div :class="{'opacity-50':link}" class="hidden">
 										<div class="rounded-sm w-28 h-28 border border-gray-300 border-dashed flex items-center justify-center cursor-pointer text-sm text-gray-400 bg-gray-50 hover:bg-gray-100" @click="chooseImage">
@@ -204,6 +204,12 @@
 		},
 		data() {
 			return {
+				time: 'immediately',
+				options: {
+					pin: false,
+					nsfw: false,
+					notifications: false
+				},
 				embed: null,
 				poll: false,
 				pin: false,
@@ -243,7 +249,7 @@
 				return this.$store.state.create.post.submission
 			},
 			buttonText() {
-				if (this.publishType === 'immediately') {
+				if (this.time === 'immediately') {
 					return 'Post'
 				} else {
 					return 'Schedule Post'
@@ -269,6 +275,12 @@
 			createPost() {
 				this.$store.commit('create/SET_SUBMISSION', {submission: this.submission})
 				this.submitPost()
+			},
+			getTime(value) {
+				this.time = value;
+			},
+			getOptions(value) {
+				this.options = value;
 			},
 			getEditorContent(value) {
 				this.submission.body = value;
