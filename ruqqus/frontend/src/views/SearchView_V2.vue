@@ -4,7 +4,7 @@
 		<div class="relative flex flex-col items-center justify-center text-center min-h-[100px] max-h-[140px] sm:min-h-[270px] sm:max-h-[340px] z-50">
 			<img class="absolute w-full h-full bottom-0 top-0 left-0 right-0 object-cover" src="https://i.imgur.com/AgS5BXJ.jpg" alt="banner">
 			<h1 class="hidden sm:block z-10 h2 text-white">
-				Search results for "{{ this.$route.query.q || this.fallback.q }}"
+				Search results for "{{ $route.query.q || fallback.q }}"
 			</h1>
 		</div>
 
@@ -16,7 +16,7 @@
 					<div class="group flex-grow overflow-hidden">
 						<router-link to="/submit" tag="div" class="flex items-center h-full">
 							<p class="text-gray-400 group-hover:text-gray-500 dark:group-hover:text-gray-200 mb-0">
-								{{ this.$route.query.q || 'Search posts, comments, and @members' }}
+								{{ $route.query.q || 'Search posts, comments, and @members' }}
 							</p>
 							<div class="ml-auto">
 								<i class="far fa-times-circle fa-fw text-lg text-gray-400"></i>
@@ -100,17 +100,16 @@
 </template>
 
 <script>
+// Import components
 import { defineAsyncComponent } from 'vue'
-// Import our components
+import { mapState, mapGetters } from "vuex";
+
 const ItemList = defineAsyncComponent(() => import('@/views/ItemList.vue'))
 const ItemSort = defineAsyncComponent(() => import('@/components/dropdowns/ItemSort.vue'))
 const ListingToggle = defineAsyncComponent(() => import('@/components/forms/ListingToggle.vue'))
 
-import { mapState } from "vuex";
-
 export default {
-	name: "FeedView",
-	//props: ["users"],
+	name: "SearchView",
 	data() {
 		return {
 			loading: false,
