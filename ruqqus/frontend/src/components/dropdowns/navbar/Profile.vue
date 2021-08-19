@@ -69,7 +69,8 @@
         <!-- Dark Theme Link -->
         <MenuItem v-slot="{ active }">
           <button :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-1.5']">
-            <i class="far text-center fa-fw mr-2" :class="dark ? 'fa-sun' : 'fa-moon'"></i><span>Dark Theme</span>
+            <i class="far text-center fa-fw mr-2" :class="dark ? 'fa-sun' : 'fa-moon'"></i>
+            <span>{{ dark ? 'Light Theme' : 'Dark THeme'}}</span>
           </button>
         </MenuItem>
       </div>
@@ -121,11 +122,19 @@
 			MenuItem
 		},
 		computed:{
-			...mapState("persist", ["v"]),
+			...mapState("persist", ["v","darkMode"]),
 			self() {
 				return this.username === this.v.username; // if username prop matches auth'd user
-			}
-		},
+			},
+      dark: {
+        get () {
+          return this.darkMode
+        },
+        set (value) {
+          this.$store.dispatch('persist/toggle_dark', value)
+        }
+      }
+    },
     methods: {
       ...mapActions("persist", ["logout"]),
     }
