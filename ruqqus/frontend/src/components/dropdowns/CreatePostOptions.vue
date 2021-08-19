@@ -46,19 +46,19 @@
             </div>
             <div class="flex flex-col space-y-2">
               <label class="flex items-center">
-                <input type="checkbox" class="form-checkbox primary" value="pin" @change="$emit('changeOptions', $event.target.value)" :checked="options.pin"/>
+                <input type="checkbox" class="form-checkbox primary" v-model="computedOptions.pin"/>
                 <span class="pl-2 text-sm text-gray-700 select-none">
                   Pin this post
                 </span>
               </label>
               <label class="flex items-center">
-                <input type="checkbox" class="form-checkbox primary" value="nsfw" @change="$emit('changeOptions', $event.target.value)" :checked="options.nsfw"/>
+                <input type="checkbox" class="form-checkbox primary" v-model="computedOptions.nsfw" :checked="computedOptions.nsfw"/>
                 <span class="pl-2 text-sm text-gray-700 select-none">
                   Mark as mature content
                 </span>
               </label>
               <label class="flex items-center">
-                <input type="checkbox" class="form-checkbox primary" value="notifications" @change="$emit('changeOptions', $event.target.value)" :checked="options.notifications"/>
+                <input type="checkbox" class="form-checkbox primary" v-model="computedOptions.notifications"/>
                 <span class="pl-2 text-sm text-gray-700 select-none">
                   Turn off notifications
                 </span>
@@ -79,6 +79,16 @@
     props: {
       time: String,
       options: Object
+    },
+    computed: {
+      computedOptions: {
+        get: function() {
+          return this.options
+        },
+        set: function(value) {
+        // some logic
+        this.$emit('changeOptions', value)
+      }
     }
   }
 </script>
