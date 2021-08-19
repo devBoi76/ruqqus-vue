@@ -115,6 +115,7 @@
     },
     data() {
       return {
+        publishType: 'immediately',
         loading: true,
         errored: false,
         showSettings: false,
