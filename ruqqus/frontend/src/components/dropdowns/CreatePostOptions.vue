@@ -21,7 +21,7 @@
           <div class="flex flex-col space-y-5 mt-4 pt-5">
             <div class="flex flex-col space-y-5">
               <label class="inline-flex">
-                <input type="radio" class="form-radio primary" name="time" value="immediately" @change="$emit('changeTime', $event.target.value)">
+                <input type="radio" class="form-radio primary" name="time" value="immediately" @change="$emit('changeTime', $event.target.value)" :checked="time === 'immediately'">
                 <div class="ml-3 -mt-0.5 w-full">
                   <div class="text-sm text-gray-900 font-bold select-none">
                     Publish now
@@ -32,7 +32,7 @@
                 </div>
               </label>
               <label class="inline-flex">
-                <input type="radio" class="form-radio primary" name="time" value="scheduled" @change="$emit('changeTime', $event.target.value)">
+                <input type="radio" class="form-radio primary" name="time" value="scheduled" @change="$emit('changeTime', $event.target.value)" :checked="time === 'scheduled'">
                 <div class="ml-3 -mt-0.5 w-full">
                   <div class="text-sm text-gray-900 font-bold select-none">
                     Schedule for later
@@ -46,19 +46,19 @@
             </div>
             <div class="flex flex-col space-y-2">
               <label class="flex items-center">
-                <input type="checkbox" class="form-checkbox primary" value="pin" @change="$emit('changeOptions', $event.target.value)"/>
+                <input type="checkbox" class="form-checkbox primary" value="pin" @change="$emit('changeOptions', $event.target.value)" :checked="options.pin"/>
                 <span class="pl-2 text-sm text-gray-700 select-none">
                   Pin this post
                 </span>
               </label>
               <label class="flex items-center">
-                <input type="checkbox" class="form-checkbox primary" value="nsfw" @change="$emit('changeOptions', $event.target.value)"/>
+                <input type="checkbox" class="form-checkbox primary" value="nsfw" @change="$emit('changeOptions', $event.target.value)" :checked="options.nsfw"/>
                 <span class="pl-2 text-sm text-gray-700 select-none">
                   Mark as mature content
                 </span>
               </label>
               <label class="flex items-center">
-                <input type="checkbox" class="form-checkbox primary" value="notifications" @change="$emit('changeOptions', $event.target.value)"/>
+                <input type="checkbox" class="form-checkbox primary" value="notifications" @change="$emit('changeOptions', $event.target.value)" :checked="options.notifications"/>
                 <span class="pl-2 text-sm text-gray-700 select-none">
                   Turn off notifications
                 </span>
