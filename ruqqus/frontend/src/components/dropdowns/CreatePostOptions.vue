@@ -21,7 +21,7 @@
           <div class="flex flex-col space-y-5 mt-4 pt-5">
             <div class="flex flex-col space-y-5">
               <label class="inline-flex">
-                <input type="radio" class="form-radio primary" value="immediately" @change="$emit('changeTime', $event.target.value)">
+                <input type="radio" class="form-radio primary" name="time" value="immediately" @change="$emit('changeTime', $event.target.value)">
                 <div class="ml-3 -mt-0.5 w-full">
                   <div class="text-sm text-gray-900 font-bold select-none">
                     Publish now
@@ -32,7 +32,7 @@
                 </div>
               </label>
               <label class="inline-flex">
-                <input type="radio" class="form-radio primary" value="scheduled" @change="$emit('changeTime', $event.target.value)">
+                <input type="radio" class="form-radio primary" name="time" value="scheduled" @change="$emit('changeTime', $event.target.value)">
                 <div class="ml-3 -mt-0.5 w-full">
                   <div class="text-sm text-gray-900 font-bold select-none">
                     Schedule for later
