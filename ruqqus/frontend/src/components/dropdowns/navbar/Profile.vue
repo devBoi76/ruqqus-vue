@@ -75,14 +75,6 @@
         </MenuItem>
       </div>
       <div class="py-2">
-        <!-- Discord -->
-        <MenuItem v-slot="{ active }">
-          <button :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-1.5']">
-            <i class="fab fa-discord text-center fa-fw mr-2"></i><span>Discord</span>
-          </button>
-        </MenuItem>
-      </div>
-      <div class="py-2">
         <!-- Sign Out -->
         <MenuItem v-slot="{ active }">
           <button :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-1.5']">
@@ -91,20 +83,36 @@
         </MenuItem>
       </div>
       <div class="py-2">
-        <ul class="flex flex-wrap space-x-3 mb-0 px-4 leading-4">
-          <li>
+        <ul class="flex flex-wrap mb-0 px-2 leading-4">
+          <li class="px-2">
             <router-link to="/about" class="text-xs text-gray-500 hover:underline">
               About
+
             </router-link>
           </li>
-          <li>
+          <li class="px-2">
             <router-link to="/about" class="text-xs text-gray-500 hover:underline">
               Rules
             </router-link>
           </li>
-          <li>
+          <li class="px-2">
             <router-link to="/about" class="text-xs text-gray-500 hover:underline">
               Source Code
+            </router-link>
+          </li>
+          <li class="px-2">
+            <router-link to="/about" class="text-xs text-gray-500 hover:underline">
+              Change Log
+            </router-link>
+          </li>
+          <li class="px-2">
+            <router-link to="/about" class="text-xs text-gray-500 hover:underline">
+              Contact
+            </router-link>
+          </li>
+          <li class="px-2">
+            <router-link to="/about" class="text-xs text-gray-500 hover:underline">
+              Discord
             </router-link>
           </li>
         </ul>
