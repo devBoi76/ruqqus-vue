@@ -11,17 +11,19 @@
 		<!-- Search Bar -->
 		<div class="grid grid-cols-12 -mt-8">
 			<div class="col-span-full xl:col-start-2 xl:col-end-12 px-6 z-75">
-				<div class="relative">
+				<form class="relative">
 					<div class="absolute left-4 top-[1.375rem]">
-						<i class="far fa-search fa-fw text-lg text-gray-400"></i>
+						<button class="text-gray-400 hover:text-gray-500" @click="search()">
+							<i class="far fa-search fa-fw text-lg text-gray-400"></i>
+						</button>
 					</div>
-					<input type="text" class="form-input white pl-12 pr-5 py-5" v-model="searchTerm" placeholder="Search posts, comments, and @members" @keyup.enter="search()">
+					<input required type="text" class="form-input white pl-12 pr-5 py-5" v-model="searchTerm" placeholder="Search posts, comments, and @members" @keyup.enter="search()">
 					<div class="absolute right-4 top-[1.375rem]">
 						<button @click="searchTerm = ''">
 							<i class="far fa-times-circle fa-fw text-lg text-gray-400"></i>
 						</button>
 					</div>
-				</div>
+				</form>
 			</div>
 		</div>
 		<!-- End Search Bar -->
@@ -36,7 +38,7 @@
 					<div v-if="getItemsLength" class="flex items-center flex-shrink-0 sm:rounded-sm sm:border mb-2.5 sm:mb-4 px-4 py-3 bg-white dark:bg-gray-800">
 						<div class="flex items-center justify-between flex-grow">
 							<div class="text-gray-500">
-									{{ getItemsLength === 1 ? '1 Result' : `${getItemsLength} Results` }}
+								{{ getItemsLength === 1 ? '1 Result' : `${getItemsLength} Results` }}
 							</div>
 							<div class="flex flex-wrap items-center space-x-6">
 								<ItemSort/>
