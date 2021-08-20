@@ -3,7 +3,7 @@
 		<!-- Skeleton loading -->
 		<div v-if="!items.length">
 			<div v-if="!isCard || compact">
-				<div v-for="i in 4" :key="i" class="mb-2 last:mb-0 p-2.5 sm:px-4 sm:py-3 sm:rounded-sm bg-white border border-transparent dark:bg-gray-800">
+				<div v-for="i in 4" :key="i" class="mb-2 last:mb-0 p-2.5 sm:px-4 sm:py-3 sm:rounded-sm sm:border bg-white dark:bg-gray-800">
 					<div class="animate-pulse">
 						<div class="flex items-center w-full mb-4">
 							<div class="flex-shrink-0 bg-gray-200 dark:bg-white dark:bg-opacity-10 rounded-sm w-9 h-9 sm:w-8 sm:h-8 mr-2"></div>
@@ -19,7 +19,7 @@
 					<div class="hidden md:block mr-4 animate-pulse">
 						<div class="bg-gray-200 dark:bg-white dark:bg-opacity-20 sm:rounded-sm w-16 h-16"></div>
 					</div>
-					<div class="w-full p-2.5 sm:p-4 sm:rounded-sm bg-white border border-transparent dark:bg-gray-800">
+					<div class="w-full p-2.5 sm:p-4 sm:rounded-sm sm:border bg-white border border-transparent dark:bg-gray-800">
 						<div class="flex flex-col animate-pulse">
 							<div class="hidden sm:flex flex-col w-full justify-between mb-6">
 								<div class="bg-gray-200 dark:bg-white dark:bg-opacity-10 mb-2 w-40 h-3 rounded-sm"></div>
