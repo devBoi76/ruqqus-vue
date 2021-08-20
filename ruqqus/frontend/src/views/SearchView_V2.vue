@@ -14,13 +14,13 @@
 				<form class="relative">
 					<div class="absolute left-4 top-[1.375rem]">
 						<button class="text-gray-400 hover:text-gray-500" @click="search()">
-							<i class="far fa-search fa-fw text-lg text-gray-400"></i>
+							<i class="far fa-search fa-fw text-lg"></i>
 						</button>
 					</div>
 					<input required type="text" class="form-input white pl-12 pr-5 py-5" v-model="searchTerm" placeholder="Search posts, comments, and @members" @keyup.enter="search()">
 					<div class="absolute right-4 top-[1.375rem]">
-						<button @click="searchTerm = ''">
-							<i class="far fa-times-circle fa-fw text-lg text-gray-400"></i>
+						<button class="text-gray-400 hover:text-gray-500" @click="searchTerm = ''">
+							<i class="far fa-times-circle fa-fw text-lg"></i>
 						</button>
 					</div>
 				</form>
