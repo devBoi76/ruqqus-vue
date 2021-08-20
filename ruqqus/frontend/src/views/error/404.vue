@@ -10,7 +10,7 @@
 				Page not found :/
 			</h1>
 			<p class="z-10 text-white text-2xl sm:text-3xl text-opacity-80 max-w-[600px] mx-auto">
-				The page you were looking for simply does not exist.
+				The page you were looking for simply does not exist
 			</p>
 			<div class="z-10 mx-auto mt-4">
 				<router-link to="/" custom v-slot="{ navigate }">
