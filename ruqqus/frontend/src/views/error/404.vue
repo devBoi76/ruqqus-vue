@@ -12,9 +12,11 @@
 			<p class="z-10 text-white text-2xl sm:text-3xl text-opacity-80 max-w-[600px] mx-auto">
 				Sorry we could not find the page you were looking for.
 			</p>
-			<button class="button white">
-				Back to the homepage
-			</button>
+			<div class="z-10 mx-auto mt-4">
+				<button class="button white">
+					Back to the homepage
+				</button>
+			</div>
 		</div>
 	</div>
 </template>
