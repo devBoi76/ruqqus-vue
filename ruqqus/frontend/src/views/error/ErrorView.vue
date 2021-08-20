@@ -6,7 +6,7 @@
 			<div v-if="statusCode" class="z-10 uppercase tracking-wide font-semibold text-gray-400 mb-2">
 				{{ statusCode }}
 			</div>
-			<h1 class="hidden sm:block z-10 text-white mb-4">
+			<h1 class="z-10 text-white mb-4">
 				{{ heading || 'An error occured' }}
 			</h1>
 			<p class="z-10 text-white text-2xl sm:text-3xl text-opacity-80 max-w-[600px] mx-auto">
