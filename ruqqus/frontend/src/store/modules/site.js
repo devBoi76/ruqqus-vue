@@ -14,7 +14,7 @@ const state = {
 		bannerUrl: 'https://i.imgur.com/AgS5BXJ.jpg',
 		iconUrl: 'https://i.imgur.com/2Ah9CcW.gif',
 		isNsfw: false,
-		isPrivate: false,
+		isPrivate: true,
 		canDownvote: true,
 		canRegister: false,
 		canPost: true,
