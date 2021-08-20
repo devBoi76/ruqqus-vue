@@ -57,7 +57,10 @@
               <!-- Loading State -->
               <div v-show="loading && !errored && !notifications.length" class="w-full space-y-4 py-4">
                 <div v-for="i in 5" :key="i" class="px-4 animate-pulse">
-                  <div class="rounded-sm bg-gray-200 dark:bg-white dark:bg-opacity-20 w-full h-6"></div>
+                  <div class="flex items-center space-x-3">
+                    <div class="rounded-sm bg-gray-200 dark:bg-white dark:bg-opacity-20 w-8 h-8"></div>
+                    <div class="rounded-sm bg-gray-200 dark:bg-white dark:bg-opacity-20 w-full h-8"></div>
+                  </div>
                 </div>
               </div>
               <!-- Errored State -->
