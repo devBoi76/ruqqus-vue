@@ -67,31 +67,31 @@
 												<div v-if="active" class="space-y-6 mt-6">
 													<div class="grid grid-cols-3 gap-6">
 														<div class="col-span-3 sm:col-span-2">
-															<input class="form-input" v-model="g.name" :placeholder="$route.params.name" type="text"/>
+															<input class="form-input" v-model="s.name" :placeholder="$route.params.name" type="text"/>
 															<p class="text-sm text-gray-500 mt-1">
-																You may only change the capitalization
+																This does not affect your community web address
 															</p>
 														</div>
 													</div>
 													<div class="grid grid-cols-3 gap-6">
 														<div class="col-span-3 sm:col-span-2">
 															<div class="relative">
-																<textarea class="form-textarea" v-model="g.description_short" type="text" rows="3" maxlength="140" placeholder="A community residing on the world wide web."/>
-																<div v-if="g.description_short" class="absolute text-xs font-semibold text-gray-400 right-3 bottom-2" :class="{'text-red-500':g.description_short.length >= 140}">
-																	{{ 140 - g.description_short.length }}
+																<textarea class="form-textarea" v-model="s.tagline" type="text" rows="3" maxlength="140" placeholder="A community residing on the world wide web."/>
+																<div v-if="s.tagline" class="absolute text-xs font-semibold text-gray-400 right-3 bottom-2" :class="{'text-red-500':s.tagline.length >= 140}">
+																	{{ 140 - s.tagline.length }}
 																</div>
 															</div>
 															<p class="text-sm text-gray-500 mt-1">
-																Used for guild cards and search engines. Markdown not supported
+																Used for search engine results. Markdown not supported
 															</p>
 														</div>
 													</div>
 													<div class="grid grid-cols-3 gap-6">
 														<div class="col-span-3 sm:col-span-2">
 															<div class="relative">
-																<Editor @input="getEditorContent" v-model="g.description_html" :limit="5000" @click.prevent/>
-																<div v-if="g.description" class="absolute text-xs font-semibold text-gray-400 right-3 bottom-2" :class="{'text-red-500':g.description >= 1000}">
-																	{{ 1000 - g.description }}
+																<Editor @input="getEditorContent" v-model="s.description" :limit="5000" @click.prevent/>
+																<div v-if="s.description" class="absolute text-xs font-semibold text-gray-400 right-3 bottom-2" :class="{'text-red-500':s.description >= 1000}">
+																	{{ 1000 - s.description }}
 																</div>
 															</div>
 															<p class="text-sm text-gray-500 mt-1">
@@ -121,7 +121,7 @@
 													The artwork used to represent your community
 												</p>
 											</div>
-											<img :src="g.profile_url" class="w-11 h-11 rounded-sm bg-gray-100 object-cover" alt="guild icon artwork"/>
+											<img :src="s.iconUrl" class="w-11 h-11 rounded-sm bg-gray-100 object-cover" alt="guild icon artwork"/>
 										</div>
 									</div>
 									<div class="p-4">
@@ -134,7 +134,7 @@
 													The cover artwork displayed across your community
 												</p>
 											</div>
-											<img :src="g.banner_url" class="w-48 h-11 rounded-sm bg-gray-100 object-cover" alt="guild cover artwork"/>
+											<img :src="s.bannerUrl" class="w-48 h-11 rounded-sm bg-gray-100 object-cover" alt="guild cover artwork"/>
 										</div>
 									</div>
 								</div>
@@ -155,7 +155,7 @@
 													Enable if your community contains NSFW content suitable only for adults
 												</p>
 											</div>
-											<t-toggle v-model="g.over_18"/>
+											<t-toggle v-model="s.isNsfw"/>
 										</div>
 									</div>
 								</div>
@@ -176,7 +176,7 @@
 													Removes downvote buttons from all content (posts and comments)
 												</p>
 											</div>
-											<t-toggle v-model="g.over_18"/>
+											<t-toggle v-model="!s.canDownvote"/>
 										</div>
 									</div>
 								</div>
@@ -209,8 +209,8 @@ export default {
 		}
 	},
 	computed: {
-		g() {
-			return this.$store.getters['guild/getGuild'](this.$route.params.name);
+		s() {
+			return this.$store.getters['site/getSite'];
 		}
 	},
 	watch: {

@@ -1,6 +1,6 @@
 <template>
 	<div class="w-full overflow-y-auto">
-		<Banner/>
+		<Banner :banner="s.banner"/>
 		<div class="grid grid-cols-12" :class="{ 'xl:grid-cols-10':isCard }">
 			<div class="col-span-full flex gap-6 sm:p-6 my-2.5 sm:my-0" :class="isCard ? 'xl:col-start-3 xl:col-end-9' : 'xl:col-start-2 xl:col-end-12'">
 
@@ -119,6 +119,9 @@ export default {
 	computed:{
 		...mapState("persist", ["v", "isCard"]),
 		...mapState("items", ["posts"]),
+		s() {
+			return this.$store.getters['site/getSite'];
+		},
 		feedIcon() {
 			if (this.$route.name === 'HomeView') {
 				return 'fa-home-lg-alt'
