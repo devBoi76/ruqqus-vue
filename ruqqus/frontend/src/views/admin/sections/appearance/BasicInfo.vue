@@ -197,7 +197,7 @@ const Toggle = defineAsyncComponent(() => import('@/components/Toggle.vue'));
 const Editor = defineAsyncComponent(() => import('@/components/editors/Editor_V2.vue'));
 
 export default {
-	name: "UserSettingsBasicInfoView",
+	name: "SiteSettingsGeneral",
 	components: {
 		Toggle,
 		Editor
@@ -213,34 +213,20 @@ export default {
 			return this.$store.getters['site/getSite'];
 		}
 	},
-	watch: {
-		'$route.params.name': { // get guild info and posts if guild changes
-			handler() {
-				if (this.g == null) {
-					this.loading = true;
-					this.errored = false;
-					this.getGuildInfo()
-				} else {
-					this.loading = false;
-				}
-			},
-			immediate: true
-		}
-	},
 	methods: {
-		getGuildInfo() {
-			let guild = this.$route.params.name
-			this.$store.dispatch('guild/fetchGuild', guild)
-			.then(() => {
-				console.log("getGuild dispatch successful")
-			})
-			.catch(error => {
-				console.error(error)
-				this.errored = true
+		// getGuildInfo() {
+		// 	let guild = this.$route.params.name
+		// 	this.$store.dispatch('guild/fetchGuild', guild)
+		// 	.then(() => {
+		// 		console.log("getGuild dispatch successful")
+		// 	})
+		// 	.catch(error => {
+		// 		console.error(error)
+		// 		this.errored = true
 
-			})
-			.finally(() => this.loading = false)
-		}
+		// 	})
+		// 	.finally(() => this.loading = false)
+		// }
 	}
 };
 </script>
