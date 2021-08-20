@@ -78,7 +78,7 @@
         <!-- Rules -->
         <MenuItem v-slot="{ active }">
           <router-link to="/rules" custom v-slot="{ navigate }">
-            <button :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-1.5']" @click="navigate" @keypress.enter="navigate" role="link">
+            <button class="text-gray-700 hover:text-gray-900 hover:bg-gray-100 group flex items-center w-full px-4 py-1.5" @click="navigate" @keypress.enter="navigate" role="link">
               <i class="far fa-scroll-old text-center fa-fw mr-2"></i><span>Rules</span>
             </button>
           </router-link>
