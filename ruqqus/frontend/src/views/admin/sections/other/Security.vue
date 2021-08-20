@@ -166,7 +166,7 @@ export default {
 		// },
 		's': { // get guild info and posts if guild changes
 			handler() {
-				this.changed = (JSON.stringify(this.g) !== JSON.stringify(this.saved))
+				this.changed = (JSON.stringify(this.s) !== JSON.stringify(this.saved))
 			},
 			deep: true
 		}
