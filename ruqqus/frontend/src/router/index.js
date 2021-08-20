@@ -131,7 +131,7 @@ const routes = [
 		// },
 
 		// Error View
-		{ path: '/:pathMatch(.*)*', name: '404View', component: ErrorView, props: { statusCode: '404', heading: 'Page not found :/' , message: 'The page you were looking for simply does not exist' } },
+		{ path: '/:pathMatch(.*)*', name: '404View', component: ErrorView, props: { statusCode: '404', heading: 'Page not found :/' , message: 'The page you were looking for does not exist' } },
 		{ path: '/time-out', name: '503View', component: ErrorView, props: { statusCode: '503', heading: 'Service unavailable' , message: 'Our servers are overloaded at the moment. Please try again later.' } },
 		{ path: '/too-many', name: '429View', component: ErrorView, props: { statusCode: '429', heading: 'Too many requests' , message: 'Sorry, you have sent us too many requests. Please try again later.' } },
 		{ path: '/access-denied', name: '403View', component: ErrorView, props: { statusCode: '403', heading: 'Access denied' , message: 'Sorry, you do not have permission to view this page.' } },
