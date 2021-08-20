@@ -83,34 +83,34 @@
         </MenuItem>
       </div>
       <div class="py-2">
-        <ul class="flex flex-wrap mb-0 px-2 leading-4">
-          <li class="px-2">
+        <ul class="flex flex-wrap mb-0 px-2.5 leading-4">
+          <li class="px-1.5">
             <router-link to="/about" class="text-xs text-gray-500 hover:underline">
               About
 
             </router-link>
           </li>
-          <li class="px-2">
+          <li class="px-1.5">
             <router-link to="/about" class="text-xs text-gray-500 hover:underline">
               Rules
             </router-link>
           </li>
-          <li class="px-2">
+          <li class="px-1.5">
             <router-link to="/about" class="text-xs text-gray-500 hover:underline">
               Source Code
             </router-link>
           </li>
-          <li class="px-2">
+          <li class="px-1.5">
             <router-link to="/about" class="text-xs text-gray-500 hover:underline">
               Change Log
             </router-link>
           </li>
-          <li class="px-2">
+          <li class="px-1.5">
             <router-link to="/about" class="text-xs text-gray-500 hover:underline">
               Contact
             </router-link>
           </li>
-          <li class="px-2">
+          <li class="px-1.5">
             <router-link to="/about" class="text-xs text-gray-500 hover:underline">
               Discord
             </router-link>
