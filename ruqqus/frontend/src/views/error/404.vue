@@ -13,9 +13,11 @@
 				The page you were looking for simply does not exist.
 			</p>
 			<div class="z-10 mx-auto mt-4">
-				<button class="button white">
-					Back to the homepage
-				</button>
+				<router-link to="/" custom v-slot="{ navigate }">
+					<button class="button white" @click="navigate" @keypress.enter="navigate" role="link">
+						Back to the homepage
+					</button>
+				</router-link>
 			</div>
 		</div>
 	</div>
