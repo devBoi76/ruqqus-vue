@@ -90,7 +90,7 @@
           </button>
         </MenuItem>
       </div>
-      <div class="py-2 bg-gray-50">
+      <div class="py-2">
         <ul class="flex flex-wrap space-x-3 mb-0 px-4 leading-4">
           <li>
             <router-link to="/about" class="text-xs text-gray-500 hover:underline">
