@@ -86,7 +86,7 @@ export default {
 				{
 					name: 'security',
 					route: {
-						name: 'admin-access-view'
+						name: 'admin-security-view'
 					},
 					icon: 'fa-lock-alt',
 					textCase: 'capitalize'
