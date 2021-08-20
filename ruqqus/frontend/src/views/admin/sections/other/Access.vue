@@ -6,7 +6,7 @@
 			<div class="col-span-full 2xl:col-start-2 2xl:col-end-10">
 				<div class="flex items-center justify-between px-4 py-3 bg-gray-50 sm:bg-gray-100">
 					<h1 class="text-2xl capitalize mb-0">
-						Access
+						Security
 					</h1>
 					<div class="flex items-center space-x-4">
 						<div v-show="changed" class="text-xs text-gray-400">
@@ -64,7 +64,7 @@
 													Require an account to view your community
 												</p>
 											</div>
-											<t-toggle v-model="g.is_private"/>
+											<t-toggle v-model="s.isPrivate"/>
 										</div>
 									</div>
 									<div class="p-4">
@@ -77,7 +77,7 @@
 													Disable any new account creation
 												</p>
 											</div>
-											<t-toggle v-model="g.is_all"/>
+											<t-toggle v-model="s.canRegister"/>
 										</div>
 									</div>
 								</div>
@@ -98,7 +98,7 @@
 													Restrict posting to approved users only
 												</p>
 											</div>
-											<Toggle v-model="g.is_restricted"/>
+											<Toggle v-model="s.canPost"/>
 										</div>
 									</div>
 									<div class="p-4 border-b">
@@ -111,7 +111,7 @@
 													Restrict commenting to approved users only
 												</p>
 											</div>
-											<t-toggle v-model="g.is_restricted"/>
+											<t-toggle v-model="s.canComment"/>
 										</div>
 									</div>
 									<div class="p-4 border-b">
@@ -124,7 +124,7 @@
 													Restrict voting to approved users only
 												</p>
 											</div>
-											<t-toggle v-model="g.is_restricted"/>
+											<t-toggle v-model="s.canVote"/>
 										</div>
 									</div>
 								</div>
@@ -149,23 +149,22 @@ export default {
 	data() {
 		return {
 			changed: false,
-			loading: true,
+			loading: false,
 			errored: false,
-			saved: {},
-			g: {}
+			saved: {}
 		}
 	},
 	components: {
 		Toggle
 	},
 	watch: {
-		'$route.params.name': { // get guild info and posts if guild changes
-			handler() {
-				this.getGuildInfo()
-			},
-			immediate: true
-		},
-		'g': { // get guild info and posts if guild changes
+		// '$route.params.name': { // get guild info and posts if guild changes
+		// 	handler() {
+		// 		this.getGuildInfo()
+		// 	},
+		// 	immediate: true
+		// },
+		's': { // get guild info and posts if guild changes
 			handler() {
 				if (JSON.stringify(this.g) !== JSON.stringify(this.saved)) {
 					this.changed = true
@@ -176,24 +175,29 @@ export default {
 			deep: true
 		}
 	},
+	computed: {
+		s() {
+			return this.$store.getters['site/getSite'];
+		}
+	},
 	methods: {
-		getGuildInfo() {
-			let guild = this.$route.params.name;
-			getGuild(guild)
-			.then(response => {
-				let data = response.data
-				this.saved = Object.assign({}, data);
-				this.g = data;
-			})
-			.catch(error => {
-				console.error(error)
-				this.errored = true
-			})
-			.finally(() => this.loading = false)
-		},
+		// getGuildInfo() {
+		// 	let guild = this.$route.params.name;
+		// 	getGuild(guild)
+		// 	.then(response => {
+		// 		let data = response.data
+		// 		this.saved = Object.assign({}, data);
+		// 		this.g = data;
+		// 	})
+		// 	.catch(error => {
+		// 		console.error(error)
+		// 		this.errored = true
+		// 	})
+		// 	.finally(() => this.loading = false)
+		// },
 		save() {
 			this.changed = false;
-			this.saved = Object.assign({}, this.g);
+			this.saved = Object.assign({}, this.s);
 		}
 	}
 };
