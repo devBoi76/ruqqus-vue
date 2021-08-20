@@ -75,9 +75,9 @@
         </MenuItem>
       </div>
       <div class="py-2">
-        <!-- Rules -->
+        <!-- Github -->
         <MenuItem v-slot="{ active }">
-          <button :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-1.5']" @click="$router.push({ path: '/rules' }">
+          <button :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-1.5']">
             <i class="fab fa-scroll-old text-center fa-fw mr-2"></i><span>Rules</span>
           </button>
         </MenuItem>
