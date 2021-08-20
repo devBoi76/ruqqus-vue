@@ -11,7 +11,7 @@
 		<!-- Search Bar -->
 		<div class="grid grid-cols-12 -mt-8">
 			<div class="col-span-full xl:col-start-2 xl:col-end-12 px-6 z-75">
-				<form class="relative">
+				<form class="relative" @submit.prevent="onSubmit">
 					<div class="absolute left-4 top-[1.375rem]">
 						<button class="text-gray-400 hover:text-gray-500" @click="search()">
 							<i class="far fa-search fa-fw text-lg"></i>
