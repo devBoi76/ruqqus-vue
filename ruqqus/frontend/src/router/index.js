@@ -66,10 +66,9 @@ import { store } from "@/store";
 
 const routes = [
 
-	// Home View
-	{ path: '/', name: 'HomeView', component: FeedView, props: true, meta: {title: 'home', sidebar: false, requiresAuth: true} },
-	// Starred View
-	{ path: '/stargazed', name: 'StargazedView', component: FeedView, props: true, meta: {title: 'stargazed', sidebar: false, requiresAuth: true} },
+	// Feed View
+	{ path: '/', name: 'HotView', component: FeedView, props: true, meta: {title: 'hot', sidebar: false, requiresAuth: true} },
+	{ path: '/featured', name: 'FeaturedView', component: FeedView, props: true, meta: {title: 'featured', sidebar: false, requiresAuth: true} },
 	{ path: '/trending', name: 'TrendingView', component: FeedView, props: true, meta: {title: 'trending', sidebar: false, requiresAuth: true} },
 	{ path: '/all', name: 'AllView', component: FeedView, props: true, meta: {title: 'all', sidebar: false, requiresAuth: true} },
 
