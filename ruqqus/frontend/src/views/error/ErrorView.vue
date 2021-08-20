@@ -2,7 +2,7 @@
 	<!-- Error Template -->
 	<div class="w-full overflow-y-auto">
 		<div class="relative flex flex-col items-center justify-center text-center h-full z-50">
-			<img class="absolute w-full h-full bottom-0 top-0 left-0 right-0 object-cover" src="https://i.imgur.com/AgS5BXJ.jpg" alt="banner">
+			<img class="absolute w-full h-full bottom-0 top-0 left-0 right-0 object-cover" src="https://i.imgur.com/AgS5BXJ.jpg" alt="banner"/>
 			<div v-if="statusCode" class="z-10 uppercase tracking-wide font-semibold text-gray-400 mb-2">
 				404
 			</div>
@@ -26,8 +26,8 @@
 <script>
 	export default {
 		props: {
-			statusCode: String
-			heading: String
+			statusCode: String,
+			heading: String,
 			message: String
 		}
 	}
