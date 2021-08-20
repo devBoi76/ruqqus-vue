@@ -36,6 +36,7 @@ const getters = {
 
 const mutations = {
 	SET_SITE: (state, site) => {
+		console.log(site)
 		state.site = Object.assign({}, site)
 	}
 }
