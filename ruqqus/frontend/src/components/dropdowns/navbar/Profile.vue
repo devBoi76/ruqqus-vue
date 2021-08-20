@@ -75,12 +75,6 @@
         </MenuItem>
       </div>
       <div class="py-2">
-        <!-- Github -->
-        <MenuItem v-slot="{ active }">
-          <button :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-1.5']">
-            <i class="fab fa-github text-center fa-fw mr-2"></i><span>Source code</span>
-          </button>
-        </MenuItem>
         <!-- Discord -->
         <MenuItem v-slot="{ active }">
           <button :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-1.5']">
