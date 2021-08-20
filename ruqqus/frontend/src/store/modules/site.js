@@ -29,9 +29,9 @@ const state = {
 }
 
 const getters = {
-	getSite: (state) => (name) => {
-		return state.site
-	}
+	getSite (state) {
+      return state.site
+    }
 }
 
 const mutations = {
