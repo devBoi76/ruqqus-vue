@@ -16,12 +16,12 @@
 				<div class="hidden md:block">
 					<div class="ml-4 flex items-center space-x-2 md:ml-6">
 
-						<router-link to="/" tag="button" class="flex items-center justify-center px-2 w-8 h-8 text-xl text-gray-600 dark:text-gray-400 hover:text-purple-500 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white rounded-sm" content="Explore" v-tippy="{ placement: 'bottom', delay: [1000,0] }">
+						<router-link to="/" tag="button" class="flex items-center justify-center px-2 w-8 h-8 text-xl text-gray-600 dark:text-gray-400 hover:text-purple-500 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white rounded-sm" content="Home" v-tippy="{ placement: 'bottom', delay: [1000,0] }">
 							<span class="sr-only">Home</span>
 							<i class="far fa-home-alt"></i>
 						</router-link>
 
-						<router-link to="/?sort=hot" tag="button" class="flex items-center justify-center px-2 w-8 h-8 text-xl text-gray-600 dark:text-gray-400 hover:text-purple-500 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white rounded-sm" content="Explore" v-tippy="{ placement: 'bottom', delay: [1000,0] }">
+						<router-link to="/?sort=hot" tag="button" class="flex items-center justify-center px-2 w-8 h-8 text-xl text-gray-600 dark:text-gray-400 hover:text-purple-500 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white rounded-sm" content="Popular" v-tippy="{ placement: 'bottom', delay: [1000,0] }">
 							<span class="sr-only">New</span>
 							<i class="far fa-bolt"></i>
 						</router-link>
