@@ -4,7 +4,7 @@
 
 			<div class="col-span-full xl:col-start-3 xl:col-end-9 flex flex-col gap-4 sm:p-6 my-2.5 sm:my-0">
 
-				<h1 class="h3 mb-0">
+				<h1 class="h3 font-semibold mb-0">
 					Create post
 				</h1>
 
