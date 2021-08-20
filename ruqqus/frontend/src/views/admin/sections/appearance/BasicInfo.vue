@@ -67,7 +67,7 @@
 												<div v-if="active" class="space-y-6 mt-6">
 													<div class="grid grid-cols-3 gap-6">
 														<div class="col-span-3 sm:col-span-2">
-															<input class="form-input" v-model="s.name" :placeholder="$route.params.name" type="text"/>
+															<input class="form-input light" v-model="s.name" :placeholder="$route.params.name" type="text"/>
 															<p class="text-sm text-gray-500 mt-1">
 																This does not affect your community web address
 															</p>
@@ -76,7 +76,7 @@
 													<div class="grid grid-cols-3 gap-6">
 														<div class="col-span-3 sm:col-span-2">
 															<div class="relative">
-																<textarea class="form-textarea" v-model="s.tagline" type="text" rows="3" maxlength="140" placeholder="A community residing on the world wide web."/>
+																<textarea class="form-textarea light" v-model="s.tagline" type="text" rows="3" maxlength="140" placeholder="A community residing on the world wide web."/>
 																<div v-if="s.tagline" class="absolute text-xs font-semibold text-gray-400 right-3 bottom-2" :class="{'text-red-500':s.tagline.length >= 140}">
 																	{{ 140 - s.tagline.length }}
 																</div>

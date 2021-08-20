@@ -166,11 +166,7 @@ export default {
 		// },
 		's': { // get guild info and posts if guild changes
 			handler() {
-				if (JSON.stringify(this.g) !== JSON.stringify(this.saved)) {
-					this.changed = true
-				} else {
-					this.changed = false
-				}
+				this.changed = (JSON.stringify(this.g) !== JSON.stringify(this.saved))
 			},
 			deep: true
 		}
@@ -198,6 +194,7 @@ export default {
 		save() {
 			this.changed = false;
 			this.saved = Object.assign({}, this.s);
+			this.$store.commit('site/SET_SITE', {site: this.saved});
 		}
 	}
 };
