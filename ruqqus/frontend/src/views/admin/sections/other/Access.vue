@@ -64,7 +64,7 @@
 													Require an account to view your community
 												</p>
 											</div>
-											<t-toggle v-model="s.isPrivate"/>
+											<Toggle v-model="s.isPrivate"/>
 										</div>
 									</div>
 									<div class="p-4">
@@ -77,7 +77,7 @@
 													Disable any new account creation
 												</p>
 											</div>
-											<t-toggle v-model="s.canRegister"/>
+											<Toggle v-model="s.canRegister"/>
 										</div>
 									</div>
 								</div>
@@ -111,7 +111,7 @@
 													Restrict commenting to approved users only
 												</p>
 											</div>
-											<t-toggle v-model="s.canComment"/>
+											<Toggle v-model="s.canComment"/>
 										</div>
 									</div>
 									<div class="p-4 border-b">
@@ -124,7 +124,7 @@
 													Restrict voting to approved users only
 												</p>
 											</div>
-											<t-toggle v-model="s.canVote"/>
+											<Toggle v-model="s.canVote"/>
 										</div>
 									</div>
 								</div>

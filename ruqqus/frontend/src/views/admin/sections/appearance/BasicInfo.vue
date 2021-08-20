@@ -48,7 +48,7 @@
 									Community Info
 								</div>
 								<div class="sm:rounded-sm sm:shadow-xs border-t border-b sm:border-0 bg-white">
-									<Toggle @change="handleChange">
+									<ToggleForm @change="handleChange">
 										<template v-slot:default="{active, toggle}">
 											<div class="p-4">
 												<div class="flex items-center justify-between">
@@ -102,7 +102,7 @@
 												</div>
 											</div>
 										</template>
-									</Toggle>
+									</ToggleForm>
 								</div>
 							</div>
 
@@ -155,7 +155,7 @@
 													Enable if your community contains NSFW content suitable only for adults
 												</p>
 											</div>
-											<t-toggle v-model="s.isNsfw"/>
+											<toggle v-model="s.isNsfw"/>
 										</div>
 									</div>
 								</div>
@@ -176,7 +176,7 @@
 													Removes downvote buttons from all content (posts and comments)
 												</p>
 											</div>
-											<t-toggle v-model="s.canDownvote"/>
+											<Toggle v-model="s.canDownvote"/>
 										</div>
 									</div>
 								</div>
@@ -193,13 +193,16 @@
 <script>
 // Import components
 import { defineAsyncComponent } from 'vue'
-const Toggle = defineAsyncComponent(() => import('@/components/Toggle.vue'));
+import Toggle from "@/components/forms/Toggle.vue";
+
+const ToggleForm = defineAsyncComponent(() => import('@/components/Toggle.vue'));
 const Editor = defineAsyncComponent(() => import('@/components/editors/Editor_V2.vue'));
 
 export default {
 	name: "SiteSettingsGeneral",
 	components: {
 		Toggle,
+		ToggleForm,
 		Editor
 	},
 	data() {
