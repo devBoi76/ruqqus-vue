@@ -176,7 +176,7 @@
 													Removes downvote buttons from all content (posts and comments)
 												</p>
 											</div>
-											<t-toggle v-model="!s.canDownvote"/>
+											<t-toggle v-model="s.canDownvote"/>
 										</div>
 									</div>
 								</div>
