@@ -19,7 +19,7 @@
 					<div class="hidden md:block mr-4 animate-pulse">
 						<div class="bg-gray-200 dark:bg-white dark:bg-opacity-20 sm:rounded-sm w-16 h-16"></div>
 					</div>
-					<div class="w-full p-2.5 sm:p-4 sm:rounded-sm sm:border bg-white border dark:bg-gray-800 dark:border-transparent">
+					<div class="w-full p-2.5 sm:p-4 sm:rounded-sm sm:border bg-white dark:bg-gray-800 dark:border-transparent">
 						<div class="flex flex-col animate-pulse">
 							<div class="hidden sm:flex flex-col w-full justify-between mb-6">
 								<div class="bg-gray-200 dark:bg-white dark:bg-opacity-10 mb-2 w-40 h-3 rounded-sm"></div>
