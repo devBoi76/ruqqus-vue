@@ -87,22 +87,11 @@
           <li class="px-1 py-0.5">
             <router-link to="/about" class="text-xs text-gray-500 hover:underline">
               About
-
             </router-link>
           </li>
           <li class="px-1 py-0.5">
             <router-link to="/about" class="text-xs text-gray-500 hover:underline">
               Rules
-            </router-link>
-          </li>
-          <li class="px-1 py-0.5">
-            <router-link to="/about" class="text-xs text-gray-500 hover:underline">
-              Source Code
-            </router-link>
-          </li>
-          <li class="px-1 py-0.5">
-            <router-link to="/about" class="text-xs text-gray-500 hover:underline">
-              Change Log
             </router-link>
           </li>
           <li class="px-1 py-0.5">
@@ -113,6 +102,16 @@
           <li class="px-1 py-0.5">
             <router-link to="/about" class="text-xs text-gray-500 hover:underline">
               Discord
+            </router-link>
+          </li>
+          <li class="px-1 py-0.5">
+            <router-link to="/about" class="text-xs text-gray-500 hover:underline">
+              Change Log
+            </router-link>
+          </li>
+          <li class="px-1 py-0.5">
+            <router-link to="/about" class="text-xs text-gray-500 hover:underline">
+              Source Code
             </router-link>
           </li>
         </ul>
