@@ -16,7 +16,7 @@
     leave-from-class="transform scale-100 opacity-100"
     leave-to-class="transform scale-95 opacity-0"
     >
-    <MenuItems class="absolute right-0 w-56 mt-4 origin-top-right bg-white divide-y divide-gray-100 rounded shadow-lg border focus:outline-none">
+    <MenuItems class="absolute right-0 w-64 mt-4 origin-top-right bg-white divide-y divide-gray-100 rounded shadow-lg border focus:outline-none">
       <!-- User Details -->
       <router-link :to="`/${v.username}`" class="flex items-center p-4">
         <!-- User Avatar -->
