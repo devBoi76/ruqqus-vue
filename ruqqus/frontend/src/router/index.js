@@ -140,9 +140,9 @@ const routes = [
 		{
 			path: '/admin', component: AdminView, props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false},
 			children: [
-			{ path: '', component: AdminGeneralView, name: 'admin-general-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
+			{ path: '/admin', alias: '/admin/general' component: AdminGeneralView, name: 'admin-general-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
+			//{ path: '/admin/general', component: AdminGeneralView, name: 'admin-general-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
 			{ path: '/admin/queue/:filter?', component: AdminQueueView, name: 'admin-queue-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
-			{ path: '/admin/general', component: AdminGeneralView, name: 'admin-general-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
 			{ path: '/admin/theming', component: AdminThemingView, name: 'admin-theming-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
 			{ path: '/admin/members/:sort?', component: AdminUserManagementView, name: 'admin-user-management-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
 			{ path: '/admin/access', component: AdminAccessView, name: 'admin-access-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
