@@ -151,6 +151,7 @@ export default {
 			changed: false,
 			loading: false,
 			errored: false,
+			s: {},
 			saved: {}
 		}
 	},
@@ -169,11 +170,6 @@ export default {
 				this.changed = (JSON.stringify(this.s) !== JSON.stringify(this.saved))
 			},
 			deep: true
-		}
-	},
-	computed: {
-		s() {
-			return this.$store.getters['site/getSite'];
 		}
 	},
 	methods: {
@@ -196,6 +192,9 @@ export default {
 			this.saved = Object.assign({}, this.s);
 			this.$store.commit('site/SET_SITE', {site: this.saved});
 		}
+	},
+	created() {
+		this.s = Object.assign({}, this.$store.getters['site/getSite'])
 	}
 };
 </script>
