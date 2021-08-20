@@ -75,12 +75,6 @@
         </MenuItem>
       </div>
       <div class="py-2">
-        <!-- Rules -->
-        <MenuItem v-slot="{ active }">
-          <button :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-1.5']">
-            <i class="far fa-scroll-old text-center fa-fw mr-2"></i><span>Rules</span>
-          </button>
-        </MenuItem>
         <!-- Github -->
         <MenuItem v-slot="{ active }">
           <button :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-1.5']">
@@ -101,6 +95,25 @@
             <i class="far fa-sign-out text-center fa-fw mr-2"></i><span>Sign Out</span>
           </button>
         </MenuItem>
+      </div>
+      <div class="py-2 bg-gray-50">
+        <ul class="flex flex-wrap space-x-3 mb-0 px-4">
+          <li>
+            <router-link to="/about" class="text-xs text-gray-500 hover:underline">
+              About
+            </router-link>
+          </li>
+          <li>
+            <router-link to="/about" class="text-xs text-gray-500 hover:underline">
+              Rules
+            </router-link>
+          </li>
+          <li>
+            <router-link to="/about" class="text-xs text-gray-500 hover:underline">
+              Source Code
+            </router-link>
+          </li>
+        </ul>
       </div>
     </MenuItems>
   </transition>
