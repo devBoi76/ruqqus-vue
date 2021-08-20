@@ -11,7 +11,6 @@ import base from './modules/base'
 import comments from './modules/comments'
 import create from "./modules/create"
 import items from "./modules/items"
-import moderation from "./modules/moderation"
 import notifications from "./modules/notifications"
 import onboarding from "./modules/onboarding"
 import persist from "./modules/persist"
@@ -57,7 +56,6 @@ export const store = createStore({
     comments: comments,
     create: create,
     items: items,
-    moderation: moderation,
     notifications: notifications,
     onboarding: onboarding,
     persist: persist,
