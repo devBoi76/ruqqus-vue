@@ -26,7 +26,7 @@
 								<label class="label" label-for="password-desktop">
 									Password
 								</label>
-								<input required type="password" class="form-input light" placeholder="Your password" required name="password-desktop" v-model="form.password"/>
+								<input required type="password" class="form-input light" placeholder="Your password" name="password-desktop" v-model="form.password"/>
 								<a href="/register" class="block mt-2 text-xs text-purple-500 hover:text-purple-600">Forgot password?</a>
 							</div>
 						</form>
