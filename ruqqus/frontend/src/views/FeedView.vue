@@ -8,7 +8,7 @@
 				<div class="w-full">
 
 					<!-- Post Creation -->
-					<div class="hidden sm:flex items-center mb-4 px-4 py-3 bg-white dark:bg-gray-800 sm:border sm:rounded-sm">
+					<div v-if="v" class="hidden sm:flex items-center mb-4 px-4 py-3 bg-white dark:bg-gray-800 sm:border sm:rounded-sm">
 						<img :src="v.profile_url" class="flex-shrink-0 w-6 h-6 object-fit mr-3 rounded-sm bg-gray-200 dark:bg-gray-800">
 						<div class="group flex-grow overflow-hidden">
 							<router-link to="/submit" tag="div" class="flex items-center h-full">
@@ -24,6 +24,21 @@
 						</div>
 					</div>
 					<!-- End Post Creation -->
+
+					<!-- Login CTA -->
+					<div v-else class="hidden sm:flex items-center mb-4 px-4 py-3 bg-white dark:bg-gray-800 sm:border sm:rounded-sm">
+						<div class="flex-grow overflow-hidden">
+							<div class="flex items-center justify-center">
+								<button class="button primary">
+									Sign up to start posting
+								</button>
+								<button class="button linkGray400">
+									Or sign in with your account
+								</button>
+							</div>
+						</div>
+					</div>
+					<!-- End Login CTA -->
 
 					<!-- Post Sorting and Display Toggle -->
 					<div class="flex items-center flex-shrink-0 sm:rounded-sm sm:border mb-2.5 sm:mb-4 px-4 py-3 bg-white dark:bg-gray-800">
@@ -86,7 +101,7 @@
 </template>
 
 <script>
-import { defineAsyncComponent } from 'vue'
+	import { defineAsyncComponent } from 'vue'
 // Import our components
 import Banner from '@/components/Banner.vue';
 const ItemList = defineAsyncComponent(() => import('@/views/ItemList.vue'))
