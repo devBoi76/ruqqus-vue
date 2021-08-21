@@ -14,13 +14,13 @@
 								<label class="label" label-for="username-desktop">
 									Username or Email
 								</label>
-								<input type="text" class="form-input" placeholder="Your username or email" name="username-desktop" v-model="form.name"/>
+								<input type="text" class="form-input light" placeholder="Your username or email" name="username-desktop" v-model="form.name"/>
 							</div>
 							<div>
 								<label class="label" label-for="password-desktop">
 									Password
 								</label>
-								<input type="password" class="form-input" placeholder="Your password" required name="password-desktop" v-model="form.password"/>
+								<input type="password" class="form-input light" placeholder="Your password" required name="password-desktop" v-model="form.password"/>
 								<a href="/register" class="block mt-2 text-xs text-purple-500 hover:text-purple-600">Forgot password?</a>
 							</div>
 						</div>
@@ -46,7 +46,7 @@
 						<label class="block mb-1 text-black text-xs uppercase tracking-wide font-medium" label-for="mfa">
 							Authentication Code
 						</label>
-						<input id="input-4" class="form-input" v-model="form.mfa" type="number" required placeholder="123456" maxlength="6" name="mfa"/>
+						<input id="input-4" class="form-input light" v-model="form.mfa" type="number" required placeholder="123456" maxlength="6" name="mfa"/>
 						<button class="button bg-primary hover:bg-opacity-70 w-full mt-4" @click="verify_mfa(form)">
 							Log in
 						</button>
@@ -54,7 +54,10 @@
 				</div>
 				<!-- Sign up micro CTA -->
 				<div class="mt-6 text-gray-700 text-sm">
-					Not on Ruqqus? <a href="/register" class="text-purple-500 font-medium">Create an account</a>
+					Not on Ruqqus?
+					<router-link to="/register" class="text-purple-500 font-semibold">
+						Create an account
+					</router-link>
 				</div>
 			</div>
 		</div>
