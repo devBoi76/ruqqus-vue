@@ -173,9 +173,14 @@
 															<label class="label">
 																Meta title
 															</label>
-															<input class="form-input light" v-model="s.meta.title" :placeholder="$route.params.name" type="text"/>
+															<div class="relative">
+																<input class="form-input light" v-model="s.meta.title" :placeholder="$route.params.name" type="text"/>
+																<div v-if="s.meta.title.length" class="absolute text-xs font-semibold text-gray-400 right-3 bottom-2" :class="{'text-yellow-500':s.meta.title.length >= 60}">
+																	{{ 60 - s.meta.title.length }}
+																</div>
+															</div>
 															<p class="text-sm text-gray-500 mt-1">
-																We recommend 72 characters or less
+																We recommend 60 characters or less
 															</p>
 														</div>
 													</div>
