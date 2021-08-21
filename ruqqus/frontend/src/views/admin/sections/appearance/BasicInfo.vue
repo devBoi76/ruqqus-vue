@@ -195,13 +195,13 @@
 																Search engine preview
 															</label>
 															<div class="p-5 bg-white border rounded">
-																<div class="text-xs text-gray-500 leading-tight mb-1">
+																<div class="text-xs text-gray-900 leading-tight mb-1">
 																	https://mysite.com
 																</div>
 																<div class="text-blue-700 text-xl font-medium">
 																	{{ s.meta.title }}
 																</div>
-																<p class="text-sm text-gray-700 mt-2">
+																<p class="text-sm text-gray-600 mt-2">
 																	{{ s.meta.description }}
 																</p>
 															</div>
