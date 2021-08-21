@@ -25,7 +25,7 @@
           <div class="px-1 py-1">
             <MenuItem>
               <!-- Sort Link -->
-              <router-link v-for="sort in sorts" :key="sort.name" v-slot="{ href, navigate, isExactActive }" :to="sort.route" @click="hide">
+              <router-link v-for="sort in sorts" :key="sort.name" custom v-slot="{ href, navigate, isExactActive }" :to="sort.route" @click="hide">
                 <a :href="href" @click="navigate" role="menuitem">
                   <div class="group flex rounded-md items-center w-full px-2 py-2" :class="isExactActive ? 'text-primary font-bold' : 'text-gray-700 hover:text-gray-900'">
                     {{ sort.name }}
