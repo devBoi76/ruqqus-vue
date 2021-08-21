@@ -67,6 +67,9 @@
 												<div v-if="active" class="space-y-6 mt-6">
 													<div class="grid grid-cols-3 gap-6">
 														<div class="col-span-3 sm:col-span-2">
+															<label class="label">
+																Community name
+															</label>
 															<input class="form-input light" v-model="s.name" :placeholder="$route.params.name" type="text"/>
 															<p class="text-sm text-gray-500 mt-1">
 																This does not affect your community web address
@@ -76,17 +79,20 @@
 													<div class="grid grid-cols-3 gap-6">
 														<div class="col-span-3 sm:col-span-2">
 															<div class="relative">
+																<label class="label">
+																	Community tagline
+																</label>
 																<textarea class="form-textarea light" v-model="s.tagline" type="text" rows="3" maxlength="140" placeholder="A community residing on the world wide web."/>
 																<div v-if="s.tagline" class="absolute text-xs font-semibold text-gray-400 right-3 bottom-2" :class="{'text-red-500':s.tagline.length >= 140}">
 																	{{ 140 - s.tagline.length }}
 																</div>
 															</div>
 															<p class="text-sm text-gray-500 mt-1">
-																Used for search engine results. Markdown not supported
+																Descriptive text used in social images and banner artwork
 															</p>
 														</div>
 													</div>
-													<div class="grid grid-cols-3 gap-6">
+<!-- 													<div class="grid grid-cols-3 gap-6">
 														<div class="col-span-3 sm:col-span-2">
 															<div class="relative">
 																<Editor @input="getEditorContent" v-model="s.description" :limit="5000" @click.prevent/>
@@ -98,7 +104,7 @@
 																A full description of the guild. <i class="fab fa-markdown"></i> markdown supported
 															</p>
 														</div>
-													</div>
+													</div> -->
 												</div>
 											</div>
 										</template>
@@ -185,7 +191,7 @@
 																</div>
 															</div>
 															<p class="text-sm text-gray-500 mt-1">
-																Used for search engine results. Markdown not supported
+																Briefly describe what your community is about
 															</p>
 														</div>
 													</div>
