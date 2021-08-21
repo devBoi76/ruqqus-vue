@@ -57,7 +57,7 @@
 									<div class="p-4 border-b">
 										<div class="flex flex-grow items-center justify-between">
 											<div>
-												<div class="font-medium leading-tight">
+												<div class="font-semibold leading-tight">
 													Make this community private
 												</div>
 												<p class="text-sm text-gray-500 mt-1">
@@ -70,7 +70,7 @@
 									<div class="p-4">
 										<div class="flex flex-grow items-center justify-between">
 											<div>
-												<div class="font-medium leading-tight">
+												<div class="font-semibold leading-tight">
 													Disable sign ups
 												</div>
 												<p class="text-sm text-gray-500 mt-1">
@@ -91,7 +91,7 @@
 									<div class="p-4 border-b">
 										<div class="flex flex-grow items-center justify-between">
 											<div>
-												<div class="font-medium leading-tight">
+												<div class="font-semibold leading-tight">
 													Restricted Posting
 												</div>
 												<p class="text-sm text-gray-500 mt-1">
@@ -104,7 +104,7 @@
 									<div class="p-4 border-b">
 										<div class="flex flex-grow items-center justify-between">
 											<div>
-												<div class="font-medium leading-tight">
+												<div class="font-semibold leading-tight">
 													Restricted Commenting
 												</div>
 												<p class="text-sm text-gray-500 mt-1">
@@ -117,7 +117,7 @@
 									<div class="p-4 border-b">
 										<div class="flex flex-grow items-center justify-between">
 											<div>
-												<div class="font-medium leading-tight">
+												<div class="font-semibold leading-tight">
 													Restricted Voting
 												</div>
 												<p class="text-sm text-gray-500 mt-1">

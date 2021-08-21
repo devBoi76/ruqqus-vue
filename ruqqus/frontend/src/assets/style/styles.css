@@ -91,7 +91,7 @@
 		@apply text-lg sm:text-base leading-5
 	}
 	.label {
-		@apply block text-sm font-medium text-gray-900 mb-1;
+		@apply block text-sm font-semibold text-gray-900 mb-1;
 	}
 	.dot {
 		@apply w-1 h-1 rounded-full bg-gray-400;

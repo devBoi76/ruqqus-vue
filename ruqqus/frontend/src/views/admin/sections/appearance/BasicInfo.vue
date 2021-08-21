@@ -53,7 +53,7 @@
 											<div class="p-4">
 												<div class="flex items-center justify-between">
 													<div>
-														<div class="font-bold leading-tight">
+														<div class="font-semibold leading-tight">
 															Name & Description
 														</div>
 														<p class="text-sm text-gray-500 mt-1">
@@ -114,7 +114,7 @@
 									<div class="p-4 border-b">
 										<div class="flex items-center justify-between">
 											<div>
-												<div class="font-bold leading-tight">
+												<div class="font-semibold leading-tight">
 													Icon
 												</div>
 												<p class="text-sm text-gray-500 mt-1">
@@ -127,7 +127,7 @@
 									<div class="p-4">
 										<div class="flex items-center justify-between">
 											<div>
-												<div class="font-bold leading-tight">
+												<div class="font-semibold leading-tight">
 													Cover
 												</div>
 												<p class="text-sm text-gray-500 mt-1">
@@ -142,13 +142,87 @@
 
 							<div>
 								<div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
+									Community Meta Details
+								</div>
+								<div class="sm:rounded-sm sm:shadow-xs border-t border-b sm:border-0 bg-white">
+									<ToggleForm @change="handleChange">
+										<template v-slot:default="{active, toggle}">
+											<div class="p-4">
+												<div class="flex items-center justify-between">
+													<div>
+														<div class="font-semibold leading-tight">
+															Meta data
+														</div>
+														<p class="text-sm text-gray-500 mt-1">
+															Additional site details for search engines
+														</p>
+													</div>
+													<button class="flex items-center justify-center px-2 w-8 h-8 text-lg text-gray-600 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white rounded-sm" @click="toggle" aria-expanded="active">
+														<i class="far fa-fw" :class="active ? 'fa-compress-alt' : 'fa-pen'"></i>
+													</button>
+												</div>
+												<div v-if="active" class="space-y-6 mt-6">
+													<div class="grid grid-cols-3 gap-6">
+														<div class="col-span-3 sm:col-span-2">
+															<label class="label">
+																Meta title
+															</label>
+															<input class="form-input light" v-model="s.meta.title" :placeholder="$route.params.name" type="text"/>
+															<p class="text-sm text-gray-500 mt-1">
+																We recommend 72 characters or less
+															</p>
+														</div>
+													</div>
+													<div class="grid grid-cols-3 gap-6">
+														<div class="col-span-3 sm:col-span-2">
+															<div class="relative">
+																<label class="label">
+																	Meta description
+																</label>
+																<textarea class="form-textarea light" v-model="s.meta.description" type="text" rows="3" maxlength="140" placeholder="A community residing on the world wide web."/>
+																<div v-if="s.meta.description" class="absolute text-xs font-semibold text-gray-400 right-3 bottom-2" :class="{'text-red-500':s.meta.description >= 140}">
+																	{{ 140 - s.meta.description }}
+																</div>
+															</div>
+															<p class="text-sm text-gray-500 mt-1">
+																Used for search engine results. Markdown not supported
+															</p>
+														</div>
+													</div>
+													<div class="grid grid-cols-3 gap-6">
+														<div class="col-span-3 sm:col-span-2">
+															<label class="label">
+																Search engine preview
+															</label>
+															<div class="p-5 bg-white border rounded">
+																<div class="text-xs text-gray-500 leading-tight mb-1">
+																	https://mysite.com
+																</div>
+																<div class="text-blue-700 text-xl font-medium">
+																	{{ s.meta.title }}
+																</div>
+																<p class="text-sm text-gray-700 mt-2">
+																	{{ s.meta.description }}
+																</p>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</template>
+									</ToggleForm>
+								</div>
+							</div>
+
+							<div>
+								<div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
 									Content Rating
 								</div>
 								<div class="sm:rounded-sm sm:shadow-xs border-t border-b sm:border-0 bg-white">
 									<div class="p-4">
 										<div class="flex flex-grow items-center justify-between">
 											<div>
-												<div class="font-bold leading-tight">
+												<div class="font-semibold leading-tight">
 													NSFW
 												</div>
 												<p class="text-sm text-gray-500 mt-1">
@@ -169,7 +243,7 @@
 									<div class="p-4">
 										<div class="flex flex-grow items-center justify-between">
 											<div>
-												<div class="font-bold leading-tight">
+												<div class="font-semibold leading-tight">
 													Disable Downvotes
 												</div>
 												<p class="text-sm text-gray-500 mt-1">
