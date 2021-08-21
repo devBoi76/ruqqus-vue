@@ -8,7 +8,7 @@
 				<div class="w-full">
 
 					<!-- Post Creation -->
-					<div v-if="v" class="hidden sm:flex items-center mb-4 px-4 py-3 bg-white dark:bg-gray-800 sm:border sm:rounded-sm">
+					<div v-if="is_authenticated" class="hidden sm:flex items-center mb-4 px-4 py-3 bg-white dark:bg-gray-800 sm:border sm:rounded-sm">
 						<img :src="v.profile_url" class="flex-shrink-0 w-6 h-6 object-fit mr-3 rounded-sm bg-gray-200 dark:bg-gray-800">
 						<div class="group flex-grow overflow-hidden">
 							<router-link to="/submit" tag="div" class="flex items-center h-full">
@@ -132,7 +132,7 @@ export default {
 		ListingToggle,
 	},
 	computed:{
-		...mapState("persist", ["v", "isCard"]),
+		...mapState("persist", ["is_authenticated", "v", "isCard"]),
 		...mapState("items", ["posts"]),
 		s() {
 			return this.$store.getters['site/getSite'];
