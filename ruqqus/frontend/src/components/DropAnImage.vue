@@ -1,14 +1,14 @@
 <template>
   <div :class="{'absolute bottom-0 w-full h-full':showDropzone}">
-    <transition
-    enter-active-class="transition duration-100 ease-out"
-    enter-from-class="transform scale-95 opacity-0"
-    enter-to-class="transform scale-100 opacity-100"
-    leave-active-class="transition duration-75 ease-in"
-    leave-from-class="transform scale-100 opacity-100"
-    leave-to-class="transform scale-95 opacity-0"
-    >
     <div v-if="canDropImage && showDropzone" class="absolute flex items-center justify-center overflow-hidden w-full h-screen z-100 bg-opacity-80" :class="wrapperClass" @drop.prevent="drop($event)" @click.self="wrongFileReset()" @keydown.esc="showDropzone=false; reset()" tabindex="0">
+      <transition
+      enter-active-class="transition duration-100 ease-out"
+      enter-from-class="transform scale-95 opacity-0"
+      enter-to-class="transform scale-100 opacity-100"
+      leave-active-class="transition duration-75 ease-in"
+      leave-from-class="transform scale-100 opacity-100"
+      leave-to-class="transform scale-95 opacity-0"
+      >
       <div class="rounded sm:w-2/4 md:1/4 lg:w-1/3 bg-white shadow transition duration-200 ease-in transform" :class="{ 'animate-shake':wrongFile }">
         <div class="w-full p-4">
           <div class="flex flex-col space-y-5 border-2 border-dashed py-12 text-center select-none">
@@ -37,8 +37,8 @@
           </div>
         </div>
       </div>
-    </div>
-  </transition>
+    </transition>
+  </div>
 </div>
 </template>
 
