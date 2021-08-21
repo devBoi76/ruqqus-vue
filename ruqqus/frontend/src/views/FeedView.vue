@@ -29,12 +29,16 @@
 					<div v-else class="hidden sm:flex items-center mb-4 px-4 py-3 bg-white dark:bg-gray-800 sm:border sm:rounded-sm">
 						<div class="flex-grow overflow-hidden">
 							<div class="flex items-center justify-center">
-								<button class="button primary">
-									Sign up and start posting
-								</button>
-								<button class="button linkGray400">
-									Or sign in with your account
-								</button>
+								<router-link to="/register" custom v-slot="{ navigate }">
+									<button class="button primary" @click="navigate" @keypress.enter="navigate" role="link">
+										Sign up and start posting
+									</button>
+								</router-link>
+								<router-link to="/login" custom v-slot="{ navigate }">
+									<button class="button linkGray400" @click="navigate" @keypress.enter="navigate" role="link">
+										Or sign into your account
+									</button>
+								</router-link>
 							</div>
 						</div>
 					</div>

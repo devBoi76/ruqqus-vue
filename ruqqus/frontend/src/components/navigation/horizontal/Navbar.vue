@@ -8,12 +8,16 @@
 					</div>
 				</div>
 				<div class="hidden md:flex space-x-2">
-					<button @click="logout()" class="button outlinePrimary">
-						Log in
-					</button>
-					<button @click="logout()" class="button primary">
-						Sign up
-					</button>
+					<router-link to="/login" custom v-slot="{ navigate }">
+						<button class="button primary" @click="navigate" @keypress.enter="navigate" role="link">
+							Log in
+						</button>
+					</router-link>
+					<router-link to="/register" custom v-slot="{ navigate }">
+						<button class="button primary" @click="navigate" @keypress.enter="navigate" role="link">
+							Sign up
+						</button>
+					</router-link>
 				</div>
 				<div class="-mr-1 flex space-x-1 md:hidden">
 					<!-- Search button -->
