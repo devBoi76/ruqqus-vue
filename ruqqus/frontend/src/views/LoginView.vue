@@ -20,7 +20,7 @@
 								<label class="label" label-for="password-desktop">
 									Password
 								</label>
-								<input required type="password" class="form-input light" placeholder="Your password" required name="password-desktop" v-model="form.password"/>
+								<input required type="password" class="form-input light" placeholder="Your password" name="password-desktop" v-model="form.password"/>
 								<a href="/register" class="block mt-2 text-xs text-purple-500 hover:text-purple-600">Forgot password?</a>
 							</div>
 						</form>
@@ -46,7 +46,7 @@
 						<label class="block mb-1 text-black text-xs uppercase tracking-wide font-medium" label-for="mfa">
 							Authentication Code
 						</label>
-						<input required id="input-4" class="form-input light" v-model="form.mfa" type="number" required placeholder="123456" maxlength="6" name="mfa"/>
+						<input required id="input-4" class="form-input light" v-model="form.mfa" type="number" placeholder="123456" maxlength="6" name="mfa"/>
 						<button class="button primary w-full mt-4" @click="verify_mfa(form)">
 							Log in
 						</button>
