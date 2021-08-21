@@ -196,7 +196,7 @@
 															</label>
 															<div class="p-5 bg-white border rounded">
 																<div class="text-xs text-gray-900 leading-tight mb-1">
-																	https://mysite.com
+																	{{ s.domain }}
 																</div>
 																<div class="text-[#1a0dab] text-xl font-medium">
 																	{{ s.meta.title }}

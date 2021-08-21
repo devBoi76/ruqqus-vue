@@ -4,6 +4,7 @@ import { getSite } from '../../api/Site.js';
 
 const state = {
 	site: {
+		domain: 'piedpiper.gg'
 		name: 'Pied Piper',
 		meta: {
 			title: 'Pied Piper - Middle-Out Compression',
