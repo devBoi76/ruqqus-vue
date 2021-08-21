@@ -5,7 +5,6 @@ import axios from 'axios'
 
 import { getPost } from '../../api/Post.js';
 import { getAccountPosts } from '../../api/Account.js';
-import { getGuildPosts } from '../../api/Guild.js';
 import { getFeed } from '../../api/Feed.js';
 import { getSearch } from '../../api/Search.js';
 
