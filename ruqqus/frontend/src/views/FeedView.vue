@@ -30,7 +30,7 @@
 						<div class="flex-grow overflow-hidden">
 							<div class="flex items-center justify-center">
 								<button class="button primary">
-									Sign up to start posting
+									Sign up and start posting
 								</button>
 								<button class="button linkGray400">
 									Or sign in with your account
