@@ -180,8 +180,8 @@
 																	Meta description
 																</label>
 																<textarea class="form-textarea light" v-model="s.meta.description" type="text" rows="3" maxlength="140" placeholder="A community residing on the world wide web."/>
-																<div v-if="s.meta.description" class="absolute text-xs font-semibold text-gray-400 right-3 bottom-2" :class="{'text-red-500':s.meta.description >= 140}">
-																	{{ 140 - s.meta.description }}
+																<div v-if="s.meta.description.length" class="absolute text-xs font-semibold text-gray-400 right-3 bottom-2" :class="{'text-red-500':s.meta.description.length >= 140}">
+																	{{ 140 - s.meta.description.length }}
 																</div>
 															</div>
 															<p class="text-sm text-gray-500 mt-1">
