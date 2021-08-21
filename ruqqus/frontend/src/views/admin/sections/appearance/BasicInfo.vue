@@ -198,10 +198,10 @@
 																<div class="text-xs text-gray-900 leading-tight mb-1">
 																	https://mysite.com
 																</div>
-																<div class="text-blue-700 text-xl font-medium">
+																<div class="text-[#1a0dab] text-xl font-medium">
 																	{{ s.meta.title }}
 																</div>
-																<p class="text-sm text-gray-600 mt-2">
+																<p class="text-sm text-gray-700 mt-1">
 																	{{ s.meta.description }}
 																</p>
 															</div>

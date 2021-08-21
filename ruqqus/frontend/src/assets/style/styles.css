@@ -134,6 +134,9 @@
 	.form-textarea:default {
 		@apply text-gray-900 placeholder-gray-400 bg-gray-50 border-gray-200 focus:bg-white focus:border-primary focus:ring-primary
 	}
+	.form-textarea.light {
+		@apply text-gray-900 placeholder-gray-400 bg-gray-50 border-gray-200 focus:bg-white focus:border-primary focus:ring-primary
+	}
 	.form-textarea.purple500 {
 		@apply text-gray-900 placeholder-gray-400 bg-gray-50 border-gray-200 focus:bg-white focus:border-purple-500 focus:ring-purple-500
 	}
