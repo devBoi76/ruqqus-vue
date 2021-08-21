@@ -9,7 +9,7 @@
 				</div>
 				<div class="hidden md:flex space-x-2">
 					<router-link to="/login" custom v-slot="{ navigate }">
-						<button class="button primary" @click="navigate" @keypress.enter="navigate" role="link">
+						<button class="button outlinePrimary" @click="navigate" @keypress.enter="navigate" role="link">
 							Log in
 						</button>
 					</router-link>
