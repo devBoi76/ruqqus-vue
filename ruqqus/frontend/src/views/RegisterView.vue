@@ -30,7 +30,7 @@
 								<a href="/register" class="block mt-2 text-xs text-purple-500 hover:text-purple-600">Forgot password?</a>
 							</div>
 						</div>
-						<button class="button bg-primary hover:bg-opacity-70 w-full mt-6" @click="auth_v(form)">
+						<button class="button primary w-full mt-6" @click="auth_v(form)">
 							Create account
 						</button>
 					</div>
