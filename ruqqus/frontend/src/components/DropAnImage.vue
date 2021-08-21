@@ -3,7 +3,7 @@
     <div class="absolute flex items-center justify-center overflow-hidden w-full h-screen z-100 bg-opacity-80 transition-all duration-100" :class="wrapperClass" @drop.prevent="drop($event)" @click.self="wrongFileReset()" @keydown.esc="showDropzone=false; reset()" tabindex="0">
       <transition
       enter-active-class="transition duration-100 ease-out"
-      enter-from-class="transform scale-105 opacity-0"
+      enter-from-class="transform scale-95 opacity-0"
       enter-to-class="transform scale-100 opacity-100"
       leave-active-class="transition duration-75 ease-in"
       leave-from-class="transform scale-100 opacity-100"
