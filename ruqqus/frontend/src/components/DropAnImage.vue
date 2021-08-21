@@ -1,12 +1,12 @@
 <template>
   <div :class="{'absolute bottom-0 w-full h-full':showDropzone}">
     <transition
-    enter-active-class="transition-all duration-150 ease-out"
-    leave-active-class="transition-all duration-300 ease-in"
-    enter-class="opacity-0 scale-60"
-    enter-to-leave-class="opacity-100 scale-100"
-    leave-class="opacity-100 scale-100"
-    leave-to-class="opacity-0 scale-60"
+    enter-active-class="transition duration-100 ease-out"
+    enter-from-class="transform scale-95 opacity-0"
+    enter-to-class="transform scale-100 opacity-100"
+    leave-active-class="transition duration-75 ease-in"
+    leave-from-class="transform scale-100 opacity-100"
+    leave-to-class="transform scale-95 opacity-0"
     >
     <div v-if="canDropImage && showDropzone" class="absolute flex items-center justify-center overflow-hidden w-full h-screen z-100 bg-opacity-80" :class="wrapperClass" @drop.prevent="drop($event)" @click.self="wrongFileReset()" @keydown.esc="showDropzone=false; reset()" tabindex="0">
       <div class="rounded sm:w-2/4 md:1/4 lg:w-1/3 bg-white shadow transition duration-200 ease-in transform" :class="{ 'animate-shake':wrongFile }">
