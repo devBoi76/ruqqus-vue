@@ -174,7 +174,7 @@
 																Meta title
 															</label>
 															<div class="relative">
-																<input class="form-input light" v-model="s.meta.title" :placeholder="$route.params.name" type="text"/>
+																<input class="form-input light" v-model="s.meta.title" :placeholder="s.name" type="text"/>
 																<div v-if="s.meta.title.length" class="absolute text-xs font-semibold text-gray-400 right-3 bottom-2" :class="{'text-yellow-500':s.meta.title.length >= 60}">
 																	{{ 60 - s.meta.title.length }}
 																</div>
@@ -210,10 +210,10 @@
 																	https://{{ s.domain }}
 																</div>
 																<div class="text-[#1a0dab] text-xl font-medium">
-																	{{ s.meta.title || 'Your site title here'}}
+																	{{ s.meta.title || s.name }}
 																</div>
 																<p class="text-sm text-gray-700 mt-1">
-																	{{ s.meta.description || 'Your site description here' }}
+																	{{ s.meta.description || `${s.name} - A community powered by Ruqqus` }}
 																</p>
 															</div>
 														</div>
