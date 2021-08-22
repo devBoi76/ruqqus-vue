@@ -8,7 +8,7 @@
 					<h1 class="text-2xl capitalize mb-0">
 						Integrations
 					</h1>
-					<div class="flex items-center space-x-4">
+					<div class="hidden items-center space-x-4">
 						<div v-show="changed" class="text-xs text-gray-400">
 							You have unsaved changes!
 						</div>
