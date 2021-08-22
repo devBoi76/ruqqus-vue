@@ -53,7 +53,7 @@
 								<div v-for="(item, index) in integrations" :key="index" class="my-2 px-2 w-full overflow-hidden md:w-1/2">
 									<div class="justify-between p-4 bg-white border rounded-sm" :class="item.isActive ? 'hidden' : 'flex'">
 										<div class="flex">
-											<img :src="item.logo" class="w-12 h-12 object-cover"/>
+											<img :src="item.logo" class="w-9 h-9 md:w-12 md:h-12 object-cover"/>
 											<div class="pl-4 pr-8">
 												<div class="font-semibold">
 													{{ item.name }}
