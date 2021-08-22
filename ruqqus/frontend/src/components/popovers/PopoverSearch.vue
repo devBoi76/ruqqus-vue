@@ -28,8 +28,8 @@
 						</div>
 					</div>
 					<div class="py-2">
-						<button class="'group flex items-center w-full px-4 py-1.5 text-gray-700 hover:text-gray-900 hover:bg-gray-100">
-							<i class="far fa-search fa-fw text-gray-500 mr-2"></i>
+						<button class="'group flex items-center w-full px-4 py-1.5 text-gray-900 hover:bg-gray-100">
+							<i class="far fa-search fa-fw text-gray-400 mr-2"></i>
 							<span>search term</span>
 						</button>
 					</div>
