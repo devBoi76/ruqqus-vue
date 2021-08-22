@@ -79,23 +79,21 @@
 										<div class="flex items-center">
 											<img :src="item.logo" class="w-9 h-9 object-cover"/>
 											<div class="pl-4 pr-8">
-												<div class="h6">
+												<div class="flex items-center h6">
 													{{ item.name }}
+													<span class="ml-2 px-2 inline-flex text-xs leading-5 font-medium rounded-sm bg-green-100 text-green-800">
+														Active
+													</span>
 												</div>
 												<p class="text-sm text-gray-500">
 													{{ item.description }}
 												</p>
 											</div>
 										</div>
-										<div class="flex items-center space-x-2">
-											<span class="px-2 inline-flex text-xs leading-5 font-medium rounded-sm bg-green-100 text-green-800">
-												Active
-											</span>
-											<button class="button gray200">
-												Manage
-												<i class="far fa-chevron-right fa-fw pl-1"></i>
-											</button>
-										</div>
+										<button class="button outlineGray200">
+											Manage
+											<i class="far fa-chevron-right fa-fw pl-1"></i>
+										</button>
 									</div>
 								</div>
 								<div v-else class="sm:rounded-sm border-t border-b sm:border bg-white">
