@@ -248,7 +248,7 @@
 
 							<div>
 								<div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
-									Miscellaneous
+									Other
 								</div>
 								<div class="sm:rounded-sm border-t border-b sm:border bg-white">
 									<div class="p-4">
