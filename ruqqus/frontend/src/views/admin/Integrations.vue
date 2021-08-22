@@ -55,9 +55,9 @@
 								</div>
 								<div class="flex flex-wrap -mx-2 overflow-hidden">
 									<div v-for="(item, index) in integrations" :key="index" class="my-2 px-2 w-full overflow-hidden md:w-1/2">
-										<div class="flex w-full justify-between p-4 bg-white border rounded-sm">
+										<div class="flex justify-between p-4 bg-white border rounded-sm">
 											<div class="flex">
-												<img :src="item.logo" class="w-14 h-14 object-cover"/>
+												<img :src="item.logo" class="w-12 h-12 object-cover"/>
 												<div class="pl-4 pr-8">
 													<div class="h5">
 														{{ item.name }}
@@ -67,7 +67,7 @@
 													</p>
 												</div>
 											</div>
-											<button class="button gray200 mt-4">
+											<button class="button gray200">
 												Connect
 											</button>
 										</div>
@@ -126,6 +126,12 @@ export default {
 				logo: 'https://i.imgur.com/bV2OM6P.png',
 				name: 'Gumroad',
 				description: 'Collect donations from your members via automatic monthly subscriptions.',
+				isActive: false
+			},
+			{
+				logo: 'https://i.imgur.com/MHgOhAk.png',
+				name: 'Discord',
+				description: 'Let members of community connect their Discord account for server integration.',
 				isActive: false
 			}
 			]
