@@ -30,7 +30,7 @@
 					<div class="py-2">
 						<ul class="flex flex-col-reverse mb-0">
 							<router-link :to="`/search?q=${item}`" v-for="(item, index) in searchHistory" :key="index" custom v-slot="{ navigate }">
-								<li class="'group flex items-center w-full px-4 py-1.5 text-gray-900 hover:bg-gray-100 focus:bg-gray-100 cursor-pointer" @click="navigate" @keypress.enter="navigate" role="link">
+								<li class="group flex items-center w-full px-4 py-1.5 text-gray-900 hover:bg-gray-100 focus:bg-gray-100 cursor-pointer" @click="navigate" @keypress.enter="navigate" role="link" tabindex="0">
 									<i class="far fa-search fa-fw text-gray-400 mr-2"></i>
 									<span>{{ item }}</span>
 								</li>
