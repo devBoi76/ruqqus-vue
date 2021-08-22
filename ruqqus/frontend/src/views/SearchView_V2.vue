@@ -116,6 +116,9 @@ export default {
 			.finally(() => this.loading = false)
 		}
 	},
+	mounted() {
+		console.log('search page mounted!')
+	},
 	created() {
 		document.documentElement.style.setProperty('--color-primary', `139, 92, 246`)
 	}
