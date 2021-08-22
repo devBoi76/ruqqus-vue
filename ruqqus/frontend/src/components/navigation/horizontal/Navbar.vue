@@ -5,10 +5,10 @@
 				<div class="flex flex-grow items-center">
 					<div class="flex-shrink-0">
 						<router-link to="/" class="font-bold text-xl text-purple-500 tracking-wide">ruqqus</router-link>
-						<div class="hidden md:block w-1/3">
-							<div class="ml-4 flex items-baseline space-x-4">
-								<Search/>
-							</div>
+					</div>
+					<div class="hidden md:block w-1/3">
+						<div class="ml-4 flex items-baseline space-x-4">
+							<Search/>
 						</div>
 					</div>
 				</div>
