@@ -146,7 +146,7 @@ export default {
 			{
 				logo: 'https://i.imgur.com/ds1CNei.png',
 				name: 'PayPal',
-				description: 'Collect one-time payments from your members via PayPal.',
+				description: 'Collect one-time payments',
 				isActive: true
 			}
 			]
