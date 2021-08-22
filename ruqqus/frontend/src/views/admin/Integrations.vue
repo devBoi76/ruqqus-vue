@@ -51,7 +51,7 @@
 
 							<div class="flex flex-wrap -mt-2 -mx-2 overflow-hidden">
 								<div v-for="(item, index) in integrations" :key="index" class="my-2 px-2 w-full overflow-hidden md:w-1/2">
-									<div class="justify-between p-4 bg-white border rounded-sm" :class="item.isActive ? 'hidden' : 'flex'">
+									<div class="justify-between sm:p-4 p-5 bg-white border rounded-sm" :class="item.isActive ? 'hidden' : 'flex'">
 										<div class="flex">
 											<img :src="item.logo" class="w-9 h-9 md:w-12 md:h-12 object-cover"/>
 											<div class="pl-4 pr-8">
