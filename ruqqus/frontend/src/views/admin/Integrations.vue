@@ -54,25 +54,22 @@
 									Available Integrations
 								</div>
 								<div class="flex flex-wrap -mx-2 overflow-hidden">
-									<div class="my-2 px-2 w-1/2 overflow-hidden">
-										<div v-for="(item, index) in integrations" :key="index" class="my-2 px-2 w-1/2 overflow-hidden lg:w-1/3">
-											<div class="flex w-full justify-between p-5 bg-white border rounded-sm">
-												<div class="flex">
-													<img :src="item.logo" class="w-16 h-16 object-cover"/>
-													<div class="pl-3">
-														<div class="h4">
-															{{ item.name }}
-														</div>
-														<p class="text-gray-500 mt-2">
-															{{ item.description }}
-														</p>
+									<div v-for="(item, index) in integrations" :key="index" class="my-2 px-2 w-1/2 overflow-hidden">
+										<div class="flex w-full justify-between p-5 bg-white border rounded-sm">
+											<div class="flex">
+												<img :src="item.logo" class="w-16 h-16 object-cover"/>
+												<div class="pl-3">
+													<div class="h4">
+														{{ item.name }}
 													</div>
+													<p class="text-gray-500 mt-2">
+														{{ item.description }}
+													</p>
 												</div>
-												<button class="button gray400 w-full mt-4">
-													<i class="far fa-plus fa-fw pr-2"></i>
-													Connect
-												</button>
 											</div>
+											<button class="button gray200 w-full mt-4">
+												Connect
+											</button>
 										</div>
 									</div>
 								</div>
