@@ -58,7 +58,7 @@
 										<div class="flex flex-grow items-center justify-between">
 											<div>
 												<div class="font-semibold leading-tight">
-													Restricted Posting
+													Restrict posting
 												</div>
 												<p class="text-sm text-gray-500 mt-1">
 													Restrict posting to approved users only
@@ -71,7 +71,7 @@
 										<div class="flex flex-grow items-center justify-between">
 											<div>
 												<div class="font-semibold leading-tight">
-													Restricted Commenting
+													Restrict commenting
 												</div>
 												<p class="text-sm text-gray-500 mt-1">
 													Restrict commenting to approved users only
@@ -84,7 +84,7 @@
 										<div class="flex flex-grow items-center justify-between">
 											<div>
 												<div class="font-semibold leading-tight">
-													Restricted Voting
+													Restrict voting
 												</div>
 												<p class="text-sm text-gray-500 mt-1">
 													Restrict voting to approved users only
