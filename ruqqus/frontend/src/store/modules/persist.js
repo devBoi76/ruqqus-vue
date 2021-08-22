@@ -52,6 +52,9 @@ const mutations = {
 	},
 	SET_NOTIFICATIONS_FILTERS(state, payload) {
 		state.notificationsFilters = payload
+	},
+	ADD_SEARCH_ITEM(state, payload) {
+		state.searchHistory.push(payload)
 	}
 }
 const actions = {
@@ -176,6 +179,11 @@ const actions = {
 			commit("v", {});
 			commit("AUTHENTICATE", false);
 		})
+	},
+	addSearchItem({ commit,state }, payload) {
+		if (!state.searchHistory.includes(payload)) { // check for duplicate search queries
+			commit("ADD_SEARCH_ITEM", payload)
+		}
 	}
 }
 
