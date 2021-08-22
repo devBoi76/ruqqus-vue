@@ -49,28 +49,23 @@
 					<div class="md:grid md:grid-cols-3 md:gap-6">
 						<div class="mt-5 md:mt-0 md:col-span-3 space-y-8">
 
-							<div>
-								<div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
-									Available Integrations
-								</div>
-								<div class="flex flex-wrap -mt-2 -mx-2 overflow-hidden">
-									<div v-for="(item, index) in integrations" :key="index" class="my-2 px-2 w-full overflow-hidden md:w-1/2">
-										<div class="flex justify-between p-4 bg-white border rounded-sm">
-											<div class="flex">
-												<img :src="item.logo" class="w-11 h-11 object-cover"/>
-												<div class="pl-4 pr-8">
-													<div class="h5">
-														{{ item.name }}
-													</div>
-													<p class="text-sm text-gray-500">
-														{{ item.description }}
-													</p>
+							<div class="flex flex-wrap -mt-2 -mx-2 overflow-hidden">
+								<div v-for="(item, index) in integrations" :key="index" class="my-2 px-2 w-full overflow-hidden md:w-1/2">
+									<div class="flex justify-between p-4 bg-white border rounded-sm">
+										<div class="flex">
+											<img :src="item.logo" class="w-11 h-11 object-cover"/>
+											<div class="pl-4 pr-8">
+												<div class="h5">
+													{{ item.name }}
 												</div>
+												<p class="text-sm text-gray-500">
+													{{ item.description }}
+												</p>
 											</div>
-											<button class="button gray200">
-												Connect
-											</button>
 										</div>
+										<button class="button gray200">
+											Connect
+										</button>
 									</div>
 								</div>
 							</div>
@@ -79,21 +74,30 @@
 								<div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
 									Your Integrations
 								</div>
-								<div class="sm:rounded-sm border-t border-b sm:border bg-white">
-									<div class="p-4 border-b">
-										<div class="flex flex-grow items-center justify-between">
-											<div>
-												<div class="font-semibold leading-tight">
-													Restrict posting
+								<div v-if="integrations.length" class="sm:rounded-sm border-t border-b sm:border bg-white divide-y">
+									<div class="flex items-center justify-between p-4">
+										<div class="flex">
+											<img :src="item.logo" class="w-11 h-11 object-cover"/>
+											<div class="pl-4 pr-8">
+												<div class="h5">
+													{{ item.name }}
 												</div>
-												<p class="text-sm text-gray-500 mt-1">
-													Restrict posting to approved users only
+												<p class="text-sm text-gray-500">
+													{{ item.description }}
 												</p>
 											</div>
-											<div class="flex items-center space-x-2">
-												<Toggle v-model="s.canPost"/>
-											</div>
 										</div>
+										<button class="button white">
+											<i class="far fa-wrench fa-fw pr-1"></i>
+											Configure
+										</button>
+									</div>
+								</div>
+								<div v-else class="sm:rounded-sm border-t border-b sm:border bg-white">
+									<div class="text-center p-12">
+										<p class="text-gray-500">
+											You have no active integrations...
+										</p>
 									</div>
 								</div>
 							</div>
