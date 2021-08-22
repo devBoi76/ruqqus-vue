@@ -92,6 +92,14 @@ export default {
 					textCase: 'capitalize'
 				},
 				{
+					name: 'moderation',
+					route: {
+						name: 'admin-moderation-view'
+					},
+					icon: 'fa-gavel',
+					textCase: 'capitalize'
+				},
+				{
 					name: 'design',
 					route: {
 						name: 'admin-theming-view'
