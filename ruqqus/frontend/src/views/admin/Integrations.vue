@@ -74,7 +74,7 @@
 								<div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
 									Your Integrations
 								</div>
-								<div v-if="activeIntegrations" class="sm:rounded-sm border-t border-b sm:border bg-white divide-y">
+								<div v-if="activeIntegrations.length" class="sm:rounded-sm border-t border-b sm:border bg-white divide-y">
 									<div v-for="(item, index) in activeIntegrations" :key="index" class="flex items-center justify-between p-4">
 										<div class="flex">
 											<img :src="item.logo" class="w-11 h-11 object-cover"/>
