@@ -90,80 +90,7 @@ export default {
 					},
 					icon: 'fa-lock-alt',
 					textCase: 'capitalize'
-				}
-				]
-			},
-			{
-				header: true,
-				name: 'content',
-				items: [
-				{
-					name: 'flagged',
-					route: {
-						name: 'admin-queue-view',
-						params: { filter: 'reports' }
-					},
-					icon: 'fa-flag',
-					textCase: 'capitalize'
 				},
-				{
-					name: 'all',
-					route: {
-						name: 'admin-queue-view',
-						params: { filter: 'unmoderated' }
-					},
-					icon: 'fa-question-circle',
-					textCase: 'capitalize'
-				},
-				{
-					name: 'media uploads',
-					route: {
-						name: 'admin-queue-view',
-						params: { filter: 'media' }
-					},
-					icon: 'fa-image',
-					textCase: 'capitalize'
-				}
-				]
-			},
-			{
-				header: true,
-				mobileDivider: true,
-				name: 'users',
-				items: [
-				{
-					name: 'all',
-					route: {
-						name: 'admin-user-management-view',
-						params: { sort: 'all' }
-					},
-					icon: 'fa-user',
-					textCase: 'capitalize'
-				},
-				{
-					name: 'banned',
-					route: {
-						name: 'admin-user-management-view',
-						params: { sort: 'banned' }
-					},
-					icon: 'fa-gavel',
-					textCase: 'capitalize'
-				},
-				{
-					name: 'staff',
-					route: {
-						name: 'admin-user-management-view',
-						params: { sort: 'staff' }
-					},
-					icon: 'fa-crown',
-					textCase: 'capitalize'
-				}
-				]
-			},
-			{
-				header: true,
-				name: 'customization',
-				items: [
 				{
 					name: 'design',
 					route: {
@@ -172,12 +99,45 @@ export default {
 					icon: 'fa-paint-roller',
 					textCase: 'capitalize'
 				},
+				// {
+				// 	name: 'integrations',
+				// 	route: {
+				// 		name: 'admin-integrations-view'
+				// 	},
+				// 	icon: 'fa-puzzle-piece',
+				// 	textCase: 'capitalize'
+				// },
+				]
+			},
+			{
+				header: true,
+				name: 'manage',
+				items: [
 				{
-					name: 'tags',
+					name: 'users',
 					route: {
-						name: 'admin-tags-view'
+						name: 'admin-user-management-view',
+						params: { sort: 'all' }
 					},
-					icon: 'fa-tag',
+					icon: 'fa-user',
+					textCase: 'capitalize'
+				},
+				{
+					name: 'flags',
+					route: {
+						name: 'admin-queue-view',
+						params: { filter: 'reports' }
+					},
+					icon: 'fa-flag',
+					textCase: 'capitalize'
+				},
+				{
+					name: 'media',
+					route: {
+						name: 'admin-queue-view',
+						params: { filter: 'reports' }
+					},
+					icon: 'fa-image',
 					textCase: 'capitalize'
 				},
 				{
@@ -185,7 +145,7 @@ export default {
 					route: {
 						name: 'admin-titles-view'
 					},
-					icon: 'fa-signature',
+					icon: 'fa-badge-check',
 					textCase: 'capitalize'
 				}
 				]
