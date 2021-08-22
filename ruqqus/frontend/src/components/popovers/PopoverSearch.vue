@@ -28,10 +28,14 @@
 						</div>
 					</div>
 					<div class="py-2">
-						<button v-for="(item, index) in searchHistory" :key="index" class="'group flex items-center w-full px-4 py-1.5 text-gray-900 hover:bg-gray-100">
-							<i class="far fa-search fa-fw text-gray-400 mr-2"></i>
-							<span>{{ item }}</span>
-						</button>
+						<ul class="mb-0">
+							<router-link :to="`/search?q=${item}`" v-for="(item, index) in searchHistory" :key="index" custom v-slot="{ navigate }">
+								<li class="'group flex items-center w-full px-4 py-1.5 text-gray-900 hover:bg-gray-100" @click="navigate" @keypress.enter="navigate" role="link">
+									<i class="far fa-search fa-fw text-gray-400 mr-2"></i>
+									<span>{{ item }}</span>
+								</li>
+							</router-link>
+						</ul>
 					</div>
 				</div>
 			</PopoverPanel>
