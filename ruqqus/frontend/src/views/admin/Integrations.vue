@@ -92,7 +92,7 @@
 												</p>
 											</div>
 										</div>
-										<button class="button outlineGray200">
+										<button class="button linkGray400">
 											Manage
 											<i class="far fa-chevron-right fa-fw pl-1"></i>
 										</button>
