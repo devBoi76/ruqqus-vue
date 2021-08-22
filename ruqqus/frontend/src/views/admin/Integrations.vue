@@ -53,7 +53,7 @@
 								<div v-for="(item, index) in integrations" :key="index" class="my-2 px-2 w-full overflow-hidden md:w-1/2">
 									<div class="flex justify-between p-4 bg-white border rounded-sm">
 										<div class="flex">
-											<img :src="item.logo" class="w-11 h-11 object-cover"/>
+											<img :src="item.logo" class="w-10 h-10 object-cover"/>
 											<div class="pl-4 pr-8">
 												<div class="h5">
 													{{ item.name }}
@@ -77,7 +77,7 @@
 								<div v-if="activeIntegrations.length" class="sm:rounded-sm border-t border-b sm:border bg-white divide-y">
 									<div v-for="(item, index) in activeIntegrations" :key="index" class="flex items-center justify-between p-4">
 										<div class="flex">
-											<img :src="item.logo" class="w-11 h-11 object-cover"/>
+											<img :src="item.logo" class="w-10 h-10 object-cover"/>
 											<div class="pl-4 pr-8">
 												<div class="h5">
 													{{ item.name }}
@@ -137,6 +137,12 @@ export default {
 				name: 'Discord',
 				description: 'Enable members to connect their account here with Discord. Ideal for official server integrations.',
 				isActive: false
+			},
+			{
+				logo: 'https://i.imgur.com/ds1CNei.png',
+				name: 'PayPal',
+				description: 'Collect one-time payments from your members via PayPal.',
+				isActive: true
 			}
 			]
 		}
