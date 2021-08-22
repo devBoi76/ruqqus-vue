@@ -53,7 +53,7 @@
 								<div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
 									Available Integrations
 								</div>
-								<div class="flex flex-wrap -mx-2 overflow-hidden">
+								<div class="flex flex-wrap -mt-2 -mx-2 overflow-hidden">
 									<div v-for="(item, index) in integrations" :key="index" class="my-2 px-2 w-full overflow-hidden md:w-1/2">
 										<div class="flex justify-between p-4 bg-white border rounded-sm">
 											<div class="flex">
