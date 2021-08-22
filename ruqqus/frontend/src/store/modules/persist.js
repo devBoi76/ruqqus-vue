@@ -57,6 +57,12 @@ const mutations = {
 	ADD_SEARCH_ITEM(state, payload) {
 		state.searchHistory.push(payload)
 		console.log(searchHistory)
+	},
+	SHIFT_SEARCH_HISTORY(state) {
+		state.searchHistory.shift()
+	},
+	CLEAR_SEARCH_HISTORY(state) {
+		state.searchHistory = []
 	}
 }
 const actions = {
@@ -185,6 +191,9 @@ const actions = {
 	addSearchItem({commit, state}, payload){
 		if (payload && !state.searchHistory.includes(payload)) { // check if query is not empty and for duplicates
 			commit("ADD_SEARCH_ITEM", payload)
+			if (state.searchHistory.length > 10) { // remove first search history item if array exceeds 10
+				commit("SHIFT_SEARCH_HISTORY")
+			}
 		}
 	}
 }
