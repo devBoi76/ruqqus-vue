@@ -2,15 +2,15 @@
 	<Popover v-slot="{ open }">
 		<PopoverButton as="div" class="w-96 appearance-none">
 			<form class="relative" @submit.prevent="onSubmit">
-				<div class="absolute left-4 top-0.5">
+				<div class="absolute left-3 top-[6px]">
 					<button class="text-gray-400 hover:text-gray-500" @click="search()">
-						<i class="far fa-search fa-fw"></i>
+						<i class="far fa-search fa-fw fa-sm"></i>
 					</button>
 				</div>
-				<input type="text" class="form-input light pl-8" v-model="searchTerm" placeholder="Search posts or @users" @keyup.enter="search()"/>
-				<div v-show="searchTerm" class="absolute right-4 top-0.5">
+				<input type="text" class="form-input light pl-9" v-model="searchTerm" placeholder="Search posts or @users" @keyup.enter="search()"/>
+				<div v-show="searchTerm" class="absolute right-3 top-[6px]">
 					<button class="text-gray-400 hover:text-gray-500" @click="searchTerm = ''">
-						<i class="far fa-times-circle fa-fw"></i>
+						<i class="far fa-times-circle fa-fw fa-sm"></i>
 					</button>
 				</div>
 			</form>
