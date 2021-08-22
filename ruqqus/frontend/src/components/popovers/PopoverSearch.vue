@@ -13,7 +13,7 @@
 		leave-from-class="translate-y-0 opacity-100"
 		leave-to-class="translate-y-1 opacity-0"
 		>
-		<div v-if="open">
+		<div v-if="open && searchHistory.length">
 			<!-- Don't forget to add static to your PopoverPanel! -->
 			<PopoverPanel static class="absolute right-0 w-96 z-10 mt-2 bg-white border rounded shadow-lg">
 				<div class="divide-y">
