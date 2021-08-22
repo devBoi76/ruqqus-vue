@@ -183,10 +183,10 @@ const actions = {
 		})
 	},
 	addSearchItem({commit, state}, payload){
-		if (!state.searchHistory.includes(payload)) { // check for duplicate search queries
-			commit("ADD_SEARCH_ITEM", payload)
+		if (payload.q && !state.searchHistory.includes(payload.q)) { // check if query is not empty and for duplicates
+			commit("ADD_SEARCH_ITEM", payload.q)
 		}
-		console.log(payload)
+		console.log(payload.q)
 	}
 }
 
