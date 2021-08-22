@@ -127,7 +127,7 @@ export default {
 			{
 				logo: 'https://i.imgur.com/bV2OM6P.png',
 				name: 'Gumroad',
-				description: 'Collect donations from your members via automatic monthly subscriptions.'
+				description: 'Collect donations from your members via automatic monthly subscriptions.',
 				isActive: false
 			}
 			]
