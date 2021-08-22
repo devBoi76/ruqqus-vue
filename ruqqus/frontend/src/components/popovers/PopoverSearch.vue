@@ -8,7 +8,7 @@
 					</button>
 				</div>
 				<input type="text" class="form-input light pl-8" v-model="searchTerm" placeholder="Search posts or @users" @keyup.enter="search()"/>
-				<div class="absolute right-4 top-0.5">
+				<div v-show="searchTerm" class="absolute right-4 top-0.5">
 					<button class="text-gray-400 hover:text-gray-500" @click="searchTerm = ''">
 						<i class="far fa-times-circle fa-fw"></i>
 					</button>
