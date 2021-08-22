@@ -51,7 +51,7 @@
 
 							<div>
 								<div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
-									Restrictions
+									Community Restrictions
 								</div>
 								<div class="sm:rounded-sm sm:shadow-xs border-t border-b sm:border-0 bg-white">
 									<div class="p-4 border-b">
