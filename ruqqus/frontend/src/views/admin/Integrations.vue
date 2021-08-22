@@ -79,7 +79,7 @@
 								<div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
 									Your Integrations
 								</div>
-								<div class="sm:rounded-sm sm:shadow-xs border-t border-b sm:border-0 bg-white">
+								<div class="sm:rounded-sm border-t border-b sm:border bg-white">
 									<div class="p-4 border-b">
 										<div class="flex flex-grow items-center justify-between">
 											<div>
