@@ -56,6 +56,7 @@ const mutations = {
 	},
 	ADD_SEARCH_ITEM(state, payload) {
 		state.searchHistory.push(payload)
+		console.log(searchHistory)
 	}
 }
 const actions = {
@@ -185,6 +186,7 @@ const actions = {
 		if (!state.searchHistory.includes(payload)) { // check for duplicate search queries
 			commit("ADD_SEARCH_ITEM", payload)
 		}
+		console.log(payload)
 	}
 }
 

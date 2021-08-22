@@ -94,7 +94,8 @@ export default {
 	watch: {
 		'$route.query': {
 			handler() {
-				this.fetchResults()
+				this.fetchResults();
+				this.$store.commit('persist/addSearchItem', this.$route.query);
 			}
 		}
 	},
@@ -114,9 +115,6 @@ export default {
 			})
 			.finally(() => this.loading = false)
 		}
-	},
-	mounted() {
-		this.$store.commit('persist/addSearchItem', this.$route.query)
 	},
 	created() {
 		document.documentElement.style.setProperty('--color-primary', `139, 92, 246`)
