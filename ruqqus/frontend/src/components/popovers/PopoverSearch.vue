@@ -18,7 +18,7 @@
 			<PopoverPanel static class="absolute right-0 w-96 z-10 mt-2 bg-white border rounded shadow-lg">
 				<div class="divide-y">
 					<div class="flex items-center px-4 py-3">
-						<div class="uppercase tracking-wide font-semibold leading-none text-2xs text-gray-500">
+						<div class="uppercase tracking-wide font-semibold leading-none text-2xs text-gray-900">
 							Recent searches
 						</div>
 						<div class="ml-auto">

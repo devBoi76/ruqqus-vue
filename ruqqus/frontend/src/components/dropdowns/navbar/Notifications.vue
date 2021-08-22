@@ -26,7 +26,7 @@
   <MenuItems class="absolute right-0 w-96 mt-5 origin-top-right bg-white divide-y divide-gray-100 rounded shadow-lg border focus:outline-none overflow-hidden">
     <div class="divide-y">
 
-      <div class="uppercase tracking-wide font-semibold leading-none text-2xs text-gray-500 px-4 py-3">
+      <div class="uppercase tracking-wide font-semibold leading-none text-2xs text-gray-900 px-4 py-3">
         Notifications
       </div>
 
