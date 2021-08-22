@@ -164,6 +164,7 @@
 			</div>
 		</aside>
 	</nav>
+	<DeleteModal ref="deleteModal"></DeleteModal>
 </template>
 
 <script>
@@ -172,12 +173,15 @@
 	import Profile from "@/components/dropdowns/navbar/Profile.vue";
 	import Search from "@/components/popovers/PopoverSearch.vue";
 
+	const DeleteModal = defineAsyncComponent(() => import('@/components/modals/ModalDelete.vue'))
+
 	export default {
 		name: "Navbar",
 		components: {
 			Notifications,
 			Profile,
-			Search
+			Search,
+			DeleteModal
 		},
 		data() {
 			return {

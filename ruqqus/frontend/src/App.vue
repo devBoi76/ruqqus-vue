@@ -10,8 +10,6 @@
     <NotificationsList v-if="toastsLength"/>
     <DropAnImage/>
 
-    <DeleteModal ref="deleteModal"></DeleteModal>
-
   </div>
 </template>
 
@@ -28,10 +26,6 @@ const NotificationsList = defineAsyncComponent(() => import('@/components/notifi
 
 const DropAnImage = defineAsyncComponent(() => import('@/components/DropAnImage.vue'))
 
-// Modals
-
-const DeleteModal = defineAsyncComponent(() => import('@/components/modals/ModalDelete.vue'))
-
 export default {
   name: "App",
   components: {
@@ -39,8 +33,7 @@ export default {
     NavbarOnboarding,
     NavbarAuth,
     NotificationsList,
-    DropAnImage,
-    DeleteModal
+    DropAnImage
   },
   data() {
     return {}
