@@ -8,20 +8,21 @@
 					</div>
 					<div class="hidden md:block w-1/3">
 						<div class="ml-4 flex items-baseline space-x-4">
-							<!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-							<input type="text" class="form-input light" v-model="searchTerm" placeholder="Search posts or @users" @keyup.enter="search()"/>
+							<div class="relative">
+								<Search/>
+							</div>
 						</div>
 					</div>
 				</div>
 				<div class="hidden md:block">
 					<div class="ml-4 flex items-center space-x-2 md:ml-6">
 
-						<router-link to="/" tag="button" class="flex items-center justify-center px-2 w-8 h-8 text-xl text-gray-600 dark:text-gray-400 hover:text-purple-500 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white rounded-sm" content="Explore" v-tippy="{ placement: 'bottom', delay: [1000,0] }">
+						<router-link to="/" tag="button" class="flex items-center justify-center px-2 w-8 h-8 text-xl text-gray-600 dark:text-gray-400 hover:text-purple-500 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white rounded-sm" content="Home" v-tippy="{ placement: 'bottom', delay: [1000,0] }">
 							<span class="sr-only">Home</span>
-							<i class="far fa-home-lg-alt"></i>
+							<i class="far fa-home-alt"></i>
 						</router-link>
 
-						<router-link to="/?sort=hot" tag="button" class="flex items-center justify-center px-2 w-8 h-8 text-xl text-gray-600 dark:text-gray-400 hover:text-purple-500 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white rounded-sm" content="Explore" v-tippy="{ placement: 'bottom', delay: [1000,0] }">
+						<router-link to="/?sort=hot" tag="button" class="flex items-center justify-center px-2 w-8 h-8 text-xl text-gray-600 dark:text-gray-400 hover:text-purple-500 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white rounded-sm" content="Popular" v-tippy="{ placement: 'bottom', delay: [1000,0] }">
 							<span class="sr-only">New</span>
 							<i class="far fa-bolt"></i>
 						</router-link>
@@ -130,10 +131,10 @@
 				<i class="far fa-signal-stream text-center fa-fw mr-3" :class="{'text-green-500':online}"></i><span>Appear Online</span>
 				<t-toggle v-model="online" variant="success" class="ml-auto"/>
 			</div> -->
-			<div class="flex items-center px-4 py-2 text-lg text-gray-700 dark:text-gray-200">
-				<i class="far text-center fa-fw mr-3" :class="dark ? 'fa-sun' : 'fa-moon'"></i><span>Dark Theme</span>
-				<t-toggle v-model="dark" class="ml-auto"/>
-			</div>
+			<button class="flex items-center px-4 py-2 text-lg text-gray-700 dark:text-gray-200" @click="dark = !dark">
+				<i class="far text-center fa-fw mr-3" :class="dark ? 'fa-sunglasses' : 'fa-moon'"></i>
+				<span>{{ dark ? 'Light Theme' : 'Dark Theme'}}</span>
+			</button>
 			<hr class="my-2 dark:border-gray-700 dark:border-opacity-70">
 			<router-link to="#" class="block px-4 py-2 text-lg text-red-500" role="menuitem" @click="isOpen = false">
 				<i class="far fa-sign-out fa-rotate-180 text-center fa-fw mr-3"></i><span>Sign Out</span>
@@ -164,12 +165,14 @@
 	import { mapState, mapActions } from 'vuex';
 	import Notifications from "@/components/dropdowns/navbar/Notifications.vue";
 	import Profile from "@/components/dropdowns/navbar/Profile.vue";
+	import Search from "@/components/popovers/PopoverSearch.vue";
 
 	export default {
 		name: "Navbar",
 		components: {
 			Notifications,
-			Profile
+			Profile,
+			Search
 		},
 		data() {
 			return {

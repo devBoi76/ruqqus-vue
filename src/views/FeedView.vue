@@ -1,39 +1,54 @@
 <template>
 	<div class="w-full overflow-y-auto">
+		<Banner :banner="s.banner"/>
 		<div class="grid grid-cols-12" :class="{ 'xl:grid-cols-10':isCard }">
-			<div class="col-span-full flex gap-6 sm:p-6 my-2.5 sm:my-0" :class="{'xl:col-start-2 xl:col-end-10':isCard}">
+			<div class="col-span-full flex gap-6 sm:p-6 my-2.5 sm:my-0" :class="isCard ? 'xl:col-start-3 xl:col-end-9' : 'xl:col-start-2 xl:col-end-12'">
 
 				<!-- Main Content Section -->
 				<div class="w-full">
 
 					<!-- Post Creation -->
-					<div class="hidden sm:flex flex-col space-y-2 mb-4 px-4 py-3 bg-white dark:bg-gray-800 sm:rounded-sm">
-						<div class="flex items-center space-x-2">
-							<img :src="v.profile_url" class="flex-shrink-0 w-6 h-6 object-fit rounded-sm bg-gray-200 dark:bg-gray-800">
-							<div class="font-bold text-sm">
-								{{ v.username || 'Ruqqie' }}
-							</div>
-						</div>
+					<div v-if="is_authenticated" class="hidden sm:flex items-center mb-4 px-4 py-3 bg-white dark:bg-gray-800 sm:border sm:rounded-sm">
+						<img :src="v.profile_url" class="flex-shrink-0 w-6 h-6 object-fit mr-3 rounded-sm bg-gray-200 dark:bg-gray-800">
 						<div class="group flex-grow overflow-hidden">
 							<router-link to="/submit" tag="div" class="flex items-center h-full">
-								<p class="text-gray-400 text-lg group-hover:text-gray-500 dark:group-hover:text-gray-200 mb-0">
+								<p class="text-gray-400 group-hover:text-gray-500 dark:group-hover:text-gray-200 mb-0">
 									Create a new post...
 								</p>
-								<div class="hidden items-center space-x-2 ml-auto text-sm">
-									<i class="fas fa-text fa-fw text-gray-300 group-hover:text-gray-400"></i>
-									<i class="fas fa-link fa-fw text-gray-300 group-hover:text-gray-400"></i>
-									<i class="fas fa-image fa-fw text-gray-300 group-hover:text-gray-400"></i>
+								<div class="items-center space-x-2 ml-auto">
+									<i class="far fa-text fa-fw text-gray-300 group-hover:text-gray-400"></i>
+									<i class="far fa-link fa-fw text-gray-300 group-hover:text-gray-400"></i>
+									<i class="far fa-image fa-fw text-gray-300 group-hover:text-gray-400"></i>
 								</div>
 							</router-link>
 						</div>
 					</div>
 					<!-- End Post Creation -->
 
+					<!-- Login CTA -->
+					<div v-else class="hidden sm:flex items-center mb-4 px-4 py-3 bg-white dark:bg-gray-800 sm:border sm:rounded-sm">
+						<div class="flex-grow overflow-hidden">
+							<div class="flex items-center justify-center">
+								<router-link to="/register" custom v-slot="{ navigate }">
+									<button class="button primary" @click="navigate" @keypress.enter="navigate" role="link">
+										Sign up and start posting
+									</button>
+								</router-link>
+								<router-link to="/login" custom v-slot="{ navigate }">
+									<button class="button linkGray400" @click="navigate" @keypress.enter="navigate" role="link">
+										Or sign into your account
+									</button>
+								</router-link>
+							</div>
+						</div>
+					</div>
+					<!-- End Login CTA -->
+
 					<!-- Post Sorting and Display Toggle -->
-					<div class="flex items-center flex-shrink-0 sm:rounded-sm mb-2.5 sm:mb-4 px-4 py-3 bg-white dark:bg-gray-800">
+					<div class="flex items-center flex-shrink-0 sm:rounded-sm sm:border mb-2.5 sm:mb-4 px-4 py-3 bg-white dark:bg-gray-800">
 						<div class="flex items-center justify-between flex-grow">
-							<div class="text-xl font-bold capitalize leading-none dark:text-gray-200">
-								{{ $route.meta.title }} Feed
+							<div class="text-lg font-semibold dark:text-gray-200">
+								All posts
 							</div>
 							<div class="flex flex-wrap items-center space-x-6">
 								<ItemSort/>
@@ -84,171 +99,18 @@
 
 				</div>
 				<!-- End Main Content Section -->
-
-				<!-- Right Bar -->
-				<div class="hidden lg:block flex-shrink-0 w-80">
-					<div v-show="loading" class="flex flex-col w-full p-4 animate-pulse">
-						<div class="space-y-4">
-							<div class="flex space-x-3">
-								<div class="flex-shrink-0 w-8 h-8 bg-gray-100 rounded-sm"></div>
-								<div class="flex flex-col justify-between flex-grow">
-									<div class="w-3/4 h-3 bg-gray-100 rounded-sm"></div>
-									<div class="w-16 h-3 bg-gray-100 rounded-sm"></div>
-								</div>
-							</div>
-							<div class="flex space-x-3">
-								<div class="flex-shrink-0 w-8 h-8 bg-gray-100 rounded-sm"></div>
-								<div class="flex flex-col justify-between flex-grow">
-									<div class="w-full h-3 bg-gray-100 rounded-sm"></div>
-									<div class="w-24 h-3 bg-gray-100 rounded-sm"></div>
-								</div>
-							</div>
-							<div class="flex space-x-3">
-								<div class="flex-shrink-0 w-8 h-8 bg-gray-100 rounded-sm"></div>
-								<div class="flex flex-col justify-between flex-grow">
-									<div class="w-2/4 h-3 bg-gray-100 rounded-sm"></div>
-									<div class="w-16 h-3 bg-gray-100 rounded-sm"></div>
-								</div>
-							</div>
-							<div class="flex space-x-3">
-								<div class="flex-shrink-0 w-8 h-8 bg-gray-100 rounded-sm"></div>
-								<div class="flex flex-col justify-between flex-grow">
-									<div class="w-3/4 h-3 bg-gray-100 rounded-sm"></div>
-									<div class="w-24 h-3 bg-gray-100 rounded-sm"></div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div v-if="!loading" class="space-y-4">
-						<SidebarSection title="Improve your acount">
-							<template v-slot:body>
-								<div class="p-4 bg-white dark:bg-gray-800 rounded-sm">
-									<ul class="mb-0 space-y-4">
-										<li>
-											<a href="https://github.com/ruqqus/ruqqus" class="group flex items-center">
-												<i class="far fa-check text-green-500 fa-fw"></i>
-												<span class="text-gray-500 line-through pl-2">
-													Follow 10 more people
-												</span>
-											</a>
-										</li>
-										<li>
-											<router-link to="/submit" class="group flex items-center">
-												<i class="far fa-check text-gray-200 dark:text-gray-500 fa-fw"></i>
-												<span class="text-purple-500 dark:text-gray-200 pl-2">
-													Create your first post
-												</span>
-											</router-link>
-										</li>
-										<li>
-											<a href="https://github.com/ruqqus/ruqqus" class="group flex items-center">
-												<i class="far fa-check text-gray-200 dark:text-gray-500 fa-fw"></i>
-												<span class="text-purple-500 dark:text-gray-200 pl-2">
-													Write a profile biography
-												</span>
-											</a>
-										</li>
-										<li>
-											<a href="https://github.com/ruqqus/ruqqus" class="group flex items-center">
-												<i class="far fa-check text-gray-200 dark:text-gray-500 fa-fw"></i>
-												<span class="text-purple-500 dark:text-gray-200 pl-2">
-													Upload a custom avatar
-												</span>
-											</a>
-										</li>
-									</ul>
-								</div>
-							</template>
-						</SidebarSection>
-						<SidebarSection>
-							<template v-slot:body>
-								<div class="p-4 bg-white dark:bg-gray-800 rounded-sm">
-									<div class="flex items-center mb-2">
-										<img src="https://i.ruqqus.com/board/ruqqus/profile-3.png" class="w-8 h-8 rounded-sm bg-gray-100 dark:bg-gray-800 object-cover">
-										<div class="pl-3 font-bold">
-											Home
-										</div>
-									</div>
-									<p class="text-sm text-gray-600 dark:text-gray-200">
-										Your personal Ruqqus homepage. Check here for content from your communities and people you follow.
-									</p>
-									<button class="button purple500 w-full" to="/submit">
-										Create post
-									</button>
-								</div>
-							</template>
-						</SidebarSection>
-						<SidebarSection title="Support Ruqqus">
-							<template v-slot:body>
-								<ul class="mb-0 p-4 space-y-3 bg-white dark:bg-gray-800 rounded-sm">
-									<li>
-										<a href="https://github.com/ruqqus/ruqqus" class="group flex items-center justify-between">
-											<div class="pr-3">
-												<div class="text-sm text-gray-900 dark:text-gray-200 font-bold">
-													Contribute Code
-													<i class="fas fa-long-arrow-right text-purple-500 fa-sm pl-1 opacity-0 group-hover:opacity-100"></i>
-												</div>
-												<p class="text-xs text-gray-500 dark:text-gray-400">
-													Ruqqus is open-source!
-												</p>
-											</div>
-											<div class="flex flex-shrink-0 items-center justify-center w-8 h-8 rounded-sm bg-gray-100">
-												<i class="fab fa-github text-black"></i>
-											</div>
-										</a>
-									</li>
-									<li>
-										<a href="https://github.com/ruqqus/ruqqus" class="group flex items-center justify-between">
-											<div class="pr-3">
-												<div class="text-sm text-gray-900 dark:text-gray-200 font-bold">
-													Ruqqus Merch
-													<i class="fas fa-long-arrow-right text-purple-500 fa-sm pl-1 opacity-0 group-hover:opacity-100"></i>
-												</div>
-												<p class="text-xs text-gray-500 dark:text-gray-400">
-													Keeps the servers running :)
-												</p>
-											</div>
-											<div class="flex flex-shrink-0 items-center justify-center w-8 h-8 rounded-sm bg-blue-100">
-												<i class="fas fa-tshirt text-blue-500"></i>
-											</div>
-										</a>
-									</li>
-									<li>
-										<a href="https://github.com/ruqqus/ruqqus" class="group flex items-center justify-between">
-											<div class="pr-3">
-												<div class="text-sm text-gray-900 dark:text-gray-200 font-bold">
-													Report a Bug
-													<i class="fas fa-long-arrow-right text-purple-500 fa-sm pl-1 opacity-0 group-hover:opacity-100"></i>
-												</div>
-												<p class="text-xs text-gray-500 dark:text-gray-400">
-													Help us squash 'em
-												</p>
-											</div>
-											<div class="flex flex-shrink-0 items-center justify-center w-8 h-8 rounded-sm bg-red-100">
-												<i class="fas fa-bug text-red-500"></i>
-											</div>
-										</a>
-									</li>
-								</ul>
-							</template>
-						</SidebarSection>
-					</div>
-				</div>
-				<!-- End Right bar -->
-
 			</div>
 		</div>
 	</div>
 </template>
 
 <script>
-import { defineAsyncComponent } from 'vue'
+	import { defineAsyncComponent } from 'vue'
 // Import our components
+import Banner from '@/components/Banner.vue';
 const ItemList = defineAsyncComponent(() => import('@/views/ItemList.vue'))
 const ItemSort = defineAsyncComponent(() => import('@/components/dropdowns/ItemSort.vue'))
 const ListingToggle = defineAsyncComponent(() => import('@/components/forms/ListingToggle.vue'))
-
-const SidebarSection = defineAsyncComponent(() => import('@/components/navigation/vertical/SidebarSection.vue'))
 
 import { mapState } from "vuex";
 
@@ -264,38 +126,21 @@ export default {
 				page: this.$route.query.page || 1,
 				sort: this.$route.query.sort || 'hot',
 				t: this.$route.query.t || 'all'
-			},
-			// featured: [
-			// {
-			// 	id: 1,
-			// 	name: 'ruqqus',
-			// 	profile_url: 'https://i.ruqqus.com/board/ruqqus/profile-3.png',
-			// 	subscription_count: 4503
-			// },
-			// {
-			// 	id: 2,
-			// 	name: 'gaming',
-			// 	profile_url: 'https://i.ruqqus.com/board/gaming/profile-2.png',
-			// 	subscription_count: 4500
-			// },
-			// {
-			// 	id: 3,
-			// 	name: 'politicalcompassmemes',
-			// 	profile_url: 'https://i.ruqqus.com/board/politicalcompassmemes/profile-7.png',
-			// 	subscription_count: 503
-			// },
-			// {
-			// 	id: 4,
-			// 	name: 'technology',
-			// 	profile_url: 'https://i.ruqqus.com/board/technology/profile-3.png',
-			// 	subscription_count: 1010
-			// }
-			// ]
+			}
 		};
 	},
+	components: {
+		Banner,
+		ItemList,
+		ItemSort,
+		ListingToggle,
+	},
 	computed:{
-		...mapState("persist", ["v", "isCard"]),
+		...mapState("persist", ["is_authenticated", "v", "isCard"]),
 		...mapState("items", ["posts"]),
+		s() {
+			return this.$store.getters['site/getSite'];
+		},
 		feedIcon() {
 			if (this.$route.name === 'HomeView') {
 				return 'fa-home-lg-alt'
@@ -317,12 +162,6 @@ export default {
 				this.getFeed()
 			}
 		}
-	},
-	components: {
-		ItemList,
-		ItemSort,
-		ListingToggle,
-		SidebarSection
 	},
 	methods: {
 		getFeed() {

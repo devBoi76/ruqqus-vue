@@ -28,7 +28,7 @@ const UserAppsSettings = () => import ('../views/user/settings/sections/apps/App
 const UserContentSettings = () => import ('../views/user/settings/sections/filters/Filters.vue')
 
 // Search and Discover
-const SearchView = () => import ('../views/SearchView.vue')
+const SearchView = () => import ('../views/SearchView_V2.vue')
 
 // Submit
 const SubmitView = () => import ('../views/SubmitView.vue')
@@ -58,18 +58,20 @@ const AdminQueueView = () => import ('../views/admin/sections/queue/Queue.vue')
 const AdminGeneralView = () => import ('../views/admin/sections/appearance/BasicInfo.vue')
 const AdminThemingView = () => import ('../views/admin/sections/appearance/Theming.vue')
 const AdminUserManagementView = () => import ('../views/admin/sections/members/Members.vue')
-const AdminAccessView = () => import ('../views/admin/sections/other/Access.vue')
+const AdminSecurityView = () => import ('../views/admin/sections/other/Security.vue')
 const AdminRulesView = () => import ('../views/admin/sections/other/Rules.vue')
 const AdminTitlesView = () => import ('../views/admin/sections/other/Titles.vue')
+
+// Errors
+const ErrorView = () => import ('../views/error/ErrorView.vue')
 
 import { store } from "@/store";
 
 const routes = [
 
-	// Home View
-	{ path: '/', name: 'HomeView', component: FeedView, props: true, meta: {title: 'home', sidebar: false, requiresAuth: true} },
-	// Starred View
-	{ path: '/stargazed', name: 'StargazedView', component: FeedView, props: true, meta: {title: 'stargazed', sidebar: false, requiresAuth: true} },
+	// Feed View
+	{ path: '/', name: 'HotView', component: FeedView, props: true, meta: {title: 'hot', sidebar: false, requiresAuth: true} },
+	{ path: '/featured', name: 'FeaturedView', component: FeedView, props: true, meta: {title: 'featured', sidebar: false, requiresAuth: true} },
 	{ path: '/trending', name: 'TrendingView', component: FeedView, props: true, meta: {title: 'trending', sidebar: false, requiresAuth: true} },
 	{ path: '/all', name: 'AllView', component: FeedView, props: true, meta: {title: 'all', sidebar: false, requiresAuth: true} },
 
@@ -128,16 +130,22 @@ const routes = [
 		// 	]
 		// },
 
+		// Error View
+		{ path: '/:pathMatch(.*)*', name: '404View', component: ErrorView, props: { statusCode: '404', heading: 'Page not found :/' , message: 'The page you were looking for does not exist' } },
+		{ path: '/time-out', name: '503View', component: ErrorView, props: { statusCode: '503', heading: 'Service unavailable' , message: 'Our servers are overloaded at the moment. Please try again later.' } },
+		{ path: '/too-many', name: '429View', component: ErrorView, props: { statusCode: '429', heading: 'Too many requests' , message: 'Sorry, you have sent us too many requests. Please try again later.' } },
+		{ path: '/access-denied', name: '403View', component: ErrorView, props: { statusCode: '403', heading: 'Access denied' , message: 'Sorry, you do not have permission to view this page.' } },
+
 		// Admin view
 		{
 			path: '/admin', component: AdminView, props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false},
 			children: [
 			{ path: '', component: AdminGeneralView, name: 'admin-general-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
-			{ path: '/admin/queue/:filter?', component: AdminQueueView, name: 'admin-queue-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
 			{ path: '/admin/general', component: AdminGeneralView, name: 'admin-general-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
+			{ path: '/admin/queue/:filter?', component: AdminQueueView, name: 'admin-queue-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
 			{ path: '/admin/theming', component: AdminThemingView, name: 'admin-theming-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
 			{ path: '/admin/members/:sort?', component: AdminUserManagementView, name: 'admin-user-management-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
-			{ path: '/admin/access', component: AdminAccessView, name: 'admin-access-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
+			{ path: '/admin/security', component: AdminSecurityView, name: 'admin-security-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
 			{ path: '/admin/rules', component: AdminRulesView, name: 'admin-rules-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
 			{ path: '/admin/titles', component: AdminTitlesView, name: 'admin-titles-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} }
 			]
@@ -146,69 +154,69 @@ const routes = [
 		// Route level code-splitting this generates a separate chunk (about.[hash].js) for this route which is lazy-loaded when the route is visited.
 		{ path: '/about', name: 'About', component: () => import(/* webpackChunkName: "about" */ '../views/static/About.vue') },
 
-			// User Profile View
-			{
-				path: '/:username', alias: '/@:username', component: ProfileView, props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} ,
-				children: [
-				{ path: '', component: UserOverviewView, name: 'user-profile-overview-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
-				{ path: '/:username/posts', component: UserPostsView, name: 'user-profile-posts-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
-				{ path: '/:username/comments', component: UserCommentsView, name: 'user-profile-comments-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} }
-				]
-			}
+		// User Profile View
+		{
+			path: '/:username', alias: '/@:username', component: ProfileView, props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} ,
+			children: [
+			{ path: '', component: UserOverviewView, name: 'user-profile-overview-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
+			{ path: '/:username/posts', component: UserPostsView, name: 'user-profile-posts-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
+			{ path: '/:username/comments', component: UserCommentsView, name: 'user-profile-comments-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} }
 			]
+		}
+		]
 
-			const router = createRouter({
-				history: createWebHistory(),
-				scrollBehavior: () => ({ top: 0 }),
-				// parseQuery(query) {
-				// 	return qs.parse(query);
-				// },
-				// stringifyQuery  : query => {
-				// 	let result = qs.stringify(query, { format: 'RFC1738' })
-				// 	return result ? ('?' + result) : ''
-				// },
-				routes
-			})
+		const router = createRouter({
+			history: createWebHistory(),
+			scrollBehavior: () => ({ top: 0 }),
+			// parseQuery(query) {
+			// 	return qs.parse(query);
+			// },
+			// stringifyQuery  : query => {
+			// 	let result = qs.stringify(query, { format: 'RFC1738' })
+			// 	return result ? ('?' + result) : ''
+			// },
+			routes
+		})
 
-			// router.beforeEach((to , from, next) => {
-			// 	console.log(`Coming from : ${from.path} | going to ${to.path}`)
-			// 	console.log(from.fullPath)
-			// 	if (to.matched.some(record => record.meta.requiresAuth)) {
-			// 		if (!store.state.persist.is_authenticated) {
-			// 			console.log(`is_authenticated : ${store.state.persist.is_authenticated} | Redirecting to login`)
-			// 			next({
-			// 				name: "LoginView"
-			// 			})
-			// 		}
-			// 		else if (!store.state.persist.v){
-			// 			console.log(`v doesn't exist | Redirecting to login`)
-			// 			next({
-			// 				name: "LoginView"
-			// 			})
-			// 		}
-			// 		// else if (store.state.persist.v.admin_level != -1 && store.state.persist.v.admin_level != 6){
-			// 		// 	console.log(`only admins allowed | redirecting to login`)
-			// 		// 	next({
-			// 		// 		name: "LoginView"
-			// 		// 	})
-			// 		// }
-			// 		else{next();}
-			// 	}else{next();}
-			// })
+		// router.beforeEach((to , from, next) => {
+		// 	console.log(`Coming from : ${from.path} | going to ${to.path}`)
+		// 	console.log(from.fullPath)
+		// 	if (to.matched.some(record => record.meta.requiresAuth)) {
+		// 		if (!store.state.persist.is_authenticated) {
+		// 			console.log(`is_authenticated : ${store.state.persist.is_authenticated} | Redirecting to login`)
+		// 			next({
+		// 				name: "LoginView"
+		// 			})
+		// 		}
+		// 		else if (!store.state.persist.v){
+		// 			console.log(`v doesn't exist | Redirecting to login`)
+		// 			next({
+		// 				name: "LoginView"
+		// 			})
+		// 		}
+		// 		// else if (store.state.persist.v.admin_level != -1 && store.state.persist.v.admin_level != 6){
+		// 		// 	console.log(`only admins allowed | redirecting to login`)
+		// 		// 	next({
+		// 		// 		name: "LoginView"
+		// 		// 	})
+		// 		// }
+		// 		else{next();}
+		// 	}else{next();}
+		// })
 
-			// Cancel all pending API requests on route change
-			router.beforeEach((to, from, next) => {
-				store.dispatch('base/CANCEL_PENDING_REQUESTS');
-				next();
-			})
+		// Cancel all pending API requests on route change
+		router.beforeEach((to, from, next) => {
+			store.dispatch('base/CANCEL_PENDING_REQUESTS');
+			next();
+		})
 
-			// Reset primary color to porpl
-			router.beforeEach((to, from, next) => {
-				if (to.params.name !== from.params.name) {
-					document.documentElement.style.setProperty('--color-primary', `139, 92, 246`)
-				}
-				next();
-			})
+		// Reset primary color to porpl
+		router.beforeEach((to, from, next) => {
+			if (to.params.name !== from.params.name) {
+				document.documentElement.style.setProperty('--color-primary', `139, 92, 246`)
+			}
+			next();
+		})
 
 // Add router push method to automatically redirect to previously-requested page after successfull auth
 

@@ -1,36 +1,46 @@
 <template>
   <div :class="{'absolute bottom-0 w-full h-full':showDropzone}">
-    <transition
-    enter-active-class="transition-all duration-150 ease-out"
-    leave-active-class="transition-all duration-300 ease-in"
-    enter-class="opacity-0 scale-60"
-    enter-to-leave-class="opacity-100 scale-100"
-    leave-class="opacity-100 scale-100"
-    leave-to-class="opacity-0 scale-60"
-    >
-    <div v-if="canDropImage && showDropzone" class="absolute flex items-center justify-center overflow-hidden w-full h-screen z-100 bg-opacity-90" :class="wrapperClass" @drop.prevent="drop($event)" @click.self="wrongFileReset()" @keydown.esc="showDropzone=false; reset()" tabindex="0">
-      <div class="rounded-lg sm:w-2/4 md:1/4 lg:w-1/3 bg-white shadow transition duration-200 ease-in transform" :class="{ 'animate-shake':wrongFile }">
-        <div class="w-full p-3">
-          <div class="border-2 border-dashed py-16 rounded text-center select-none">
-            <!-- Wrong file icon -->
-            <div v-show="wrongFile" class="flex items-center justify-center w-10 h-10 bg-red-100 rounded mx-auto mb-5">
-              <i class="far fa-frown fa-lg text-red-400"></i>
+    <div class="absolute flex items-center justify-center overflow-hidden w-full h-screen z-100 bg-opacity-80 transition-all duration-100" :class="wrapperClass" @drop.prevent="drop($event)" @click.self="wrongFileReset()" @keydown.esc="showDropzone=false; reset()" tabindex="0">
+      <transition
+      enter-active-class="transition duration-100 ease-out"
+      enter-from-class="transform scale-95 opacity-0"
+      enter-to-class="transform scale-100 opacity-100"
+      leave-active-class="transition duration-75 ease-in"
+      leave-from-class="transform scale-100 opacity-100"
+      leave-to-class="transform scale-95 opacity-0"
+      >
+      <div class="sm:w-2/4 md:1/4 lg:w-1/3" v-if="canDropImage && showDropzone">
+        <div class="rounded bg-white shadow transition duration-200 ease-in transform" :class="{ 'animate-shake':wrongFile }">
+          <div class="w-full p-4">
+            <div class="flex flex-col space-y-5 border-2 border-dashed py-12 text-center select-none">
+              <!-- Wrong file icon -->
+              <div v-if="wrongFile" class="flex items-center justify-center w-10 h-10 bg-red-100 rounded mx-auto mb-5">
+                <i class="far fa-frown fa-lg text-red-400"></i>
+              </div>
+              <!-- Correct file icon -->
+              <div v-if="!wrongFile" class="relative w-[72px] h-[50px] mx-auto">
+                <div class="z-0 absolute left-0 bottom-0 w-[60px] h-[42px] transform rotate-[5deg]"></div>
+                <div class="z-0 absolute bg-gray-200 left-0 bottom-0 w-[72px] h-[50px] transform rotate-[-10deg]"></div>
+                <div class="z-0 absolute bg-gray-200 border-3 border-white shadow left-0 bottom-0 w-[72px] h-[50px] transform"></div>
+              </div>
+              <div class="h4 w-3/4 mx-auto">
+                {{ wrongFile ? 'Wrong file type. Try again.' : 'Drag and drop an image here to create a post' }}
+              </div>
+              <p class="text-sm text-gray-500">
+                or
+              </p>
+              <div class="relative w-3/4 mx-auto">
+                <div class="absolute left-4 top-[6px]">
+                  <i class="far fa-link fa-fw text-sm text-gray-400"></i>
+                </div>
+                <input type="text" class="form-input light pl-10" v-model="url" placeholder="Paste a URL or image here"/>
+              </div>
             </div>
-            <!-- Correct file icon -->
-            <div v-show="!wrongFile" class="flex items-center justify-center w-10 h-10 bg-gray-100 rounded mx-auto mb-5">
-              <i class="far fa-long-arrow-down fa-lg text-purple-500 animate-bounce"></i>
-            </div>
-            <div class="h4">
-              {{ wrongFile ? 'Wrong file type. Try again.' : 'Drop to create a post' }}
-            </div>
-            <p class="text-sm text-gray-500">
-              PNG, JPG, and GIF files are allowed
-            </p>
           </div>
         </div>
       </div>
-    </div>
-  </transition>
+    </transition>
+  </div>
 </div>
 </template>
 

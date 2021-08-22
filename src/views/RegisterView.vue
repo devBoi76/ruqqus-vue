@@ -9,35 +9,38 @@
 						Create an account
 					</h1>
 					<div class="mt-3">
-						<div class="flex flex-col space-y-3 mb-3">
+						<form @submit.prevent="onSubmit" class="flex flex-col space-y-3 mb-3">
 							<div>
 								<label class="label" label-for="username-desktop">
 									Username
 								</label>
-								<input type="text" class="form-input" placeholder="Your username or email" name="username-desktop" v-model="form.name"/>
+								<input required type="text" class="form-input light" placeholder="Your username or email" name="username-desktop" v-model="form.name"/>
 							</div>
 							<div>
 								<label class="label" label-for="username-desktop">
 									Email address
 								</label>
-								<input type="text" class="form-input" placeholder="john@example.com (optional)" name="username-desktop" v-model="form.email"/>
+								<input required type="text" class="form-input light" placeholder="john@example.com (optional)" name="username-desktop" v-model="form.email"/>
 							</div>
 							<div>
 								<label class="label" label-for="password-desktop">
 									Password
 								</label>
-								<input type="password" class="form-input" placeholder="Your password" required name="password-desktop" v-model="form.password"/>
+								<input required type="password" class="form-input light" placeholder="Your password" name="password-desktop" v-model="form.password"/>
 								<a href="/register" class="block mt-2 text-xs text-purple-500 hover:text-purple-600">Forgot password?</a>
 							</div>
-						</div>
-						<button class="button bg-primary hover:bg-opacity-70 w-full mt-6" @click="auth_v(form)">
+						</form>
+						<button class="button primary w-full mt-6" @click="auth_v(form)">
 							Create account
 						</button>
 					</div>
 				</div>
 				<!-- Sign up micro CTA -->
 				<div class="mt-6 text-gray-700 text-sm">
-					Already made a Ruqqus? <a href="/register" class="text-purple-500 font-medium">Log in</a>
+					Already made a Ruqqus?
+					<router-link to="/login" class="text-purple-500 font-semibold">
+						Log in
+					</router-link>
 				</div>
 			</div>
 		</div>

@@ -3,7 +3,7 @@
 
 		<!-- Header content section -->
 		<div class="flex flex-shrink-0 w-full items-center h-16 px-4 bg-white border-b dark:border-white dark:border-opacity-10 dark:bg-gray-700">
-			<h1 class="text-xl font-medium mb-0">Following</h1>
+			<h1 class="text-xl mb-0">Following</h1>
 			<div class="ml-auto w-1/3">
 				<input class="form-input" v-model="searchTerm" placeholder="Filter by username"/>
 			</div>

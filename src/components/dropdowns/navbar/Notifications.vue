@@ -2,45 +2,50 @@
   <Menu as="div" class="relative inline-block text-left">
     <div>
       <MenuButton
-        class="relative flex items-center justify-center px-2 w-8 h-8 text-xl text-gray-600 dark:text-gray-400 hover:text-purple-500 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white rounded-sm">
-        <span class="sr-only">View notifications</span>
-        <!-- Button Icon -->
-        <i class="far fa-bell"></i>
-        <!-- Counter -->
-        <span class="absolute flex items-center justify-center w-6 h-6 rounded bg-purple-500 border-2 border-white dark:border-gray-800 transform transition duration-150" :class="notifications.length ? 'scale-100' : 'scale-0'" style="top: -6px;right: -6px;">
-          <span class="font-bold text-2xs text-white dark:text-gray-200">
-            {{ notifications.length || 1 }}
-          </span>
+      class="relative flex items-center justify-center px-2 w-8 h-8 text-xl text-gray-600 dark:text-gray-400 hover:text-purple-500 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-sm">
+      <span class="sr-only">View notifications</span>
+      <!-- Button Icon -->
+      <i class="far fa-bell"></i>
+      <!-- Counter -->
+      <span class="absolute flex items-center justify-center w-6 h-6 rounded bg-purple-500 border-2 border-white dark:border-gray-800 transform transition duration-150" :class="notifications.length ? 'scale-100' : 'scale-0'" style="top: -6px;right: -6px;">
+        <span class="font-bold text-2xs text-white dark:text-gray-200">
+          {{ notifications.length || 1 }}
         </span>
-      </MenuButton>
-    </div>
+      </span>
+    </MenuButton>
+  </div>
 
-    <transition
-      enter-active-class="transition duration-100 ease-out"
-      enter-from-class="transform scale-95 opacity-0"
-      enter-to-class="transform scale-100 opacity-100"
-      leave-active-class="transition duration-75 ease-in"
-      leave-from-class="transform scale-100 opacity-100"
-      leave-to-class="transform scale-95 opacity-0"
-    >
-      <MenuItems class="absolute right-0 w-96 mt-5 origin-top-right bg-white divide-y divide-gray-100 rounded shadow-lg border focus:outline-none overflow-hidden">
-        <div>
-          <div class="flex items-center justify-between p-4 bg-white dark:bg-gray-900 border-b dark:border-gray-800">
-            <div class="text-2xs font-bold uppercase tracking-wider text-gray-700 dark:text-gray-400">Notifications</div>
+  <transition
+  enter-active-class="transition duration-100 ease-out"
+  enter-from-class="transform scale-95 opacity-0"
+  enter-to-class="transform scale-100 opacity-100"
+  leave-active-class="transition duration-75 ease-in"
+  leave-from-class="transform scale-100 opacity-100"
+  leave-to-class="transform scale-95 opacity-0"
+  >
+  <MenuItems class="absolute right-0 w-96 mt-5 origin-top-right bg-white divide-y divide-gray-100 rounded shadow-lg border focus:outline-none overflow-hidden">
+    <div class="divide-y">
+
+      <div class="uppercase tracking-wide font-semibold leading-none text-2xs text-gray-900 px-4 py-3">
+        Notifications
+      </div>
+
+          <!-- <div class="flex items-center justify-between p-4 bg-white dark:bg-gray-900 border-b dark:border-gray-800">
+            <div class="uppercase tracking-wide font-semibold leading-none text-2xs text-gray-700">Notifications</div>
             <div class="flex items-center space-x-2 leading-tight">
-              <!-- Mark As Read Button -->
+              Mark As Read Button
               <button :disabled="!notifications.length" class="text-sm text-gray-500 hover:text-gray-700 disabed:opacity-50">
                 <i class="far fa-check-double"></i>
               </button>
               <span class="text-gray-300 text-sm font-hairline">
                 |
               </span>
-              <!-- Toggle Preferences Button -->
+              Toggle Preferences Button
               <button class="text-sm text-gray-500 hover:text-gray-700" @click="toggleSettings()">
                 <i class="far fa-cog"></i>
               </button>
             </div>
-          </div>
+          </div> -->
 
           <!-- settings -->
           <div v-show="showSettings" class="flex flex-col p-4 bg-white border-b">
@@ -57,7 +62,10 @@
               <!-- Loading State -->
               <div v-show="loading && !errored && !notifications.length" class="w-full space-y-4 py-4">
                 <div v-for="i in 5" :key="i" class="px-4 animate-pulse">
-                  <div class="rounded-sm bg-gray-200 dark:bg-white dark:bg-opacity-20 w-full h-6"></div>
+                  <div class="flex items-center space-x-3">
+                    <div class="rounded-sm bg-gray-200 dark:bg-white dark:bg-opacity-20 flex-shrink-0 w-7 h-7"></div>
+                    <div class="rounded-sm bg-gray-200 dark:bg-white dark:bg-opacity-20 w-full h-7"></div>
+                  </div>
                 </div>
               </div>
               <!-- Errored State -->
@@ -90,7 +98,13 @@
               </div>
             </div>
           </div>
-
+          <!-- Inbox Link -->
+          <div v-if="notifications.length" class="flex items-center justify-center w-full py-3">
+            <router-link to="/inbox" class="text-sm">
+              View everything
+              <i class="far fa-long-arrow-right fa-sm pl-1"></i>
+            </router-link>
+          </div>
         </div>
       </MenuItems>
     </transition>

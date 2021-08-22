@@ -1,4 +1,7 @@
 /*@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
 	--color-primary: 139, 92, 246;
@@ -18,6 +21,9 @@
 	}
 	body.using-mouse :focus {
 		outline: none!important;
+	}
+	input::-webkit-datetime-edit {
+		padding: 0!important;
 	}
 }
 
@@ -78,14 +84,14 @@
 		@apply animate-pulse;
 	}
 	/*Inputs*/
-	input[type], select, textarea {
+	input[type], select, textarea, input::-webkit-datetime-edit {
 		@apply text-lg sm:text-base leading-5
 	}
-	[type=date], [type=email], [type=month], [type=number], [type=password], [type=search], [type=text], [type=time], [type=url], [type=week], select, textarea {
+	[type=date], [type=datetime-local], [type=email], [type=month], [type=number], [type=password], [type=search], [type=text], [type=time], [type=url], [type=week], select, textarea {
 		@apply text-lg sm:text-base leading-5
 	}
 	.label {
-		@apply block text-sm font-medium text-gray-900 mb-1;
+		@apply block text-sm font-semibold text-gray-900 mb-1;
 	}
 	.dot {
 		@apply w-1 h-1 rounded-full bg-gray-400;
@@ -128,6 +134,9 @@
 	.form-textarea:default {
 		@apply text-gray-900 placeholder-gray-400 bg-gray-50 border-gray-200 focus:bg-white focus:border-primary focus:ring-primary
 	}
+	.form-textarea.light {
+		@apply text-gray-900 placeholder-gray-400 bg-gray-50 border-gray-200 focus:bg-white focus:border-primary focus:ring-primary
+	}
 	.form-textarea.purple500 {
 		@apply text-gray-900 placeholder-gray-400 bg-gray-50 border-gray-200 focus:bg-white focus:border-purple-500 focus:ring-purple-500
 	}
@@ -158,45 +167,54 @@
 	}
 	/* Radio */
 	.form-radio {
-		@apply transition duration-100 ease-in-out shadow-sm focus:border-purple-500 focus:ring-2 focus:ring-purple-500 focus:outline-none focus:ring-opacity-50 focus:ring-offset-0  disabled:opacity-50
+		@apply transition duration-100 ease-in-out border-gray-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-500 focus:outline-none focus:ring-opacity-50 focus:ring-offset-0  disabled:opacity-50
 	}
 	.form-radio:default {
-		@apply text-purple-500 border-gray-300
+		@apply text-purple-500 checked:border-purple-600 focus:border-purple-600 focus:ring-purple-600
+	}
+	.form-radio.primary {
+		@apply text-primary checked:border-black checked:border-opacity-10 focus:border-black focus:ring-black focus:border-opacity-10 focus:ring-opacity-10;
 	}
 	.form-radio.error {
-		@apply text-red-500 border-red-300 focus:border-red-500 focus:ring-red-500
+		@apply text-red-500 checked:border-red-600 focus:border-red-600 focus:ring-red-600
 	}
 	.form-radio.success {
-		@apply text-green-500 border-gray-300 focus:border-green-500 focus:ring-green-500
+		@apply text-green-500 checked:border-gray-600 focus:border-green-600 focus:ring-green-600
 	}
 	.form-radio.warning {
-		@apply text-yellow-500 border-yellow-300 focus:border-yellow-500 focus:ring-yellow-500
+		@apply text-yellow-500 checked:border-yellow-600 focus:border-yellow-600 focus:ring-yellow-600
 	}
 	/* Checkbox */
 	.form-checkbox {
-		@apply transition duration-100 ease-in-out rounded-sm focus:border-purple-500 focus:ring-2 focus:ring-purple-500 focus:outline-none focus:ring-opacity-50 focus:ring-offset-0 disabled:opacity-50
+		@apply transition duration-100 ease-in-out rounded-sm border-gray-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-500 focus:outline-none focus:ring-opacity-50 focus:ring-offset-0 disabled:opacity-50
 	}
 	.form-checkbox:default {
-		@apply text-purple-500 border-gray-300
+		@apply text-purple-500 checked:border-purple-600
+	}
+	.form-checkbox.primary {
+		@apply text-primary checked:border-black checked:border-opacity-10;
 	}
 	.form-checkbox.error {
-		@apply text-red-500 border-red-300
+		@apply text-red-500 checked:border-red-600
 	}
 	.form-checkbox.red500 {
-		@apply text-red-500 border-gray-300
+		@apply text-red-500 checked:border-red-600
 	}
 	.form-checkbox.green500 {
-		@apply text-green-500 border-gray-300
+		@apply text-green-500 checked:border-green-600
+	}
+	.form-checkbox.purple500 {
+		@apply text-purple-500 checked:border-purple-600
 	}
 	.form-checkbox.success {
-		@apply text-green-500 border-green-300
+		@apply text-green-500 checked:border-green-600
 	}
 	.form-checkbox.gray900 {
-		@apply text-green-900 border-gray-300
+		@apply text-green-900 checked:border-black
 	}
 	/* Button */
 	.button {
-		@apply block px-4 py-1.5 h-8 rounded-sm transition text-sm leading-4 font-bold duration-100 ease-in-out focus:border-purple-500 focus:ring-2 focus:ring-purple-500 focus:outline-none focus:ring-opacity-50 disabled:opacity-50
+		@apply block px-4 py-1.5 h-8 rounded-sm transition text-sm leading-4 font-semibold duration-100 ease-in-out focus:border-purple-500 focus:ring-2 focus:ring-purple-500 focus:outline-none focus:ring-opacity-50 disabled:opacity-50
 	}
 	.button:default {
 		@apply text-white bg-purple-500 border border-transparent hover:bg-purple-600

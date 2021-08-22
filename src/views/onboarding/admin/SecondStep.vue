@@ -23,12 +23,12 @@
 					</span>
 				</div>
 			</div>
-			<div class="flex flex-col space-y-4 mb-8">
+			<form class="flex flex-col space-y-4 mb-8" @submit.prevent="onSubmit">
 				<div>
 					<label class="label">
 						Community name
 					</label>
-					<input type="text" v-model="name" placeholder="i.e. The Guild" class="form-input w-full"/>
+					<input required type="text" v-model="name" placeholder="i.e. The Guild" class="form-input light w-full"/>
 					<p class="mt-2 text-xs text-gray-500">
 						You can set up your custom domain later.
 					</p>
@@ -37,21 +37,21 @@
 					<label class="label">
 						Username
 					</label>
-					<input type="text" v-model="username" placeholder="i.e. ruqqie" class="form-input w-full"/>
+					<input required type="text" v-model="username" placeholder="i.e. ruqqie" class="form-input light w-full"/>
 				</div>
 				<div>
 					<label class="label">
 						Email address
 					</label>
-					<input type="email" v-model="email" placeholder="john@example.com" class="form-input w-full"/>
+					<input required type="email" v-model="email" placeholder="john@example.com" class="form-input light w-full"/>
 				</div>
 				<div>
 					<label class="label">
 						Password
 					</label>
-					<input type="password" v-model="password" placeholder="At least 10 characters" class="form-input w-full"/>
+					<input required type="password" v-model="password" placeholder="At least 10 characters" class="form-input light w-full"/>
 				</div>
-			</div>
+			</form>
 			<router-link to="/admin" custom v-slot="{ navigate }">
 				<button class="button primary w-full" @click="navigate" @keypress.enter="navigate" role="link">
 					Continue

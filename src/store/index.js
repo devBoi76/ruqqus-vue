@@ -10,12 +10,11 @@ import * as Cookies from 'js-cookie'
 import base from './modules/base'
 import comments from './modules/comments'
 import create from "./modules/create"
-import guild from "./modules/guild"
 import items from "./modules/items"
-import moderation from "./modules/moderation"
 import notifications from "./modules/notifications"
 import onboarding from "./modules/onboarding"
 import persist from "./modules/persist"
+import site from "./modules/site"
 import toasts from "./modules/toasts"
 
 //import * as mods from 'modules'
@@ -56,12 +55,11 @@ export const store = createStore({
     base: base,
     comments: comments,
     create: create,
-    guild: guild,
     items: items,
-    moderation: moderation,
     notifications: notifications,
     onboarding: onboarding,
     persist: persist,
+    site: site,
     toasts: toasts
   },
   plugins: [persistedState, vuexLocalStorage.plugin],

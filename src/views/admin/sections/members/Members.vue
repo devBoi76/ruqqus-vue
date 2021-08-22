@@ -77,7 +77,7 @@
 							<thead class="bg-gray-50 border-b rounded-t-sm">
 								<tr>
 									<th class="pl-6 pr-3 py-3">
-										<input type="radio" class="form-checkbox" v-model="selectAll"/>
+										<input type="checkbox" class="form-checkbox primary" v-model="selectAll"/>
 									</th>
 									<th class="w-1/5 pl-3 pr-6 py-3 text-xs font-semibold uppercase tracking-wider text-left text-gray-400 dark:text-gray-400">
 										{{ subscriber_count === 1 ? '1 Member' : `${subscriber_count} Members` }}
@@ -101,7 +101,7 @@
 									<tr class="border-t first:border-0 hover:bg-gray-50">
 										<td class="pl-6 pr-3 py-3">
 											<div class="flex items-center">
-												<input type="radio" class="form-checkbox" v-model="selected" :value="member.id"/>
+												<input type="checkbox" class="form-checkbox primary" v-model="selected" :value="member.id"/>
 											</div>
 										</td>
 										<td class="pl-3 pr-6 py-3 whitespace-no-wrap">

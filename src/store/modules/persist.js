@@ -14,7 +14,8 @@ const state = {
 	is_authenticated: false, // set to false when auth is fully functional
 	is_leftBar_collapsed: false,
 	mfa: false,
-	notificationsFilters: []
+	notificationsFilters: [],
+	searchHistory: []
 }
 
 const getters = {}
@@ -52,6 +53,16 @@ const mutations = {
 	},
 	SET_NOTIFICATIONS_FILTERS(state, payload) {
 		state.notificationsFilters = payload
+	},
+	ADD_SEARCH_ITEM(state, payload) {
+		state.searchHistory.push(payload)
+		console.log(searchHistory)
+	},
+	SHIFT_SEARCH_HISTORY(state) {
+		state.searchHistory.shift()
+	},
+	CLEAR_SEARCH_HISTORY(state) {
+		state.searchHistory = []
 	}
 }
 const actions = {
@@ -176,6 +187,17 @@ const actions = {
 			commit("v", {});
 			commit("AUTHENTICATE", false);
 		})
+	},
+	addSearchItem({commit, state}, payload){
+		if (payload && !state.searchHistory.includes(payload)) { // check if query is not empty and for duplicates
+			commit("ADD_SEARCH_ITEM", payload)
+			if (state.searchHistory.length > 10) { // remove first search history item if array exceeds 10
+				commit("SHIFT_SEARCH_HISTORY")
+			}
+		}
+	},
+	clearSearchHistory({commit}) {
+		commit("CLEAR_SEARCH_HISTORY")
 	}
 }
 

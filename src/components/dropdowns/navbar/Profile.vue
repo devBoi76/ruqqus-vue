@@ -16,7 +16,7 @@
     leave-from-class="transform scale-100 opacity-100"
     leave-to-class="transform scale-95 opacity-0"
     >
-    <MenuItems class="absolute right-0 w-56 mt-4 origin-top-right bg-white divide-y divide-gray-100 rounded shadow-lg border focus:outline-none">
+    <MenuItems class="absolute right-0 w-64 mt-4 origin-top-right bg-white divide-y divide-gray-100 rounded shadow-lg border focus:outline-none">
       <!-- User Details -->
       <router-link :to="`/${v.username}`" class="flex items-center p-4">
         <!-- User Avatar -->
@@ -68,28 +68,9 @@
       <div class="py-2">
         <!-- Dark Theme Link -->
         <MenuItem v-slot="{ active }">
-          <button :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-1.5']">
-            <i class="far text-center fa-fw mr-2" :class="dark ? 'fa-sun' : 'fa-moon'"></i><span>Dark Theme</span>
-          </button>
-        </MenuItem>
-      </div>
-      <div class="py-2">
-        <!-- Rules -->
-        <MenuItem v-slot="{ active }">
-          <button :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-1.5']">
-            <i class="far fa-scroll-old text-center fa-fw mr-2"></i><span>Rules</span>
-          </button>
-        </MenuItem>
-        <!-- Github -->
-        <MenuItem v-slot="{ active }">
-          <button :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-1.5']">
-            <i class="fab fa-github text-center fa-fw mr-2"></i><span>Source code</span>
-          </button>
-        </MenuItem>
-        <!-- Discord -->
-        <MenuItem v-slot="{ active }">
-          <button :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-1.5']">
-            <i class="fab fa-discord text-center fa-fw mr-2"></i><span>Discord</span>
+          <button :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-1.5']" @click="dark = !dark">
+            <i class="far text-center fa-fw mr-2" :class="dark ? 'fa-sunglasses' : 'fa-moon'"></i>
+            <span>{{ dark ? 'Light Theme' : 'Dark Theme'}}</span>
           </button>
         </MenuItem>
       </div>
@@ -100,6 +81,40 @@
             <i class="far fa-sign-out text-center fa-fw mr-2"></i><span>Sign Out</span>
           </button>
         </MenuItem>
+      </div>
+      <div class="py-2">
+        <ul class="flex flex-wrap mb-0 px-3 leading-4">
+          <li class="px-1 py-0.5">
+            <router-link to="/about" class="text-xs text-gray-500 hover:underline">
+              About
+            </router-link>
+          </li>
+          <li class="px-1 py-0.5">
+            <router-link to="/about" class="text-xs text-gray-500 hover:underline">
+              Rules
+            </router-link>
+          </li>
+          <li class="px-1 py-0.5">
+            <router-link to="/about" class="text-xs text-gray-500 hover:underline">
+              Contact
+            </router-link>
+          </li>
+          <li class="px-1 py-0.5">
+            <router-link to="/about" class="text-xs text-gray-500 hover:underline">
+              Discord
+            </router-link>
+          </li>
+          <li class="px-1 py-0.5">
+            <router-link to="/about" class="text-xs text-gray-500 hover:underline">
+              Change Log
+            </router-link>
+          </li>
+          <li class="px-1 py-0.5">
+            <router-link to="/about" class="text-xs text-gray-500 hover:underline">
+              Source Code
+            </router-link>
+          </li>
+        </ul>
       </div>
     </MenuItems>
   </transition>
@@ -121,11 +136,19 @@
 			MenuItem
 		},
 		computed:{
-			...mapState("persist", ["v"]),
+			...mapState("persist", ["v","darkMode"]),
 			self() {
 				return this.username === this.v.username; // if username prop matches auth'd user
-			}
-		},
+			},
+      dark: {
+        get () {
+          return this.darkMode
+        },
+        set (value) {
+          this.$store.dispatch('persist/toggle_dark', value)
+        }
+      }
+    },
     methods: {
       ...mapActions("persist", ["logout"]),
     }

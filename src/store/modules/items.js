@@ -5,7 +5,6 @@ import axios from 'axios'
 
 import { getPost } from '../../api/Post.js';
 import { getAccountPosts } from '../../api/Account.js';
-import { getGuildPosts } from '../../api/Guild.js';
 import { getFeed } from '../../api/Feed.js';
 import { getSearch } from '../../api/Search.js';
 
@@ -191,17 +190,6 @@ const actions = {
 		.then(response => {
 			commit("SET_ITEMS", response.data.listing)
 			commit('guild/SET_GUILDS', response.data.results, { root: true });
-		})
-	},
-	fetchGuildPosts({ commit }, payload) {
-		if (payload.params.page === 1) {
-			commit("CLEAR_ITEMS")
-		}
-		console.log(payload.params)
-		getGuildPosts(payload.guild, payload.params)
-		.then(response => {
-			commit("SET_ITEMS", response.data.results)
-			commit('guild/SET_GUILD', response.data.results, { root: true });
 		})
 	},
 	fetchFeed({ commit }, payload) {

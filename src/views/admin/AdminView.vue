@@ -36,7 +36,7 @@
 			</template>
 			<template v-slot:footer>
 				<div class="flex items-center justify-center w-full px-4 py-3 border-t">
-					<a href="https://github.com/ruqqus/ruqqus" target="_blank" class="text-xs text-gray-400 hover:underline">
+					<a href="https://github.com/ruqqus/ruqqus" target="_blank" class="text-sm text-gray-400 hover:underline">
 						View site
 						<i class="far fa-external-link pl-1"></i>
 					</a>
@@ -86,7 +86,7 @@ export default {
 				{
 					name: 'security',
 					route: {
-						name: 'admin-access-view'
+						name: 'admin-security-view'
 					},
 					icon: 'fa-lock-alt',
 					textCase: 'capitalize'

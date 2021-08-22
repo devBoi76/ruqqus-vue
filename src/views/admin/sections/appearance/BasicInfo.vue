@@ -5,7 +5,7 @@
 		<div class="grid grid-cols-12 sticky top-0 z-10">
 			<div class="col-span-full 2xl:col-start-2 2xl:col-end-10">
 				<div class="flex items-center justify-between px-4 py-3 bg-gray-50 sm:bg-gray-100">
-					<h1 class="text-2xl mb-0">
+					<h1 class="text-2xl font-semibold mb-0">
 						General
 					</h1>
 					<button v-if="!loading && !errored" class="button purple500">
@@ -48,12 +48,12 @@
 									Community Info
 								</div>
 								<div class="sm:rounded-sm sm:shadow-xs border-t border-b sm:border-0 bg-white">
-									<Toggle @change="handleChange">
+									<ToggleForm @change="handleChange">
 										<template v-slot:default="{active, toggle}">
 											<div class="p-4">
 												<div class="flex items-center justify-between">
 													<div>
-														<div class="font-bold leading-tight">
+														<div class="font-semibold leading-tight">
 															Name & Description
 														</div>
 														<p class="text-sm text-gray-500 mt-1">
@@ -67,42 +67,48 @@
 												<div v-if="active" class="space-y-6 mt-6">
 													<div class="grid grid-cols-3 gap-6">
 														<div class="col-span-3 sm:col-span-2">
-															<input class="form-input" v-model="g.name" :placeholder="$route.params.name" type="text"/>
+															<label class="label">
+																Community name
+															</label>
+															<input class="form-input light" v-model="s.name" :placeholder="$route.params.name" type="text"/>
 															<p class="text-sm text-gray-500 mt-1">
-																You may only change the capitalization
+																This does not affect your community web address
 															</p>
 														</div>
 													</div>
 													<div class="grid grid-cols-3 gap-6">
 														<div class="col-span-3 sm:col-span-2">
 															<div class="relative">
-																<textarea class="form-textarea" v-model="g.description_short" type="text" rows="3" maxlength="140" placeholder="A community residing on the world wide web."/>
-																<div v-if="g.description_short" class="absolute text-xs font-semibold text-gray-400 right-3 bottom-2" :class="{'text-red-500':g.description_short.length >= 140}">
-																	{{ 140 - g.description_short.length }}
+																<label class="label">
+																	Community tagline
+																</label>
+																<textarea class="form-textarea light" v-model="s.tagline" type="text" rows="3" maxlength="140" placeholder="A community residing on the world wide web."/>
+																<div v-if="s.tagline" class="absolute text-xs font-semibold text-gray-400 right-3 bottom-2" :class="{'text-red-500':s.tagline.length >= 140}">
+																	{{ 140 - s.tagline.length }}
 																</div>
 															</div>
 															<p class="text-sm text-gray-500 mt-1">
-																Used for guild cards and search engines. Markdown not supported
+																Descriptive text used in social images and banner artwork
 															</p>
 														</div>
 													</div>
-													<div class="grid grid-cols-3 gap-6">
+<!-- 													<div class="grid grid-cols-3 gap-6">
 														<div class="col-span-3 sm:col-span-2">
 															<div class="relative">
-																<Editor @input="getEditorContent" v-model="g.description_html" :limit="5000" @click.prevent/>
-																<div v-if="g.description" class="absolute text-xs font-semibold text-gray-400 right-3 bottom-2" :class="{'text-red-500':g.description >= 1000}">
-																	{{ 1000 - g.description }}
+																<Editor @input="getEditorContent" v-model="s.description" :limit="5000" @click.prevent/>
+																<div v-if="s.description" class="absolute text-xs font-semibold text-gray-400 right-3 bottom-2" :class="{'text-red-500':s.description >= 1000}">
+																	{{ 1000 - s.description }}
 																</div>
 															</div>
 															<p class="text-sm text-gray-500 mt-1">
 																A full description of the guild. <i class="fab fa-markdown"></i> markdown supported
 															</p>
 														</div>
-													</div>
+													</div> -->
 												</div>
 											</div>
 										</template>
-									</Toggle>
+									</ToggleForm>
 								</div>
 							</div>
 
@@ -114,29 +120,108 @@
 									<div class="p-4 border-b">
 										<div class="flex items-center justify-between">
 											<div>
-												<div class="font-bold leading-tight">
+												<div class="font-semibold leading-tight">
 													Icon
 												</div>
 												<p class="text-sm text-gray-500 mt-1">
 													The artwork used to represent your community
 												</p>
 											</div>
-											<img :src="g.profile_url" class="w-11 h-11 rounded-sm bg-gray-100 object-cover" alt="guild icon artwork"/>
+											<img :src="s.iconUrl" class="w-11 h-11 rounded-sm bg-gray-100 object-cover" alt="guild icon artwork"/>
 										</div>
 									</div>
 									<div class="p-4">
 										<div class="flex items-center justify-between">
 											<div>
-												<div class="font-bold leading-tight">
+												<div class="font-semibold leading-tight">
 													Cover
 												</div>
 												<p class="text-sm text-gray-500 mt-1">
 													The cover artwork displayed across your community
 												</p>
 											</div>
-											<img :src="g.banner_url" class="w-48 h-11 rounded-sm bg-gray-100 object-cover" alt="guild cover artwork"/>
+											<img :src="s.bannerUrl" class="w-48 h-11 rounded-sm bg-gray-100 object-cover" alt="guild cover artwork"/>
 										</div>
 									</div>
+								</div>
+							</div>
+
+							<div>
+								<div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
+									Community Meta Details
+								</div>
+								<div class="sm:rounded-sm sm:shadow-xs border-t border-b sm:border-0 bg-white">
+									<ToggleForm @change="handleChange">
+										<template v-slot:default="{active, toggle}">
+											<div class="p-4">
+												<div class="flex items-center justify-between">
+													<div>
+														<div class="font-semibold leading-tight">
+															Meta data
+														</div>
+														<p class="text-sm text-gray-500 mt-1">
+															Additional site details for search engines
+														</p>
+													</div>
+													<button class="flex items-center justify-center px-2 w-8 h-8 text-lg text-gray-600 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white rounded-sm" @click="toggle" aria-expanded="active">
+														<i class="far fa-fw" :class="active ? 'fa-compress-alt' : 'fa-pen'"></i>
+													</button>
+												</div>
+												<div v-if="active" class="space-y-6 mt-6">
+													<div class="grid grid-cols-3 gap-6">
+														<div class="col-span-3 sm:col-span-2">
+															<label class="label">
+																Meta title
+															</label>
+															<div class="relative">
+																<input class="form-input light" v-model="s.meta.title" :placeholder="s.name" type="text"/>
+																<div v-if="s.meta.title.length" class="absolute text-xs font-semibold text-gray-400 right-3 bottom-2" :class="{'text-yellow-500':s.meta.title.length >= 60}">
+																	{{ 60 - s.meta.title.length }}
+																</div>
+															</div>
+															<p class="text-sm text-gray-500 mt-1">
+																We recommend 60 characters or less
+															</p>
+														</div>
+													</div>
+													<div class="grid grid-cols-3 gap-6">
+														<div class="col-span-3 sm:col-span-2">
+															<div class="relative">
+																<label class="label">
+																	Meta description
+																</label>
+																<textarea class="form-textarea light" v-model="s.meta.description" type="text" rows="3" maxlength="140" placeholder="A community residing on the world wide web."/>
+																<div v-if="s.meta.description.length" class="absolute text-xs font-semibold text-gray-400 right-3 bottom-2" :class="{'text-red-500':s.meta.description.length >= 140}">
+																	{{ 140 - s.meta.description.length }}
+																</div>
+															</div>
+															<p class="text-sm text-gray-500 mt-1">
+																Briefly describe what your community is about
+															</p>
+														</div>
+													</div>
+													<div class="grid grid-cols-3 gap-6">
+														<div class="col-span-3 sm:col-span-2">
+															<label class="label">
+																Search engine preview
+															</label>
+															<div class="p-5 bg-white border rounded">
+																<div class="text-xs text-gray-900 leading-tight mb-1">
+																	https://{{ s.domain }}
+																</div>
+																<div class="text-[#1a0dab] text-xl font-medium">
+																	{{ s.meta.title || s.name }}
+																</div>
+																<p class="text-sm text-gray-700 mt-1">
+																	{{ s.meta.description || `${s.name} - A community powered by Ruqqus` }}
+																</p>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</template>
+									</ToggleForm>
 								</div>
 							</div>
 
@@ -148,14 +233,14 @@
 									<div class="p-4">
 										<div class="flex flex-grow items-center justify-between">
 											<div>
-												<div class="font-bold leading-tight">
+												<div class="font-semibold leading-tight">
 													NSFW
 												</div>
 												<p class="text-sm text-gray-500 mt-1">
 													Enable if your community contains NSFW content suitable only for adults
 												</p>
 											</div>
-											<t-toggle v-model="g.over_18"/>
+											<toggle v-model="s.isNsfw"/>
 										</div>
 									</div>
 								</div>
@@ -169,14 +254,14 @@
 									<div class="p-4">
 										<div class="flex flex-grow items-center justify-between">
 											<div>
-												<div class="font-bold leading-tight">
+												<div class="font-semibold leading-tight">
 													Disable Downvotes
 												</div>
 												<p class="text-sm text-gray-500 mt-1">
 													Removes downvote buttons from all content (posts and comments)
 												</p>
 											</div>
-											<t-toggle v-model="g.over_18"/>
+											<Toggle v-model="s.canDownvote"/>
 										</div>
 									</div>
 								</div>
@@ -193,54 +278,43 @@
 <script>
 // Import components
 import { defineAsyncComponent } from 'vue'
-const Toggle = defineAsyncComponent(() => import('@/components/Toggle.vue'));
+import Toggle from "@/components/forms/Toggle.vue";
+
+const ToggleForm = defineAsyncComponent(() => import('@/components/Toggle.vue'));
 const Editor = defineAsyncComponent(() => import('@/components/editors/Editor_V2.vue'));
 
 export default {
-	name: "UserSettingsBasicInfoView",
+	name: "SiteSettingsGeneral",
 	components: {
 		Toggle,
+		ToggleForm,
 		Editor
 	},
 	data() {
 		return {
-			loading: true,
+			loading: false,
 			errored: false
 		}
 	},
 	computed: {
-		g() {
-			return this.$store.getters['guild/getGuild'](this.$route.params.name);
-		}
-	},
-	watch: {
-		'$route.params.name': { // get guild info and posts if guild changes
-			handler() {
-				if (this.g == null) {
-					this.loading = true;
-					this.errored = false;
-					this.getGuildInfo()
-				} else {
-					this.loading = false;
-				}
-			},
-			immediate: true
+		s() {
+			return this.$store.getters['site/getSite'];
 		}
 	},
 	methods: {
-		getGuildInfo() {
-			let guild = this.$route.params.name
-			this.$store.dispatch('guild/fetchGuild', guild)
-			.then(() => {
-				console.log("getGuild dispatch successful")
-			})
-			.catch(error => {
-				console.error(error)
-				this.errored = true
+		// getGuildInfo() {
+		// 	let guild = this.$route.params.name
+		// 	this.$store.dispatch('guild/fetchGuild', guild)
+		// 	.then(() => {
+		// 		console.log("getGuild dispatch successful")
+		// 	})
+		// 	.catch(error => {
+		// 		console.error(error)
+		// 		this.errored = true
 
-			})
-			.finally(() => this.loading = false)
-		}
+		// 	})
+		// 	.finally(() => this.loading = false)
+		// }
 	}
 };
 </script>

@@ -2,22 +2,17 @@
 	<div class="w-full overflow-y-auto">
 		<div class="grid grid-cols-12 xl:grid-cols-10">
 
-			<div class="col-span-full xl:col-start-2 xl:col-end-10 sm:p-4 xl:p-0 my-2.5 sm:my-8">
+			<div class="col-span-full xl:col-start-3 xl:col-end-9 flex flex-col gap-4 sm:p-6 my-2.5 sm:my-0">
 
-				<div class="mb-4 md:mb-6">
-					<h1 class="h3">
-						Create post
-					</h1>
-				</div>
+				<h1 class="h3 font-semibold mb-0">
+					Create post
+				</h1>
 
 				<div class="flex gap-6">
 					<!-- Main Content Section -->
 					<div class="w-full">
 						<div class="flex flex-grow">
-							<div class="hidden md:block flex-shrink-0 w-16 h-16 mr-4 rounded-sm overflow-hidden">
-								<img class="w-full h-full object-cover bg-white dark:bg-gray-700" :src="v.profile_url"/>
-							</div>
-							<div class="w-full bg-white dark:bg-gray-800 border sm:shadow-xs sm:rounded-sm">
+							<div class="w-full bg-white dark:bg-gray-800 sm:rounded-sm sm:border">
 								<div v-if="showLinkInput && !submission.image.source" class="relative bg-white border-t-2 border-b-2 border-dashed bg-gray-100 -mt-0.5">
 									<div v-show="!submission.link" class="absolute w-full px-10 py-12 text-gray-500 pointer-events-none">
 										Type or paste a link
@@ -41,31 +36,30 @@
 										/>
 									</div>
 								</div>
-								<div class="p-2.5 space-y-2.5">
-									<div class="flex items-center justify-between border-l border-r border-transparent">
-										<div class="font-bold text-sm">
-											{{ v.username }}
+								<div class="p-2.5 space-y-2.5 sm:p-4 sm:space-y-3">
+									<div class="flex items-center justify-between">
+										<div class="flex items-center">
+											<img class="w-9 h-9 md:w-8 md:h-8 object-cover mr-2 rounded-sm bg-gray-100 dark:bg-gray-700" :src="v.profile_url"/>
+											<div class="font-bold text-sm">
+												{{ v.username }}
+											</div>
 										</div>
-										<div class="-ml-2 flex items-center">
-											<button class="flex items-center justify-center px-2 w-8 h-8 text-xl text-gray-600 dark:text-gray-400 hover:text-purple-500 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white rounded-sm" :class="{'bell':notifications}" :content="notifications ? 'Notifications on' : 'Notifications off'" v-tippy @click="notifications = !notifications">
-												<i class="far fa-fw text-lg" :class="notifications ? 'fa-bell' : 'fa-bell-slash'"></i>
-											</button>
-										</div>
+										<CreatePostOptions @change-time="setTime" @change-options="setOptions" :time="time" :options="options"/>
 									</div>
 									<div class="relative">
-										<input class="form-input" v-model="submission.title" placeholder="Give your post a title"/>
+										<input type="text" class="form-input light" v-model="submission.title" placeholder="Give your post a title"/>
 										<div v-if="submission.title" class="absolute text-xs font-semibold text-gray-400 right-3 bottom-2" :class="{'text-red-500':submission.title.length >= 32}">
 											{{32 - submission.title.length}}
 										</div>
 									</div>
 
 									<div v-show="!submission.image.source">
-										<input class="form-input" v-model="submission.link" placeholder="Add a link to something cool (optional)"/>
+										<input type="text" class="form-input light" v-model="submission.link" placeholder="Add a link to something cool (optional)"/>
 									</div>
 
 									<iframe v-if="embed" :src="embed" width="100%" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"/>
 
-									<Editor @input="getEditorContent" min-height="9rem" :limit="10000"/>
+									<Editor @input="getEditorContent()" min-height="12rem" :limit="10000"/>
 									<!-- Image upload -->
 									<div :class="{'opacity-50':link}" class="hidden">
 										<div class="rounded-sm w-28 h-28 border border-gray-300 border-dashed flex items-center justify-center cursor-pointer text-sm text-gray-400 bg-gray-50 hover:bg-gray-100" @click="chooseImage">
@@ -86,24 +80,30 @@
 										</button>
 										<img :src="submission.image.source" class="w-full h-full object-cover rounded-sm">
 									</div>
+
+									<!-- Other post types -->
+									<div class="flex items-center space-x-1">
+										<button class="button gray100 flex items-center">
+											<i class="far fa-image fa-fw text-lg mr-2"></i>
+											Photo
+										</button>
+										<button class="button gray100 flex items-center">
+											<i class="far fa-poll-h fa-fw text-lg mr-2"></i>
+											Poll
+										</button>
+										<button class="button gray100 flex items-center">
+											<i class="far fa-waveform fa-fw text-lg mr-2"></i>
+											Audio
+										</button>
+									</div>
+
 								</div>
-								<div class="flex items-center space-x-1 p-2.5 border-t">
-									<button :disabled="submission.link" class="flex items-center justify-center px-2 w-8 h-8 text-xl text-gray-600 dark:text-gray-400 hover:text-purple-500 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white rounded-sm" @click="chooseImage" content="Upload an image" v-tippy="{ placement : 'top' }">
-										<i class="far fa-image fa-fw text-lg"></i>
+								<div class="flex justify-end p-4 border-t">
+									<button type="button" class="button linkGray400">
+										Save as Draft
 									</button>
-									<button class="flex items-center justify-center px-2 w-8 h-8 text-xl text-gray-600 dark:text-gray-400 hover:text-purple-500 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white rounded-sm" @click="poll = !poll" content="Add a poll" v-tippy="{ placement : 'top' }">
-										<i class="far fa-poll-h fa-fw text-lg"></i>
-									</button>
-									<button class="flex items-center justify-center px-2 w-8 h-8 text-xl text-gray-600 dark:text-gray-400 hover:text-purple-500 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white rounded-sm" @click="poll = !poll" content="Add music" v-tippy="{ placement : 'top' }">
-										<i class="far fa-waveform fa-fw text-lg"></i>
-									</button>
-								</div>
-								<div class="flex justify-between p-2.5 border-t">
 									<button type="button" class="button purple500" @click="createPost()">
-										Post
-									</button>
-									<button type="button" class="button gray100">
-										Discard
+										{{ buttonText }}
 									</button>
 								</div>
 							</div>
@@ -112,36 +112,67 @@
 					<!-- End Main Content Section -->
 
 					<!-- Right Bar -->
-					<div class="hidden lg:block flex-shrink-0 w-80">
+					<div class="hidden flex-shrink-0 w-80">
 						<div class="space-y-4">
 							<div class="flex flex-col">
-								<div class="bg-white border shadow-xs rounded-sm">
-									<Toggle @change="handleChange">
-										<template v-slot:default="{active, toggle}">
-											<div class="p-4">
-												<div class="flex items-center justify-between">
-													<div class="text-lg font-bold">
-														Advanced Options
+								<div class="bg-white rounded-sm">
+									<div class="p-4 divide-y">
+										<div class="text-lg font-medium">
+											Post options
+										</div>
+										<div class="flex flex-col space-y-5 mt-4 pt-5">
+											<div class="flex flex-col space-y-5">
+												<label class="inline-flex">
+													<input type="radio" class="form-radio primary" v-model="publishType" value="immediately" checked>
+													<div class="ml-3 -mt-0.5 w-full">
+														<div class="text-sm text-gray-900 font-bold select-none">
+															Publish now
+														</div>
+														<div class="text-xs text-gray-500">
+															Publish the post immediately
+														</div>
 													</div>
-													<button @click="toggle">
-														<i class="far fa-fw text-gray-600" :class="active ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
-													</button>
-												</div>
-												<div v-if="active" class="mt-3 space-y-3">
-													<label class="flex items-center justify-between">
-														<span class="text-xs text-gray-600 leading-none">
-															<i class="fas fa-thumbtack fa-fw fa-sm text-green-500 mr-1"></i>
-															Pin this post to the guild
-														</span>
-														<input type="radio" class="form-checkbox green500" name="pin" value="pin"/>
-													</label>
-													<select placeholder="Select rating" v-model="rating" class="form-select capitalize">
-														<option v-for="rating in ratings" :value="rating">{{ rating }}</option>
-													</select>
-												</div>
+												</label>
+												<label class="inline-flex">
+													<input type="radio" class="form-radio primary" v-model="publishType" value="scheduled">
+													<div class="ml-3 -mt-0.5 w-full">
+														<div class="text-sm text-gray-900 font-bold select-none">
+															Schedule for later
+														</div>
+														<input type="datetime-local" id="time" name="time" class="flex items-center form-input light mt-2"/>
+														<div class="mt-2 text-xs text-gray-500">
+															Automatically publish the post later on
+														</div>
+													</div>
+												</label>
 											</div>
-										</template>
-									</Toggle>
+											<div class="flex flex-col space-y-2">
+												<label class="flex items-center">
+													<input type="checkbox" class="form-checkbox green500" name="pin" value="pin"/>
+													<span class="pl-2 text-sm text-gray-700 select-none">
+														Pin this post
+													</span>
+												</label>
+												<label class="flex items-center">
+													<input type="checkbox" class="form-checkbox red500" name="pin" value="pin"/>
+													<span class="pl-2 text-sm text-gray-700 select-none">
+														Mark as mature content
+													</span>
+												</label>
+											</div>
+										</div>
+										<div class="flex justify-end mt-5 pt-5">
+											<span>
+												time: {{ time }}
+											</span>
+											<button type="button" class="button linkGray400">
+												Save as Draft
+											</button>
+											<button type="button" class="button purple500" @click="createPost()">
+												{{ buttonText }}
+											</button>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -159,18 +190,23 @@
 	import MediaFormat from '../helpers/media-format.js'
 	import Editor from "@/components/editors/Editor_V2.vue";
 
+	import CreatePostOptions from "@/components/dropdowns/CreatePostOptions.vue";
+
 	const LinkPreview = () => import('@/components/embeds/Link.vue')
 
 	import Toggle from '@/components/Toggle.vue';
 
 	export default {
 		components: {
+			CreatePostOptions,
 			Editor,
 			LinkPreview,
 			Toggle
 		},
 		data() {
 			return {
+				time: 'immediately',
+				options: [],
 				embed: null,
 				poll: false,
 				pin: false,
@@ -208,6 +244,13 @@
 			...mapState("persist", ["v"]),
 			submission() {
 				return this.$store.state.create.post.submission
+			},
+			buttonText() {
+				if (this.time === 'immediately') {
+					return 'Post'
+				} else {
+					return 'Schedule Post'
+				}
 			}
 		},
 		watch: {
@@ -229,6 +272,14 @@
 			createPost() {
 				this.$store.commit('create/SET_SUBMISSION', {submission: this.submission})
 				this.submitPost()
+			},
+			setTime(time) {
+				console.log('setTime method triggered')
+				this.time = time;
+			},
+			setOptions(options) {
+				console.log('setOptions method triggered')
+				this.options = options
 			},
 			getEditorContent(value) {
 				this.submission.body = value;
