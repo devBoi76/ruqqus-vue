@@ -75,7 +75,7 @@
 									Your Integrations
 								</div>
 								<div v-if="activeIntegrations" class="sm:rounded-sm border-t border-b sm:border bg-white divide-y">
-									<div class="flex items-center justify-between p-4">
+									<div v-for="(item, index) in activeIntegrations" :key="index" class="flex items-center justify-between p-4">
 										<div class="flex">
 											<img :src="item.logo" class="w-11 h-11 object-cover"/>
 											<div class="pl-4 pr-8">
