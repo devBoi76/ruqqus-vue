@@ -47,59 +47,61 @@
 			<div v-if="!loading && !errored" class="col-span-full 2xl:col-start-2 2xl:col-end-10">
 				<div class="p-4">
 					<div class="md:grid md:grid-cols-3 md:gap-6">
+						<div class="mt-5 md:mt-0 md:col-span-3 space-y-8">
 
-						<div>
-							<div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
-								Available Integrations
-							</div>
-							<div class="flex flex-wrap -mx-2 overflow-hidden">
-								<div class="my-2 px-2 w-1/2 overflow-hidden">
-									<div v-for="(item, index) in integrations" :key="index" class="my-2 px-2 w-1/2 overflow-hidden lg:w-1/3">
-										<div class="flex p-5 bg-white border rounded-sm">
-											<div class="flex">
-												<img :src="item.logo" class="w-24 h-24 obeject-cover mb-2"/>
-												<div>
-													<div class="h4">
-														{{ item.name }}
+							<div>
+								<div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
+									Available Integrations
+								</div>
+								<div class="flex flex-wrap -mx-2 overflow-hidden">
+									<div class="my-2 px-2 w-1/2 overflow-hidden">
+										<div v-for="(item, index) in integrations" :key="index" class="my-2 px-2 w-1/2 overflow-hidden lg:w-1/3">
+											<div class="flex p-5 bg-white border rounded-sm">
+												<div class="flex">
+													<img :src="item.logo" class="w-24 h-24 obeject-cover mb-2"/>
+													<div>
+														<div class="h4">
+															{{ item.name }}
+														</div>
+														<p class="text-gray-500 mt-2">
+															{{ item.description }}
+														</p>
 													</div>
-													<p class="text-gray-500 mt-2">
-														{{ item.description }}
-													</p>
 												</div>
+												<button class="button gray400 w-full mt-4">
+													<i class="far fa-plus fa-fw pr-2"></i>
+													Connect
+												</button>
 											</div>
-											<button class="button gray400 w-full mt-4">
-												<i class="far fa-plus fa-fw pr-2"></i>
-												Connect
-											</button>
 										</div>
 									</div>
 								</div>
 							</div>
-						</div>
 
-						<div>
-							<div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
-								Your Integrations
-							</div>
-							<div class="sm:rounded-sm sm:shadow-xs border-t border-b sm:border-0 bg-white">
-								<div class="p-4 border-b">
-									<div class="flex flex-grow items-center justify-between">
-										<div>
-											<div class="font-semibold leading-tight">
-												Restrict posting
+							<div>
+								<div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
+									Your Integrations
+								</div>
+								<div class="sm:rounded-sm sm:shadow-xs border-t border-b sm:border-0 bg-white">
+									<div class="p-4 border-b">
+										<div class="flex flex-grow items-center justify-between">
+											<div>
+												<div class="font-semibold leading-tight">
+													Restrict posting
+												</div>
+												<p class="text-sm text-gray-500 mt-1">
+													Restrict posting to approved users only
+												</p>
 											</div>
-											<p class="text-sm text-gray-500 mt-1">
-												Restrict posting to approved users only
-											</p>
-										</div>
-										<div class="flex items-center space-x-2">
-											<Toggle v-model="s.canPost"/>
+											<div class="flex items-center space-x-2">
+												<Toggle v-model="s.canPost"/>
+											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-						</div>
 
+						</div>
 					</div>
 				</div>
 			</div>
