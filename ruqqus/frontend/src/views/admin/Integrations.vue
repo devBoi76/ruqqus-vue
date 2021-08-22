@@ -51,7 +51,7 @@
 
 							<div class="flex flex-wrap -mt-2 -mx-2 overflow-hidden">
 								<div v-for="(item, index) in integrations" :key="index" class="my-2 px-2 w-full overflow-hidden md:w-1/2">
-									<div class="flex justify-between p-4 bg-white border rounded-sm">
+									<div class="justify-between p-4 bg-white border rounded-sm" :class="item.isActive ? 'hidden' : 'flex'">
 										<div class="flex">
 											<img :src="item.logo" class="w-10 h-10 object-cover"/>
 											<div class="pl-4 pr-8">
@@ -87,10 +87,15 @@
 												</p>
 											</div>
 										</div>
-										<button class="button white">
-											<i class="far fa-wrench fa-fw pr-1"></i>
-											Configure
-										</button>
+										<div class="flex items-center space-x-2">
+											<span class="px-2 inline-flex text-xs leading-5 font-medium rounded-sm bg-green-100 text-green-800">
+												Active
+											</span>
+											<button class="button gray200">
+												Manage
+												<i class="far fa-chevron-right fa-fw pl-1"></i>
+											</button>
+										</div>
 									</div>
 								</div>
 								<div v-else class="sm:rounded-sm border-t border-b sm:border bg-white">
