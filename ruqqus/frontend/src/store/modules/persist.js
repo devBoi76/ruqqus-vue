@@ -182,7 +182,7 @@ const actions = {
 			commit("AUTHENTICATE", false);
 		})
 	},
-	addSearchItem({ commit,state }, payload) {
+	addSearchItem({commit, state}, payload){
 		if (!state.searchHistory.includes(payload)) { // check for duplicate search queries
 			commit("ADD_SEARCH_ITEM", payload)
 		}
