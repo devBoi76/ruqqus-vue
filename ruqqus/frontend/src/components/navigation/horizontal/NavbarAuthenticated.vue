@@ -168,6 +168,7 @@
 </template>
 
 <script>
+	import { defineAsyncComponent } from 'vue'
 	import { mapState, mapActions } from 'vuex';
 	import Notifications from "@/components/dropdowns/navbar/Notifications.vue";
 	import Profile from "@/components/dropdowns/navbar/Profile.vue";
