@@ -9,7 +9,10 @@
 					<div class="hidden md:block w-1/3">
 						<div class="ml-4 flex items-baseline space-x-4">
 							<!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-							<input type="text" class="form-input light" v-model="searchTerm" placeholder="Search posts or @users" @keyup.enter="search()"/>
+							<div class="relative">
+							<input type="text" class="hidden form-input light" v-model="searchTerm" placeholder="Search posts or @users" @keyup.enter="search()"/>
+							<Search/>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -164,12 +167,14 @@
 	import { mapState, mapActions } from 'vuex';
 	import Notifications from "@/components/dropdowns/navbar/Notifications.vue";
 	import Profile from "@/components/dropdowns/navbar/Profile.vue";
+	import Search from "@/components/popovers/PopoverSearch.vue";
 
 	export default {
 		name: "Navbar",
 		components: {
 			Notifications,
-			Profile
+			Profile,
+			Search
 		},
 		data() {
 			return {
