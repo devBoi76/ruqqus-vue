@@ -82,7 +82,7 @@
 												<div class="flex items-center h6">
 													{{ item.name }}
 													<span class="ml-2 px-2 inline-flex text-xs leading-5 font-medium rounded-sm bg-green-100 text-green-800">
-														Active
+														active
 													</span>
 												</div>
 												<p class="text-sm text-gray-500">
