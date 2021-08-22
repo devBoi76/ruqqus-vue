@@ -22,7 +22,7 @@
 							Recent searches
 						</div>
 						<div class="ml-auto">
-							<button class="text-sm text-gray-500">
+							<button class="text-sm text-gray-500" @click="clearSearchHistory()">
 								Clear
 							</button>
 						</div>
@@ -45,7 +45,7 @@
 </template>
 
 <script>
-	import { mapState } from 'vuex';
+	import { mapState, mapActions } from 'vuex';
 	import { Popover, PopoverButton, PopoverPanel } from '@headlessui/vue';
 
 	export default {
@@ -59,6 +59,7 @@
 			...mapState("persist", ["searchHistory"]),
 		},
 		methods: {
+			...mapActions("persist", ["clearSearchHistory"]),
 			search() {
 				this.$router.push("/search?q="+this.searchTerm);
 			}

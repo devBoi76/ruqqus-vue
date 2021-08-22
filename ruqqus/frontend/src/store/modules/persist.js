@@ -195,6 +195,9 @@ const actions = {
 				commit("SHIFT_SEARCH_HISTORY")
 			}
 		}
+	},
+	clearSearchHistory({commit}) {
+		commit("CLEAR_SEARCH_HISTORY")
 	}
 }
 
