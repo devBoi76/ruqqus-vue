@@ -63,6 +63,9 @@ const AdminSecurityView = () => import ('../views/admin/sections/other/Security.
 const AdminRulesView = () => import ('../views/admin/sections/other/Rules.vue')
 const AdminTitlesView = () => import ('../views/admin/sections/other/Titles.vue')
 
+// Integration Configs
+const AdminIntegrationKoFiView = () => import ('../views/admin/integrations/Ko-Fi.vue')
+
 // Errors
 const ErrorView = () => import ('../views/error/ErrorView.vue')
 
@@ -144,7 +147,8 @@ const routes = [
 			{ path: '', component: AdminGeneralView, name: 'admin-general-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
 			{ path: '/admin/general', component: AdminGeneralView, name: 'admin-general-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
 			{ path: '/admin/moderation', component: AdminModerationView, name: 'admin-moderation-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
-			{ path: '/admin/integrations/:integration?', component: AdminIntegrationsView, name: 'admin-integrations-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
+			{ path: '/admin/integrations', component: AdminIntegrationsView, name: 'admin-integrations-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
+			{ path: '/admin/integrations/ko-fi', component: AdminIntegrationKoFiView, name: 'admin-integration-kofi-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false},
 			{ path: '/admin/queue/:filter?', component: AdminQueueView, name: 'admin-queue-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
 			{ path: '/admin/theming', component: AdminThemingView, name: 'admin-theming-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
 			{ path: '/admin/members/:sort?', component: AdminUserManagementView, name: 'admin-user-management-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
