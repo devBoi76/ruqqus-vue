@@ -131,7 +131,7 @@ export default {
 			{
 				logo: 'https://i.imgur.com/MHgOhAk.png',
 				name: 'Discord',
-				description: 'Enable members to connect their community account with their Discord. Ideal for official server integrations.',
+				description: 'Enable members to connect their account here with Discord. Ideal for official server integrations.',
 				isActive: false
 			}
 			]
