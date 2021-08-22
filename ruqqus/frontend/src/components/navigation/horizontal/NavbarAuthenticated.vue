@@ -8,7 +8,9 @@
 					</div>
 					<div class="hidden md:block w-1/3">
 						<div class="ml-4 flex items-baseline space-x-4">
-							<Search/>
+							<div class="relative">
+								<Search/>
+							</div>
 						</div>
 					</div>
 				</div>
