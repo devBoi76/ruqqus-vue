@@ -53,9 +53,9 @@
 								<div v-for="(item, index) in integrations" :key="index" class="my-2 px-2 w-full overflow-hidden md:w-1/2">
 									<div class="justify-between p-4 bg-white border rounded-sm" :class="item.isActive ? 'hidden' : 'flex'">
 										<div class="flex">
-											<img :src="item.logo" class="w-10 h-10 object-cover"/>
+											<img :src="item.logo" class="w-9 h-9 object-cover"/>
 											<div class="pl-4 pr-8">
-												<div class="h5">
+												<div class="h6">
 													{{ item.name }}
 												</div>
 												<p class="text-sm text-gray-500">
@@ -76,10 +76,10 @@
 								</div>
 								<div v-if="activeIntegrations.length" class="sm:rounded-sm border-t border-b sm:border bg-white divide-y">
 									<div v-for="(item, index) in activeIntegrations" :key="index" class="flex items-center justify-between p-4">
-										<div class="flex">
-											<img :src="item.logo" class="w-10 h-10 object-cover"/>
+										<div class="flex items-center">
+											<img :src="item.logo" class="w-9 h-9 object-cover"/>
 											<div class="pl-4 pr-8">
-												<div class="h5">
+												<div class="h6">
 													{{ item.name }}
 												</div>
 												<p class="text-sm text-gray-500">
