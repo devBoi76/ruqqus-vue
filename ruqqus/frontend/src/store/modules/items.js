@@ -83,7 +83,7 @@ const getters = {
 	},
 	// Get the status of item's saved property
 	getItemSavedStatus: (state) => (id) => {
-		return state.posts[id].itemSavedStatus
+		return state.posts[id].isSaved
 	}
 }
 
