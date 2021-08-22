@@ -28,9 +28,9 @@
 						</div>
 					</div>
 					<div class="py-2">
-						<button class="'group flex items-center w-full px-4 py-1.5 text-gray-900 hover:bg-gray-100">
+						<button v-for="(item, index) in searchHistory" :key="index" class="'group flex items-center w-full px-4 py-1.5 text-gray-900 hover:bg-gray-100">
 							<i class="far fa-search fa-fw text-gray-400 mr-2"></i>
-							<span>search term</span>
+							<span>{{ item }}</span>
 						</button>
 					</div>
 				</div>
@@ -41,7 +41,8 @@
 </template>
 
 <script>
-	import { Popover, PopoverButton, PopoverPanel } from '@headlessui/vue'
+	import { mapState } from 'vuex';
+	import { Popover, PopoverButton, PopoverPanel } from '@headlessui/vue';
 
 	export default {
 		components: { Popover, PopoverButton, PopoverPanel },
@@ -49,6 +50,9 @@
 			return {
 				searchTerm: this.$route.query.q
 			}
+		},
+		computed: {
+			...mapState("persist", ["searchHistory"]),
 		},
 		methods: {
 			search() {

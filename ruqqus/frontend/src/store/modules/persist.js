@@ -14,7 +14,8 @@ const state = {
 	is_authenticated: false, // set to false when auth is fully functional
 	is_leftBar_collapsed: false,
 	mfa: false,
-	notificationsFilters: []
+	notificationsFilters: [],
+	searchHistory: []
 }
 
 const getters = {}
