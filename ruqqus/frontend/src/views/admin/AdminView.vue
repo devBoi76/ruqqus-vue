@@ -107,14 +107,14 @@ export default {
 					icon: 'fa-paint-roller',
 					textCase: 'capitalize'
 				},
-				// {
-				// 	name: 'integrations',
-				// 	route: {
-				// 		name: 'admin-integrations-view'
-				// 	},
-				// 	icon: 'fa-puzzle-piece',
-				// 	textCase: 'capitalize'
-				// },
+				{
+					name: 'integrations',
+					route: {
+						name: 'admin-integrations-view'
+					},
+					icon: 'fa-puzzle-piece',
+					textCase: 'capitalize'
+				},
 				]
 			},
 			{
