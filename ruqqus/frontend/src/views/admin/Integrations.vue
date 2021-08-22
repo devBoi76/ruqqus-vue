@@ -59,7 +59,7 @@
 											<div class="flex">
 												<img :src="item.logo" class="w-16 h-16 object-cover"/>
 												<div class="pl-3">
-													<div class="h4">
+													<div class="h5">
 														{{ item.name }}
 													</div>
 													<p class="text-gray-500 mt-2">
