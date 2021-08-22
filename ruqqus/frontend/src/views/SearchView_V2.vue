@@ -96,7 +96,8 @@ export default {
 			handler() {
 				this.fetchResults();
 				this.$store.dispatch('persist/addSearchItem', this.$route.query.q);
-			}
+			},
+			immediate: true
 		}
 	},
 	methods: {
