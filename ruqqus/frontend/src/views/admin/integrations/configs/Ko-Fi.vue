@@ -49,6 +49,30 @@
 		<div v-if="!loading && !errored" class="col-span-full 2xl:col-start-2 2xl:col-end-10">
 			<div class="p-4">
 				<div class="md:grid md:grid-cols-3 md:gap-6">
+					<div class="sm:rounded-sm border-t border-b sm:border bg-white">
+						<div class="flex flex-col md:flex-row p-4">
+							<div class="flex flex-col flex-shrink-0">
+								<img src="https://i.imgur.com/j87KTfH.png" class="w-14 h-14 md:w-32 md:h-32 object-cover p-4 bg-white border border-gray-100 rounded shadow-inner" alt="kofi logo"/>
+								<div class="hidden md:block">
+									<a href="https://ko-fi.com" target="_blank" class="button gray100 mt-2">
+										Learn more
+									</a>
+								</div>
+							</div>
+							<div class="pl-4">
+								<div class="h4 font-semibold">
+									Ko-Fi
+								</div>
+								<span class="px-2 mb-2 inline-flex uppercase tracking-wide text-2xs leading-5 font-medium rounded-sm bg-gray-100 text-gray-800">
+									finance
+								</span>
+								<p class="text-gray-600">
+									Artists, Writers, Podcasters, and all kinds of creators use Ko-fi. It can be a simple tip-jar, a place to build a membership community or a super-easy way to sell products and commissions with just a link! Ko-fi is for anyone who wants to start making an income directly from fans of what they do.
+								</p>
+							</div>
+						</div>
+					</div>
+
 					<div class="mt-5 md:mt-0 md:col-span-3 space-y-8">
 						<div>
 							<div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
