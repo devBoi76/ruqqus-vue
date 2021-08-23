@@ -50,7 +50,7 @@
 											</p>
 										</div>
 									</div>
-									<router-link :to="`/integrations/${item.name}`" custom v-slot="{ navigate }">
+									<router-link :to="`/admin/integrations/${item.name}`" custom v-slot="{ navigate }">
 										<button class="button gray200" @click="navigate" @keypress.enter="navigate" role="link">
 											Connect
 										</button>
@@ -80,7 +80,7 @@
 											</p>
 										</div>
 									</div>
-									<router-link :to="`/integrations/${item.name}`" custom v-slot="{ navigate }">
+									<router-link :to="`/admin/integrations/${item.name}`" custom v-slot="{ navigate }">
 										<button class="button linkGray400" @click="navigate" @keypress.enter="navigate" role="link">
 											Manage
 											<i class="far fa-chevron-right fa-fw pl-1"></i>
