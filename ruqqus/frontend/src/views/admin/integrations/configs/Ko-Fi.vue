@@ -91,7 +91,7 @@
 							<div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
 								Configuration
 							</div>
-							<div class="relative sm:rounded-sm border-t border-b sm:border bg-white">
+							<div class="relative rounded-sm border bg-white">
 								<div v-show="!isActive" class="absolute w-full h-full bg-white bg-opacity-80 backdrop-blur-sm z-10">
 									<div class="w-full h-full flex flex-col items-center justify-center">
 										<p class="text-gray-500">
