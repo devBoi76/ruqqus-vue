@@ -120,7 +120,7 @@
 				{
 					logo: 'https://i.imgur.com/MHgOhAk.png',
 					name: 'Discord',
-					description: 'Enable members to connect their account here with Discord. Ideal for official server integrations.',
+					description: 'Enable members to connect their account here with Discord.',
 					isActive: false
 				},
 				{
