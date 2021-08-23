@@ -65,6 +65,7 @@ const AdminTitlesView = () => import ('../views/admin/sections/other/Titles.vue'
 const AdminIntegrationsView = () => import ('../views/admin/integrations/Integrations.vue')
 const AdminIntegrationsListView = () => import ('../views/admin/integrations/IntegrationsList.vue')
 const AdminIntegrationKoFiView = () => import ('../views/admin/integrations/configs/Ko-Fi.vue')
+const AdminIntegrationMailgunView = () => import ('../views/admin/integrations/configs/Mailgun.vue')
 
 // Errors
 const ErrorView = () => import ('../views/error/ErrorView.vue')
@@ -151,7 +152,8 @@ const routes = [
 				path: '/admin/integrations', component: AdminIntegrationsView, props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false},
 				children: [
 				{ path: '', component: AdminIntegrationsListView, name: 'admin-integrations-list-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
-				{ path: '/admin/integrations/ko-fi', component: AdminIntegrationKoFiView, name: 'admin-integration-kofi-view', meta: {title: "Ko-Fi", requiresAuth: true, dropImage: false} }
+				{ path: '/admin/integrations/ko-fi', component: AdminIntegrationKoFiView, name: 'admin-integration-kofi-view', meta: {requiresAuth: true, dropImage: false} },
+				{ path: '/admin/integrations/mailgun', component: AdminIntegrationMailgunView, name: 'admin-integration-mailgun-view', meta: {requiresAuth: true, dropImage: false} }
 				]
 			},
 			{ path: '/admin/queue/:filter?', component: AdminQueueView, name: 'admin-queue-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
