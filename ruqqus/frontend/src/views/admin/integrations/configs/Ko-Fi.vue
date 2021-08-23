@@ -63,9 +63,9 @@
 											</label>
 											<input class="form-input light" v-model="webhook" placeholder="Enter your Ko-Fi account webhook" type="text"/>
 											<p class="text-sm text-gray-500 mt-1">
-												Your webhook can be found in
-												<a href="hover:underline">
-													Ko-Fi account settings
+												Webhooks can be found in
+												<a href="https://ko-fi.com/manage/webhooks" target="_blank" class="hover:underline">
+													Ko-Fi settings
 												</a>
 											</p>
 										</div>
