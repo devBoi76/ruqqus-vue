@@ -203,8 +203,8 @@ const actions = {
 		console.log(payload.params)
 		getFeed(payload.feed, payload.params)
 		.then(response => {
-			commit("SET_ITEMS", response.data.results);
-			commit('guild/SET_GUILDS', response.data.results, { root: true });
+			commit("SET_ITEMS", response.data);
+			// commit('guild/SET_GUILDS', response.data.results, { root: true });
 		})
 	},
 	fetchSearch({ commit }, query) {
