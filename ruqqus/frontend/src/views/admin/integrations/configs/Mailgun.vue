@@ -4,7 +4,7 @@
 		<div class="col-span-full 2xl:col-start-2 2xl:col-end-10">
 			<div class="flex items-center justify-between px-4 py-3 bg-gray-50 sm:bg-gray-100">
 				<div class="flex items-center">
-					<router-link to="/admin/integrations" class="block text-2xl text-gray-900">
+					<router-link to="/admin/integrations" class="h4 text-gray-900 mb-0">
 						Integrations
 					</router-link>
 					<div class="pl-4 flex items-center space-x-4">
