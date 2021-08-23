@@ -54,11 +54,6 @@
 							<div class="flex">
 								<div class="flex flex-col flex-shrink-0">
 									<img src="https://i.imgur.com/j87KTfH.png" class="w-20 h-20 md:w-32 md:h-32 object-cover p-4 bg-white border rounded shadow-inner" alt="kofi logo"/>
-									<div class="hidden md:block mt-3">
-										<a href="https://ko-fi.com" target="_blank" class="button green500 text-center">
-											Learn more
-										</a>
-									</div>
 								</div>
 								<div class="pl-4">
 									<div class="h4 font-semibold">
@@ -67,9 +62,27 @@
 									<span class="px-2 mb-2 inline-flex uppercase tracking-wide text-2xs leading-5 font-medium rounded-sm bg-gray-200 text-gray-800">
 										finance
 									</span>
-									<p class="text-gray-600">
+									<p class="text-gray-900">
 										Get one-time donations and monthly memberships from fans. No fees.
 									</p>
+									<ul class="flex flex-wrap leading-4 space-x-4" role="none">
+										<li class="" role="none">
+											<span class="font-semibold text-sm text-gray-700">
+												Website
+											</span>
+											<a href="https://kofi.com" class="text-xs text-gray-500 hover:underline pl-1" role="none">
+												kofi.com
+											</a>
+										</li>
+										<li class="" role="none">
+											<span class="font-semibold text-sm text-gray-700">
+												Docs
+											</span>
+											<a href="https://help.ko-fi.com" class="text-xs text-gray-500 hover:underline pl-1" role="none">
+												help.ko-fi.com
+											</a>
+										</li>
+									</ul>
 								</div>
 							</div>
 						</div>
