@@ -50,11 +50,11 @@
 			<div class="p-4">
 				<div class="md:grid md:grid-cols-3 md:gap-6">
 					<div class="md:col-span-3 space-y-8">
-						<div class="rounded-sm border bg-white p-4 sm:rounded-0 sm:bg-transparent sm:pb-4 sm:border-b">
-							<div class="flex flex-col md:flex-row p-4">
+						<div class="pb-4 border-b">
+							<div class="flex flex-col md:flex-row">
 								<div class="flex flex-col flex-shrink-0">
-									<img src="https://i.imgur.com/j87KTfH.png" class="w-20 h-20 md:w-32 md:h-32 object-cover p-4 bg-white border border-gray-100 rounded shadow-inner" alt="kofi logo"/>
-									<div class="hidden md:block mt-2">
+									<img src="https://i.imgur.com/j87KTfH.png" class="w-20 h-20 md:w-32 md:h-32 object-cover p-4 bg-white border rounded shadow-inner" alt="kofi logo"/>
+									<div class="hidden md:block mt-3">
 										<a href="https://ko-fi.com" target="_blank" class="button green500 text-center">
 											Learn more
 										</a>
