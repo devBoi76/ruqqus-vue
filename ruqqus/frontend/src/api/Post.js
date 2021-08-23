@@ -5,15 +5,15 @@ import axios from 'axios'
 
 // Return post info given id
 export function getPost(id){
-	return axios.get('/api/vue/post/'+id);
+  return axios.get('/api/v2/post/'+id);
 }
 
 // Return a post's comments info given id
 export function getPostComments(id){
-	return axios.get('/api/vue/comments/'+id); // api/vue/post/{{ id }}/comments/{{ comment id }}
+  return axios.get(`/api/v2/post/${id}/comments`); // api/vue/post/{{ id }}/comments/{{ comment id }}
 }
 
 // Delete comment given id
 export function deletePost(id){
-	return axios.delete(id)
+  return axios.delete(id)
 }
