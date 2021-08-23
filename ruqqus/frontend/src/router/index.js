@@ -148,7 +148,7 @@ const routes = [
 			{ path: '/admin/general', component: AdminGeneralView, name: 'admin-general-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
 			{ path: '/admin/moderation', component: AdminModerationView, name: 'admin-moderation-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
 			{
-				path: '/admin/integrations', component: AdminIntegrationsView, name: 'admin-integrations-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false},
+				path: '/admin/integrations', component: AdminIntegrationsView, props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false},
 				children: [
 				{ path: '', component: AdminIntegrationsListView, name: 'admin-integrations-list-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
 				{ path: '/admin/integrations/ko-fi', component: AdminIntegrationKoFiView, name: 'admin-integration-kofi-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} }
