@@ -35,7 +35,7 @@
 		<div v-if="!loading && !errored" class="col-span-full 2xl:col-start-2 2xl:col-end-10">
 			<div class="p-4">
 				<div class="md:grid md:grid-cols-3 md:gap-6">
-					<div class="mt-5 md:mt-0 md:col-span-3 space-y-8">
+					<div class="md:col-span-3 space-y-8">
 						<div class="flex flex-wrap -mt-2 -mx-2 overflow-hidden">
 							<div v-for="(item, index) in integrations" :key="index" v-show="!item.isActive" class="my-2 px-2 w-full overflow-hidden md:w-1/4">
 								<div class="flex flex-col justify-between h-full sm:p-4 p-5 bg-white border rounded-sm">
