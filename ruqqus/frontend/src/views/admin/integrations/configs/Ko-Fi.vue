@@ -71,7 +71,7 @@
 										</div>
 									</div>
 									<div class="grid grid-cols-3 gap-6">
-										<div class="col-span-3 sm:col-span-2">
+										<div class="col-span-3">
 											<div class="flex flex-grow items-center justify-between">
 												<div>
 													<div class="font-semibold leading-tight">
