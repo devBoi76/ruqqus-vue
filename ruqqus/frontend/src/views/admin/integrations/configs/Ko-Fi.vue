@@ -49,38 +49,38 @@
 		<div v-if="!loading && !errored" class="col-span-full 2xl:col-start-2 2xl:col-end-10">
 			<div class="p-4">
 				<div class="md:grid md:grid-cols-3 md:gap-6">
-					<div class="mt-5 md:mt-0 md:col-span-3 space-y-8">
-						<div class="sm:rounded-sm border-t border-b sm:border bg-white">
+					<div class="md:col-span-3 space-y-8">
+						<div class="rounded-sm border bg-white p-4 sm:rounded-0 sm:bg-transparent sm:pb-4 sm:border-b-2">
 							<div class="flex flex-col md:flex-row p-4">
 								<div class="flex flex-col flex-shrink-0">
-									<img src="https://i.imgur.com/j87KTfH.png" class="w-14 h-14 md:w-32 md:h-32 object-cover p-4 bg-white border border-gray-100 rounded shadow-inner" alt="kofi logo"/>
+									<img src="https://i.imgur.com/j87KTfH.png" class="w-20 h-20 md:w-32 md:h-32 object-cover p-4 bg-white border border-gray-100 rounded shadow-inner" alt="kofi logo"/>
 									<div class="hidden md:block mt-2">
-										<a href="https://ko-fi.com" target="_blank" class="button gray100 text-center">
+										<a href="https://ko-fi.com" target="_blank" class="button green500 text-center">
 											Learn more
 										</a>
 									</div>
 								</div>
-								<div class="md:pl-4">
+								<div class="mt-4 md:mt-0 md:pl-4">
 									<div class="h4 font-semibold">
 										Ko-Fi
 									</div>
-									<span class="px-2 mb-2 inline-flex uppercase tracking-wide text-2xs leading-5 font-medium rounded-sm bg-gray-100 text-gray-800">
+									<span class="px-2 mb-2 inline-flex uppercase tracking-wide text-2xs leading-5 font-medium rounded-sm bg-gray-200 text-gray-800">
 										finance
 									</span>
 									<p class="text-gray-600">
-										Artists, Writers, Podcasters, and all kinds of creators use Ko-fi. It can be a simple tip-jar, a place to build a membership community or a super-easy way to sell products and commissions with just a link! Ko-fi is for anyone who wants to start making an income directly from fans of what they do.
+										Get one-time donations and monthly memberships from fans. No fees.
 									</p>
 								</div>
 							</div>
 						</div>
-						
+
 						<div>
 							<div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
 								Configuration
 							</div>
 							<div class="sm:rounded-sm border-t border-b sm:border bg-white">
-								<div class="p-4 space-y-5 divide-y">
-									<div class="grid grid-cols-3 gap-6">
+								<div class="divide-y">
+									<div class="grid grid-cols-3 gap-6 p-4">
 										<div class="col-span-3 sm:col-span-2">
 											<label class="label">
 												Webhook
@@ -94,7 +94,7 @@
 											</p>
 										</div>
 									</div>
-									<div class="grid grid-cols-3 gap-6">
+									<div class="grid grid-cols-3 gap-6 p-4">
 										<div class="col-span-3">
 											<div class="flex flex-grow items-center justify-between">
 												<div>
