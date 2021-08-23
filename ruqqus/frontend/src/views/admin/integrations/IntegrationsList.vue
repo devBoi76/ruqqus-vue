@@ -38,10 +38,10 @@
 					<div class="mt-5 md:mt-0 md:col-span-3 space-y-8">
 						<div class="flex flex-wrap -mt-2 -mx-2 overflow-hidden">
 							<div v-for="(item, index) in integrations" :key="index" v-show="!item.isActive" class="my-2 px-2 w-full overflow-hidden md:w-1/2">
-								<div class="flex justify-between sm:p-4 p-5 bg-white border rounded-sm">
+								<div class="flex justify-between p-4 sm:p-5 bg-white border rounded-sm">
 									<div class="flex">
 										<img :src="item.logo" class="w-9 h-9 md:w-12 md:h-12 object-cover"/>
-										<div class="pl-4 pr-8">
+										<div class="pl-5 pr-8">
 											<div class="font-semibold">
 												{{ item.name }}
 											</div>
