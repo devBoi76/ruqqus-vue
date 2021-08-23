@@ -91,7 +91,17 @@
 							<div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
 								Configuration
 							</div>
-							<div class="sm:rounded-sm border-t border-b sm:border bg-white">
+							<div class="relative sm:rounded-sm border-t border-b sm:border bg-white">
+								<div class="absolute w-full h-full bg-white bg-opacity-50 backdrop-blur">
+									<div class="w-full h-full flex flex-col items-center justify-center">
+										<p class="text-gray-500">
+											You have not configured Ko-Fi with your site.
+										</p>
+										<button class="button green500">
+											Get started
+										</button>
+									</div>
+								</div>
 								<div class="divide-y">
 									<div class="grid grid-cols-3 gap-6 p-4">
 										<div class="col-span-3 sm:col-span-2">
