@@ -63,7 +63,7 @@ const AdminRulesView = () => import ('../views/admin/sections/other/Rules.vue')
 const AdminTitlesView = () => import ('../views/admin/sections/other/Titles.vue')
 // Integrations
 const AdminIntegrationsView = () => import ('../views/admin/integrations/Integrations.vue')
-const AdminIntegrationsListView = () => import ('../views/admin/integratinos/IntegrationsList.vue')
+const AdminIntegrationsListView = () => import ('../views/admin/integrations/IntegrationsList.vue')
 const AdminIntegrationKoFiView = () => import ('../views/admin/integrations/config/Ko-Fi.vue')
 
 // Errors
