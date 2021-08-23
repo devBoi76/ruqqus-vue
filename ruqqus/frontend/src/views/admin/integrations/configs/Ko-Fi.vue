@@ -79,7 +79,7 @@
 								Configuration
 							</div>
 							<div class="sm:rounded-sm border-t border-b sm:border bg-white">
-								<div class="p-4 space-y-5">
+								<div class="p-4 space-y-5 divide-y">
 									<div class="grid grid-cols-3 gap-6">
 										<div class="col-span-3 sm:col-span-2">
 											<label class="label">
