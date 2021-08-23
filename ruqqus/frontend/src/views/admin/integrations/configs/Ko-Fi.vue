@@ -14,7 +14,7 @@
 						</h2>
 					</div>
 				</div>
-				<div class="flex items-center space-x-4">
+				<div v-if="isActive" class="flex items-center space-x-4">
 					<div v-show="changed" class="text-xs text-gray-400">
 						You have unsaved changes!
 					</div>
@@ -92,7 +92,7 @@
 								Configuration
 							</div>
 							<div class="relative sm:rounded-sm border-t border-b sm:border bg-white">
-								<div class="absolute w-full h-full bg-white bg-opacity-50 backdrop-blur">
+								<div v-show="!isActive" class="absolute w-full h-full bg-white bg-opacity-50 backdrop-blur">
 									<div class="w-full h-full flex flex-col items-center justify-center">
 										<p class="text-gray-500">
 											You have not configured Ko-Fi with your site.
@@ -149,6 +149,7 @@
 		name: "AdminIntegrationsKofiView",
 		data() {
 			return {
+				isActive: false,
 				webhook: '',
 				hasDonationAttr: true,
 				changed: false,
