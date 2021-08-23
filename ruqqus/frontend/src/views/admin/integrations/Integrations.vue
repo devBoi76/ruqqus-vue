@@ -8,10 +8,10 @@
 						<h1 class="text-2xl capitalize mb-0">
 							Integrations
 						</h1>
-						<div v-if="$route.props.name" class="pl-4 flex items-center space-x-4">
+						<div v-if="$route.meta.title" class="pl-4 flex items-center space-x-4">
 							<i class="fal fa-chevron-right fa-lg text-gray-500"></i>
 							<h2 class="text-2xl capitalize mb-0">
-								{{ $route.props.name }}
+								{{ $route.meta.title }}
 							</h2>
 						</div>
 					</div>
