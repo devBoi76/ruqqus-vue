@@ -7,20 +7,6 @@
 					<h1 class="text-2xl capitalize mb-0">
 						Integrations
 					</h1>
-					<div v-if="$route.meta.title" class="pl-4 flex items-center space-x-4">
-						<i class="fal fa-chevron-right fa-lg text-gray-500"></i>
-						<h2 class="text-2xl capitalize mb-0">
-							{{ $route.meta.title }}
-						</h2>
-					</div>
-				</div>
-				<div v-if="$route.meta.title" class="flex items-center space-x-4">
-					<div v-show="changed" class="text-xs text-gray-400">
-						You have unsaved changes!
-					</div>
-					<button v-if="!loading && !errored" :disabled="!changed" class="button purple500" @click="save()">
-						Save
-					</button>
 				</div>
 			</div>
 		</div>
@@ -64,9 +50,11 @@
 											</p>
 										</div>
 									</div>
-									<button class="button gray200">
-										Connect
-									</button>
+									<router-link :to="`/integrations/${item.name}`" custom v-slot="{ navigate }">
+										<button class="button gray200" @click="navigate" @keypress.enter="navigate" role="link">
+											Connect
+										</button>
+									</router-link>
 								</div>
 							</div>
 						</div>
@@ -92,10 +80,12 @@
 											</p>
 										</div>
 									</div>
-									<button class="button linkGray400">
-										Manage
-										<i class="far fa-chevron-right fa-fw pl-1"></i>
-									</button>
+									<router-link :to="`/integrations/${item.name}`" custom v-slot="{ navigate }">
+										<button class="button linkGray400" @click="navigate" @keypress.enter="navigate" role="link">
+											Manage
+											<i class="far fa-chevron-right fa-fw pl-1"></i>
+										</button>
+									</router-link>
 								</div>
 							</div>
 							<div v-else class="sm:rounded-sm border-t border-b sm:border bg-white">
@@ -114,16 +104,12 @@
 </template>
 
 <script>
-
 	export default {
 		name: "AdminIntegrationsListView",
 		data() {
 			return {
-				changed: false,
 				loading: false,
 				errored: false,
-				s: {},
-				saved: {},
 				integrations: [
 				{
 					logo: 'https://i.imgur.com/bV2OM6P.png',
@@ -142,6 +128,12 @@
 					name: 'PayPal',
 					description: 'Collect one-time payments',
 					isActive: true
+				},
+				{
+					logo: 'https://i.imgur.com/j87KTfH.png',
+					name: 'Ko-Fi',
+					description: 'Collect one-time and recurring donations with zero fees',
+					isActive: false
 				}
 				]
 			}
