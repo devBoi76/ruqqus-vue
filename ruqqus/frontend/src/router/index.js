@@ -62,8 +62,8 @@ const AdminSecurityView = () => import ('../views/admin/sections/other/Security.
 const AdminRulesView = () => import ('../views/admin/sections/other/Rules.vue')
 const AdminTitlesView = () => import ('../views/admin/sections/other/Titles.vue')
 // Integrations
-const AdminIntegrationsView = () => import ('../views/admin/Integrations.vue')
-const AdminIntegrationsListView = () => import ('../views/admin/IntegrationsList.vue')
+const AdminIntegrationsView = () => import ('../views/admin/integrations/Integrations.vue')
+const AdminIntegrationsListView = () => import ('../views/admin/integratinos/IntegrationsList.vue')
 const AdminIntegrationKoFiView = () => import ('../views/admin/integrations/config/Ko-Fi.vue')
 
 // Errors
