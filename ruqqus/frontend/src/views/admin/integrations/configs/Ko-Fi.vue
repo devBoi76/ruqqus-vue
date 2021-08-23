@@ -59,28 +59,30 @@
 									<div class="grid grid-cols-3 gap-6">
 										<div class="col-span-3 sm:col-span-2">
 											<label class="label">
-												Community name
+												Webhook
 											</label>
-											<input class="form-input light" v-model="s.name" :placeholder="$route.params.name" type="text"/>
+											<input class="form-input light" v-model="s.name" placeholder="Enter your Ko-Fi account webhook" type="text"/>
 											<p class="text-sm text-gray-500 mt-1">
-												This does not affect your community web address
+												Your webhook can be found in
+												<a href="hover:underline">
+													Ko-Fi account settings
+												</a>
 											</p>
 										</div>
 									</div>
 									<div class="grid grid-cols-3 gap-6">
 										<div class="col-span-3 sm:col-span-2">
-											<div class="relative">
-												<label class="label">
-													Community tagline
-												</label>
-												<textarea class="form-textarea light" v-model="s.tagline" type="text" rows="3" maxlength="140" placeholder="A community residing on the world wide web."/>
-												<div v-if="s.tagline" class="absolute text-xs font-semibold text-gray-400 right-3 bottom-2" :class="{'text-red-500':s.tagline.length >= 140}">
-													{{ 140 - s.tagline.length }}
+											<div class="flex flex-grow items-center justify-between">
+												<div>
+													<div class="font-semibold leading-tight">
+														Designate users who donate
+													</div>
+													<p class="text-sm text-gray-500 mt-1">
+														Applies a 'hasDonated' attribute to members who have donated via Ko-Fi
+													</p>
 												</div>
+												<Toggle v-model="hasDonationAttr"/>
 											</div>
-											<p class="text-sm text-gray-500 mt-1">
-												Descriptive text used in social images and banner artwork
-											</p>
 										</div>
 									</div>
 								</div>
@@ -94,14 +96,20 @@
 </template>
 
 <script>
+	import Toggle from "@/components/forms/Toggle.vue";
+
 	export default {
 		name: "AdminIntegrationsKofiView",
 		data() {
 			return {
+				hasDonationAttr: true,
 				changed: false,
 				loading: false,
 				errored: false,
 			}
+		},
+		components: {
+			Toggle
 		},
 		methods: {
 		// getGuildInfo() {
