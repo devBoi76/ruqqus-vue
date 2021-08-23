@@ -114,13 +114,13 @@
 				{
 					logo: 'https://i.imgur.com/bV2OM6P.png',
 					name: 'Gumroad',
-					description: 'Collect donations from your members via automatic monthly subscriptions.',
+					description: 'Collect donations from your members via automatic monthly subscriptions',
 					isActive: false
 				},
 				{
 					logo: 'https://i.imgur.com/MHgOhAk.png',
 					name: 'Discord',
-					description: 'Enable members to connect their account here with Discord.',
+					description: 'Enable members to connect their account here with Discord',
 					isActive: false
 				},
 				{
@@ -133,6 +133,12 @@
 					logo: 'https://i.imgur.com/j87KTfH.png',
 					name: 'Ko-Fi',
 					description: 'Collect one-time and recurring donations with zero fees',
+					isActive: false
+				},
+				{
+					logo: 'https://i.imgur.com/LVtkHwo.png',
+					name: 'Mailgun',
+					description: 'Send transactional emails to your members',
 					isActive: false
 				}
 				]
