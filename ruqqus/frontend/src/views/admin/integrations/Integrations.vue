@@ -5,9 +5,17 @@
 		<div class="grid grid-cols-12 sticky top-0 z-10">
 			<div class="col-span-full 2xl:col-start-2 2xl:col-end-10">
 				<div class="flex items-center justify-between px-4 py-3 bg-gray-50 sm:bg-gray-100">
-					<h1 class="text-2xl capitalize mb-0">
-						Integrations
-					</h1>
+					<div class="flex items-center">
+						<h1 class="text-2xl capitalize mb-0">
+							Integrations
+						</h1>
+						<div v-if="route.props.name" class="pl-4 flex items-center space-x-4">
+							<i class="fal fa-chevron-right fa-lg text-gray-500"></i>
+							<h2 class="text-2xl capitalize mb-0">
+								{{ $route.props.name }}
+							</h2>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -53,16 +61,19 @@
 
 <script>
 
-export default {
-	name: "AdminIntegrationsView",
-	data() {
-		return {
-			changed: false,
-			loading: false,
-			errored: false,
-		}
-	},
-	methods: {
+	export default {
+		name: "AdminIntegrationsView",
+		props: {
+			name: String
+		},
+		data() {
+			return {
+				changed: false,
+				loading: false,
+				errored: false,
+			}
+		},
+		methods: {
 		// getGuildInfo() {
 		// 	let guild = this.$route.params.name;
 		// 	getGuild(guild)
