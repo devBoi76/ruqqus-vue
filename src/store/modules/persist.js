@@ -121,12 +121,12 @@ const actions = {
 		})
 		.then(
 			function(response){
-				if (response.data.status_code === 200) {
+				if (response.data.status === 200) {
 					commit("v", response.data.v);
 					commit("AUTHENTICATE", true);
 				}
 					// handle MFA code
-					else if (response.data.status_code === 201) {
+					else if (response.data.status === 201) {
 						//commit("v", response.data.v);
 						console.log(`form hash : ${response.data.hash}`)
 						console.log(`form time : ${response.data.time}`)
@@ -164,7 +164,7 @@ const actions = {
 			headers: headers
 		}).then(
 		function(response) {
-			if (response.data.status_code === 200) {
+			if (response.data.status === 200) {
 				commit("v", response.data.v);
 				commit("AUTHENTICATE", true);
 				commit("TOGGLE_MFA")
@@ -178,7 +178,7 @@ const actions = {
 		})
 		.then(
 			function(response) {
-				if (response.data.status_code === 200) {
+				if (response.data.status === 200) {
 					commit("v", {});
 					commit("AUTHENTICATE", false);
 				}
