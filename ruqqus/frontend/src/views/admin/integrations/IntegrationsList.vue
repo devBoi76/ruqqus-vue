@@ -51,7 +51,7 @@
 										</div>
 									</div>
 									<router-link :to="`/admin/integrations/${item.name}`" custom v-slot="{ navigate }">
-										<button class="button gray200" @click="navigate" @keypress.enter="navigate" role="link">
+										<button class="button gray100" @click="navigate" @keypress.enter="navigate" role="link">
 											Connect
 										</button>
 									</router-link>
