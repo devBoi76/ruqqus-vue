@@ -4,9 +4,11 @@
 		<div class="col-span-full 2xl:col-start-2 2xl:col-end-10">
 			<div class="flex items-center justify-between px-4 py-3 bg-gray-50 sm:bg-gray-100">
 				<div class="flex items-center">
-					<router-link to="/admin/integrations" class="h4 text-gray-900 mb-0">
-						Integrations
-					</router-link>
+					<h1 class="text-2xl capitalize mb-0">
+						<router-link to="/admin/integrations">
+							Integrations
+						</router-link>
+					</h1>
 					<div class="pl-4 flex items-center space-x-4">
 						<i class="fal fa-chevron-right fa-lg text-gray-400"></i>
 						<h2 class="text-2xl capitalize mb-0">
