@@ -95,7 +95,7 @@
 								<div v-show="!isActive" class="absolute w-full h-full rounded-sm bg-white bg-opacity-80 backdrop-blur-sm z-10">
 									<div class="w-full h-full flex flex-col items-center justify-center">
 										<p class="text-gray-500">
-											You have not configured Ko-Fi with your site.
+											You have not configured Ko-Fi with your site
 										</p>
 										<button class="button green500">
 											Get started
