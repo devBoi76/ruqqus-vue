@@ -61,7 +61,7 @@
 											<label class="label">
 												Webhook
 											</label>
-											<input class="form-input light" v-model="s.name" placeholder="Enter your Ko-Fi account webhook" type="text"/>
+											<input class="form-input light" v-model="webhook" placeholder="Enter your Ko-Fi account webhook" type="text"/>
 											<p class="text-sm text-gray-500 mt-1">
 												Your webhook can be found in
 												<a href="hover:underline">
@@ -102,6 +102,7 @@
 		name: "AdminIntegrationsKofiView",
 		data() {
 			return {
+				webhook: '',
 				hasDonationAttr: true,
 				changed: false,
 				loading: false,
