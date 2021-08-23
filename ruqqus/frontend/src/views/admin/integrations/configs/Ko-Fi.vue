@@ -49,7 +49,7 @@
 		<div v-if="!loading && !errored" class="col-span-full 2xl:col-start-2 2xl:col-end-10">
 			<div class="p-4">
 				<div class="md:grid md:grid-cols-3 md:gap-6">
-					<div>
+					<div class="mt-5 md:mt-0 md:col-span-3 space-y-8">
 						<div class="sm:rounded-sm border-t border-b sm:border bg-white">
 							<div class="flex flex-col md:flex-row p-4">
 								<div class="flex flex-col flex-shrink-0">
@@ -73,9 +73,7 @@
 								</div>
 							</div>
 						</div>
-					</div>
-
-					<div class="mt-5 md:mt-0 md:col-span-3 space-y-8">
+						
 						<div>
 							<div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
 								Configuration
