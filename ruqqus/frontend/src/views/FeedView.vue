@@ -177,7 +177,6 @@ export default {
 			.catch(error => {
 				console.error(error)
 				this.errored = true
-
 			})
 			.finally(() => this.loading = false)
 		},

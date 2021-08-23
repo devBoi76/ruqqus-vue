@@ -66,6 +66,9 @@ const AdminIntegrationsView = () => import ('../views/admin/integrations/Integra
 const AdminIntegrationsListView = () => import ('../views/admin/integrations/IntegrationsList.vue')
 const AdminIntegrationKoFiView = () => import ('../views/admin/integrations/configs/Ko-Fi.vue')
 const AdminIntegrationMailgunView = () => import ('../views/admin/integrations/configs/Mailgun.vue')
+const AdminIntegrationPayPalView = () => import ('../views/admin/integrations/configs/PayPal.vue')
+const AdminIntegrationGumroadView = () => import ('../views/admin/integrations/configs/Gumroad.vue')
+const AdminIntegrationDiscordView = () => import ('../views/admin/integrations/configs/Discord.vue')
 
 // Errors
 const ErrorView = () => import ('../views/error/ErrorView.vue')
@@ -153,7 +156,10 @@ const routes = [
 				children: [
 				{ path: '', component: AdminIntegrationsListView, name: 'admin-integrations-list-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
 				{ path: '/admin/integrations/ko-fi', component: AdminIntegrationKoFiView, name: 'admin-integration-kofi-view', meta: {requiresAuth: true, dropImage: false} },
-				{ path: '/admin/integrations/mailgun', component: AdminIntegrationMailgunView, name: 'admin-integration-mailgun-view', meta: {requiresAuth: true, dropImage: false} }
+				{ path: '/admin/integrations/mailgun', component: AdminIntegrationMailgunView, name: 'admin-integration-mailgun-view', meta: {requiresAuth: true, dropImage: false} },
+				{ path: '/admin/integrations/paypal', component: AdminIntegrationPayPalView, name: 'admin-integration-paypal-view', meta: {requiresAuth: true, dropImage: false} },
+				{ path: '/admin/integrations/gumroad', component: AdminIntegrationGumroadView, name: 'admin-integration-gumroad-view', meta: {requiresAuth: true, dropImage: false} },
+				{ path: '/admin/integrations/discord', component: AdminIntegrationDiscordView, name: 'admin-integration-discord-view', meta: {requiresAuth: true, dropImage: false} }
 				]
 			},
 			{ path: '/admin/queue/:filter?', component: AdminQueueView, name: 'admin-queue-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
