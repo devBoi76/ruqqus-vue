@@ -114,7 +114,7 @@
 				{
 					logo: 'https://i.imgur.com/bV2OM6P.png',
 					name: 'Gumroad',
-					description: 'Collect donations from your members via automatic monthly subscriptions',
+					description: 'Collect one-time or recurring donations for digital products',
 					isActive: false
 				},
 				{
