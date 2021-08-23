@@ -131,10 +131,16 @@
 							<span class="text-sm font-bold">Share</span>
 						</button>
 						<!-- Save Button -->
-						<button class="flex items-center text-gray-500 leading-none dark:text-gray-400 hover:text-gray-600 dark:hover:text-gray-300">
-							<i class="far fa-bookmark fa-fw mr-1"></i>
-							<span class="text-sm font-bold">Save</span>
-						</button>
+						<SaveButton v-if="author">
+							<template v-slot:default="{isSaved, savePost, unsavePost}">
+								<button class="flex items-center text-gray-500 leading-none dark:text-gray-400 hover:text-gray-600 dark:hover:text-gray-300" @click="isSaved ? unsavePost() : savePost()">
+									<i class="fa-bookmark fa-fw mr-1" :class="isSaved ? 'fas' : 'far'"></i>
+									<span class="text-sm font-bold">
+										{{ isSaved ? 'Unsave' : 'Save' }}
+									</span>
+								</button>
+							</template>
+						</SaveButton>
 						<!-- Delete Button-->
 						<button v-if="author" class="flex items-center text-gray-500 leading-none dark:text-gray-400 hover:text-gray-600 dark:hover:text-gray-300">
 							<i class="far fa-trash-alt fa-fw mr-1"></i>
@@ -221,6 +227,8 @@ import { mapState, mapGetters } from "vuex";
 //import date-fns
 import { isValid, formatDistanceToNowStrict } from '../../../node_modules/date-fns';
 
+const SaveButton = defineAsyncComponent(() => import('@/components/buttons/SavePostButton.vue'))
+
 export default {
 	name: "ItemListingCompact",
 	props: {
@@ -233,6 +241,9 @@ export default {
 				return {}
 			}
 		}
+	},
+	components: {
+		SaveButton
 	},
 	data() {
 		return {

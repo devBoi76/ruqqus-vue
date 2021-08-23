@@ -1,13 +1,13 @@
 <template>
 	<Popover v-slot="{ open }">
 		<PopoverButton as="div" class="w-96 appearance-none">
-			<form class="relative" @submit.prevent="onSubmit">
+			<form class="relative" @submit.prevent="onSubmit" @submit="search()">
 				<div class="absolute left-3 top-[6px]">
-					<button class="text-gray-400 hover:text-gray-500" @click="search()">
+					<button class="text-gray-400 hover:text-gray-500" type="submit">
 						<i class="far fa-search fa-fw fa-sm"></i>
 					</button>
 				</div>
-				<input type="text" class="form-input light pl-9" v-model="searchTerm" placeholder="Search posts or @users" @keyup.enter="search()"/>
+				<input required type="text" class="form-input light pl-9" v-model="searchTerm" placeholder="Search posts or @users"/>
 				<div v-show="searchTerm" class="absolute right-3 top-[6px]">
 					<button class="text-gray-400 hover:text-gray-500" @click="searchTerm = ''">
 						<i class="far fa-times-circle fa-fw fa-sm"></i>
@@ -43,7 +43,7 @@
 						<ul class="flex flex-col-reverse mb-0">
 							<router-link :to="`/search?q=${item}`" v-for="(item, index) in searchHistory" :key="index" custom v-slot="{ navigate }">
 								<PopoverButton as="li" class="appearance-none flex items-center w-full px-4 py-1.5 text-gray-900 hover:bg-gray-100 focus:bg-gray-100 cursor-pointer" @click="navigate" @keypress.enter="navigate" role="link">
-									<i class="far fa-search fa-fw text-gray-400 mr-3"></i>
+									<i class="far fa-search fa-fw text-gray-400 mr-4"></i>
 									<span>{{ item }}</span>
 								</PopoverButton>
 							</router-link>

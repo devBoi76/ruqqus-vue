@@ -83,7 +83,7 @@ const getters = {
 	},
 	// Get the status of item's saved property
 	getItemSavedStatus: (state) => (id) => {
-		return state.posts[id].itemSavedStatus
+		return state.posts[id].isSaved
 	}
 }
 
@@ -128,9 +128,6 @@ const mutations = {
 			new: [],
 		}
 	},
-	// DELETE_ITEM: (state, id) => {
-	// 	delete state.posts.id
-	// },
 
 	/*
 	MUTATIONS FOR USER ACTIONS
@@ -146,6 +143,13 @@ const mutations = {
 	SET_ITEM_VOTE_TYPE(state, { type, id }){
 		state.posts[id].voted = type
 		//Vue.set(state.posts[id], 'voted', type)
+	},
+
+	// Deleting
+	DELETE_ITEM: (state, id) => {
+		//delete state.posts.id
+		let i = state.ids.map(item => item.id).indexOf(id) // find index of your object
+		state.ids.splice(i, 1) // remove the item from the array
 	},
 
 	// Saving

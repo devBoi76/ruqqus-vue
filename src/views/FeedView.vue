@@ -160,7 +160,8 @@ export default {
 				this.loading = true;
 				this.errored = false;
 				this.getFeed()
-			}
+			},
+			flush: "post"
 		}
 	},
 	methods: {
