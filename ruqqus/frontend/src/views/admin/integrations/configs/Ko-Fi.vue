@@ -51,7 +51,7 @@
 				<div class="md:grid md:grid-cols-3 md:gap-6">
 					<div class="md:col-span-3 space-y-8">
 						<div class="pb-4 border-b">
-							<div class="flex flex-col md:flex-row">
+							<div class="flex">
 								<div class="flex flex-col flex-shrink-0">
 									<img src="https://i.imgur.com/j87KTfH.png" class="w-20 h-20 md:w-32 md:h-32 object-cover p-4 bg-white border rounded shadow-inner" alt="kofi logo"/>
 									<div class="hidden md:block mt-3">
@@ -60,7 +60,7 @@
 										</a>
 									</div>
 								</div>
-								<div class="mt-4 md:mt-0 md:pl-4">
+								<div class="pl-4">
 									<div class="h4 font-semibold">
 										Ko-Fi
 									</div>
