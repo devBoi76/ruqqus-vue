@@ -5,7 +5,7 @@
 			<div class="flex items-center justify-between px-4 py-3 bg-gray-50 sm:bg-gray-100">
 				<div class="flex items-center">
 					<h1 class="text-2xl capitalize mb-0">
-						<router-link to="/admin/integrations">
+						<router-link to="/admin/integrations" class="text-gray-900">
 							Integrations
 						</router-link>
 					</h1>
