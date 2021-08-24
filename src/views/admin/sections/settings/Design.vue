@@ -39,56 +39,54 @@
 				</div>
 			</div>
 
-			<div v-if="!loading && !errored" class="col-span-full 2xl:col-start-2 2xl:col-end-10">
-				<div class="p-4">
-					<div class="md:grid md:grid-cols-3 md:gap-6">
-						<div class="mt-5 md:mt-0 md:col-span-3 space-y-8">
-							<div>
-								<div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
-									Theme
-								</div>
-								<div class="sm:rounded-sm border-t border-b sm:border bg-white">
-									<Toggle @change="handleChange">
-										<template v-slot:default="{active, toggle}">
-											<div class="p-4">
-												<div class="flex items-center justify-between">
-													<div>
-														<div class="font-medium leading-tight">
-															Primary color
+			<div v-if="!loading && !errored" class="col-span-full 2xl:col-start-2 2xl:col-end-10 p-4">
+				<div class="md:grid md:grid-cols-3 md:gap-6">
+					<div class="mt-5 md:mt-0 md:col-span-3 space-y-8">
+						<div>
+							<div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
+								Theme
+							</div>
+							<div class="sm:rounded-sm border-t border-b sm:border bg-white">
+								<Toggle @change="handleChange">
+									<template v-slot:default="{active, toggle}">
+										<div class="p-4">
+											<div class="flex items-center justify-between">
+												<div>
+													<div class="font-medium leading-tight">
+														Primary color
+													</div>
+													<p class="text-sm text-gray-500 mt-1">
+														The primary color for your community's look
+													</p>
+												</div>
+												<button class="flex items-center justify-center px-2 w-8 h-8 text-lg text-gray-600 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white rounded-sm" @click="toggle" aria-expanded="active">
+													<i class="far fa-fw" :class="active ? 'fa-compress-alt' : 'fa-pen'"></i>
+												</button>
+											</div>
+											<div v-if="active" class="space-y-6 mt-6">
+												<div class="grid grid-cols-4 gap-6">
+													<div class="col-span-4 sm:col-span-1">
+														<div class="space-y-1">
+															<ul class="flex flex-wrap space-x-2">
+																<li v-for="swatch in primarySwatches" :key="swatch">
+																	<button class="w-8 h-8" :style="{ 'background-color': swatch }">
+																	</button>
+																</li>
+															</ul>
+															<input v-model="primaryColor" placeholder="#FFFFFF" class="form-input max-w-xs"/>
 														</div>
 														<p class="text-sm text-gray-500 mt-1">
-															The primary color for your community's look
+															Links and buttons
 														</p>
-													</div>
-													<button class="flex items-center justify-center px-2 w-8 h-8 text-lg text-gray-600 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white rounded-sm" @click="toggle" aria-expanded="active">
-														<i class="far fa-fw" :class="active ? 'fa-compress-alt' : 'fa-pen'"></i>
-													</button>
-												</div>
-												<div v-if="active" class="space-y-6 mt-6">
-													<div class="grid grid-cols-4 gap-6">
-														<div class="col-span-4 sm:col-span-1">
-															<div class="space-y-1">
-																<ul class="flex flex-wrap space-x-2">
-																	<li v-for="swatch in primarySwatches" :key="swatch">
-																		<button class="w-8 h-8" :style="backgroundColor: swatch">
-																		</button>
-																	</li>
-																</ul>
-																<input v-model="primaryColor" placeholder="#FFFFFF" class="form-input max-w-xs"/>
-															</div>
-															<p class="text-sm text-gray-500 mt-1">
-																Links and buttons
-															</p>
-														</div>
 													</div>
 												</div>
 											</div>
-										</template>
-									</Toggle>
-								</div>
+										</div>
+									</template>
+								</Toggle>
 							</div>
-
 						</div>
+
 					</div>
 				</div>
 			</div>
