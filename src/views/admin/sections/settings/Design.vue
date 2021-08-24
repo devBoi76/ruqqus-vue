@@ -44,7 +44,7 @@
 					<div class="mt-5 md:mt-0 md:col-span-3 space-y-8">
 						<div>
 							<div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
-								Theme
+								Community Colors
 							</div>
 							<div class="sm:rounded-sm border-t border-b sm:border bg-white">
 								<Toggle @change="handleChange">
