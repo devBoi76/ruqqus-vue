@@ -140,6 +140,12 @@
 					name: 'Mailgun',
 					description: 'Send transactional emails to your members',
 					isActive: false
+				},
+				{
+					logo: 'https://i.imgur.com/Ty34VRY.png',
+					name: 'Unsplash',
+					description: 'Beautiful, free images and photos',
+					isActive: false
 				}
 				]
 			}

@@ -69,6 +69,7 @@ const AdminIntegrationMailgunView = () => import ('../views/admin/integrations/c
 const AdminIntegrationPayPalView = () => import ('../views/admin/integrations/configs/PayPal.vue')
 const AdminIntegrationGumroadView = () => import ('../views/admin/integrations/configs/Gumroad.vue')
 const AdminIntegrationDiscordView = () => import ('../views/admin/integrations/configs/Discord.vue')
+const AdminIntegrationUnsplashView = () => import ('../views/admin/integrations/configs/Unsplash.vue')
 
 // Errors
 const ErrorView = () => import ('../views/error/ErrorView.vue')
@@ -159,7 +160,8 @@ const routes = [
 				{ path: '/admin/integrations/mailgun', component: AdminIntegrationMailgunView, name: 'admin-integration-mailgun-view', meta: {requiresAuth: true, dropImage: false} },
 				{ path: '/admin/integrations/paypal', component: AdminIntegrationPayPalView, name: 'admin-integration-paypal-view', meta: {requiresAuth: true, dropImage: false} },
 				{ path: '/admin/integrations/gumroad', component: AdminIntegrationGumroadView, name: 'admin-integration-gumroad-view', meta: {requiresAuth: true, dropImage: false} },
-				{ path: '/admin/integrations/discord', component: AdminIntegrationDiscordView, name: 'admin-integration-discord-view', meta: {requiresAuth: true, dropImage: false} }
+				{ path: '/admin/integrations/discord', component: AdminIntegrationDiscordView, name: 'admin-integration-discord-view', meta: {requiresAuth: true, dropImage: false} },
+				{ path: '/admin/integrations/unsplash', component: AdminIntegrationUnsplashView, name: 'admin-integration-unsplash-view', meta: {requiresAuth: true, dropImage: false} }
 				]
 			},
 			{ path: '/admin/queue/:filter?', component: AdminQueueView, name: 'admin-queue-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
