@@ -83,7 +83,7 @@
 
 <script>
 import { mapState, mapActions } from "vuex";
-import { getRandomPhoto } from "./helpers/unsplash";
+import { getRandomPhoto } from "../helpers/unsplash";
 
 export default {
 	data() {
