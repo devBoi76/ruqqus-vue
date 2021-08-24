@@ -3,6 +3,7 @@ const namespaced = true
 import axios from 'axios'
 
 const state = {
+	site: {},
 	v: Object,
 	u: {},
 	loading: true,
@@ -82,18 +83,6 @@ const actions = {
 		}).catch(err => {
 			console.log(err);
 		})
-	},
-	async getGuilds({ commit }){
-		commit('changeLoadingState', true)
-		if (this.state.is_authenticated) {
-			const response = await axios.get('https://jsonplaceholder.typicode.com/posts')
-			const ids = response.data.map(post => post.id)
-			//console.log(ids, this)
-			commit('guilds', ids)
-		} else {
-			commit('guilds', [])
-		}
-		commit('changeLoadingState', false)
 	},
 	toggle_card({commit}){
 		commit('UPDATE_ISCARD')
