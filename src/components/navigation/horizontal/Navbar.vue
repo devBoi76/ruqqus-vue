@@ -63,16 +63,16 @@
 						</button>
 					</div>
 					<router-link to="/following" class="block px-4 py-2 text-lg text-gray-700 dark:text-gray-200" @click="isOpen = false">
-						<i class="far fa-user text-center fa-fw mr-3"></i><span>About</span>
+						<i class="far fa-info-circle text-center fa-fw mr-3"></i><span>About</span>
 					</router-link>
 					<router-link to="/guilds" class="block px-4 py-2 text-lg text-gray-700 dark:text-gray-200" @click="isOpen = false">
-						<i class="far fa-users-crown text-center fa-fw mr-3"></i><span>Rules</span>
+						<i class="far fa-scroll-old text-center fa-fw mr-3"></i><span>Rules</span>
 					</router-link>
 					<router-link to="/saved" class="block px-4 py-2 text-lg text-gray-700 dark:text-gray-200" @click="isOpen = false">
-						<i class="far fa-bookmark text-center fa-fw mr-3"></i><span>Source Code</span>
+						<i class="fab fa-github text-center fa-fw mr-3"></i><span>Source Code</span>
 					</router-link>
 					<router-link to="/settings" class="block px-4 py-2 text-lg text-gray-700 dark:text-gray-200" @click="isOpen = false">
-						<i class="far fa-cog text-center fa-fw mr-3"></i><span>Discord</span>
+						<i class="fab fa-discord text-center fa-fw mr-3"></i><span>Discord</span>
 					</router-link>
 					<button class="flex items-center px-4 py-2 text-lg text-gray-700 dark:text-gray-200" @click="dark = !dark">
 						<i class="far text-center fa-fw mr-3" :class="dark ? 'fa-sunglasses' : 'fa-moon'"></i>
