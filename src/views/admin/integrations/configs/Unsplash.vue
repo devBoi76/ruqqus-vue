@@ -114,7 +114,7 @@
 										<p class="text-sm text-gray-500 mt-1">
 											Unsplash API keys can be granted in their
 											<a href="https://unsplash.com/developers" target="_blank" class="hover:underline">
-												developer portel
+												developer portal
 											</a>
 										</p>
 									</div>
