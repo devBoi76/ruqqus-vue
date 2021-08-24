@@ -54,9 +54,9 @@
         </MenuItem>
         <!-- Saved Link -->
         <MenuItem v-slot="{ active }">
-          <button to="/saved" :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-1.5']">
+          <router-link to="/saved" :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-1.5']">
             <i class="far fa-bookmark text-center fa-fw mr-2"></i><span>Saved</span>
-          </button>
+          </router-link>
         </MenuItem>
         <!-- User Settings Link -->
         <MenuItem v-slot="{ active }">
