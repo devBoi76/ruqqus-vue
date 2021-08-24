@@ -50,38 +50,40 @@
 		</div>
 		<div v-if="!loading && !errored" class="col-span-full 2xl:col-start-2 2xl:col-end-10 p-4">
 			<div class="md:grid md:grid-cols-3 md:gap-6">
-				<div class="md:col-span-3 space-y-8 pb-4 border-b flex">
-					<div class="flex flex-col flex-shrink-0">
-						<img src="https://i.imgur.com/MHgOhAk.png" class="w-20 h-20 md:w-32 md:h-32 object-cover p-4 bg-white border rounded shadow-inner" alt="kofi logo"/>
-					</div>
-					<div class="pl-4">
-						<div class="h4 font-semibold">
-							Discord
+				<div class="md:col-span-3 space-y-8">
+					<div class="pb-4 border-b flex">
+						<div class="flex flex-col flex-shrink-0">
+							<img src="https://i.imgur.com/MHgOhAk.png" class="w-20 h-20 md:w-32 md:h-32 object-cover p-4 bg-white border rounded shadow-inner" alt="kofi logo"/>
 						</div>
-						<span class="px-2 mb-2 inline-flex uppercase tracking-wide text-2xs leading-5 font-medium rounded-sm bg-gray-200 text-gray-800">
-							social
-						</span>
-						<p class="text-gray-900">
-							Connect your user accounts to Discord for seamless server integration.
-						</p>
-						<ul class="flex flex-wrap leading-4 space-x-4" role="none">
-							<li class="" role="none">
-								<span class="font-semibold text-sm text-gray-700">
-									Website
-								</span>
-								<a href="https://discord.com" class="text-xs text-gray-500 hover:underline pl-1" role="none">
-									discord.com
-								</a>
-							</li>
-							<li class="" role="none">
-								<span class="font-semibold text-sm text-gray-700">
-									Docs
-								</span>
-								<a href="https://discord.com/developers/docs" class="text-xs text-gray-500 hover:underline pl-1" role="none">
-									discord.com/developer/docs
-								</a>
-							</li>
-						</ul>
+						<div class="pl-4">
+							<div class="h4 font-semibold">
+								Discord
+							</div>
+							<span class="px-2 mb-2 inline-flex uppercase tracking-wide text-2xs leading-5 font-medium rounded-sm bg-gray-200 text-gray-800">
+								social
+							</span>
+							<p class="text-gray-900">
+								Connect your user accounts to Discord for seamless server integration.
+							</p>
+							<ul class="flex flex-wrap leading-4 space-x-4" role="none">
+								<li class="" role="none">
+									<span class="font-semibold text-sm text-gray-700">
+										Website
+									</span>
+									<a href="https://discord.com" class="text-xs text-gray-500 hover:underline pl-1" role="none">
+										discord.com
+									</a>
+								</li>
+								<li class="" role="none">
+									<span class="font-semibold text-sm text-gray-700">
+										Docs
+									</span>
+									<a href="https://discord.com/developers/docs" class="text-xs text-gray-500 hover:underline pl-1" role="none">
+										discord.com/developer/docs
+									</a>
+								</li>
+							</ul>
+						</div>
 					</div>
 
 					<div>
@@ -89,12 +91,12 @@
 							Configuration
 						</div>
 						<div class="relative rounded-sm border bg-white">
-							<div v-show="!isActive" class="absolute w-full h-full rounded-sm bg-white bg-opacity-90 backdrop-blur-sm z-10">
+							<div v-show="!isActive && !formVisible" class="absolute w-full h-full rounded-sm bg-white bg-opacity-90 backdrop-blur-sm z-10">
 								<div class="w-full h-full flex flex-col items-center justify-center">
 									<p class="text-gray-500">
 										You have not configured Discord with your site
 									</p>
-									<button class="button green500">
+									<button class="button green500" @click="toggleForm()">
 										Get started
 									</button>
 								</div>
@@ -128,6 +130,7 @@
 		name: "AdminIntegrationsDiscordView",
 		data() {
 			return {
+				formVisible: false,
 				isActive: false,
 				webhook: '',
 				hasDonationAttr: true,
@@ -137,6 +140,9 @@
 			}
 		},
 		components: {
+			toggleForm() {
+				this.formVisible = !this.formVisible
+			}
 		},
 		methods: {
 		// getGuildInfo() {
