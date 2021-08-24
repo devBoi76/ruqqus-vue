@@ -117,7 +117,7 @@ export default {
 			let query = this.site.unsplash.query
 			getRandomPhoto(query)
 			.then(response => {
-				this.selectedImage = response.photo
+				this.selectedImage = response.data.urls.regular
 			})
 		}
 	},
