@@ -44,58 +44,48 @@
 				</div>
 			</div>
 
-			<div v-if="!loading && !errored" class="col-span-full 2xl:col-start-2 2xl:col-end-10">
-				<div class="p-4">
-					<div class="md:grid md:grid-cols-3 md:gap-6">
-						<div class="mt-5 md:mt-0 md:col-span-3 space-y-8">
-
-							<div>
-								<div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
-									Community Restrictions
+			<div v-if="!loading && !errored" class="col-span-full 2xl:col-start-2 2xl:col-end-10 p-4">
+				<div class="md:grid md:grid-cols-3 md:gap-6">
+					<div class="mt-5 md:mt-0 md:col-span-3 space-y-8">
+						<div>
+							<div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
+								Community Restrictions
+							</div>
+							<div class="sm:rounded-sm border-t border-b sm:border bg-white divide-y">
+								<div class="flex flex-grow items-center justify-between p-4">
+									<div>
+										<div class="font-semibold leading-tight">
+											Restrict posting
+										</div>
+										<p class="text-sm text-gray-500 mt-1">
+											Restrict posting to approved users only
+										</p>
+									</div>
+									<Toggle v-model="s.canPost"/>
 								</div>
-								<div class="sm:rounded-sm border-t border-b sm:border bg-white">
-									<div class="p-4 border-b">
-										<div class="flex flex-grow items-center justify-between">
-											<div>
-												<div class="font-semibold leading-tight">
-													Restrict posting
-												</div>
-												<p class="text-sm text-gray-500 mt-1">
-													Restrict posting to approved users only
-												</p>
-											</div>
-											<Toggle v-model="s.canPost"/>
+								<div class="flex flex-grow items-center justify-between p-4">
+									<div>
+										<div class="font-semibold leading-tight">
+											Restrict commenting
 										</div>
+										<p class="text-sm text-gray-500 mt-1">
+											Restrict commenting to approved users only
+										</p>
 									</div>
-									<div class="p-4 border-b">
-										<div class="flex flex-grow items-center justify-between">
-											<div>
-												<div class="font-semibold leading-tight">
-													Restrict commenting
-												</div>
-												<p class="text-sm text-gray-500 mt-1">
-													Restrict commenting to approved users only
-												</p>
-											</div>
-											<Toggle v-model="s.canComment"/>
+									<Toggle v-model="s.canComment"/>
+								</div>
+								<div class="flex flex-grow items-center justify-between p-4">
+									<div>
+										<div class="font-semibold leading-tight">
+											Restrict voting
 										</div>
+										<p class="text-sm text-gray-500 mt-1">
+											Restrict voting to approved users only
+										</p>
 									</div>
-									<div class="p-4 border-b">
-										<div class="flex flex-grow items-center justify-between">
-											<div>
-												<div class="font-semibold leading-tight">
-													Restrict voting
-												</div>
-												<p class="text-sm text-gray-500 mt-1">
-													Restrict voting to approved users only
-												</p>
-											</div>
-											<Toggle v-model="s.canVote"/>
-										</div>
-									</div>
+									<Toggle v-model="s.canVote"/>
 								</div>
 							</div>
-
 						</div>
 					</div>
 				</div>
