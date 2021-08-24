@@ -53,7 +53,7 @@ const SetupSecondStep = () => import ('../views/onboarding/admin/SecondStep.vue'
 
 // Admin
 const AdminView = () => import ('../views/admin/AdminView.vue')
-const AdminModerationView = () => import ('../views/admin/manage/Moderation.vue')
+const AdminModerationView = () => import ('../views/admin/sections/manage/Moderation.vue')
 const AdminQueueView = () => import ('../views/admin/sections/manage/Queue.vue')
 const AdminGeneralView = () => import ('../views/admin/sections/settings/General.vue')
 const AdminThemingView = () => import ('../views/admin/sections/settings/Theming.vue')
