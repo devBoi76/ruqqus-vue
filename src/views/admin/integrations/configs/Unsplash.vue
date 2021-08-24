@@ -124,18 +124,16 @@
 										<div class="flex flex-grow items-center justify-between">
 											<div>
 												<div class="font-semibold leading-tight">
-													Use Unsplash artwork on login
+													Use Unsplash on static pages
 												</div>
 												<p class="text-sm text-gray-500 mt-1">
-													Displays Unsplash photos on the login and registration pages
+													Displays Unsplash photos on login, registration, and error pages
 												</p>
 											</div>
 											<Toggle v-model="hasUnsplashLogin"/>
 										</div>
 									</div>
-								</div>
-								<div class="grid grid-cols-3 gap-6 p-4" :class="{'opacity-50 pointer-events-none':!hasUnsplashLogin}">
-									<div class="col-span-3 sm:col-span-2">
+									<div class="col-span-3 sm:col-span-2" :class="{'opacity-50 pointer-events-none':!hasUnsplashLogin}">
 										<label class="label">
 											Keyword
 										</label>
