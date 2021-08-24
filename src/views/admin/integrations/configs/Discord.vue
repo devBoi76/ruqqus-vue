@@ -51,7 +51,7 @@
 		<div v-if="!loading && !errored" class="col-span-full 2xl:col-start-2 2xl:col-end-10 p-4">
 			<div class="md:grid md:grid-cols-3 md:gap-6">
 				<div class="md:col-span-3 space-y-8">
-					<div class="pb-4 border-b flex">
+					<div class="flex pb-4 border-b">
 						<div class="flex flex-col flex-shrink-0">
 							<img src="https://i.imgur.com/MHgOhAk.png" class="w-20 h-20 md:w-32 md:h-32 object-cover p-4 bg-white border rounded shadow-inner" alt="kofi logo"/>
 						</div>
@@ -139,12 +139,10 @@
 				errored: false,
 			}
 		},
-		components: {
+		methods: {
 			toggleForm() {
 				this.formVisible = !this.formVisible
 			}
-		},
-		methods: {
 		// getGuildInfo() {
 		// 	let guild = this.$route.params.name;
 		// 	getGuild(guild)
