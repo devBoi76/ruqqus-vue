@@ -73,7 +73,7 @@
 																</label>
 															</li>
 														</ul>
-														<input type="text" v-model="primaryColor" placeholder="#FFFFFF" class="form-input light lg:w-2/4"/>
+														<input type="text" v-model="primaryColor" placeholder="#FFFFFF" class="form-input light sm:w-[200px]"/>
 													</div>
 												</div>
 											</div>
