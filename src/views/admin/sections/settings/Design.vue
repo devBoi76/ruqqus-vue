@@ -69,7 +69,9 @@
 														<div class="space-y-1">
 															<ul class="flex flex-wrap space-x-2">
 																<li v-for="swatch in primarySwatches" :key="swatch">
-																	<input type="checkbox" class="w-8 h-8" :style="{ 'background-color': swatch }" v-model="primaryColor"/>
+																	<label class="w-8 h-8" :style="{ 'background-color': swatch }">
+																		<input type="checkbox" class="w-8 h-8" :id="swatch" :value="swatch" v-model="primaryColor"/>
+																	</label>
 																</li>
 															</ul>
 															<input v-model="primaryColor" placeholder="#FFFFFF" class="form-input max-w-xs"/>
