@@ -149,8 +149,8 @@ const routes = [
 		{
 			path: '/admin', component: AdminView, props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false},
 			children: [
-			{ path: '', component: AdminGeneralView, name: 'admin-general-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
-			{ path: '/admin/general', component: AdminGeneralView, name: 'admin-general-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
+			{ path: '', alias: '/admin/general', component: AdminGeneralView, name: 'admin-general-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
+			//{ path: '/admin/general', component: AdminGeneralView, name: 'admin-general-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
 			{ path: '/admin/moderation', component: AdminModerationView, name: 'admin-moderation-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
 			{
 				path: '/admin/integrations', component: AdminIntegrationsView, props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false},

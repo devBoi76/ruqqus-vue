@@ -333,7 +333,8 @@ export default {
 					this.getPost()
 				}
 			},
-			immediate: true
+			immediate: true,
+			flush: 'post'
 		},
 		'$route.params.commentId': {
 			handler() {
@@ -342,7 +343,8 @@ export default {
 					this.getCommentReplies()
 				}
 			},
-			immediate: true
+			immediate: true,
+			flush: 'post'
 		},
 		'item': { // get replies when item changes
 			handler(newVal) {
@@ -435,7 +437,6 @@ export default {
 			.catch(error => {
 				console.error(error)
 				this.errored = true
-
 			})
 			.finally(() => this.loading = false)
 		},
