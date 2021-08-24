@@ -69,13 +69,13 @@
 			<div class="absolute w-full h-full bg-violet-500 bg-gradient-to-br from-transparent via-purple-600 to-purple-900 opacity-70"/>
 			<!-- User attribution -->
 			<div class="absolute bottom-3 right-3 text-xs text-white">
-				<div class="flex items-center justify-content-end">
+				<div class="flex items-center justify-content-end space-x-1">
 					<span>Photo by</span>
-					<a :href="`https://unsplash.com/@${image.user.username}?utm_source=ruqqus&utm_medium=desktop`">
+					<a :href="`https://unsplash.com/@${image.user.username}?utm_source=ruqqus&utm_medium=desktop`" class="text-white font-semibold">
 						{{ image.user.name }}
 					</a>
 					on
-					<a href="https://unsplash.com/?utm_source=ruqqus&utm_medium=desktop">
+					<a href="https://unsplash.com/?utm_source=ruqqus&utm_medium=desktop" class="text-white">
 						Unsplash
 					</a>
 				</div>
