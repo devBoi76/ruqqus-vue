@@ -45,178 +45,73 @@
 			</div>
 		</div>
 		<!-- Background artwork -->
-		<div class="relative hidden md:block w-2/4">
+		<div v-if="site.unsplash.isActive" class="relative hidden lg:block w-2/4">
 			<!-- Background image -->
-			<div class="absolute w-full h-full bg-cover bg-center bg-purple-500" :style="{ backgroundImage: `url(${selectedImage.src})` }"/>
+			<div class="absolute w-full h-full bg-cover bg-center bg-purple-500" :style="{ backgroundImage: `url(${image.urls.regular})` }">
+			</div>
 			<!-- Gradient -->
-			<div class="absolute w-full h-full bg-violet-500 bg-gradient-to-br from-transparent via-purple-600 to-purple-900 opacity-70"/>
-			<!-- User suggestion -->
-			<div v-if="userSuggested" class="absolute bottom-3 right-3 text-xs text-white">
-				<div class="flex items-center justify-content-end">
-					<span>Background suggested by</span>
-					<img class="w-6 h-6 object-fit mx-2 rounded-sm" :src="selectedImage.profile_url"/>
-					<router-link :to="`/${selectedImage.username}`" class="text-white font-bold hover:text-gray-300">
-						@{{ selectedImage.username }}
-					</router-link>
+			<div class="absolute w-full h-full bg-violet-500 bg-gradient-to-br from-transparent via-purple-600 to-purple-900 opacity-70">
+			</div>
+			<!-- User attribution -->
+			<div class="absolute bottom-3 right-3 text-xs text-white">
+				<div class="flex items-center justify-content-end space-x-1">
+					<span>Photo by</span>
+					<a :href="`https://unsplash.com/@${image.user.username}?utm_source=ruqqus&utm_medium=desktop`" class="text-white font-semibold">
+						{{ image.user.name }}
+					</a>
+					<span>on</span>
+					<a href="https://unsplash.com/?utm_source=ruqqus&utm_medium=desktop" class="text-white">
+						Unsplash
+					</a>
 				</div>
 			</div>
 		</div>
 	</div>
-
-
 </template>
 
 <script>
-//import axios from "axios";
-import { mapState, mapActions } from "vuex";
+	import { mapState, mapActions } from "vuex";
+	import { getRandomPhoto } from "../helpers/unsplash";
 
-export default {
-	data() {
-		return {
-			images: [
-			{
-				src: 'https://i.ibb.co/z66GQsv/giphy.gif',
-				username: 'VILLAIN',
-				profile_url: 'https://i.ibb.co/WPFY0kQ/Image.png',
-				domain: 'giphy.com',
-				link: 'http://gph.is/1kADt78',
-			},
-			{
-				src: 'https://i.ibb.co/z66GQsv/giphy.gif',
-				username: 'carpatheonflourist',
-				profile_url: 'https://i.ibb.co/KL3Tmyb/image.png',
-				domain: 'giphy.com',
-				link: 'http://gph.is/1kADt78',
-			},
-			{
-				src: 'https://i.ibb.co/bNkzQ6c/ezgif-7-e403a730f379.gif',
-				username: 'asinineporcupine',
-				profile_url: 'https://i.ibb.co/2gZZ8NR/image.png',
-				domain: 'giphy.com',
-				link: 'https://gph.is/2RELZf3',
-			},
-			{
-				src: 'https://i.ibb.co/SxGWMZG/decorate.jpg',
-				username: 'asinineporcupine',
-				profile_url: 'https://i.ibb.co/2gZZ8NR/image.png',
-				domain: 'pixiv.net',
-				link: 'https://www.pixiv.net/en/artworks/77003769',
-			}
-			],
-			selectedImage: null,
-			userSuggested: true,
-			imageAttribution: false,
-			form: {
-				email: '',
-				name: '',
-				password: '',
-				mfa: '',
-				checked: []
-			},
-			tips: [
-			{
-				id: 1,
-				text: 'You can post by pasting a valid URL anywhere into ruqqus.'
-			},
-			{
-				id: 2,
-				text: 'You can cloak your profile history from other users.'
-			},
-			{
-				id: 3,
-				text: 'Auto-hide posts and comments by visiting your filter settings.'
-			},
-			{
-				id: 4,
-				text: 'Visit +BackgroundSubmissions to suggest a background!'
-			},
-			{
-				id: 5,
-				text: 'Visit +BackgroundSubmissions to suggest a background!'
-			},
-			{
-				id: 6,
-				text: 'Ruqqus was founded in July of 2019.'
-			},
-			{
-				id: 7,
-				text: "Visit 2020.ruqqus.com for our Year in Review."
-			},
-			{
-				id: 8,
-				text: "Vue was originally slated for a 2032 release date."
-			},
-			{
-				id: 9,
-				text: "Ruqqus beta launched in February 2020."
-			},
-			{
-				id: 10,
-				text: "'Porpl' is the official Ruqqus purple."
-			},
-			{
-				id: 11,
-				text: "Ruqqus users are called 'ruqqies'."
-			},
-			{
-				id: 12,
-				text: "You can upload .GIFs as profile pics!"
-			},
-			{
-				id: 13,
-				text: "All Ruqqus communities have public moderation logs."
-			},
-			{
-				id: 14,
-				text: "At one point, Ruqqus' brand color was green."
-			}
-			]
-		}
-	},
-	computed: {
-		...mapState("persist", ["v", "is_authenticated", "mfa"]),
-		splashStyle() {
+	export default {
+		data() {
 			return {
-				background: `url(${this.selectedImage.src})rgba(0, 0, 0, 0.65) no-repeat center center fixed`,
-				webkitBackgroundSize: 'cover',
-				mozBackgroundSize: 'cover',
-				backgroundSize: 'cover',
-				width: '100%',
-				height: '100%',
-				position: 'fixed',
-				backgroundBlendMode: 'color'
-
+				site: {
+					unsplash: {
+						isActive: true,
+						query: 'dog'
+					}
+				},
+				image: {},
+				form: {
+					email: '',
+					name: '',
+					password: '',
+					mfa: '',
+					checked: []
+				},
+			}
+		},
+		computed: {
+			...mapState("persist", ["mfa"]),
+		},
+		methods: {
+			...mapActions("persist", ["auth_v", "verify_mfa"]),
+			randomItem (items) {
+				return items[Math.floor(Math.random()*items.length)];
+			},
+			fetchRandomPhoto() {
+				let query = this.site.unsplash.query
+				getRandomPhoto(query)
+				.then(response => {
+					this.image = response.data
+				})
+			}
+		},
+		created() {
+			if (this.site.unsplash.isActive) {
+				this.fetchRandomPhoto()
 			}
 		}
-	},
-	beforeCreate: function () {
-		document.body.className = 'register';
-	},
-	methods: {
-		...mapActions("persist", ["auth_v", "verify_mfa"]),
-		randomItem (items) {
-			return items[Math.floor(Math.random()*items.length)];
-		}
-	},
-	created() {
-		this.selectedImage = this.randomItem(this.images);
-		this.selectedTip = this.randomItem(this.tips)
 	}
-}
 </script>
-
-<style scoped>
-.w-400 {
-	width: 400px;
-}
-.user-attribution {
-	position: absolute;
-	bottom: 1rem;
-	left: 1rem;
-}
-.image-attribution {
-	position: absolute;
-	bottom: 1rem;
-	right: 1rem;
-}
-</style>

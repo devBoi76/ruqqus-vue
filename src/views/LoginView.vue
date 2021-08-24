@@ -64,9 +64,11 @@
 		<!-- Background artwork -->
 		<div v-if="site.unsplash.isActive" class="relative hidden lg:block w-2/4">
 			<!-- Background image -->
-			<div class="absolute w-full h-full bg-cover bg-center bg-purple-500" :style="{ backgroundImage: `url(${image.urls.regular})` }"/>
+			<div class="absolute w-full h-full bg-cover bg-center bg-purple-500" :style="{ backgroundImage: `url(${image.urls.regular})` }">
+			</div>
 			<!-- Gradient -->
-			<div class="absolute w-full h-full bg-violet-500 bg-gradient-to-br from-transparent via-purple-600 to-purple-900 opacity-70"/>
+			<div class="absolute w-full h-full bg-violet-500 bg-gradient-to-br from-transparent via-purple-600 to-purple-900 opacity-70">
+			</div>
 			<!-- User attribution -->
 			<div class="absolute bottom-3 right-3 text-xs text-white">
 				<div class="flex items-center justify-content-end space-x-1">
