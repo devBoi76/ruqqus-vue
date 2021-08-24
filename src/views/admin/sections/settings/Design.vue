@@ -48,38 +48,34 @@
 							</div>
 							<div class="sm:rounded-sm border-t border-b sm:border bg-white">
 								<Toggle @change="handleChange">
-									<template v-slot:default="{active, toggle}">
-										<div class="p-4">
-											<div class="flex items-center justify-between">
-												<div>
-													<div class="font-medium leading-tight">
-														Primary color
-													</div>
-													<p class="text-sm text-gray-500 mt-1">
-														The primary color for your community's look
-													</p>
+									<template v-slot:default="{active, toggle}" class="p-4">
+										<div class="flex items-center justify-between">
+											<div>
+												<div class="font-medium leading-tight">
+													Primary color
 												</div>
-												<button class="flex items-center justify-center px-2 w-8 h-8 text-lg text-gray-600 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white rounded-sm" @click="toggle" aria-expanded="active">
-													<i class="far fa-fw" :class="active ? 'fa-compress-alt' : 'fa-pen'"></i>
-												</button>
+												<p class="text-sm text-gray-500 mt-1">
+													The primary color for your community's look
+												</p>
 											</div>
-											<div v-if="active" class="space-y-6 mt-6">
-												<div class="grid grid-cols-4 gap-6">
-													<div class="col-span-4 sm:col-span-1">
-														<div class="space-y-1">
-															<ul class="flex flex-wrap space-x-2">
-																<li v-for="swatch in primarySwatches" :key="swatch">
-																	<label class="w-8 h-8" :style="{ 'background-color': swatch }">
-																		<input type="checkbox" class="w-8 h-8" :id="swatch" :value="swatch" v-model="primaryColor"/>
-																	</label>
-																</li>
-															</ul>
-															<input v-model="primaryColor" placeholder="#FFFFFF" class="form-input max-w-xs"/>
-														</div>
-														<p class="text-sm text-gray-500 mt-1">
-															Links and buttons
-														</p>
-													</div>
+											<button class="flex items-center justify-center px-2 w-8 h-8 text-lg text-gray-600 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white rounded-sm" @click="toggle" aria-expanded="active">
+												<i class="far fa-fw" :class="active ? 'fa-compress-alt' : 'fa-pen'"></i>
+											</button>
+										</div>
+										<div v-if="active" class="space-y-6 mt-6">
+											<div class="grid grid-cols-4 gap-6">
+												<div class="col-span-4 sm:col-span-1">
+													<ul class="flex flex-wrap space-x-2">
+														<li v-for="swatch in primarySwatches" :key="swatch">
+															<label class="w-8 h-8" :style="{ 'background-color': swatch }">
+																<input type="checkbox" class="w-8 h-8" :id="swatch" :value="swatch" v-model="primaryColor"/>
+															</label>
+														</li>
+													</ul>
+													<input v-model="primaryColor" placeholder="#FFFFFF" class="form-input max-w-xs mt-1"/>
+													<p class="text-sm text-gray-500 mt-1">
+														Links and buttons
+													</p>
 												</div>
 											</div>
 										</div>
