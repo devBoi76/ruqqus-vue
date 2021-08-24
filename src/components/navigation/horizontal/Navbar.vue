@@ -1,7 +1,7 @@
 <template>
-	<nav class="fixed w-full bg-white border-b dark:bg-gray-800 dark:shadow z-10">
+	<nav class="fixed w-full bg-white sm:border-b dark:bg-gray-800 dark:border-gray-700 dark:border-opacity-70 z-100"">
 		<div class="mx-auto px-4">
-			<div class="flex items-center justify-between h-14">
+			<div class="flex items-center justify-between h-12 sm:h-14">
 				<div class="flex flex-grow items-center">
 					<div class="flex-shrink-0">
 						<router-link to="/" class="font-bold text-xl text-purple-500 tracking-wide">ruqqus</router-link>
@@ -40,6 +40,7 @@
 						<i class="far fa-bars fa-fw fa-lg"></i>
 					</button>
 				</div>
+				
 				<!-- Mobile Menu -->
 				<transition enter-class="opacity-0" enter-active-class="ease-out transition-all duration-100" enter-to-class="opacity-200" leave-class="opacity-100" leave-active-class="ease-out transition-all duration-200" leave-to-class="opacity-0">
 					<div @keydown.esc="isOpen = false" v-show="isOpen" class="z-10 fixed inset-0 transition-opacity">
