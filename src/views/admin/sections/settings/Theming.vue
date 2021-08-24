@@ -47,7 +47,7 @@
 								<div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
 									Theme
 								</div>
-								<div class="sm:rounded-sm sm:shadow-xs border-t border-b sm:border-0 bg-white">
+								<div class="sm:rounded-sm border-t border-b sm:border bg-white">
 									<Toggle @change="handleChange">
 										<template v-slot:default="{active, toggle}">
 											<div class="p-4">

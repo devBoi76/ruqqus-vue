@@ -232,14 +232,6 @@ const routes = [
 			next();
 		})
 
-		// Reset primary color to porpl
-		router.beforeEach((to, from, next) => {
-			if (to.params.name !== from.params.name) {
-				document.documentElement.style.setProperty('--color-primary', `139, 92, 246`)
-			}
-			next();
-		})
-
 // Add router push method to automatically redirect to previously-requested page after successfull auth
 
 export default router
