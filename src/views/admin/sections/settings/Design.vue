@@ -65,7 +65,7 @@
 											</div>
 											<div v-if="active" class="space-y-6 mt-6">
 												<div class="grid grid-cols-3 gap-6">
-														<div class="col-span-3 sm:col-span-1">
+														<div class="col-span-3 md:col-span-1">
 														<ul class="flex flex-wrap -m-1 mb-2">
 															<li v-for="swatch in primarySwatches" :key="swatch" class="p-1">
 																<label :for="swatch" class="flex flex-shrink-0 w-6 h-6 shadow-inner rounded-sm" :style="{ 'background-color': swatch }">
