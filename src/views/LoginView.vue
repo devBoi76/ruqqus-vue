@@ -88,6 +88,12 @@ import { getRandomPhoto } from "../helpers/unsplash";
 export default {
 	data() {
 		return {
+			site: {
+				unsplash: {
+					isActive: true,
+					query: 'dog'
+				}
+			},
 			selectedImage: null,
 			imageAttribution: false,
 			form: {
