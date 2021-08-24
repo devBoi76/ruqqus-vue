@@ -3,7 +3,7 @@
 
 import axios from 'axios'
 
-const url = `/api/vue/feed/`
+const url = `/api/v2/feed/`
 
 // Return a posts of a feed. Requires a type (all, hot, etc). Optioanl parameters for sort, pagination, etc
 export function getFeed(type, params){
