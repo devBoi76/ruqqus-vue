@@ -69,8 +69,7 @@
 														<div class="space-y-1">
 															<ul class="flex flex-wrap space-x-2">
 																<li v-for="swatch in primarySwatches" :key="swatch">
-																	<button class="w-8 h-8" :style="{ 'background-color': swatch }">
-																	</button>
+																	<input type="checkbox" class="w-8 h-8" :style="{ 'background-color': swatch }" v-model="primaryColor"/>
 																</li>
 															</ul>
 															<input v-model="primaryColor" placeholder="#FFFFFF" class="form-input max-w-xs"/>
@@ -107,14 +106,10 @@ export default {
 	},
 	data() {
 		return {
-			showPrimary: false,
-			showSecondary: false,
-			loading: true,
+			loading: false,
 			errored: false,
 			primaryColor: null,
-			secondaryColor: `rgb(${window.getComputedStyle(document.documentElement).getPropertyValue('--color-secondary')})`,
-			primarySwatches: ['#C53030', '#F97316', '#ECC94B', '#22C55E', '#14B8A6', '#0EA5E9', '#6366F1', '#8B5CF6', '#EC4899', '#9B2C2C', '#C2410C', '#B7791F','#15803D', '#0F766E', '#0369A1', '#4338CA', '#5B21B6', '#9D174D'],
-			secondarySwatches: ['#C53030', '#F97316', '#ECC94B', '#22C55E', '#14B8A6', '#0EA5E9', '#6366F1', '#8B5CF6', '#EC4899', '#9B2C2C', '#C2410C', '#B7791F','#15803D', '#0F766E', '#0369A1', '#4338CA', '#5B21B6', '#9D174D']
+			primarySwatches: ['#C53030', '#F97316', '#ECC94B', '#22C55E', '#14B8A6', '#0EA5E9', '#6366F1', '#8B5CF6', '#EC4899', '#9B2C2C', '#C2410C', '#B7791F','#15803D', '#0F766E', '#0369A1', '#4338CA', '#5B21B6', '#9D174D']
 		}
 	},
 	computed: {
