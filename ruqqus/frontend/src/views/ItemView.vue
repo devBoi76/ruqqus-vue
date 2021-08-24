@@ -455,7 +455,7 @@ export default {
 
       getPostComments(id)
       .then(response => {
-        this.comments = response.data
+        this.comments = response.data.results;
       })
       .catch(error => {
         console.error(error)

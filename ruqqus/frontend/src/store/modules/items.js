@@ -185,7 +185,7 @@ const actions = {
 		getPost(id)
 		.then(response => {
 			commit("SET_ITEM", response.data)
-			commit('guild/SET_GUILD', response.data.guild, { root: true });
+			// commit('guild/SET_GUILD', response.data.guild, { root: true });
 		})
 	},
 	fetchAccountPosts({ commit }, account) {
@@ -204,7 +204,7 @@ const actions = {
 		getFeed(payload.feed, payload.params)
 		.then(response => {
 			commit("SET_ITEMS", response.data);
-			// commit('guild/SET_GUILDS', response.data.results, { root: true });
+			commit('guild/SET_GUILDS', response.data.results, { root: true });
 		})
 	},
 	fetchSearch({ commit }, query) {
