@@ -110,7 +110,7 @@ export default {
 				{
 					name: 'integrations',
 					route: {
-						name: 'admin-integrations-view'
+						name: 'admin-integrations-list-view'
 					},
 					icon: 'fa-puzzle-piece',
 					textCase: 'capitalize'

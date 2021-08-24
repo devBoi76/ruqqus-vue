@@ -56,15 +56,19 @@ const AdminView = () => import ('../views/admin/AdminView.vue')
 const AdminModerationView = () => import ('../views/admin/Moderation.vue')
 const AdminQueueView = () => import ('../views/admin/sections/queue/Queue.vue')
 const AdminGeneralView = () => import ('../views/admin/sections/appearance/General.vue')
-const AdminIntegrationsView = () => import ('../views/admin/Integrations.vue')
 const AdminThemingView = () => import ('../views/admin/sections/appearance/Theming.vue')
 const AdminUserManagementView = () => import ('../views/admin/sections/members/Members.vue')
 const AdminSecurityView = () => import ('../views/admin/sections/other/Security.vue')
 const AdminRulesView = () => import ('../views/admin/sections/other/Rules.vue')
 const AdminTitlesView = () => import ('../views/admin/sections/other/Titles.vue')
-
-// Integration Configs
-const AdminIntegrationKoFiView = () => import ('../views/admin/integrations/Ko-Fi.vue')
+// Integrations
+const AdminIntegrationsView = () => import ('../views/admin/integrations/Integrations.vue')
+const AdminIntegrationsListView = () => import ('../views/admin/integrations/IntegrationsList.vue')
+const AdminIntegrationKoFiView = () => import ('../views/admin/integrations/configs/Ko-Fi.vue')
+const AdminIntegrationMailgunView = () => import ('../views/admin/integrations/configs/Mailgun.vue')
+const AdminIntegrationPayPalView = () => import ('../views/admin/integrations/configs/PayPal.vue')
+const AdminIntegrationGumroadView = () => import ('../views/admin/integrations/configs/Gumroad.vue')
+const AdminIntegrationDiscordView = () => import ('../views/admin/integrations/configs/Discord.vue')
 
 // Errors
 const ErrorView = () => import ('../views/error/ErrorView.vue')
@@ -147,8 +151,17 @@ const routes = [
 			{ path: '', component: AdminGeneralView, name: 'admin-general-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
 			{ path: '/admin/general', component: AdminGeneralView, name: 'admin-general-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
 			{ path: '/admin/moderation', component: AdminModerationView, name: 'admin-moderation-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
-			{ path: '/admin/integrations', component: AdminIntegrationsView, name: 'admin-integrations-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
-			{ path: '/admin/integrations/ko-fi', component: AdminIntegrationKoFiView, name: 'admin-integration-kofi-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
+			{
+				path: '/admin/integrations', component: AdminIntegrationsView, props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false},
+				children: [
+				{ path: '', component: AdminIntegrationsListView, name: 'admin-integrations-list-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
+				{ path: '/admin/integrations/ko-fi', component: AdminIntegrationKoFiView, name: 'admin-integration-kofi-view', meta: {requiresAuth: true, dropImage: false} },
+				{ path: '/admin/integrations/mailgun', component: AdminIntegrationMailgunView, name: 'admin-integration-mailgun-view', meta: {requiresAuth: true, dropImage: false} },
+				{ path: '/admin/integrations/paypal', component: AdminIntegrationPayPalView, name: 'admin-integration-paypal-view', meta: {requiresAuth: true, dropImage: false} },
+				{ path: '/admin/integrations/gumroad', component: AdminIntegrationGumroadView, name: 'admin-integration-gumroad-view', meta: {requiresAuth: true, dropImage: false} },
+				{ path: '/admin/integrations/discord', component: AdminIntegrationDiscordView, name: 'admin-integration-discord-view', meta: {requiresAuth: true, dropImage: false} }
+				]
+			},
 			{ path: '/admin/queue/:filter?', component: AdminQueueView, name: 'admin-queue-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
 			{ path: '/admin/theming', component: AdminThemingView, name: 'admin-theming-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
 			{ path: '/admin/members/:sort?', component: AdminUserManagementView, name: 'admin-user-management-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
