@@ -55,12 +55,16 @@
 						</button>
 					</div>
 					<div class="flex flex-col items-center mt-8 px-4 py-2">
-						<button class="button outlinePrimary w-full">
-							Log in
-						</button>
-						<button class="button primary mt-2 w-full">
-							Sign up
-						</button>
+						<router-link to="/login" custom v-slot="{ navigate }">
+							<button class="button outlinePrimary w-full" @click="navigate" @keypress.enter="navigate" role="link">
+								Sign up
+							</button>
+						</router-link>
+						<router-link to="/register" custom v-slot="{ navigate }">
+							<button class="button primary mt-2 w-full" @click="navigate" @keypress.enter="navigate" role="link">
+								Sign up
+							</button>
+						</router-link>
 					</div>
 					<router-link to="/following" class="block px-4 py-2 text-lg text-gray-700 dark:text-gray-200" @click="isOpen = false">
 						<i class="far fa-info-circle text-center fa-fw mr-3"></i><span>About</span>
