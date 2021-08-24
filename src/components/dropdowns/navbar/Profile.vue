@@ -29,7 +29,7 @@
           <div class="text-2xs text-gray-600 mt-1">
             <!-- User Reputation -->
             <div class="inline-block w-1.5 h-1.5 rounded-full bg-yellow-500 mr-1"></div>
-            {{ v.post_rep + v.comment_rep }} rep
+            {{ v.post_rep + v.comment_rep || 0 }} rep
           </div>
         </div>
       </router-link>
