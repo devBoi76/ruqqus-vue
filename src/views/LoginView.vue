@@ -4,7 +4,7 @@
 			<!-- Form section -->
 			<div class="flex flex-col h-full justify-center mx-auto p-12 md:p-0 md:w-96">
 				<!-- Username and password form -->
-				<div v-show="!mfa">
+				<div v-if="!mfa">
 					<h1 class="text-4xl font-medium mb-5">
 						Welcome back!
 					</h1>
@@ -30,7 +30,7 @@
 					</div>
 				</div>
 				<!-- 2-step form -->
-				<div v-show="mfa">
+				<div v-if="mfa">
 					<div>
 						<div class="flex items-center justify-center w-12 h-12 mx-auto mb-6 rounded-sm bg-gray-100">
 							<i class="fas fa-lock-alt text-purple-500"></i>
@@ -100,7 +100,7 @@ export default {
 		}
 	},
 	computed: {
-		...mapState("persist", ["v", "is_authenticated", "mfa"]),
+		...mapState("persist", ["mfa"]),
 	},
 	methods: {
 		...mapActions("persist", ["auth_v", "verify_mfa"]),
