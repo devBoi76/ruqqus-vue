@@ -68,7 +68,7 @@
 													<div class="col-span-4 md:col-span-1">
 														<ul class="flex flex-wrap">
 															<li v-for="swatch in primarySwatches" :key="swatch" class="p-1">
-																<label :for="swatch" class="flex flex-shrink-0 w-8 h-8 rounded" :style="{ 'background-color': swatch }">
+																<label :for="swatch" class="flex flex-shrink-0 w-6 h-6 rounded" :style="{ 'background-color': swatch }">
 																	<input type="checkbox" class="invisible" :id="swatch" :value="swatch" v-model="primaryColor"/>
 																</label>
 															</li>
