@@ -79,7 +79,7 @@ import { store } from "@/store";
 const routes = [
 
 	// Feed View
-	{ path: '/', name: 'HotView', component: FeedView, props: true, meta: {title: 'hot', sidebar: false, requiresAuth: true} },
+	{ path: '/', name: 'HotView', component: FeedView, props: true, meta: {title: 'front', sidebar: false, requiresAuth: true} },
 	{ path: '/featured', name: 'FeaturedView', component: FeedView, props: true, meta: {title: 'featured', sidebar: false, requiresAuth: true} },
 	{ path: '/trending', name: 'TrendingView', component: FeedView, props: true, meta: {title: 'trending', sidebar: false, requiresAuth: true} },
 	{ path: '/all', name: 'AllView', component: FeedView, props: true, meta: {title: 'all', sidebar: false, requiresAuth: true} },

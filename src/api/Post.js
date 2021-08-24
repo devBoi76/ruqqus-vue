@@ -10,7 +10,7 @@ export function getPost(id){
 
 // Return a post's comments info given id
 export function getPostComments(id){
-	return HTTP.get('/comments/'+id); // api/vue/post/{{ id }}/comments/{{ comment id }}
+	return HTTP.get(`/post/${id}/comments`); // api/vue/post/{{ id }}/comments/{{ comment id }}
 }
 
 // Delete comment given id
