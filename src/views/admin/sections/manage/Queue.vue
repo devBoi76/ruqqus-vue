@@ -118,7 +118,7 @@
 <script>
 // Import components
 import { defineAsyncComponent } from 'vue'
-import axios from "axios";
+import { HTTP } from '@/helpers/http-common.js'
 import { mapActions } from "vuex";
 
 const ItemList = defineAsyncComponent(() => import('@/views/ItemList.vue'));
@@ -145,8 +145,8 @@ export default {
 		...mapActions('items', ['deselectItems'])
 	},
 	created() {
-		axios
-		.get(`/api/vue/core/+${this.$route.params.name}`)
+		HTTP
+		.get(`/core/+${this.$route.params.name}`)
 		.then(response => {
 			this.g = response.data.data
 		})

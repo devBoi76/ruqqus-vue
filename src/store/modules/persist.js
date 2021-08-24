@@ -1,7 +1,6 @@
 const namespaced = true
 
-import axios from 'axios'
-
+import { HTTP } from '@/helpers/http-common.js'
 const state = {
 	site: {},
 	v: Object,
@@ -74,7 +73,7 @@ const actions = {
 	},
 	async getUser({ commit }, obj) {
 		commit('changeLoadingState', true)
-		return axios.get(obj.url_core)
+		return HTTP.get(obj.url_core)
 		.then(res => {
 			let data = res.data.u
 			console.log(data)
@@ -102,9 +101,9 @@ const actions = {
 		data.append('username', form.name);
 		data.append('password', form.password);
 
-		axios({
+		HTTP({
 			method: 'post',
-			url: '/api/vue/login',
+			url: '/login',
 			data: data,
 			headers: headers
 		})
@@ -146,9 +145,9 @@ const actions = {
 		data.append('time', state.v.time);
 		data.append('hash', state.v.hash);
 		data.append('2fa_token', form.mfa)
-		axios({
+		HTTP({
 			method: 'post',
-			url: '/api/vue/login',
+			url: '/login',
 			data: data,
 			headers: headers
 		}).then(
@@ -161,9 +160,9 @@ const actions = {
 		})
 	},
 	logout({commit}){
-		axios({
+		HTTP({
 			method: 'post',
-			url: '/api/vue/logout',
+			url: '/logout',
 		})
 		.then(
 			function(response) {

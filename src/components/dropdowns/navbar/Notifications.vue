@@ -113,7 +113,7 @@
 
 <script>
   import { defineAsyncComponent } from 'vue'
-  import axios from "axios";
+  import { HTTP } from '@/helpers/http-common.js'
   //import { mapGetters } from "vuex"
   import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue'
   const NotificationList = defineAsyncComponent(() => import('@/components/notifications/NotificationList.vue'));
@@ -161,8 +161,8 @@
       getNotifications() {
         this.loading = true;
         this.errored = false;
-        axios
-        .get('/api/vue/notifications/all')
+        HTTP
+        .get('/notifications/all')
         .then(response => {
           this.notifications = response.data.notifications
           console.log(response.data)
