@@ -7,20 +7,20 @@ const url = '/comment/'
 
 // Return comment given id
 export function getComment(id){
-	return axios.get(url+id);
+	return HTTP.get(url+id);
 }
 
 // Create comment given data
 export function createComment(data){
-	return axios.post(url, data)
+	return HTTP.post(url, data)
 }
 
 // Update comment given id and data object
 export function updateComment(id, data){
-	return axios.put(url+id, data)
+	return HTTP.put(url+id, data)
 }
 
 // Delete comment given id
 export function deleteComment(id){
-	return axios.delete(url+id)
+	return HTTP.delete(url+id)
 }
