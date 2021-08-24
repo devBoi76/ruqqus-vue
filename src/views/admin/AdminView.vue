@@ -3,7 +3,7 @@
 
 		<Sidebar :menu="menu" sidebar-color="white" sticky-header border>
 			<template v-slot:header>
-				<div class="flex flex-shrink-0 w-full items-center h-16 md:px-4 border-b border-black border-opacity-10 dark:border-white dark:border-opacity-10 dark:bg-gray-700">
+				<div class="flex flex-shrink-0 w-full items-center h-16 md:px-4 border-b dark:bg-gray-700">
 					<!-- Define sidebar bg color here so tailwidn doesn't purge the class during prod build -->
 					<span class="hidden bg-purple-500"/>
 					<!-- Loading skeleton elements -->
