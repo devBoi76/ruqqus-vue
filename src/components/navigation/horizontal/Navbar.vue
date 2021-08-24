@@ -54,7 +54,7 @@
 							<i class="far fa-long-arrow-left fa-fw fa-lg"></i>
 						</button>
 					</div>
-					<div class="flex flex-col items-center px-4 py-2">
+					<div class="flex flex-col items-center mt-8 px-4 py-2">
 						<button class="button outlinePrimary w-full">
 							Log in
 						</button>
