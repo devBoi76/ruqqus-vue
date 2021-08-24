@@ -70,7 +70,8 @@
 															<div class="space-y-1">
 																<ul class="flex flex-wrap space-x-2">
 																	<li v-for="swatch in primarySwatches" :key="swatch">
-																		<button class="w-8 h-8" :style="backgroundColor: swatch"/>
+																		<button class="w-8 h-8" :style="backgroundColor: swatch">
+																		</button>
 																	</li>
 																</ul>
 																<input v-model="primaryColor" placeholder="#FFFFFF" class="form-input max-w-xs"/>
