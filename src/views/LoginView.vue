@@ -74,7 +74,7 @@
 					<a :href="`https://unsplash.com/@${image.user.username}?utm_source=ruqqus&utm_medium=desktop`" class="text-white font-semibold">
 						{{ image.user.name }}
 					</a>
-					on
+					<span>on</span>
 					<a href="https://unsplash.com/?utm_source=ruqqus&utm_medium=desktop" class="text-white">
 						Unsplash
 					</a>
