@@ -101,22 +101,52 @@
 									</button>
 								</div>
 							</div>
-							<div class="divide-y">
+							<form class="divide-y">
 								<div class="grid grid-cols-3 gap-6 p-4">
 									<div class="col-span-3 sm:col-span-2">
 										<label class="label">
-											Webhook
+											API key
+											<span class="text-xs text-orange-500">
+												(required)
+											</span>
 										</label>
-										<input class="form-input light" v-model="webhook" placeholder="Enter your Unsplash account webhook" type="text"/>
+										<input required class="form-input light" v-model="webhook" placeholder="Enter your Unsplash API key" type="text"/>
 										<p class="text-sm text-gray-500 mt-1">
-											Webhooks can be found in
-											<a href="https://Unsplash.com" target="_blank" class="hover:underline">
-												Unsplash settings
+											Unsplash API keys can be granted in their
+											<a href="https://unsplash.com/developers" target="_blank" class="hover:underline">
+												developer portel
 											</a>
 										</p>
 									</div>
 								</div>
-							</div>
+								<div class="grid grid-cols-3 gap-6 p-4">
+									<div class="col-span-3">
+										<div class="flex flex-grow items-center justify-between">
+											<div>
+												<div class="font-semibold leading-tight">
+													Use Unsplash artwork on login
+												</div>
+												<p class="text-sm text-gray-500 mt-1">
+													Displays Unsplash photos on the login and registration pages
+												</p>
+											</div>
+											<Toggle v-model="hasUnsplashLogin"/>
+										</div>
+									</div>
+								</div>
+								<div class="grid grid-cols-3 gap-6 p-4" :class="{'opacity-50 pointer-events-none':!hasUnsplashLogin}">
+									<div class="col-span-3 sm:col-span-2">
+										<label class="label">
+											Keyword
+										</label>
+										<input required class="form-input light" v-model="keyword" placeholder="e.g. dogs" type="text"/>
+										<p class="text-sm text-gray-500 mt-1">
+											The category of images to pull from Unsplash.
+										</p>
+										<!-- Preview goes right here, load 5-10 images flex box -->
+									</div>
+								</div>
+							</form>
 						</div>
 					</div>
 				</div>
@@ -126,20 +156,24 @@
 </template>
 
 <script>
+	import Toggle from "@/components/forms/Toggle.vue";
+
 	export default {
 		name: "AdminIntegrationsUnsplashView",
 		data() {
 			return {
 				formVisible: false,
 				isActive: false,
-				webhook: '',
-				hasDonationAttr: true,
+				apiKey: '',
+				hasUnsplashLogin: true,
+				keyword: '',
 				changed: false,
 				loading: false,
 				errored: false,
 			}
 		},
 		components: {
+			Toggle
 		},
 		methods: {
 			toggleForm() {
