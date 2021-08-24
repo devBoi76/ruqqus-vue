@@ -93,7 +93,7 @@
 							<!-- Menu Icon -->
 							<i class="far fa-long-arrow-left fa-fw fa-lg"></i>
 						</button>
-						<input class="form-input" v-model="searchTerm" placeholder="Search Ruqqus..." @keyup.enter="search(); searchDrawer()"/>
+						<input class="form-input light" v-model="searchTerm" placeholder="Search Ruqqus..." @keyup.enter="search(); searchDrawer()"/>
 					</div>
 				</aside>
 			</div>
