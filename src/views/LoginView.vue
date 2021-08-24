@@ -62,19 +62,22 @@
 			</div>
 		</div>
 		<!-- Background artwork -->
-		<div v-show="site.unsplash.isActive" class="relative hidden md:block w-2/4">
+		<div v-if="site.unsplash.isActive" class="relative hidden md:block w-2/4">
 			<!-- Background image -->
-			<div class="absolute w-full h-full bg-cover bg-center bg-purple-500" :style="{ backgroundImage: `url(${selectedImage.src})` }"/>
+			<div class="absolute w-full h-full bg-cover bg-center bg-purple-500" :style="{ backgroundImage: `url(${image.urls.regular})` }"/>
 			<!-- Gradient -->
 			<div class="absolute w-full h-full bg-violet-500 bg-gradient-to-br from-transparent via-purple-600 to-purple-900 opacity-70"/>
-			<!-- User suggestion -->
-			<div v-if="selectedImage.profile_url" class="absolute bottom-3 right-3 text-xs text-white">
+			<!-- User attribution -->
+			<div class="absolute bottom-3 right-3 text-xs text-white">
 				<div class="flex items-center justify-content-end">
-					<span>Background suggested by</span>
-					<img class="w-6 h-6 object-fit mx-2 rounded-sm" :src="selectedImage.profile_url"/>
-					<router-link :to="`/${selectedImage.username}`" class="text-white font-bold hover:text-gray-300">
-						@{{ selectedImage.username }}
-					</router-link>
+					<span>Photo by</span>
+					<a :href="`https://unsplash.com/@${image.user.username}?utm_source=ruqqus&utm_medium=desktop`">
+						{{ image.user.name }}
+					</a>
+					on
+					<a href="https://unsplash.com/?utm_source=ruqqus&utm_medium=desktop">
+						Unsplash
+					</a>
 				</div>
 			</div>
 		</div>
@@ -82,49 +85,48 @@
 </template>
 
 <script>
-import { mapState, mapActions } from "vuex";
-import { getRandomPhoto } from "../helpers/unsplash";
+	import { mapState, mapActions } from "vuex";
+	import { getRandomPhoto } from "../helpers/unsplash";
 
-export default {
-	data() {
-		return {
-			site: {
-				unsplash: {
-					isActive: true,
-					query: 'dog'
-				}
-			},
-			selectedImage: null,
-			imageAttribution: false,
-			form: {
-				email: '',
-				name: '',
-				password: '',
-				mfa: '',
-				checked: []
-			},
-		}
-	},
-	computed: {
-		...mapState("persist", ["mfa"]),
-	},
-	methods: {
-		...mapActions("persist", ["auth_v", "verify_mfa"]),
-		randomItem (items) {
-			return items[Math.floor(Math.random()*items.length)];
+	export default {
+		data() {
+			return {
+				site: {
+					unsplash: {
+						isActive: true,
+						query: 'dog'
+					}
+				},
+				image: {},
+				form: {
+					email: '',
+					name: '',
+					password: '',
+					mfa: '',
+					checked: []
+				},
+			}
 		},
-		fetchRandomPhoto() {
-			let query = this.site.unsplash.query
-			getRandomPhoto(query)
-			.then(response => {
-				this.selectedImage = response.data.urls.regular
-			})
-		}
-	},
-	created() {
-		if (this.site.unsplash.isActive) {
-			this.fetchRandomPhoto()
+		computed: {
+			...mapState("persist", ["mfa"]),
+		},
+		methods: {
+			...mapActions("persist", ["auth_v", "verify_mfa"]),
+			randomItem (items) {
+				return items[Math.floor(Math.random()*items.length)];
+			},
+			fetchRandomPhoto() {
+				let query = this.site.unsplash.query
+				getRandomPhoto(query)
+				.then(response => {
+					this.image = response.data
+				})
+			}
+		},
+		created() {
+			if (this.site.unsplash.isActive) {
+				this.fetchRandomPhoto()
+			}
 		}
 	}
-}
 </script>
