@@ -66,14 +66,14 @@
 											<div v-if="active" class="space-y-6 mt-6">
 												<div class="grid grid-cols-3 gap-6">
 														<div class="col-span-3 md:col-span-1">
-														<ul class="flex flex-wrap -m-1 mb-2">
+														<ul class="flex flex-wrap -m-1 mb-2 md:w-[289px]">
 															<li v-for="swatch in primarySwatches" :key="swatch" class="p-1">
 																<label :for="swatch" class="flex flex-shrink-0 w-6 h-6 shadow-inner rounded-sm" :style="{ 'background-color': swatch }">
 																	<input type="checkbox" class="invisible" :id="swatch" :value="swatch" v-model="primaryColor"/>
 																</label>
 															</li>
 														</ul>
-														<input type="text" v-model="primaryColor" placeholder="#FFFFFF" class="form-input light"/>
+														<input type="text" v-model="primaryColor" placeholder="#FFFFFF" class="form-input light md:w-2/4"/>
 													</div>
 												</div>
 											</div>
