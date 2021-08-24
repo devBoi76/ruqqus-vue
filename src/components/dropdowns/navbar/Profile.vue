@@ -40,6 +40,12 @@
             <i class="far fa-user text-center fa-fw mr-2"></i><span>My Profile</span>
           </router-link>
         </MenuItem>
+        <!-- Inbox Link -->
+        <MenuItem v-slot="{ active }">
+          <router-link to="/inbox" :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-1.5']">
+            <i class="far fa-envelope text-center fa-fw mr-2"></i><span>Inbox</span>
+          </router-link>
+        </MenuItem>
         <!-- Posts Link -->
         <MenuItem v-slot="{ active }">
           <router-link to="/posts" :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-1.5']">
