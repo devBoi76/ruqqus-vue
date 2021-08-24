@@ -141,7 +141,7 @@
 										</label>
 										<input required class="form-input light" v-model="keyword" placeholder="e.g. dogs" type="text"/>
 										<p class="text-sm text-gray-500 mt-1">
-											The category of images to pull from Unsplash.
+											The category of images to pull from Unsplash
 										</p>
 										<!-- Preview goes right here, load 5-10 images flex box -->
 									</div>
@@ -165,7 +165,7 @@
 				formVisible: false,
 				isActive: false,
 				apiKey: '',
-				hasUnsplashLogin: true,
+				hasUnsplashLogin: false,
 				keyword: '',
 				changed: false,
 				loading: false,
