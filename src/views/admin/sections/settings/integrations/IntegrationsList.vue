@@ -36,8 +36,8 @@
 			<div class="p-4">
 				<div class="md:grid md:grid-cols-3 md:gap-6">
 					<div class="md:col-span-3 space-y-8">
-						<div class="flex flex-wrap -mt-2 -mx-2 overflow-hidden">
-							<div v-for="(item, index) in integrations" :key="index" v-show="!item.isActive" class="my-2 px-2 w-full overflow-hidden md:w-1/2 lg:w-1/4">
+						<ul class="flex flex-wrap -mt-2 -mx-2 overflow-hidden">
+							<li v-for="(item, index) in integrations" :key="index" v-show="!item.isActive" class="my-2 px-2 w-full overflow-hidden md:w-1/2 lg:w-1/4">
 								<div class="flex flex-col justify-between h-full sm:p-4 p-5 bg-white border rounded-sm">
 									<div class="flex flex-col items-center mb-4">
 										<img :src="item.logo" class="w-9 h-9 object-cover"/>
@@ -56,8 +56,8 @@
 										</button>
 									</router-link>
 								</div>
-							</div>
-						</div>
+							</li>
+						</ul>
 						<div>
 							<div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
 								Your Integrations
