@@ -54,12 +54,14 @@
 							<i class="far fa-long-arrow-left fa-fw fa-lg"></i>
 						</button>
 					</div>
-					<button class="button outlinePrimary">
-						Log in
-					</button>
-					<button class="button primary mt-2">
-						Sign up
-					</button>
+					<div class="flex flex-col items-center px-4 py-2">
+						<button class="button outlinePrimary w-full">
+							Log in
+						</button>
+						<button class="button primary mt-2 w-full">
+							Sign up
+						</button>
+					</div>
 					<router-link to="/following" class="block px-4 py-2 text-lg text-gray-700 dark:text-gray-200" @click="isOpen = false">
 						<i class="far fa-user text-center fa-fw mr-3"></i><span>About</span>
 					</router-link>
