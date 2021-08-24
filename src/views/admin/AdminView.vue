@@ -102,7 +102,7 @@ export default {
 				{
 					name: 'design',
 					route: {
-						name: 'admin-theming-view'
+						name: 'admin-design-view'
 					},
 					icon: 'fa-paint-roller',
 					textCase: 'capitalize'

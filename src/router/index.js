@@ -56,7 +56,7 @@ const AdminView = () => import ('../views/admin/AdminView.vue')
 const AdminModerationView = () => import ('../views/admin/sections/manage/Moderation.vue')
 const AdminQueueView = () => import ('../views/admin/sections/manage/Queue.vue')
 const AdminGeneralView = () => import ('../views/admin/sections/settings/General.vue')
-const AdminThemingView = () => import ('../views/admin/sections/settings/Theming.vue')
+const AdminDesignView = () => import ('../views/admin/sections/settings/Design.vue')
 const AdminUserManagementView = () => import ('../views/admin/sections/manage/Members.vue')
 const AdminSecurityView = () => import ('../views/admin/sections/settings/Security.vue')
 const AdminRulesView = () => import ('../views/admin/sections/manage/Rules.vue')
@@ -165,7 +165,7 @@ const routes = [
 				]
 			},
 			{ path: '/admin/queue/:filter?', component: AdminQueueView, name: 'admin-queue-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
-			{ path: '/admin/theming', component: AdminThemingView, name: 'admin-theming-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
+			{ path: '/admin/design', component: AdminDesignView, name: 'admin-design-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
 			{ path: '/admin/members/:sort?', component: AdminUserManagementView, name: 'admin-user-management-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
 			{ path: '/admin/security', component: AdminSecurityView, name: 'admin-security-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
 			{ path: '/admin/rules', component: AdminRulesView, name: 'admin-rules-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },

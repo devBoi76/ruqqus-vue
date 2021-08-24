@@ -6,7 +6,7 @@
 			<div class="col-span-full 2xl:col-start-2 2xl:col-end-10">
 				<div class="flex items-center justify-between px-4 py-3 bg-gray-50 sm:bg-gray-100">
 					<h1 class="text-2xl capitalize mb-0">
-						Theming
+						Design
 					</h1>
 					<button v-if="!loading && !errored" class="button purple500">
 						Save
@@ -54,10 +54,10 @@
 												<div class="flex items-center justify-between">
 													<div>
 														<div class="font-medium leading-tight">
-															Primary & Secondary Colors
+															Primary color
 														</div>
 														<p class="text-sm text-gray-500 mt-1">
-															Colors that give your community its style
+															The primary color for your community's look
 														</p>
 													</div>
 													<button class="flex items-center justify-center px-2 w-8 h-8 text-lg text-gray-600 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white rounded-sm" @click="toggle" aria-expanded="active">
@@ -68,40 +68,15 @@
 													<div class="grid grid-cols-4 gap-6">
 														<div class="col-span-4 sm:col-span-1">
 															<div class="space-y-1">
-																<v-swatches
-																class="md:w-80"
-																v-model="primaryColor"
-																:swatches="primarySwatches"
-																inline
-																swatch-size="24"
-																:swatch-style="{ marginRight: '10px', marginBottom: '10px', borderRadius: '3px', boxShadow: 'none' }"
-																></v-swatches>
-																<div class="max-w-xs">
-																	<input v-model="primaryColor" placeholder="#FFFFFF" class="form-input max-w-xs"/>
-																</div>
+																<ul class="flex flex-wrap space-x-2">
+																	<li v-for="swatch in primarySwatches" :key="swatch">
+																		<button class="w-8 h-8" :style="backgroundColor: swatch"/>
+																	</li>
+																</ul>
+																<input v-model="primaryColor" placeholder="#FFFFFF" class="form-input max-w-xs"/>
 															</div>
 															<p class="text-sm text-gray-500 mt-1">
 																Links and buttons
-															</p>
-														</div>
-													</div>
-													<div class="grid grid-cols-4 gap-6">
-														<div class="col-span-4 sm:col-span-1">
-															<div class="space-y-1">
-																<v-swatches
-																class="md:w-80"
-																v-model="secondaryColor"
-																:swatches="secondarySwatches"
-																inline
-																swatch-size="24"
-																:swatch-style="{ marginRight: '10px', marginBottom: '10px', borderRadius: '3px', boxShadow: 'none' }"
-																></v-swatches>
-																<div class="max-w-xs">
-																	<input class="form-input" v-model="secondaryColor" placeholder="#000000"/>
-																</div>
-															</div>
-															<p class="text-sm text-gray-500 mt-1">
-																Tabs and accents
 															</p>
 														</div>
 													</div>
@@ -125,16 +100,11 @@
 // Import components
 import { defineAsyncComponent } from 'vue'
 const Toggle = defineAsyncComponent(() => import('@/components/Toggle.vue'));
-const VSwatches = defineAsyncComponent(() => import('vue-swatches'));
-
-// Import styles
-import 'vue-swatches/dist/vue-swatches.css'
 
 export default {
-	name: "UserSettingsBasicInfoView",
+	name: "AdminDesignView",
 	components: {
-		Toggle,
-		VSwatches
+		Toggle
 	},
 	data() {
 		return {
@@ -149,63 +119,38 @@ export default {
 		}
 	},
 	computed: {
-		g() {
-			return this.$store.getters['guild/getGuild'](this.$route.params.name);
-		}
+		// g() {
+		// 	return this.$store.getters['guild/getGuild'](this.$route.params.name);
+		// }
 	},
 	watch: {
-		'$route.params.name': { // get guild info and posts if guild changes
-			handler() {
-				if (this.g == null) {
-					this.loading = true;
-					this.errored = false;
-					this.getGuildInfo()
-				} else {
-					this.loading = false;
-				}
-			},
-			immediate: true
-		}
+		// '$route.params.name': { // get guild info and posts if guild changes
+		// 	handler() {
+		// 		if (this.g == null) {
+		// 			this.loading = true;
+		// 			this.errored = false;
+		// 			this.getGuildInfo()
+		// 		} else {
+		// 			this.loading = false;
+		// 		}
+		// 	},
+		// 	immediate: true
+		// }
 	},
 	methods: {
-		getGuildInfo() {
-			let guild = this.$route.params.name
-			this.$store.dispatch('guild/fetchGuild', guild)
-			.then(() => {
-				console.log("getGuild dispatch successful")
-			})
-			.catch(error => {
-				console.error(error)
-				this.errored = true
+		// getGuildInfo() {
+		// 	let guild = this.$route.params.name
+		// 	this.$store.dispatch('guild/fetchGuild', guild)
+		// 	.then(() => {
+		// 		console.log("getGuild dispatch successful")
+		// 	})
+		// 	.catch(error => {
+		// 		console.error(error)
+		// 		this.errored = true
 
-			})
-			.finally(() => this.loading = false)
-		}
+		// 	})
+		// 	.finally(() => this.loading = false)
+		// }
 	}
 };
 </script>
-
-<style scoped>
-/deep/ .vue-swatches__container {
-	@apply bg-transparent
-}
-/deep/ .vue-swatches__swatch {
-	@apply w-6 h-6 rounded-sm mr-2 mb-2
-}
-/deep/ .vue-swatches__swatch {
-	&.vue-swatches__swatch--border,
-	&.vue-swatches__swatch--selected,
-	&:focus,
-	&:hover {
-		@apply shadow-none
-	}
-}
-/deep/ .vue-swatches__diagonal {
-	width: 75%;
-	height: 75%;
-	background: linear-gradient(to top right, transparent, transparent 45%, #DC2626, transparent 55%, transparent);
-}
-/deep/ .vue-swatches__check__circle {
-	@apply w-3 h-3 bg-transparent
-}
-</style>
