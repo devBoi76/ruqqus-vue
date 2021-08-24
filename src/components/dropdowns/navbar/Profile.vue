@@ -36,33 +36,33 @@
       <div class="py-2">
         <!-- Profile Link -->
         <MenuItem v-slot="{ active }">
-          <button :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-1.5']">
+          <router-link to="/profile" :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-1.5']">
             <i class="far fa-user text-center fa-fw mr-2"></i><span>My Profile</span>
-          </button>
+          </router-link>
         </MenuItem>
         <!-- Posts Link -->
         <MenuItem v-slot="{ active }">
-          <button :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-1.5']">
+          <router-link to="/posts" :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-1.5']">
             <i class="far fa-pen text-center fa-fw mr-2"></i><span>Posts</span>
-          </button>
+          </router-link>
         </MenuItem>
         <!-- Following Link -->
         <MenuItem v-slot="{ active }">
-          <button :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-1.5']">
+          <router-link to="/following" :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-1.5']">
             <i class="far fa-heart text-center fa-fw mr-2"></i><span>Following</span>
-          </button>
+          </router-link>
         </MenuItem>
         <!-- Saved Link -->
         <MenuItem v-slot="{ active }">
-          <button :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-1.5']">
+          <button to="/saved" :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-1.5']">
             <i class="far fa-bookmark text-center fa-fw mr-2"></i><span>Saved</span>
           </button>
         </MenuItem>
         <!-- User Settings Link -->
         <MenuItem v-slot="{ active }">
-          <button :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-1.5']">
+          <router-link to="/settings" :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-1.5']">
             <i class="far fa-cog text-center fa-fw mr-2"></i><span>Settings</span>
-          </button>
+          </router-link>
         </MenuItem>
       </div>
       <div class="py-2">
