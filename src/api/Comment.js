@@ -1,9 +1,9 @@
 // API endpoints for interfacing with posts
 // For documentation on these endpoints (and our entire API), please visit postman url here
 
-import axios from 'axios'
+import { HTTP } from '@/helpers/http-common.js';
 
-const url = '/api/vue/comment/'
+const url = '/comment/'
 
 // Return comment given id
 export function getComment(id){

@@ -1,9 +1,9 @@
 // API endpoints for interfacing with Ruqqus accounts
 // For documentation on these endpoints (and our entire API), please visit postman url here
 
-import axios from 'axios'
+import { HTTP } from '@/helpers/http-common.js';
 
-const url = `/api/vue/account/`
+const url = `/account/`
 
 // Return all public info given account username (or id)
 export function getAccount(id){
@@ -12,7 +12,7 @@ export function getAccount(id){
 
 // Return notfications of current auth'd account. Prameters for sort, pagination, etc
 export function getAccountNotifications(params){
-	return axios.get(url+`me/notifications/`, {
+	return axios.get(url + `/me/notifications/`, {
 		params: params
 	})
 }
