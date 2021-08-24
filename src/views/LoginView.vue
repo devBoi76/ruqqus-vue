@@ -1,6 +1,6 @@
 <template>
 	<div class="flex flex-grow bg-white">
-		<div class="relative w-full" :class="{ 'md:w-2/4 shadow':site.unsplash.isActive }">
+		<div class="relative w-full" :class="{ 'lg:w-2/4 shadow':site.unsplash.isActive }">
 			<!-- Form section -->
 			<div class="flex flex-col h-full justify-center mx-auto p-12 md:p-0 md:w-96">
 				<!-- Username and password form -->
@@ -62,7 +62,7 @@
 			</div>
 		</div>
 		<!-- Background artwork -->
-		<div v-if="site.unsplash.isActive" class="relative hidden md:block w-2/4">
+		<div v-if="site.unsplash.isActive" class="relative hidden lg:block w-2/4">
 			<!-- Background image -->
 			<div class="absolute w-full h-full bg-cover bg-center bg-purple-500" :style="{ backgroundImage: `url(${image.urls.regular})` }"/>
 			<!-- Gradient -->
