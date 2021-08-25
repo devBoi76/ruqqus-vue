@@ -1,24 +1,24 @@
 <template>
 	<div class="mb-2 md:mb-4 last:mb-0" :class="pinned ? 'hidden' : 'flex'">
 		<!-- Item Actions -->
-		<ItemActions avatar stickyPos :author="this.item.author" :score="this.item.score" :id="this.item.id"/>
+		<ItemActions avatar stickyPos :author="item.author" :score="item.score" :id="item.id"/>
 		<div class="relative flex w-full bg-white dark:bg-gray-800 border-t border-b border-gray-100 dark:border-transparent sm:border sm:rounded-sm dark:text-gray-100">
 			<!-- Post Details -->
 			<div class="flex flex-col flex-grow">
 				<div class="flex flex-shrink-0 items-center justify-between p-2.5 border-b dark:border-gray-700 dark:border-opacity-70" :class="{ 'border-green-400':pinned }">
 					<div class="flex items-center">
 						<!-- Author Avatar -->
-						<router-link :to="'/'+this.item.author.username" class="block md:hidden">
+						<router-link :to="'/'+item.author.username" class="block md:hidden">
 							<img
-							v-lazy="this.item.author.profile_url"
+							:src="item.author.profile_url"
 							alt="avatar"
 							class="w-9 h-9 md:w-8 md:h-8 object-cover mr-2 rounded-sm bg-gray-100 dark:bg-gray-700"
 							/>
 						</router-link>
 						<div class="flex flex-col sm:flex-row sm:items-center sm:space-x-2 leading-4">
 							<!-- Author Username -->
-							<router-link :to="'/'+this.item.author.username" class="block font-bold text-sm text-gray-900 dark:text-gray-100">
-								{{ this.item.author.username }}
+							<router-link :to="'/'+item.author.username" class="block font-bold text-sm text-gray-900 dark:text-gray-100">
+								{{ item.author.username }}
 							</router-link>
 							<div class="flex items-center space-x-2 text-xs mt-0.5 sm:mt-0 sm:text-sm text-gray-500 dark:text-gray-400">
 								<!-- Timestamp -->
@@ -52,17 +52,17 @@
 				<!-- Embed -->
 				<div class="px-2.5 mt-2.5" v-if="item.url && !item.is_image">
 					<EmbedLink
-					:domain="this.item.domain"
-					:title="this.item.meta_title"
-					:thumbnail="this.item.thumb_url"
-					:url="this.item.url"
-					:preview="this.item.meta_description"
+					:domain="item.domain"
+					:title="item.meta_title"
+					:thumbnail="item.thumb_url"
+					:url="item.url"
+					:preview="item.meta_description"
 					/>
 				</div>
 				<!-- Image -->
 				<router-link v-if="item.is_image" :to="item.permalink" class="flex justify-center md:mt-2.5 md:px-2.5">
 					<img
-					v-lazy="this.item.url"
+					:src="item.url"
 					alt="Post image"
 					class="w-full h-full object-cover sm:rounded-sm bg-gray-200 dark:bg-white dark:bg-opacity-20"
 					/>
@@ -71,13 +71,13 @@
 				<div class="p-2.5">
 					<!-- Title -->
 					<h5 class="text-lg md:text-xl font-medium">
-						<router-link class="text-gray-900 visited:text-gray-400 dark:text-gray-100 hover:text-primary" :to="this.item.permalink">
-							{{ this.item.title }}
+						<router-link class="text-gray-900 visited:text-gray-400 dark:text-gray-100 hover:text-primary" :to="item.permalink">
+							{{ item.title }}
 						</router-link>
 					</h5>
 					<!-- Body -->
 					<div v-if="textPost" class="relative overflow-hidden" :class="{'max-h-56 mask-overlay':!expanded}">
-						<div class="text-gray-900 dark:text-gray-200 break-words" v-html="this.item.body_html"></div>
+						<div class="text-gray-900 dark:text-gray-200 break-words" v-html="item.body_html"></div>
 					</div>
 					<!-- Body expand button, mobile only -->
 					<div v-if="textPost" class="relative flex sm:hidden justify-center -mt-2">
@@ -87,10 +87,10 @@
 					</div>
 					<!-- Participant Avatars -->
 					<div class="flex items-center mt-3">
-						<router-link class="flex items-center -space-x-4" :to="this.item.permalink">
+						<router-link class="flex items-center -space-x-4" :to="item.permalink">
 							<!-- Avatar Group -->
 							<img
-							v-for="participant of this.item.participants"
+							v-for="participant in item.participants"
 							v-bind:key="participant.id"
 							:src="participant.avatar"
 							variant="null"
@@ -102,7 +102,7 @@
 						</router-link>
 						<div class="hidden md:block ml-2">
 							<!-- Replies Count -->
-							<router-link :to="this.item.permalink" class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary">
+							<router-link :to="item.permalink" class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary">
 								{{ item.comment_count === 1 ? '1 reply' : `${item.comment_count} replies` }}
 							</router-link>
 						</div>
