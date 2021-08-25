@@ -26,8 +26,7 @@
 </template>
 
 <script>
-	import axios from 'axios'
-
+	import { HTTP } from '@/helpers/http-common.js'
 	import Comment from "@/components/comment/CommentCompact.vue"
 
 	export default {
@@ -58,9 +57,9 @@
 		},
 		methods: {
 			getComments()  {
-				axios
+				HTTP
 				//.get(`/api/vue/user/@${this.$route.params.username}/comments`)
-				.get(`/api/vue/user/@kek/comments`)
+				.get(`/user/@kek/comments`)
 				.then(response => {
 					this.comments = response.data.listing
 				//console.log(this.u)

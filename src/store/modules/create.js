@@ -1,6 +1,6 @@
 const namespaced = true
 
-import axios from 'axios'
+import { HTTP } from '@/helpers/http-common.js'
 
 const state = {
   firstStepValidated: false,
@@ -121,9 +121,9 @@ const actions = {
     console.log(rootState.guild.guild.name)
     console.log(rootState.persist.v.formkey)
 
-    axios({
+    HTTP({
       method: 'post',
-      url: '/api/vue/submit',
+      url: '/submit',
       data: data,
       headers: headers
     })

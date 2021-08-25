@@ -74,7 +74,7 @@
 
 <script>
 // Import components
-import axios from "axios";
+import { HTTP } from '@/helpers/http-common.js'
 import { mapState } from "vuex";
 
 const Form = () => import('@/components/forms/Input.vue')
@@ -122,8 +122,8 @@ export default {
 	methods: {
 	},
 	created() {
-		axios
-		.get('/api/vue/settings/app_info')
+		HTTP
+		.get('/settings/app_info')
 		.then(response => {
 			console.log(response)
 		})

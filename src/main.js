@@ -3,7 +3,7 @@ import { store } from './store'
 import router from './router'
 
 import App from './App.vue'
-import axios from "axios"
+import { HTTP } from '@/helpers/http-common.js'
 import interceptors from './helpers/interceptors.js'
 import * as LazyLoad from '@vant/lazyload'
 import VueTippy from '../node_modules/vue-tippy'
@@ -18,7 +18,7 @@ const app = createApp(App)
 app.config.devtools = true
 
 app.config.globalProperties.$store = store
-app.config.globalProperties.$http = axios
+app.config.globalProperties.$http = HTTP
 
 app.use(store)
 app.use(router)

@@ -97,7 +97,7 @@
 
 // Import components
 
-import axios from "axios";
+import { HTTP } from '@/helpers/http-common.js'
 
 export default {
   name: "UserSettingsBasicInfoView",
@@ -117,8 +117,8 @@ export default {
   methods: {
   },
   created() {
-    axios
-    .get('/api/vue/settings/user_info')
+    HTTP
+    .get('/settings/user_info')
     .then(response => {
       this.v = response.data
     })

@@ -64,7 +64,7 @@
 <script>
 // Import Components
 import { defineAsyncComponent } from 'vue'
-import axios from "axios";
+import { HTTP } from '@/helpers/http-common.js'
 
 const NotificationList = defineAsyncComponent(() => import('@/components/notifications/NotificationList.vue'));
 
@@ -164,8 +164,8 @@ export default {
 		},
 		getNotifications() {
 			this.clearNotifcations();
-			axios
-			.get(`/api/vue/notifications/${this.sort || 'all'}`)
+			HTTP
+			.get(`/notifications/${this.sort || 'all'}`)
 			.then(response => {
 				this.notifications = response.data.notifications
 				console.log(response.data)
