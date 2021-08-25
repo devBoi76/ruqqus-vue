@@ -21,12 +21,10 @@
 				<!-- Sort Links (hot, top, new, etc) -->
 				<ul class="flex items-center space-x-3 mb-0 text-sm">
 					<li v-for="sort in sorts" :key="sort.id" class="capitalize">
-						<router-link v-slot="{ href, navigate, isExactActive }" :to="sort.route">
-							<a :href="href" @click="navigate">
-								<span :class="isExactActive ? 'text-gray-700' : 'text-gray-500 hover:text-gray-600'">
-									{{ sort.text }}
-								</span>
-							</a>
+						<router-link :to="sort.route" custom v-slot="{ isExactActive, navigate }">
+							<button @click="navigate" @keypress.enter="navigate" :class="isExactActive ? 'text-gray-700' : 'text-gray-400 hover:text-gray-500'" role="link">
+								{{ sort.text }}
+							</button>
 						</router-link>
 					</li>
 				</ul>
@@ -52,14 +50,16 @@
 					id: 1,
 					text: "top",
 					route: {
-						path: "?sortBy=upvotes&order=desc"
+						path: this.$route.path,
+						query: { sortBy: `top` }
 					}
 				},
 				{
 					id: 2,
 					text: "newest",
 					route: {
-						path: "?sortBy=createdAt"
+						path: this.$route.path,
+						query: { sortBy: `latest` }
 					}
 				},
 				{
