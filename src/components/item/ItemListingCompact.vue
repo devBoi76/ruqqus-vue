@@ -78,7 +78,7 @@
 							<!-- Fallback Icon - Link Posts Only -->
 							<a v-else :href="item.url" target="_blank" class="block">
 								<img
-								v-lazy="item.thumb_url"
+								:src="item.thumb_url"
 								alt="Post image"
 								class="w-14 md:w-20 h-14 object-cover rounded-sm bg-gray-200 dark:bg-white dark:bg-opacity-20"
 								/>
