@@ -12,7 +12,7 @@
 						<!-- Author Avatar -->
 						<router-link :to="'/'+item.author.username">
 							<img
-							v-lazy="item.author.profile_url"
+							:src="item.author.profile_url"
 							alt="avatar"
 							class="w-9 h-9 md:w-8 md:h-8 object-cover mr-2 rounded-sm bg-gray-100 dark:bg-gray-700"
 							/>
@@ -70,7 +70,7 @@
 						<div v-if="item.thumb_url && isScreenshot" class="relative">
 							<img
 							v-if="item.is_image"
-							v-lazy="item.thumb_url"
+							:src="item.thumb_url"
 							alt="Post image"
 							class="w-14 md:w-20 h-14 object-cover rounded-sm bg-gray-200 dark:bg-white dark:bg-opacity-20"
 							@click="isExpanded = !isExpanded"
@@ -96,7 +96,7 @@
 				<!-- Expanded Image -->
 				<router-link v-show="isExpanded" v-if="item.is_image" :to="item.permalink">
 					<img
-					v-lazy="item.url"
+					:src="item.url"
 					alt="Post image"
 					class="w-full h-full obect-cover mt-6 bg-gray-100 sm:rounded-sm sm:hidden" 
 					/>
@@ -200,17 +200,17 @@
 					<!-- Participant avatars -->
 					<div class="hidden md:flex items-center">
 						<!-- Avatar Group -->
-						<div class="flex items-center -space-x-4">
+						<!-- <div class="flex items-center -space-x-4">
 							<img
 							v-for="participant of item.participants"
-							v-bind:key="participant.id"
+							:key="participant.id"
 							:src="participant.avatar"
 							variant="null"
 							rounded
 							class="border border-gray-500 border-2"
 							v-b-tooltip.hover.bottom="participant.username"
 							/>
-						</div>
+						</div> -->
 						<!-- Comment Count -->
 						<router-link v-if="item.comment_count > 0" class="block ml-2 text-sm text-gray-500 dark:text-gray-400 hover:text-primary" :to="item.permalink">
 							{{ item.comment_count === 1 ? '1 reply' : `${item.comment_count} replies` }}
