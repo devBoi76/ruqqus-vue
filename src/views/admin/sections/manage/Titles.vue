@@ -66,7 +66,7 @@
 <script>
 // Import components
 import draggable from "vuedraggable";
-import axios from "axios";
+import { HTTP } from '@/helpers/http-common.js'
 import TitleRow from "@/components/moderation/TitleRow.vue";
 
 export default {
@@ -117,8 +117,8 @@ export default {
     }
   },
   created() {
-    axios
-    .get(`/api/vue/core/+${this.$route.params.name}`)
+    HTTP
+    .get(`/core/+${this.$route.params.name}`)
     .then(response => {
       this.g = response.data
     })

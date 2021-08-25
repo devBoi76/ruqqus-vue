@@ -1,7 +1,7 @@
 const namespaced = true
 
 //import Vue from "vue"
-import axios from 'axios'
+import { HTTP } from '@/helpers/http-common.js'
 
 import { getPost } from '../../api/Post.js';
 import { getAccountPosts } from '../../api/Account.js';
@@ -225,9 +225,9 @@ const actions = {
 		const headers = {'Content-Type': 'multipart/form-data'}
 		const data = new FormData();
 		data.append('formkey', rootState.persist.v.formkey)
-		axios({
+		HTTP({
 			method: 'post',
-			url: `/api/vue/post/${obj.post_id}/${obj.vote}`,
+			url: `/post/${obj.post_id}/${obj.vote}`,
 			data: data,
 			headers: headers
 		}).then(

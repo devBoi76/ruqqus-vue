@@ -1,4 +1,3 @@
-import axios from 'axios';
 import { store } from '@/store';
 import { HTTP } from '@/helpers/http-common.js'
 
@@ -6,7 +5,7 @@ import { HTTP } from '@/helpers/http-common.js'
 export default function setup() {
 	HTTP.interceptors.request.use(function (config) {
 	//  Generate cancel token source
-	let source = axios.CancelToken.source();
+	let source = HTTP.CancelToken.source();
 	
 	// Set cancel token on this request
 	config.cancelToken = source.token;
