@@ -94,7 +94,7 @@
 
 <script>
 // Import components
-import { HTTP } from '@/helpers/http-common.js'
+import axios from 'axios'
 
 const Form = () => import('@/components/forms/Input.vue')
 
@@ -125,7 +125,7 @@ export default {
 	methods: {
 	},
 	created() {
-		HTTP
+		axios
 		.get('/settings/user_info')
 		.then(response => {
 			this.v = response.data

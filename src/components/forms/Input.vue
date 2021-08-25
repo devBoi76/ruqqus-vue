@@ -13,7 +13,7 @@
 </template>
 
 <script>
-	import { HTTP } from '@/helpers/http-common.js'
+	import axios from 'axios'
 	import { mapActions } from "vuex"
 	export default {
 		props: {
@@ -101,7 +101,7 @@
 						formData.append(key, value);
 					});
 					formData.append('formkey', this.$store.state.persist.v.formkey); // append auth'd user form key
-					HTTP({
+					axios({
 						method: 'post',
 						url: this.postUrl,
 						data: formData,

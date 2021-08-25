@@ -96,7 +96,7 @@
 
 <script>
 // Import components
-import { HTTP } from '@/helpers/http-common.js'
+import axios from 'axios'
 import { mapState, mapActions } from "vuex";
 
 import VSwatches from 'vue-swatches'
@@ -192,7 +192,7 @@ export default {
 			Object.entries(this.model).forEach(([key, value]) => {
 				formData.append(key, value);
 			});
-			HTTP({
+			axios({
 				method: 'post',
 				url: this.postUrl,
 				data: formData,

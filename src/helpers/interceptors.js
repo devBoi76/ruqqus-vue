@@ -1,10 +1,11 @@
-import { store } from '@/store';
-import { HTTP } from '@/helpers/http-common.js'
+import { store } from '@/store'
 import axios from 'axios' 
+
+axios.defaults.baseURL = `${import.meta.env.VITE_BASE_URL}/api/v2`;
 
 // Cancel Token Request Interceptor
 export default function setup() {
-	HTTP.interceptors.request.use(function (config) {
+	axios.interceptors.request.use(function (config) {
 	//  Generate cancel token source
 	let source = axios.CancelToken.source();
 	
