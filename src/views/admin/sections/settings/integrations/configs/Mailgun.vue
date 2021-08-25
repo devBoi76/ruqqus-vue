@@ -113,7 +113,7 @@
 													(required)
 												</span>
 											</label>
-											<input required class="form-input light" v-model="webhook" placeholder="Enter your Unsplash API key" type="text"/>
+											<input required class="form-input light" v-model="webhook" placeholder="Enter your Mailgun API key" type="text"/>
 											<p class="text-sm text-gray-500 mt-1">
 												Mailgun api keys are granted after you link a sub-domain in the Mailgun
 												<a href="https://mailgun.com/dashboard" target="_blank" class="hover:underline">
@@ -130,7 +130,7 @@
 													(required)
 												</span>
 											</label>
-											<input required class="form-input light" v-model="webhook" placeholder="Enter your Unsplash API key" type="text"/>
+											<input required class="form-input light" v-model="webhook" placeholder="e.g. mail.example.com" type="text"/>
 											<p class="text-sm text-gray-500 mt-1">
 												The custom sub-domain that you linked in the Mailgun dashboard
 											</p>
