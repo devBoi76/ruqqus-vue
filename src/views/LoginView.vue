@@ -96,7 +96,7 @@
 				site: {
 					unsplash: {
 						isActive: true,
-						query: 'dog'
+						query: 'code'
 					}
 				},
 				image: {},
