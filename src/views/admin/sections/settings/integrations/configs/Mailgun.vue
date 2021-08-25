@@ -116,7 +116,7 @@
 											<input required class="form-input light" v-model="webhook" placeholder="Enter your Mailgun API key" type="text"/>
 											<p class="text-sm text-gray-500 mt-1">
 												Mailgun api keys are granted after you link a sub-domain in the Mailgun
-												<a href="https://mailgun.com/dashboard" target="_blank" class="hover:underline">
+												<a href="https://app.mailgun.com/app/dashboard" target="_blank" class="hover:underline">
 													dashboard
 												</a>
 											</p>
