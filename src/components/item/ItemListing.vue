@@ -10,7 +10,7 @@
 						<!-- Author Avatar -->
 						<router-link :to="'/'+item.author.username" class="block md:hidden">
 							<img
-							v-lazy="item.author.profile_url"
+							:src="item.author.profile_url"
 							alt="avatar"
 							class="w-9 h-9 md:w-8 md:h-8 object-cover mr-2 rounded-sm bg-gray-100 dark:bg-gray-700"
 							/>
@@ -62,7 +62,7 @@
 				<!-- Image -->
 				<router-link v-if="item.is_image" :to="item.permalink" class="flex justify-center md:mt-2.5 md:px-2.5">
 					<img
-					v-lazy="item.url"
+					:src="item.url"
 					alt="Post image"
 					class="w-full h-full object-cover sm:rounded-sm bg-gray-200 dark:bg-white dark:bg-opacity-20"
 					/>

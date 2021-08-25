@@ -24,7 +24,7 @@
 			</div>
 			<div class="flex-shrink-0 pl-3 md:pl-4">
 				<!-- Thumbnail -->
-				<img v-if="thumbnail" v-lazy="thumbnail" class="w-14 md:w-20 h-14 flex-shrink-0 object-cover rounded-sm bg-gray-200 dark:bg-white dark:bg-opacity-20" alt="Link embed image"/>
+				<img v-if="thumbnail" :src="thumbnail" class="w-14 md:w-20 h-14 flex-shrink-0 object-cover rounded-sm bg-gray-200 dark:bg-white dark:bg-opacity-20" alt="Link embed image"/>
 				<!-- Fallback Icon -->
 				<div v-else class="flex items-center justify-center w-14 md:w-20 h-14 flex-shrink-0 rounded-sm bg-gradient-to-br from-primary to-secondary">
 					<i class="fas fa-link fa-lg text-white text-opacity-30"></i>

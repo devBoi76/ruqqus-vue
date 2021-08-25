@@ -82,9 +82,6 @@
       }
     },
     computed: {
-      darkMode() {
-        return this.$store.state.persist.darkMode
-      },
       voteType: {
         get() { // functional getter
           return this.$store.getters['items/getItemVoteType'](this.id); // pass item ID to get item vote integer
