@@ -227,7 +227,7 @@
 
 							<div>
 								<div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
-									Content Rating
+									Community Rating
 								</div>
 								<div class="sm:rounded-sm border-t border-b sm:border bg-white">
 									<div class="p-4">
@@ -245,28 +245,6 @@
 									</div>
 								</div>
 							</div>
-
-							<div>
-								<div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
-									Other
-								</div>
-								<div class="sm:rounded-sm border-t border-b sm:border bg-white">
-									<div class="p-4">
-										<div class="flex flex-grow items-center justify-between">
-											<div>
-												<div class="font-semibold leading-tight">
-													Disable Downvotes
-												</div>
-												<p class="text-sm text-gray-500 mt-1">
-													Removes downvote buttons from all content (posts and comments)
-												</p>
-											</div>
-											<Toggle v-model="s.canDownvote"/>
-										</div>
-									</div>
-								</div>
-							</div>
-
 						</div>
 					</div>
 				</div>

@@ -85,6 +85,17 @@
 									</div>
 									<Toggle v-model="s.canVote"/>
 								</div>
+								<div class="flex flex-grow items-center justify-between p-4">
+									<div>
+										<div class="font-semibold leading-tight">
+											Disable downvotes
+										</div>
+										<p class="text-sm text-gray-500 mt-1">
+											Remove downvote buttons from all content for all members
+										</p>
+									</div>
+									<Toggle v-model="s.canDownvote"/>
+								</div>
 							</div>
 						</div>
 					</div>
