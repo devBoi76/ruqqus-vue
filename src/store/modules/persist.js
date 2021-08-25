@@ -1,6 +1,6 @@
 const namespaced = true
 
-import { HTTP } from '@/helpers/http-common.js'
+import axios from 'axios'
 const state = {
 	site: {},
 	v: Object,
@@ -73,7 +73,7 @@ const actions = {
 	},
 	async getUser({ commit }, obj) {
 		commit('changeLoadingState', true)
-		return HTTP.get(obj.url_core)
+		return axios.get(obj.url_core)
 		.then(res => {
 			let data = res.data.u
 			console.log(data)
@@ -92,6 +92,9 @@ const actions = {
 	toggle_leftbar({commit}){
 		commit('UPDATE_LEFTBAR_COLLAPSE')
 	},
+	// register(){
+
+	// },
 	auth_v({commit}, form){
 		commit("changeLoadingState", true);
 
@@ -101,7 +104,7 @@ const actions = {
 		data.append('username', form.name);
 		data.append('password', form.password);
 
-		HTTP({
+		axios({
 			method: 'post',
 			url: '/login',
 			data: data,
@@ -109,6 +112,7 @@ const actions = {
 		})
 		.then(
 			function(response){
+
 				if (response.status === 200) {
 					commit("v", response.data.v);
 					commit("AUTHENTICATE", true);
@@ -145,7 +149,7 @@ const actions = {
 		data.append('time', state.v.time);
 		data.append('hash', state.v.hash);
 		data.append('2fa_token', form.mfa)
-		HTTP({
+		axios({
 			method: 'post',
 			url: '/login',
 			data: data,
@@ -160,7 +164,7 @@ const actions = {
 		})
 	},
 	logout({commit}){
-		HTTP({
+		axios({
 			method: 'post',
 			url: '/logout',
 		})
