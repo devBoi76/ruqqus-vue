@@ -223,6 +223,7 @@
 </template>
 
 <script>
+import { defineAsyncComponent } from 'vue'
 import { mapState, mapGetters } from "vuex";
 //import date-fns
 import { isValid, formatDistanceToNowStrict } from '../../../node_modules/date-fns';
