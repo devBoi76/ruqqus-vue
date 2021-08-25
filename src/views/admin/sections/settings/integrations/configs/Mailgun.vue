@@ -94,32 +94,49 @@
 								Configuration
 							</div>
 							<div class="relative rounded-sm border bg-white">
-								<div v-show="!isActive" class="absolute w-full h-full rounded-sm bg-white bg-opacity-90 backdrop-blur-sm z-10">
+								<div v-show="!isActive & !formVisible" class="absolute w-full h-full rounded-sm bg-white bg-opacity-90 backdrop-blur-sm z-10">
 									<div class="w-full h-full flex flex-col items-center justify-center">
 										<p class="text-gray-500">
 											You have not configured Mailgun with your site
 										</p>
-										<button class="button green500">
+										<button class="button green500" @click="toggleForm()">
 											Get started
 										</button>
 									</div>
 								</div>
-								<div class="divide-y">
+								<form class="divide-y">
 									<div class="grid grid-cols-3 gap-6 p-4">
 										<div class="col-span-3 sm:col-span-2">
 											<label class="label">
-												Webhook
+												API key
+												<span class="text-xs text-orange-500">
+													(required)
+												</span>
 											</label>
-											<input class="form-input light" v-model="webhook" placeholder="Enter your Mailgun account webhook" type="text"/>
+											<input required class="form-input light" v-model="webhook" placeholder="Enter your Unsplash API key" type="text"/>
 											<p class="text-sm text-gray-500 mt-1">
-												Webhooks can be found in
-												<a href="https://Mailgun.com/manage/webhooks" target="_blank" class="hover:underline">
-													Mailgun settings
+												Mailgun api keys are granted after you link a sub-domain in the Mailgun
+												<a href="https://mailgun.com/dashboard" target="_blank" class="hover:underline">
+													dashboard
 												</a>
 											</p>
 										</div>
 									</div>
-								</div>
+									<div class="grid grid-cols-3 gap-6 p-4">
+										<div class="col-span-3 sm:col-span-2">
+											<label class="label">
+												Mailgun domain
+												<span class="text-xs text-orange-500">
+													(required)
+												</span>
+											</label>
+											<input required class="form-input light" v-model="webhook" placeholder="Enter your Unsplash API key" type="text"/>
+											<p class="text-sm text-gray-500 mt-1">
+												The custom sub-domain that you linked in the Mailgun dashboard
+											</p>
+										</div>
+									</div>
+								</form>
 							</div>
 						</div>
 					</div>
@@ -134,6 +151,7 @@
 		name: "AdminIntegrationsMailgunView",
 		data() {
 			return {
+				formVisible: false,
 				isActive: false,
 				webhook: '',
 				hasDonationAttr: true,
@@ -145,6 +163,9 @@
 		components: {
 		},
 		methods: {
+			toggleForm() {
+				this.formVisible = !this.formVisible
+			}
 		// getGuildInfo() {
 		// 	let guild = this.$route.params.name;
 		// 	getGuild(guild)
