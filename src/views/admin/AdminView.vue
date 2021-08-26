@@ -25,10 +25,10 @@
 						</router-link>
 						<div class="pl-3">
 							<div class="text-gray-900 font-medium">
-								Community Name
+								{{ site.name }}
 							</div>
 							<div class="text-2xs text-gray-500">
-								503 members
+								{{ site.memberCount }}
 							</div>
 						</div>
 					</div>
@@ -162,10 +162,10 @@ export default {
 		}
 	},
 	computed: {
-		...mapState("persist",["v"])
-	},
-	created() {
-		document.documentElement.style.setProperty('--color-primary', `139, 92, 246`)
+		...mapState("persist",["v"]),
+		site() {
+			return this.$store.getters['persist/getSite'];
+		}
 	}
 }
 </script>

@@ -20,11 +20,7 @@ const state = {
 		canPost: true,
 		canComment: true,
 		canVote: true,
-		banner: {
-			image: 'https://i.imgur.com/AgS5BXJ.jpg',
-			title: 'Pied Piper',
-			subtitle: 'Know what has three commas in it?'
-		}
+		memberCount: 503
 	},
 	v: Object,
 	u: {},
