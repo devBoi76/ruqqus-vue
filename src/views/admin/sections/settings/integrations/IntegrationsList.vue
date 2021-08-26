@@ -37,7 +37,7 @@
 				<div class="md:grid md:grid-cols-3 md:gap-6">
 					<div class="md:col-span-3 space-y-8">
 						<div class="relative">
-							<div class="absolute top-0 -right-4 w-20 h-full bg-gradient-to-l from-gray-100 opacity-70"></div>
+							<div class="absolute top-0 -right-4 w-20 h-full bg-gradient-to-l from-gray-100"></div>
 							<div class="flex overflow-x-scroll scrollbar-hidden">
 								<ul class="flex flex-nowrap -m-2 mb-0 pr-8">
 									<li v-for="(item, index) in integrations" :key="index" v-show="!item.isActive" class="my-2 px-2 w-full w-72">
