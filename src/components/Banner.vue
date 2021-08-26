@@ -16,6 +16,11 @@
 			image: String,
 			title: String,
 			subtitle: String
+		},
+		computed: {
+			site() {
+				return this.$store.getters['persist/getSite']
+			}
 		}
 	}
 </script>
