@@ -116,8 +116,8 @@
 								<div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
 									Community Branding
 								</div>
-								<div class="sm:rounded-sm border-t border-b sm:border bg-white">
-									<div class="p-4 border-b">
+								<div class="sm:rounded-sm border-t border-b sm:border bg-white divide-y">
+									<div class="p-4">
 										<div class="flex items-center justify-between">
 											<div>
 												<div class="font-semibold leading-tight">
