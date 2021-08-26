@@ -338,6 +338,7 @@ export default {
 	},
 	created() {
 		this.site = Object.assign({}, this.$store.getters['persist/getSite']);
+		this.saved = Object.assign({}, this.site);
 	}
 };
 </script>
