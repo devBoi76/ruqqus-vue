@@ -303,7 +303,7 @@ export default {
 		return {
 			loading: false,
 			errored: false,
-			isDifferent: false,
+			isDifferent: false
 			site: {},
 			saved: {}
 		}
@@ -312,10 +312,8 @@ export default {
 		'site': { // get guild info and posts if guild changes
 			handler() {
 				console.log('site obj watcher triggered')
-				let diff = (JSON.stringify(this.site) !== JSON.stringify(this.saved))
-				this.isDifferent = diff
+				this.isDifferent = (JSON.stringify(this.site) !== JSON.stringify(this.saved))
 			},
-			immediate: true,
 			deep: true
 		}
 	},
@@ -340,11 +338,9 @@ export default {
 		}
 	},
 	created() {
-		const obj = this.$store.getters['persist/getSite']
-		this.site = {...obj}
+		this.site = {...this.$store.getters['persist/getSite']}
 		this.saved = {...this.site}
-		console.log(this.site)
-		console.log(this.saved)
+		this.isDifferent: false
 	}
 };
 </script>
