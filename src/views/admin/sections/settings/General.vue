@@ -314,6 +314,7 @@ export default {
 				let diff JSON.stringify(this.site) !== JSON.stringify(this.saved)
 				this.isDifferent = diff
 			},
+			immediate: true,
 			deep: true
 		}
 	},
