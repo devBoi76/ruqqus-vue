@@ -70,7 +70,7 @@
 															<label class="label">
 																Community name
 															</label>
-															<input class="form-input light" v-model="s.name" :placeholder="$route.params.name" type="text"/>
+															<input class="form-input light" v-model="site.name" :placeholder="$route.paramsite.name" type="text"/>
 															<p class="text-sm text-gray-500 mt-1">
 																This does not affect your community web address
 															</p>
@@ -82,9 +82,9 @@
 																<label class="label">
 																	Community tagline
 																</label>
-																<textarea class="form-textarea light" v-model="s.tagline" type="text" rows="3" maxlength="140" placeholder="A community residing on the world wide web."/>
-																<div v-if="s.tagline" class="absolute text-xs font-semibold text-gray-400 right-3 bottom-2" :class="{'text-red-500':s.tagline.length >= 140}">
-																	{{ 140 - s.tagline.length }}
+																<textarea class="form-textarea light" v-model="site.tagline" type="text" rows="3" maxlength="140" placeholder="A community residing on the world wide web."/>
+																<div v-if="site.tagline" class="absolute text-xs font-semibold text-gray-400 right-3 bottom-2" :class="{'text-red-500':site.tagline.length >= 140}">
+																	{{ 140 - site.tagline.length }}
 																</div>
 															</div>
 															<p class="text-sm text-gray-500 mt-1">
@@ -95,9 +95,9 @@
 <!-- 													<div class="grid grid-cols-3 gap-6">
 														<div class="col-span-3 sm:col-span-2">
 															<div class="relative">
-																<Editor @input="getEditorContent" v-model="s.description" :limit="5000" @click.prevent/>
-																<div v-if="s.description" class="absolute text-xs font-semibold text-gray-400 right-3 bottom-2" :class="{'text-red-500':s.description >= 1000}">
-																	{{ 1000 - s.description }}
+																<Editor @input="getEditorContent" v-model="site.description" :limit="5000" @click.prevent/>
+																<div v-if="site.description" class="absolute text-xs font-semibold text-gray-400 right-3 bottom-2" :class="{'text-red-500':site.description >= 1000}">
+																	{{ 1000 - site.description }}
 																</div>
 															</div>
 															<p class="text-sm text-gray-500 mt-1">
@@ -127,7 +127,7 @@
 													The artwork used to represent your community
 												</p>
 											</div>
-											<img :src="s.iconUrl" class="w-11 h-11 rounded-sm bg-gray-100 object-cover" alt="guild icon artwork"/>
+											<img :src="site.iconUrl" class="w-11 h-11 rounded-sm bg-gray-100 object-cover" alt="guild icon artwork"/>
 										</div>
 									</div>
 									<div class="p-4">
@@ -140,7 +140,7 @@
 													The cover artwork displayed across your community
 												</p>
 											</div>
-											<img :src="s.bannerUrl" class="w-48 h-11 rounded-sm bg-gray-100 object-cover" alt="guild cover artwork"/>
+											<img :src="site.bannerUrl" class="w-48 h-11 rounded-sm bg-gray-100 object-cover" alt="guild cover artwork"/>
 										</div>
 									</div>
 								</div>
@@ -174,9 +174,9 @@
 																Meta title
 															</label>
 															<div class="relative">
-																<input class="form-input light" v-model="s.meta.title" :placeholder="s.name" type="text"/>
-																<div v-if="s.meta.title.length" class="absolute text-xs font-semibold text-gray-400 right-3 bottom-2" :class="{'text-yellow-500':s.meta.title.length >= 60}">
-																	{{ 60 - s.meta.title.length }}
+																<input class="form-input light" v-model="site.meta.title" :placeholder="site.name" type="text"/>
+																<div v-if="site.meta.title.length" class="absolute text-xs font-semibold text-gray-400 right-3 bottom-2" :class="{'text-yellow-500':site.meta.title.length >= 60}">
+																	{{ 60 - site.meta.title.length }}
 																</div>
 															</div>
 															<p class="text-sm text-gray-500 mt-1">
@@ -190,9 +190,9 @@
 																<label class="label">
 																	Meta description
 																</label>
-																<textarea class="form-textarea light" v-model="s.meta.description" type="text" rows="3" maxlength="140" placeholder="A community residing on the world wide web."/>
-																<div v-if="s.meta.description.length" class="absolute text-xs font-semibold text-gray-400 right-3 bottom-2" :class="{'text-red-500':s.meta.description.length >= 140}">
-																	{{ 140 - s.meta.description.length }}
+																<textarea class="form-textarea light" v-model="site.meta.description" type="text" rows="3" maxlength="140" placeholder="A community residing on the world wide web."/>
+																<div v-if="site.meta.description.length" class="absolute text-xs font-semibold text-gray-400 right-3 bottom-2" :class="{'text-red-500':site.meta.description.length >= 140}">
+																	{{ 140 - site.meta.description.length }}
 																</div>
 															</div>
 															<p class="text-sm text-gray-500 mt-1">
@@ -207,13 +207,13 @@
 															</label>
 															<div class="p-5 bg-white border rounded">
 																<div class="text-xs text-gray-900 leading-tight mb-1">
-																	https://{{ s.domain }}
+																	https://{{ site.domain }}
 																</div>
 																<div class="text-[#1a0dab] text-xl font-medium">
-																	{{ s.meta.title || s.name }}
+																	{{ site.meta.title || site.name }}
 																</div>
 																<p class="text-sm text-gray-700 mt-1">
-																	{{ s.meta.description || `${s.name} - A community powered by Ruqqus` }}
+																	{{ site.meta.description || `${site.name} - A community powered by Ruqqus` }}
 																</p>
 															</div>
 														</div>
@@ -240,7 +240,7 @@
 													Enable if your community contains NSFW content suitable only for adults
 												</p>
 											</div>
-											<toggle v-model="s.isNsfw"/>
+											<toggle v-model="site.isNsfw"/>
 										</div>
 									</div>
 								</div>
@@ -275,23 +275,23 @@ export default {
 		}
 	},
 	computed: {
-		s() {
-			return this.$store.getters['persist/getSite'];
+		site() {
+			return thisite.$store.getters['persist/getSite'];
 		}
 	},
 	methods: {
 		// getGuildInfo() {
-		// 	let guild = this.$route.params.name
-		// 	this.$store.dispatch('guild/fetchGuild', guild)
+		// 	let guild = thisite.$route.paramsite.name
+		// 	thisite.$store.dispatch('guild/fetchGuild', guild)
 		// 	.then(() => {
 		// 		console.log("getGuild dispatch successful")
 		// 	})
 		// 	.catch(error => {
 		// 		console.error(error)
-		// 		this.errored = true
+		// 		thisite.errored = true
 
 		// 	})
-		// 	.finally(() => this.loading = false)
+		// 	.finally(() => thisite.loading = false)
 		// }
 	}
 };
