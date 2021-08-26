@@ -25,7 +25,7 @@ const state = {
 			title: 'Pied Piper',
 			subtitle: 'Know what has three commas in it?'
 		}
-	}
+	},
 	v: Object,
 	u: {},
 	loading: true,
