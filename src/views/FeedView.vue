@@ -1,6 +1,6 @@
 <template>
 	<div class="w-full overflow-y-auto">
-		<Banner/>
+		<Banner v-if="site.hasBanner"/>
 		<div class="grid grid-cols-12" :class="{ 'xl:grid-cols-10':isCard }">
 			<div class="col-span-full flex gap-6 sm:p-6 my-2.5 sm:my-0" :class="isCard ? 'xl:col-start-3 xl:col-end-9' : 'xl:col-start-2 xl:col-end-12'">
 
@@ -107,7 +107,7 @@
 <script>
 import { defineAsyncComponent } from 'vue'
 // Import our components
-import Banner from '@/components/Banner.vue';
+const Banner = defineAsyncComponent(() => import('@/components/Banner.vue'))
 const ItemList = defineAsyncComponent(() => import('@/views/ItemList.vue'))
 const ItemSort = defineAsyncComponent(() => import('@/components/dropdowns/ItemSort.vue'))
 const ListingToggle = defineAsyncComponent(() => import('@/components/forms/ListingToggle.vue'))
@@ -138,6 +138,9 @@ export default {
 	computed:{
 		...mapState("persist", ["is_authenticated", "v", "isCard"]),
 		...mapState("items", ["posts"]),
+		site() {
+			return this.$store.getters['persist/getSite'];
+		},
 		feedIcon() {
 			if (this.$route.name === 'HomeView') {
 				return 'fa-home-lg-alt'

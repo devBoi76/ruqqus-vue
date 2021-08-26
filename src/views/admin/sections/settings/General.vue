@@ -143,6 +143,32 @@
 											<img :src="site.cover" class="w-48 h-11 rounded-sm bg-gray-100 object-cover" alt="guild cover artwork"/>
 										</div>
 									</div>
+									<div class="p-4">
+										<div class="flex flex-grow items-center justify-between">
+											<div>
+												<div class="font-semibold leading-tight">
+													Display icon in site header
+												</div>
+												<p class="text-sm text-gray-500 mt-1">
+													Enable to display the site's icon in the navigation bar
+												</p>
+											</div>
+											<toggle v-model="site.hasIcon"/>
+										</div>
+									</div>
+									<div class="p-4">
+										<div class="flex flex-grow items-center justify-between">
+											<div>
+												<div class="font-semibold leading-tight">
+													Display cover artwork
+												</div>
+												<p class="text-sm text-gray-500 mt-1">
+													Enable to display the cover with the site name and tagline
+												</p>
+											</div>
+											<toggle v-model="site.hasBanner"/>
+										</div>
+									</div>
 								</div>
 							</div>
 

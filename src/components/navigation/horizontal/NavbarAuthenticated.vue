@@ -3,6 +3,7 @@
 		<div class="mx-auto px-4">
 			<div class="flex items-center justify-between h-12 sm:h-14">
 				<div class="flex flex-grow items-center">
+					<img v-if="site.hasIcon" :src="site.icon" class="w-10 h-10 rounded-sm bg-white bg-opacity-20 mr-3" alt="Community icon"/>
 					<div class="flex-shrink-0">
 						<router-link to="/" class="font-bold text-xl text-purple-500 tracking-wide">
 							{{ site.name }}

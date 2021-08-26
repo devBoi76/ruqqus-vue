@@ -15,6 +15,8 @@ const state = {
 		icon: 'https://i.imgur.com/2Ah9CcW.gif',
 		isNsfw: false,
 		isPrivate: true,
+		hasIcon: true,
+		hasBanner: true,
 		canDownvote: true,
 		canRegister: false,
 		canPost: true,
