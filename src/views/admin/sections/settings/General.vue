@@ -9,10 +9,10 @@
 						General
 					</h1>
 					<div class="flex items-center space-x-4">
-						<div v-show="changed" class="text-xs text-gray-400">
+						<div v-show="isDifferent" class="text-xs text-gray-400">
 							You have unsaved changes!
 						</div>
-						<button v-if="!loading && !errored" :disabled="!changed" class="button purple500" @click="save()">
+						<button v-if="!loading && !errored" :disabled="!isDifferent" class="button purple500" @click="save()">
 							Save
 						</button>
 					</div>
@@ -303,7 +303,7 @@ export default {
 		return {
 			loading: false,
 			errored: false,
-			changed: false,
+			isDifferent: false,
 			site: {},
 			saved: {}
 		}
@@ -311,7 +311,8 @@ export default {
 	watch: {
 		'site': { // get guild info and posts if guild changes
 			handler() {
-				this.changed = (JSON.stringify(this.site) !== JSON.stringify(this.saved))
+				let diff JSON.stringify(this.site) !== JSON.stringify(this.saved)
+				this.isDifferent = diff
 			},
 			deep: true
 		}
@@ -331,7 +332,7 @@ export default {
 		// 	.finally(() => this.site.loading = false)
 		// }
 		save() {
-			this.changed = false;
+			this.isDifferent = false;
 			this.saved = {...this.site}
 			this.$store.commit('persist/SET_SITE', {site: this.saved});
 		}
