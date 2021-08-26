@@ -337,6 +337,7 @@ export default {
 		}
 	},
 	created() {
+		console.log('test')
 		const obj = this.$store.getters['persist/getSite'
 		this.site = {...obj}
 		this.saved = {...this.site}
