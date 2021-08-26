@@ -2,7 +2,30 @@ const namespaced = true
 
 import axios from 'axios'
 const state = {
-	site: {},
+	site: {
+		domain: 'piedpiper.gg',
+		name: 'Pied Piper',
+		tagline: 'Know what has three commas in it?',
+		description: 'Know what has three commas in it?',
+		meta: {
+			title: 'Pied Piper - Middle-Out Compression',
+			description: 'Know what has three commas in it?'
+		},
+		cover: 'https://i.imgur.com/AgS5BXJ.jpg',
+		icon: 'https://i.imgur.com/2Ah9CcW.gif',
+		isNsfw: false,
+		isPrivate: true,
+		canDownvote: true,
+		canRegister: false,
+		canPost: true,
+		canComment: true,
+		canVote: true,
+		banner: {
+			image: 'https://i.imgur.com/AgS5BXJ.jpg',
+			title: 'Pied Piper',
+			subtitle: 'Know what has three commas in it?'
+		}
+	}
 	v: Object,
 	u: {},
 	loading: true,
@@ -18,7 +41,11 @@ const state = {
 	searchHistory: []
 }
 
-const getters = {}
+const getters = {
+	getSite(state) {
+		return state.site
+	}
+}
 
 const mutations = {
 	AUTHENTICATE(state, payload) {

@@ -276,7 +276,7 @@ export default {
 	},
 	computed: {
 		s() {
-			return this.$store.getters['site/getSite'];
+			return this.$store.getters['persist/getSite'];
 		}
 	},
 	methods: {

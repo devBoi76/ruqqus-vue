@@ -4,7 +4,9 @@
 			<div class="flex items-center justify-between h-12 sm:h-14">
 				<div class="flex flex-grow items-center">
 					<div class="flex-shrink-0">
-						<router-link to="/" class="font-bold text-xl text-purple-500 tracking-wide">ruqqus</router-link>
+						<router-link to="/" class="font-bold text-xl text-purple-500 tracking-wide">
+							{{ site.name }}
+						</router-link>
 					</div>
 					<div class="hidden md:block w-1/3">
 						<div class="ml-4 flex items-baseline space-x-4">
@@ -124,6 +126,9 @@
 		},
 		computed: {
 			...mapState("persist", ["v"]),
+			site() {
+				return this.$store.getters['persist/getSite'];
+			}
 		},
 		watch: {
 			isOpen: {

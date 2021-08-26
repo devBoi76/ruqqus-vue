@@ -4,7 +4,9 @@
 				<div class="flex items-center justify-between h-14">
 					<div class="flex flex-grow items-center">
 						<div class="flex-shrink-0">
-							<span class="font-bold text-xl text-purple-500 tracking-wide" @click.once="clicked = true">ruqqus</span>
+							<span class="font-bold text-xl text-purple-500 tracking-wide" @click.once="clicked = true">
+								{{ site.name }}
+							</span>
 						</div>
 					</div>
 					<!-- <div v-show="clicked" class="flex-grow-1">
@@ -96,6 +98,9 @@
 		},
 		computed: {
 			...mapState("persist", ["v"]),
+			site() {
+				return this.$store.getters['persist/getSite'];
+			}
 		},
 		methods: {
 			...mapActions("persist", ["logout"]),
