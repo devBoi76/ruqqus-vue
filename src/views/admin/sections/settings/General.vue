@@ -337,8 +337,11 @@ export default {
 		}
 	},
 	created() {
-		this.site = {...this.$store.getters['persist/getSite']}
+		const obj = this.$store.getters['persist/getSite'
+		this.site = {...obj}
 		this.saved = {...this.site}
+		console.table(this.site)
+		console.table(this.saved)
 	}
 };
 </script>
