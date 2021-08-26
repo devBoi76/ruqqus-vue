@@ -150,7 +150,7 @@
 													Display icon in site header
 												</div>
 												<p class="text-sm text-gray-500 mt-1">
-													Enable to display the site's icon in the navigation bar
+													Enable to display the icon in the navigation bar
 												</p>
 											</div>
 											<toggle v-model="site.hasIcon"/>
@@ -298,9 +298,19 @@ export default {
 		return {
 			loading: false,
 			errored: false,
-			site: {}
+			changed: false,
+			site: {},
+			saved: {}
 		}
 	},
+	watch: {
+		'site': { // get guild info and posts if guild changes
+			handler() {
+				this.changed = (JSON.stringify(this.s) !== JSON.stringify(this.saved))
+			},
+			deep: true
+		}
+	}
 	methods: {
 		// getGuildInfo() {
 		// 	let guild = this.site.$route.paramsite.name
@@ -315,6 +325,11 @@ export default {
 		// 	})
 		// 	.finally(() => this.site.loading = false)
 		// }
+		save() {
+			this.changed = false;
+			this.saved = Object.assign({}, this.site);
+			this.$store.commit('persist/SET_SITE', {site: this.saved});
+		}
 	},
 	created() {
 		this.site = Object.assign({}, this.$store.getters['persist/getSite']);

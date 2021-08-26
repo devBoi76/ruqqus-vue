@@ -64,8 +64,9 @@ const mutations = {
 		state.v = payload
 		console.log("v data: ", payload)
 	},
-	guilds(state, payload){
-		state.guilds = payload
+	SET_SITE: (state, site) => {
+		console.log(site)
+		state.site = Object.assign({}, site)
 	},
 	UPDATE_ISCARD(state) {
 		state.isCard = !state.isCard
