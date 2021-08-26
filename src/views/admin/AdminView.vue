@@ -22,7 +22,7 @@
 								{{ site.name }}
 							</div>
 							<div class="text-2xs text-gray-500">
-								{{ site.memberCount }}
+								{{ site.memberCount === 1 ? '1 member' : `${site.memberCount} members` }}
 							</div>
 						</div>
 					</div>
