@@ -15,14 +15,8 @@
 						</div>
 					</div>
 					<!-- Show this when guild data has loaded -->
-					<div v-if="v" class="flex items-center">
-						<router-link :to="v.permalink">
-							<img
-							:src="v.profile_url"
-							class="w-10 h-10 rounded-sm bg-white bg-opacity-20"
-							alt="Community icon"
-							/>
-						</router-link>
+					<div v-if="site" class="flex items-center">
+						<img :src="site.icon" class="w-10 h-10 rounded-sm bg-white bg-opacity-20" alt="Community icon"/>
 						<div class="pl-3">
 							<div class="text-gray-900 font-medium">
 								{{ site.name }}
