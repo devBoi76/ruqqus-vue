@@ -276,13 +276,13 @@ export default {
 	},
 	computed: {
 		site() {
-			return thisite.$store.getters['persist/getSite'];
+			return this.$store.getters['persist/getSite'];
 		}
 	},
 	methods: {
 		// getGuildInfo() {
-		// 	let guild = thisite.$route.paramsite.name
-		// 	thisite.$store.dispatch('guild/fetchGuild', guild)
+		// 	let guild = this.site.$route.paramsite.name
+		// 	this.site.$store.dispatch('guild/fetchGuild', guild)
 		// 	.then(() => {
 		// 		console.log("getGuild dispatch successful")
 		// 	})
@@ -291,7 +291,7 @@ export default {
 		// 		thisite.errored = true
 
 		// 	})
-		// 	.finally(() => thisite.loading = false)
+		// 	.finally(() => this.site.loading = false)
 		// }
 	}
 };
