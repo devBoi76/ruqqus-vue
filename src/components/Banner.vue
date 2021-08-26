@@ -5,7 +5,7 @@
 			{{ title || site.name }}
 		</h1>
 		<p class="z-10 text-white text-2xl sm:text-3xl text-opacity-80 max-w-[600px] mx-auto">
-			{{ subtitle || site.subtitle }}
+			{{ subtitle || site.tagline }}
 		</p>
 	</div>
 </template>
