@@ -297,12 +297,8 @@ export default {
 	data() {
 		return {
 			loading: false,
-			errored: false
-		}
-	},
-	computed: {
-		site() {
-			return this.$store.getters['persist/getSite'];
+			errored: false,
+			site: {}
 		}
 	},
 	methods: {
@@ -319,6 +315,11 @@ export default {
 		// 	})
 		// 	.finally(() => this.site.loading = false)
 		// }
+	},
+	created() {
+		created() {
+			this.site = Object.assign({}, this.$store.getters['persist/getSite']);
+		}
 	}
 };
 </script>
