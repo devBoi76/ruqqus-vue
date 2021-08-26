@@ -336,7 +336,7 @@ export default {
 			this.$store.commit('persist/SET_SITE', {site: this.saved});
 		}
 	},
-	created() {
+	mounted() {
 		console.log('test')
 		const obj = this.$store.getters['persist/getSite'
 		this.site = {...obj}
