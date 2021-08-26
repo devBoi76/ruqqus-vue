@@ -38,11 +38,10 @@
 					<div class="md:col-span-3 space-y-8">
 						<div class="relative">
 							<div class="absolute top-0 -right-4 w-20 h-full bg-gradient-to-l from-gray-100"></div>
-							<div class="absolute top-0 left-0 w-10 h-full bg-gradient-to-r from-gray-100"></div>
 							<div class="flex overflow-x-scroll scrollbar-hidden">
 								<ul class="flex flex-nowrap mb-0">
 									<li v-for="(item, index) in integrations" :key="index" v-show="!item.isActive" class="my-2 px-2 w-full w-72">
-										<div class="flex flex-col justify-between h-full sm:p-4 p-5 bg-white border rounded-sm transition-all duration-100 hover:shadow-lg">
+										<div class="flex flex-col justify-between h-full sm:p-4 p-5 bg-white border rounded-sm">
 											<div class="flex flex-col items-center mb-4">
 												<img :src="item.logo" class="w-9 h-9 object-cover"/>
 												<div class="text-center mt-2">
