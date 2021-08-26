@@ -8,9 +8,14 @@
 					<h1 class="text-2xl mb-0">
 						General
 					</h1>
-					<button v-if="!loading && !errored" class="button purple500">
-						Save
-					</button>
+					<div class="flex items-center space-x-4">
+						<div v-show="changed" class="text-xs text-gray-400">
+							You have unsaved changes!
+						</div>
+						<button v-if="!loading && !errored" :disabled="!changed" class="button purple500" @click="save()">
+							Save
+						</button>
+					</div>
 				</div>
 			</div>
 		</div>
