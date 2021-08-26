@@ -337,7 +337,7 @@ export default {
 		}
 	},
 	created() {
-		this.site = Object.assign({}, this.$store.getters['persist/getSite']);
+		this.site = Object.assign({}, this.$store.store['persist/site']);
 		this.saved = Object.assign({}, this.site);
 	}
 };
