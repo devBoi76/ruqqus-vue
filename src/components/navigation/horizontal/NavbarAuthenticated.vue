@@ -6,7 +6,7 @@
 					<img v-if="site.hasIcon" :src="site.icon" class="w-10 h-10 rounded-sm bg-white bg-opacity-20 mr-3" alt="Community icon"/>
 					<div class="flex-shrink-0">
 						<router-link to="/" class="font-bold text-xl text-purple-500 tracking-wide">
-							{{ site.name }}
+							{{ site.name }} {{ site.hasIcon }}
 						</router-link>
 					</div>
 					<div class="hidden md:block w-1/3">
