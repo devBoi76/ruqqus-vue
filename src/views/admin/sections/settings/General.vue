@@ -310,7 +310,7 @@ export default {
 			},
 			deep: true
 		}
-	}
+	},
 	methods: {
 		// getGuildInfo() {
 		// 	let guild = this.site.$route.paramsite.name
