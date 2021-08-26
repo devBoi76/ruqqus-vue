@@ -340,8 +340,8 @@ export default {
 		const obj = this.$store.getters['persist/getSite'
 		this.site = {...obj}
 		this.saved = {...this.site}
-		console.table(this.site)
-		console.table(this.saved)
+		console.log(this.site)
+		console.log(this.saved)
 	}
 };
 </script>
