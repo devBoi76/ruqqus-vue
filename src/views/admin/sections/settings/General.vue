@@ -317,9 +317,7 @@ export default {
 		// }
 	},
 	created() {
-		created() {
-			this.site = Object.assign({}, this.$store.getters['persist/getSite']);
-		}
+		this.site = Object.assign({}, this.$store.getters['persist/getSite']);
 	}
 };
 </script>
