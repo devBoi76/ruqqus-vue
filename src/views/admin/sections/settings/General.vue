@@ -303,7 +303,7 @@ export default {
 		return {
 			loading: false,
 			errored: false,
-			isDifferent: false
+			isDifferent: false,
 			site: {},
 			saved: {}
 		}
@@ -340,7 +340,7 @@ export default {
 	created() {
 		this.site = {...this.$store.getters['persist/getSite']}
 		this.saved = {...this.site}
-		this.isDifferent: false
+		this.isDifferent = false
 	}
 };
 </script>
