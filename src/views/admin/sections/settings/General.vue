@@ -332,13 +332,13 @@ export default {
 		// }
 		save() {
 			this.changed = false;
-			this.saved = Object.assign({}, this.site);
+			this.saved = {...this.site}
 			this.$store.commit('persist/SET_SITE', {site: this.saved});
 		}
 	},
 	created() {
-		this.site = Object.assign({}, this.$store.store['persist/site']);
-		this.saved = Object.assign({}, this.site);
+		this.site = {...this.$store.getters['persist/getSite']}
+		this.saved = {...this.site}
 	}
 };
 </script>
