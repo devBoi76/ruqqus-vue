@@ -38,6 +38,7 @@
 					<div class="md:col-span-3 space-y-8">
 						<div class="relative flex overflow-x-scroll scrollbar-hidden">
 							<div class="absolute top-0 -right-4 w-20 bg-gradient-to-r from-white"></div>
+							<div class="absolute top-0 left-0 w-10 bg-gradient-to-l from-white"></div>
 							<ul class="flex flex-nowrap mb-0">
 								<li v-for="(item, index) in integrations" :key="index" v-show="!item.isActive" class="my-2 px-2 w-full overflow-hidden w-72">
 									<div class="flex flex-col justify-between h-full sm:p-4 p-5 bg-white border rounded-sm">
