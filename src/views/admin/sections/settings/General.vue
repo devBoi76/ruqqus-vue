@@ -311,6 +311,7 @@ export default {
 	watch: {
 		'site': { // get guild info and posts if guild changes
 			handler() {
+				console.log('site obj watcher triggered')
 				let dif = (JSON.stringify(this.site) !== JSON.stringify(this.saved))
 				this.isDifferent = diff
 			},
