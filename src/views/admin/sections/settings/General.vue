@@ -311,7 +311,7 @@ export default {
 	watch: {
 		'site': { // get guild info and posts if guild changes
 			handler() {
-				this.changed = (JSON.stringify(this.s) !== JSON.stringify(this.saved))
+				this.changed = (JSON.stringify(this.site) !== JSON.stringify(this.saved))
 			},
 			deep: true
 		}
