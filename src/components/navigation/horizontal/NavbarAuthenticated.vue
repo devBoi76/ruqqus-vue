@@ -1,6 +1,6 @@
 <template>
 	<nav class="fixed w-full bg-white sm:border-b dark:bg-gray-800 dark:border-gray-700 dark:border-opacity-70 z-100">
-		<div class="mx-auto px-4">
+		<div class="mx-auto px-4 md:px-6">
 			<div class="flex items-center justify-between h-12 sm:h-14">
 				<div class="flex flex-grow items-center">
 					<img v-if="site.hasIcon" :src="site.icon" class="w-10 h-10 rounded-sm bg-white bg-opacity-20 mr-3" alt="Community icon"/>
