@@ -64,6 +64,7 @@ const AdminTitlesView = () => import ('../views/admin/sections/manage/Titles.vue
 // Integrations
 const AdminIntegrationsView = () => import ('../views/admin/sections/settings/integrations/Integrations.vue')
 const AdminIntegrationsListView = () => import ('../views/admin/sections/settings/integrations/IntegrationsList.vue')
+const AdminIntegrationStripeView = () => import ('../views/admin/sections/settings/integrations/configs/Stripe.vue')
 const AdminIntegrationKoFiView = () => import ('../views/admin/sections/settings/integrations/configs/Ko-Fi.vue')
 const AdminIntegrationMailgunView = () => import ('../views/admin/sections/settings/integrations/configs/Mailgun.vue')
 const AdminIntegrationPayPalView = () => import ('../views/admin/sections/settings/integrations/configs/PayPal.vue')
@@ -156,6 +157,7 @@ const routes = [
 				path: '/admin/integrations', component: AdminIntegrationsView, props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false},
 				children: [
 				{ path: '', component: AdminIntegrationsListView, name: 'admin-integrations-list-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
+				{ path: '/admin/integrations/stripe', component: AdminIntegrationStripeView, name: 'admin-integration-stripe-view', meta: {requiresAuth: true, dropImage: false} },
 				{ path: '/admin/integrations/ko-fi', component: AdminIntegrationKoFiView, name: 'admin-integration-kofi-view', meta: {requiresAuth: true, dropImage: false} },
 				{ path: '/admin/integrations/mailgun', component: AdminIntegrationMailgunView, name: 'admin-integration-mailgun-view', meta: {requiresAuth: true, dropImage: false} },
 				{ path: '/admin/integrations/paypal', component: AdminIntegrationPayPalView, name: 'admin-integration-paypal-view', meta: {requiresAuth: true, dropImage: false} },
