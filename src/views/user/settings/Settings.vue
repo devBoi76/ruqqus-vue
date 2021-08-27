@@ -39,13 +39,62 @@
                 </div>
               </div>
               <div class="z-10 ml-4 pt-3 font-bold text-lg text-white" :class="{'text-opacity-30':editAppearance}">
-              {{ v.username }}
-            </div>
+                {{ v.username }}
+              </div>
             </div>
           </div>
           <div>
-            <div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
-              Profile
+            <div class="flex justify-between">
+              <div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
+                Profile
+              </div>
+              <div class="text-xs text-gray-400">
+                <i class="far fa-globe-americas fa-sm pr-1"></i>
+                <span>
+                  Visible to everyone
+                </span>
+              </div>
+            </div>
+            <form class="rounded-sm border bg-white divide-y">
+              <div class="grid grid-cols-3 gap-6 p-4">
+                <div class="col-span-3">
+                  <label class="label">
+                    Display name
+                  </label>
+                  <input required class="form-input light" v-model="webhook" :placeholder="v.username" type="text"/>
+                  <p class="text-sm text-gray-500 mt-1">
+                    Your original username will always stay reserved for you:
+                    <span class="text-primary">
+                      {{ v.username }}
+                    </span>
+                  </p>
+                </div>
+              </div>
+              <div class="grid grid-cols-3 gap-6 p-4">
+                <div class="col-span-3">
+                  <label class="label">
+                    Bio
+                  </label>
+                  <Editor @input="getEditorContent()" min-height="10rem" :limit="1000" :value="bio"/>
+                  <p class="text-sm text-gray-500 mt-1">
+                    <i class="fab fa-markdown fa-fw fa-sm"></i>
+                    markdown supported
+                  </p>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div>
+            <div class="flex justify-between">
+              <div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
+                Security
+              </div>
+              <div class="text-xs text-gray-400">
+                <i class="far fa-lock-alt fa-sm pr-1"></i>
+                <span>
+                  Only you can see these details
+                </span>
+              </div>
             </div>
             <form class="rounded-sm border bg-white divide-y">
               <div class="grid grid-cols-3 gap-6 p-4">
