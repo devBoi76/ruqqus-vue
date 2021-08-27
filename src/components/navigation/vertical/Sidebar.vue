@@ -7,7 +7,7 @@
 
 			<slot name="header" v-if="!stickyHeader"/>
 
-			<ul v-for="(section, index) in menu" :key="index" class="-mt-2 mb-5 last:mb-0 list-unstyled border-gray-200 dark:border-white-13" :class="{'pb-2 border-b':section.divider}">
+			<ul v-for="(section, index) in menu" :key="index" class="-mt-2 mb-8 last:mb-0 list-unstyled border-gray-200 dark:border-white-13" :class="{'pb-2 border-b':section.divider}">
 				<li v-if="section.header" class="z-10 sticky -top-4 py-2 dark:bg-gray-750 dark:border-white-13" :class="`bg-${sidebarColor}`">
 					<div class="px-4 uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-700">
 						{{ section.name }}
