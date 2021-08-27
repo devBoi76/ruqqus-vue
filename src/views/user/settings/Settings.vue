@@ -38,7 +38,9 @@
                   </button>
                 </div>
               </div>
-              <div class="z-10 ml-4 pt-3 font-bold text-lg text-white" :class="{'text-opacity-30':editAppearance}">{{ v.username }}</div>
+              <div class="z-10 ml-4 pt-3 font-bold text-lg text-white" :class="{'text-opacity-30':editAppearance}">
+              {{ v.username }}
+            </div>
             </div>
           </div>
           <div>
@@ -51,7 +53,7 @@
                   <label class="label">
                     Display name
                   </label>
-                  <input required class="form-input light" v-model="webhook" placeholder="Enter your Unsplash API key" type="text"/>
+                  <input required class="form-input light" v-model="webhook" :placeholder="v.username" type="text"/>
                   <p class="text-sm text-gray-500 mt-1">
                     Your original username will always stay reserved for you:
                     <span class="text-primary">
