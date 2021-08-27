@@ -36,7 +36,7 @@ module.exports = {
 			transparent: 'transparent',
 			black: colors.black,
 			white: colors.white,
-			gray: colors.trueGray,
+			gray: colors.blueGray,
 			red: colors.red,
 			blue: colors.lightBlue,
 			yellow: colors.yellow,
@@ -45,7 +45,7 @@ module.exports = {
 			teal: colors.teal,
 			cyan: colors.cyan,
 			indigo: colors.indigo,
-			purple: colors.indigo,
+			purple: colors.violet,
 			fuchsia: colors.fuchsia,
 			pink: colors.pink
 		},
