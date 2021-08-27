@@ -21,7 +21,7 @@
 					</div>
 					<div v-if="!item.header">
 						<router-link custom :to="item.route" v-slot="{ href, navigate, isActive }">
-							<a :href="href" @click="navigate" class="relative block px-6 py-1.5 text-left transition duration-100" :class="isActive ? 'text-white font-medium bg-purple-300' : 'text-gray-700 hover:bg-gray-100'">
+							<a :href="href" @click="navigate" class="relative block px-6 py-1.5 text-left transition duration-100" :class="isActive ? 'text-white font-medium bg-primary bg-opacit-40' : 'text-gray-700 hover:bg-gray-100'">
 								<span v-if="!item.icon">
 									<img
 									:id="item.id"
