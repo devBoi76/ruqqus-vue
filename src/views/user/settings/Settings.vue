@@ -62,7 +62,7 @@
                     Display name
                   </label>
                   <input required class="form-input light" v-model="webhook" :placeholder="v.username" type="text"/>
-                  <p class="text-sm text-gray-500 mt-1">
+                  <p class="text-sm text-gray-500 mt-1 md:w-3/4">
                     Your original username will always stay reserved for you:
                     <span class="text-primary">
                       {{ v.username }}
@@ -76,7 +76,7 @@
                     Bio
                   </label>
                   <Editor @input="getEditorContent()" min-height="10rem" :limit="1000" :value="bio"/>
-                  <p class="text-sm text-gray-500 mt-1">
+                  <p class="text-sm text-gray-500 mt-1 md:w-3/4">
                     <i class="fab fa-markdown fa-fw fa-sm"></i>
                     markdown supported
                   </p>
@@ -100,16 +100,26 @@
               <div class="grid grid-cols-3 gap-6 p-4">
                 <div class="col-span-3">
                   <label class="label">
-                    Display name
+                    Email
                   </label>
-                  <input required class="form-input light" v-model="webhook" :placeholder="v.username" type="text"/>
-                  <p class="text-sm text-gray-500 mt-1">
-                    Your original username will always stay reserved for you:
-                    <span class="text-primary">
-                      {{ v.username }}
-                    </span>
+                  <input required class="form-input light" v-model="v.email" :placeholder="v.email || `john@example.com`" type="email"/>
+                  <p class="text-sm text-gray-500 mt-1 md:w-3/4">
+                    Used for password resets and announcements (optional)
                   </p>
                 </div>
+                <div class="col-span-3 sm:col-span-2" :class="{'opacity-50 pointer-events-none':!v.email}">
+                    <div class="flex flex-grow items-center justify-between">
+                      <div>
+                        <div class="font-semibold leading-tight">
+                          Subscribe to email alerts
+                        </div>
+                        <p class="text-sm text-gray-500 mt-1">
+                          Receive official site announcements over email
+                        </p>
+                      </div>
+                      <Toggle v-model="isEmailSubscribed"/>
+                    </div>
+                  </div>
               </div>
               <div class="grid grid-cols-3 gap-6 p-4">
                 <div class="col-span-3">
@@ -117,7 +127,7 @@
                     Bio
                   </label>
                   <Editor @input="getEditorContent()" min-height="10rem" :limit="1000" :value="bio"/>
-                  <p class="text-sm text-gray-500 mt-1">
+                  <p class="text-sm text-gray-500 mt-1 md:w-3/4">
                     <i class="fab fa-markdown fa-fw fa-sm"></i>
                     markdown supported
                   </p>
@@ -137,7 +147,7 @@
                       <div class="font-semibold leading-tight">
                         Private profile
                       </div>
-                      <p class="text-sm text-gray-500 mt-1">
+                      <p class="text-sm text-gray-500 mt-1 md:w-3/4">
                         Cloak your post and comment history from others. We will also ask search engines to not index your profile page (your content will still be accessible via direct link).
                       </p>
                     </div>
@@ -152,7 +162,7 @@
                       <div class="font-semibold leading-tight">
                         Disable followers
                       </div>
-                      <p class="text-sm text-gray-500 mt-1">
+                      <p class="text-sm text-gray-500 mt-1 md:w-3/4">
                         Prevent others from following you
                       </p>
                     </div>
@@ -180,7 +190,8 @@ export default {
   data() {
     return {
       editAppearance: false,
-      bio: ''
+      bio: '',
+      isEmailSubscribed: false
     }
   },
   components: {
