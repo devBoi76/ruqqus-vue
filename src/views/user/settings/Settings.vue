@@ -97,12 +97,17 @@
 // Import Components
 import { mapState } from 'vuex';
 
+import Toggle from "@/components/forms/Toggle.vue";
+
 export default {
   name: "UserSettingsView",
   data() {
     return {
       editAppearance: false
     }
+  },
+  components: {
+    Toggle
   },
   computed: {
     ...mapState("persist", ["v"])
