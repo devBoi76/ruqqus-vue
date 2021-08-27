@@ -44,46 +44,44 @@
 				</div>
 			</div>
 
-			<div v-if="!loading && !errored" class="col-span-full 2xl:col-start-2 2xl:col-end-10">
-				<div class="p-4">
-					<div class="md:grid md:grid-cols-3 md:gap-6">
-						<div class="mt-5 md:mt-0 md:col-span-3 space-y-8">
+			<div v-if="!loading && !errored" class="col-span-full 2xl:col-start-2 2xl:col-end-10 p-4 md:px-8">
+				<div class="md:grid md:grid-cols-3 md:gap-6">
+					<div class="mt-5 md:mt-0 md:col-span-3 space-y-8">
 
-							<div>
-								<div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
-									Community Privacy
-								</div>
-								<div class="sm:rounded-sm border-t border-b sm:border bg-white">
-									<div class="p-4 border-b">
-										<div class="flex flex-grow items-center justify-between">
-											<div>
-												<div class="font-semibold leading-tight">
-													Make this community private
-												</div>
-												<p class="text-sm text-gray-500 mt-1">
-													Require an account to view your community
-												</p>
+						<div>
+							<div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
+								Community Privacy
+							</div>
+							<div class="sm:rounded-sm border-t border-b sm:border bg-white">
+								<div class="p-4 border-b">
+									<div class="flex flex-grow items-center justify-between">
+										<div>
+											<div class="font-semibold leading-tight">
+												Make this community private
 											</div>
-											<Toggle v-model="s.isPrivate"/>
+											<p class="text-sm text-gray-500 mt-1">
+												Require an account to view your community
+											</p>
 										</div>
+										<Toggle v-model="s.isPrivate"/>
 									</div>
-									<div class="p-4">
-										<div class="flex flex-grow items-center justify-between">
-											<div>
-												<div class="font-semibold leading-tight">
-													Disable sign ups
-												</div>
-												<p class="text-sm text-gray-500 mt-1">
-													Disable any new account creation
-												</p>
+								</div>
+								<div class="p-4">
+									<div class="flex flex-grow items-center justify-between">
+										<div>
+											<div class="font-semibold leading-tight">
+												Disable sign ups
 											</div>
-											<Toggle v-model="s.canRegister"/>
+											<p class="text-sm text-gray-500 mt-1">
+												Disable any new account creation
+											</p>
 										</div>
+										<Toggle v-model="s.canRegister"/>
 									</div>
 								</div>
 							</div>
-
 						</div>
+
 					</div>
 				</div>
 			</div>

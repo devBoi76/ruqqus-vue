@@ -48,90 +48,88 @@
 				<div class="rounded-sm bg-gray-200 dark:bg-white dark:bg-opacity-20 w-full h-20"></div>
 			</div>
 		</div>
-		<div v-if="!loading && !errored" class="col-span-full 2xl:col-start-2 2xl:col-end-10">
-			<div class="p-4">
-				<div class="md:grid md:grid-cols-3 md:gap-6">
-					<div class="md:col-span-3 space-y-8">
-						<div class="pb-4 border-b">
-							<div class="flex">
-								<div class="flex flex-col flex-shrink-0">
-									<img src="https://i.imgur.com/LzxXK3K.png" class="w-20 h-20 md:w-32 md:h-32 object-contain p-4 bg-white border rounded shadow-inner" alt="stripe logo"/>
+		<div v-if="!loading && !errored" class="col-span-full 2xl:col-start-2 2xl:col-end-10 p-4 md:px-8">
+			<div class="md:grid md:grid-cols-3 md:gap-6">
+				<div class="md:col-span-3 space-y-8">
+					<div class="pb-4 border-b">
+						<div class="flex">
+							<div class="flex flex-col flex-shrink-0">
+								<img src="https://i.imgur.com/LzxXK3K.png" class="w-20 h-20 md:w-32 md:h-32 object-contain p-4 bg-white border rounded shadow-inner" alt="stripe logo"/>
+							</div>
+							<div class="pl-4">
+								<div class="h4 font-semibold">
+									Stripe
 								</div>
-								<div class="pl-4">
-									<div class="h4 font-semibold">
-										Stripe
-									</div>
-									<span class="px-2 mb-2 inline-flex uppercase tracking-wide text-2xs leading-5 font-medium rounded-sm bg-gray-200 text-gray-800">
-										finance
-									</span>
-									<p class="text-gray-900">
-										Create subscriptions or send invoices in a few clicks or lines of code.
-									</p>
-									<ul class="flex flex-wrap leading-4 space-x-4" role="none">
-										<li class="" role="none">
-											<span class="font-semibold text-sm text-gray-700">
-												Website
-											</span>
-											<a href="https://stripe.com" class="text-xs text-gray-500 hover:underline pl-1" role="none">
-												stripe.com
-											</a>
-										</li>
-										<li class="" role="none">
-											<span class="font-semibold text-sm text-gray-700">
-												Docs
-											</span>
-											<a href="https://stripe.com/docs" class="text-xs text-gray-500 hover:underline pl-1" role="none">
-												stripe.com/docs
-											</a>
-										</li>
-									</ul>
-								</div>
+								<span class="px-2 mb-2 inline-flex uppercase tracking-wide text-2xs leading-5 font-medium rounded-sm bg-gray-200 text-gray-800">
+									finance
+								</span>
+								<p class="text-gray-900">
+									Create subscriptions or send invoices in a few clicks or lines of code.
+								</p>
+								<ul class="flex flex-wrap leading-4 space-x-4" role="none">
+									<li class="" role="none">
+										<span class="font-semibold text-sm text-gray-700">
+											Website
+										</span>
+										<a href="https://stripe.com" class="text-xs text-gray-500 hover:underline pl-1" role="none">
+											stripe.com
+										</a>
+									</li>
+									<li class="" role="none">
+										<span class="font-semibold text-sm text-gray-700">
+											Docs
+										</span>
+										<a href="https://stripe.com/docs" class="text-xs text-gray-500 hover:underline pl-1" role="none">
+											stripe.com/docs
+										</a>
+									</li>
+								</ul>
 							</div>
 						</div>
+					</div>
 
-						<div>
-							<div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
-								Configuration
+					<div>
+						<div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
+							Configuration
+						</div>
+						<div class="relative rounded-sm border bg-white">
+							<div v-show="!isActive" class="absolute w-full h-full rounded-sm bg-white bg-opacity-90 backdrop-blur-sm z-10">
+								<div class="w-full h-full flex flex-col items-center justify-center">
+									<p class="text-gray-500">
+										You have not configured Stripe with your site
+									</p>
+									<button class="button green500">
+										Get started
+									</button>
+								</div>
 							</div>
-							<div class="relative rounded-sm border bg-white">
-								<div v-show="!isActive" class="absolute w-full h-full rounded-sm bg-white bg-opacity-90 backdrop-blur-sm z-10">
-									<div class="w-full h-full flex flex-col items-center justify-center">
-										<p class="text-gray-500">
-											You have not configured Stripe with your site
+							<div class="divide-y">
+								<div class="grid grid-cols-3 gap-6 p-4">
+									<div class="col-span-3 sm:col-span-2">
+										<label class="label">
+											Webhook
+										</label>
+										<input class="form-input light" v-model="webhook" placeholder="Enter your Stripe account webhook" type="text"/>
+										<p class="text-sm text-gray-500 mt-1">
+											Webhooks can be found in
+											<a href="https://Stripe.com/manage/webhooks" target="_blank" class="hover:underline">
+												Stripe settings
+											</a>
 										</p>
-										<button class="button green500">
-											Get started
-										</button>
 									</div>
 								</div>
-								<div class="divide-y">
-									<div class="grid grid-cols-3 gap-6 p-4">
-										<div class="col-span-3 sm:col-span-2">
-											<label class="label">
-												Webhook
-											</label>
-											<input class="form-input light" v-model="webhook" placeholder="Enter your Stripe account webhook" type="text"/>
-											<p class="text-sm text-gray-500 mt-1">
-												Webhooks can be found in
-												<a href="https://Stripe.com/manage/webhooks" target="_blank" class="hover:underline">
-													Stripe settings
-												</a>
-											</p>
-										</div>
-									</div>
-									<div class="grid grid-cols-3 gap-6 p-4">
-										<div class="col-span-3">
-											<div class="flex flex-grow items-center justify-between">
-												<div>
-													<div class="font-semibold leading-tight">
-														Designate users who donate
-													</div>
-													<p class="text-sm text-gray-500 mt-1">
-														Applies a 'hasDonated' attribute to members who have donated via Stripe
-													</p>
+								<div class="grid grid-cols-3 gap-6 p-4">
+									<div class="col-span-3">
+										<div class="flex flex-grow items-center justify-between">
+											<div>
+												<div class="font-semibold leading-tight">
+													Designate users who donate
 												</div>
-												<Toggle v-model="hasDonationAttr"/>
+												<p class="text-sm text-gray-500 mt-1">
+													Applies a 'hasDonated' attribute to members who have donated via Stripe
+												</p>
 											</div>
+											<Toggle v-model="hasDonationAttr"/>
 										</div>
 									</div>
 								</div>

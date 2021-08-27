@@ -32,73 +32,71 @@
 				<div class="rounded-sm bg-gray-200 dark:bg-white dark:bg-opacity-20 w-full h-20"></div>
 			</div>
 		</div>
-		<div v-if="!loading && !errored" class="col-span-full 2xl:col-start-2 2xl:col-end-10">
-			<div class="p-4">
-				<div class="md:grid md:grid-cols-3 md:gap-6">
-					<div class="md:col-span-3 space-y-8">
-						<div class="relative">
-							<div class="absolute top-0 -right-4 w-20 h-full bg-gradient-to-l from-white"></div>
-							<div class="flex overflow-x-scroll scrollbar-hidden">
-								<ul class="flex flex-nowrap -m-2 mb-0 pr-8">
-									<li v-for="(item, index) in integrations" :key="index" v-show="!item.isActive" class="my-2 px-2 w-full w-72">
-										<div class="flex flex-col justify-between h-full sm:p-4 p-5 bg-white border rounded-sm">
-											<div class="flex flex-col items-center mb-4">
-												<img :src="item.logo" class="w-auto h-9 object-cover"/>
-												<div class="text-center mt-2">
-													<div class="font-semibold">
-														{{ item.name }}
-													</div>
-													<p class="text-sm text-gray-500 mt-1">
-														{{ item.description }}
-													</p>
+		<div v-if="!loading && !errored" class="col-span-full 2xl:col-start-2 2xl:col-end-10 p-4 md:px-8">
+			<div class="md:grid md:grid-cols-3 md:gap-6">
+				<div class="md:col-span-3 space-y-8">
+					<div class="relative">
+						<div class="absolute top-0 -right-4 w-20 h-full bg-gradient-to-l from-white"></div>
+						<div class="flex overflow-x-scroll scrollbar-hidden">
+							<ul class="flex flex-nowrap -m-2 mb-0 pr-8">
+								<li v-for="(item, index) in integrations" :key="index" v-show="!item.isActive" class="my-2 px-2 w-full w-72">
+									<div class="flex flex-col justify-between h-full sm:p-4 p-5 bg-white border rounded-sm">
+										<div class="flex flex-col items-center mb-4">
+											<img :src="item.logo" class="w-auto h-9 object-cover"/>
+											<div class="text-center mt-2">
+												<div class="font-semibold">
+													{{ item.name }}
 												</div>
+												<p class="text-sm text-gray-500 mt-1">
+													{{ item.description }}
+												</p>
 											</div>
-											<router-link :to="`/admin/integrations/${item.name}`" custom v-slot="{ navigate }">
-												<button class="button green500" @click="navigate" @keypress.enter="navigate" role="link">
-													Connect
-												</button>
-											</router-link>
 										</div>
-									</li>
-								</ul>
+										<router-link :to="`/admin/integrations/${item.name}`" custom v-slot="{ navigate }">
+											<button class="button green500" @click="navigate" @keypress.enter="navigate" role="link">
+												Connect
+											</button>
+										</router-link>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div>
+						<div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
+							Your Integrations
+						</div>
+						<div v-if="activeIntegrations.length" class="sm:rounded-sm border-t border-b sm:border bg-white hover:bg-gray-50 divide-y">
+							<div v-for="(item, index) in activeIntegrations" :key="index" class="flex items-center justify-between px-4 py-3">
+								<div class="flex items-center">
+									<img :src="item.logo" class="w-9 h-9 object-cover"/>
+									<div class="pl-4 pr-8">
+										<div class="flex items-center">
+											<span class="font-semibold">
+												{{ item.name }}
+											</span>
+											<span class="ml-2 px-2 inline-flex text-xs leading-5 font-medium rounded-sm bg-green-100 text-green-800">
+												active
+											</span>
+										</div>
+										<p class="text-sm text-gray-500 mt-1">
+											{{ item.description }}
+										</p>
+									</div>
+								</div>
+								<router-link :to="`/admin/integrations/${item.name}`" custom v-slot="{ navigate }">
+									<button class="button linkGray400" @click="navigate" @keypress.enter="navigate" role="link">
+										Manage
+										<i class="far fa-chevron-right fa-fw pl-1"></i>
+									</button>
+								</router-link>
 							</div>
 						</div>
-						<div>
-							<div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
-								Your Integrations
-							</div>
-							<div v-if="activeIntegrations.length" class="sm:rounded-sm border-t border-b sm:border bg-white hover:bg-gray-50 divide-y">
-								<div v-for="(item, index) in activeIntegrations" :key="index" class="flex items-center justify-between px-4 py-3">
-									<div class="flex items-center">
-										<img :src="item.logo" class="w-9 h-9 object-cover"/>
-										<div class="pl-4 pr-8">
-											<div class="flex items-center">
-												<span class="font-semibold">
-													{{ item.name }}
-												</span>
-												<span class="ml-2 px-2 inline-flex text-xs leading-5 font-medium rounded-sm bg-green-100 text-green-800">
-													active
-												</span>
-											</div>
-											<p class="text-sm text-gray-500 mt-1">
-												{{ item.description }}
-											</p>
-										</div>
-									</div>
-									<router-link :to="`/admin/integrations/${item.name}`" custom v-slot="{ navigate }">
-										<button class="button linkGray400" @click="navigate" @keypress.enter="navigate" role="link">
-											Manage
-											<i class="far fa-chevron-right fa-fw pl-1"></i>
-										</button>
-									</router-link>
-								</div>
-							</div>
-							<div v-else class="sm:rounded-sm border-t border-b sm:border bg-white">
-								<div class="text-center p-12">
-									<p class="text-gray-500">
-										You have no active integrations...
-									</p>
-								</div>
+						<div v-else class="sm:rounded-sm border-t border-b sm:border bg-white">
+							<div class="text-center p-12">
+								<p class="text-gray-500">
+									You have no active integrations...
+								</p>
 							</div>
 						</div>
 					</div>

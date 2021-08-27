@@ -48,8 +48,7 @@
 				<div class="rounded-sm bg-gray-200 dark:bg-white dark:bg-opacity-20 w-full h-20"></div>
 			</div>
 		</div>
-		<div v-if="!loading && !errored" class="col-span-full 2xl:col-start-2 2xl:col-end-10">
-			<div class="p-4">
+		<div v-if="!loading && !errored" class="col-span-full 2xl:col-start-2 2xl:col-end-10 p-4 md:px-8">
 				<div class="md:grid md:grid-cols-3 md:gap-6">
 					<div class="md:col-span-3 space-y-8">
 						<div class="pb-4 border-b">
@@ -141,7 +140,6 @@
 						</div>
 					</div>
 				</div>
-			</div>
 		</div>
 	</div>
 </template>
