@@ -133,7 +133,7 @@
                     New password
                   </label>
                   <div class="relative">
-                    <input required class="form-input light pr-5" v-model="newPassword" placeholder="Enter a new password" :type="showPassword ? 'text' : 'password'" :disabled="!password"/>
+                    <input required class="form-input light pr-8" v-model="newPassword" placeholder="Enter a new password" :type="showPassword ? 'text' : 'password'" :disabled="!password"/>
                     <button type="button" class="flex items-center absolute text-gray-400 right-1 bottom-0 p-2 transform active:scale-95 origin-center" @click="showPassword = !showPassword">
                       {{ showPassword ? '&#128585;' : '&#128584;' }}
                     </button>
