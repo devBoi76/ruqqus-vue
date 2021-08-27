@@ -107,30 +107,35 @@
                     Used for password resets and announcements (optional)
                   </p>
                 </div>
-                <div class="col-span-3 sm:col-span-2" :class="{'opacity-50 pointer-events-none':!v.email}">
-                    <div class="flex flex-grow items-center justify-between">
-                      <div>
-                        <div class="font-semibold leading-tight">
-                          Subscribe to email alerts
-                        </div>
-                        <p class="text-sm text-gray-500 mt-1">
-                          Receive official site announcements over email
-                        </p>
-                      </div>
-                      <Toggle v-model="isEmailSubscribed"/>
+                <div class="col-span-3" :class="{'opacity-50 pointer-events-none':!v.email}">
+                  <div class="flex flex-grow items-center justify-between">
+                    <div>
+                      <label class="label">
+                        Subscribe to email alerts
+                      </label>
+                      <p class="text-sm text-gray-500 mt-1">
+                        Receive official site announcements over email
+                      </p>
                     </div>
+                    <Toggle v-model="isEmailSubscribed"/>
                   </div>
+                </div>
               </div>
               <div class="grid grid-cols-3 gap-6 p-4">
                 <div class="col-span-3">
                   <label class="label">
-                    Bio
+                    Current password
                   </label>
-                  <Editor @input="getEditorContent()" min-height="10rem" :limit="1000" :value="bio"/>
-                  <p class="text-sm text-gray-500 mt-1 md:w-3/4">
-                    <i class="fab fa-markdown fa-fw fa-sm"></i>
-                    markdown supported
-                  </p>
+                  <input required class="form-input light" placeholder="Enter your current password" type="password"/>
+                  <label class="label">
+                    New password
+                  </label>
+                  <div class="relative">
+                    <input required class="form-input light" v-model="newPassword" placeholder="Enter a new password" :type="showPassword ? 'text' : 'password'"/>
+                    <button type="button" class="flex items-center absolute text-gray-400 right-1 bottom-0 p-2 transform active:scale-95 origin-center" @click="showPassword = !showPassword">
+                      {{ showPassword ? '&#128585;' : '&#128584;' }}
+                    </button>
+                  </div>
                 </div>
               </div>
             </form>
@@ -191,7 +196,8 @@ export default {
     return {
       editAppearance: false,
       bio: '',
-      isEmailSubscribed: false
+      isEmailSubscribed: false,
+      showPassword: false
     }
   },
   components: {
