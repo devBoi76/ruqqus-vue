@@ -128,12 +128,6 @@
 					isActive: false
 				},
 				{
-					logo: 'https://i.imgur.com/MHgOhAk.png',
-					name: 'Discord',
-					description: 'Enable members to connect their account here with Discord',
-					isActive: false
-				},
-				{
 					logo: 'https://i.imgur.com/ds1CNei.png',
 					name: 'PayPal',
 					description: 'Collect one-time payments',
@@ -156,7 +150,13 @@
 					name: 'Unsplash',
 					description: 'Beautiful, free images and photos',
 					isActive: false
-				}
+				},
+				{
+					logo: 'https://i.imgur.com/MHgOhAk.png',
+					name: 'Discord',
+					description: 'Enable members to connect their account here with Discord',
+					isActive: false
+				},
 				]
 			}
 		},
