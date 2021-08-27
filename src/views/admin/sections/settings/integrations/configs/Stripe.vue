@@ -55,7 +55,7 @@
 						<div class="pb-4 border-b">
 							<div class="flex">
 								<div class="flex flex-col flex-shrink-0">
-									<img src="https://i.imgur.com/j87KTfH.png" class="w-20 h-20 md:w-32 md:h-32 object-cover p-4 bg-white border rounded shadow-inner" alt="stripe logo"/>
+									<img src="https://i.imgur.com/LzxXK3K.png" class="w-20 h-20 md:w-32 md:h-32 object-cover p-4 bg-white border rounded shadow-inner" alt="stripe logo"/>
 								</div>
 								<div class="pl-4">
 									<div class="h4 font-semibold">
