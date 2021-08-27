@@ -1,27 +1,48 @@
 <template>
-  <div class="flex flex-col flex-grow bg-white md:shadow-xs md:rounded-sm overflow-hidden">
-
-    <!-- Header content section -->
-    <div class="flex flex-shrink-0 w-full items-center h-16 px-4 bg-white border-b dark:border-white dark:border-opacity-10 dark:bg-gray-700">
-      <h1 class="text-xl mb-0">Account Settings</h1>
-    </div>
-
-    <!-- Tabs -->
-    <div class="flex flex-shrink-0 w-full items-end h-10 px-4 border-b dark:border-white dark:border-opacity-10 dark:bg-gray-700">
-      <router-link v-for="tab in tabs" :key="tab.name" v-slot="{ href, navigate, isExactActive }" :to="tab.route">
-        <a :href="href" @click="navigate" class="group">
-          <div class="border-b-2 px-4 pb-2 capitalize" :class="isExactActive ? 'text-purple-500 border-purple-500' : 'text-gray-500 hover:text-gray-700 border-transparent'">
-            {{ tab.name }}
+  <div class="w-full overflow-y-auto">
+    <div class="grid grid-cols-12 xl:grid-cols-10">
+      <div class="col-span-full xl:col-start-3 xl:col-end-9 flex flex-col gap-4 sm:p-6 my-2.5 sm:my-0">
+        <h1 class="h3 font-semibold mb-0">
+          Settings
+        </h1>
+        <div class="flex gap-6">
+          <!-- Main Content Section -->
+          <div class="w-full">
+            <div class="flex flex-grow">
+              <div class="w-full bg-white dark:bg-gray-800 sm:rounded-sm sm:border">
+                <div class="grid grid-cols-3 gap-6">
+                  <div class="col-span-3 sm:col-span-2">
+                    <label class="label">
+                      Community name
+                    </label>
+                    <input class="form-input light" v-model="site.name" :placeholder="$route.params.name" type="text"/>
+                    <p class="text-sm text-gray-500 mt-1">
+                      This does not affect your community web address
+                    </p>
+                  </div>
+                </div>
+                <div class="grid grid-cols-3 gap-6">
+                  <div class="col-span-3 sm:col-span-2">
+                    <div class="relative">
+                      <label class="label">
+                        Community tagline
+                      </label>
+                      <textarea class="form-textarea light" v-model="site.tagline" type="text" rows="3" maxlength="140" placeholder="A community residing on the world wide web."/>
+                      <div v-if="site.tagline" class="absolute text-xs font-semibold text-gray-400 right-3 bottom-2" :class="{'text-red-500':site.tagline.length >= 140}">
+                        {{ 140 - site.tagline.length }}
+                      </div>
+                    </div>
+                    <p class="text-sm text-gray-500 mt-1">
+                      Descriptive text used in social images and banner artwork
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-        </a>
-      </router-link>
+        </div>
+      </div>
     </div>
-
-    <!-- Main content section -->
-    <keep-alive :max='5'>
-      <router-view :key="$route.fullPath"></router-view>
-    </keep-alive>
-
   </div>
 </template>
 

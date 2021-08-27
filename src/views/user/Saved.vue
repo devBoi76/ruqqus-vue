@@ -1,21 +1,25 @@
 <template>
-	<div class="flex flex-col flex-grow">
-		<!-- Post Sorting and Display Toggle -->
-		<div class="flex items-center flex-shrink-0 sm:rounded-sm sm:shadow-xs mb-2.5 sm:mb-4 px-4 py-3 bg-white dark:bg-gray-800">
-			<div class="flex items-center justify-between flex-grow">
-				<div class="text-xl font-bold capitalize leading-none dark:text-gray-200">
-					Saved
-				</div>
-				<div class="flex flex-wrap items-center space-x-6">
+	<div class="w-full overflow-y-auto">
+		<div class="grid grid-cols-12 xl:grid-cols-10">
+			<div class="col-span-full xl:col-start-3 xl:col-end-9 flex flex-col gap-4 sm:p-6 my-2.5 sm:my-0">
+				<div class="flex justify-between">
+					<h1 class="h3 font-semibold mb-0">
+						Saved
+					</h1>
 					<ListingToggle/>
+				</div>
+				<div class="flex gap-6">
+					<!-- Main Content Section -->
+					<div class="w-full">
+						<div class="flex flex-grow">
+							<div class="w-full bg-white dark:bg-gray-800 sm:rounded-sm sm:border">
+								<ItemList/>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
-		<!-- End Post Sorting and Display Toggle -->
-
-		<!-- Listings -->
-		<ItemList/>
-		<!-- End Listings -->
 	</div>
 </template>
 

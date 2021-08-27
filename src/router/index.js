@@ -20,7 +20,7 @@ const UserInboxView = () => import ('../views/user/Inbox.vue')
 const UserSavedView = () => import ('../views/user/Saved.vue')
 
 // User Settings
-const UserSettingsView = () => import ('../views/user/settings/UserSettings_V2.vue')
+const UserSettingsView = () => import ('../views/user/settings/Settings.vue')
 const UserProfileSettings = () => import ('../views/user/settings/sections/appearance/BasicInfo.vue')
 const UserNotificationsSettings = () => import ('../views/user/settings/sections/notifications/Notifications.vue')
 const UserSecuritySettings = () => import ('../views/user/settings/sections/security/Security.vue')
@@ -87,6 +87,8 @@ const routes = [
 
 	// Thread View
 	{ path: '/post/:id/:title?/:commentId?', name: 'item-view', component: ThreadView, props: true, meta: {sidebar: false, requiresAuth: false} },
+
+	{ path: '/settings', component: UserSettingsView, props: true, meta: {sidebar: false, requiresAuth: true} },
 
 		// User Personal view
 		{
