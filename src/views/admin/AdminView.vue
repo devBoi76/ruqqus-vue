@@ -1,7 +1,7 @@
 <template>
-	<div class="flex flex-grow">
+	<div class="flex flex-grow bg-white">
 
-		<Sidebar :menu="menu" sidebar-color="white" sticky-header border>
+		<Sidebar :menu="menu" sidebar-color="gray-50" sticky-header border>
 			<template v-slot:header>
 				<div class="flex flex-shrink-0 w-full items-center p-4 dark:bg-gray-700">
 					<!-- Define sidebar bg color here so tailwidn doesn't purge the class during prod build -->
