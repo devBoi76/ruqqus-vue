@@ -4,7 +4,7 @@
 		<!-- Header content section -->
 		<div class="grid grid-cols-12 sticky top-0 z-10">
 			<div class="col-span-full 2xl:col-start-2 2xl:col-end-10">
-				<div class="flex items-center justify-between px-4 md:px-8 py-3 bg-white">
+				<div class="flex items-center justify-between p-4 md:px-8 bg-white">
 					<h1 class="text-2xl capitalize mb-0">
 						Design
 					</h1>
