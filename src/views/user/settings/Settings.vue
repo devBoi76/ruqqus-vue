@@ -127,6 +127,8 @@
                     Current password
                   </label>
                   <input required class="form-input light" placeholder="Enter your current password" type="password"/>
+                </div>
+                <div class="col-span-3">
                   <label class="label">
                     New password
                   </label>
