@@ -89,7 +89,22 @@
                         Private profile
                       </div>
                       <p class="text-sm text-gray-500 mt-1">
-                        Cloak my posting history from others
+                        Cloak your post and comment history from others. We will also ask search engines to not index your profile page (your content will still be accessible via direct link).
+                      </p>
+                    </div>
+                    <Toggle v-model="v.is_private"/>
+                  </div>
+                </div>
+              </div>
+              <div class="grid grid-cols-3 gap-6 p-4">
+                <div class="col-span-3">
+                  <div class="flex flex-grow items-center justify-between">
+                    <div>
+                      <div class="font-semibold leading-tight">
+                        Disable followers
+                      </div>
+                      <p class="text-sm text-gray-500 mt-1">
+                        Prevent others from following you
                       </p>
                     </div>
                     <Toggle v-model="v.is_private"/>
