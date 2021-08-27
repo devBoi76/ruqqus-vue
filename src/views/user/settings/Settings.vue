@@ -99,7 +99,7 @@
                         Cloak my posting history from others
                       </p>
                     </div>
-                    <Toggle v-model="v.isPrivate"/>
+                    <Toggle v-model="v.is_private"/>
                   </div>
                 </div>
               </div>
@@ -123,7 +123,7 @@ export default {
   data() {
     return {
       editAppearance: false,
-      bio: this.v.bio
+      bio: ''
     }
   },
   components: {
@@ -140,6 +140,9 @@ export default {
     getEditorContent(value) {
       this.bio = value;
     }
+  },
+  created() {
+    console.log(this.v)
   }
 }
 </script>
