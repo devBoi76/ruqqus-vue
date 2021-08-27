@@ -38,21 +38,51 @@
                     <div class="z-10 ml-4 pt-3 font-bold text-lg text-white" :class="{'text-opacity-30':editAppearance}">{{ v.username }}</div>
                   </div>
                 </div>
-                <div class="grid grid-cols-3 gap-6">
-                  <div class="col-span-3 sm:col-span-2">
-                    <div class="relative">
-                      <label class="label">
-                        Community tagline
-                      </label>
-                      <textarea class="form-textarea light" v-model="site.tagline" type="text" rows="3" maxlength="140" placeholder="A community residing on the world wide web."/>
-                      <div v-if="site.tagline" class="absolute text-xs font-semibold text-gray-400 right-3 bottom-2" :class="{'text-red-500':site.tagline.length >= 140}">
-                        {{ 140 - site.tagline.length }}
+                <div>
+                  <div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
+                    Profile
+                  </div>
+                  <form class="rounded-sm border bg-white divide-y">
+                    <div class="grid grid-cols-3 gap-6 p-4">
+                      <div class="col-span-3 sm:col-span-2">
+                        <label class="label">
+                          Display name
+                        </label>
+                        <input required class="form-input light" v-model="webhook" placeholder="Enter your Unsplash API key" type="text"/>
+                        <p class="text-sm text-gray-500 mt-1">
+                          Unsplash API keys can be granted in their
+                          <a href="https://unsplash.com/developers" target="_blank" class="hover:underline">
+                            developer portal
+                          </a>
+                        </p>
                       </div>
                     </div>
-                    <p class="text-sm text-gray-500 mt-1">
-                      Descriptive text used in social images and banner artwork
-                    </p>
-                  </div>
+                    <div class="grid grid-cols-3 gap-6 p-4">
+                      <div class="col-span-3">
+                        <div class="flex flex-grow items-center justify-between">
+                          <div>
+                            <div class="font-semibold leading-tight">
+                              Use Unsplash on static pages
+                            </div>
+                            <p class="text-sm text-gray-500 mt-1">
+                              Displays Unsplash photos on login, registration, and error pages
+                            </p>
+                          </div>
+                          <Toggle v-model="hasUnsplashLogin"/>
+                        </div>
+                      </div>
+                      <div class="col-span-3 sm:col-span-2" :class="{'opacity-50 pointer-events-none':!hasUnsplashLogin}">
+                        <label class="label">
+                          Keyword
+                        </label>
+                        <input required class="form-input light" v-model="keyword" placeholder="e.g. dogs" type="text"/>
+                        <p class="text-sm text-gray-500 mt-1">
+                          The category of images to pull from Unsplash
+                        </p>
+                        <!-- Preview goes right here, load 5-10 images flex box -->
+                      </div>
+                    </div>
+                  </form>
                 </div>
               </div>
             </div>
