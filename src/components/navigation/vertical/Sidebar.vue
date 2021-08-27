@@ -1,5 +1,5 @@
 <template>
-	<div class="hidden md:flex items-center flex-col flex-shrink-0 w-64 border-gray-100 dark:bg-gray-750 dark:border-white-13" :class="['bg-'+sidebarColor, {'border-r':border}]">
+	<div class="hidden md:flex items-center flex-col flex-shrink-0 w-64 dark:bg-gray-750" :class="['bg-'+sidebarColor, {'border-r border-gray-100':border}]">
 
 		<slot name="header" v-if="stickyHeader"/>
 
