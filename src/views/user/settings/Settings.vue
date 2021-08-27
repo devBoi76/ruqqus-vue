@@ -49,7 +49,7 @@
                 Profile
               </div>
               <div class="text-xs text-gray-400">
-                <i class="far fa-globe-americas fa-sm pr-1"></i>
+                <i class="fas fa-globe-americas fa-sm pr-1"></i>
                 <span>
                   Visible to everyone
                 </span>
@@ -90,7 +90,7 @@
                 Security
               </div>
               <div class="text-xs text-gray-400">
-                <i class="far fa-lock-alt fa-sm pr-1"></i>
+                <i class="fas fa-lock-alt fa-sm pr-1"></i>
                 <span>
                   Only you can see these details
                 </span>
