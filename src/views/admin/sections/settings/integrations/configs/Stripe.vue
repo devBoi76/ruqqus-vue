@@ -65,7 +65,7 @@
 										finance
 									</span>
 									<p class="text-gray-900">
-										Start accepting recurring payments in minutes. Use Invoicing to collect payments from existing customers or share a payment link to sell a subscription—no code required.
+										Create subscriptions or send invoices in a few clicks or lines of code.
 									</p>
 									<ul class="flex flex-wrap leading-4 space-x-4" role="none">
 										<li class="" role="none">
