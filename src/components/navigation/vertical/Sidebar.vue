@@ -9,7 +9,7 @@
 
 			<ul v-for="(section, index) in menu" :key="index" class="-mt-2 mb-8 last:mb-0 list-unstyled border-gray-200 dark:border-white-13" :class="{'pb-2 border-b':section.divider}">
 				<li v-if="section.header" class="z-10 sticky -top-4 py-2 dark:bg-gray-750 dark:border-white-13" :class="`bg-${sidebarColor}`">
-					<div class="px-4 uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-700">
+					<div class="px-6 uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-700">
 						{{ section.name }}
 					</div>
 				</li>
@@ -21,7 +21,7 @@
 					</div>
 					<div v-if="!item.header">
 						<router-link custom :to="item.route" v-slot="{ href, navigate, isActive }">
-							<a :href="href" @click="navigate" class="relative block px-4 py-1.5 text-left transition duration-100" :class="isActive ? 'text-gray-900 font-medium bg-gray-200' : 'text-gray-700 hover:bg-gray-100'">
+							<a :href="href" @click="navigate" class="relative block px-6 py-1.5 text-left transition duration-100" :class="isActive ? 'text-gray-900 font-medium bg-gray-200' : 'text-gray-700 hover:bg-gray-100'">
 								<span v-if="!item.icon">
 									<img
 									:id="item.id"
