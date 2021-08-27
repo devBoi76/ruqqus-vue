@@ -16,7 +16,7 @@
               </div>
             </div>
             <div class="relative">
-              <img :src="v.banner_url" class="w-full h-56 lg:h-72 object-cover rounded-lg"/>
+              <img :src="v.banner_url" class="w-full h-56 lg:h-72 object-cover rounded"/>
               <div v-show="editAppearance" class="absolute bottom-0 flex items-center justify-center w-full h-full bg-black bg-opacity-30">
                 <button type="button" class="w-9 h-9 flex items-center justify-center px-2 py-0 text-white bg-transparent hover:bg-black hover:bg-opacity-50 rounded-sm transition duration-100 ease-in-out" tabindex="0">
                   <i class="fas fa-pencil fa-lg"></i>
@@ -24,7 +24,7 @@
               </div>
             </div>
             <div class="flex px-4 -mt-12">
-              <div class="relative rounded-sm overflow-hidden w-20 h-20 flex-shrink-0 p-1 bg-white border rounded shadow-inner">
+              <div class="relative rounded-sm overflow-hidden w-20 h-20 flex-shrink-0">
                 <img :src="v.profile_url" class="object-cover" alt="profile-picture"/>
                 <div v-show="editAppearance" class="absolute bottom-0 flex items-center justify-center w-full h-full bg-black bg-opacity-30">
                   <button type="button" class="w-9 h-9 flex items-center justify-center text-white px-2 py-0 bg-transparent hover:bg-black hover:bg-opacity-50 rounded-sm transition duration-100 ease-in-out" tabindex="0">
