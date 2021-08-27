@@ -13,10 +13,10 @@
                 Edit appearance
               </button>
               <div v-show="editAppearance" class="flex items-center space-x-2">
-                <button type="button" class="button black30" @click="toggleAppearance" tabindex="0">
+                <button type="button" class="button linkWhite" @click="toggleAppearance" tabindex="0">
                   Cancel
                 </button>
-                <button type="button" class="button primary" tabindex="0">
+                <button type="button" class="button white" tabindex="0">
                   Save
                 </button>
               </div>
