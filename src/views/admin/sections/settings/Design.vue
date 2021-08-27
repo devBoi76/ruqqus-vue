@@ -39,7 +39,7 @@
 				</div>
 			</div>
 
-			<div v-if="!loading && !errored" class="col-span-full 2xl:col-start-2 2xl:col-end-10 p-4">
+			<div v-if="!loading && !errored" class="col-span-full 2xl:col-start-2 2xl:col-end-10 p-4 md:px-8">
 				<div class="md:grid md:grid-cols-3 md:gap-6">
 					<div class="mt-5 md:mt-0 md:col-span-3 space-y-8">
 						<div>

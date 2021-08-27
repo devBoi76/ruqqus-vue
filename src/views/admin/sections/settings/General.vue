@@ -44,59 +44,58 @@
 				</div>
 			</div>
 
-			<div v-if="!loading && !errored" class="col-span-full 2xl:col-start-2 2xl:col-end-10">
-				<div class="p-4 md:px-8">
-					<div class="md:grid md:grid-cols-3 md:gap-6">
-						<div class="mt-5 md:mt-0 md:col-span-3 space-y-8">
-							<div>
-								<div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
-									Community Info
-								</div>
-								<div class="sm:rounded-sm border-t border-b sm:border bg-white">
-									<ToggleForm @change="handleChange">
-										<template v-slot:default="{active, toggle}">
-											<div class="p-4">
-												<div class="flex items-center justify-between">
-													<div>
-														<div class="font-semibold leading-tight">
-															Name & Description
-														</div>
+			<div v-if="!loading && !errored" class="col-span-full 2xl:col-start-2 2xl:col-end-10 p-4 md:px-8">
+				<div class="md:grid md:grid-cols-3 md:gap-6">
+					<div class="mt-5 md:mt-0 md:col-span-3 space-y-8">
+						<div>
+							<div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
+								Community Info
+							</div>
+							<div class="sm:rounded-sm border-t border-b sm:border bg-white">
+								<ToggleForm @change="handleChange">
+									<template v-slot:default="{active, toggle}">
+										<div class="p-4">
+											<div class="flex items-center justify-between">
+												<div>
+													<div class="font-semibold leading-tight">
+														Name & Description
+													</div>
+													<p class="text-sm text-gray-500 mt-1">
+														The name and description of your community, publicly visible on the web
+													</p>
+												</div>
+												<button class="flex items-center justify-center px-2 w-8 h-8 text-lg text-gray-600 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white rounded-sm" @click="toggle" aria-expanded="active">
+													<i class="far fa-fw" :class="active ? 'fa-compress-alt' : 'fa-pen'"></i>
+												</button>
+											</div>
+											<div v-if="active" class="space-y-6 mt-6">
+												<div class="grid grid-cols-3 gap-6">
+													<div class="col-span-3 sm:col-span-2">
+														<label class="label">
+															Community name
+														</label>
+														<input class="form-input light" v-model="site.name" :placeholder="$route.params.name" type="text"/>
 														<p class="text-sm text-gray-500 mt-1">
-															The name and description of your community, publicly visible on the web
+															This does not affect your community web address
 														</p>
 													</div>
-													<button class="flex items-center justify-center px-2 w-8 h-8 text-lg text-gray-600 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white rounded-sm" @click="toggle" aria-expanded="active">
-														<i class="far fa-fw" :class="active ? 'fa-compress-alt' : 'fa-pen'"></i>
-													</button>
 												</div>
-												<div v-if="active" class="space-y-6 mt-6">
-													<div class="grid grid-cols-3 gap-6">
-														<div class="col-span-3 sm:col-span-2">
+												<div class="grid grid-cols-3 gap-6">
+													<div class="col-span-3 sm:col-span-2">
+														<div class="relative">
 															<label class="label">
-																Community name
+																Community tagline
 															</label>
-															<input class="form-input light" v-model="site.name" :placeholder="$route.params.name" type="text"/>
-															<p class="text-sm text-gray-500 mt-1">
-																This does not affect your community web address
-															</p>
-														</div>
-													</div>
-													<div class="grid grid-cols-3 gap-6">
-														<div class="col-span-3 sm:col-span-2">
-															<div class="relative">
-																<label class="label">
-																	Community tagline
-																</label>
-																<textarea class="form-textarea light" v-model="site.tagline" type="text" rows="3" maxlength="140" placeholder="A community residing on the world wide web."/>
-																<div v-if="site.tagline" class="absolute text-xs font-semibold text-gray-400 right-3 bottom-2" :class="{'text-red-500':site.tagline.length >= 140}">
-																	{{ 140 - site.tagline.length }}
-																</div>
+															<textarea class="form-textarea light" v-model="site.tagline" type="text" rows="3" maxlength="140" placeholder="A community residing on the world wide web."/>
+															<div v-if="site.tagline" class="absolute text-xs font-semibold text-gray-400 right-3 bottom-2" :class="{'text-red-500':site.tagline.length >= 140}">
+																{{ 140 - site.tagline.length }}
 															</div>
-															<p class="text-sm text-gray-500 mt-1">
-																Descriptive text used in social images and banner artwork
-															</p>
 														</div>
+														<p class="text-sm text-gray-500 mt-1">
+															Descriptive text used in social images and banner artwork
+														</p>
 													</div>
+												</div>
 <!-- 													<div class="grid grid-cols-3 gap-6">
 														<div class="col-span-3 sm:col-span-2">
 															<div class="relative">
@@ -281,10 +280,9 @@
 				</div>
 			</div>
 		</div>
-	</div>
-</template>
+	</template>
 
-<script>
+	<script>
 // Import components
 import { defineAsyncComponent } from 'vue'
 import Toggle from "@/components/forms/Toggle.vue";
