@@ -9,10 +9,16 @@
         <div class="w-full space-y-8">
           <div class="relative">
             <div class="z-10 absolute top-4 right-4">
-              <button v-show="!editAppearance" type="button" class="button white" @click="toggleAppearance">Edit appearance</button>
+              <button v-show="!editAppearance" class="button white" @click="toggleAppearance">
+                Edit appearance
+              </button>
               <div v-show="editAppearance" class="flex items-center space-x-2">
-                <button type="button" class="button black30" @click="toggleAppearance" tabindex="0">Cancel</button>
-                <button type="button" class="button white" tabindex="0">Save</button>
+                <button type="button" class="button black30" @click="toggleAppearance" tabindex="0">
+                  Cancel
+                </button>
+                <button type="button" class="button primary" tabindex="0">
+                  Save
+                </button>
               </div>
             </div>
             <div class="relative">
@@ -41,7 +47,7 @@
             </div>
             <form class="rounded-sm border bg-white divide-y">
               <div class="grid grid-cols-3 gap-6 p-4">
-                <div class="col-span-3 sm:col-span-2">
+                <div class="col-span-3">
                   <label class="label">
                     Display name
                   </label>
@@ -55,7 +61,7 @@
                 </div>
               </div>
               <div class="grid grid-cols-3 gap-6 p-4">
-                <div class="col-span-3 sm:col-span-2">
+                <div class="col-span-3">
                   <label class="label">
                     Bio
                   </label>
@@ -64,21 +70,6 @@
                     <i class="fab fa-markdown fa-fw fa-sm"></i>
                     markdown supported
                   </p>
-                </div>
-              </div>
-              <div class="grid grid-cols-3 gap-6 p-4">
-                <div class="col-span-3">
-                  <div class="flex flex-grow items-center justify-between">
-                    <div>
-                      <div class="font-semibold leading-tight">
-                        Use Unsplash on static pages
-                      </div>
-                      <p class="text-sm text-gray-500 mt-1">
-                        Displays Unsplash photos on login, registration, and error pages
-                      </p>
-                    </div>
-                    <Toggle v-model="hasUnsplashLogin"/>
-                  </div>
                 </div>
               </div>
             </form>
