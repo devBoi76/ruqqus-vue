@@ -4,7 +4,7 @@
 		<!-- Header content section -->
 		<div class="grid grid-cols-12 sticky top-0 z-10">
 			<div class="col-span-full 2xl:col-start-2 2xl:col-end-10">
-				<div class="flex items-center justify-between px-4 py-3 bg-white">
+				<div class="flex items-center justify-between px-4 md:px-8 py-3 bg-white">
 					<h1 class="text-2xl mb-0">
 						General
 					</h1>
@@ -45,7 +45,7 @@
 			</div>
 
 			<div v-if="!loading && !errored" class="col-span-full 2xl:col-start-2 2xl:col-end-10">
-				<div class="p-4">
+				<div class="p-4 md:px-8 md:py-5">
 					<div class="md:grid md:grid-cols-3 md:gap-6">
 						<div class="mt-5 md:mt-0 md:col-span-3 space-y-8">
 							<div>
