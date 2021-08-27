@@ -37,7 +37,7 @@
 										{{ item.name }}
 									</span>
 								</span>
-								<span v-show="isActive" class="arrow"/>
+								<!-- <span v-show="isActive" class="arrow"/> -->
 							</a>
 						</router-link>
 					</div>
