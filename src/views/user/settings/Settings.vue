@@ -10,15 +10,32 @@
           <div class="w-full">
             <div class="flex flex-grow">
               <div class="w-full bg-white dark:bg-gray-800 sm:rounded-sm sm:border">
-                <div class="grid grid-cols-3 gap-6">
-                  <div class="col-span-3 sm:col-span-2">
-                    <label class="label">
-                      Community name
-                    </label>
-                    <input class="form-input light" v-model="site.name" :placeholder="$route.params.name" type="text"/>
-                    <p class="text-sm text-gray-500 mt-1">
-                      This does not affect your community web address
-                    </p>
+                <div class="relative">
+                  <div class="z-10 absolute top-4 right-4">
+                    <button v-show="!editAppearance" type="button" class="button white" @click="toggleAppearance">Edit appearance</button>
+                    <div v-show="editAppearance" class="flex items-center space-x-2">
+                      <button type="button" class="button black30" @click="toggleAppearance" tabindex="0">Cancel</button>
+                      <button type="button" class="button white" tabindex="0">Save</button>
+                    </div>
+                  </div>
+                  <div class="relative">
+                    <img :src="v.banner_url" class="w-full h-56 lg:h-72 object-cover"/>
+                    <div v-show="editAppearance" class="absolute bottom-0 flex items-center justify-center w-full h-full bg-black bg-opacity-30">
+                      <button type="button" class="w-9 h-9 flex items-center justify-center px-2 py-0 text-white bg-transparent hover:bg-black hover:bg-opacity-50 rounded-sm transition duration-100 ease-in-out" tabindex="0">
+                        <i class="fas fa-pencil fa-lg"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="flex px-4 -mt-12">
+                    <div class="relative rounded-sm overflow-hidden w-20 h-20 flex-shrink-0">
+                      <img :src="v.profile_url" class="object-cover" alt="profile-picture"/>
+                      <div v-show="editAppearance" class="absolute bottom-0 flex items-center justify-center w-full h-full bg-black bg-opacity-30">
+                        <button type="button" class="w-9 h-9 flex items-center justify-center text-white px-2 py-0 bg-transparent hover:bg-black hover:bg-opacity-50 rounded-sm transition duration-100 ease-in-out" tabindex="0">
+                          <i class="fas fa-pencil fa-lg"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="z-10 ml-4 pt-3 font-bold text-lg text-white" :class="{'text-opacity-30':editAppearance}">{{ v.username }}</div>
                   </div>
                 </div>
                 <div class="grid grid-cols-3 gap-6">
@@ -48,93 +65,22 @@
 
 <script>
 // Import Components
-
 import { mapState } from 'vuex';
 
 export default {
   name: "UserSettingsView",
   data() {
     return {
-      lists: [
-      {
-        name: "saved",
-        routeName: "user-settings-profile-view",
-        icon: 'fas fa-bookmark',
-        color: 'red-500',
-        description: 'View posts and comments you have saved.'
-      },
-      {
-        name: "upvoted",
-        routeName: "guild-about-view",
-        icon: 'fas fa-arrow-alt-up',
-        color: 'purple-500',
-        description: 'View posts and comments you have upvoted.'
-      }
-      ],
-      tabs: [
-      {
-        name: "profile",
-        route: {
-          name: 'user-settings-profile-view'
-        },
-        exact: true,
-        icon: 'fas fa-user-circle',
-        color: 'gray-300',
-        description: 'Manage your public profile.'
-      },
-      {
-        name: "notifications",
-        route: {
-          name: 'user-settings-notifications-view'
-        },
-        icon: 'fas fa-bell',
-        color: 'blue-500',
-        description: 'Manage how you receive notifications across Ruqqus.'
-      },
-      {
-        name: "security",
-        route: {
-          name: 'user-settings-security-view'
-        },
-        icon: 'fas fa-lock-alt',
-        color: 'red-500',
-        description: 'Configure your email, password, and more.'
-      },
-      {
-        name: "apps",
-        route: {
-          name: 'user-settings-apps-view'
-        },
-        icon: 'fas fa-wrench',
-        color: 'orange-500',
-        description: 'For developers. Manage Ruqqus-powered apps and API keys.'
-      },
-      {
-        name: "filters",
-        route: {
-          name: 'user-settings-content-view'
-        },
-        exact: true,
-        icon: 'fas fa-filter',
-        color: 'green-500',
-        description: 'Configure your personal Ruqqus content filters.'
-      },
-      {
-        name: "premium",
-        routeName: "user-settings-premium-view",
-        icon: 'fas fa-star',
-        color: 'yellow-700',
-        description: 'Ruqqus Premium subscription.'
-      }
-      ]
+      editAppearance: false
     }
   },
   computed: {
-    ...mapState("persist", ["darkmode"])
+    ...mapState("persist", ["v"])
+  },
+  methods: {
+    toggleAppearance() {
+      this.editAppearance = !this.editAppearance
+    }
   }
 }
 </script>
-
-<style scoped>
-
-</style>
