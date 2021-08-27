@@ -5,7 +5,7 @@
 				<div class="flex flex-grow items-center">
 					<img v-if="site.hasIcon" :src="site.icon" class="w-10 h-10 rounded-sm bg-white bg-opacity-20 mr-3" alt="Community icon"/>
 					<div class="flex-shrink-0">
-						<router-link to="/" class="font-bold text-xl text-purple-500 tracking-wide">
+						<router-link to="/" class="font-semibold text-xl text-gray-900">
 							{{ site.name }}
 						</router-link>
 					</div>

@@ -4,7 +4,7 @@
 				<div class="flex items-center justify-between h-14">
 					<div class="flex flex-grow items-center">
 						<div class="flex-shrink-0">
-							<span class="font-bold text-xl text-purple-500 tracking-wide" @click.once="clicked = true">
+							<span class="font-semibold text-xl text-gray-900" @click.once="clicked = true">
 								{{ site.name }}
 							</span>
 						</div>
