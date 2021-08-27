@@ -126,14 +126,14 @@
                   <label class="label">
                     Current password
                   </label>
-                  <input required class="form-input light" placeholder="Enter your current password" type="password"/>
+                  <input required class="form-input light" v-model="password" placeholder="Enter your current password" type="password"/>
                 </div>
                 <div class="col-span-3">
                   <label class="label">
                     New password
                   </label>
                   <div class="relative">
-                    <input required class="form-input light" v-model="newPassword" placeholder="Enter a new password" :type="showPassword ? 'text' : 'password'"/>
+                    <input required class="form-input light" v-model="newPassword" placeholder="Enter a new password" :type="showPassword ? 'text' : 'password'" :disabled="!password"/>
                     <button type="button" class="flex items-center absolute text-gray-400 right-1 bottom-0 p-2 transform active:scale-95 origin-center" @click="showPassword = !showPassword">
                       {{ showPassword ? '&#128585;' : '&#128584;' }}
                     </button>
@@ -199,6 +199,7 @@ export default {
       editAppearance: false,
       bio: '',
       isEmailSubscribed: false,
+      password: '',
       showPassword: false
     }
   },
