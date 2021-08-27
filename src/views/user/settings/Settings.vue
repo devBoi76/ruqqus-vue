@@ -62,7 +62,7 @@
                     Display name
                   </label>
                   <input required class="form-input light" v-model="webhook" :placeholder="v.username" type="text"/>
-                  <p class="text-sm text-gray-500 mt-1 md:w-3/4">
+                  <p class="text-sm text-gray-500 mt-1">
                     Your original username will always stay reserved for you:
                     <span class="text-primary">
                       {{ v.username }}
@@ -76,7 +76,7 @@
                     Bio
                   </label>
                   <Editor @input="getEditorContent()" min-height="10rem" :limit="1000" :value="bio"/>
-                  <p class="text-sm text-gray-500 mt-1 md:w-3/4">
+                  <p class="text-sm text-gray-500 mt-1">
                     <i class="fab fa-markdown fa-fw fa-sm"></i>
                     markdown supported
                   </p>
@@ -103,7 +103,7 @@
                     Email
                   </label>
                   <input required class="form-input light" v-model="v.email" :placeholder="v.email || `john@example.com`" type="email"/>
-                  <p class="text-sm text-gray-500 mt-1 md:w-3/4">
+                  <p class="text-sm text-gray-500 mt-1">
                     Used for password resets and announcements (optional)
                   </p>
                 </div>
@@ -167,7 +167,7 @@
                       <div class="font-semibold leading-tight">
                         Disable followers
                       </div>
-                      <p class="text-sm text-gray-500 mt-1 md:w-3/4">
+                      <p class="text-sm text-gray-500 mt-1">
                         Prevent others from following you
                       </p>
                     </div>
