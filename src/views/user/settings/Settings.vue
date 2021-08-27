@@ -140,6 +140,21 @@
                   </div>
                 </div>
               </div>
+              <div class="grid grid-cols-3 gap-6 p-4">
+                <div class="col-span-3">
+                  <div class="flex flex-grow items-center justify-between">
+                    <div>
+                      <div class="font-semibold leading-tight">
+                        Enable 2-step login
+                      </div>
+                      <p class="text-sm text-gray-500 mt-1">
+                        Require a 6-digit verification code during login
+                      </p>
+                    </div>
+                    <Toggle v-model="v.is_private"/>
+                  </div>
+                </div>
+              </div>
             </form>
           </div>
           <div>
