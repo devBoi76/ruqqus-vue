@@ -4,7 +4,7 @@
 		<!-- Header content section -->
 		<div class="grid grid-cols-12 sticky top-0 z-10">
 			<div class="col-span-full 2xl:col-start-2 2xl:col-end-10">
-				<div class="flex items-center justify-between px-4 py-3 bg-gray-50 sm:bg-gray-100">
+				<div class="flex items-center justify-between px-4 py-3 bg-white">
 					<h1 class="text-2xl capitalize mb-0">
 						Security
 					</h1>
