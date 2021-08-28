@@ -264,7 +264,7 @@
                 <div class="col-span-3">
                   <div class="flex flex-grow items-center justify-between">
                     <div class="font-semibold leading-tight">
-                      Replies to me
+                      When someone replies to me
                     </div>
                     <Toggle v-model="v.is_private"/>
                   </div>
