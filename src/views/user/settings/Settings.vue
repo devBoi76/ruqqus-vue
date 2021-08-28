@@ -240,13 +240,8 @@
               <div class="grid grid-cols-3 gap-6 p-4">
                 <div class="col-span-3">
                   <div class="flex flex-grow items-center justify-between">
-                    <div>
-                      <div class="font-semibold leading-tight">
-                        New follower
-                      </div>
-                      <p class="text-sm text-gray-500 mt-1">
-                        When you gain a new follower
-                      </p>
+                    <div class="font-semibold leading-tight">
+                      When someone follows me
                     </div>
                     <Toggle v-model="v.is_private"/>
                   </div>
@@ -255,13 +250,8 @@
               <div class="grid grid-cols-3 gap-6 p-4">
                 <div class="col-span-3">
                   <div class="flex flex-grow items-center justify-between">
-                    <div>
-                      <div class="font-semibold leading-tight">
-                        New posts
-                      </div>
-                      <p class="text-sm text-gray-500 mt-1">
-                        When someone you follow posts
-                      </p>
+                    <div class="font-semibold leading-tight">
+                      New posts from people I follow
                     </div>
                     <Toggle v-model="v.is_private"/>
                   </div>
@@ -270,13 +260,8 @@
               <div class="grid grid-cols-3 gap-6 p-4">
                 <div class="col-span-3">
                   <div class="flex flex-grow items-center justify-between">
-                    <div>
-                      <div class="font-semibold leading-tight">
-                        Replies
-                      </div>
-                      <p class="text-sm text-gray-500 mt-1">
-                        When someone replies to your post or comment
-                      </p>
+                    <div class="font-semibold leading-tight">
+                      Replies to me
                     </div>
                     <Toggle v-model="v.is_private"/>
                   </div>
@@ -285,13 +270,8 @@
               <div class="grid grid-cols-3 gap-6 p-4">
                 <div class="col-span-3">
                   <div class="flex flex-grow items-center justify-between">
-                    <div>
-                      <div class="font-semibold leading-tight">
-                        Username mentions
-                      </div>
-                      <p class="text-sm text-gray-500 mt-1">
-                        When someone @mentions you
-                      </p>
+                    <div class="font-semibold leading-tight">
+                      Username mentions
                     </div>
                     <Toggle v-model="v.is_private"/>
                   </div>
