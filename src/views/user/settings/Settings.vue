@@ -222,7 +222,7 @@
                       <div class="font-semibold leading-tight">
                         Announcement emails
                       </div>
-                      <p class="text-sm text-gray-500 mt-1 md:w-3/4">
+                      <p class="text-sm text-gray-500 mt-1">
                         Receive official site announcements via email (requires a verified email)
                       </p>
                     </div>
