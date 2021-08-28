@@ -84,7 +84,111 @@
               </div>
             </form>
           </div>
+
+
           <div>
+            <div class="flex justify-between">
+              <div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
+                Security
+              </div>
+              <div class="text-xs text-gray-400">
+                <i class="fas fa-lock-alt fa-sm pr-1"></i>
+                <span>
+                  Only you can see these details
+                </span>
+              </div>
+            </div>
+            <div class="rounded-sm border bg-white divide-y">
+              <ToggleForm @change="handleChange">
+                <template v-slot:default="{active, toggle}">
+                  <div class="p-4">
+                    <div class="flex items-center justify-between">
+                      <div>
+                        <div class="font-semibold leading-tight">
+                          Password
+                        </div>
+                        <p class="text-sm text-gray-500 mt-1">
+                          Change your password
+                        </p>
+                      </div>
+                      <button class="flex items-center justify-center px-2 w-8 h-8 text-lg text-gray-600 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white rounded-sm" @click="toggle" aria-expanded="active">
+                        <i class="far fa-fw" :class="active ? 'fa-compress-alt' : 'fa-pen'"></i>
+                      </button>
+                    </div>
+                    <div v-if="active" class="space-y-6 mt-6">
+                      <div class="grid grid-cols-3 gap-6">
+                        <div class="col-span-3">
+                          <label class="label">
+                            Current password
+                          </label>
+                          <input required class="form-input light" v-model="password" placeholder="Enter your current password" type="password"/>
+                        </div>
+                        <div class="col-span-3">
+                          <label class="label">
+                            New password
+                          </label>
+                          <div class="relative">
+                            <input required class="form-input light pr-8" v-model="newPassword" placeholder="Enter a new password" :type="showPassword ? 'text' : 'password'" :disabled="!password"/>
+                            <button type="button" class="flex items-center absolute text-gray-400 right-1 bottom-0 p-2 transform active:scale-95 origin-center" @click="showPassword = !showPassword">
+                              {{ showPassword ? '&#128585;' : '&#128584;' }}
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </template>
+              </ToggleForm>
+              <ToggleForm @change="handleChange">
+                <template v-slot:default="{active, toggle}">
+                  <div class="p-4">
+                    <div class="flex items-center justify-between">
+                      <div>
+                        <div class="font-semibold leading-tight">
+                          Email
+                        </div>
+                        <p class="text-sm text-gray-500 mt-1">
+                          {{ v.email || 'You have not verified an email wit this account'}}
+                        </p>
+                      </div>
+                      <button class="flex items-center justify-center px-2 w-8 h-8 text-lg text-gray-600 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white rounded-sm" @click="toggle" aria-expanded="active">
+                        <i class="far fa-fw" :class="active ? 'fa-compress-alt' : 'fa-pen'"></i>
+                      </button>
+                    </div>
+                    <div v-if="active" class="space-y-6 mt-6">
+                      <div class="grid grid-cols-3 gap-6">
+                        <div class="col-span-3">
+                          <label class="label">
+                            Email
+                          </label>
+                          <input required class="form-input light" v-model="v.email" :placeholder="v.email || `john@example.com`" type="email"/>
+                          <p class="text-sm text-gray-500 mt-1">
+                            Used for password resets and announcements (optional)
+                          </p>
+                        </div>
+                        <div class="col-span-3" :class="{'opacity-50 pointer-events-none':!v.email}">
+                          <div class="flex flex-grow items-center justify-between">
+                            <div>
+                              <label class="label">
+                                Subscribe to email alerts
+                              </label>
+                              <p class="text-sm text-gray-500 mt-1">
+                                Receive official site announcements over email
+                              </p>
+                            </div>
+                            <Toggle v-model="isEmailSubscribed"/>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </template>
+              </ToggleForm>
+            </div>
+          </div>
+
+
+          <div class="hidden">
             <div class="flex justify-between">
               <div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
                 Security
@@ -207,6 +311,8 @@ import { mapState } from 'vuex';
 import Editor from "@/components/editors/Editor_V2.vue";
 import Toggle from "@/components/forms/Toggle.vue";
 
+const ToggleForm = defineAsyncComponent(() => import('@/components/Toggle.vue'));
+
 export default {
   name: "UserSettingsView",
   data() {
@@ -220,7 +326,8 @@ export default {
   },
   components: {
     Editor,
-    Toggle
+    Toggle,
+    ToggleForm
   },
   computed: {
     ...mapState("persist", ["v"])
