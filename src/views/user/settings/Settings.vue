@@ -287,7 +287,7 @@
                   <div class="flex flex-grow items-center justify-between">
                     <div>
                       <div class="font-semibold leading-tight">
-                        Username entions
+                        Username mentions
                       </div>
                       <p class="text-sm text-gray-500 mt-1">
                         Be notified when someone @mentions you
