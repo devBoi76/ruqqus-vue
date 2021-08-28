@@ -183,10 +183,13 @@
                   <div class="flex flex-grow items-center justify-between">
                     <div>
                       <div class="font-semibold leading-tight">
-                        Announcement emails
+                        Announcements
                       </div>
                       <p class="text-sm text-gray-500 mt-1">
-                        Receive official site announcements via email (requires a verified email)
+                        Receive official site announcements via email
+                        <span v-if="!v.email" class="text-yellow-500">
+                          (you must verify an email first)
+                        </span>
                       </p>
                     </div>
                     <Toggle v-model="v.is_private" :disabled="!v.email"/>
