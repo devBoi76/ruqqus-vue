@@ -208,7 +208,7 @@
                         Private profile
                       </div>
                       <p class="text-sm text-gray-500 mt-1 md:w-3/4">
-                        Cloak your posting history and ask search engines not to index your profile (content is always visible via direct link).
+                        Cloak my posting history and ask search engines not to index my profile
                       </p>
                     </div>
                     <Toggle v-model="v.is_private"/>
