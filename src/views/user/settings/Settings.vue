@@ -177,7 +177,7 @@
             <div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
               Email alerts
             </div>
-            <form class="rounded-sm border bg-white divide-y">
+            <form class="rounded-sm border bg-white divide-y" :class="{ 'opacity-50 pointer-events-none':!v.email }">
               <div class="grid grid-cols-3 gap-6 p-4">
                 <div class="col-span-3">
                   <div class="flex flex-grow items-center justify-between">
@@ -187,12 +187,9 @@
                       </div>
                       <p class="text-sm text-gray-500 mt-1">
                         Receive official site announcements via email
-                        <span v-if="!v.email" class="text-yellow-500">
-                          (you must verify an email first)
-                        </span>
                       </p>
                     </div>
-                    <Toggle v-model="v.is_private" :disabled="!v.email"/>
+                    <Toggle v-model="v.is_private"/>
                   </div>
                 </div>
               </div>
