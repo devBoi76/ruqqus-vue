@@ -175,6 +175,28 @@
           </div>
           <div>
             <div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
+              Email alerts
+            </div>
+            <form class="rounded-sm border bg-white divide-y">
+              <div class="grid grid-cols-3 gap-6 p-4">
+                <div class="col-span-3">
+                  <div class="flex flex-grow items-center justify-between">
+                    <div>
+                      <div class="font-semibold leading-tight">
+                        Announcement emails
+                      </div>
+                      <p class="text-sm text-gray-500 mt-1">
+                        Receive official site announcements via email (requires a verified email)
+                      </p>
+                    </div>
+                    <Toggle v-model="v.is_private" :disabled="!v.email"/>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div>
+            <div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
               Privacy
             </div>
             <form class="rounded-sm border bg-white divide-y">
@@ -220,13 +242,13 @@
                   <div class="flex flex-grow items-center justify-between">
                     <div>
                       <div class="font-semibold leading-tight">
-                        Announcement emails
+                        New follower
                       </div>
                       <p class="text-sm text-gray-500 mt-1">
-                        Receive official site announcements via email (requires a verified email)
+                        Be notified when someone follows you
                       </p>
                     </div>
-                    <Toggle v-model="v.is_private" :disabled="!v.email"/>
+                    <Toggle v-model="v.is_private"/>
                   </div>
                 </div>
               </div>
@@ -235,10 +257,40 @@
                   <div class="flex flex-grow items-center justify-between">
                     <div>
                       <div class="font-semibold leading-tight">
-                        New Follower
+                        New posts
                       </div>
                       <p class="text-sm text-gray-500 mt-1">
-                        Receive a notification when someone follows you
+                        Be notified when people you follow post
+                      </p>
+                    </div>
+                    <Toggle v-model="v.is_private"/>
+                  </div>
+                </div>
+              </div>
+              <div class="grid grid-cols-3 gap-6 p-4">
+                <div class="col-span-3">
+                  <div class="flex flex-grow items-center justify-between">
+                    <div>
+                      <div class="font-semibold leading-tight">
+                        Replies
+                      </div>
+                      <p class="text-sm text-gray-500 mt-1">
+                        Be notified when someone replies to your posts or comments
+                      </p>
+                    </div>
+                    <Toggle v-model="v.is_private"/>
+                  </div>
+                </div>
+              </div>
+              <div class="grid grid-cols-3 gap-6 p-4">
+                <div class="col-span-3">
+                  <div class="flex flex-grow items-center justify-between">
+                    <div>
+                      <div class="font-semibold leading-tight">
+                        Username entions
+                      </div>
+                      <p class="text-sm text-gray-500 mt-1">
+                        Be notified when someone @mentions you
                       </p>
                     </div>
                     <Toggle v-model="v.is_private"/>
