@@ -215,7 +215,7 @@
               Notifications
             </div>
             <form class="rounded-sm border bg-white divide-y">
-              <div class="grid grid-cols-3 gap-6 p-4" :class="{'opacity-50 pointer-events-none':!v.email}">
+              <div class="grid grid-cols-3 gap-6 p-4">
                 <div class="col-span-3">
                   <div class="flex flex-grow items-center justify-between">
                     <div>
@@ -226,7 +226,7 @@
                         Receive official site announcements via email (requires a verified email)
                       </p>
                     </div>
-                    <Toggle v-model="v.is_private"/>
+                    <Toggle v-model="v.is_private" :disabled="!v.email"/>
                   </div>
                 </div>
               </div>
