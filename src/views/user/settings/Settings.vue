@@ -176,7 +176,7 @@
                                 Receive official site announcements over email
                               </p>
                             </div>
-                            <Toggle v-model="isEmailSubscribed"/>
+                            <!-- <Toggle v-model="isEmailSubscribed"/> -->
                           </div>
                         </div>
                       </div>
