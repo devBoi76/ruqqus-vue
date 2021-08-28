@@ -245,7 +245,7 @@
                         New follower
                       </div>
                       <p class="text-sm text-gray-500 mt-1">
-                        Be notified when someone follows you
+                        When you gain a new follower
                       </p>
                     </div>
                     <Toggle v-model="v.is_private"/>
@@ -260,7 +260,7 @@
                         New posts
                       </div>
                       <p class="text-sm text-gray-500 mt-1">
-                        Be notified when people you follow post
+                        When someone you follow posts
                       </p>
                     </div>
                     <Toggle v-model="v.is_private"/>
@@ -275,7 +275,7 @@
                         Replies
                       </div>
                       <p class="text-sm text-gray-500 mt-1">
-                        Be notified when someone replies to your posts or comments
+                        When someone replies to your post or comment
                       </p>
                     </div>
                     <Toggle v-model="v.is_private"/>
@@ -290,7 +290,7 @@
                         Username mentions
                       </div>
                       <p class="text-sm text-gray-500 mt-1">
-                        Be notified when someone @mentions you
+                        When someone @mentions you
                       </p>
                     </div>
                     <Toggle v-model="v.is_private"/>
