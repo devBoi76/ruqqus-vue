@@ -226,7 +226,7 @@
                         Disable followers
                       </div>
                       <p class="text-sm text-gray-500 mt-1">
-                        Prevent others from following you
+                        Prevent others from following me
                       </p>
                     </div>
                     <Toggle v-model="v.is_private"/>
