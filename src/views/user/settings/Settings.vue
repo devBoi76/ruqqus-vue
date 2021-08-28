@@ -128,7 +128,7 @@
                             New password
                           </label>
                           <div class="relative">
-                            <input required class="form-input light pr-8" v-model="newPassword" placeholder="Enter a new password" :type="showPassword ? 'text' : 'password'" :disabled="!password"/>
+                            <input required class="form-input light pr-10" v-model="newPassword" placeholder="Enter a new password" :type="showPassword ? 'text' : 'password'" :disabled="!password"/>
                             <button type="button" class="flex items-center absolute text-gray-400 right-1 bottom-0 p-2 transform active:scale-95 origin-center" @click="showPassword = !showPassword">
                               {{ showPassword ? '&#128585;' : '&#128584;' }}
                             </button>
@@ -159,25 +159,12 @@
                       <div class="grid grid-cols-3 gap-6">
                         <div class="col-span-3">
                           <label class="label">
-                            Email
+                            Email address
                           </label>
                           <input required class="form-input light" v-model="v.email" :placeholder="v.email || `john@example.com`" type="email"/>
                           <p class="text-sm text-gray-500 mt-1">
-                            Used for password resets and announcements (optional)
+                            Used for password resets and opt-in announcements
                           </p>
-                        </div>
-                        <div class="col-span-3" :class="{'opacity-50 pointer-events-none':!v.email}">
-                          <div class="flex flex-grow items-center justify-between">
-                            <div>
-                              <label class="label">
-                                Subscribe to email alerts
-                              </label>
-                              <p class="text-sm text-gray-500 mt-1">
-                                Receive official site announcements over email
-                              </p>
-                            </div>
-                            <!-- <Toggle v-model="isEmailSubscribed"/> -->
-                          </div>
                         </div>
                       </div>
                     </div>
@@ -185,81 +172,6 @@
                 </template>
               </ToggleForm>
             </div>
-          </div>
-
-
-          <div class="hidden">
-            <div class="flex justify-between">
-              <div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
-                Security
-              </div>
-              <div class="text-xs text-gray-400">
-                <i class="fas fa-lock-alt fa-sm pr-1"></i>
-                <span>
-                  Only you can see these details
-                </span>
-              </div>
-            </div>
-            <form class="rounded-sm border bg-white divide-y">
-              <div class="grid grid-cols-3 gap-6 p-4">
-                <div class="col-span-3">
-                  <label class="label">
-                    Email
-                  </label>
-                  <input required class="form-input light" v-model="v.email" :placeholder="v.email || `john@example.com`" type="email"/>
-                  <p class="text-sm text-gray-500 mt-1">
-                    Used for password resets and announcements (optional)
-                  </p>
-                </div>
-                <div class="col-span-3" :class="{'opacity-50 pointer-events-none':!v.email}">
-                  <div class="flex flex-grow items-center justify-between">
-                    <div>
-                      <label class="label">
-                        Subscribe to email alerts
-                      </label>
-                      <p class="text-sm text-gray-500 mt-1">
-                        Receive official site announcements over email
-                      </p>
-                    </div>
-                    <Toggle v-model="isEmailSubscribed"/>
-                  </div>
-                </div>
-              </div>
-              <div class="grid grid-cols-3 gap-6 p-4">
-                <div class="col-span-3">
-                  <label class="label">
-                    Current password
-                  </label>
-                  <input required class="form-input light" v-model="password" placeholder="Enter your current password" type="password"/>
-                </div>
-                <div class="col-span-3">
-                  <label class="label">
-                    New password
-                  </label>
-                  <div class="relative">
-                    <input required class="form-input light pr-8" v-model="newPassword" placeholder="Enter a new password" :type="showPassword ? 'text' : 'password'" :disabled="!password"/>
-                    <button type="button" class="flex items-center absolute text-gray-400 right-1 bottom-0 p-2 transform active:scale-95 origin-center" @click="showPassword = !showPassword">
-                      {{ showPassword ? '&#128585;' : '&#128584;' }}
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="grid grid-cols-3 gap-6 p-4">
-                <div class="col-span-3">
-                  <div class="flex flex-grow items-center justify-between">
-                    <div>
-                      <div class="font-semibold leading-tight">
-                        Enable 2-step login
-                      </div>
-                      <p class="text-sm text-gray-500 mt-1">
-                        Require a 6-digit verification code during login
-                      </p>
-                    </div>
-                    <Toggle v-model="v.is_private"/>
-                  </div>
-                </div>
-              </div>
-            </form>
           </div>
           <div>
             <div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
@@ -290,6 +202,43 @@
                       </div>
                       <p class="text-sm text-gray-500 mt-1">
                         Prevent others from following you
+                      </p>
+                    </div>
+                    <Toggle v-model="v.is_private"/>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div>
+            <div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
+              Notifications
+            </div>
+            <form class="rounded-sm border bg-white divide-y">
+              <div class="grid grid-cols-3 gap-6 p-4" :class="{'opacity-50 pointer-events-none':!v.email}">
+                <div class="col-span-3">
+                  <div class="flex flex-grow items-center justify-between">
+                    <div>
+                      <div class="font-semibold leading-tight">
+                        Announcement emails
+                      </div>
+                      <p class="text-sm text-gray-500 mt-1 md:w-3/4">
+                        Receive official site announcements via email (requires a verified email)
+                      </p>
+                    </div>
+                    <Toggle v-model="v.is_private"/>
+                  </div>
+                </div>
+              </div>
+              <div class="grid grid-cols-3 gap-6 p-4">
+                <div class="col-span-3">
+                  <div class="flex flex-grow items-center justify-between">
+                    <div>
+                      <div class="font-semibold leading-tight">
+                        New Follower
+                      </div>
+                      <p class="text-sm text-gray-500 mt-1">
+                        Receive a notification when someone follows you
                       </p>
                     </div>
                     <Toggle v-model="v.is_private"/>
