@@ -246,7 +246,7 @@
                   <div class="flex flex-grow items-center justify-between">
                     <label class="label">
                       New posts from people I follow
-                    </lable>
+                    </label>
                     <Toggle v-model="v.is_private"/>
                   </div>
                 </div>
