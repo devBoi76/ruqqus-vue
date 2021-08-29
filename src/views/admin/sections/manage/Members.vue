@@ -18,7 +18,7 @@
 		<!-- Main content section -->
 
 		<!-- Error state if guild data fails to load -->
-		<div v-show="errored && !loading" class="w-full h-2/3 px-4">
+		<div v-show="errored && !loading" class="w-full h-2/3 p-4 md:px-8">
 			<div class="flex flex-col h-full justify-center items-center text-center">
 				<i class="block fad fa-ghost text-gray-400 dark:text-gray-200 text-5xl mb-6"></i>
 				<div class="h5">
@@ -33,8 +33,8 @@
 		<div class="grid grid-cols-12">
 
 			<!-- Loading state -->
-			<div v-show="loading && !errored" class="col-span-full 2xl:col-start-2 2xl:col-end-10">
-				<div class="flex flex-col w-full p-4 space-y-3 animate-pulse">
+			<div v-show="loading && !errored" class="col-span-full 2xl:col-start-2 2xl:col-end-10 p-4 md:px-8">
+				<div class="flex flex-col w-full space-y-3 animate-pulse">
 					<div class="rounded-sm bg-gray-200 dark:bg-white dark:bg-opacity-20 w-1/6 h-3"></div>
 					<div class="rounded-sm bg-gray-200 dark:bg-white dark:bg-opacity-20 w-full h-20"></div>
 				</div>
