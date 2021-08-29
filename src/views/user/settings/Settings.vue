@@ -112,13 +112,13 @@
                     <div v-if="active" class="space-y-6 mt-6">
                       <div class="grid grid-cols-3 gap-6">
                         <div class="col-span-3">
-                          <label class="label mb-0">
+                          <label class="label">
                             Current password
                           </label>
                           <input required class="form-input light" v-model="password" placeholder="Enter your current password" type="password"/>
                         </div>
                         <div class="col-span-3">
-                          <label class="label mb-0">
+                          <label class="label">
                             New password
                           </label>
                           <div class="relative">
