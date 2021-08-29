@@ -24,9 +24,9 @@
                 <div class="col-span-3">
                   <div class="flex flex-grow items-center justify-between">
                     <div>
-                      <label class="label mb-0">
+                      <div class="font-semibold leading-tight">
                         Avatar
-                      </label>
+                      </div>
                       <p class="text-sm text-gray-500 mt-1">
                         png, jpg, gif up to 16mb
                       </p>
@@ -39,9 +39,9 @@
                 <div class="col-span-3">
                   <div class="flex flex-grow items-center justify-between">
                     <div>
-                      <label class="label mb-0">
+                      <div class="font-semibold leading-tight">
                         Banner
-                      </label>
+                      </div>
                       <p class="text-sm text-gray-500 mt-1">
                         png, jpg, gif up to 16mb
                       </p>
@@ -112,9 +112,9 @@
                     <div v-if="active" class="space-y-6 mt-6">
                       <div class="grid grid-cols-3 gap-6">
                         <div class="col-span-3">
-                          <label class="label">
+                          <div class="font-semibold leading-tight">
                             Current password
-                          </label>
+                          </div>
                           <input required class="form-input light" v-model="password" placeholder="Enter your current password" type="password"/>
                         </div>
                         <div class="col-span-3">
@@ -138,9 +138,9 @@
                   <div class="p-4">
                     <div class="flex items-center justify-between">
                       <div>
-                        <label class="label mb-0">
+                        <div class="font-semibold leading-tight">
                           Email
-                        </label>
+                        </div>
                         <p class="text-sm text-gray-500 mt-1">
                           {{ v.email || 'You have not verified an email with this account'}}
                         </p>
@@ -176,9 +176,9 @@
                 <div class="col-span-3">
                   <div class="flex flex-grow items-center justify-between">
                     <div>
-                      <label class="label mb-0">
+                      <div class="font-semibold leading-tight">
                         Announcements
-                      </label>
+                      </div>
                       <p class="text-sm text-gray-500 mt-1">
                         Receive official site announcements via email
                       </p>
@@ -198,9 +198,9 @@
                 <div class="col-span-3">
                   <div class="flex flex-grow items-center justify-between">
                     <div>
-                      <label class="label mb-0">
+                      <div class="font-semibold leading-tight">
                         Private profile
-                      </label>
+                      </div>
                       <p class="text-sm text-gray-500 mt-1">
                         Cloak my posting history and ask search engines not to index my profile
                       </p>
@@ -213,9 +213,9 @@
                 <div class="col-span-3">
                   <div class="flex flex-grow items-center justify-between">
                     <div>
-                      <label class="label mb-0">
+                      <div class="font-semibold leading-tight">
                         Disable followers
-                      </label>
+                      </div>
                       <p class="text-sm text-gray-500 mt-1">
                         Prevent others from following me
                       </p>
