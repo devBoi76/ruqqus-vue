@@ -95,12 +95,6 @@
 	export default {
 		data() {
 			return {
-				site: {
-					unsplash: {
-						isActive: true,
-						query: 'code'
-					}
-				},
 				image: {},
 				form: {
 					email: '',

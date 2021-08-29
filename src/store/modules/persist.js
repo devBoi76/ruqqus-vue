@@ -22,7 +22,11 @@ const state = {
 		canPost: true,
 		canComment: true,
 		canVote: true,
-		memberCount: 503
+		memberCount: 503,
+		unsplash: {
+			isActive: true,
+			query: 'code'
+		}
 	},
 	v: Object,
 	u: {},
