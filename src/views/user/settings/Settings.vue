@@ -98,9 +98,9 @@
                   <div class="p-4">
                     <div class="flex items-center justify-between">
                       <div>
-                        <div class="font-semibold leading-tight">
+                        <label class="label">
                           Password
-                        </div>
+                        </label>
                         <p class="text-sm text-gray-500 mt-1">
                           Change your password
                         </p>
@@ -138,9 +138,9 @@
                   <div class="p-4">
                     <div class="flex items-center justify-between">
                       <div>
-                        <div class="font-semibold leading-tight">
+                        <label class="label">
                           Email
-                        </div>
+                        </label>
                         <p class="text-sm text-gray-500 mt-1">
                           {{ v.email || 'You have not verified an email with this account'}}
                         </p>
@@ -176,9 +176,9 @@
                 <div class="col-span-3">
                   <div class="flex flex-grow items-center justify-between">
                     <div>
-                      <div class="font-semibold leading-tight">
+                      <label class="label">
                         Announcements
-                      </div>
+                      </label>
                       <p class="text-sm text-gray-500 mt-1">
                         Receive official site announcements via email
                       </p>
@@ -198,9 +198,9 @@
                 <div class="col-span-3">
                   <div class="flex flex-grow items-center justify-between">
                     <div>
-                      <div class="font-semibold leading-tight">
+                      <label class="label">
                         Private profile
-                      </div>
+                      </label>
                       <p class="text-sm text-gray-500 mt-1">
                         Cloak my posting history and ask search engines not to index my profile
                       </p>
@@ -213,9 +213,9 @@
                 <div class="col-span-3">
                   <div class="flex flex-grow items-center justify-between">
                     <div>
-                      <div class="font-semibold leading-tight">
+                      <label class="label">
                         Disable followers
-                      </div>
+                      </label>
                       <p class="text-sm text-gray-500 mt-1">
                         Prevent others from following me
                       </p>
@@ -234,9 +234,9 @@
               <div class="grid grid-cols-3 gap-6 p-4">
                 <div class="col-span-3">
                   <div class="flex flex-grow items-center justify-between">
-                    <div class="font-semibold leading-tight">
+                    <label class="label">
                       When someone follows me
-                    </div>
+                    </label>
                     <Toggle v-model="v.is_private"/>
                   </div>
                 </div>
@@ -244,9 +244,9 @@
               <div class="grid grid-cols-3 gap-6 p-4">
                 <div class="col-span-3">
                   <div class="flex flex-grow items-center justify-between">
-                    <div class="font-semibold leading-tight">
+                    <label class="label">
                       New posts from people I follow
-                    </div>
+                    </lable>
                     <Toggle v-model="v.is_private"/>
                   </div>
                 </div>
@@ -254,9 +254,9 @@
               <div class="grid grid-cols-3 gap-6 p-4">
                 <div class="col-span-3">
                   <div class="flex flex-grow items-center justify-between">
-                    <div class="font-semibold leading-tight">
+                    <label class="label">
                       When someone replies to me
-                    </div>
+                    </label>
                     <Toggle v-model="v.is_private"/>
                   </div>
                 </div>
@@ -264,9 +264,9 @@
               <div class="grid grid-cols-3 gap-6 p-4">
                 <div class="col-span-3">
                   <div class="flex flex-grow items-center justify-between">
-                    <div class="font-semibold leading-tight">
+                    <label class="label">
                       Username mentions
-                    </div>
+                    </label>
                     <Toggle v-model="v.is_private"/>
                   </div>
                 </div>
