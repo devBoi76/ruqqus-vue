@@ -9,7 +9,19 @@
 						Members
 					</h1>
 					<div v-show="!loading && !errored" class="flex space-x-2">
-						<input class="form-input light" placeholder="Search members" type="text"/>
+						<form class="relative" @submit.prevent="onSubmit" @submit="search()">
+							<div class="absolute left-3 top-[6px]">
+								<button class="text-gray-400 hover:text-gray-500" type="submit">
+									<i class="far fa-search fa-fw fa-sm"></i>
+								</button>
+							</div>
+							<input required type="text" class="form-input light pl-9" v-model="searchTerm" placeholder="Search members"/>
+							<div v-show="searchTerm" class="absolute right-3 top-[6px]">
+								<button class="text-gray-400 hover:text-gray-500" @click="searchTerm = ''">
+									<i class="far fa-times-circle fa-fw fa-sm"></i>
+								</button>
+							</div>
+						</form>
 					</div>
 				</div>
 			</div>
@@ -165,6 +177,7 @@ export default {
 	},
 	data() {
 		return {
+			searchTerm: '',
 			subscriber_count: 4503,
 			loading: false,
 			errored: false,

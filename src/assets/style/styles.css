@@ -148,7 +148,7 @@
 	}
 	/* Select */
 	.form-select {
-		@apply block w-full pl-3 pr-8 py-1 h-8 transition duration-100 ease-in-out border rounded-sm focus:ring-2 focus:ring-purple-500 focus:outline-none focus:ring-opacity-50 disabled:opacity-50
+		@apply block w-full pl-3 pr-8 py-1.5 transition duration-100 ease-in-out border rounded-sm focus:ring-2 focus:ring-purple-500 focus:outline-none focus:ring-opacity-50 disabled:opacity-50
 	}
 	.form-select:default {
 		@apply text-gray-900 placeholder-gray-400 bg-white border-gray-200 focus:border-purple-500
