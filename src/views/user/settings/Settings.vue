@@ -24,7 +24,7 @@
                 <div class="col-span-3">
                   <div class="flex flex-grow items-center justify-between">
                     <div>
-                      <label class="label">
+                      <label class="label mb-0">
                         Avatar
                       </label>
                       <p class="text-sm text-gray-500 mt-1">
@@ -39,7 +39,7 @@
                 <div class="col-span-3">
                   <div class="flex flex-grow items-center justify-between">
                     <div>
-                      <label class="label">
+                      <label class="label mb-0">
                         Banner
                       </label>
                       <p class="text-sm text-gray-500 mt-1">
@@ -118,7 +118,7 @@
                           <input required class="form-input light" v-model="password" placeholder="Enter your current password" type="password"/>
                         </div>
                         <div class="col-span-3">
-                          <label class="label">
+                          <label class="label mb-0">
                             New password
                           </label>
                           <div class="relative">
@@ -138,7 +138,7 @@
                   <div class="p-4">
                     <div class="flex items-center justify-between">
                       <div>
-                        <label class="label">
+                        <label class="label mb-0">
                           Email
                         </label>
                         <p class="text-sm text-gray-500 mt-1">
@@ -176,7 +176,7 @@
                 <div class="col-span-3">
                   <div class="flex flex-grow items-center justify-between">
                     <div>
-                      <label class="label">
+                      <label class="label mb-0">
                         Announcements
                       </label>
                       <p class="text-sm text-gray-500 mt-1">
@@ -198,7 +198,7 @@
                 <div class="col-span-3">
                   <div class="flex flex-grow items-center justify-between">
                     <div>
-                      <label class="label">
+                      <label class="label mb-0">
                         Private profile
                       </label>
                       <p class="text-sm text-gray-500 mt-1">
@@ -213,7 +213,7 @@
                 <div class="col-span-3">
                   <div class="flex flex-grow items-center justify-between">
                     <div>
-                      <label class="label">
+                      <label class="label mb-0">
                         Disable followers
                       </label>
                       <p class="text-sm text-gray-500 mt-1">
@@ -234,7 +234,7 @@
               <div class="grid grid-cols-3 gap-6 p-4">
                 <div class="col-span-3">
                   <div class="flex flex-grow items-center justify-between">
-                    <label class="label">
+                    <label class="label mb-0">
                       When someone follows me
                     </label>
                     <Toggle v-model="v.is_private"/>
@@ -244,7 +244,7 @@
               <div class="grid grid-cols-3 gap-6 p-4">
                 <div class="col-span-3">
                   <div class="flex flex-grow items-center justify-between">
-                    <label class="label">
+                    <label class="label mb-0">
                       New posts from people I follow
                     </label>
                     <Toggle v-model="v.is_private"/>
@@ -254,7 +254,7 @@
               <div class="grid grid-cols-3 gap-6 p-4">
                 <div class="col-span-3">
                   <div class="flex flex-grow items-center justify-between">
-                    <label class="label">
+                    <label class="label mb-0">
                       When someone replies to me
                     </label>
                     <Toggle v-model="v.is_private"/>
@@ -264,7 +264,7 @@
               <div class="grid grid-cols-3 gap-6 p-4">
                 <div class="col-span-3">
                   <div class="flex flex-grow items-center justify-between">
-                    <label class="label">
+                    <label class="label mb-0">
                       Username mentions
                     </label>
                     <Toggle v-model="v.is_private"/>
