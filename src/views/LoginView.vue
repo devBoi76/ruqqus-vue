@@ -56,7 +56,7 @@
 				</div>
 				<!-- Sign up micro CTA -->
 				<div class="mt-6 text-gray-700 text-sm">
-					Not on Ruqqus?
+					New to {{ site.name }}?
 					<router-link to="/register" class="text-purple-500 font-semibold">
 						Create an account
 					</router-link>

@@ -5,7 +5,7 @@
 			<div class="flex flex-col h-full justify-center mx-auto p-12 md:p-0 md:w-96">
 				<!-- Username and password form -->
 				<div v-show="!mfa">
-					<h1 class="text-4xl font-medium mb-5">
+					<h1 class="text-3xl font-medium mb-5">
 						Create an account
 					</h1>
 					<div class="mt-3">
@@ -27,7 +27,6 @@
 									Password
 								</label>
 								<input required type="password" class="form-input light" placeholder="Your password" name="password-desktop" v-model="form.password"/>
-								<a href="/register" class="block mt-2 text-xs text-purple-500 hover:text-purple-600">Forgot password?</a>
 							</div>
 						</form>
 						<button class="button primary w-full mt-6" @click="auth_v(form)">
@@ -37,9 +36,9 @@
 				</div>
 				<!-- Sign up micro CTA -->
 				<div class="mt-6 text-gray-700 text-sm">
-					Already made a Ruqqus?
+					Already on {{ site.name }}?
 					<router-link to="/login" class="text-purple-500 font-semibold">
-						Log in
+						Create account
 					</router-link>
 				</div>
 			</div>
@@ -76,12 +75,6 @@
 	export default {
 		data() {
 			return {
-				site: {
-					unsplash: {
-						isActive: true,
-						query: 'code'
-					}
-				},
 				image: {},
 				form: {
 					email: '',
@@ -94,6 +87,9 @@
 		},
 		computed: {
 			...mapState("persist", ["mfa"]),
+			site() {
+				return this.$store.getters['persist/getSite'];
+			}
 		},
 		methods: {
 			...mapActions("persist", ["auth_v", "verify_mfa"]),
