@@ -13,7 +13,7 @@
                 Profile
               </div>
               <div class="text-xs text-gray-400">
-                <i class="fas fa-globe-americas fa-sm pr-1"></i>
+                <i class="fas fa-globe-americas fa-sm pr-0.5"></i>
                 <span>
                   Visible to everyone
                 </span>
@@ -86,7 +86,7 @@
                 Security
               </div>
               <div class="text-xs text-gray-400">
-                <i class="fas fa-lock-alt fa-sm pr-1"></i>
+                <i class="fas fa-lock-alt fa-sm pr-0.5"></i>
                 <span>
                   Only you can see these details
                 </span>
