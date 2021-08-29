@@ -9,7 +9,7 @@
 						Members
 					</h1>
 					<div v-show="!loading && !errored" class="flex space-x-2">
-						<input class="form-input" placeholder="Search members" type="text"/>
+						<input class="form-input light" placeholder="Search members" type="text"/>
 					</div>
 				</div>
 			</div>
@@ -44,11 +44,11 @@
 			<div v-if="!loading && !errored" class="col-span-full mt-1">
 				<div class="flex items-center px-4">
 					<div class="flex space-x-4">
-						<select class="form-select capitalize" v-model="sort" :options="routes" >
+						<select class="form-select light capitalize" v-model="sort" :options="routes" >
 							<option v-for="route in routes" :value="route.id">{{ route.text }}</option>
 						</select>
 						<div class="flex flex-shrink-0 space-x-2">
-							<select class="form-select" placeholder="Change role" :disabled="!selected.length" v-model="selectedRole">
+							<select class="form-select light" placeholder="Change role" :disabled="!selected.length" v-model="selectedRole">
 								<option v-for="role in roles" :value="role.id">{{ role.text }}</option>
 							</select>
 							<button class="button gray200" v-show="!confirmation || !selected.length" :disabled="!selectedRole || !selected.length"  @click="confirmation = true">
