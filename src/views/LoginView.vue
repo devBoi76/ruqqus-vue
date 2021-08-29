@@ -5,11 +5,11 @@
 			<div class="flex flex-col h-full justify-center mx-auto p-12 md:p-0 md:w-96">
 				<!-- Username and password form -->
 				<div v-if="!mfa">
-					<h1 class="text-4xl font-medium mb-5">
-						Welcome back!
+					<h1 class="text-3xl font-medium mb-5">
+						Welcome back to {{ site.name }}.
 					</h1>
 					<div class="mt-3">
-						<form @submit.prevent="onSubmit" class="flex flex-col space-y-3 mb-3">
+						<form @submit.prevent="onSubmit" class="flex flex-col space-y-4 mb-3">
 							<div>
 								<label class="label" label-for="username-desktop">
 									Username or Email
@@ -17,11 +17,13 @@
 								<input required type="text" class="form-input light" placeholder="Your username or email" name="username-desktop" v-model="form.name"/>
 							</div>
 							<div>
-								<label class="label" label-for="password-desktop">
-									Password
-								</label>
+								<div class="flex items-center justify-between">
+									<label class="label" label-for="password-desktop">
+										Password
+									</label>
+									<a href="/register" class="mb-1 text-xs text-purple-500 hover:text-purple-600">Forgot password?</a>
+								</div>
 								<input required type="password" class="form-input light" placeholder="Your password" name="password-desktop" v-model="form.password"/>
-								<a href="/register" class="block mt-2 text-xs text-purple-500 hover:text-purple-600">Forgot password?</a>
 							</div>
 						</form>
 						<button class="button primary w-full mt-6" @click="auth_v(form)">
@@ -111,6 +113,9 @@
 		},
 		computed: {
 			...mapState("persist", ["mfa"]),
+			site() {
+				return this.$store.getters['persist/getSite'];
+			}
 		},
 		methods: {
 			...mapActions("persist", ["auth_v", "verify_mfa"]),
