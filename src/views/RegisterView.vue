@@ -38,7 +38,7 @@
 				<div class="mt-6 text-gray-700 text-sm">
 					Already on {{ site.name }}?
 					<router-link to="/login" class="text-purple-500 font-semibold">
-						Create account
+						Log in
 					</router-link>
 				</div>
 			</div>
