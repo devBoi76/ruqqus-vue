@@ -41,8 +41,8 @@
 			</div>
 
 			<!-- Tools -->
-			<div v-if="!loading && !errored" class="col-span-full mt-1">
-				<div class="flex items-center px-4">
+			<div v-if="!loading && !errored" class="col-span-full mt-1 p-4 md:px-8">
+				<div class="flex items-center">
 					<div class="flex space-x-4">
 						<select class="form-select light capitalize" v-model="sort" :options="routes" >
 							<option v-for="route in routes" :value="route.id">{{ route.text }}</option>
@@ -70,7 +70,7 @@
 			</div>
 
 			<!-- Table -->
-			<div v-if="!loading && !errored" class="col-span-full 2xl:col-start-2 2xl:col-end-10 p-4">
+			<div v-if="!loading && !errored" class="col-span-full 2xl:col-start-2 2xl:col-end-10 p-4 md:px-8">
 				<div class="border overflow-hidden border-b border-gray-200 sm:rounded-sm">
 					<table class="min-w-full divide-y divide-gray-200">
 						<thead class="bg-gray-50">
