@@ -4,8 +4,8 @@
 		<!-- Header content section -->
 		<div class="grid grid-cols-12 sticky top-0 z-10">
 			<div class="col-span-full 2xl:col-start-2 2xl:col-end-10">
-				<div class="flex items-center justify-between px-4 py-3 bg-gray-50 sm:bg-gray-100">
-					<h1 class="text-2xl capitalize mb-0">
+				<div class="flex items-center justify-between p-6 md:px-8 bg-white">
+					<h1 class="text-2xl mb-0">
 						Members
 					</h1>
 					<div v-show="!loading && !errored" class="flex space-x-2">
@@ -169,7 +169,7 @@ export default {
 	data() {
 		return {
 			subscriber_count: 4503,
-			loading: true,
+			loading: false,
 			errored: false,
 			reorder: false,
 			members: [
@@ -269,12 +269,6 @@ export default {
 		}
 	},
 	watch: {
-		'$route.params.name': { // get guild info and posts if guild changes
-			handler() {
-				this.getGuildInfo()
-			},
-			immediate: true
-		},
 		'selected': { // get guild info and posts if guild changes
 			handler() {
 				if (this.confirmation && this.selected.length) {
@@ -286,19 +280,19 @@ export default {
 		}
 	},
 	methods: {
-		getGuildInfo() {
-			let guild = this.$route.params.name
-			this.$store.dispatch('guild/fetchGuild', guild)
-			.then(() => {
-				console.log("getGuild dispatch successful")
-			})
-			.catch(error => {
-				console.error(error)
-				this.errored = true
+		// getGuildInfo() {
+		// 	let guild = this.$route.params.name
+		// 	this.$store.dispatch('guild/fetchGuild', guild)
+		// 	.then(() => {
+		// 		console.log("getGuild dispatch successful")
+		// 	})
+		// 	.catch(error => {
+		// 		console.error(error)
+		// 		this.errored = true
 
-			})
-			.finally(() => this.loading = false)
-		},
+		// 	})
+		// 	.finally(() => this.loading = false)
+		// },
 		exile(members) {
 			console.log('exiled' + members)
 		},
