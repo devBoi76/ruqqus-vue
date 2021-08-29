@@ -98,9 +98,9 @@
                   <div class="p-4">
                     <div class="flex items-center justify-between">
                       <div>
-                        <label class="label">
+                        <div class="font-semibold leading-tight">
                           Password
-                        </label>
+                        </div>
                         <p class="text-sm text-gray-500 mt-1">
                           Change your password
                         </p>
@@ -112,9 +112,9 @@
                     <div v-if="active" class="space-y-6 mt-6">
                       <div class="grid grid-cols-3 gap-6">
                         <div class="col-span-3">
-                          <div class="font-semibold leading-tight">
+                          <label class="label mb-0">
                             Current password
-                          </div>
+                          </label>
                           <input required class="form-input light" v-model="password" placeholder="Enter your current password" type="password"/>
                         </div>
                         <div class="col-span-3">
