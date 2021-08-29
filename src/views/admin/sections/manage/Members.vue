@@ -70,92 +70,89 @@
 			</div>
 
 			<!-- Table -->
-			<div v-if="!loading && !errored" class="col-span-full 2xl:col-start-2 2xl:col-end-10">
-				<div class="col-span-full">
-					<div class="flex flex-col hidden md:flex p-4">
-						<table class="table-fixed min-w-full divide-y divide-gray-200 rounded-sm shadow-xs bg-white">
-							<thead class="bg-gray-50 border-b rounded-t-sm">
-								<tr>
-									<th class="pl-6 pr-3 py-3">
-										<input type="checkbox" class="form-checkbox primary" v-model="selectAll"/>
-									</th>
-									<th class="w-1/5 pl-3 pr-6 py-3 text-xs font-semibold uppercase tracking-wider text-left text-gray-400 dark:text-gray-400">
-										{{ subscriber_count === 1 ? '1 Member' : `${subscriber_count} Members` }}
-									</th>
-									<th class="w-1/5 px-6 py-3 text-xs font-semibold uppercase tracking-wider text-left text-gray-400 dark:text-gray-400">
-										Roles
-									</th>
-									<th class="w-1/5 px-6 py-3 text-xs font-semibold uppercase tracking-wider text-left text-gray-400 dark:text-gray-400">
-										Joined
-									</th>
-									<th class="w-1/5 px-6 py-3 text-xs font-semibold uppercase tracking-wider text-left text-gray-400 dark:text-gray-400">
-										Posts
-									</th>
-									<th class="w-1/5 px-6 py-3 text-xs font-semibold uppercase tracking-wider text-left text-gray-400 dark:text-gray-400">
-										Comments
-									</th>
-								</tr>
-							</thead>
-							<tbody class="border-b last:border-0">
-								<template v-for="member in members" :key="member.id">
-									<tr class="border-t first:border-0 hover:bg-gray-50">
-										<td class="pl-6 pr-3 py-3">
-											<div class="flex items-center">
-												<input type="checkbox" class="form-checkbox primary" v-model="selected" :value="member.id"/>
-											</div>
-										</td>
-										<td class="pl-3 pr-6 py-3 whitespace-no-wrap">
-											<div class="flex items-center">
-												<router-link :to="`/${member.username}`" target="_blank">
-													<img :src="member.profile_url" class="w-8 h-8 rounded-sm object-cover mr-2" :alt="`${member.username} avatar`"/>
+			<div v-if="!loading && !errored" class="col-span-full 2xl:col-start-2 2xl:col-end-10 p-4">
+				<div class="border overflow-hidden border-b border-gray-200 sm:rounded-sm">
+					<table class="min-w-full divide-y divide-gray-200">
+						<thead class="bg-gray-50">
+							<tr>
+								<th class="pl-6 pr-3 py-3">
+									<input type="checkbox" class="form-checkbox primary" v-model="selectAll"/>
+								</th>
+								<th class="w-1/5 pl-3 pr-6 py-2 text-xs font-semibold uppercase tracking-wider text-left text-gray-400 dark:text-gray-400">
+									{{ subscriber_count === 1 ? '1 Member' : `${subscriber_count} Members` }}
+								</th>
+								<th class="w-1/5 px-6 py-3 text-xs font-semibold uppercase tracking-wider text-left text-gray-400 dark:text-gray-400">
+									Roles
+								</th>
+								<th class="w-1/5 px-6 py-3 text-xs font-semibold uppercase tracking-wider text-left text-gray-400 dark:text-gray-400">
+									Joined
+								</th>
+								<th class="w-1/5 px-6 py-3 text-xs font-semibold uppercase tracking-wider text-left text-gray-400 dark:text-gray-400">
+									Posts
+								</th>
+								<th class="w-1/5 px-6 py-3 text-xs font-semibold uppercase tracking-wider text-left text-gray-400 dark:text-gray-400">
+									Comments
+								</th>
+							</tr>
+						</thead>
+						<tbody class="border-b last:border-0">
+							<template v-for="member in members" :key="member.id">
+								<tr class="border-t first:border-0 hover:bg-gray-50">
+									<td class="pl-6 pr-3 py-3">
+										<div class="flex items-center">
+											<input type="checkbox" class="form-checkbox primary" v-model="selected" :value="member.id"/>
+										</div>
+									</td>
+									<td class="pl-3 pr-6 py-3 whitespace-no-wrap">
+										<div class="flex items-center">
+											<router-link :to="`/${member.username}`" target="_blank">
+												<img :src="member.profile_url" class="w-8 h-8 rounded-sm object-cover mr-2" :alt="`${member.username} avatar`"/>
+											</router-link>
+											<div>
+												<router-link :to="`/${member.username}`" target="_blank" class="text-sm text-gray-900 font-medium">
+													{{ member.username }}
 												</router-link>
-												<div>
-													<router-link :to="`/${member.username}`" target="_blank" class="text-sm text-gray-900 font-medium">
-														{{ member.username }}
-													</router-link>
-													<p class="text-2xs text-gray-500">
-														{{ member.reputation }} reputation
-													</p>
-												</div>
+												<p class="text-2xs text-gray-500">
+													{{ member.reputation }} reputation
+												</p>
 											</div>
-										</td>
-										<td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-900">
-											<div class="flex space-x-1">
-												<span v-for="i in member.roles" :key="i" class="px-2 inline-flex text-xs leading-5 font-medium rounded-sm" :class="role[i] || role.normal">
-													{{ i }}
-												</span>
-											</div>
-										</td>
-										<td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-900">
-											<span class="text-gray-500">
-												{{ member.date }}
+										</div>
+									</td>
+									<td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-900">
+										<div class="flex space-x-1">
+											<span v-for="i in member.roles" :key="i" class="px-2 inline-flex text-xs leading-5 font-medium rounded-sm" :class="role[i] || role.normal">
+												{{ i }}
 											</span>
-										</td>
-										<td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-900">
-											<div class="flex items-center space-x-2">
-												<span class="text-gray-500">
-													{{ member.post_count }}
-												</span>
-											</div>
-										</td>
-										<td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-900">
-											<div class="flex items-center space-x-2">
-												<span class="text-gray-500">
-													{{ member.comment_count }}
-												</span>
-											</div>
-										</td>
-									</tr>
-								</template>
-							</tbody>
-						</table>
-					</div>
+										</div>
+									</td>
+									<td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-900">
+										<span class="text-gray-500">
+											{{ member.date }}
+										</span>
+									</td>
+									<td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-900">
+										<div class="flex items-center space-x-2">
+											<span class="text-gray-500">
+												{{ member.post_count }}
+											</span>
+										</div>
+									</td>
+									<td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-900">
+										<div class="flex items-center space-x-2">
+											<span class="text-gray-500">
+												{{ member.comment_count }}
+											</span>
+										</div>
+									</td>
+								</tr>
+							</template>
+						</tbody>
+					</table>
 				</div>
 			</div>
-			<!-- End Main content section -->
-
 		</div>
 	</div>
+	<!-- End Main content section -->
 </template>
 
 <script>
