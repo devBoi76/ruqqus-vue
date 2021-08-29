@@ -4,7 +4,7 @@
 			<!-- Form section -->
 			<div class="flex flex-col h-full justify-center mx-auto p-12 md:p-0 md:w-96">
 				<!-- Username and password form -->
-				<div v-show="!mfa">
+				<div>
 					<h1 class="text-3xl font-medium mb-5">
 						Create an account
 					</h1>
@@ -14,7 +14,7 @@
 								<label class="label" label-for="username-desktop">
 									Username
 								</label>
-								<input required type="text" class="form-input light" placeholder="Your username or email" name="username-desktop" v-model="form.name"/>
+								<input required type="text" class="form-input light" placeholder="i.e. SandTurtle" name="username-desktop" v-model="form.name"/>
 							</div>
 							<div>
 								<label class="label" label-for="username-desktop">
@@ -26,10 +26,10 @@
 								<label class="label" label-for="password-desktop">
 									Password
 								</label>
-								<input required type="password" class="form-input light" placeholder="Your password" name="password-desktop" v-model="form.password"/>
+								<input required type="password" class="form-input light" placeholder="Enter something secretive" name="password-desktop" v-model="form.password"/>
 							</div>
 						</form>
-						<button class="button primary w-full mt-6" @click="auth_v(form)">
+						<button class="button primary w-full mt-6">
 							Create account
 						</button>
 					</div>
@@ -69,7 +69,6 @@
 </template>
 
 <script>
-	import { mapState, mapActions } from "vuex";
 	import { getRandomPhoto } from "../helpers/unsplash";
 
 	export default {
@@ -80,19 +79,16 @@
 					email: '',
 					name: '',
 					password: '',
-					mfa: '',
 					checked: []
 				},
 			}
 		},
 		computed: {
-			...mapState("persist", ["mfa"]),
 			site() {
 				return this.$store.getters['persist/getSite'];
 			}
 		},
 		methods: {
-			...mapActions("persist", ["auth_v", "verify_mfa"]),
 			randomItem (items) {
 				return items[Math.floor(Math.random()*items.length)];
 			},
