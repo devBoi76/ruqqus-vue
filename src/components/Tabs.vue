@@ -22,12 +22,15 @@
       </TabList>
 
       <TabPanels>
+        <div class="px-4 mt-4">
+          <input type="text" placeholder="Search for the perfect emote"/>
+        </div>
         <TabPanel
           v-for="(category, index) in Object.values(categories)"
           :key="index"
           class="bg-white p-4"
         >
-          <ul class="inline-flex flex-wrap gap-2">
+          <ul class="inline-flex flex-wrap gap-2 mb-0">
             <li
               v-for="emote in category"
               :key="emote.id"
