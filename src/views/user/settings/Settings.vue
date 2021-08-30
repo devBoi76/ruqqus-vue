@@ -78,7 +78,7 @@
 											</label>
 											<div class="flex items-center space-x-2">
 												<input required class="form-input light pr-8" v-model="v.username" :placeholder="v.username" type="text"/>
-												<ColorPicker/>
+												<ColorPicker :color.sync="usernameColor"/>
 											</div>
 											<p class="text-sm text-gray-500 mt-1">
 												Your original username will always be reserved:
@@ -93,7 +93,7 @@
 											</label>
 											<div class="flex items-center space-x-2">
 												<input required class="form-input light pr-8" v-model="title" :placeholder="title" type="text"/>
-												<ColorPicker/>
+												<ColorPicker :color.sync="titleColor"/>
 											</div>
 											<p class="text-sm text-gray-500 mt-1">
 												Titles are decorative text next to your username
@@ -106,7 +106,7 @@
 											<div class="p-3 bg-white border rounded">
 												<div class="flex items-center mb-3">
 													<img :src="v.profile_url" class="w-9 h-9 rounded-sm bg-white bg-opacity-20 mr-2" alt="avatar">
-													<div class="text-xs font-semibold text-gray-900 leading-tight">
+													<div class="text-xs font-semibold text-gray-900 leading-tight" :style="{ 'color': usernameColor }">
 														{{ v.username }}
 													</div>
 												</div>
@@ -365,6 +365,8 @@ export default {
 	name: "UserSettingsView",
 	data() {
 		return {
+			usernameColor: '#C53030',
+			titleColor: '#C53030',
 			title: '',
 			editProfile: false,
 			editAppearance: false,
