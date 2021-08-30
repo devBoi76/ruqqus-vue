@@ -92,6 +92,7 @@ export default {
   },
   methods: {
     selectEmote(val) {
+      console.log(val)
       this.$emit("selectEmote",val)
     }
   }

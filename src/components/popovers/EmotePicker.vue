@@ -14,7 +14,7 @@
     leave-to-class="translate-y-1 opacity-0"
     >
     <PopoverPanel class="absolute top-0 left-6 ml-2 w-56 z-10 bg-white border rounded shadow-lg">
-      <Tabs/>
+      <Tabs @select-emote="selectEmote(val)"/>
     </PopoverPanel>
   </transition>
 </Popover>
@@ -29,6 +29,12 @@
     components: { Popover, PopoverButton, PopoverPanel, Tabs },
     data() {
       return {
+      }
+    },
+    methods: {
+      selectEmote(val) {
+        console.log(val)
+        this.$emit("selectEmote",val)
       }
     }
   }
