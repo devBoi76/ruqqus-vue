@@ -2,7 +2,7 @@
   <div class="w-full rounded overflow-hidden">
     <TabGroup>
       <TabList class="relative flex px-2.5 space-x-1 overflow-x-scroll scrollbar-hidden bg-white shadow-xs mb-1">
-        <div class="absolute top-0 -right-4 w-20 h-full bg-gradient-to-l from-white"></div>
+        <div class="absolute top-0 -right-4 w-10 h-full bg-gradient-to-l from-white"></div>
         <Tab
           v-for="category in Object.keys(categories)"
           as="template"
