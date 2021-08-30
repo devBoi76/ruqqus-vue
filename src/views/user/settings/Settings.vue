@@ -46,9 +46,7 @@
                         png, jpg, gif up to 16mb
                       </p>
                     </div>
-                    <img v-if="v.banner_url" :src="v.banner_url" class="w-48 h-11 rounded-sm bg-gray-100 object-cover" alt="guild cover artwork"/>
-                    <div class="v-else">
-                    </div>
+                    <img :src="banner" class="w-48 h-11 rounded-sm bg-gray-100 object-cover" alt="guild cover artwork"/>
                   </div>
                 </div>
               </div>
@@ -307,7 +305,10 @@ export default {
     ToggleForm
   },
   computed: {
-    ...mapState("persist", ["v"])
+    ...mapState("persist", ["v"]),
+    banner() {
+      return this.v.banner_url || 'https://i.imgur.com/AgS5BXJ.jpg'
+    }
   },
   methods: {
     getEditorContent(value) {
