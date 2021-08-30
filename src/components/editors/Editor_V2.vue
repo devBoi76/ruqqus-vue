@@ -57,10 +57,14 @@
 		<editor-content v-if="!menuBarBottom" :editor="editor" :style="`min-height:${minHeight}`"/>
 
 		<div class="flex items-center justify-between px-2 py-1.5 bg-gray-50 dark:bg-gray-950 border-t dark:border-gray-700 dark:border-opacity-70 border-dashed">
-			<!-- GIF Picker -->
-			<button class="ml-1 font-bold text-xs text-gray-600 hover:text-primary" @click="toggleModal()">
-				GIF
-			</button>
+			<div class="flex items-center space-x-2">
+				<!-- GIF Picker -->
+				<button class="ml-1 font-bold text-xs text-gray-600 hover:text-primary" @click="toggleModal()">
+					GIF
+				</button>
+				<!-- Emote Picker -->
+				<EmotePicker/>
+			</div>
 			<!-- Character Count -->
 			<div class="text-xs text-gray-400">
 				{{ limit - editor.getCharacterCount() }}
@@ -83,12 +87,12 @@
 	import Placeholder from '@tiptap/extension-placeholder'
 	import Dropcursor from '@tiptap/extension-dropcursor'
 	import Image from '@tiptap/extension-image'
-	//import GIFPicker from "@/components/modals/ModalGIFPicker.vue"
+	import EmotePicker from "@/components/popovers/EmotePicker.vue"
 
 	export default {
 		components: {
 			EditorContent,
-			//GIFPicker
+			EmotePicker
 		},
 		props: {
 			value: {
@@ -239,20 +243,20 @@
 
 /* Placeholder (only at the top) */
 ::v-deep .ProseMirror p.is-editor-empty:first-child::before {
-  content: attr(data-placeholder);
-  float: left;
-  color: #ced4da;
-  pointer-events: none;
-  height: 0;
+	content: attr(data-placeholder);
+	float: left;
+	color: #ced4da;
+	pointer-events: none;
+	height: 0;
 }
 
 /* Placeholder (on every new line) */
 ::v-deep .ProseMirror p.is-empty::before {
-  content: attr(data-placeholder);
-  float: left;
-  color: #ced4da;
-  pointer-events: none;
-  height: 0;
+	content: attr(data-placeholder);
+	float: left;
+	color: #ced4da;
+	pointer-events: none;
+	height: 0;
 }
 
 ::v-deep .ProseMirror img {
