@@ -55,7 +55,7 @@
                 </span>
               </div>
             </div>
-            <form class="border-t border-b border-gray-100 dark:border-transparent sm:border sm:border-gray-200 sm:rounded-sm bg-white divide-y">
+            <form class="border-t border-b border-gray-100 dark:border-transparent sm:border sm:border-gray-200 sm:rounded-sm bg-white divide-y" @submit.prevent="onSubmit">
               <div class="p-4">
                 <div class="flex items-center justify-between">
                   <div>
@@ -72,7 +72,7 @@
                 </div>
                 <div v-if="editProfile" class="space-y-6 mt-6">
                   <div class="grid grid-cols-3 gap-6">
-                    <form class="col-span-3" @submit.prevent="onSubmit">
+                    <div class="col-span-3">
                       <div class="w-full md:w-2/4">
                         <label class="label">
                           Display name
@@ -97,7 +97,7 @@
                           Titles are decorative text next to your username
                         </p>
                       </div>
-                    </form>
+                    </div>
                     <div class="col-span-3 sm:col-span-2">
                       <label class="label">
                         Persona preview
