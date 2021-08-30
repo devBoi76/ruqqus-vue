@@ -1,7 +1,7 @@
 <template>
-  <div class="w-full max-w-md px-2 py-16 sm:px-0">
+  <div class="w-full">
     <TabGroup>
-      <TabList class="flex p-1 space-x-1 bg-blue-900/20 rounded-xl">
+      <TabList class="flex p-1 space-x-1 bg-white rounded">
         <Tab
           v-for="category in Object.keys(categories)"
           as="template"
@@ -10,11 +10,11 @@
         >
           <button
             :class="[
-              'w-full py-2.5 text-sm leading-5 font-medium text-blue-700 rounded-lg',
-              'focus:outline-none focus:ring-2 ring-offset-2 ring-offset-blue-400 ring-white ring-opacity-60',
+              'border-b-2 px-4 pb-2 border-primary capitalize font-semibold',
+              'focus:outline-none focus:ring-2 ring-offset-2 ring-offset-primary ring-white ring-opacity-60',
               selected
-                ? 'bg-white shadow'
-                : 'text-blue-100 hover:bg-white/[0.12] hover:text-white',
+                ? 'text-gray-900'
+                : 'text-gray-400',
             ]"
           >
             {{ category }}

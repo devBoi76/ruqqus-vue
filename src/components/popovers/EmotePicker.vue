@@ -1,6 +1,6 @@
 <template>
-  <Popover v-slot="{ open }" class="relative inline-block text-left">
-    <PopoverButton class="flex items-center justify-center text-gray-700 hover:text-gray-900 bg-white group focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 rounded-sm w-8 h-8">
+  <Popover v-slot="{ open }" class="inline-block text-left">
+    <PopoverButton class="flex items-center justify-center text-gray-700 hover:text-gray-900 group focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 rounded-sm w-8 h-8">
       <i class="far fa-grin fa-fw"></i>
     </PopoverButton>
 
@@ -12,7 +12,7 @@
     leave-from-class="translate-y-0 opacity-100"
     leave-to-class="translate-y-1 opacity-0"
     >
-    <PopoverPanel class="absolute left-0 bottom-4 w-full z-10 mt-2 bg-white border rounded shadow-lg">
+    <PopoverPanel class="absolute right-0 w-full z-10 mt-2 bg-white border rounded shadow-lg">
       <Tabs/>
     </PopoverPanel>
   </transition>
