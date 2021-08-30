@@ -92,7 +92,7 @@ export default {
   },
   methods: {
     selectEmote(val) {
-      this.$emit("update:emote",val)
+      this.$emit("selectEmote",val)
     }
   }
 }
