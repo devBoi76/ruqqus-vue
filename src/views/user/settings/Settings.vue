@@ -22,8 +22,8 @@
               </div>
             </div>
             <div class="relative">
-              <img :src="banner" class="w-full h-56 lg:h-72 object-cover"/>
-              <div v-show="editAppearance" class="absolute bottom-0 flex items-center justify-center w-full h-full bg-black bg-opacity-30">
+              <img :src="banner" class="w-full h-56 lg:h-72 object-cover rounded-sm"/>
+              <div v-show="editAppearance" class="absolute bottom-0 flex items-center justify-center w-full h-full bg-black bg-opacity-30 rounded-sm">
                 <button type="button" class="w-9 h-9 flex items-center justify-center px-2 py-0 text-white bg-transparent hover:bg-black hover:bg-opacity-50 rounded-sm transition duration-100 ease-in-out" tabindex="0">
                   <i class="far fa-pen fa-lg"></i>
                 </button>
