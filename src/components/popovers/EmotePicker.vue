@@ -13,22 +13,7 @@
     leave-to-class="translate-y-1 opacity-0"
     >
     <PopoverPanel class="absolute right-0 origin-top-right w-56 z-10 mt-2 bg-white border rounded shadow-lg">
-      <ul class="inline-flex flex-wrap gap-2 mb-0 p-3">
-        <li v-for="swatch in primarySwatches" :key="swatch">
-          <label :for="swatch" class="flex flex-shrink-0 w-6 h-6 shadow-inner rounded-sm" :style="{ 'background-color': swatch }">
-            <input type="checkbox" class="invisible" :id="swatch" :value="swatch" v-model="innerColor"/>
-          </label>
-        </li>
-      </ul>
-      <div class="flex items-center border-t p-3">
-        <div class="uppercase tracking-wide font-semibold leading-none text-2xs text-gray-500">
-          Custom
-        </div>
-        <div class="relative ml-8">
-          <input type="color" id="color" name="color" class="w-[18px] h-[23px] rounded-full absolute left-2 top-[6px] bg-transparent" v-model="innerColor">
-          <input type="text" class="form-input light pl-8" :placeholder="innerColor" v-model="innerColor"/>
-        </div>
-      </div>
+      <Tabs/>
     </PopoverPanel>
   </transition>
 </Popover>
@@ -37,8 +22,10 @@
 <script>
   import { Popover, PopoverButton, PopoverPanel } from '@headlessui/vue'
 
+  import Tabs from "@/components/Tabs.vue"
+
   export default {
-    components: { Popover, PopoverButton, PopoverPanel },
+    components: { Popover, PopoverButton, PopoverPanel, Tabs },
     props: {
       color: {
         type: String,
