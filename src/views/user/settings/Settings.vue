@@ -72,7 +72,7 @@
                 </div>
                 <div v-if="editProfile" class="space-y-6 mt-6">
                   <div class="grid grid-cols-3 gap-6">
-                    <div class="col-span-3">
+                    <form class="col-span-3" @submit.prevent="onSubmit">
                       <label class="label">
                         Display name
                       </label>
@@ -84,7 +84,7 @@
                           {{ v.username }}
                         </span>
                       </p>
-                    </div>
+                    </form>
                     <div class="col-span-3 sm:col-span-2">
                       <label class="label">
                         Persona preview
