@@ -271,7 +271,7 @@
                 <div class="col-span-3">
                   <div class="flex flex-grow items-center justify-between">
                     <label class="label mb-0">
-                      Username mentions
+                      Username @mentions
                     </label>
                     <Toggle v-model="v.is_private"/>
                   </div>
