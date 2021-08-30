@@ -1,26 +1,28 @@
 <template>
   <div class="w-full rounded overflow-hidden">
     <TabGroup>
-      <TabList class="relative flex px-2.5 space-x-1 overflow-x-scroll scrollbar-hidden bg-white shadow-xs mb-1">
+      <div class="relative">
         <div class="absolute top-0 -right-4 w-10 h-full bg-gradient-to-l from-white"></div>
-        <Tab
-          v-for="category in Object.keys(categories)"
-          as="template"
-          :key="category"
-          v-slot="{ selected }"
-        >
-          <button
-            :class="[
-              'border-b-2 px-2.5 py-2.5 capitalize text-sm font-semibold leading-tight]',
-              selected
-                ? 'border-primary text-gray-900'
-                : 'border-transparent text-gray-400 hover:text-gray-500',
-            ]"
+        <TabList class="relative flex px-2.5 space-x-1 overflow-x-scroll scrollbar-hidden bg-white shadow-xs mb-1">
+          <Tab
+            v-for="category in Object.keys(categories)"
+            as="template"
+            :key="category"
+            v-slot="{ selected }"
           >
-            {{ category }}
-          </button>
-        </Tab>
-      </TabList>
+            <button
+              :class="[
+                'border-b-2 px-2.5 py-2.5 capitalize text-sm font-semibold leading-tight]',
+                selected
+                  ? 'border-primary text-gray-900'
+                  : 'border-transparent text-gray-400 hover:text-gray-500',
+              ]"
+            >
+              {{ category }}
+            </button>
+          </Tab>
+        </TabList>
+      </div>
 
       <TabPanels>
         <div class="hidden p-4 shadow-xs mb-1">
