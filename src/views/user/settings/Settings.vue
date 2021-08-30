@@ -29,7 +29,7 @@
                 </button>
               </div>
             </div>
-            <div class="flex p-6">
+            <div class="flex items-center p-6">
               <div class="relative rounded-sm overflow-hidden w-20 h-20 flex-shrink-0">
                 <img :src="v.profile_url" class="object-cover" alt="profile-picture"/>
                 <div v-show="editAppearance" class="absolute bottom-0 flex items-center justify-center w-full h-full bg-black bg-opacity-30">
@@ -38,7 +38,7 @@
                   </button>
                 </div>
               </div>
-              <div class="z-10 ml-4 pt-3 font-bold text-lg text-white" :class="{'text-opacity-30':editAppearance}">
+              <div class="z-10 ml-4 font-bold text-lg text-white" :class="{'text-opacity-30':editAppearance}">
                 {{ v.username }}
               </div>
             </div>
