@@ -1,9 +1,9 @@
 <template>
   <div class="w-full rounded overflow-hidden">
     <TabGroup>
-      <div class="relative">
-        <div class="absolute top-0 -right-4 w-10 h-full bg-gradient-to-l from-white"></div>
-        <TabList class="relative flex px-2.5 space-x-1 overflow-x-scroll scrollbar-hidden bg-white shadow-xs mb-1">
+      <div class="relative rounded-t">
+        <div class="absolute top-0 right-0 w-8 h-full bg-gradient-to-l from-white rounded-t-r"></div>
+        <TabList class="relative flex px-2.5 overflow-x-scroll scrollbar-hidden bg-white shadow-xs mb-1">
           <Tab
             v-for="category in Object.keys(categories)"
             as="template"
@@ -12,7 +12,7 @@
           >
             <button
               :class="[
-                'border-b-2 px-2.5 py-2.5 capitalize text-sm font-semibold leading-tight]',
+                'border-b-2 px-3 py-2 capitalize text-sm font-semibold leading-tight]',
                 selected
                   ? 'border-primary text-gray-900'
                   : 'border-transparent text-gray-400 hover:text-gray-500',
