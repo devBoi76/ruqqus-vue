@@ -93,7 +93,7 @@ export default {
   methods: {
     selectEmote(event, val) {
       console.log(val)
-      this.$emit("selectEmote",val)
+      this.$parent.$emit("selectEmote",val) // `$parent` requires a strict parent to grand-parent relation between this component and the parent
     }
   }
 }
