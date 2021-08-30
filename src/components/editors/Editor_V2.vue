@@ -56,8 +56,8 @@
 		<!-- Editor -->
 		<editor-content v-if="!menuBarBottom" :editor="editor" :style="`min-height:${minHeight}`"/>
 
-		<div v-if="showEmotes" class="p-2.5 border-t">
-			<EmoteTabs class="shadow-sm"/>
+		<div v-if="showEmotes" class="p-2.5 bg-gray-50 border-t">
+			<EmoteTabs class="bg-white shadow-sm"/>
 		</div>
 
 		<div class="flex items-center justify-between px-2 py-1.5 bg-gray-50 dark:bg-gray-950 border-t dark:border-gray-700 dark:border-opacity-70 border-dashed">
@@ -67,7 +67,7 @@
 					GIF
 				</button>
 				<!-- Emote Picker Trigger -->
-				<button class="flex items-center justify-center px-2 w-8 h-8 text-xl text-gray-600 dark:text-gray-400 hover:text-purple-500 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white rounded-sm" @click="showEmotes = !showEmotes">
+				<button class="flex items-center justify-center px-2 w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-purple-500 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white rounded-sm" @click="showEmotes = !showEmotes">
 					<span class="sr-only">Emote Picker</span>
 					<i class="far fa-grin fa-fw"></i>
 				</button>
