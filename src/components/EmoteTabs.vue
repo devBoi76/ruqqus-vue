@@ -34,9 +34,8 @@
             <li
               v-for="emote in category"
               :key="emote.id"
-              class="relative p-1 rounded hover:bg-gray-100"
             >
-              <button @click="selectEmote(emote.src)">
+              <button class="relative p-1 rounded hover:bg-gray-100" @click="selectEmote(emote.src)">
                 <img :src="emote.src" class="w-8 h-8 object-contain" :alt="emote.name"/>
               </button>
             </li>
