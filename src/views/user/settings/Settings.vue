@@ -9,11 +9,11 @@
         <div class="w-full space-y-8">
           <div class="relative">
             <div class="z-10 absolute top-4 right-4 md:top-6 md:right-6">
-              <button v-show="!editAppearance" class="button white" @click="toggleAppearance">
+              <button v-show="!editAppearance" class="button white" @click="toggleAppearance()">
                 Edit appearance
               </button>
               <div v-show="editAppearance" class="flex items-center space-x-2">
-                <button type="button" class="button linkWhite" @click="toggleAppearance" tabindex="0">
+                <button type="button" class="button linkWhite" @click="toggleAppearance()" tabindex="0">
                   Cancel
                 </button>
                 <button type="button" class="button white" tabindex="0">
@@ -321,6 +321,9 @@ export default {
   methods: {
     getEditorContent(value) {
       this.bio = value;
+    },
+    toggleAppearance() {
+      this.editAppearance = !this.editAppearance;
     }
   },
   created() {
