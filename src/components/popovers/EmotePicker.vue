@@ -14,7 +14,7 @@
     leave-to-class="translate-y-1 opacity-0"
     >
     <PopoverPanel class="absolute top-0 left-4 ml-2 w-56 z-10 bg-white border rounded shadow-lg">
-      <EmoteTabs/>
+      <Tabs/>
     </PopoverPanel>
   </transition>
 </Popover>
@@ -23,7 +23,7 @@
 <script>
   import { Popover, PopoverButton, PopoverPanel } from '@headlessui/vue'
 
-  import EmoteTabs from "@/components/EmoteTabs.vue"
+  import Tabs from "@/components/EmoteTabs.vue"
 
   export default {
     components: { Popover, PopoverButton, PopoverPanel, Tabs },
