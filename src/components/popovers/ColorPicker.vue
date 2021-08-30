@@ -15,7 +15,7 @@
     leave-from-class="translate-y-0 opacity-100"
     leave-to-class="translate-y-1 opacity-0"
     >
-    <PopoverPanel class="absolute right-0 w-48 z-10 mt-2 bg-white border rounded shadow-lg">
+    <PopoverPanel class="absolute right-0 origin-top-right w-48 z-10 mt-2 bg-white border rounded shadow-lg">
       <div class="p-3">
         <ul class="flex flex-wrap justify-center -m-1">
           <li v-for="swatch in primarySwatches" :key="swatch" class="p-1">
