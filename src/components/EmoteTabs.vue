@@ -1,7 +1,7 @@
 <template>
   <div class="w-full rounded overflow-hidden">
     <TabGroup>
-      <TabList class="flex px-4 space-x-1 bg-white border-b">
+      <TabList class="flex px-2.5 space-x-1 bg-white shadow-xs mb-1">
         <Tab
           v-for="category in Object.keys(categories)"
           as="template"
@@ -10,7 +10,7 @@
         >
           <button
             :class="[
-              'border-b-2 px-4 py-3 capitalize text-sm font-semibold mb-[-1px]',
+              'border-b-2 px-2.5 py-2 capitalize text-sm font-semibold mb-[-1px]',
               selected
                 ? 'border-primary text-gray-900'
                 : 'border-transparent text-gray-400 hover:text-gray-500',
@@ -22,13 +22,13 @@
       </TabList>
 
       <TabPanels>
-        <div class="p-4 shadow-xs mb-1">
+        <div class="hidden p-4 shadow-xs mb-1">
           <input type="text" class="form-input light" placeholder="Find the perfect emote"/>
         </div>
         <TabPanel
           v-for="(category, index) in Object.values(categories)"
           :key="index"
-          class="px-4 py-3 bg-white overflow-y-auto scrollbar-hidden min-h-[10rem] max-h-[10rem]"
+          class="p-2.5 bg-white overflow-y-auto scrollbar-hidden min-h-[10rem] max-h-[10rem]"
         >
           <ul class="inline-flex flex-wrap mb-0">
             <li
@@ -36,7 +36,9 @@
               :key="emote.id"
               class="relative p-1 rounded hover:bg-gray-100"
             >
-              <img :src="emote.src" class="w-10 h-10 object-contain" :alt="emote.name"/>
+              <button @click="selectEmote(emote.src)">
+                <img :src="emote.src" class="w-8 h-8 object-contain" :alt="emote.name"/>
+              </button>
             </li>
           </ul>
         </TabPanel>
@@ -84,8 +86,12 @@ export default {
         },
       ]
     })
-
     return { categories }
   },
+  methods: {
+    selectEmote(val) {
+      this.$emit("update:emote",val)
+    }
+  }
 }
 </script>

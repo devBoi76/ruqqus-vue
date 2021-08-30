@@ -66,11 +66,8 @@
 				<button class="ml-1 font-bold text-xs text-gray-600 hover:text-primary" @click="toggleModal()">
 					GIF
 				</button>
-				<!-- Emote Picker Trigger -->
-				<button class="flex items-center justify-center px-2 w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-purple-500 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white rounded-sm" @click="showEmotes = !showEmotes">
-					<span class="sr-only">Emote Picker</span>
-					<i class="far fa-grin fa-fw"></i>
-				</button>
+				<!-- Emote Picker -->
+				<EmotePicker/>
 			</div>
 			<!-- Character Count -->
 			<div class="text-xs text-gray-400">
@@ -95,13 +92,12 @@
 	import Placeholder from '@tiptap/extension-placeholder'
 	import Dropcursor from '@tiptap/extension-dropcursor'
 	import Image from '@tiptap/extension-image'
-
-	const EmoteTabs = defineAsyncComponent(() => import('@/components/EmoteTabs.vue'));
+	import EmotePicker from '@/components/popovers/EmotePicker'
 
 	export default {
 		components: {
 			EditorContent,
-			EmoteTabs
+			EmotePicker
 		},
 		props: {
 			value: {
@@ -136,6 +132,9 @@
 			}
 		},
 		methods: {
+			addEmote(e) {
+				this.editor.chain().focus().setImage({ src: e }).run()
+			},
 			addImage() {
 				const url = window.prompt('Enter an image URL')
 

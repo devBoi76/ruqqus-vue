@@ -1,6 +1,7 @@
 <template>
   <Popover v-slot="{ open }" class="inline-block text-left">
-    <PopoverButton class="flex items-center justify-center text-gray-700 hover:text-gray-900 group focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 rounded-sm w-8 h-8">
+    <PopoverButton class="flex items-center justify-center px-2 w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-purple-500 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white rounded-sm">
+      <span class="sr-only">Emote Picker</span>
       <i class="far fa-grin fa-fw"></i>
     </PopoverButton>
 
@@ -12,7 +13,7 @@
     leave-from-class="translate-y-0 opacity-100"
     leave-to-class="translate-y-1 opacity-0"
     >
-    <PopoverPanel class="absolute right-0 w-full z-10 mt-2 bg-white border rounded shadow-lg">
+    <PopoverPanel class="absolute top-0 left-4 ml-2 w-56 z-10 bg-white border rounded shadow-lg">
       <EmoteTabs/>
     </PopoverPanel>
   </transition>
@@ -28,10 +29,7 @@
     components: { Popover, PopoverButton, PopoverPanel, Tabs },
     data() {
       return {
-        primarySwatches: ['#EF4444', '#F43F5E', '#EC4899', '#D946EF', '#A855F7', '#8B5CF6', '#6366F1', '#3B82F6', '#0EA5E9', '#06B6D4','#14B8A6', '#10B981', '#22C55E', '#84CC16', '#EAB308', '#F59E0B', '#F97316', '#78716C', '#71717A', '#6B7280', '#64748B']
       }
-    },
-    computed: {
     }
   }
 </script>
