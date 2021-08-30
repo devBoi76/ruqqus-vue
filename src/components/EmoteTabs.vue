@@ -36,7 +36,7 @@
               :key="emote.id"
               class="relative p-1 rounded hover:bg-gray-100"
             >
-              <img :src="emote.src" class="w-9 h-9 object-contain" :alt="emote.name"/>
+              <img :src="emote.src" class="w-10 h-10 object-contain" :alt="emote.name"/>
             </li>
           </ul>
         </TabPanel>
