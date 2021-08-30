@@ -62,6 +62,7 @@
                     Display name
                   </label>
                   <input required class="form-input light" v-model="webhook" :placeholder="v.username" type="text"/>
+                  <ColorPicker/>
                   <p class="text-sm text-gray-500 mt-1">
                     Your original username will always stay reserved for you:
                     <span class="text-primary">
@@ -309,11 +310,10 @@
 // Import Components
 import { defineAsyncComponent } from 'vue'
 import { mapState } from 'vuex';
-
 import Editor from "@/components/editors/Editor_V2.vue";
 import Toggle from "@/components/forms/Toggle.vue";
-
 const ToggleForm = defineAsyncComponent(() => import('@/components/Toggle.vue'));
+import ColorPicker from "@/components/popovers/ColorPicker.vue";
 
 export default {
   name: "UserSettingsView",
@@ -329,7 +329,8 @@ export default {
   components: {
     Editor,
     Toggle,
-    ToggleForm
+    ToggleForm,
+    ColorPicker
   },
   computed: {
     ...mapState("persist", ["v"]),

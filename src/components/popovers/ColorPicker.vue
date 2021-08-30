@@ -16,15 +16,21 @@
       leave-from-class="translate-y-0 opacity-100"
       leave-to-class="translate-y-1 opacity-0"
       >
-        <PopoverPanel class="absolute z-10 w-screen max-w-sm px-4 mt-3 transform -translate-x-1/2 left-1/2 sm:px-0 lg:max-w-3xl">
-          <div class="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
-            <div class="p-4 bg-gray-50">
-              test
-            </div>
+      <PopoverPanel class="absolute z-10 w-screen max-w-sm px-4 mt-3 transform -translate-x-1/2 left-1/2 sm:px-0 lg:max-w-3xl">
+        <div class="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
+          <div class="p-2 bg-white">
+            <ul class="flex flex-wrap -m-1">
+              <li v-for="swatch in primarySwatches" :key="swatch" class="p-1">
+                <label :for="swatch" class="flex flex-shrink-0 w-6 h-6 shadow-inner rounded-full" :style="{ 'background-color': swatch }">
+                  <input type="checkbox" class="invisible" :id="swatch" :value="swatch" v-model="primaryColor"/>
+                </label>
+              </li>
+            </ul>
           </div>
-        </PopoverPanel>
-      </transition>
-    </Popover>
+        </div>
+      </PopoverPanel>
+    </transition>
+  </Popover>
 </div>
 </template>
 
@@ -38,6 +44,8 @@
     },
     data() {
       return {
+        primaryColor: null,
+        primarySwatches: ['#C53030', '#F97316', '#ECC94B', '#22C55E', '#14B8A6', '#0EA5E9', '#6366F1', '#8B5CF6', '#EC4899', '#9B2C2C', '#C2410C', '#B7791F','#15803D', '#0F766E', '#0369A1', '#4338CA', '#5B21B6', '#9D174D']
       }
     }
   }
