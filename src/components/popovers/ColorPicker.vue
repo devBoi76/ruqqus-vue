@@ -21,6 +21,7 @@
             </label>
           </li>
         </ul>
+        <input type="text" class="form-input text-xs" :placeholder="primaryColor"/>
       </div>
     </PopoverPanel>
   </transition>
