@@ -13,7 +13,7 @@
     leave-to-class="translate-y-1 opacity-0"
     >
     <PopoverPanel class="absolute right-0 origin-top-right w-56 z-10 mt-2 bg-white border rounded shadow-lg">
-      <ul class="inline-flex flex-wrap gap-2 p-3">
+      <ul class="inline-flex flex-wrap gap-2 mb-0 p-3">
         <li v-for="swatch in primarySwatches" :key="swatch">
           <label :for="swatch" class="flex flex-shrink-0 w-5 h-5 shadow-inner rounded-sm" :style="{ 'background-color': swatch }">
             <input type="checkbox" class="invisible" :id="swatch" :value="swatch" v-model="primaryColor"/>
