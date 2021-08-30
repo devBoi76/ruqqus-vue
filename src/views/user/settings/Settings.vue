@@ -109,7 +109,7 @@
 													<div class="text-xs font-semibold text-gray-900 leading-tight" :style="{ 'color': usernameColor }">
 														{{ v.username }}
 													</div>
-													<span v-if="title.length" class="ml-2 px-2 inline-flex text-xs leading-5 font-medium rounded-sm text-gray-900" :style="{ 'background-color': titleColor }">
+													<span v-if="title" class="ml-2 px-2 inline-flex text-xs leading-5 font-medium rounded-sm text-gray-900" :style="{ 'background-color': titleColor }">
 														{{ title }}
 													</span>
 												</div>
