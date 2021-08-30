@@ -28,7 +28,7 @@
         <TabPanel
           v-for="(category, index) in Object.values(categories)"
           :key="index"
-          class="mb-4 px-4 bg-white overflow-y-auto scrollbar-hidden"
+          class="mb-3 px-4 bg-white overflow-y-auto scrollbar-hidden"
           :style="`min-height:${minHeight}`"
         >
           <ul class="inline-flex flex-wrap gap-1 mb-0">
