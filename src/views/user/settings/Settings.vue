@@ -76,9 +76,11 @@
 											<label class="label">
 												Display name
 											</label>
-											<div class="flex items-center space-x-2">
-												<input required class="form-input light" v-model="v.username" :placeholder="v.username" type="text"/>
-												<ColorPicker/>
+											<div class="relative">
+												<input required class="form-input light pr-10" v-model="v.username" :placeholder="v.username" type="text"/>
+												<div class="absolute right-4 top-[3px]">
+													<ColorPicker/>
+												</div>
 											</div>
 											<p class="text-sm text-gray-500 mt-1">
 												Your original username will always be reserved:
@@ -91,9 +93,11 @@
 											<label class="label">
 												Title
 											</label>
-											<div class="flex items-center space-x-2">
+											<div class="relative">
 												<input required class="form-input light pr-10" v-model="title" :placeholder="title" type="text"/>
-												<ColorPicker/>
+												<div class="absolute right-4 top-[3px]">
+													<ColorPicker/>
+												</div>
 											</div>
 											<p class="text-sm text-gray-500 mt-1">
 												Titles are decorative text next to your username

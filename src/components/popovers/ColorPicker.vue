@@ -1,10 +1,7 @@
 <template>
   <Popover v-slot="{ open }" class="relative inline-block text-left">
-    <PopoverButton :class="open ? '' : 'text-opacity-90'" class="flex items-center border rounded-sm text-gray-700 hover:text-gray-900 group focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
-      <div class="w-6 h-6 bg-red-500 rounded-l-sm"></div>
-      <div class="flex items-center justify-center w-6 h-6">
-        <i class="far fa-fw fa-eye-dropper"></i>
-      </div>
+    <PopoverButton :class="open ? '' : 'text-opacity-90'" class="block group focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
+      <div class="w-5 h-5 bg-red-500 rounded-full"></div>
     </PopoverButton>
 
     <transition
