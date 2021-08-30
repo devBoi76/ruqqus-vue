@@ -8,7 +8,7 @@
         <!-- Main Content Section -->
         <div class="w-full space-y-8">
           <div class="relative flex items-center">
-            <div class="z-10 absolute top-4 right-4">
+            <div class="z-10 top-4 right-4 md:top-6 md:right-6">
               <button v-show="!editAppearance" class="button white" @click="toggleAppearance">
                 Edit appearance
               </button>
@@ -22,14 +22,14 @@
               </div>
             </div>
             <div class="relative">
-              <img :src="v.banner_url" class="w-full h-56 lg:h-72 object-cover rounded"/>
+              <img :src="banner" class="w-full h-56 lg:h-72 object-cover rounded"/>
               <div v-show="editAppearance" class="absolute bottom-0 flex items-center justify-center w-full h-full bg-black bg-opacity-30">
                 <button type="button" class="w-9 h-9 flex items-center justify-center px-2 py-0 text-white bg-transparent hover:bg-black hover:bg-opacity-50 rounded-sm transition duration-100 ease-in-out" tabindex="0">
                   <i class="far fa-pen fa-lg"></i>
                 </button>
               </div>
             </div>
-            <div class="flex items-center p-6">
+            <div class="absolute bottom-4 left-4 md:bottom-6 md:left-6 flex items-center">
               <div class="relative rounded-sm overflow-hidden w-20 h-20 flex-shrink-0">
                 <img :src="v.profile_url" class="object-cover" alt="profile-picture"/>
                 <div v-show="editAppearance" class="absolute bottom-0 flex items-center justify-center w-full h-full bg-black bg-opacity-30">
@@ -38,7 +38,7 @@
                   </button>
                 </div>
               </div>
-              <div class="z-10 ml-4 font-bold text-lg text-white" :class="{'text-opacity-30':editAppearance}">
+              <div class="z-10 ml-4 font-semibold text-2xl text-white" :class="{'text-opacity-30':editAppearance}">
                 {{ v.username }}
               </div>
             </div>
