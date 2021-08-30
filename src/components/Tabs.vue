@@ -14,7 +14,7 @@
               'focus:outline-none focus:ring-2 ring-offset-2 ring-offset-primary ring-white ring-opacity-60',
               selected
                 ? 'border-primary text-gray-900'
-                : 'border-transparent text-gray-400',
+                : 'border-transparent text-gray-400 hover:text-gray-500',
             ]"
           >
             {{ category }}
