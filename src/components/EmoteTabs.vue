@@ -3,7 +3,7 @@
     <TabGroup>
       <div class="relative">
         <div class="z-10 absolute top-0 right-0 w-8 h-full rounded-tr bg-gradient-to-l from-white"></div>
-        <TabList class="relative flex px-2.5 overflow-x-scroll scrollbar-hidden bg-white shadow-xs mb-1 rounded-t">
+        <TabList class="relative flex px-2.5 overflow-x-scroll scrollbar-hidden bg-white shadow-xs rounded-t">
           <Tab
             v-for="category in Object.keys(categories)"
             as="template"
