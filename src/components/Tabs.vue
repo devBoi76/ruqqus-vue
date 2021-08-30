@@ -30,11 +30,11 @@
           :key="index"
           class="bg-white p-4"
         >
-          <ul class="inline-flex flex-wrap gap-2 mb-0">
+          <ul class="inline-flex flex-wrap gap-1 mb-0">
             <li
               v-for="emote in category"
               :key="emote.id"
-              class="relative p-2 rounded hover:bg-gray-100"
+              class="relative p-1 rounded hover:bg-gray-100"
             >
               <img :src="emote.src" class="w-7 h-7 object-contain" :alt="emote.name"/>
             </li>
