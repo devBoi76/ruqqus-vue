@@ -44,7 +44,7 @@
             </div>
           </div>
           <div>
-            <div class="flex justify-between">
+            <div class="flex justify-between px-4 sm:px-0">
               <div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
                 Profile
               </div>
@@ -87,7 +87,7 @@
 
 
           <div>
-            <div class="flex justify-between">
+            <div class="flex justify-between px-4 sm:px-0">
               <div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
                 Security
               </div>
@@ -196,7 +196,7 @@
             </form>
           </div>
           <div>
-            <div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
+            <div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2 px-4 sm:px-0">
               Privacy
             </div>
             <form class="border-t border-b border-gray-100 dark:border-transparent sm:border sm:border-gray-200 sm:rounded-sm bg-white divide-y">
@@ -233,7 +233,7 @@
             </form>
           </div>
           <div>
-            <div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
+            <div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2 px-4 sm:px-0">
               Notifications
             </div>
             <form class="border-t border-b border-gray-100 dark:border-transparent sm:border sm:border-gray-200 sm:rounded-sm bg-white divide-y">
