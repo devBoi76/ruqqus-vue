@@ -92,7 +92,7 @@
 												Title
 											</label>
 											<div class="flex items-center space-x-2">
-												<input required class="form-input light pr-8" v-model="title" :placeholder="title" type="text"/>
+												<input required class="form-input light pr-8" v-model="title" :placeholder="title || 'e.g. UwU'" type="text"/>
 												<ColorPicker v-model:color="titleColor"/>
 											</div>
 											<p class="text-sm text-gray-500 mt-1">
@@ -105,10 +105,13 @@
 											</label>
 											<div class="p-3 bg-white border rounded">
 												<div class="flex items-center mb-3">
-													<img :src="v.profile_url" class="w-9 h-9 rounded-sm bg-white bg-opacity-20 mr-2" alt="avatar">
+													<img :src="v.profile_url" class="w-9 h-9 rounded-sm bg-white bg-opacity-20 mr-3" alt="avatar">
 													<div class="text-xs font-semibold text-gray-900 leading-tight" :style="{ 'color': usernameColor }">
 														{{ v.username }}
 													</div>
+													<span v-if="title.length" class="ml-2 px-2 inline-flex text-xs leading-5 font-medium rounded-sm text-gray-900" :style="{ 'background-color': titleColor }">
+														{{ title }}
+													</span>
 												</div>
 												<div class="h-4 w-3/4 rounded-sm bg-gray-100 mb-2"></div>
 												<div class="h-4 w-1/3 rounded-sm bg-gray-100"></div>
