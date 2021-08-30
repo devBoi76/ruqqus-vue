@@ -11,7 +11,7 @@
           <button
             :class="[
               'border-b-2 px-4 py-3 capitalize text-sm font-semibold mb-[-1px]',
-              'focus:outline-none focus:ring-2 ring-offset-2 ring-offset-primary ring-white ring-opacity-60',
+              'focus:outline-none focus:ring-2 ring-offset-2 ring-offset-primary ring-white ring-opacity-0',
               selected
                 ? 'border-primary text-gray-900'
                 : 'border-transparent text-gray-400 hover:text-gray-500',
@@ -28,17 +28,14 @@
           :key="index"
           :class="[
             'bg-white p-4',
-            'focus:outline-none focus:ring-2 ring-offset-2 ring-offset-blue-400 ring-white ring-opacity-60',
+            'focus:outline-none focus:ring-2 ring-offset-2 ring-offset-blue-400 ring-white ring-opacity-0',
           ]"
         >
-          <div class="uppercase tracking-wide font-semibold leading-none text-2xs text-gray-500 mb-2">
-            {{ category }}
-          </div>
-          <ul class="inline-flex flex-wrap gap-4">
+          <ul class="inline-flex flex-wrap gap-2">
             <li
               v-for="emote in category"
               :key="emote.id"
-              class="relative p-2 rounded-md hover:bg-gray-100"
+              class="relative p-2 rounded hover:bg-gray-100"
             >
               <img :src="emote.src" class="w-7 h-7 object-contain" :alt="emote.name"/>
             </li>
