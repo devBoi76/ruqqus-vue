@@ -78,7 +78,7 @@
 											</label>
 											<div class="flex items-center space-x-2">
 												<input required class="form-input light pr-8" v-model="v.username" :placeholder="v.username" type="text"/>
-												<ColorPicker :color="usernameColor" :color.sync="usernameColor"/>
+												<ColorPicker v-model:color="usernameColor">
 											</div>
 											<p class="text-sm text-gray-500 mt-1">
 												Your original username will always be reserved:
@@ -93,7 +93,7 @@
 											</label>
 											<div class="flex items-center space-x-2">
 												<input required class="form-input light pr-8" v-model="title" :placeholder="title" type="text"/>
-												<ColorPicker :color="titleColor" :color.sync="titleColor"/>
+												<ColorPicker v-model:color="titleColor"/>
 											</div>
 											<p class="text-sm text-gray-500 mt-1">
 												Titles are decorative text next to your username

@@ -42,7 +42,7 @@
     props: {
       color: {
         type: String,
-        default: '#C53030'
+        default: '#000000'
       }
     },
     data() {
