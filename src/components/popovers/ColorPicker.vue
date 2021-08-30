@@ -14,7 +14,7 @@
     >
     <PopoverPanel class="absolute right-0 origin-top-right w-56 z-10 mt-2 bg-white border rounded shadow-lg">
       <div class="p-3">
-        <ul class="inline-flex flex-wrap gap-2">
+        <ul class="inline-flex flex-wrap gap-2 -mt-1">
           <li v-for="swatch in primarySwatches" :key="swatch">
             <label :for="swatch" class="flex flex-shrink-0 w-5 h-5 shadow-inner rounded-sm" :style="{ 'background-color': swatch }">
               <input type="checkbox" class="invisible" :id="swatch" :value="swatch" v-model="primaryColor"/>
@@ -27,7 +27,7 @@
           </div>
           <div class="relative ml-8">
             <input type="color" id="color" name="color" class="w-[19px] h-[24px] rounded-full absolute left-2 top-[5px]" :value="primaryColor || `#FFFFFFF`">
-            <input type="text" class="form-input light text-xs pl-8" :placeholder="primaryColor || '#FFFFFFF'"/>
+            <input type="text" class="form-input light text-xs pl-10" :placeholder="primaryColor || '#FFFFFFF'"/>
           </div>
         </div>
       </div>
@@ -46,7 +46,7 @@
     },
     data() {
       return {
-        primaryColor: null,
+        primaryColor: '',
         primarySwatches: ['#C53030', '#F97316', '#ECC94B', '#22C55E', '#14B8A6', '#0EA5E9', '#6366F1', '#8B5CF6', '#EC4899', '#9B2C2C', '#C2410C', '#B7791F','#15803D', '#0F766E', '#0369A1', '#4338CA', '#5B21B6', '#9D174D']
       }
     }
