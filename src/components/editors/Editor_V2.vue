@@ -84,6 +84,7 @@
 </template>
 
 <script>
+	import { defineAsyncComponent } from 'vue'
 	import { mapState } from "vuex"
 	import tippy from 'tippy.js'
 	import { Editor, EditorContent, VueRenderer } from '@tiptap/vue-3'
