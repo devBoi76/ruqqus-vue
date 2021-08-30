@@ -22,13 +22,13 @@
       </TabList>
 
       <TabPanels>
-        <div class="px-4 py-3 shadow-xs mb-1">
+        <div class="p-4 shadow-xs mb-1">
           <input type="text" class="form-input light" placeholder="Find the perfect emote"/>
         </div>
         <TabPanel
           v-for="(category, index) in Object.values(categories)"
           :key="index"
-          class="p-4 bg-white overflow-y-auto scrollbar-hidden min-h-[10rem] max-h-[10rem]"
+          class="px-4 py-3 bg-white overflow-y-auto scrollbar-hidden min-h-[10rem] max-h-[10rem]"
         >
           <ul class="inline-flex flex-wrap mb-0">
             <li
