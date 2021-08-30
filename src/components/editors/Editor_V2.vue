@@ -92,7 +92,7 @@
 	import Placeholder from '@tiptap/extension-placeholder'
 	import Dropcursor from '@tiptap/extension-dropcursor'
 	import Image from '@tiptap/extension-image'
-	import EmotePicker from '@/components/popovers/EmotePicker'
+	import EmotePicker from '@/components/popovers/EmotePicker.vue'
 
 	export default {
 		components: {
