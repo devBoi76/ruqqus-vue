@@ -72,14 +72,14 @@
                 </div>
                 <div v-if="editProfile" class="space-y-6 mt-6">
                   <div class="grid grid-cols-3 gap-6">
-                    <div class="col-span-3">
+                    <div class="col-span-3 md:flex md:space-x-4">
                       <div class="w-full md:w-2/4">
                         <label class="label">
                           Display name
                         </label>
                         <input required class="form-input light" v-model="v.username" :placeholder="v.username" type="text"/>
                         <p class="text-sm text-gray-500 mt-1">
-                          Your original username will always stay reserved for you:
+                          Your original username will always be reserved:
                           <span class="text-primary">
                             {{ v.username }}
                           </span>
@@ -89,9 +89,9 @@
                         <label class="label">
                           Title
                         </label>
-                        <div class="relative">
+                        <div class="flex items-center space-x-2">
                           <input required class="form-input light pr-10" v-model="title" :placeholder="title" type="text"/>
-                          <ColorPicker class="absolute right-4 top-[2px]"/>
+                          <ColorPicker/>
                         </div>
                         <p class="text-sm text-gray-500 mt-1">
                           Titles are decorative text next to your username
