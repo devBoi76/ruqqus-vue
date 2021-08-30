@@ -13,42 +13,23 @@
     leave-to-class="translate-y-1 opacity-0"
     >
     <PopoverPanel class="absolute right-0 bottom-4 w-full z-10 bg-white border rounded shadow-lg">
-      <TabGroup>
-        <TabList>
-          <Tab v-for="category in emotes" :key="category.name">
-            <span class="capitalize">
-              {{ category.name }}
-            </span>
-          </Tab>
-        </TabList>
-        <TabPanels>
-          <TabPanel v-for="category in emotes" :key="category.name">
-            <ul class="inline-flex flex-wrap gap-4">
-              <li v-for="emote in category.emotes" :key="emote.id">
-                <img :src="emote.src" class="w-7 h-8 object-contain" :alt="emote.name"/>
-              </li>
-            </ul>
-          </TabPanel>
-        </TabPanels>
-      </TabGroup>
+      <Tabs/>
     </PopoverPanel>
   </transition>
 </Popover>
 </template>
 
 <script>
-  import { Popover, PopoverButton, PopoverPanel, TabGroup, TabList, Tab, TabPanels, TabPanel } from '@headlessui/vue'
+  import { Popover, PopoverButton, PopoverPanel } from '@headlessui/vue'
+
+  import Tabs from "@/components/Tabs.vue"
 
   export default {
     components: {
       Popover,
       PopoverButton,
       PopoverPanel,
-      TabGroup,
-      TabList,
-      Tab,
-      TabPanels,
-      TabPanel
+      Tabs
     },
     props: {
     },
