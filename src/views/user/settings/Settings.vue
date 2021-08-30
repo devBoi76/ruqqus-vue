@@ -344,7 +344,8 @@ export default {
   computed: {
     ...mapState("persist", ["v"]),
     banner() {
-      return this.v.banner_url || 'https://i.imgur.com/AgS5BXJ.jpg'
+      //return this.v.banner_url || 'https://i.imgur.com/AgS5BXJ.jpg'
+      return 'https://i.imgur.com/AgS5BXJ.jpg'
     }
   },
   methods: {
