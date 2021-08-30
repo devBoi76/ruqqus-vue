@@ -7,8 +7,8 @@
         </h1>
         <!-- Main Content Section -->
         <div class="w-full space-y-8">
-          <div class="relative flex items-center">
-            <div class="z-10 top-4 right-4 md:top-6 md:right-6">
+          <div class="relative">
+            <div class="z-10 absolute top-4 right-4 md:top-6 md:right-6">
               <button v-show="!editAppearance" class="button white" @click="toggleAppearance">
                 Edit appearance
               </button>
@@ -56,36 +56,6 @@
               </div>
             </div>
             <form class="rounded-sm border bg-white divide-y">
-              <div class="grid grid-cols-3 gap-6 p-4">
-                <div class="col-span-3">
-                  <div class="flex flex-grow items-center justify-between">
-                    <div>
-                      <div class="font-semibold leading-tight">
-                        Avatar
-                      </div>
-                      <p class="text-sm text-gray-500 mt-1">
-                        png, jpg, gif up to 16mb
-                      </p>
-                    </div>
-                    <img :src="v.profile_url" class="w-11 h-11 rounded-sm bg-gray-100 object-cover" alt="guild icon artwork"/>
-                  </div>
-                </div>
-              </div>
-              <div class="grid grid-cols-3 gap-6 p-4">
-                <div class="col-span-3">
-                  <div class="flex flex-grow items-center justify-between">
-                    <div>
-                      <div class="font-semibold leading-tight">
-                        Banner
-                      </div>
-                      <p class="text-sm text-gray-500 mt-1">
-                        png, jpg, gif up to 16mb
-                      </p>
-                    </div>
-                    <img :src="banner" class="w-48 h-11 rounded-sm bg-gray-100 object-cover" alt="guild cover artwork"/>
-                  </div>
-                </div>
-              </div>
               <div class="grid grid-cols-3 gap-6 p-4">
                 <div class="col-span-3">
                   <label class="label">
