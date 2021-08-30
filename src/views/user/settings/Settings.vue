@@ -46,7 +46,9 @@
                         png, jpg, gif up to 16mb
                       </p>
                     </div>
-                    <img :src="v.banner_url" class="w-48 h-11 rounded-sm bg-gray-100 object-cover" alt="guild cover artwork"/>
+                    <img v-if="v.banner_url" :src="v.banner_url" class="w-48 h-11 rounded-sm bg-gray-100 object-cover" alt="guild cover artwork"/>
+                    <div class="v-else">
+                    </div>
                   </div>
                 </div>
               </div>
@@ -71,7 +73,7 @@
                   </label>
                   <Editor @input="getEditorContent()" min-height="10rem" :limit="1000" :value="bio"/>
                   <p class="text-sm text-gray-500 mt-1">
-                    <i class="fab fa-markdown fa-fw fa-sm"></i>
+                    <i class="fab fa-markdown fa-sm pr-0.5"></i>
                     markdown supported
                   </p>
                 </div>
