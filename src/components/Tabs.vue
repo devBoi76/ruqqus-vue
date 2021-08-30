@@ -24,40 +24,23 @@
 
       <TabPanels>
         <TabPanel
-          v-for="(posts, idx) in Object.values(categories)"
-          :key="idx"
+          v-for="(category, index) in Object.values(categories)"
+          :key="index"
           :class="[
             'bg-white p-4',
             'focus:outline-none focus:ring-2 ring-offset-2 ring-offset-blue-400 ring-white ring-opacity-60',
           ]"
         >
-          <ul>
+          <div class="uppercase tracking-wide font-semibold leading-none text-2xs text-gray-500 mb-2">
+            {{ category }}
+          </div>
+          <ul class="inline-flex flex-wrap gap-4">
             <li
-              v-for="post in posts"
-              key="post.id"
-              class="relative p-3 rounded-md hover:bg-coolGray-100"
+              v-for="emote in category"
+              :key="emote.id"
+              class="relative p-2 rounded-md hover:bg-gray-100"
             >
-              <h3 class="text-sm font-medium leading-5">
-                {{ post.title }}
-              </h3>
-
-              <ul
-                class="flex mt-1 space-x-1 text-xs font-normal leading-4 text-coolGray-500"
-              >
-                <li>{{ post.date }}</li>
-                <li>&middot;</li>
-                <li>{{ post.commentCount }} comments</li>
-                <li>&middot;</li>
-                <li>{{ post.shareCount }} shares</li>
-              </ul>
-
-              <a
-                href="#"
-                :class="[
-                  'absolute inset-0 rounded-md',
-                  'focus:z-10 focus:outline-none focus:ring-2 ring-blue-400',
-                ]"
-              />
+              <img :src="emote.src" class="w-7 h-7 object-contain" :alt="emote.name"/>
             </li>
           </ul>
         </TabPanel>
@@ -80,54 +63,30 @@ export default {
   },
   setup() {
     let categories = ref({
-      Recent: [
+      Animated: [
         {
           id: 1,
-          title: 'Does drinking coffee make you smarter?',
-          date: '5h ago',
-          commentCount: 5,
-          shareCount: 2,
+          shortcut: 'think',
+          src: 'https://i.imgur.com/q1il1nl.gif'
         },
         {
           id: 2,
-          title: "So you've bought coffee... now what?",
-          date: '2h ago',
-          commentCount: 3,
-          shareCount: 2,
+          shortcut: 'flushed',
+          src: 'https://i.imgur.com/R9XCoie.gif'
         },
       ],
-      Popular: [
+      Meme: [
         {
           id: 1,
-          title: 'Is tech making coffee better or worse?',
-          date: 'Jan 7',
-          commentCount: 29,
-          shareCount: 16,
+          shortcut: 'pepe',
+          src: 'https://i.imgur.com/3BH7ry5.jpg'
         },
         {
           id: 2,
-          title: 'The most innovative things happening in coffee',
-          date: 'Mar 19',
-          commentCount: 24,
-          shareCount: 12,
+          shortcut: 'poggers',
+          src: 'https://i.imgur.com/D5TdiNt.jpg'
         },
-      ],
-      Trending: [
-        {
-          id: 1,
-          title: 'Ask Me Anything: 10 answers to your questions about coffee',
-          date: '2d ago',
-          commentCount: 9,
-          shareCount: 5,
-        },
-        {
-          id: 2,
-          title: "The worst advice we've ever heard about coffee",
-          date: '4d ago',
-          commentCount: 1,
-          shareCount: 2,
-        },
-      ],
+      ]
     })
 
     return { categories }
