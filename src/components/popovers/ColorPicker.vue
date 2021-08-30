@@ -1,6 +1,6 @@
 <template>
   <Popover v-slot="{ open }" class="relative inline-block text-left">
-    <PopoverButton class="flex items-center justify-center bg-white border border-dashed group focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 rounded-sm w-[34px] h-[34px]" :style="{ 'color': primaryColor }">
+    <PopoverButton :class="primaryColor === '#FFFFFF' ? 'bg-black' : 'bg-white'" class="flex items-center justify-center border border-dashed group focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 rounded-sm w-[34px] h-[34px]" :style="{ 'color': primaryColor }">
       <i class="fas fa-fill-drip fa-fw"></i>
     </PopoverButton>
 
@@ -25,7 +25,7 @@
           Custom
         </div>
         <div class="relative ml-8">
-          <input type="color" id="color" name="color" class="w-[18px] h-[23px] rounded-full absolute left-2 top-[6px] bg-transparent" :value="primaryColor">
+          <input type="color" id="color" name="color" class="w-[18px] h-[23px] rounded-full absolute left-2 top-[6px] bg-transparent" v-model="primaryColor">
           <input type="text" class="form-input light text-xs pl-8" :placeholder="primaryColor" v-model="primaryColor"/>
         </div>
       </div>
