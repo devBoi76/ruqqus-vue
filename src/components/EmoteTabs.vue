@@ -30,13 +30,13 @@
           :key="index"
           class="p-4 bg-white overflow-y-auto scrollbar-hidden max-height-[10rem]"
         >
-          <ul class="inline-flex flex-wrap gap-1 mb-0">
+          <ul class="inline-flex flex-wrap mb-0">
             <li
               v-for="emote in category"
               :key="emote.id"
               class="relative p-1 rounded hover:bg-gray-100"
             >
-              <img :src="emote.src" class="w-7 h-7 object-contain" :alt="emote.name"/>
+              <img :src="emote.src" class="w-9 h-9 object-contain" :alt="emote.name"/>
             </li>
           </ul>
         </TabPanel>
