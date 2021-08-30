@@ -22,13 +22,14 @@
       </TabList>
 
       <TabPanels>
-        <div class="p-4">
+        <div class="p-4 border-b">
           <input type="text" class="form-input light" placeholder="Find the perfect emote"/>
         </div>
         <TabPanel
           v-for="(category, index) in Object.values(categories)"
           :key="index"
-          class="mb-4 px-4 bg-white"
+          class="mb-4 px-4 bg-white overflow-y-auto scrollbar-hidden"
+          :style="`min-height:${minHeight}`"
         >
           <ul class="inline-flex flex-wrap gap-1 mb-0">
             <li
@@ -56,6 +57,12 @@ export default {
     Tab,
     TabPanels,
     TabPanel,
+  },
+  props: {
+    min-height: {
+      type: String,
+      default: '10rem'
+    }
   },
   setup() {
     let categories = ref({
