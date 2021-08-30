@@ -77,7 +77,10 @@
                         <label class="label">
                           Display name
                         </label>
-                        <input required class="form-input light" v-model="v.username" :placeholder="v.username" type="text"/>
+                        <div class="flex items-center space-x-2">
+                          <input required class="form-input light" v-model="v.username" :placeholder="v.username" type="text"/>
+                          <ColorPicker/>
+                        </div>
                         <p class="text-sm text-gray-500 mt-1">
                           Your original username will always be reserved:
                           <span class="text-primary">
