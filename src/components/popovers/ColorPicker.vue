@@ -1,6 +1,6 @@
 <template>
   <Popover v-slot="{ open }" class="relative inline-block text-left">
-    <PopoverButton class="flex items-center justify-center bg-white border border-dashed group focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 rounded-sm w-[34px] h-[34px]" :style="{ color: primaryColor }">
+    <PopoverButton class="flex items-center justify-center bg-white border border-dashed group focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 rounded-sm w-[34px] h-[34px]" :style="{ 'color': primaryColor }">
       <i class="fas fa-fill-drip fa-fw"></i>
     </PopoverButton>
 
@@ -44,7 +44,7 @@
     },
     data() {
       return {
-        primaryColor: '',
+        primaryColor: '#C53030',
         primarySwatches: ['#C53030', '#F97316', '#ECC94B', '#22C55E', '#14B8A6', '#0EA5E9', '#6366F1', '#8B5CF6', '#EC4899', '#9B2C2C', '#C2410C', '#B7791F','#15803D', '#0F766E', '#0369A1', '#4338CA', '#5B21B6', '#9D174D']
       }
     }
