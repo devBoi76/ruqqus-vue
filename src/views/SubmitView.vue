@@ -74,7 +74,7 @@
 										</div>
 									</div>
 									<!-- Image preview -->
-									<div v-if="submission.image.source" class="relative group w-28 h-28 rounded-sm">
+									<div v-if="submission.image.source" class="relative group w-24 h-24 rounded-sm">
 										<button class="absolute -top-2 -right-2 w-5 h-5 rounded-full flex items-center justify-center bg-red-500 hover:bg-red-600 text-2xs font-bold text-white transform scale-0 group-hover:scale-100 transition duration-200 delay-100 shadow-xs" @click="removeImage" tabindex="0">
 											<i class="fas fa-times fa-sm"></i>
 										</button>
