@@ -13,7 +13,7 @@
     leave-to-class="translate-y-1 opacity-0"
     >
     <PopoverPanel class="absolute right-0 bottom-4 w-full z-10 bg-white border rounded shadow-lg">
-      <Tabs/>
+      test
     </PopoverPanel>
   </transition>
 </Popover>
@@ -22,14 +22,14 @@
 <script>
   import { Popover, PopoverButton, PopoverPanel } from '@headlessui/vue'
 
-  import Tabs from "@/components/Tabs.vue"
+  //import Tabs from "@/components/Tabs.vue"
 
   export default {
     components: {
       Popover,
       PopoverButton,
       PopoverPanel,
-      Tabs
+      //Tabs
     },
     props: {
     },
