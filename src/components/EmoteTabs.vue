@@ -38,7 +38,7 @@
               v-for="emote in category"
               :key="emote.id"
             >
-              <button class="relative p-1 rounded hover:bg-primary hover:bg-opacity-20" @click="selectEmote(emote.src)">
+              <button class="relative p-1 rounded hover:bg-primary hover:bg-opacity-20" @click="selectEmote($event, emote.src)">
                 <img :src="emote.src" class="w-8 h-8 object-contain" :alt="emote.name"/>
               </button>
             </li>
@@ -91,7 +91,7 @@ export default {
     return { categories }
   },
   methods: {
-    selectEmote(val) {
+    selectEmote(event, val) {
       console.log(val)
       this.$emit("selectEmote",val)
     }
