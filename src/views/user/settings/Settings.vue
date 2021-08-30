@@ -73,17 +73,30 @@
                 <div v-if="editProfile" class="space-y-6 mt-6">
                   <div class="grid grid-cols-3 gap-6">
                     <form class="col-span-3" @submit.prevent="onSubmit">
-                      <label class="label">
-                        Display name
-                      </label>
-                      <input required class="form-input light" v-model="webhook" :placeholder="v.username" type="text"/>
-                      <ColorPicker/>
-                      <p class="text-sm text-gray-500 mt-1">
-                        Your original username will always stay reserved for you:
-                        <span class="text-primary">
-                          {{ v.username }}
-                        </span>
-                      </p>
+                      <div class="w-full md:w-2/4">
+                        <label class="label">
+                          Display name
+                        </label>
+                        <input required class="form-input light" v-model="v.username" :placeholder="v.username" type="text"/>
+                        <p class="text-sm text-gray-500 mt-1">
+                          Your original username will always stay reserved for you:
+                          <span class="text-primary">
+                            {{ v.username }}
+                          </span>
+                        </p>
+                      </div>
+                      <div class="w-full md:w-2/4">
+                        <label class="label">
+                          Title
+                        </label>
+                        <div class="relative">
+                          <input required class="form-input light pr-10" v-model="title" :placeholder="title" type="text"/>
+                          <ColorPicker class="absolute right-4 top-[2px]"/>
+                        </div>
+                        <p class="text-sm text-gray-500 mt-1">
+                          Titles are decorative text next to your username
+                        </p>
+                      </div>
                     </form>
                     <div class="col-span-3 sm:col-span-2">
                       <label class="label">
@@ -351,6 +364,7 @@ export default {
   name: "UserSettingsView",
   data() {
     return {
+      title: '',
       editProfile: false,
       editAppearance: false,
       bio: '',
