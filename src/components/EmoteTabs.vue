@@ -1,9 +1,9 @@
 <template>
   <div class="w-full rounded overflow-hidden">
     <TabGroup>
-      <div class="relative rounded-t">
-        <div class="absolute top-0 right-0 w-8 h-full bg-gradient-to-l from-white rounded-t-r"></div>
-        <TabList class="relative flex px-2.5 overflow-x-scroll scrollbar-hidden bg-white shadow-xs mb-1">
+      <div class="relative">
+        <div class="absolute top-0 right-0 w-8 h-full bg-gradient-to-l from-white rounded-tr"></div>
+        <TabList class="relative flex px-2.5 overflow-x-scroll scrollbar-hidden bg-white shadow-xs mb-1 rounded-t">
           <Tab
             v-for="category in Object.keys(categories)"
             as="template"
