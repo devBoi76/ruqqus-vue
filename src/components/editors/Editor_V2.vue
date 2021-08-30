@@ -2,7 +2,7 @@
 <!-- https://tiptap.dev -->
 
 <template>
-	<div class="relative bg-white dark:bg-gray-950 border dark:border-gray-700 dark:border-opacity-70 rounded-sm overflow-hidden focus:bg-white dark:focus:bg-gray-950 focus:ring-2 focus:border-primary focus:ring-primary" :style="cssProps">
+	<div class="relative bg-white dark:bg-gray-950 border dark:border-gray-700 dark:border-opacity-70 rounded-sm focus:bg-white dark:focus:bg-gray-950 focus:ring-2 focus:border-primary focus:ring-primary" :style="cssProps">
 
 		<!-- Editor -->
 		<editor-content v-if="menuBarBottom" :editor="editor" :style="`min-height:${minHeight}`"/>
