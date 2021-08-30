@@ -96,7 +96,7 @@
 	import Dropcursor from '@tiptap/extension-dropcursor'
 	import Image from '@tiptap/extension-image'
 
-	const EmoteTabs = defineAsyncComponent(() => import('@/components/popovers/EmoteTabs.vue'));
+	const EmoteTabs = defineAsyncComponent(() => import('@/components/EmoteTabs.vue'));
 
 	export default {
 		components: {
