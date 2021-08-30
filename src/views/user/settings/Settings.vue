@@ -174,7 +174,7 @@
             </div>
           </div>
           <div>
-            <div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
+            <div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2 px-4 sm:px-0">
               Email alerts
             </div>
             <form class="border-t border-b border-gray-100 dark:border-transparent sm:border sm:border-gray-200 sm:rounded-sm bg-white divide-y" :class="{ 'opacity-50 pointer-events-none':!v.email }">
