@@ -10,7 +10,7 @@
         >
           <button
             :class="[
-              'border-b-2 px-2.5 py-2 capitalize text-sm font-semibold mb-[-1px]',
+              'border-b-2 px-2.5 py-2.5 capitalize text-sm font-semibold leading-tight mb-[-1px]',
               selected
                 ? 'border-primary text-gray-900'
                 : 'border-transparent text-gray-400 hover:text-gray-500',
