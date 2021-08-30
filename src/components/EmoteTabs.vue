@@ -22,13 +22,13 @@
       </TabList>
 
       <TabPanels>
-        <div class="px-4 mt-4">
-          <input type="text" class="form-input light" placeholder="Search for the perfect emote"/>
+        <div class="p-4">
+          <input type="text" class="form-input light" placeholder="Find the perfect emote"/>
         </div>
         <TabPanel
           v-for="(category, index) in Object.values(categories)"
           :key="index"
-          class="bg-white p-4"
+          class="mb-4 px-4 bg-white"
         >
           <ul class="inline-flex flex-wrap gap-1 mb-0">
             <li
