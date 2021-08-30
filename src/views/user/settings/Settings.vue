@@ -260,7 +260,7 @@
                         Posts
                       </div>
                       <p class="text-sm text-gray-500 mt-1">
-                        Whens someone I follow posts
+                        When someone I follow posts
                       </p>
                     </div>
                     <Toggle v-model="v.is_private"/>
@@ -275,7 +275,7 @@
                         Replies
                       </div>
                       <p class="text-sm text-gray-500 mt-1">
-                        Whens someone replies to my post or comment
+                        When someone replies to my post or comment
                       </p>
                     </div>
                     <Toggle v-model="v.is_private"/>
@@ -290,7 +290,7 @@
                         Mentions
                       </div>
                       <p class="text-sm text-gray-500 mt-1">
-                        Whens someone mentions me by @username
+                        When someone mentions me by @username
                       </p>
                     </div>
                     <Toggle v-model="v.is_private"/>
