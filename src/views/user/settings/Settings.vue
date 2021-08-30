@@ -55,7 +55,7 @@
                 </span>
               </div>
             </div>
-            <form class="rounded-sm border bg-white divide-y">
+            <form class="border-t border-b border-gray-100 dark:border-transparent sm:border sm:border-gray-200 sm:rounded-sm bg-white divide-y">
               <div class="grid grid-cols-3 gap-6 p-4">
                 <div class="col-span-3">
                   <label class="label">
@@ -98,7 +98,7 @@
                 </span>
               </div>
             </div>
-            <div class="rounded-sm border bg-white divide-y">
+            <div class="border-t border-b border-gray-100 dark:border-transparent sm:border sm:border-gray-200 sm:rounded-sm bg-white divide-y">
               <ToggleForm @change="handleChange">
                 <template v-slot:default="{active, toggle}">
                   <div class="p-4">
@@ -177,7 +177,7 @@
             <div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
               Email alerts
             </div>
-            <form class="rounded-sm border bg-white divide-y" :class="{ 'opacity-50 pointer-events-none':!v.email }">
+            <form class="border-t border-b border-gray-100 dark:border-transparent sm:border sm:border-gray-200 sm:rounded-sm bg-white divide-y" :class="{ 'opacity-50 pointer-events-none':!v.email }">
               <div class="grid grid-cols-3 gap-6 p-4">
                 <div class="col-span-3">
                   <div class="flex flex-grow items-center justify-between">
@@ -199,7 +199,7 @@
             <div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
               Privacy
             </div>
-            <form class="rounded-sm border bg-white divide-y">
+            <form class="border-t border-b border-gray-100 dark:border-transparent sm:border sm:border-gray-200 sm:rounded-sm bg-white divide-y">
               <div class="grid grid-cols-3 gap-6 p-4">
                 <div class="col-span-3">
                   <div class="flex flex-grow items-center justify-between">
@@ -236,7 +236,7 @@
             <div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
               Notifications
             </div>
-            <form class="rounded-sm border bg-white divide-y">
+            <form class="border-t border-b border-gray-100 dark:border-transparent sm:border sm:border-gray-200 sm:rounded-sm bg-white divide-y">
               <div class="grid grid-cols-3 gap-6 p-4">
                 <div class="col-span-3">
                   <div class="flex flex-grow items-center justify-between">
