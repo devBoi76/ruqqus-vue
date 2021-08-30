@@ -56,10 +56,6 @@
 		<!-- Editor -->
 		<editor-content v-if="!menuBarBottom" :editor="editor" :style="`min-height:${minHeight}`"/>
 
-		<div v-if="showEmotes" class="p-2.5 bg-gray-50 border-t">
-			<EmoteTabs class="bg-white shadow-sm"/>
-		</div>
-
 		<div class="flex items-center justify-between px-2 py-1.5 bg-gray-50 dark:bg-gray-950 border-t dark:border-gray-700 dark:border-opacity-70 border-dashed">
 			<div class="flex items-center space-x-2">
 				<!-- GIF Picker -->
@@ -115,7 +111,6 @@
 		},
 		data() {
 			return {
-				showEmotes: false,
 				count: 0,
 				loadModal: false,
 				show: false,
