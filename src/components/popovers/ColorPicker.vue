@@ -1,6 +1,6 @@
 <template>
-  <Popover v-slot="{ open }" class="relative">
-    <PopoverButton :class="open ? '' : 'text-opacity-90'" class="flex items-center border rounded-sm text-gray-700 hover:text-gray-900 bg-white group focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
+  <Popover v-slot="{ open }" class="relative inline-block text-left">
+    <PopoverButton :class="open ? '' : 'text-opacity-90'" class="flex items-center border rounded-sm text-gray-700 hover:text-gray-900 group focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
       <div class="w-6 h-6 bg-red-500 rounded-l-sm"></div>
       <div class="flex items-center justify-center w-6 h-6">
         <i class="far fa-fw fa-eye-dropper"></i>
@@ -19,7 +19,7 @@
       <div class="p-2 bg-white">
         <ul class="flex flex-wrap -m-1">
           <li v-for="swatch in primarySwatches" :key="swatch" class="p-1">
-            <label :for="swatch" class="flex flex-shrink-0 w-6 h-6 shadow-inner rounded-full" :style="{ 'background-color': swatch }">
+            <label :for="swatch" class="flex flex-shrink-0 w-5 h-5 shadow-inner rounded-full" :style="{ 'background-color': swatch }">
               <input type="checkbox" class="invisible" :id="swatch" :value="swatch" v-model="primaryColor"/>
             </label>
           </li>
