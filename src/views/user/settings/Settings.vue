@@ -56,33 +56,50 @@
               </div>
             </div>
             <form class="border-t border-b border-gray-100 dark:border-transparent sm:border sm:border-gray-200 sm:rounded-sm bg-white divide-y">
-              <div class="grid grid-cols-3 gap-6 p-4">
-                <div class="col-span-3">
-                  <label class="label">
-                    Display name
-                  </label>
-                  <input required class="form-input light" v-model="webhook" :placeholder="v.username" type="text"/>
-                  <ColorPicker/>
-                  <p class="text-sm text-gray-500 mt-1">
-                    Your original username will always stay reserved for you:
-                    <span class="text-primary">
-                      {{ v.username }}
-                    </span>
-                  </p>
+              <div class="p-4">
+                <div class="flex items-center justify-between">
+                  <div>
+                    <div class="font-semibold leading-tight">
+                      Profile details
+                    </div>
+                    <p class="text-sm text-gray-500 mt-1">
+                      Change your appearance
+                    </p>
+                  </div>
+                  <button class="flex items-center justify-center px-2 w-8 h-8 text-lg text-gray-600 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white rounded-sm" @click="editProfile = !editProfile" aria-expanded="active">
+                    <i class="far fa-fw" :class="editProfile ? 'fa-compress-alt' : 'fa-pen'"></i>
+                  </button>
                 </div>
-                <div class="col-span-3 sm:col-span-2">
-                  <label class="label">
-                    Persona preview
-                  </label>
-                  <div class="p-3 bg-white border rounded">
-                    <div class="flex items-center mb-3">
-                      <img :src="v.profile_url" class="w-9 h-9 rounded-sm bg-white bg-opacity-20 mr-2" alt="avatar">
-                      <div class="text-xs font-semibold text-gray-900 leading-tight">
-                        {{ v.username }}
+                <div v-if="editProfile" class="space-y-6 mt-6">
+                  <div class="grid grid-cols-3 gap-6">
+                    <div class="col-span-3">
+                      <label class="label">
+                        Display name
+                      </label>
+                      <input required class="form-input light" v-model="webhook" :placeholder="v.username" type="text"/>
+                      <ColorPicker/>
+                      <p class="text-sm text-gray-500 mt-1">
+                        Your original username will always stay reserved for you:
+                        <span class="text-primary">
+                          {{ v.username }}
+                        </span>
+                      </p>
+                    </div>
+                    <div class="col-span-3 sm:col-span-2">
+                      <label class="label">
+                        Persona preview
+                      </label>
+                      <div class="p-3 bg-white border rounded">
+                        <div class="flex items-center mb-3">
+                          <img :src="v.profile_url" class="w-9 h-9 rounded-sm bg-white bg-opacity-20 mr-2" alt="avatar">
+                          <div class="text-xs font-semibold text-gray-900 leading-tight">
+                            {{ v.username }}
+                          </div>
+                        </div>
+                        <div class="h-4 w-3/4 rounded-sm bg-gray-100 mb-2"></div>
+                        <div class="h-4 w-1/3 rounded-sm bg-gray-100"></div>
                       </div>
                     </div>
-                    <div class="h-4 w-3/4 rounded-sm bg-gray-100 mb-2"></div>
-                    <div class="h-4 w-1/3 rounded-sm bg-gray-100"></div>
                   </div>
                 </div>
               </div>
@@ -334,6 +351,7 @@ export default {
   name: "UserSettingsView",
   data() {
     return {
+      editProfile: false,
       editAppearance: false,
       bio: '',
       isEmailSubscribed: false,
