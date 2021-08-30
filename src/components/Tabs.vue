@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full">
+  <div class="w-full rounded overflow-hidden">
     <TabGroup>
       <TabList class="flex px-4 space-x-1 bg-white border-b">
         <Tab
@@ -11,7 +11,6 @@
           <button
             :class="[
               'border-b-2 px-4 py-3 capitalize text-sm font-semibold mb-[-1px]',
-              'focus:outline-none focus:ring-2 ring-offset-2 ring-offset-primary ring-white ring-opacity-0',
               selected
                 ? 'border-primary text-gray-900'
                 : 'border-transparent text-gray-400 hover:text-gray-500',
@@ -26,10 +25,7 @@
         <TabPanel
           v-for="(category, index) in Object.values(categories)"
           :key="index"
-          :class="[
-            'bg-white p-4',
-            'focus:outline-none focus:ring-2 ring-offset-2 ring-offset-blue-400 ring-white ring-opacity-0',
-          ]"
+          class="bg-white p-4"
         >
           <ul class="inline-flex flex-wrap gap-2">
             <li
