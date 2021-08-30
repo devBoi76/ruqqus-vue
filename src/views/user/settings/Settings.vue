@@ -77,7 +77,7 @@
 												Display name
 											</label>
 											<div class="flex items-center space-x-2">
-												<input required class="form-input light pr-8" v-model="v.username" :placeholder="v.username" type="text"/>
+												<input class="form-input light pr-8" v-model="v.username" :placeholder="v.username" type="text"/>
 												<ColorPicker v-model:color="usernameColor"/>
 											</div>
 											<p class="text-sm text-gray-500 mt-1">
@@ -92,7 +92,7 @@
 												Title
 											</label>
 											<div class="flex items-center space-x-2">
-												<input required class="form-input light pr-8" v-model="title" :placeholder="title || 'e.g. UwU'" type="text"/>
+												<input class="form-input light pr-8" v-model="title" :placeholder="title || 'e.g. UwU'" type="text"/>
 												<ColorPicker v-model:color="titleColor"/>
 											</div>
 											<p class="text-sm text-gray-500 mt-1">
