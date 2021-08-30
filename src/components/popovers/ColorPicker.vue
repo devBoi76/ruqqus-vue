@@ -1,6 +1,6 @@
 <template>
   <Popover v-slot="{ open }" class="relative inline-block text-left">
-    <PopoverButton :class="open ? '' : 'text-opacity-90'" class="flex items-center justify-center text-white bg-red-500 group focus:outline-none hover:text-opacity-100 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 rounded-sm w-[34px] h-[34px]">
+    <PopoverButton class="flex items-center justify-center bg-white border border-dashed group focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 rounded-sm w-[34px] h-[34px]" :style="{ color: primaryColor }">
       <i class="fas fa-fill-drip fa-fw"></i>
     </PopoverButton>
 
