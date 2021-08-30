@@ -56,14 +56,21 @@
 		<!-- Editor -->
 		<editor-content v-if="!menuBarBottom" :editor="editor" :style="`min-height:${minHeight}`"/>
 
+		<div v-if="showEmotes" class="p-2.5 border-t">
+			<EmoteTabs class="shadow-sm"/>
+		</div>
+
 		<div class="flex items-center justify-between px-2 py-1.5 bg-gray-50 dark:bg-gray-950 border-t dark:border-gray-700 dark:border-opacity-70 border-dashed">
 			<div class="flex items-center space-x-2">
 				<!-- GIF Picker -->
 				<button class="ml-1 font-bold text-xs text-gray-600 hover:text-primary" @click="toggleModal()">
 					GIF
 				</button>
-				<!-- Emote Picker -->
-				<EmotePicker/>
+				<!-- Emote Picker Trigger -->
+				<button class="flex items-center justify-center px-2 w-8 h-8 text-xl text-gray-600 dark:text-gray-400 hover:text-purple-500 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white rounded-sm" @click="showEmotes = !showEmotes">
+					<span class="sr-only">Emote Picker</span>
+					<i class="far fa-grin fa-fw"></i>
+				</button>
 			</div>
 			<!-- Character Count -->
 			<div class="text-xs text-gray-400">
@@ -87,12 +94,13 @@
 	import Placeholder from '@tiptap/extension-placeholder'
 	import Dropcursor from '@tiptap/extension-dropcursor'
 	import Image from '@tiptap/extension-image'
-	import EmotePicker from "@/components/popovers/EmotePicker.vue"
+
+	const EmoteTabs = defineAsyncComponent(() => import('@/components/popovers/EmoteTabs.vue'));
 
 	export default {
 		components: {
 			EditorContent,
-			EmotePicker
+			EmoteTabs
 		},
 		props: {
 			value: {
@@ -111,6 +119,7 @@
 		},
 		data() {
 			return {
+				showEmotes: false,
 				count: 0,
 				loadModal: false,
 				show: false,
