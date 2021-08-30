@@ -1,5 +1,5 @@
 <template>
-  <div :class="{'absolute bottom-0 w-full h-full':showDropzone}">
+  <div tabindex="-1" :class="{'absolute bottom-0 w-full h-full':showDropzone}">
     <div class="absolute flex items-center justify-center overflow-hidden w-full h-screen z-100 bg-opacity-80 transition-all duration-200" :class="wrapperClass" @drop.prevent="drop($event)" @click.self="wrongFileReset()" @keydown.esc="showDropzone=false; reset()" tabindex="0">
       <transition
       enter-active-class="transition duration-100 ease-out"
