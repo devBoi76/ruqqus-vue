@@ -25,8 +25,8 @@
           Custom
         </div>
         <div class="relative ml-8">
-          <input type="color" id="color" name="color" class="w-[18px] h-[23px] rounded-full absolute left-2 top-[6px] bg-transparent" :value="primaryColor || `#FFFFFFF`">
-          <input type="text" class="form-input light text-xs pl-8" :placeholder="primaryColor || '#FFFFFFF'"/>
+          <input type="color" id="color" name="color" class="w-[18px] h-[23px] rounded-full absolute left-2 top-[6px] bg-transparent" :value="primaryColor">
+          <input type="text" class="form-input light text-xs pl-8" :placeholder="primaryColor" v-model="primaryColor"/>
         </div>
       </div>
     </PopoverPanel>
