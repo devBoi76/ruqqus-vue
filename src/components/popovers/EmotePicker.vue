@@ -1,7 +1,7 @@
 <template>
   <Popover v-slot="{ open }" class="relative inline-block text-left">
-    <PopoverButton class="flex items-center justify-center text-gray-700 hover:text-gray-900 bg-white group focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 rounded-sm w-8 h-8">
-      <i class="fas fa-grin fa-fw"></i>
+    <PopoverButton class="flex items-center justify-center bg-white border border-dashed group focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 rounded-sm w-[34px] h-[34px]">
+      <i class="fas fa-fill-drip fa-fw"></i>
     </PopoverButton>
 
     <transition
@@ -12,7 +12,7 @@
     leave-from-class="translate-y-0 opacity-100"
     leave-to-class="translate-y-1 opacity-0"
     >
-    <PopoverPanel class="absolute right-0 bottom-4 w-full z-10 bg-white border rounded shadow-lg">
+    <PopoverPanel class="absolute right-0 origin-top-right w-56 z-10 mt-2 bg-white border rounded shadow-lg">
       test
     </PopoverPanel>
   </transition>
@@ -25,42 +25,10 @@
   //import Tabs from "@/components/Tabs.vue"
 
   export default {
-    components: {
-      Popover,
-      PopoverButton,
-      PopoverPanel,
-      //Tabs
-    },
-    props: {
-    },
+    components: { Popover, PopoverButton, PopoverPanel, Tabs },
     data() {
       return {
-        emotes: [
-        {
-          category: 'meme'
-          emotes: [
-          id: 1,
-          shortcut: 'pepe',
-          src: 'https://i.imgur.com/3BH7ry5.jpg']
-        },
-        {
-          category: 'animated'
-          emotes: [
-          id: 1,
-          shortcut: 'think',
-          src: 'https://i.imgur.com/q1il1nl.gif']
-        }
-        ]
-      }
-    },
-    computed: {
-      innerEmote: {
-        get: function () {
-          return this.color
-        },
-        set: function (newValue) {
-          this.$emit("update:color",newValue)
-        }
+        primarySwatches: ['#EF4444', '#F43F5E', '#EC4899', '#D946EF', '#A855F7', '#8B5CF6', '#6366F1', '#3B82F6', '#0EA5E9', '#06B6D4','#14B8A6', '#10B981', '#22C55E', '#84CC16', '#EAB308', '#F59E0B', '#F97316', '#78716C', '#71717A', '#6B7280', '#64748B']
       }
     }
   }
