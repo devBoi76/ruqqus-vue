@@ -22,12 +22,12 @@
         </Tab>
       </TabList>
 
-      <TabPanels class="mt-2">
+      <TabPanels>
         <TabPanel
           v-for="(posts, idx) in Object.values(categories)"
           :key="idx"
           :class="[
-            'bg-white rounded-xl p-3',
+            'bg-white p-4',
             'focus:outline-none focus:ring-2 ring-offset-2 ring-offset-blue-400 ring-white ring-opacity-60',
           ]"
         >
