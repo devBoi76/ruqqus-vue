@@ -14,14 +14,14 @@
     >
     <PopoverPanel class="absolute right-0 origin-top-right w-48 z-10 mt-2 bg-white border rounded shadow-lg">
       <div class="p-3">
-        <ul class="flex flex-wrap justify-center -m-1">
+        <ul class="flex flex-wrap justify-center -m-1 mb-3">
           <li v-for="swatch in primarySwatches" :key="swatch" class="p-0.5">
-            <label :for="swatch" class="flex flex-shrink-0 w-5 h-5 shadow-inner rounded-lg" :style="{ 'background-color': swatch }">
+            <label :for="swatch" class="flex flex-shrink-0 w-5 h-5 shadow-inner rounded-sm" :style="{ 'background-color': swatch }">
               <input type="checkbox" class="invisible" :id="swatch" :value="swatch" v-model="primaryColor"/>
             </label>
           </li>
         </ul>
-        <input type="text" class="form-input text-xs" :placeholder="primaryColor"/>
+        <input type="text" class="form-input light text-xs" :placeholder="primaryColor || '#FFFFFFF'"/>
       </div>
     </PopoverPanel>
   </transition>
