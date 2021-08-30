@@ -370,12 +370,12 @@ export default {
 		return {
 			usernameColor: '#C53030',
 			titleColor: '#C53030',
-			title: '',
+			title: null,
 			editProfile: false,
 			editAppearance: false,
-			bio: '',
+			bio: null,
 			isEmailSubscribed: false,
-			password: '',
+			password: null,
 			showPassword: false
 		}
 	},
