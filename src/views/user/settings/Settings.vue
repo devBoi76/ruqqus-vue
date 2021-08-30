@@ -70,6 +70,21 @@
                     </span>
                   </p>
                 </div>
+                <div class="col-span-3 sm:col-span-2">
+                  <label class="label">
+                    Persona preview
+                  </label>
+                  <div class="p-3 bg-white border rounded">
+                    <div class="flex items-center mb-3">
+                      <img :src="v.profile_url" class="w-9 h-9 rounded-sm bg-white bg-opacity-20 mr-2" alt="avatar">
+                      <div class="text-xs font-semibold text-gray-900 leading-tight">
+                        {{ v.username }}
+                      </div>
+                    </div>
+                    <div class="h-4 w-3/4 rounded-sm bg-gray-100 mb-2"></div>
+                    <div class="h-4 w-1/3 rounded-sm bg-gray-100"></div>
+                  </div>
+                </div>
               </div>
               <div class="grid grid-cols-3 gap-6 p-4">
                 <div class="col-span-3">
