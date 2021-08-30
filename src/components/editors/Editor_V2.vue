@@ -67,7 +67,7 @@
 					GIF
 				</button>
 				<!-- Emote Picker -->
-				<EmotePicker @select-emote="addEmote(value)"/>
+				<EmotePicker @select-emote="addEmote"/>
 			</div>
 			<!-- Character Count -->
 			<div class="text-xs text-gray-400">
