@@ -10,7 +10,7 @@
       leave-to-class="transform scale-95 opacity-0"
       >
       <div class="sm:w-2/4 md:1/4 lg:w-1/3" v-if="canDropImage && showDropzone">
-        <div class="rounded bg-white shadow transition duration-200 ease-in transform" :class="{ 'animate-shake':wrongFile }" @dragenter="dragging=true">
+        <div class="rounded bg-white shadow transition duration-200 ease-in transform" :class="{ 'animate-shake':wrongFile }" @dragenter="dragging=true" @drop="dragging=false" @dragleave="dragging=false">
           <div class="w-full p-4">
             <div class="flex flex-col space-y-5 border-2 border-dashed py-12 text-center select-none">
               <!-- Wrong file icon -->
