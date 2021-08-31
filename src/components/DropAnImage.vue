@@ -30,10 +30,10 @@
                 or
               </p>
               <div class="relative w-3/4 mx-auto">
-                <div class="absolute left-4 top-[6px]">
+                <div class="absolute left-3 top-[6px]">
                   <i class="far fa-link fa-fw text-sm text-gray-400"></i>
                 </div>
-                <input type="text" class="form-input light pl-10" v-model="url" placeholder="Paste a URL or image here"/>
+                <input type="text" class="form-input light pl-9" v-model="url" placeholder="Paste a URL or image here"/>
               </div>
             </div>
           </div>
