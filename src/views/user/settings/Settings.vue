@@ -113,8 +113,8 @@
 														{{ title }}
 													</span>
 												</div>
-												<div class="h-4 w-3/4 rounded-sm bg-gray-200 mb-2"></div>
-												<div class="h-4 w-1/3 rounded-sm bg-gray-200"></div>
+												<div class="h-3 w-3/4 rounded-sm bg-gray-200 mb-2"></div>
+												<div class="h-3 w-1/3 rounded-sm bg-gray-200"></div>
 											</div>
 										</div>
 									</div>
