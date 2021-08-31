@@ -146,6 +146,14 @@ export default {
 					},
 					icon: 'fa-badge-check',
 					textCase: 'capitalize'
+				},
+				{
+					name: 'emoji',
+					route: {
+						name: 'admin-emojis-view'
+					},
+					icon: 'fa-grin',
+					textCase: 'capitalize'
 				}
 				]
 			}

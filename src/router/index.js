@@ -61,6 +61,7 @@ const AdminUserManagementView = () => import ('../views/admin/sections/manage/Me
 const AdminSecurityView = () => import ('../views/admin/sections/settings/Security.vue')
 const AdminRulesView = () => import ('../views/admin/sections/manage/Rules.vue')
 const AdminTitlesView = () => import ('../views/admin/sections/manage/Titles.vue')
+const AdminEmojisView = () => import ('../views/admin/sections/manage/Emojis.vue')
 // Integrations
 const AdminIntegrationsView = () => import ('../views/admin/sections/settings/integrations/Integrations.vue')
 const AdminIntegrationsListView = () => import ('../views/admin/sections/settings/integrations/IntegrationsList.vue')
@@ -173,7 +174,8 @@ const routes = [
 			{ path: '/admin/members/:sort?', component: AdminUserManagementView, name: 'admin-user-management-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
 			{ path: '/admin/security', component: AdminSecurityView, name: 'admin-security-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
 			{ path: '/admin/rules', component: AdminRulesView, name: 'admin-rules-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
-			{ path: '/admin/titles', component: AdminTitlesView, name: 'admin-titles-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} }
+			{ path: '/admin/titles', component: AdminTitlesView, name: 'admin-titles-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
+			{ path: '/admin/emojis', component: AdminEmojisView, name: 'admin-emojis-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} }
 			]
 		},
 
