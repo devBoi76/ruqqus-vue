@@ -62,7 +62,7 @@
 						<thead class="bg-gray-50">
 							<tr>
 								<th class="w-1/4 pl-3 pr-6 py-2 text-xs font-semibold uppercase tracking-wider text-left text-gray-400 dark:text-gray-400">
-									{{ subscriber_count === 1 ? '1 Emote' : `${subscriber_count} Emotes` }}
+									{{ emoteCount === 1 ? '1 Emote' : `${emoteCount} Emotes` }}
 								</th>
 								<th class="w-1/4 px-6 py-3 text-xs font-semibold uppercase tracking-wider text-left text-gray-400 dark:text-gray-400">
 									Uploaded by
@@ -89,21 +89,19 @@
 										</div>
 									</td>
 									<td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-900">
-										<div class="flex space-x-1">
-											<span v-for="i in member.roles" :key="i" class="px-2 inline-flex text-xs leading-5 font-medium rounded-sm" :class="role[i] || role.normal">
-												{{ i }}
-											</span>
-										</div>
-									</td>
-									<td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-900">
 										<span class="text-gray-500">
-											{{ member.date }}
+											{{ emote.author }}
 										</span>
 									</td>
 									<td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-900">
 										<span class="text-gray-500">
-											{{ member.date }}
+											{{ emote.category }}
 										</span>
+									</td>
+									<td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-900">
+										<button class="button linkPrimary">
+											Edit
+										</button>
 									</td>
 								</tr>
 							</template>
@@ -134,10 +132,10 @@ export default {
 			emotes: [
 			{
 				id: 1,
-				name: 'throwaway420',
-				src: 'https://i.ruqqus.com/users/throwaway420/profile-2.png',
-				category: ['member'],
-				author: 'Mon Jul 05 2021',
+				name: 'pepe',
+				src: 'https://i.imgur.com/3BH7ry5.jpg',
+				author: 'throwaway420',
+				category: 'memes',
 			}
 			],
 			selected: [],
