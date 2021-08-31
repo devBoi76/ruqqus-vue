@@ -8,8 +8,7 @@
     </div>
 
     <NotificationsList v-if="toastsLength"/>
-    <DropAnImage/>
-
+    <DropAnImage v-if="showDropzone"/>
   </div>
 </template>
 
@@ -53,8 +52,8 @@ export default {
         return Navbar
       }
     },
-    loadingGuild() {
-      return Object.keys(this.$store.state.guild.guild).length < 1
+    showDropzone() {
+      return this.$store.state.create.post.dropzone
     },
     image: {
       get() {
