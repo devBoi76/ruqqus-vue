@@ -121,40 +121,33 @@
 												<img :src="member.profile_url" class="w-8 h-8 rounded-sm object-cover mr-2" :alt="`${member.username} avatar`"/>
 											</router-link>
 											<div>
-												<router-link :to="`/${member.username}`" target="_blank" class="text-sm text-gray-900 font-medium">
+												<router-link :to="`/${member.username}`" target="_blank" class="text-gray-900 font-medium">
 													{{ member.username }}
 												</router-link>
-												<p class="text-2xs text-gray-500">
-													{{ member.reputation }} reputation
-												</p>
 											</div>
 										</div>
 									</td>
-									<td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-900">
+									<td class="px-6 py-4 whitespace-no-wrap leading-5 text-gray-900">
 										<div class="flex space-x-1">
 											<span v-for="i in member.roles" :key="i" class="px-2 inline-flex text-xs leading-5 font-medium rounded-sm" :class="role[i] || role.normal">
 												{{ i }}
 											</span>
 										</div>
 									</td>
-									<td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-900">
-										<span class="text-gray-500">
+									<td class="px-6 py-4 whitespace-no-wrap leading-5 text-gray-900">
+										<span>
 											{{ member.date }}
 										</span>
 									</td>
-									<td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-900">
-										<div class="flex items-center space-x-2">
-											<span class="text-gray-500">
-												{{ member.post_count }}
-											</span>
-										</div>
+									<td class="px-6 py-4 whitespace-no-wrap leading-5 text-gray-900">
+										<span>
+											{{ member.post_count }}
+										</span>
 									</td>
-									<td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-900">
-										<div class="flex items-center space-x-2">
-											<span class="text-gray-500">
-												{{ member.comment_count }}
-											</span>
-										</div>
+									<td class="px-6 py-4 whitespace-no-wrap leading-5 text-gray-900">
+										<span>
+											{{ member.comment_count }}
+										</span>
 									</td>
 								</tr>
 							</template>
