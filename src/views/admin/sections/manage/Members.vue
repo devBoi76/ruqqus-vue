@@ -134,17 +134,17 @@
 											</span>
 										</div>
 									</td>
-									<td class="px-6 py-4 whitespace-no-wrap leading-5 text-gray-700">
+									<td class="px-6 py-4 whitespace-no-wrap leading-5 text-gray-600">
 										<span>
 											{{ member.date }}
 										</span>
 									</td>
-									<td class="px-6 py-4 whitespace-no-wrap leading-5 text-gray-700">
+									<td class="px-6 py-4 whitespace-no-wrap leading-5 text-gray-600">
 										<span>
 											{{ member.post_count }}
 										</span>
 									</td>
-									<td class="px-6 py-4 whitespace-no-wrap leading-5 text-gray-700">
+									<td class="px-6 py-4 whitespace-no-wrap leading-5 text-gray-600">
 										<span>
 											{{ member.comment_count }}
 										</span>
