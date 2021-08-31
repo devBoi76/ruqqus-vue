@@ -9,10 +9,10 @@
       leave-from-class="transform scale-100 opacity-100"
       leave-to-class="transform scale-95 opacity-0"
       >
-      <div class="sm:w-2/4 md:1/4 lg:w-1/3" v-if="canDropImage && showDropzone">
-        <div class="rounded bg-white shadow transition duration-200 ease-in transform" :class="{ 'animate-shake':wrongFile }" @dragenter="dragging=true" @drop="dragging=false" @dragleave="dragging=false">
+      <div class="sm:w-2/4 md:1/4 lg:w-1/3" v-if="canDropImage && showDropzone" @dragenter="dragging=true" @dragend="dragging=false" @dragleave="dragging=false">
+        <div class="rounded bg-white shadow transition duration-200 ease-in transform" :class="{ 'animate-shake':wrongFile }">
           <div class="w-full p-4">
-            <div class="flex flex-col space-y-5 border-2 border-dashed py-12 text-center select-none">
+            <div class="flex flex-col space-y-5 border-2 border-dashed py-12 text-center select-none" :class="{ 'border-gray-400':dragging }">
               <!-- Wrong file icon -->
               <div v-if="wrongFile" class="flex items-center justify-center w-10 h-10 bg-red-100 rounded mx-auto mb-5">
                 <i class="far fa-frown fa-lg text-red-400"></i>
@@ -20,8 +20,8 @@
               <!-- Correct file icon -->
               <div v-if="!wrongFile" class="relative w-[72px] h-[50px] mx-auto">
                 <div class="z-0 absolute left-0 bottom-0 w-[60px] h-[42px] transform rotate-[5deg]"></div>
-                <div class="z-0 absolute bg-gray-200 left-0 bottom-0 w-[72px] h-[50px] transform transition-all duration-100" :class="dragging ? 'rotate-[-15deg]' : 'rotate-[-10deg]'"></div>
-                <div class="z-0 absolute bg-gray-200 border-3 border-white shadow left-0 bottom-0 w-[72px] h-[50px] transform transition-all duration-100" :class="{ 'rotate-[-5deg]':dragging }"></div>
+                <div class="z-0 absolute bg-gray-200 left-0 bottom-0 w-[72px] h-[50px] transform rotate-[-10deg]"></div>
+                <div class="z-0 absolute bg-gray-200 border-3 border-white shadow left-0 bottom-0 w-[72px] h-[50px] transform"></div>
               </div>
               <div class="h4 w-3/4 mx-auto">
                 {{ wrongFile ? 'Wrong file type. Try again.' : 'Drag and drop an image here to create a post' }}
