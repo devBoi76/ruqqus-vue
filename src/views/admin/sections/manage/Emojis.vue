@@ -10,7 +10,7 @@
 					</h1>
 					<div v-show="!loading && !errored" class="flex items-center space-x-2">
 						<button class="button primary">
-							Add emoji
+							Add Emoji
 						</button>
 						<form class="relative" @submit.prevent="onSubmit" @submit="search()">
 							<div class="absolute left-3 top-[6px]">
