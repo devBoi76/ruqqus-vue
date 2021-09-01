@@ -34,7 +34,6 @@
 </template>
 
 <script>
-  import { ref } from 'vue'
   import {
     Listbox,
     ListboxButton,
@@ -45,13 +44,14 @@
   export default {
     components: { Listbox, ListboxButton, ListboxOptions, ListboxOption },
     props: {
+      selected: Object,
       options: Array,
       canAppend: Boolean
     },
     computed: {
       selectedOption: {
         get: function () {
-          return this.options[0]
+          return this.selected
         },
         set: function (newValue) {
           this.$emit("update:selected",newValue)
