@@ -8,7 +8,7 @@
       <ListboxOptions as="div" class="absolute right-0 w-64 mt-4 py-2 origin-top-right bg-white rounded shadow-lg border focus:outline-none">
         <ListboxOption v-slot="{ active, selected }" as="div" v-for="person in people" :key="person" :value="person">
           <div :class="[active ? 'text-primary bg-gray-100' : 'text-gray-700','relative cursor-default select-none relative py-2 pl-10 pr-4',]">
-            <span :class="[selected ? 'font-medium' : 'font-normal','block truncate']">{{ person.name }}</span
+            <span :class="[selected ? 'font-medium' : 'font-normal','block truncate']">{{ person.name }}</span>
             <span v-if="selected" class="absolute inset-y-0 left-0 flex items-center pl-4 text-sm text-primary">
               <i class="far fa-check fa-sm"></i>
             </span>
