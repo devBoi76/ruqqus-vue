@@ -68,7 +68,7 @@
 												Emoji
 											</th>
 											<th scope="col" class="px-6 py-3 text-left text-xs font-semibold uppercase tracking-wider text-left text-gray-400 dark:text-gray-400">
-												Author
+												Uploaded By
 											</th>
 											<th scope="col" class="px-6 py-3 text-left text-xs font-semibold uppercase tracking-wider text-left text-gray-400 dark:text-gray-400">
 												Category
