@@ -12,7 +12,7 @@
     leave-from-class="translate-y-0 opacity-100"
     leave-to-class="translate-y-1 opacity-0"
     >
-    <PopoverPanel class="absolute right-0 origin-top-right w-56 z-10 mt-2 bg-white border rounded shadow-lg">
+    <PopoverPanel class="absolute right-0 origin-top-right w-56 z-10 mt-2 bg-white border rounded-sm">
       <ul class="inline-flex flex-wrap gap-2 mb-0 p-3">
         <li v-for="swatch in primarySwatches" :key="swatch">
           <label :for="swatch" class="flex flex-shrink-0 w-[1.325rem] h-[1.325rem] shadow-inner rounded-sm" :style="{ 'background-color': swatch }">

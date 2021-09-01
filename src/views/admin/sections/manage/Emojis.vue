@@ -81,7 +81,7 @@
 									</thead>
 									<tbody class="bg-white divide-y divide-gray-200">
 										<tr v-for="emoji in emojis" :key="emoji.id" class="hover:bg-gray-50">
-											<td class="px-6 py-4 whitespace-nowrap">
+											<td class="px-6 py-3 whitespace-nowrap">
 												<div class="flex items-center">
 													<div class="flex-shrink-0 w-8 h-8">
 														<img class="w-8 h-8" :src="emoji.image" :alt="emoji.name" />
@@ -95,16 +95,16 @@
 													</div>
 												</div>
 											</td>
-											<td class="px-6 py-4 whitespace-nowrap">
+											<td class="px-6 py-3 whitespace-nowrap">
 												<div class="flex items-center">
 													<img class="w-5 h-5 rounded-sm" :src="emoji.author.image" :alt="`${emoji.author.name} avatar`"/>
 													<div class="ml-2 text-gray-900">{{ emoji.author.name }}</div>
 												</div>
 											</td>
-											<td class="px-6 py-4 whitespace-nowrap text-gray-500">
+											<td class="px-6 py-3 whitespace-nowrap text-gray-500">
 												<span class="capitalize">{{ emoji.category }}</span>
 											</td>
-											<td class="px-6 py-4 whitespace-nowrap text-right">
+											<td class="px-6 py-3 whitespace-nowrap text-right">
 												<button href="#" class="font-medium text-primary hover:text-opacity-70">Edit</button>
 											</td>
 										</tr>
