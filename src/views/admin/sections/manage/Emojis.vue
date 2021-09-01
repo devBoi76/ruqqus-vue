@@ -85,7 +85,7 @@
 													<div class="flex-shrink-0 w-8 h-8">
 														<img class="w-8 h-8" :src="emoji.image" :alt="emoji.name" />
 													</div>
-													<div class="ml-4">
+													<div class="ml-3">
 														<div class="flex items-center font-medium text-gray-900">
 															<span class="text-gray-500 pr-[1px]">:</span>
 															<span>{{ emoji.name }}</span>
@@ -97,7 +97,7 @@
 											<td class="px-6 py-4 whitespace-nowrap">
 												<div class="flex items-center">
 													<img class="w-6 h-6 rounded-sm" :src="emoji.author.image" :alt="`${emoji.author.name} avatar`"/>
-													<div class="ml-3 text-gray-900">{{ emoji.author.name }}</div>
+													<div class="ml-2 text-gray-900">{{ emoji.author.name }}</div>
 												</div>
 											</td>
 											<td class="px-6 py-4 whitespace-nowrap text-gray-500">
