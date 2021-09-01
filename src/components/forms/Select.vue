@@ -49,7 +49,7 @@
       ]
       const selectedPerson = ref(people[0])
 
-      const form = false
+      let form = false
 
       return {
         people,
