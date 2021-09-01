@@ -83,7 +83,7 @@
 											<td class="px-6 py-4 whitespace-nowrap">
 												<div class="flex items-center">
 													<div class="flex-shrink-0 w-8 h-8">
-														<img class="w-10 h-10 rounded-sm" :src="emoji.image" :alt="emoji.name" />
+														<img class="w-8 h-8 rounded-sm" :src="emoji.image" :alt="emoji.name" />
 													</div>
 													<div class="ml-4">
 														<div class="font-medium text-gray-900">
