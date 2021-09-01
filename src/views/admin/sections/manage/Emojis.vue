@@ -86,10 +86,10 @@
 														<img class="w-8 h-8" :src="emoji.image" :alt="emoji.name" />
 													</div>
 													<div class="ml-4">
-														<div class="font-medium text-gray-900">
-															<span class="text-gray-500">:</span>
-															{{ emoji.name }}
-															<span class="text-gray-500">:</span>
+														<div class="flex items-center font-medium text-gray-900">
+															<span class="text-gray-500 pr-[1px]">:</span>
+															<span>{{ emoji.name }}</span>
+															<span class="text-gray-500 pl-[1px]">:</span>
 														</div>
 													</div>
 												</div>
