@@ -57,54 +57,56 @@
 
 			<!-- Table -->
 			<div v-if="!loading && !errored" class="col-span-full 2xl:col-start-2 2xl:col-end-10 p-4 md:px-8">
-				<div class="border overflow-hidden border-b border-gray-200 sm:rounded-sm">
-					<table class="min-w-full divide-y divide-gray-200">
-						<thead class="bg-gray-50">
-							<tr>
-								<th class="w-6/12 pl-3 pr-6 py-2 text-xs font-semibold uppercase tracking-wider text-left text-gray-400 dark:text-gray-400">
-									{{ emoteCount === 1 ? '1 Emote' : `${emoteCount} Emotes` }}
-								</th>
-								<th class="w-3/12 px-6 py-3 text-xs font-semibold uppercase tracking-wider text-left text-gray-400 dark:text-gray-400">
-									Uploaded by
-								</th>
-								<th class="w-3/12 px-6 py-3 text-xs font-semibold uppercase tracking-wider text-left text-gray-400 dark:text-gray-400">
-									Category
-								</th>
-								<th class="w-2/12" class="relative px-6 py-3">
-									<span class="sr-only">Edit</span>
-								</th>
-							</tr>
-						</thead>
-						<tbody class="border-b last:border-0">
-							<template v-for="emote in emotes" :key="emote.id">
-								<tr class="border-t first:border-0 hover:bg-gray-50">
-									<td class="pl-3 pr-6 py-3 whitespace-no-wrap">
-										<div class="flex items-center">
-											<img :src="emote.src" class="w-8 h-8 rounded-sm object-cover mr-3" :alt="`${emote.name} emote`"/>
-											<p class="font-medium">
-												{{ emote.name }}
-											</p>
-										</div>
-									</td>
-									<td class="px-6 py-4 whitespace-no-wrap leading-5 text-gray-600">
-										<span>
-											{{ emote.author }}
-										</span>
-									</td>
-									<td class="px-6 py-4 whitespace-no-wrap leading-5 text-gray-600">
-										<span>
-											{{ emote.category }}
-										</span>
-									</td>
-									<td class="px-6 py-4 whitespace-no-wrap leading-5 text-gray-600">
-										<button class="button linkPrimary">
-											Edit
-										</button>
-									</td>
-								</tr>
-							</template>
-						</tbody>
-					</table>
+				<div class="flex flex-col">
+					<div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+						<div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+							<div class="overflow-hidden border-b border-gray-200 sm:rounded">
+								<table class="min-w-full divide-y divide-gray-200">
+									<thead class="bg-gray-50">
+										<tr>
+											<th scope="col" class="px-6 py-3 text-left text-xs font-semibold uppercase tracking-wider text-left text-gray-400 dark:text-gray-400">
+												Emoji
+											</th>
+											<th scope="col" class="px-6 py-3 text-left text-xs font-semibold uppercase tracking-wider text-left text-gray-400 dark:text-gray-400">
+												Author
+											</th>
+											<th scope="col" class="px-6 py-3 text-left text-xs font-semibold uppercase tracking-wider text-left text-gray-400 dark:text-gray-400">
+												Category
+											</th>
+											<th scope="col" class="relative px-6 py-3">
+												<span class="sr-only">Edit</span>
+											</th>
+										</tr>
+									</thead>
+									<tbody class="bg-white divide-y divide-gray-200">
+										<tr v-for="emoji in emojis" :key="emoji.id">
+											<td class="px-6 py-4 whitespace-nowrap">
+												<div class="flex items-center">
+													<div class="flex-shrink-0 h-10 w-10">
+														<img class="h-10 w-10 rounded-full" :src="emoji.image" alt="" />
+													</div>
+													<div class="ml-4">
+														<div class="text-sm font-medium text-gray-900">
+															{{ emoji.name }}
+														</div>
+													</div>
+												</div>
+											</td>
+											<td class="px-6 py-4 whitespace-nowrap">
+												<div class="text-sm text-gray-900">{{ emoji.author }}</div>
+											</td>
+											<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+												{{ emoji.category }}
+											</td>
+											<td class="px-6 py-4 whitespace-nowrap text-right text-sm font-semibold">
+												<button href="#" class="text-primary hover:text-opacity-70">Edit</button>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
