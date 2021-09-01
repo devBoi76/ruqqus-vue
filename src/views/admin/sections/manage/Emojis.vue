@@ -61,16 +61,16 @@
 					<table class="min-w-full divide-y divide-gray-200">
 						<thead class="bg-gray-50">
 							<tr>
-								<th class="w-3/6 pl-3 pr-6 py-2 text-xs font-semibold uppercase tracking-wider text-left text-gray-400 dark:text-gray-400">
+								<th class="w-2/5 pl-3 pr-6 py-2 text-xs font-semibold uppercase tracking-wider text-left text-gray-400 dark:text-gray-400">
 									{{ emoteCount === 1 ? '1 Emote' : `${emoteCount} Emotes` }}
 								</th>
-								<th class="w-1/6 px-6 py-3 text-xs font-semibold uppercase tracking-wider text-left text-gray-400 dark:text-gray-400">
+								<th class="w-1/5 px-6 py-3 text-xs font-semibold uppercase tracking-wider text-left text-gray-400 dark:text-gray-400">
 									Uploaded by
 								</th>
-								<th class="w-1/6 px-6 py-3 text-xs font-semibold uppercase tracking-wider text-left text-gray-400 dark:text-gray-400">
+								<th class="w-1/5 px-6 py-3 text-xs font-semibold uppercase tracking-wider text-left text-gray-400 dark:text-gray-400">
 									Category
 								</th>
-								<th class="w-1/6 px-6 py-3 text-xs font-semibold uppercase tracking-wider text-left text-gray-400 dark:text-gray-400">
+								<th class="w-1/5 px-6 py-3 text-xs font-semibold uppercase tracking-wider text-left text-gray-400 dark:text-gray-400">
 									Actions
 								</th>
 							</tr>
