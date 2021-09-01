@@ -53,7 +53,7 @@
         { id: 4, name: 'Benedict Kessler' },
         { id: 5, name: 'Katelyn Rohan' },
         ],
-        selectedPerson: people[0],
+        selectedPerson: this.people[0],
         form: false
       }
     }
