@@ -22,11 +22,11 @@
             Add
           </button>
           <form v-show="form" @submit.prevent="onSubmit">
-            <input type="text" placeholder="i.e. memes" class="form-input light" v-model="newOption" @keyup.enter="appendOption()"/>
+            <input required type="text" placeholder="i.e. memes" class="form-input light" v-model="newOption" @keyup.enter="appendOption()"/>
             <p class="text-xs text-gray-400 mt-2">
               Press enter to create a new option
             </p>
-          </div>
+          </form>
         </div>
       </ListboxOptions>
     </div>
