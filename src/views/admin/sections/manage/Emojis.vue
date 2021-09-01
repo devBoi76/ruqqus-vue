@@ -101,7 +101,7 @@
 												</div>
 											</td>
 											<td class="px-6 py-4 whitespace-nowrap text-gray-500">
-												{{ emoji.category }}
+												<span class="capitalize">{{ emoji.category }}</span>
 											</td>
 											<td class="px-6 py-4 whitespace-nowrap text-right">
 												<button href="#" class="font-medium text-primary hover:text-opacity-70">Edit</button>
