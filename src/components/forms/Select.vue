@@ -2,10 +2,10 @@
   <!-- Render a `div` instead of nothing -->
   <Listbox as="div" v-model="selectedOption">
     <div class="relative">
-      <ListboxButton class="relative w-full py-2 pl-3 pr-10 text-left bg-white border rounded-sm cursor-default focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-white focus-visible:ring-offset-orange-300 focus-visible:ring-offset-2 focus-visible:border-indigo-500 sm:text-sm">
+      <ListboxButton class="relative w-full py-1.5 pl-3 pr-10 text-left leading-5 bg-white border rounded-sm cursor-default focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-white focus-visible:ring-offset-orange-300 focus-visible:ring-offset-2 focus-visible:border-indigo-500 sm:text-sm">
         {{ selectedOption.name }}
-        <span class="absolute inset-y-0 right-0 flex items-center pl-2 text-sm text-primary">
-          <i class="fas fa-sort fa-sm"></i>
+        <span class="absolute inset-y-0 right-0 flex items-center pr-2 text-sm text-gray-500">
+          <i class="fas fa-sort"></i>
         </span>
       </ListboxButton>
       <ListboxOptions as="div" class="absolute right-0 w-64 mt-2 origin-top-right bg-white rounded shadow-lg border focus:outline-none">
