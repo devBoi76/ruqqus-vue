@@ -22,10 +22,7 @@
             Add
           </button>
           <form v-show="form" @submit.prevent="onSubmit">
-            <input required type="text" placeholder="i.e. memes" class="form-input light" v-model="newOption" @keyup.enter="appendOption()"/>
-            <p class="text-xs text-gray-400 mt-2">
-              Press enter to create a new option
-            </p>
+            <input required type="text" placeholder="i.e. memes" class="form-input light" v-model="newOption.name" @keyup.enter="appendOption()"/>
           </form>
         </div>
       </ListboxOptions>
@@ -50,7 +47,7 @@
     },
     data() {
       return {
-        newOption: '',
+        newOption: { name: '' },
         showForm: this.canAppend
       }
     },
@@ -76,7 +73,7 @@
       appendOption() {
         this.innerOptions.push(this.newOption)
         this.showForm = false
-        this.newOption = ''
+        this.newOption.name = ''
       }
     }
   }
