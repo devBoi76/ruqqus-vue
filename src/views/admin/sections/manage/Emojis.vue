@@ -134,8 +134,31 @@ export default {
 				id: 1,
 				name: 'pepe',
 				image: 'https://i.imgur.com/3BH7ry5.jpg',
-				author: 'throwaway420',
+				author: {
+					name: 'throwaway420',
+					image: 'https://i.ruqqus.com/users/throwaway420/profile-2.png'
+				},
 				category: 'memes',
+			},
+			{
+				id: 2,
+				name: 'kekw',
+				image: 'https://i.imgur.com/u6zqX6q.jpg',
+				author: {
+					name: 'throwaway420',
+					image: 'https://i.ruqqus.com/users/throwaway420/profile-2.png'
+				},
+				category: 'memes',
+			},
+			{
+				id: 3,
+				name: 'flushed',
+				image: 'https://i.imgur.com/R9XCoie.gif',
+				author: {
+					name: 'throwaway420',
+					image: 'https://i.ruqqus.com/users/throwaway420/profile-2.png'
+				},
+				category: 'animated',
 			}
 			],
 			selected: [],
