@@ -83,7 +83,7 @@
 											<td class="px-6 py-4 whitespace-nowrap">
 												<div class="flex items-center">
 													<div class="flex-shrink-0 h-10 w-10">
-														<img class="h-10 w-10 rounded-full" :src="emoji.image" alt="" />
+														<img class="h-10 w-10 rounded-full" :src="emoji.image" :alt="emoji.name" />
 													</div>
 													<div class="ml-4">
 														<div class="text-sm font-medium text-gray-900">
@@ -129,11 +129,11 @@ export default {
 			loading: false,
 			errored: false,
 			reorder: false,
-			emotes: [
+			emojis: [
 			{
 				id: 1,
 				name: 'pepe',
-				src: 'https://i.imgur.com/3BH7ry5.jpg',
+				image: 'https://i.imgur.com/3BH7ry5.jpg',
 				author: 'throwaway420',
 				category: 'memes',
 			}
