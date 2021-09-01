@@ -22,8 +22,8 @@
             Create new category
           </button>
           <div v-show="form">
-            <input type="text" placeholder="i.e. memes"/>
-            <p class="text-xs text-gray-500 mt-1">
+            <input type="text" placeholder="i.e. memes" class="form-input light"/>
+            <p class="text-xs text-gray-400 mt-1">
               Press enter to add new category
             </p>
           </div>
@@ -44,24 +44,18 @@
 
   export default {
     components: { Listbox, ListboxButton, ListboxOptions, ListboxOption },
-
-    setup() {
-      const people = [
-      { id: 1, name: 'Durward Reynolds' },
-      { id: 2, name: 'Kenton Towne' },
-      { id: 3, name: 'Therese Wunsch' },
-      { id: 4, name: 'Benedict Kessler' },
-      { id: 5, name: 'Katelyn Rohan' },
-      ]
-      const selectedPerson = ref(people[0])
-
-      let form = false
-
+    data() {
       return {
-        people,
-        selectedPerson,
-        form
+        people: [
+        { id: 1, name: 'Durward Reynolds' },
+        { id: 2, name: 'Kenton Towne' },
+        { id: 3, name: 'Therese Wunsch' },
+        { id: 4, name: 'Benedict Kessler' },
+        { id: 5, name: 'Katelyn Rohan' },
+        ],
+        selectedPerson: this.people[0],
+        form: false
       }
-    },
+    }
   }
 </script>
