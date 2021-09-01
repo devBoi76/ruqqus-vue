@@ -96,7 +96,7 @@
 											</td>
 											<td class="px-6 py-4 whitespace-nowrap">
 												<div class="flex items-center">
-													<img class="w-6 h-6 rounded-sm" :src="emoji.author.image" :alt="`${emoji.author.name} avatar`"/>
+													<img class="w-5 h-5 rounded-sm" :src="emoji.author.image" :alt="`${emoji.author.name} avatar`"/>
 													<div class="ml-2 text-gray-900">{{ emoji.author.name }}</div>
 												</div>
 											</td>
