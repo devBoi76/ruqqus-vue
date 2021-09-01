@@ -87,9 +87,9 @@
 													</div>
 													<div class="ml-4">
 														<div class="font-medium text-gray-900">
-															<span class="text-gray-500 pr-[1px]">:</span>
+															<span class="text-gray-500">:</span>
 															{{ emoji.name }}
-															<span class="text-gray-500 pl-[1px]">:</span>
+															<span class="text-gray-500">:</span>
 														</div>
 													</div>
 												</div>
