@@ -10,6 +10,7 @@
 					</h1>
 					<div v-show="!loading && !errored" class="flex items-center space-x-2">
 						<Select v-model:selected="selected" :options="options" canAppend/>
+						{{ selected }}
 						<button class="button primary">
 							Add Emoji
 						</button>
