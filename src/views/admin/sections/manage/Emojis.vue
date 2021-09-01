@@ -125,7 +125,7 @@ export default {
 	data() {
 		return {
 			searchTerm: '',
-			emoteCount: 28,
+			emojiCount: 3,
 			loading: false,
 			errored: false,
 			reorder: false,
