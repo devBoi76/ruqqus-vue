@@ -44,10 +44,7 @@
   export default {
     components: { Listbox, ListboxButton, ListboxOptions, ListboxOption },
     props: {
-      selected: {
-        type: Object,
-        default: this.options[0]
-      },
+      selected: Object,
       options: Array,
       canAppend: Boolean
     },

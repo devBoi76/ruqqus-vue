@@ -133,7 +133,7 @@ export default {
 	},
 	data() {
 		return {
-			selected: '',
+			selected: { name: 'Wade Cooper' },
 			searchTerm: '',
 			emojiCount: 3,
 			loading: false,
