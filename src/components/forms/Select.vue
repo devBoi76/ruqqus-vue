@@ -1,9 +1,9 @@
 <template>
   <!-- Render a `div` instead of nothing -->
-  <Listbox as="div" v-model="selectedOptions">
+  <Listbox as="div" v-model="selectedOption">
     <div class="relative">
       <ListboxButton class="relative w-full py-2 pl-3 pr-10 text-left bg-white rounded-lg shadow-md cursor-default focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-white focus-visible:ring-offset-orange-300 focus-visible:ring-offset-2 focus-visible:border-indigo-500 sm:text-sm">
-        {{ selectedOptions.name }}
+        {{ selectedOption.name }}
       </ListboxButton>
       <ListboxOptions as="div" class="absolute right-0 w-64 mt-4 origin-top-right bg-white rounded shadow-lg border focus:outline-none">
         <div class="py-2">
@@ -16,7 +16,7 @@
             </div>
           </ListboxOption>
         </div>
-        <div v-if="hasForm" class="px-4 py-2 border-t">
+        <div v-if="canAppend" class="px-4 py-2 border-t">
           <button v-show="!form" class="button linkGray400 mx-auto" @click="form = !form">
             <i class="far fa-plus fa-sm pr-1"></i>
             Create new
@@ -46,15 +46,15 @@
     components: { Listbox, ListboxButton, ListboxOptions, ListboxOption },
     props: {
       options: Array,
-      hasForm: Boolean
+      canAppend: Boolean
     },
     computed: {
       selectedOption: {
         get: function () {
-          return this.options
+          return this.options[0]
         },
         set: function (newValue) {
-          this.$emit("selectOption",newValue)
+          this.$emit("update:selected",newValue)
         }
       }
     }

@@ -9,7 +9,7 @@
 						Emoji
 					</h1>
 					<div v-show="!loading && !errored" class="flex items-center space-x-2">
-						<Select/>
+						<Select v-model:selected="selected" :options="options" canAppend/>
 						<button class="button primary">
 							Add Emoji
 						</button>
@@ -133,11 +133,20 @@ export default {
 	},
 	data() {
 		return {
+			selected: '',
 			searchTerm: '',
 			emojiCount: 3,
 			loading: false,
 			errored: false,
 			reorder: false,
+			options: [
+			{ name: 'Wade Cooper' },
+			{ name: 'Arlene Mccoy' },
+			{ name: 'Devon Webb' },
+			{ name: 'Tom Cook' },
+			{ name: 'Tanya Fox' },
+			{ name: 'Hellen Schmidt' },
+			],
 			emojis: [
 			{
 				id: 1,
