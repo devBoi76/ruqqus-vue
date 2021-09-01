@@ -5,7 +5,7 @@
       <ListboxButton class="relative w-full py-2 pl-3 pr-10 text-left bg-white rounded-lg shadow-md cursor-default focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-white focus-visible:ring-offset-orange-300 focus-visible:ring-offset-2 focus-visible:border-indigo-500 sm:text-sm">
         {{ selectedOption.name }}
       </ListboxButton>
-      <ListboxOptions as="div" class="absolute right-0 w-64 mt-4 origin-top-right bg-white rounded shadow-lg border focus:outline-none">
+      <ListboxOptions as="div" class="absolute right-0 w-64 mt-2 origin-top-right bg-white rounded shadow-lg border focus:outline-none">
         <div class="py-2">
           <ListboxOption v-slot="{ active, selected }" as="div" v-for="option in options" :key="option" :value="option">
             <div :class="[active ? 'text-primary bg-gray-100' : 'text-gray-700','relative cursor-default select-none relative py-2 pl-10 pr-4',]">
