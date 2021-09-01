@@ -9,6 +9,7 @@
 						Emoji
 					</h1>
 					<div v-show="!loading && !errored" class="flex items-center space-x-2">
+						<Select/>
 						<button class="button primary">
 							Add Emoji
 						</button>
@@ -123,9 +124,12 @@
 // Import components
 import { mapState } from 'vuex';
 
+import Select from "@/components/forms/Select.vue";
+
 export default {
 	name: "UserSettingsBasicInfoView",
 	components: {
+		Select
 	},
 	data() {
 		return {
