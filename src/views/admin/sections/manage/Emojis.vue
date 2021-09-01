@@ -61,17 +61,17 @@
 					<table class="min-w-full divide-y divide-gray-200">
 						<thead class="bg-gray-50">
 							<tr>
-								<th class="w-2/5 pl-3 pr-6 py-2 text-xs font-semibold uppercase tracking-wider text-left text-gray-400 dark:text-gray-400">
+								<th class="w-6/12 pl-3 pr-6 py-2 text-xs font-semibold uppercase tracking-wider text-left text-gray-400 dark:text-gray-400">
 									{{ emoteCount === 1 ? '1 Emote' : `${emoteCount} Emotes` }}
 								</th>
-								<th class="w-1/5 px-6 py-3 text-xs font-semibold uppercase tracking-wider text-left text-gray-400 dark:text-gray-400">
+								<th class="w-3/12 px-6 py-3 text-xs font-semibold uppercase tracking-wider text-left text-gray-400 dark:text-gray-400">
 									Uploaded by
 								</th>
-								<th class="w-1/5 px-6 py-3 text-xs font-semibold uppercase tracking-wider text-left text-gray-400 dark:text-gray-400">
+								<th class="w-3/12 px-6 py-3 text-xs font-semibold uppercase tracking-wider text-left text-gray-400 dark:text-gray-400">
 									Category
 								</th>
-								<th class="w-1/5 px-6 py-3 text-xs font-semibold uppercase tracking-wider text-left text-gray-400 dark:text-gray-400">
-									Actions
+								<th class="w-2/12" class="relative px-6 py-3">
+									<span class="sr-only">Edit</span>
 								</th>
 							</tr>
 						</thead>
@@ -96,12 +96,9 @@
 											{{ emote.category }}
 										</span>
 									</td>
-									<td class="flex space-x-2 px-6 py-4 whitespace-no-wrap leading-5 text-gray-600">
-										<button class="flex items-center justify-center px-2 w-8 h-8 text-xl text-gray-600 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white rounded-sm">
-											<i class="far fa-pen"></i>
-										</button>
-										<button class="flex items-center justify-center px-2 w-8 h-8 text-xl text-gray-600 dark:text-gray-400 hover:text-red-500 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white rounded-sm">
-											<i class="far fa-trash-alt"></i>
+									<td class="px-6 py-4 whitespace-no-wrap leading-5 text-gray-600">
+										<button class="button linkPrimary">
+											Edit
 										</button>
 									</td>
 								</tr>
