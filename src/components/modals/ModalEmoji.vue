@@ -71,6 +71,10 @@
                 <toggle v-model="isNsfw"/>
               </div>
             </div>
+            <p class="text-sm text-gray-500">
+              <i class="far fa-info-circle fa-sm pr-1"></i>
+              Modifying this emoji will not affect its current appearance in posts, comments, etc.
+            </p>
           </div>
           <div class="flex justify-end mt-4 px-6 py-3 bg-gray-50 border-t">
             <button class="button linkGray400 mr-2" @click="closeModal">
