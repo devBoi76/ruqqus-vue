@@ -37,7 +37,7 @@
           </DialogTitle>
           <div class="px-6 space-y-8">
             <div class="flex items-center">
-              <div class="flex-shrink-0 w-8 h-8 border-2 border-dashed p-2 rounded">
+              <div class="flex-shrink-0 w-8 h-8">
                 <img class="w-8 h-8" src="https://i.imgur.com/u6zqX6q.jpg" alt="kekw" />
               </div>
               <div class="hidden ml-3">
@@ -49,7 +49,7 @@
               </div>
               <input type="text" placeholder="kekw" class="form-input white ml-3">
             </div>
-            <div class="z-10">
+            <div>
               <div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
                 Category
               </div>
