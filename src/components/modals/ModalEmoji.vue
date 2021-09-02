@@ -36,11 +36,17 @@
             </h3>
           </DialogTitle>
           <div class="px-6 space-y-8">
-            <div>
-              <label class="label">
-                Alias
-              </label>
-              <input type="text" class="form-input light" placeholder="poggers">
+            <div class="flex items-center">
+              <div class="flex-shrink-0 w-8 h-8">
+                <img class="w-8 h-8" src="https://i.imgur.com/u6zqX6q.jpg" alt="kekw" />
+              </div>
+              <div class="ml-3">
+                <div class="flex items-center font-medium text-gray-900">
+                  <span class="text-gray-500 pr-[1px]">:</span>
+                  <span>kekw</span>
+                  <span class="text-gray-500 pl-[1px]">:</span>
+                </div>
+              </div>
             </div>
             <div>
               <div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
@@ -66,7 +72,8 @@
               </div>
             </div>
             <p class="text-sm text-gray-500">
-              Note: modifying existing emoji will not affect its current appearance in posts, comments, etc.
+              <i class="far fa-info-circle fa-sm pr-2"></i>
+              Modifying this emoji will not affect its current appearance in posts, comments, etc.
             </p>
           </div>
           <div class="flex justify-end mt-4 px-6 py-3 bg-gray-50 border-t">
