@@ -1,108 +1,127 @@
 <template>
-  <div class="fixed inset-0 flex items-center justify-center">
-    <button
-      type="button"
-      @click="openModal"
-      class="px-4 py-2 text-sm font-medium text-white bg-black rounded-md bg-opacity-20 hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
-    >
-      Open dialog
-    </button>
-  </div>
+  <button type="button" @click="openModal" class="button gray200">
+    Settings
+  </button>
   <TransitionRoot appear :show="isOpen" as="template">
     <Dialog as="div" @close="closeModal">
-      <div class="fixed inset-0 z-10 overflow-y-auto">
+      <div class="fixed inset-0 z-100 overflow-y-auto">
         <div class="min-h-screen px-4 text-center">
           <TransitionChild
-            as="template"
-            enter="duration-300 ease-out"
-            enter-from="opacity-0"
-            enter-to="opacity-100"
-            leave="duration-200 ease-in"
-            leave-from="opacity-100"
-            leave-to="opacity-0"
-          >
-            <DialogOverlay class="fixed inset-0" />
-          </TransitionChild>
+          as="template"
+          enter="duration-300 ease-out"
+          enter-from="opacity-0"
+          enter-to="opacity-100"
+          leave="duration-200 ease-in"
+          leave-from="opacity-100"
+          leave-to="opacity-0">
+          <DialogOverlay class="fixed inset-0 bg-black opacity-70" />
+        </TransitionChild>
 
-          <span class="inline-block h-screen align-middle" aria-hidden="true">
-            &#8203;
-          </span>
+        <span class="inline-block h-screen align-middle" aria-hidden="true">
+          &#8203;
+        </span>
 
-          <TransitionChild
-            as="template"
-            enter="duration-300 ease-out"
-            enter-from="opacity-0 scale-95"
-            enter-to="opacity-100 scale-100"
-            leave="duration-200 ease-in"
-            leave-from="opacity-100 scale-100"
-            leave-to="opacity-0 scale-95"
-          >
-            <div
-              class="inline-block w-full max-w-md my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-lg"
-            >
-              <DialogTitle
-                as="div"
-                class="px-6 py-4"
-              >
-              <h3 class="text-lg font-semibold leading-6 text-gray-900">
-                Edit Emoji
-              </h3>
-              </DialogTitle>
-              <div class="mt-2 px-6">
-                <p class="text-sm text-gray-500">
-                  Your payment has been successfully submitted. We’ve sent your
-                  an email with all of the details of your order.
-                </p>
+        <TransitionChild
+        as="template"
+        enter="duration-300 ease-out"
+        enter-from="opacity-0 scale-95"
+        enter-to="opacity-100 scale-100"
+        leave="duration-200 ease-in"
+        leave-from="opacity-100 scale-100"
+        leave-to="opacity-0 scale-95">
+        <div class="inline-block w-full max-w-md my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl">
+          <DialogTitle as="div" class="px-6 py-4">
+            <h3 class="text-lg font-semibold leading-6 text-gray-900">
+              Edit Emoji
+            </h3>
+          </DialogTitle>
+          <div class="px-6 space-y-5">
+            <div>
+              <label class="label">Alias</label>
+              <input type="text" class="form-input light" placeholder="poggers">
+            </div>
+            <div>
+              <label class="label">Permissions</label>
+              <div class="flex flex-grow items-center justify-between">
+                <div class="font-medium leading-tight">
+                  Allow in posts
+                </div>
+                <toggle v-model="isNsfw"/>
               </div>
-
-              <div class="px-6 py-4 bg-gray-50 border-t">
-                <button
-                  type="button"
-                  class="inline-flex justify-center px-4 py-2 text-sm font-medium text-blue-900 bg-blue-100 border border-transparent rounded-md hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
-                  @click="closeModal"
-                >
-                  Got it, thanks!
-                </button>
+              <div class="flex flex-grow items-center justify-between mt-3">
+                <div class="font-medium leading-tight">
+                  Allow in comments
+                </div>
+                <toggle v-model="isNsfw"/>
+              </div>
+              <div class="flex flex-grow items-center justify-between mt-3">
+                <div class="font-medium leading-tight">
+                  Requires premium membership
+                </div>
+                <toggle v-model="isNsfw"/>
               </div>
             </div>
-          </TransitionChild>
+            <p class="text-sm text-gray-500">
+              Note: modifying existing emoji will not affect its current appearance in posts, comments, etc.
+            </p>
+          </div>
+          <div class="flex mt-4 px-6 py-4 bg-gray-50 border-t">
+            <button class="button linkRed500">
+              Delete Emoji
+            </button>
+            <div class="flex ml-auto">
+              <button class="button gray200 mr-2">
+                Cancel
+              </button>
+              <button class="button primary" @click="closeModal">
+                Save changes
+              </button>
+            </div>
+          </div>
         </div>
-      </div>
-    </Dialog>
-  </TransitionRoot>
+      </TransitionChild>
+    </div>
+  </div>
+</Dialog>
+</TransitionRoot>
 </template>
 
 <script>
-import { ref } from 'vue'
-import {
-  TransitionRoot,
-  TransitionChild,
-  Dialog,
-  DialogOverlay,
-  DialogTitle,
-} from '@headlessui/vue'
-
-export default {
-  components: {
+  import { ref } from 'vue'
+  import {
     TransitionRoot,
     TransitionChild,
     Dialog,
     DialogOverlay,
     DialogTitle,
-  },
+  } from '@headlessui/vue'
 
-  setup() {
-    const isOpen = ref(true)
+  import Toggle from "@/components/forms/Toggle.vue"
 
-    return {
-      isOpen,
-      closeModal() {
-        isOpen.value = false
-      },
-      openModal() {
-        isOpen.value = true
-      },
-    }
-  },
-}
+  export default {
+    components: {
+      TransitionRoot,
+      TransitionChild,
+      Dialog,
+      DialogOverlay,
+      DialogTitle,
+      Toggle
+    },
+
+    setup() {
+      const isOpen = ref(true)
+
+      let isNsfw = false
+
+      return {
+        isOpen,
+        closeModal() {
+          isOpen.value = false
+        },
+        openModal() {
+          isOpen.value = true
+        },
+      }
+    },
+  }
 </script>
