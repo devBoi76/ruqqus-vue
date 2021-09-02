@@ -105,10 +105,7 @@
 											<td class="px-6 py-3 whitespace-nowrap text-gray-500">
 												<span class="capitalize">{{ emoji.category }}</span>
 											</td>
-											<td class="group flex space-x-2 px-6 py-3 whitespace-nowrap text-right">
-												<button href="#" class="hidden group-hover:block font-medium text-red-500 hover:text-red-600">
-													Delete
-												</button>
+											<td class="group px-6 py-3 whitespace-nowrap text-right">
 												<button href="#" class="font-medium text-primary hover:text-opacity-70">
 													Edit
 												</button>
