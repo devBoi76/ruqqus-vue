@@ -74,10 +74,10 @@
               <i class="far fa-trash-alt"></i>
             </button>
             <div class="flex">
-              <button class="button linkGray400 mr-2">
+              <button class="button linkGray400 mr-2" @click="closeModal">
                 Cancel
               </button>
-              <button class="button primary" @click="closeModal">
+              <button class="button primary">
                 Save
               </button>
             </div>
