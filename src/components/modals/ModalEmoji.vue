@@ -59,7 +59,7 @@
               <div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
                 Permissions
               </div>
-              <div class="flex flex-grow items-center justify-between mt-5">
+              <div class="flex flex-grow items-center justify-between">
                 <label class="label">
                   Allow in posts
                 </label>
