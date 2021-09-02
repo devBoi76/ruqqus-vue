@@ -136,6 +136,8 @@
       ]
 
       return {
+        selected,
+        options,
         isOpen,
         closeModal() {
           isOpen.value = false
