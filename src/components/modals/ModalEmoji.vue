@@ -78,7 +78,7 @@
                 Cancel
               </button>
               <button class="button primary" @click="closeModal">
-                Save changes
+                Save
               </button>
             </div>
           </div>
