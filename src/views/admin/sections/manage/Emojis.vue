@@ -118,6 +118,7 @@
 		</div>
 	</div>
 	<!-- End Main content section -->
+	<EditModal/>
 </template>
 
 <script>
@@ -125,11 +126,13 @@
 import { mapState } from 'vuex';
 
 import Select from "@/components/forms/Select.vue";
+import EditModal from "@/components/modals/ModalEmoji.vue"
 
 export default {
 	name: "UserSettingsBasicInfoView",
 	components: {
-		Select
+		Select,
+		EditModal
 	},
 	data() {
 		return {
