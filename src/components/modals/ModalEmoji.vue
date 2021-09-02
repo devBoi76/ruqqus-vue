@@ -124,7 +124,7 @@
 
       let isNsfw = false
 
-      const selected= { name: 'Wade Cooper' }
+      const selected = { name: 'Wade Cooper' }
 
       const options = [
       { name: 'Wade Cooper' },
