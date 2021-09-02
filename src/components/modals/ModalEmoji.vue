@@ -72,7 +72,7 @@
               </div>
             </div>
             <p class="text-xs text-gray-500">
-              <i class="far fa-info-circle fa-sm pr-1"></i>
+              <i class="far fa-info-circle fa-sm pr-0.5"></i>
               Changes will be reflected on future usage of this emoji.
             </p>
           </div>
