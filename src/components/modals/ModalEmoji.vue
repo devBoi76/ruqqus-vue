@@ -72,7 +72,7 @@
               </div>
             </div>
             <p class="text-sm text-gray-500">
-              <i class="far fa-info-circle fa-sm pr-2"></i>
+              <i class="far fa-info-circle fa-sm pr-1"></i>
               Modifying this emoji will not affect its current appearance in posts, comments, etc.
             </p>
           </div>
