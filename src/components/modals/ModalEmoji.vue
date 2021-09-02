@@ -29,54 +29,57 @@
         leave="duration-200 ease-in"
         leave-from="opacity-100 scale-100"
         leave-to="opacity-0 scale-95">
-        <div class="inline-block w-full max-w-md my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl">
+        <div class="inline-block w-full max-w-md my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded">
           <DialogTitle as="div" class="px-6 py-4">
             <h3 class="text-lg font-semibold leading-6 text-gray-900">
               Edit Emoji
             </h3>
           </DialogTitle>
-          <div class="px-6 space-y-5">
+          <div class="px-6 space-y-8">
             <div>
-              <label class="label">Alias</label>
+              <label class="label">
+                Alias
+              </label>
               <input type="text" class="form-input light" placeholder="poggers">
             </div>
             <div>
-              <label class="label">Permissions</label>
+              <label class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
+                Permissions
+              </label>
               <div class="flex flex-grow items-center justify-between">
-                <div class="font-medium leading-tight">
+                <label class="label">
                   Allow in posts
-                </div>
+                </label>
                 <toggle v-model="isNsfw"/>
               </div>
-              <div class="flex flex-grow items-center justify-between mt-3">
-                <div class="font-medium leading-tight">
+              <div class="flex flex-grow items-center justify-between mt-5">
+                <label class="label">
                   Allow in comments
-                </div>
+                </label>
                 <toggle v-model="isNsfw"/>
               </div>
-              <div class="flex flex-grow items-center justify-between mt-3">
-                <div class="font-medium leading-tight">
+              <div class="flex flex-grow items-center justify-between mt-5">
+                <label class="label">
                   Requires premium membership
-                </div>
+                </label>
                 <toggle v-model="isNsfw"/>
               </div>
             </div>
+            <button class="button outlineRed500 w-full">
+              <i class="far fa-trash-alt"></i>
+              Delete emoji
+            </button>
             <p class="text-sm text-gray-500">
               Note: modifying existing emoji will not affect its current appearance in posts, comments, etc.
             </p>
           </div>
-          <div class="flex mt-4 px-6 py-4 bg-gray-50 border-t">
-            <button class="button linkRed500">
-              Delete Emoji
+          <div class="flex justify-between mt-4 px-6 py-4 bg-gray-50 border-t">
+            <button class="button gray200">
+              Cancel
             </button>
-            <div class="flex ml-auto">
-              <button class="button gray200 mr-2">
-                Cancel
-              </button>
-              <button class="button primary" @click="closeModal">
-                Save changes
-              </button>
-            </div>
+            <button class="button primary" @click="closeModal">
+              Save changes
+            </button>
           </div>
         </div>
       </TransitionChild>
