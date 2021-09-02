@@ -47,8 +47,8 @@
                   <span class="text-gray-500 pl-[1px]">:</span>
                 </div>
               </div>
-              <input type="text" placeholder="kekw" class="form-input light ml-2">
-              <Select v-model:selected="selected" :options="options" class="ml-2"/>
+              <input type="text" placeholder="kekw" class="form-input white ml-2">
+              <Select v-model:selected="selected" :options="options" class="ml-2 w-full z-10"/>
             </div>
             <div>
               <div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
@@ -124,7 +124,7 @@
 
       let isNsfw = false
 
-      const selected = { name: 'Wade Cooper' }
+      let selected = { name: 'Wade Cooper' }
 
       const options = [
       { name: 'Wade Cooper' },
