@@ -48,6 +48,11 @@
                 </div>
               </div>
               <input type="text" placeholder="kekw" class="form-input white ml-2">
+            </div>
+            <div>
+              <div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
+                Category
+              </div>
               <Select v-model:selected="selected" :options="options" class="ml-2 w-full z-10"/>
             </div>
             <div>
@@ -73,10 +78,6 @@
                 <toggle v-model="isNsfw"/>
               </div>
             </div>
-            <p class="text-xs text-gray-500">
-              <i class="far fa-info-circle fa-sm pr-0.5"></i>
-              Changes will be reflected on future usage of this emoji.
-            </p>
           </div>
           <div class="flex justify-end mt-4 px-6 py-4 bg-gray-50 border-t">
             <button class="button linkGray400 mr-2" @click="closeModal">
