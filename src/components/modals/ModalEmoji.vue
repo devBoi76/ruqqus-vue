@@ -47,7 +47,7 @@
                   <span class="text-gray-500 pl-[1px]">:</span>
                 </div>
               </div>
-              <input type="text" placeholder="kekw" class="form-input white ml-2">
+              <input type="text" placeholder="kekw" class="form-input white ml-3">
             </div>
             <div class="z-10">
               <div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
