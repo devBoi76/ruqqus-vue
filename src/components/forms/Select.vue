@@ -8,7 +8,7 @@
           <i class="fas fa-sort"></i>
         </span>
       </ListboxButton>
-      <ListboxOptions as="div" class="absolute right-0 w-64 mt-2 origin-top-right bg-white rounded shadow-lg border focus:outline-none">
+      <ListboxOptions as="div" class="absolute right-0 w-full mt-2 origin-top-right bg-white rounded shadow-lg border focus:outline-none">
         <div class="py-2">
           <ListboxOption v-slot="{ active, selected }" as="div" v-for="option in innerOptions" :key="option" :value="option">
             <div :class="[active ? 'text-primary bg-gray-100' : 'text-gray-700','relative cursor-default select-none relative py-2 pl-10 pr-4',]">
