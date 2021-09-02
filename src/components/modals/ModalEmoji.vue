@@ -1,5 +1,5 @@
 <template>
-  <button @click="openModal" class="button gray200">
+  <button @click="openModal" class="button gray100">
     Settings
   </button>
   <TransitionRoot appear :show="isOpen" as="template">
@@ -70,9 +70,8 @@
             </p>
           </div>
           <div class="flex justify-between mt-4 px-6 py-3 bg-gray-50 border-t">
-            <button class="button outlineRed500">
-              <i class="far fa-trash-alt pr-2"></i>
-              Delete
+            <button class="flex items-center justify-center px-2 w-8 h-8 text-xl text-gray-600 dark:text-gray-400 hover:text-red-500 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white rounded-sm">
+              <i class="far fa-trash-alt"></i>
             </button>
             <div class="flex">
               <button class="button linkGray400 mr-2">
