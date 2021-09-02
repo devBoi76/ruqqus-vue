@@ -40,13 +40,15 @@
               <div class="flex-shrink-0 w-8 h-8">
                 <img class="w-8 h-8" src="https://i.imgur.com/u6zqX6q.jpg" alt="kekw" />
               </div>
-              <div class="ml-3">
+              <div class="hidden ml-3">
                 <div class="flex items-center font-medium text-gray-900">
                   <span class="text-gray-500 pr-[1px]">:</span>
                   <span>kekw</span>
                   <span class="text-gray-500 pl-[1px]">:</span>
                 </div>
               </div>
+              <input type="text" placeholder="kekw" class="form-input light ml-2">
+              <Select v-model:selected="selected" :options="options" class="ml-2"/>
             </div>
             <div>
               <div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
@@ -102,6 +104,8 @@
     DialogTitle,
   } from '@headlessui/vue'
 
+  import Select from "@/components/forms/Select.vue";
+
   import Toggle from "@/components/forms/Toggle.vue"
 
   export default {
@@ -111,6 +115,7 @@
       Dialog,
       DialogOverlay,
       DialogTitle,
+      Select,
       Toggle
     },
 
@@ -118,6 +123,17 @@
       const isOpen = ref(true)
 
       let isNsfw = false
+
+      const selected= { name: 'Wade Cooper' }
+
+      const options = [
+      { name: 'Wade Cooper' },
+      { name: 'Arlene Mccoy' },
+      { name: 'Devon Webb' },
+      { name: 'Tom Cook' },
+      { name: 'Tanya Fox' },
+      { name: 'Hellen Schmidt' },
+      ]
 
       return {
         isOpen,
