@@ -126,7 +126,7 @@
     },
 
     setup() {
-      const isOpen = ref(true)
+      const isOpen = ref(false)
 
       let isNsfw = false
 
