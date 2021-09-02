@@ -76,7 +76,7 @@
               Changes will be reflected on future usage of this emoji.
             </p>
           </div>
-          <div class="flex justify-end mt-4 px-6 py-3 bg-gray-50 border-t">
+          <div class="flex justify-end mt-4 px-6 py-4 bg-gray-50 border-t">
             <button class="button linkGray400 mr-2" @click="closeModal">
               Cancel
             </button>
