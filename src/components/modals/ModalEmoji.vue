@@ -79,13 +79,18 @@
               </div>
             </div>
           </div>
-          <div class="flex justify-end mt-4 px-6 py-4 bg-gray-50 border-t">
-            <button class="button linkGray400 mr-2" @click="closeModal">
-              Cancel
+          <div class="flex mt-4 px-6 py-4 bg-gray-50 border-t">
+            <button class="text-sm text-red-500 hover:text-red-700">
+              Delete
             </button>
-            <button class="button primary">
-              Save
-            </button>
+            <div class="flex ml-auto">
+              <button class="button linkGray400 mr-2" @click="closeModal">
+                Cancel
+              </button>
+              <button class="button primary">
+                Save
+              </button>
+            </div>
           </div>
         </div>
       </TransitionChild>
