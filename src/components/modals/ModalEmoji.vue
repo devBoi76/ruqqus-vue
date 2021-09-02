@@ -37,7 +37,7 @@
           </DialogTitle>
           <div class="px-6 space-y-8">
             <div class="flex items-center">
-              <div class="flex-shrink-0 w-8 h-8">
+              <div class="flex-shrink-0 w-8 h-8 border-2 border-dashed p-2 rounded">
                 <img class="w-8 h-8" src="https://i.imgur.com/u6zqX6q.jpg" alt="kekw" />
               </div>
               <div class="hidden ml-3">
@@ -49,11 +49,11 @@
               </div>
               <input type="text" placeholder="kekw" class="form-input white ml-2">
             </div>
-            <div>
+            <div class="z-10">
               <div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
                 Category
               </div>
-              <Select v-model:selected="selected" :options="options" class="ml-2 w-full z-10"/>
+              <Select v-model:selected="selected" :options="options" class="w-full"/>
             </div>
             <div>
               <div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
