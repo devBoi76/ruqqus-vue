@@ -1,5 +1,5 @@
 <template>
-  <button type="button" @click="openModal" class="button gray200">
+  <button @click="openModal" class="button gray200">
     Settings
   </button>
   <TransitionRoot appear :show="isOpen" as="template">
@@ -43,10 +43,10 @@
               <input type="text" class="form-input light" placeholder="poggers">
             </div>
             <div>
-              <label class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
+              <div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
                 Permissions
-              </label>
-              <div class="flex flex-grow items-center justify-between">
+              </div>
+              <div class="flex flex-grow items-center justify-between mt-5">
                 <label class="label">
                   Allow in posts
                 </label>
@@ -65,21 +65,23 @@
                 <toggle v-model="isNsfw"/>
               </div>
             </div>
-            <button class="button outlineRed500 w-full">
-              <i class="far fa-trash-alt"></i>
-              Delete emoji
-            </button>
             <p class="text-sm text-gray-500">
               Note: modifying existing emoji will not affect its current appearance in posts, comments, etc.
             </p>
           </div>
-          <div class="flex justify-between mt-4 px-6 py-4 bg-gray-50 border-t">
-            <button class="button gray200">
-              Cancel
+          <div class="flex justify-between mt-4 px-6 py-3 bg-gray-50 border-t">
+            <button class="button outlineRed500">
+              <i class="far fa-trash-alt pr-2"></i>
+              Delete
             </button>
-            <button class="button primary" @click="closeModal">
-              Save changes
-            </button>
+            <div class="flex">
+              <button class="button linkGray400 mr-2">
+                Cancel
+              </button>
+              <button class="button primary" @click="closeModal">
+                Save changes
+              </button>
+            </div>
           </div>
         </div>
       </TransitionChild>

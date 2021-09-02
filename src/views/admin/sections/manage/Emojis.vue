@@ -9,6 +9,7 @@
 						Emoji
 					</h1>
 					<div v-show="!loading && !errored" class="flex items-center space-x-2">
+						<EditModal/>
 						<Select v-model:selected="selected" :options="options"/>
 						<button class="button primary">
 							Add Emoji
@@ -118,7 +119,6 @@
 		</div>
 	</div>
 	<!-- End Main content section -->
-	<EditModal/>
 </template>
 
 <script>
