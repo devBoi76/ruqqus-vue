@@ -125,7 +125,7 @@
 									<label class="label">
 										Bio
 									</label>
-									<Editor @input="getEditorContent()" min-height="10rem" :limit="1000" :value="bio"/>
+									<Editor @input="getEditorContent()" min-height="10rem" :limit="1000" :value="innerV.bioHtml"/>
 									<p class="text-sm text-gray-500 mt-1">
 										<i class="fab fa-markdown fa-sm pr-0.5"></i>
 										markdown supported
