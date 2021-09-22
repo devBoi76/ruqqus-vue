@@ -89,36 +89,21 @@ const routes = [
 	// Thread View
 	{ path: '/post/:id/:title?/:commentId?', name: 'item-view', component: ThreadView, props: true, meta: {sidebar: false, requiresAuth: false} },
 
-	{ path: '/settings', component: UserSettingsView, props: true, meta: {sidebar: false, requiresAuth: true} },
+	{ path: '/settings', component: UserSettingsView, meta: {sidebar: false, requiresAuth: true} },
 
-		// User Personal view
-		{
-			path: '/dashboard', component: UserView, props: true, meta: {requiresAuth: true},
-			children: [
-			{ path: '/following', component: UserFollowingView, name: 'user-following-view', props: true, meta: {sidebar: false, requiresAuth: true} },
-			{ path: '/notifications', alias: ['/notifications/all','/inbox','/inbox/all'], component: UserInboxView, name: 'user-inbox-view', props: { sort: 'all' }, meta: {sidebar: false, requiresAuth: true} },
-			{ path: '/notifications/unread', alias: '/inbox/unread', component: UserInboxView, name: 'user-inbox-unread-view', props: { sort: 'unread' }, meta: {sidebar: false, requiresAuth: true} },
-			{ path: '/notifications/replies', alias: '/inbox/replies', component: UserInboxView, name: 'user-inbox-replies-view', props: { sort: 'replies' }, meta: {sidebar: false, requiresAuth: true} },
-			{ path: '/notifications/mentions', alias: '/inbox/mentions', component: UserInboxView, name: 'user-inbox-mentions-view', props: { sort: 'mentions' }, meta: {sidebar: false, requiresAuth: true} },
-			{ path: '/notifications/posts', alias: '/inbox/posts', component: UserInboxView, name: 'user-inbox-posts-view', props: { sort: 'posts' }, meta: {sidebar: false, requiresAuth: true} },
-			{ path: '/notifications/system', alias: '/inbox/system', component: UserInboxView, name: 'user-inbox-system-view', props: { sort: 'system' }, meta: {sidebar: false, requiresAuth: true} },
-			{ path: '/saved', alias:'/ruqqsack', name: 'user-saved-view', component: UserSavedView, props: true, meta: {sidebar: false, requiresAuth: true} },
-			{
-				path: '/settings', component: UserSettingsView, props: true, meta: {sidebar: false, requiresAuth: true},
-				children: [
-				{ path: '', alias:'/settings/profile', component: UserProfileSettings, name: 'user-settings-profile-view', props: true, meta: {sidebar: false, requiresAuth: true} },
-				{ path: '/settings/notifications', component: UserNotificationsSettings, name: 'user-settings-notifications-view', props: true, meta: {sidebar: false, requiresAuth: true}},
-				{ path: '/settings/security', component: UserSecuritySettings, name: 'user-settings-security-view', props: true, meta: {sidebar: false, requiresAuth: true} },
-				{ path: '/settings/apps', component: UserAppsSettings, name: 'user-settings-apps-view', props: true, meta: {sidebar: false, requiresAuth: true} },
-				{ path: '/settings/filters', component: UserContentSettings, name: 'user-settings-content-view', props: true, meta: {sidebar: false, requiresAuth: true} }
-				]
-			}
-			]
-		},
+	{ path: '/notifications', alias: ['/notifications/all','/inbox','/inbox/all'], component: UserInboxView, name: 'user-inbox-view', props: { sort: 'all' }, meta: {sidebar: false, requiresAuth: true} },
+	{ path: '/notifications/unread', alias: '/inbox/unread', component: UserInboxView, name: 'user-inbox-unread-view', props: { sort: 'unread' }, meta: {sidebar: false, requiresAuth: true} },
+	{ path: '/notifications/replies', alias: '/inbox/replies', component: UserInboxView, name: 'user-inbox-replies-view', props: { sort: 'replies' }, meta: {sidebar: false, requiresAuth: true} },
+	{ path: '/notifications/mentions', alias: '/inbox/mentions', component: UserInboxView, name: 'user-inbox-mentions-view', props: { sort: 'mentions' }, meta: {sidebar: false, requiresAuth: true} },
+	{ path: '/notifications/posts', alias: '/inbox/posts', component: UserInboxView, name: 'user-inbox-posts-view', props: { sort: 'posts' }, meta: {sidebar: false, requiresAuth: true} },
+	//{ path: '/notifications/system', alias: '/inbox/system', component: UserInboxView, name: 'user-inbox-system-view', props: { sort: 'system' }, meta: {sidebar: false, requiresAuth: true} },
 
-		{ path: '/create/post', alias: '/submit', name: 'SubmitView', component: SubmitView, props: true, meta: {requiresAuth: true, sidebar: false} },
-		{ path: '/register', name: 'RegisterView', component: RegisterView, props: true, meta: {sidebar: false, dropImage: false} },
-		{ path: '/login', name: 'LoginView', component: LoginView, props: true, meta: {sidebar: false, dropImage: false} },
+	// { path: '/saved', component: UserSettingsView, meta: {sidebar: false, requiresAuth: true} },
+	// { path: '/following', component: UserSettingsView, meta: {sidebar: false, requiresAuth: true} },
+
+	{ path: '/create/post', alias: '/submit', name: 'SubmitView', component: SubmitView, props: true, meta: {requiresAuth: true, sidebar: false} },
+	{ path: '/register', name: 'RegisterView', component: RegisterView, props: true, meta: {sidebar: false, dropImage: false} },
+	{ path: '/login', name: 'LoginView', component: LoginView, props: true, meta: {sidebar: false, dropImage: false} },
 
 		// Search View
 		{ path: '/search', name: 'SearchView', component: SearchView, props: true, meta: {requiresAuth: true} },

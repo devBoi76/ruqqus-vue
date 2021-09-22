@@ -127,17 +127,17 @@ export default {
 				icon: 'fas fa-eye-slash',
 				color: 'red-500',
 				description: 'Configure your email, password, and more.'
-			},
-			{
-				name: "system",
-				route: {
-					path: '/notifications/system'
-				},
-				exact: true,
-				icon: 'fas fa-eye-slash',
-				color: 'red-500',
-				description: 'Configure your email, password, and more.'
 			}
+			// {
+			// 	name: "system",
+			// 	route: {
+			// 		path: '/notifications/system'
+			// 	},
+			// 	exact: true,
+			// 	icon: 'fas fa-eye-slash',
+			// 	color: 'red-500',
+			// 	description: 'Configure your email, password, and more.'
+			// }
 			]
 		}
 	},
