@@ -22,7 +22,7 @@
 							</div>
 						</div>
 						<div class="relative">
-							<img :src="banner" class="w-full h-56 lg:h-72 object-cover sm:rounded-sm"/>
+							<img :src="v.bannerUrl" class="w-full h-56 lg:h-72 object-cover sm:rounded-sm"/>
 							<div v-show="editAppearance" class="absolute bottom-0 flex items-center justify-center w-full h-full bg-black bg-opacity-30 sm:rounded-sm">
 								<button type="button" class="w-9 h-9 flex items-center justify-center px-2 py-0 text-white bg-transparent hover:bg-black hover:bg-opacity-50 rounded-sm transition duration-100 ease-in-out" tabindex="0">
 									<i class="far fa-pen fa-lg"></i>
@@ -31,7 +31,7 @@
 						</div>
 						<div class="absolute bottom-4 left-4 md:bottom-6 md:left-6 flex items-center">
 							<div class="relative rounded overflow-hidden w-20 h-20 flex-shrink-0">
-								<img :src="v.profile_url" class="object-cover" alt="profile-picture"/>
+								<img :src="v.profileUrl" class="object-cover" alt="profile-picture"/>
 								<div v-show="editAppearance" class="absolute bottom-0 flex items-center justify-center w-full h-full bg-black bg-opacity-30">
 									<button type="button" class="w-9 h-9 flex items-center justify-center text-white px-2 py-0 bg-transparent hover:bg-black hover:bg-opacity-50 rounded-sm transition duration-100 ease-in-out" tabindex="0">
 										<i class="far fa-pen fa-lg"></i>
@@ -239,7 +239,7 @@
 												Receive official site announcements via email
 											</p>
 										</div>
-										<Toggle v-model="v.is_private"/>
+										<Toggle v-model="v.hasAnnouncements"/>
 									</div>
 								</div>
 							</div>
@@ -261,7 +261,7 @@
 												Cloak my posting history and ask search engines not to index my profile
 											</p>
 										</div>
-										<Toggle v-model="v.is_private"/>
+										<Toggle v-model="v.isPrivate"/>
 									</div>
 								</div>
 							</div>
@@ -276,7 +276,7 @@
 												Prevent others from following me
 											</p>
 										</div>
-										<Toggle v-model="v.is_private"/>
+										<Toggle v-model="v.hasDisabledFollowers"/>
 									</div>
 								</div>
 							</div>
@@ -298,7 +298,7 @@
 												When someone follows me
 											</p>
 										</div>
-										<Toggle v-model="v.is_private"/>
+										<Toggle v-model="v.hasNotifications.followers"/>
 									</div>
 								</div>
 							</div>
@@ -313,7 +313,7 @@
 												When someone I follow posts
 											</p>
 										</div>
-										<Toggle v-model="v.is_private"/>
+										<Toggle v-model="v.hasNotifications.posts"/>
 									</div>
 								</div>
 							</div>
@@ -328,7 +328,7 @@
 												When someone replies to my post or comment
 											</p>
 										</div>
-										<Toggle v-model="v.is_private"/>
+										<Toggle v-model="v.hasNotifications.replies"/>
 									</div>
 								</div>
 							</div>
@@ -343,7 +343,7 @@
 												When someone mentions me by @username
 											</p>
 										</div>
-										<Toggle v-model="v.is_private"/>
+										<Toggle v-model="v.hasNotifications.mentions"/>
 									</div>
 								</div>
 							</div>
@@ -368,15 +368,13 @@ export default {
 	name: "UserSettingsView",
 	data() {
 		return {
-			usernameColor: '#C53030',
-			titleColor: '#C53030',
-			title: null,
 			editProfile: false,
 			editAppearance: false,
-			bio: null,
-			isEmailSubscribed: false,
+			showPassword: false,
 			password: null,
-			showPassword: false
+			isDifferent: false,
+			v: {},
+			saved: {}
 		}
 	},
 	components: {
@@ -387,21 +385,40 @@ export default {
 	},
 	computed: {
 		...mapState("persist", ["v"]),
-		banner() {
-			//return this.v.banner_url || 'https://i.imgur.com/AgS5BXJ.jpg'
-			return 'https://i.imgur.com/AgS5BXJ.jpg'
+	},
+	watch: {
+		'v': {
+			handler() {
+				console.log('v obj watcher triggered')
+				this.isDifferent = (JSON.stringify(this.v) !== JSON.stringify(this.saved))
+			},
+			deep: true
 		}
 	},
 	methods: {
 		getEditorContent(value) {
-			this.bio = value;
+			this.v.bio = value;
 		},
 		toggleAppearance() {
 			this.editAppearance = !this.editAppearance;
+		},
+		save() {
+			this.$store.dispatch('persist/submitUserSettings', this.saved)
+			.then(() => {
+				console.log("submitUserSettings dispatch successful")
+				this.saved = {...this.v}
+			})
+			.catch(error => {
+				console.error(error)
+				this.errored = true
+
+			})
+			.finally(() => this.loading = false)
 		}
 	},
 	created() {
-		console.log(this.v)
+		this.v = {...this.$store.getters['persist/getAuthUser']}
+		this.saved = {...this.v}
 	}
 }
 </script>
