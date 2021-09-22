@@ -173,7 +173,9 @@ const routes = [
 			children: [
 			{ path: '', component: UserOverviewView, name: 'user-profile-overview-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
 			{ path: '/:username/posts', component: UserPostsView, name: 'user-profile-posts-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
-			{ path: '/:username/comments', component: UserCommentsView, name: 'user-profile-comments-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} }
+			{ path: '/:username/comments', component: UserCommentsView, name: 'user-profile-comments-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} },
+			//{ path: '/:username/followers', component: UserFollowersView, name: 'user-followers-view', props: true, meta: {requiresAuth: false, sidebar: false, dropImage: false} },
+			//{ path: '/:username/saved', component: UserSavedView, name: 'user-saved-view', props: true, meta: {requiresAuth: true, sidebar: false, dropImage: false} }
 			]
 		}
 		]
