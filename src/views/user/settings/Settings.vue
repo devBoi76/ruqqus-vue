@@ -393,7 +393,7 @@ export default {
 		ColorPicker
 	},
 	watch: {
-		'v': {
+		'innerV': {
 			handler() {
 				console.log('v obj watcher triggered')
 				this.isDifferent = (JSON.stringify(this.v) !== JSON.stringify(this.innerV))
@@ -425,6 +425,7 @@ export default {
 	created() {
 		this.v = {...this.$store.getters['persist/getAuthUser']}
 		this.innerV = {...this.v}
+		this.isDifferent = false
 	}
 }
 </script>
