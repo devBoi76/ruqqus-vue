@@ -239,7 +239,7 @@
 												Receive official site announcements via email
 											</p>
 										</div>
-										<Toggle v-model="innerV.hasAnnouncements"/>
+										<Toggle v-model:enabled="innerV.hasAnnouncements"/>
 									</div>
 								</div>
 							</div>
@@ -261,7 +261,7 @@
 												Cloak my posting history and ask search engines not to index my profile
 											</p>
 										</div>
-										<Toggle v-model="innerV.isPrivate"/>
+										<Toggle v-model:enabled="innerV.isPrivate"/>
 									</div>
 								</div>
 							</div>
@@ -276,7 +276,7 @@
 												Prevent others from following me
 											</p>
 										</div>
-										<Toggle v-model="innerV.hasDisabledFollowers"/>
+										<Toggle v-model:enabled="innerV.hasDisabledFollowers"/>
 									</div>
 								</div>
 							</div>
@@ -298,7 +298,7 @@
 												When someone follows me
 											</p>
 										</div>
-										<Toggle v-model="innerV.hasNotifications.followers"/>
+										<Toggle v-model:enabled="innerV.hasNotifications.followers"/>
 									</div>
 								</div>
 							</div>
@@ -313,7 +313,7 @@
 												When someone I follow posts
 											</p>
 										</div>
-										<Toggle v-model="innerV.hasNotifications.posts"/>
+										<Toggle v-model:enabled="innerV.hasNotifications.posts"/>
 									</div>
 								</div>
 							</div>
@@ -328,7 +328,7 @@
 												When someone replies to my post or comment
 											</p>
 										</div>
-										<Toggle v-model="innerV.hasNotifications.replies"/>
+										<Toggle v-model:enabled="innerV.hasNotifications.replies"/>
 									</div>
 								</div>
 							</div>
@@ -343,7 +343,7 @@
 												When someone mentions me by @username
 											</p>
 										</div>
-										<Toggle v-model="innerV.hasNotifications.mentions"/>
+										<Toggle v-model:enabled="innerV.hasNotifications.mentions"/>
 									</div>
 								</div>
 							</div>
