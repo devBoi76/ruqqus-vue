@@ -28,7 +28,8 @@ const state = {
 			query: 'code'
 		}
 	},
-	v: {
+	v: Object,
+	v2: {
 		'username': 'steve',
 		'usernameColor': '#00FFFF',
 		'title': 'Newton',
@@ -68,7 +69,7 @@ const getters = {
 		return state.site
 	},
 	getAuthUser(state) {
-		return state.v
+		return state.v2
 	}
 }
 
