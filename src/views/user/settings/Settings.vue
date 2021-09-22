@@ -426,6 +426,7 @@ export default {
 		this.v = {...this.$store.getters['persist/getAuthUser']}
 		this.innerV = {...this.v}
 		this.isDifferent = false
+		console.log(this.innerV)
 	}
 }
 </script>

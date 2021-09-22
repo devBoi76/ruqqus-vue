@@ -29,24 +29,24 @@ const state = {
 		}
 	},
 	v: {
-		username: 'steve',
-		usernameColor: '#00FFFF',
-		title: 'Newton',
-		titleColor: '#FFFF00',
-		id: 1,
-		profileUrl: 'https://i.imgur.com/yC8L3ME.gif',
-		bannerUrl: 'https://i.imgur.com/I4IfRQa.png',
-		bio: 'All your base are belong to us.',
-		bioHtml: '<p>All your base are belong to us.</p>',
-		reputation: 2001,
-		email: 'example@example.com',
-		isPrivate: false,
-		hasDisabledFollowers: false,
-		hasNotifications: {
-			followers: true,
-			posts: false,
-			replies: true,
-			mentions: true
+		'username': 'steve',
+		'usernameColor': '#00FFFF',
+		'title': 'Newton',
+		'titleColor': '#FFFF00',
+		'id': 1,
+		'profileUrl': 'https://i.imgur.com/yC8L3ME.gif',
+		'bannerUrl': 'https://i.imgur.com/I4IfRQa.png',
+		'bio': 'All your base are belong to us.',
+		'bioHtml': '<p>All your base are belong to us.</p>',
+		'reputation': 2001,
+		'email': 'example@example.com',
+		'isPrivate': true,
+		'hasDisabledFollowers': false,
+		'hasNotifications': {
+			'followers': true,
+			'posts': false,
+			'replies': true,
+			'mentions': true
 		}
 	},
 	u: {},
