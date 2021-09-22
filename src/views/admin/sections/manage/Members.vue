@@ -53,7 +53,7 @@
 			</div>
 
 			<!-- Tools -->
-			<div v-if="!loading && !errored" class="col-span-full px-4 md:px-8">
+			<div v-if="!loading && !errored" class="col-span-full px-4 md:px-8 mt-1">
 				<div class="flex items-center">
 					<div class="flex space-x-4">
 						<select class="form-select light capitalize" v-model="sort" :options="routes" >
@@ -250,13 +250,11 @@ export default {
 			},
 			set: function (value) {
 				let selected = [];
-
 				if (value) {
 					this.members.forEach(function (member) {
 						selected.push(member.id);
 					});
 				}
-
 				this.selected = selected;
 			}
 		},
@@ -272,7 +270,7 @@ export default {
 		}
 	},
 	watch: {
-		'selected': { // get guild info and posts if guild changes
+		'selected': {
 			handler() {
 				if (this.confirmation && this.selected.length) {
 					this.confirmation = true
@@ -283,19 +281,6 @@ export default {
 		}
 	},
 	methods: {
-		// getGuildInfo() {
-		// 	let guild = this.$route.params.name
-		// 	this.$store.dispatch('guild/fetchGuild', guild)
-		// 	.then(() => {
-		// 		console.log("getGuild dispatch successful")
-		// 	})
-		// 	.catch(error => {
-		// 		console.error(error)
-		// 		this.errored = true
-
-		// 	})
-		// 	.finally(() => this.loading = false)
-		// },
 		exile(members) {
 			console.log('exiled' + members)
 		},
@@ -303,7 +288,6 @@ export default {
 			if (value) {
 				this.exile(this.selected)
 			}
-
 			this.confirmation = !this.confirmation
 			this.selectedRole = null
 			this.selected = []
