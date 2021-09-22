@@ -61,7 +61,7 @@
 											Restrict posting to approved users only
 										</p>
 									</div>
-									<Toggle v-model="s.canPost"/>
+									<Toggle v-model:enabled="s.canPost"/>
 								</div>
 								<div class="flex flex-grow items-center justify-between p-4">
 									<div>
@@ -72,7 +72,7 @@
 											Restrict commenting to approved users only
 										</p>
 									</div>
-									<Toggle v-model="s.canComment"/>
+									<Toggle v-model:enabled="s.canComment"/>
 								</div>
 								<div class="flex flex-grow items-center justify-between p-4">
 									<div>
@@ -83,7 +83,7 @@
 											Restrict voting to approved users only
 										</p>
 									</div>
-									<Toggle v-model="s.canVote"/>
+									<Toggle v-model:enabled="s.canVote"/>
 								</div>
 								<div class="flex flex-grow items-center justify-between p-4">
 									<div>
@@ -94,7 +94,7 @@
 											Remove downvote buttons from all content for all members
 										</p>
 									</div>
-									<Toggle v-model="s.canDownvote"/>
+									<Toggle v-model:enabled="s.canDownvote"/>
 								</div>
 							</div>
 						</div>

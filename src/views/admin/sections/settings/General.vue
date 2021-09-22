@@ -157,7 +157,7 @@
 													Enable to display the icon in the navigation bar
 												</p>
 											</div>
-											<toggle v-model="site.hasIcon"/>
+											<Toggle v-model:enabled="site.hasIcon"/>
 										</div>
 									</div>
 									<div class="p-4">
@@ -170,7 +170,7 @@
 													Enable to display the cover with the site name and tagline
 												</p>
 											</div>
-											<toggle v-model="site.hasBanner"/>
+											<Toggle v-model:enabled="site.hasBanner"/>
 										</div>
 									</div>
 								</div>
@@ -270,7 +270,7 @@
 													Enable if your community contains NSFW content suitable only for adults
 												</p>
 											</div>
-											<toggle v-model="site.isNsfw"/>
+											<Toggle v-model:enabled="site.isNsfw"/>
 										</div>
 									</div>
 								</div>

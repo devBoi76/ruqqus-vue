@@ -130,7 +130,7 @@
 														Applies a 'hasDonated' attribute to members who have donated via Ko-Fi
 													</p>
 												</div>
-												<Toggle v-model="hasDonationAttr"/>
+												<Toggle v-model:enabled="hasDonationAttr"/>
 											</div>
 										</div>
 									</div>

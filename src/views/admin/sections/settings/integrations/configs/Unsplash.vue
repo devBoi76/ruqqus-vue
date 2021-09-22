@@ -130,7 +130,7 @@
 													Displays Unsplash photos on login, registration, and error pages
 												</p>
 											</div>
-											<Toggle v-model="hasUnsplashLogin"/>
+											<Toggle v-model:enabled="hasUnsplashLogin"/>
 										</div>
 									</div>
 									<div class="col-span-3 sm:col-span-2" :class="{'opacity-50 pointer-events-none':!hasUnsplashLogin}">
