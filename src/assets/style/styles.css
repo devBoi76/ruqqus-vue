@@ -87,8 +87,8 @@
 	input[type], select, textarea, input::-webkit-datetime-edit {
 		@apply text-lg sm:text-base leading-5
 	}
-	[type=date], [type=datetime-local], [type=email], [type=month], [type=number], [type=password], [type=search], [type=text], [type=time], [type=url], [type=week], select, textarea {
-		@apply text-lg sm:text-base leading-5
+	[multiple], [type=date], [type=datetime-local], [type=email], [type=month], [type=number], [type=password], [type=search], [type=tel], [type=text], [type=time], [type=url], [type=week], select, textarea {
+		@apply text-lg sm:text-base leading-5 appearance-none;
 	}
 	.label {
 		@apply block text-sm font-semibold text-gray-900 mb-1;
