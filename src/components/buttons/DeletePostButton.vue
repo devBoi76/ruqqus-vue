@@ -1,7 +1,6 @@
 <template>
 	<div>
-		<slot :loading="loading" :success="success" :errored="errored">
-		</slot>
+		<slot :loading="loading" :success="success" :errored="errored"/>
 	</div>
 </template>
 
@@ -17,10 +16,6 @@
 				success: false,
 				errored: false,
 			};
-		},
-		components: {
-		},
-		computed: {
 		},
 		methods: {
 			deletePost() {

@@ -1,7 +1,6 @@
 <template>
 	<div>
-		<slot :isSaved="isSaved" :isLoading="loading" :hasErrored="errored" :savePost="savePost" :unsavePost="unsavePost">
-		</slot>
+		<slot :isSaved="isSaved" :isLoading="loading" :hasErrored="errored" :savePost="savePost" :unsavePost="unsavePost"/>
 	</div>
 </template>
 
