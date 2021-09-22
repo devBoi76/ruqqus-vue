@@ -31,7 +31,7 @@
 						</div>
 						<div class="absolute bottom-4 left-4 md:bottom-6 md:left-6 flex items-center">
 							<div class="relative rounded overflow-hidden w-20 h-20 flex-shrink-0">
-								<img :src="v.profileUrl" class="object-cover" alt="profile-picture"/>
+								<img :src="innerV.profileUrl" class="object-cover" alt="profile-picture"/>
 								<div v-show="editAppearance" class="absolute bottom-0 flex items-center justify-center w-full h-full bg-black bg-opacity-30">
 									<button type="button" class="w-9 h-9 flex items-center justify-center text-white px-2 py-0 bg-transparent hover:bg-black hover:bg-opacity-50 rounded-sm transition duration-100 ease-in-out" tabindex="0">
 										<i class="far fa-pen fa-lg"></i>
@@ -39,7 +39,7 @@
 								</div>
 							</div>
 							<div class="z-10 ml-4 font-semibold text-2xl text-white" :class="{'text-opacity-30':editAppearance}">
-								{{ v.username }}
+								{{ innerV.username }}
 							</div>
 						</div>
 					</div>
@@ -77,13 +77,13 @@
 												Display name
 											</label>
 											<div class="flex items-center space-x-2">
-												<input class="form-input light pr-8" v-model="v.username" :placeholder="v.username" type="text"/>
-												<ColorPicker v-model:color="usernameColor"/>
+												<input class="form-input light pr-8" v-model="innerV.username" :placeholder="innerV.username" type="text"/>
+												<ColorPicker v-model:color="innerV.usernameColor"/>
 											</div>
 											<p class="text-sm text-gray-500 mt-1">
 												Your original username will always be reserved:
 												<span class="text-primary">
-													{{ v.username }}
+													{{ innerV.username }}
 												</span>
 											</p>
 										</div>
@@ -92,8 +92,8 @@
 												Title
 											</label>
 											<div class="flex items-center space-x-2">
-												<input class="form-input light pr-8" v-model="title" :placeholder="title || 'e.g. UwU'" type="text"/>
-												<ColorPicker v-model:color="titleColor"/>
+												<input class="form-input light pr-8" v-model="innerV.title" :placeholder="innerV.title || 'e.g. UwU'" type="text"/>
+												<ColorPicker v-model:color="innerV.titleColor"/>
 											</div>
 											<p class="text-sm text-gray-500 mt-1">
 												Titles are decorative text next to your username
@@ -105,12 +105,12 @@
 											</label>
 											<div class="p-3 bg-white border rounded">
 												<div class="flex items-center mb-3">
-													<img :src="v.profile_url" class="w-9 h-9 rounded-sm bg-white bg-opacity-20 mr-3" alt="avatar">
-													<div class="text-xs font-semibold text-gray-900 leading-tight" :style="{ 'color': usernameColor }">
-														{{ v.username }}
+													<img :src="innerV.profile_url" class="w-9 h-9 rounded-sm bg-white bg-opacity-20 mr-3" alt="avatar">
+													<div class="text-xs font-semibold text-gray-900 leading-tight" :style="{ 'color': innerV.usernameColor }">
+														{{ innerV.username }}
 													</div>
-													<span v-if="title" class="ml-2 px-2 inline-flex text-xs leading-5 font-medium rounded-sm text-gray-900" :style="{ 'background-color': titleColor }">
-														{{ title }}
+													<span v-if="title" class="ml-2 px-2 inline-flex text-xs leading-5 font-medium rounded-sm text-gray-900" :style="{ 'background-color': innerV.titleColor }">
+														{{ innerV.title }}
 													</span>
 												</div>
 												<div class="h-3 w-3/4 rounded-sm bg-gray-200 mb-2"></div>
@@ -198,7 +198,7 @@
 													Email
 												</div>
 												<p class="text-sm text-gray-500 mt-1">
-													{{ v.email || 'You have not verified an email with this account'}}
+													{{ innerV.email || 'You have not verified an email with this account'}}
 												</p>
 											</div>
 											<button class="flex items-center justify-center px-2 w-8 h-8 text-lg text-gray-600 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white rounded-sm" @click="toggle" aria-expanded="active">
@@ -211,7 +211,7 @@
 													<label class="label">
 														Email address
 													</label>
-													<input required class="form-input light" v-model="v.email" :placeholder="v.email || `john@example.com`" type="email"/>
+													<input required class="form-input light" v-model="innerV.email" :placeholder="innerV.email || `john@example.com`" type="email"/>
 													<p class="text-sm text-gray-500 mt-1">
 														Used for password resets and opt-in announcements
 													</p>
@@ -227,7 +227,7 @@
 						<div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2 px-4 sm:px-0">
 							Email alerts
 						</div>
-						<form class="border-t border-b border-gray-100 dark:border-transparent sm:border sm:border-gray-200 sm:rounded-sm bg-white divide-y" :class="{ 'opacity-50 pointer-events-none':!v.email }">
+						<form class="border-t border-b border-gray-100 dark:border-transparent sm:border sm:border-gray-200 sm:rounded-sm bg-white divide-y" :class="{ 'opacity-50 pointer-events-none':!innerV.email }">
 							<div class="grid grid-cols-3 gap-6 p-4">
 								<div class="col-span-3">
 									<div class="flex flex-grow items-center justify-between">
@@ -239,7 +239,7 @@
 												Receive official site announcements via email
 											</p>
 										</div>
-										<Toggle v-model="v.hasAnnouncements"/>
+										<Toggle v-model="innerV.hasAnnouncements"/>
 									</div>
 								</div>
 							</div>
@@ -261,7 +261,7 @@
 												Cloak my posting history and ask search engines not to index my profile
 											</p>
 										</div>
-										<Toggle v-model="v.isPrivate"/>
+										<Toggle v-model="innerV.isPrivate"/>
 									</div>
 								</div>
 							</div>
@@ -276,7 +276,7 @@
 												Prevent others from following me
 											</p>
 										</div>
-										<Toggle v-model="v.hasDisabledFollowers"/>
+										<Toggle v-model="innerV.hasDisabledFollowers"/>
 									</div>
 								</div>
 							</div>
@@ -298,7 +298,7 @@
 												When someone follows me
 											</p>
 										</div>
-										<Toggle v-model="v.hasNotifications.followers"/>
+										<Toggle v-model="innerV.hasNotifications.followers"/>
 									</div>
 								</div>
 							</div>
@@ -313,7 +313,7 @@
 												When someone I follow posts
 											</p>
 										</div>
-										<Toggle v-model="v.hasNotifications.posts"/>
+										<Toggle v-model="innerV.hasNotifications.posts"/>
 									</div>
 								</div>
 							</div>
@@ -328,7 +328,7 @@
 												When someone replies to my post or comment
 											</p>
 										</div>
-										<Toggle v-model="v.hasNotifications.replies"/>
+										<Toggle v-model="innerV.hasNotifications.replies"/>
 									</div>
 								</div>
 							</div>
@@ -343,7 +343,7 @@
 												When someone mentions me by @username
 											</p>
 										</div>
-										<Toggle v-model="v.hasNotifications.mentions"/>
+										<Toggle v-model="innerV.hasNotifications.mentions"/>
 									</div>
 								</div>
 							</div>
@@ -403,7 +403,7 @@ export default {
 	},
 	methods: {
 		getEditorContent(value) {
-			this.v.bio = value;
+			this.innerV.bio = value;
 		},
 		toggleAppearance() {
 			this.editAppearance = !this.editAppearance;
