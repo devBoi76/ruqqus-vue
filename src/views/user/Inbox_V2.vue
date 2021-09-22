@@ -11,7 +11,7 @@
 					<div class="flex flex-shrink-0 w-full items-end px-4 border-b dark:border-white dark:border-opacity-10 dark:bg-gray-700">
 						<router-link v-for="tab in tabs" :key="tab.name" v-slot="{ href, navigate, isExactActive }" :to="tab.route">
 							<a :href="href" @click="navigate" class="group">
-								<div class="border-b-2 px-4 py-3 leading-tight capitalize" :class="isExactActive ? 'text-purple-500 font-semibold border-purple-500' : 'text-gray-500 hover:text-gray-700 border-transparent'">
+								<div class="border-b-2 px-4 py-3 font-semibold leading-tight capitalize" :class="isExactActive ? 'text-purple-500 border-purple-500' : 'text-gray-400 hover:text-gray-500 border-transparent'">
 									{{ tab.name }}
 								</div>
 							</a>
