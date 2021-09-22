@@ -383,9 +383,6 @@ export default {
 		ToggleForm,
 		ColorPicker
 	},
-	computed: {
-		...mapState("persist", ["v"]),
-	},
 	watch: {
 		'v': {
 			handler() {

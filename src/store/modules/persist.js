@@ -66,6 +66,9 @@ const state = {
 const getters = {
 	getSite(state) {
 		return state.site
+	},
+	getAuthUser(state) {
+		return state.v
 	}
 }
 
