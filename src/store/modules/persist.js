@@ -110,7 +110,7 @@ const mutations = {
 	},
 	ADD_SEARCH_ITEM(state, payload) {
 		state.searchHistory.push(payload)
-		console.log(searchHistory)
+		console.log(state.searchHistory)
 	},
 	SHIFT_SEARCH_HISTORY(state) {
 		state.searchHistory.shift()
