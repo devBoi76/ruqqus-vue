@@ -105,7 +105,7 @@
 											</label>
 											<div class="p-3 bg-white border rounded">
 												<div class="flex items-center mb-3">
-													<img :src="innerV.profile_url" class="w-9 h-9 rounded-sm bg-white bg-opacity-20 mr-3" alt="avatar">
+													<img :src="innerV.profileUrl" class="w-9 h-9 rounded-sm bg-white bg-opacity-20 mr-3" alt="avatar">
 													<div class="text-xs font-semibold text-gray-900 leading-tight" :style="{ 'color': innerV.usernameColor }">
 														{{ innerV.username }}
 													</div>
