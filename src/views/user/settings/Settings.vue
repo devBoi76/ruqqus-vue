@@ -22,7 +22,7 @@
 							</div>
 						</div>
 						<div class="relative">
-							<img :src="v.bannerUrl" class="w-full h-56 lg:h-72 object-cover sm:rounded-sm"/>
+							<img :src="innerV.bannerUrl" class="w-full h-56 lg:h-72 object-cover sm:rounded-sm"/>
 							<div v-show="editAppearance" class="absolute bottom-0 flex items-center justify-center w-full h-full bg-black bg-opacity-30 sm:rounded-sm">
 								<button type="button" class="w-9 h-9 flex items-center justify-center px-2 py-0 text-white bg-transparent hover:bg-black hover:bg-opacity-50 rounded-sm transition duration-100 ease-in-out" tabindex="0">
 									<i class="far fa-pen fa-lg"></i>
@@ -350,6 +350,15 @@
 						</form>
 					</div>
 				</div>
+
+				<div class="flex items-center justify-end space-x-4">
+					<div v-show="isDifferent" class="text-xs text-gray-400">
+						You have unsaved changes!
+					</div>
+					<button v-if="!loading && !errored" :disabled="!isDifferent" class="button purple500" @click="save()">
+						Save
+					</button>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -374,7 +383,7 @@ export default {
 			password: null,
 			isDifferent: false,
 			v: {},
-			saved: {}
+			innerV: {}
 		}
 	},
 	components: {
@@ -387,7 +396,7 @@ export default {
 		'v': {
 			handler() {
 				console.log('v obj watcher triggered')
-				this.isDifferent = (JSON.stringify(this.v) !== JSON.stringify(this.saved))
+				this.isDifferent = (JSON.stringify(this.v) !== JSON.stringify(this.innerV))
 			},
 			deep: true
 		}
@@ -400,10 +409,10 @@ export default {
 			this.editAppearance = !this.editAppearance;
 		},
 		save() {
-			this.$store.dispatch('persist/submitUserSettings', this.saved)
+			this.$store.dispatch('persist/submitUserSettings', this.innerV)
 			.then(() => {
 				console.log("submitUserSettings dispatch successful")
-				this.saved = {...this.v}
+				this.innerV = {...this.v}
 			})
 			.catch(error => {
 				console.error(error)
@@ -415,7 +424,7 @@ export default {
 	},
 	created() {
 		this.v = {...this.$store.getters['persist/getAuthUser']}
-		this.saved = {...this.v}
+		this.innerV = {...this.v}
 	}
 }
 </script>
