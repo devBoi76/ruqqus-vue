@@ -1,13 +1,13 @@
 <template>
 	<Popover v-slot="{ open }">
 		<PopoverButton as="div" class="w-96 appearance-none">
-			<form class="relative" @submit.prevent="search">
+			<form class="relative" @submit.prevent="onSubmit" @submit="search()">
 				<div class="absolute left-3 top-[6px]">
 					<button class="text-gray-400 hover:text-gray-500" type="submit">
 						<i class="far fa-search fa-fw fa-sm"></i>
 					</button>
 				</div>
-				<input ref="input" required type="text" class="form-input light pl-9" v-model="searchTerm" placeholder="Search posts or @users"/>
+				<input required type="text" class="form-input light pl-9" v-model="searchTerm" placeholder="Search posts or @users" @submit="search()"/>
 				<div v-show="searchTerm" class="absolute right-3 top-[6px]">
 					<button class="text-gray-400 hover:text-gray-500" @click="searchTerm = ''">
 						<i class="far fa-times-circle fa-fw fa-sm"></i>
@@ -73,7 +73,7 @@
 		methods: {
 			...mapActions("persist", ["clearSearchHistory"]),
 			search() {
-				this.$router.push("/search?q="+this.searchTerm);
+				if (searchTerm) this.$router.push("/search?q="+this.searchTerm);
 			}
 		}
 	}
