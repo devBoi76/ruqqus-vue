@@ -16,7 +16,7 @@ const UserCommentsView = () => import ('../views/profile/sections/Comments.vue')
 // User
 const UserView = () => import ('../views/user/UserView.vue')
 const UserFollowingView = () => import ('../views/user/Following.vue')
-const UserInboxView = () => import ('../views/user/Inbox.vue')
+const UserInboxView = () => import ('../views/user/Inbox_V2.vue')
 const UserSavedView = () => import ('../views/user/Saved.vue')
 
 // User Settings

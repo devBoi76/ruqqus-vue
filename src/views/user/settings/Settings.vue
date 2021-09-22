@@ -135,7 +135,6 @@
 						</form>
 					</div>
 
-
 					<div>
 						<div class="flex justify-between px-4 sm:px-0">
 							<div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
