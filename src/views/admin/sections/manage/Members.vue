@@ -282,7 +282,7 @@ export default {
 		editRole() {
 			let i = 0;
 			if (this.selectedRole) {
-				for (member of this.selected) {
+				for (let member of this.selected) {
 					member[role] = this.selectedRole;
 					i++
 				}
