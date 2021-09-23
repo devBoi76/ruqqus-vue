@@ -74,7 +74,7 @@
 														<label class="label">
 															Community name
 														</label>
-														<input class="form-input light" v-model="site.name" :placeholder="$route.params.name" type="text"/>
+														<input class="form-input light" v-model="innerSite.name" :placeholder="$route.params.name" type="text"/>
 														<p class="text-sm text-gray-500 mt-1">
 															This does not affect your community web address
 														</p>
@@ -86,9 +86,9 @@
 															<label class="label">
 																Community tagline
 															</label>
-															<textarea class="form-textarea light" v-model="site.tagline" type="text" rows="3" maxlength="140" placeholder="A community residing on the world wide web."/>
-															<div v-if="site.tagline" class="absolute text-xs font-semibold text-gray-400 right-3 bottom-2" :class="{'text-red-500':site.tagline.length >= 140}">
-																{{ 140 - site.tagline.length }}
+															<textarea class="form-textarea light" v-model="innerSite.tagline" type="text" rows="3" maxlength="140" placeholder="A community residing on the world wide web."/>
+															<div v-if="innerSite.tagline" class="absolute text-xs font-semibold text-gray-400 right-3 bottom-2" :class="{'text-red-500':innerSite.tagline.length >= 140}">
+																{{ 140 - innerSite.tagline.length }}
 															</div>
 														</div>
 														<p class="text-sm text-gray-500 mt-1">
@@ -99,9 +99,9 @@
 <!-- 													<div class="grid grid-cols-3 gap-6">
 														<div class="col-span-3 sm:col-span-2">
 															<div class="relative">
-																<Editor @input="getEditorContent" v-model="site.description" :limit="5000" @click.prevent/>
-																<div v-if="site.description" class="absolute text-xs font-semibold text-gray-400 right-3 bottom-2" :class="{'text-red-500':site.description >= 1000}">
-																	{{ 1000 - site.description }}
+																<Editor @input="getEditorContent" v-model="innerSite.description" :limit="5000" @click.prevent/>
+																<div v-if="innerSite.description" class="absolute text-xs font-semibold text-gray-400 right-3 bottom-2" :class="{'text-red-500':innerSite.description >= 1000}">
+																	{{ 1000 - innerSite.description }}
 																</div>
 															</div>
 															<p class="text-sm text-gray-500 mt-1">
@@ -131,7 +131,7 @@
 													The artwork used to represent your community
 												</p>
 											</div>
-											<img :src="site.icon" class="w-11 h-11 rounded-sm bg-gray-100 object-cover" alt="guild icon artwork"/>
+											<img :src="innerSite.icon" class="w-11 h-11 rounded-sm bg-gray-100 object-cover" alt="guild icon artwork"/>
 										</div>
 									</div>
 									<div class="p-4">
@@ -144,7 +144,7 @@
 													The cover artwork displayed across your community
 												</p>
 											</div>
-											<img :src="site.cover" class="w-48 h-11 rounded-sm bg-gray-100 object-cover" alt="guild cover artwork"/>
+											<img :src="innerSite.cover" class="w-48 h-11 rounded-sm bg-gray-100 object-cover" alt="guild cover artwork"/>
 										</div>
 									</div>
 									<div class="p-4">
@@ -157,7 +157,7 @@
 													Enable to display the icon in the navigation bar
 												</p>
 											</div>
-											<Toggle v-model:enabled="site.hasIcon"/>
+											<Toggle v-model:enabled="innerSite.hasIcon"/>
 										</div>
 									</div>
 									<div class="p-4">
@@ -170,7 +170,7 @@
 													Enable to display the cover with the site name and tagline
 												</p>
 											</div>
-											<Toggle v-model:enabled="site.hasBanner"/>
+											<Toggle v-model:enabled="innerSite.hasBanner"/>
 										</div>
 									</div>
 								</div>
@@ -204,9 +204,9 @@
 																Meta title
 															</label>
 															<div class="relative">
-																<input class="form-input light" v-model="site.meta.title" :placeholder="site.name" type="text"/>
-																<div v-if="site.meta.title.length" class="absolute text-xs font-semibold text-gray-400 right-3 bottom-2" :class="{'text-yellow-500':site.meta.title.length >= 60}">
-																	{{ 60 - site.meta.title.length }}
+																<input class="form-input light" v-model="innerSite.meta.title" :placeholder="innerSite.name" type="text"/>
+																<div v-if="innerSite.meta.title.length" class="absolute text-xs font-semibold text-gray-400 right-3 bottom-2" :class="{'text-yellow-500':innerSite.meta.title.length >= 60}">
+																	{{ 60 - innerSite.meta.title.length }}
 																</div>
 															</div>
 															<p class="text-sm text-gray-500 mt-1">
@@ -220,9 +220,9 @@
 																<label class="label">
 																	Meta description
 																</label>
-																<textarea class="form-textarea light" v-model="site.meta.description" type="text" rows="3" maxlength="140" placeholder="A community residing on the world wide web."/>
-																<div v-if="site.meta.description.length" class="absolute text-xs font-semibold text-gray-400 right-3 bottom-2" :class="{'text-red-500':site.meta.description.length >= 140}">
-																	{{ 140 - site.meta.description.length }}
+																<textarea class="form-textarea light" v-model="innerSite.meta.description" type="text" rows="3" maxlength="140" placeholder="A community residing on the world wide web."/>
+																<div v-if="innerSite.meta.description.length" class="absolute text-xs font-semibold text-gray-400 right-3 bottom-2" :class="{'text-red-500':innerSite.meta.description.length >= 140}">
+																	{{ 140 - innerSite.meta.description.length }}
 																</div>
 															</div>
 															<p class="text-sm text-gray-500 mt-1">
@@ -237,13 +237,13 @@
 															</label>
 															<div class="p-5 bg-white border rounded">
 																<div class="text-xs text-gray-900 leading-tight mb-1">
-																	https://{{ site.domain }}
+																	https://{{ innerSite.domain }}
 																</div>
 																<div class="text-[#1a0dab] text-xl font-medium">
-																	{{ site.meta.title || site.name }}
+																	{{ innerSite.meta.title || innerSite.name }}
 																</div>
 																<p class="text-sm text-gray-700 mt-1">
-																	{{ site.meta.description || `${site.name} - A community powered by Ruqqus` }}
+																	{{ innerSite.meta.description || `${innerSite.name} - A community powered by Ruqqus` }}
 																</p>
 															</div>
 														</div>
@@ -270,7 +270,7 @@
 													Enable if your community contains NSFW content suitable only for adults
 												</p>
 											</div>
-											<Toggle v-model:enabled="site.isNsfw"/>
+											<Toggle v-model:enabled="innerSite.isNsfw"/>
 										</div>
 									</div>
 								</div>
@@ -303,41 +303,53 @@ export default {
 			errored: false,
 			isDifferent: false,
 			site: {},
-			saved: {}
+			innerSite: {}
 		}
 	},
 	watch: {
 		'site': { // get guild info and posts if guild changes
 			handler() {
 				console.log('site obj watcher triggered')
-				this.isDifferent = (JSON.stringify(this.site) !== JSON.stringify(this.saved))
+				this.isDifferent = (JSON.stringify(this.site) !== JSON.stringify(this.innerSite))
 			},
 			deep: true
 		}
 	},
+	computed: {
+		site() {
+			return this.$store.getters['persist/getSite']
+		}
+	},
 	methods: {
-		// getGuildInfo() {
-		// 	let guild = this.site.$route.paramsite.name
-		// 	this.site.$store.dispatch('guild/fetchGuild', guild)
+		// getSite() {
+		// 	this.$store.dispatch('site/fetchSite', guild)
 		// 	.then(() => {
-		// 		console.log("getGuild dispatch successful")
+		// 		console.log("getSite dispatch successful")
 		// 	})
 		// 	.catch(error => {
 		// 		console.error(error)
-		// 		thisite.errored = true
+		// 		thiinnerSite.errored = true
 
 		// 	})
-		// 	.finally(() => this.site.loading = false)
+		// 	.finally(() => this.innerSite.loading = false)
 		// }
 		save() {
-			this.isDifferent = false;
-			this.saved = {...this.site}
-			this.$store.commit('persist/SET_SITE', {site: this.saved});
+			this.$store.dispatch('persist/submitSiteSettings', this.innerSite)
+			.then(() => {
+				console.log("submitSiteSettings dispatch successful")
+				this.innerSite = {...this.site}
+			})
+			.catch(error => {
+				console.error(error)
+				this.errored = true
+
+			})
+			.finally(() => this.loading = false)
 		}
 	},
 	created() {
-		this.site = {...this.$store.getters['persist/getSite']}
-		this.saved = {...this.site}
+		//this.site = {...this.$store.getters['persist/getSite']}
+		this.innerSite = {...this.site}
 		this.isDifferent = false
 	}
 };
