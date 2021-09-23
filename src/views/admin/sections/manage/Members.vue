@@ -283,7 +283,7 @@ export default {
 			let i = 0;
 			if (this.selectedRole) {
 				for (let id of this.selected) {
-					this.member[id].role = this.selectedRole
+					this.members[id].role = this.selectedRole
 					i++
 				}
 				if (i === this.selected.length - 1) {
