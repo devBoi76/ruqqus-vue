@@ -175,44 +175,44 @@ export default {
 			reorder: false,
 			members: [
 			{
-				id: 1,
-				username: 'throwaway420',
-				profile_url: 'https://i.ruqqus.com/users/throwaway420/profile-2.png',
-				role: 'member',
-				date: 'Mon Jul 05 2021',
-				reputation: 1024,
-				post_count: 24,
-				comment_count: 240
+				'id': 1,
+				'username': 'throwaway420',
+				'profile_url': 'https://i.ruqqus.com/users/throwaway420/profile-2.png',
+				'role': 'member',
+				'date': 'Mon Jul 05 2021',
+				'reputation': 1024,
+				'post_count': 24,
+				'comment_count': 240
 			},
 			{
-				id: 2,
-				username: 'bidpots',
-				profile_url: 'https://i.ruqqus.com/users/Bidpots/profile-21.png',
-				role: 'member',
-				date: 'Mon Jul 05 2021',
-				reputation: 2048,
-				post_count: 19,
-				comment_count: 290
+				'id': 2,
+				'username': 'bidpots',
+				'profile_url': 'https://i.ruqqus.com/users/Bidpots/profile-21.png',
+				'role': 'member',
+				'date': 'Mon Jul 05 2021',
+				'reputation': 2048,
+				'post_count': 19,
+				'comment_count': 290
 			},
 			{
-				id: 3,
-				username: 'Nemu',
-				profile_url: 'https://i.ruqqus.com/uid/8cq/profile-7.png',
-				role: 'exiled',
-				date: 'Mon Jul 05 2021',
-				reputation: 420,
-				post_count: 72,
-				comment_count: 240
+				'id': 3,
+				'username': 'Nemu',
+				'profile_url': 'https://i.ruqqus.com/uid/8cq/profile-7.png',
+				'role': 'exiled',
+				'date': 'Mon Jul 05 2021',
+				'reputation': 420,
+				'post_count': 72,
+				'comment_count': 240
 			},
 			{
-				id: 4,
-				username: 'citwrong',
-				profile_url: 'https://i.ruqqus.com/users/citwrong/profile-3.png',
-				role: 'guildmaster',
-				date: 'Mon Jul 05 2021',
-				reputation: 4273,
-				post_count: 82,
-				comment_count: 280
+				'id': 4,
+				'username': 'citwrong',
+				'profile_url': 'https://i.ruqqus.com/users/citwrong/profile-3.png',
+				'role': 'guildmaster',
+				'date': 'Mon Jul 05 2021',
+				'reputation': 4273,
+				'post_count': 82,
+				'comment_count': 280
 			}
 			],
 			selected: [],
@@ -283,7 +283,7 @@ export default {
 			let i = 0;
 			if (this.selectedRole) {
 				for (let member of this.selected) {
-					member[role] = this.selectedRole;
+					member.role = this.selectedRole;
 					i++
 				}
 				if (i === this.selected.length - 1) {
