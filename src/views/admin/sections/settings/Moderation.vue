@@ -111,6 +111,9 @@ import { getGuild } from '@/api/Guild.js';
 
 import Toggle from "@/components/forms/Toggle.vue";
 
+import isEqual from 'lodash/isEqual';
+import cloneDeep from 'lodash/cloneDeep';
+
 export default {
 	name: "UserSettingsBasicInfoView",
 	data() {
@@ -128,7 +131,7 @@ export default {
 		'innerSite': { // get guild info and posts if guild changes
 			handler() {
 				console.log('site obj watcher triggered')
-				this.isDifferent = (JSON.stringify(this.site) !== JSON.stringify(this.innerSite))
+				this.isDifferent = !isEqual(this.site, this.innerSite)
 			},
 			deep: true
 		}
@@ -168,7 +171,7 @@ export default {
 		}
 	},
 	created() {
-		this.innerSite = {...this.site}
+		this.innerSite = cloneDeep(this.site);
 		this.isDifferent = false
 	}
 };
