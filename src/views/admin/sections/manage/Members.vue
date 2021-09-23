@@ -174,8 +174,8 @@ export default {
 			errored: false,
 			reorder: false,
 			members: [
-			'1': {
-				'id': '1',
+			1: {
+				'id': 1,
 				'username': 'throwaway420',
 				'profile_url': 'https://i.ruqqus.com/users/throwaway420/profile-2.png',
 				'role': 'member',
@@ -183,37 +183,37 @@ export default {
 				'reputation': 1024,
 				'post_count': 24,
 				'comment_count': 240
-			},
-			'2': {
-				'id': '2',
-				'username': 'bidpots',
-				'profile_url': 'https://i.ruqqus.com/users/Bidpots/profile-21.png',
-				'role': 'member',
-				'date': 'Mon Jul 05 2021',
-				'reputation': 2048,
-				'post_count': 19,
-				'comment_count': 290
-			},
-			'3': {
-				'id': '3',
-				'username': 'Nemu',
-				'profile_url': 'https://i.ruqqus.com/uid/8cq/profile-7.png',
-				'role': 'exiled',
-				'date': 'Mon Jul 05 2021',
-				'reputation': 420,
-				'post_count': 72,
-				'comment_count': 240
-			},
-			'4': {
-				'id': '4',
-				'username': 'citwrong',
-				'profile_url': 'https://i.ruqqus.com/users/citwrong/profile-3.png',
-				'role': 'guildmaster',
-				'date': 'Mon Jul 05 2021',
-				'reputation': 4273,
-				'post_count': 82,
-				'comment_count': 280
 			}
+			// '2': {
+			// 	'id': '2',
+			// 	'username': 'bidpots',
+			// 	'profile_url': 'https://i.ruqqus.com/users/Bidpots/profile-21.png',
+			// 	'role': 'member',
+			// 	'date': 'Mon Jul 05 2021',
+			// 	'reputation': 2048,
+			// 	'post_count': 19,
+			// 	'comment_count': 290
+			// },
+			// '3': {
+			// 	'id': '3',
+			// 	'username': 'Nemu',
+			// 	'profile_url': 'https://i.ruqqus.com/uid/8cq/profile-7.png',
+			// 	'role': 'exiled',
+			// 	'date': 'Mon Jul 05 2021',
+			// 	'reputation': 420,
+			// 	'post_count': 72,
+			// 	'comment_count': 240
+			// },
+			// '4': {
+			// 	'id': '4',
+			// 	'username': 'citwrong',
+			// 	'profile_url': 'https://i.ruqqus.com/users/citwrong/profile-3.png',
+			// 	'role': 'guildmaster',
+			// 	'date': 'Mon Jul 05 2021',
+			// 	'reputation': 4273,
+			// 	'post_count': 82,
+			// 	'comment_count': 280
+			// }
 			],
 			selected: [],
 			selectedRole: null,
