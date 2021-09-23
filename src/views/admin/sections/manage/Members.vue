@@ -128,11 +128,9 @@
 										</div>
 									</td>
 									<td class="px-6 py-4 whitespace-no-wrap leading-5 text-gray-900">
-										<div class="flex space-x-1">
-											<span v-for="i in member.roles" :key="i" class="px-2 inline-flex text-xs leading-5 font-medium rounded-sm" :class="role[i] || role.normal">
-												{{ i }}
-											</span>
-										</div>
+										<span class="px-2 inline-flex text-xs leading-5 font-medium rounded-sm" :class="role[i] || role.normal">
+											{{ member.role }}
+										</span>
 									</td>
 									<td class="px-6 py-4 whitespace-no-wrap leading-5 text-gray-600">
 										<span>
@@ -252,7 +250,7 @@ export default {
 				let selected = [];
 				if (value) {
 					this.members.forEach(function (member) {
-						selected.push(member.id);
+						selected.push(member);
 					});
 				}
 				this.selected = selected;
@@ -284,11 +282,11 @@ export default {
 		editRole() {
 			let i = 0;
 			if (this.selectedRole) {
-				for(member of this.selected) {
+				for (member of this.selected) {
 					member[role] = this.selectedRole;
 					i++
 				}
-				if(i === this.selected.length - 1) {
+				if (i === this.selected.length - 1) {
 					this.confirmation = !this.confirmation
 					this.selectedRole = null
 					this.selected = []
