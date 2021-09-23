@@ -174,8 +174,8 @@ export default {
 			errored: false,
 			reorder: false,
 			members: [
-			{
-				'id': 1,
+			'1': {
+				'id': '1',
 				'username': 'throwaway420',
 				'profile_url': 'https://i.ruqqus.com/users/throwaway420/profile-2.png',
 				'role': 'member',
@@ -184,8 +184,8 @@ export default {
 				'post_count': 24,
 				'comment_count': 240
 			},
-			{
-				'id': 2,
+			'2': {
+				'id': '2',
 				'username': 'bidpots',
 				'profile_url': 'https://i.ruqqus.com/users/Bidpots/profile-21.png',
 				'role': 'member',
@@ -194,8 +194,8 @@ export default {
 				'post_count': 19,
 				'comment_count': 290
 			},
-			{
-				'id': 3,
+			'3': {
+				'id': '3',
 				'username': 'Nemu',
 				'profile_url': 'https://i.ruqqus.com/uid/8cq/profile-7.png',
 				'role': 'exiled',
@@ -204,8 +204,8 @@ export default {
 				'post_count': 72,
 				'comment_count': 240
 			},
-			{
-				'id': 4,
+			'4': {
+				'id': '4',
 				'username': 'citwrong',
 				'profile_url': 'https://i.ruqqus.com/users/citwrong/profile-3.png',
 				'role': 'guildmaster',
@@ -250,7 +250,7 @@ export default {
 				let selected = [];
 				if (value) {
 					this.members.forEach(function (member) {
-						selected.push(member);
+						selected.push(member.id);
 					});
 				}
 				this.selected = selected;
@@ -282,8 +282,8 @@ export default {
 		editRole() {
 			let i = 0;
 			if (this.selectedRole) {
-				for (let member of this.selected) {
-					member.role = this.selectedRole;
+				for (let id of this.selected) {
+					this.member[id].role = this.selectedRole
 					i++
 				}
 				if (i === this.selected.length - 1) {
