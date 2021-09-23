@@ -1,13 +1,10 @@
 <template>
 	<div class="w-full overflow-y-auto">
 		<div class="grid grid-cols-12 xl:grid-cols-10">
-
 			<div class="col-span-full xl:col-start-3 xl:col-end-9 flex flex-col gap-4 sm:p-6 my-2.5 sm:my-0">
-
 				<h1 class="h3 font-semibold mb-0">
 					Create post
 				</h1>
-
 				<div class="flex gap-6">
 					<!-- Main Content Section -->
 					<div class="w-full">
@@ -110,7 +107,6 @@
 						</div>
 					</div>
 					<!-- End Main Content Section -->
-
 					<!-- Right Bar -->
 					<div class="hidden flex-shrink-0 w-80">
 						<div class="space-y-4">
@@ -179,7 +175,6 @@
 					</div>
 					<!-- End Right bar -->
 				</div>
-
 			</div>
 		</div>
 	</div>
@@ -187,13 +182,10 @@
 
 <script>
 	import { mapState, mapActions } from "vuex";
-	import MediaFormat from '../helpers/media-format.js'
+
 	import Editor from "@/components/editors/Editor_V2.vue";
-
 	import CreatePostOptions from "@/components/dropdowns/CreatePostOptions.vue";
-
 	const LinkPreview = () => import('@/components/embeds/Link.vue')
-
 	import Toggle from '@/components/Toggle.vue';
 
 	export default {
@@ -250,20 +242,6 @@
 					return 'Post'
 				} else {
 					return 'Schedule Post'
-				}
-			}
-		},
-		watch: {
-			'submission.link': {
-				handler() {
-					let url = this.submission.link
-					if (/^(spotify:|https:\/\/[a-z]+\.spotify\.com\/)/.test(url)) {
-						console.log('spotify regex matched!')
-						let id = MediaFormat().getSpotifyID(url)
-						this.embed = MediaFormat().getSpotifyUrl(id)
-					} else {
-						this.embed = null
-					}
 				}
 			}
 		},
@@ -330,22 +308,3 @@
 		}
 	};
 </script>
-
-<style scoped>
-.bell:hover *, .bell:focus *{
-	animation: bellshake .5s cubic-bezier(.36,.07,.19,.97) both;
-	backface-visibility: hidden;
-	transform-origin: center top;
-}
-@keyframes bellshake {
-	0% { transform: rotate(0); }
-	15% { transform: rotate(5deg); }
-	30% { transform: rotate(-5deg); }
-	45% { transform: rotate(4deg); }
-	60% { transform: rotate(-4deg); }
-	75% { transform: rotate(2deg); }
-	85% { transform: rotate(-2deg); }
-	92% { transform: rotate(1deg); }
-	100% { transform: rotate(0); }
-}
-</style>

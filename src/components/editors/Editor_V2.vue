@@ -79,6 +79,7 @@
 <script>
 	import { mapState } from "vuex"
 	import tippy from 'tippy.js'
+	
 	import { Editor, EditorContent, VueRenderer } from '@tiptap/vue-3'
 	import StarterKit from '@tiptap/starter-kit'
 	import Mention from '@tiptap/extension-mention'
@@ -87,6 +88,7 @@
 	import Placeholder from '@tiptap/extension-placeholder'
 	import Dropcursor from '@tiptap/extension-dropcursor'
 	import Image from '@tiptap/extension-image'
+
 	import EmotePicker from '@/components/popovers/EmotePicker.vue'
 
 	export default {

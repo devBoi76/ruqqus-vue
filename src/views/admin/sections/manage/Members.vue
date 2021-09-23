@@ -66,7 +66,7 @@
 							<button class="button gray200" v-show="!confirmation || !selected.length" :disabled="!selectedRole || !selected.length"  @click="confirmation = true">
 								Change
 							</button>
-							<button v-if="confirmation && selected.length" @click="confirm(exile)" class="button green500 flex-shrink-0">
+							<button v-if="confirmation && selected.length" @click="editRole()" class="button green500 flex-shrink-0">
 								Confirm change
 							</button>
 						</div>
@@ -180,7 +180,7 @@ export default {
 				id: 1,
 				username: 'throwaway420',
 				profile_url: 'https://i.ruqqus.com/users/throwaway420/profile-2.png',
-				roles: ['member'],
+				role: 'member',
 				date: 'Mon Jul 05 2021',
 				reputation: 1024,
 				post_count: 24,
@@ -190,7 +190,7 @@ export default {
 				id: 2,
 				username: 'bidpots',
 				profile_url: 'https://i.ruqqus.com/users/Bidpots/profile-21.png',
-				roles: ['approved','member'],
+				role: 'member',
 				date: 'Mon Jul 05 2021',
 				reputation: 2048,
 				post_count: 19,
@@ -200,7 +200,7 @@ export default {
 				id: 3,
 				username: 'Nemu',
 				profile_url: 'https://i.ruqqus.com/uid/8cq/profile-7.png',
-				roles: ['exile'],
+				role: 'exiled',
 				date: 'Mon Jul 05 2021',
 				reputation: 420,
 				post_count: 72,
@@ -210,7 +210,7 @@ export default {
 				id: 4,
 				username: 'citwrong',
 				profile_url: 'https://i.ruqqus.com/users/citwrong/profile-3.png',
-				roles: ['guildmaster','member'],
+				role: 'guildmaster',
 				date: 'Mon Jul 05 2021',
 				reputation: 4273,
 				post_count: 82,
@@ -281,16 +281,19 @@ export default {
 		}
 	},
 	methods: {
-		exile(members) {
-			console.log('exiled' + members)
-		},
-		confirm(value) {
-			if (value) {
-				this.exile(this.selected)
+		editRole() {
+			let i = 0;
+			if (this.selectedRole) {
+				for(member of this.selected) {
+					member[role] = this.selectedRole;
+					i++
+				}
+				if(i === this.selected.length - 1) {
+					this.confirmation = !this.confirmation
+					this.selectedRole = null
+					this.selected = []
+				}
 			}
-			this.confirmation = !this.confirmation
-			this.selectedRole = null
-			this.selected = []
 		}
 	}
 };
