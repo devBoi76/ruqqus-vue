@@ -174,8 +174,8 @@ export default {
 			errored: false,
 			reorder: false,
 			members: [
-			1: {
-				'id': 1,
+			abc: {
+				'id': 'abc',
 				'username': 'throwaway420',
 				'profile_url': 'https://i.ruqqus.com/users/throwaway420/profile-2.png',
 				'role': 'member',
