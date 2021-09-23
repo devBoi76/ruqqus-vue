@@ -279,20 +279,20 @@ export default {
 		}
 	},
 	methods: {
-		editRole() {
-			let i = 0;
-			if (this.selected.length && this.selectedRole) {
-				for (let id of this.selected) {
-					this.members[id].role = this.selectedRole;
-					i++
-				}
-				if (i === this.selected.length - 1) {
-					this.confirmation = !this.confirmation
-					this.selectedRole = null
-					this.selected = []
-				}
-			}
-		}
+		// editRole() {
+		// 	let i = 0;
+		// 	if (this.selected.length && this.selectedRole) {
+		// 		for (let id of this.selected) {
+		// 			this.members[id].role = this.selectedRole;
+		// 			i++
+		// 		}
+		// 		if (i === this.selected.length - 1) {
+		// 			this.confirmation = !this.confirmation
+		// 			this.selectedRole = null
+		// 			this.selected = []
+		// 		}
+		// 	}
+		// }
 	}
 };
 </script>
