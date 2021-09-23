@@ -128,10 +128,10 @@
 										Bio
 									</label>
 									<Editor @input="getEditorContent()" min-height="10rem" :limit="1000" :value="innerV.bioHtml"/>
-									<p class="text-sm text-gray-500 mt-1">
+									<a href="https://www.markdownguide.org/cheat-sheet/" target="_blank" class="text-sm text-gray-400 mt-1">
 										<i class="fab fa-markdown fa-sm pr-0.5"></i>
 										markdown supported
-									</p>
+									</a>
 								</div>
 							</div>
 						</form>
