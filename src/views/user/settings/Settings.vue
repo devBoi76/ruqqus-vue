@@ -368,10 +368,14 @@
 // Import Components
 import { defineAsyncComponent } from 'vue'
 import { mapState } from 'vuex';
+
+import isEqual from 'lodash/isEqual';
+import cloneDeep from 'lodash/cloneDeep';
+
 import Editor from "@/components/editors/Editor_V2.vue";
 import Toggle from "@/components/forms/Toggle.vue";
 const ToggleForm = defineAsyncComponent(() => import('@/components/Toggle.vue'));
-import ColorPicker from "@/components/popovers/ColorPicker.vue";
+const ColorPicker = defineAsyncComponent(() => import('@/components/popovers/ColorPicker.vue'));
 
 export default {
 	name: "UserSettingsView",
@@ -396,9 +400,14 @@ export default {
 		'innerV': {
 			handler() {
 				console.log('v obj watcher triggered')
-				this.isDifferent = (JSON.stringify(this.v) !== JSON.stringify(this.innerV))
+				this.isDifferent = !isEqual(this.v, this.innerV)
 			},
 			deep: true
+		}
+	},
+	computed: {
+		v() {
+			return this.$store.getters['persist/getAuthUser']
 		}
 	},
 	methods: {
@@ -423,10 +432,8 @@ export default {
 		}
 	},
 	created() {
-		this.v = {...this.$store.getters['persist/getAuthUser']}
-		this.innerV = {...this.v}
-		this.isDifferent = false
-		console.log(this.innerV)
+		this.innerV = cloneDeep(this.v);
+		this.isDifferent = false;
 	}
 }
 </script>
