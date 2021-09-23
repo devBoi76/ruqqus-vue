@@ -288,6 +288,8 @@ import { defineAsyncComponent } from 'vue'
 import Toggle from "@/components/forms/Toggle.vue";
 
 import isEqual from 'lodash/isEqual';
+import cloneDeep from 'lodash/cloneDeep';
+
 
 const ToggleForm = defineAsyncComponent(() => import('@/components/Toggle.vue'));
 const Editor = defineAsyncComponent(() => import('@/components/editors/Editor_V2.vue'));
@@ -350,8 +352,9 @@ export default {
 		}
 	},
 	created() {
-		this.innerSite = {...this.site}
-		this.isDifferent = false
+		//this.innerSite = {...this.site}
+		this.innerSite = cloneDeep(this.site);
+		this.isDifferent = false;
 	}
 };
 </script>
