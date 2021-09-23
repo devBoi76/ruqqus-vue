@@ -128,7 +128,7 @@
 										</div>
 									</td>
 									<td class="px-6 py-4 whitespace-no-wrap leading-5 text-gray-900">
-										<span class="px-2 inline-flex text-xs leading-5 font-medium rounded-sm" :class="role[i] || role.normal">
+										<span class="px-2 inline-flex text-xs leading-5 font-medium rounded-sm" :class="role[member.role] || role.normal">
 											{{ member.role }}
 										</span>
 									</td>
