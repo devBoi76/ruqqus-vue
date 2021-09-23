@@ -386,7 +386,6 @@ export default {
 			showPassword: false,
 			password: null,
 			isDifferent: false,
-			v: {},
 			innerV: {}
 		}
 	},
