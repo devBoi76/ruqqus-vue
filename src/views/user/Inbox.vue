@@ -36,7 +36,6 @@
 								Sorry, we're unable to fetch your notifications right now.
 							</p>
 							<button class="button outlineGray200 mt-3" @click="getNotifications()">
-								<i class="far fa-redo-alt pr-2"></i>
 								Try again
 							</button>
 						</div>
