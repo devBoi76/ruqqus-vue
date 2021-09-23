@@ -302,7 +302,6 @@ export default {
 			loading: false,
 			errored: false,
 			isDifferent: false,
-			site: {},
 			innerSite: {}
 		}
 	},
