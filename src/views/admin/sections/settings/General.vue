@@ -347,7 +347,6 @@ export default {
 		}
 	},
 	created() {
-		//this.site = {...this.$store.getters['persist/getSite']}
 		this.innerSite = {...this.site}
 		this.isDifferent = false
 	}

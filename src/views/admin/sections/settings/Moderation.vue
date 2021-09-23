@@ -9,10 +9,10 @@
 						Moderation
 					</h1>
 					<div class="flex items-center space-x-4">
-						<div v-show="changed" class="text-xs text-gray-400">
+						<div v-show="isDifferent" class="text-xs text-gray-400">
 							You have unsaved changes!
 						</div>
-						<button v-if="!loading && !errored" :disabled="!changed" class="button purple500" @click="save()">
+						<button v-if="!loading && !errored" :disabled="!isDifferent" class="button purple500" @click="save()">
 							Save
 						</button>
 					</div>
@@ -61,7 +61,7 @@
 											Restrict posting to approved users only
 										</p>
 									</div>
-									<Toggle v-model:enabled="s.canPost"/>
+									<Toggle v-model:enabled="innerSite.canPost"/>
 								</div>
 								<div class="flex flex-grow items-center justify-between p-4">
 									<div>
@@ -72,7 +72,7 @@
 											Restrict commenting to approved users only
 										</p>
 									</div>
-									<Toggle v-model:enabled="s.canComment"/>
+									<Toggle v-model:enabled="innerSite.canComment"/>
 								</div>
 								<div class="flex flex-grow items-center justify-between p-4">
 									<div>
@@ -83,7 +83,7 @@
 											Restrict voting to approved users only
 										</p>
 									</div>
-									<Toggle v-model:enabled="s.canVote"/>
+									<Toggle v-model:enabled="innerSite.canVote"/>
 								</div>
 								<div class="flex flex-grow items-center justify-between p-4">
 									<div>
@@ -94,7 +94,7 @@
 											Remove downvote buttons from all content for all members
 										</p>
 									</div>
-									<Toggle v-model:enabled="s.canDownvote"/>
+									<Toggle v-model:enabled="innerSite.canDownvote"/>
 								</div>
 							</div>
 						</div>
@@ -115,28 +115,27 @@ export default {
 	name: "UserSettingsBasicInfoView",
 	data() {
 		return {
-			changed: false,
 			loading: false,
 			errored: false,
-			s: {},
-			saved: {}
+			isDifferent: false,
+			innerSite: {}
 		}
 	},
 	components: {
 		Toggle
 	},
 	watch: {
-		// '$route.params.name': { // get guild info and posts if guild changes
-		// 	handler() {
-		// 		this.getGuildInfo()
-		// 	},
-		// 	immediate: true
-		// },
-		's': { // get guild info and posts if guild changes
+		'innerSite': { // get guild info and posts if guild changes
 			handler() {
-				this.changed = (JSON.stringify(this.s) !== JSON.stringify(this.saved))
+				console.log('site obj watcher triggered')
+				this.isDifferent = (JSON.stringify(this.site) !== JSON.stringify(this.innerSite))
 			},
 			deep: true
+		}
+	},
+	computed: {
+		site() {
+			return this.$store.getters['persist/getSite']
 		}
 	},
 	methods: {
@@ -155,13 +154,22 @@ export default {
 		// 	.finally(() => this.loading = false)
 		// },
 		save() {
-			this.changed = false;
-			this.saved = Object.assign({}, this.s);
-			this.$store.commit('site/SET_SITE', {site: this.saved});
+			this.$store.dispatch('persist/submitSiteSettings', this.innerSite)
+			.then(() => {
+				console.log("submitSiteSettings dispatch successful")
+				this.innerSite = {...this.site}
+			})
+			.catch(error => {
+				console.error(error)
+				this.errored = true
+
+			})
+			.finally(() => this.loading = false)
 		}
 	},
 	created() {
-		this.s = Object.assign({}, this.$store.getters['site/getSite'])
+		this.innerSite = {...this.site}
+		this.isDifferent = false
 	}
 };
 </script>
