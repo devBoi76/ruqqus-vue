@@ -311,7 +311,7 @@ export default {
 		'innerSite': { // get guild info and posts if guild changes
 			handler() {
 				console.log('site obj watcher triggered')
-				this.isDifferent = isEqual(one, two)
+				this.isDifferent = isEqual(this.site, this.innerSite)
 				//this.isDifferent = (JSON.stringify(this.site) !== JSON.stringify(this.innerSite))
 			},
 			deep: true
