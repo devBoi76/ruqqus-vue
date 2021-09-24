@@ -84,11 +84,13 @@
 											<i class="far fa-image fa-fw text-lg mr-2"></i>
 											Photo
 										</button>
-										<button class="button gray100 flex items-center">
+										<!-- Hidden -->
+										<button class="hidden button gray100 flex items-center">
 											<i class="far fa-poll-h fa-fw text-lg mr-2"></i>
 											Poll
 										</button>
-										<button class="button gray100 flex items-center">
+										<!-- Hidden -->
+										<button class="hidden button gray100 flex items-center">
 											<i class="far fa-waveform fa-fw text-lg mr-2"></i>
 											Audio
 										</button>
