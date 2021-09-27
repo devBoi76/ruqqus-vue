@@ -131,7 +131,7 @@
 													The artwork used to represent your community
 												</p>
 											</div>
-											<img :src="innerSite.icon" class="w-11 h-11 rounded-sm bg-gray-100 object-cover" alt="guild icon artwork"/>
+											<img :src="innerSite.iconUrl" class="w-11 h-11 rounded-sm bg-gray-100 object-cover" alt="guild icon artwork"/>
 										</div>
 									</div>
 									<div class="p-4">
@@ -144,7 +144,7 @@
 													The cover artwork displayed across your community
 												</p>
 											</div>
-											<img :src="innerSite.cover" class="w-48 h-11 rounded-sm bg-gray-100 object-cover" alt="guild cover artwork"/>
+											<img :src="innerSite.coverUrl" class="w-48 h-11 rounded-sm bg-gray-100 object-cover" alt="guild cover artwork"/>
 										</div>
 									</div>
 									<div class="p-4">
