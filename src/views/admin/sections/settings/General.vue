@@ -314,34 +314,34 @@ export default {
 			handler() {
 				console.log('site obj watcher triggered')
 				this.isDifferent = !isEqual(this.site, this.innerSite)
-				//this.isDifferent = (JSON.stringify(this.site) !== JSON.stringify(this.innerSite))
 			},
 			deep: true
 		}
 	},
 	computed: {
 		site() {
-			return this.$store.getters['persist/getSite']
+			return this.$store.getters['site/getSite']
 		}
 	},
 	methods: {
-		// getSite() {
-		// 	this.$store.dispatch('site/fetchSite', guild)
-		// 	.then(() => {
-		// 		console.log("getSite dispatch successful")
-		// 	})
-		// 	.catch(error => {
-		// 		console.error(error)
-		// 		thiinnerSite.errored = true
+		getSite() {
+			this.$store.dispatch('site/fetchSite')
+			.then(() => {
+				console.log("getSite dispatch successful")
+				this.innerSite = cloneDeep(this.site);
+			})
+			.catch(error => {
+				console.error(error)
+				this.errored = true
 
-		// 	})
-		// 	.finally(() => this.innerSite.loading = false)
-		// }
+			})
+			.finally(() => this.loading = false)
+		},
 		save() {
-			this.$store.dispatch('persist/submitSiteSettings', this.innerSite)
+			this.$store.dispatch('site/submitSiteSettings', this.innerSite)
 			.then(() => {
 				console.log("submitSiteSettings dispatch successful")
-				this.innerSite = {...this.site}
+				this.innerSite = cloneDeep(this.site);
 			})
 			.catch(error => {
 				console.error(error)
@@ -352,8 +352,8 @@ export default {
 		}
 	},
 	created() {
+		this.getSite()
 		//this.innerSite = {...this.site}
-		this.innerSite = cloneDeep(this.site);
 		this.isDifferent = false;
 	}
 };
