@@ -3,29 +3,29 @@ const namespaced = true
 import axios from 'axios'
 const state = {
 	site: {
-		domain: 'piedpiper.gg',
-		name: 'Pied Piper',
-		tagline: 'Know what has three commas in it?',
-		description: 'Know what has three commas in it?',
-		meta: {
-			title: 'Pied Piper - Middle-Out Compression',
-			description: 'Know what has three commas in it?'
+		"domain": "piedpiper.gg",
+		"name": "Pied Piper",
+		"tagline": "Know what has three commas in it?",
+		"description": "Know what has three commas in it?",
+		"meta": {
+			"title": "Pied Piper - Middle-Out Compression",
+			"description": "Know what has three commas in it?"
 		},
-		cover: 'https://i.imgur.com/AgS5BXJ.jpg',
-		icon: 'https://i.imgur.com/2Ah9CcW.gif',
-		isNsfw: false,
-		isPrivate: true,
-		hasIcon: false,
-		hasBanner: true,
-		canDownvote: true,
-		canRegister: false,
-		canPost: true,
-		canComment: true,
-		canVote: true,
-		memberCount: 503,
-		unsplash: {
-			isActive: true,
-			query: 'code'
+		"coverUrl": "https://i.imgur.com/AgS5BXJ.jpg",
+		"iconUrl": "https://i.imgur.com/2Ah9CcW.gif",
+		"isNsfw": false,
+		"isPrivate": true,
+		"hasIcon": false,
+		"hasBanner": true,
+		"canDownvote": true,
+		"canRegister": false,
+		"canPost": true,
+		"canComment": true,
+		"canVote": true,
+		"memberCount": 503,
+		"unsplash": {
+			"isActive": true,
+			"query": "code"
 		}
 	},
 	v: Object,
