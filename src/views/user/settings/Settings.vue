@@ -8,7 +8,7 @@
 					</h1>
 				</div>
 				<!-- Main Content Section -->
-				<div class="w-full space-y-8">
+				<div v-if="innerV" class="w-full space-y-8">
 					<div class="relative">
 						<div class="z-10 absolute top-4 right-4 md:top-6 md:right-6">
 							<button v-show="!editAppearance" class="button white" @click="toggleAppearance()">
@@ -299,7 +299,7 @@
 												When someone follows me
 											</p>
 										</div>
-										<Toggle v-model:enabled="innerV.hasNotifications[followers]"/>
+										<Toggle v-model:enabled="innerV.hasNotifications.followers"/>
 									</div>
 								</div>
 							</div>
@@ -314,7 +314,7 @@
 												When someone I follow posts
 											</p>
 										</div>
-										<Toggle v-model:enabled="innerV.hasNotifications[posts]"/>
+										<Toggle v-model:enabled="innerV.hasNotifications.posts"/>
 									</div>
 								</div>
 							</div>
@@ -329,7 +329,7 @@
 												When someone replies to my post or comment
 											</p>
 										</div>
-										<Toggle v-model:enabled="innerV.hasNotifications[replies]"/>
+										<Toggle v-model:enabled="innerV.hasNotifications.replies"/>
 									</div>
 								</div>
 							</div>
@@ -344,14 +344,14 @@
 												When someone mentions me by @username
 											</p>
 										</div>
-										<Toggle v-model:enabled="innerV.hasNotifications[mentions]"/>
+										<Toggle v-model:enabled="innerV.hasNotifications.mentions"/>
 									</div>
 								</div>
 							</div>
 						</form>
 					</div>
 				</div>
-				<div class="flex items-center justify-end space-x-4 px-4 sm:px-0">
+				<div v-show="innerV" class="flex items-center justify-end space-x-4 px-4 sm:px-0">
 					<div v-show="isDifferent" class="text-xs text-gray-400">
 						You have unsaved changes!
 					</div>
