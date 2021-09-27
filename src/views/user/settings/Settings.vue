@@ -33,7 +33,7 @@
 						</div>
 						<div class="absolute bottom-4 left-4 md:bottom-6 md:left-6 flex items-center">
 							<div class="relative rounded overflow-hidden w-20 h-20 flex-shrink-0">
-								<img :src="innerV.profileUrl" class="object-cover" alt="profile-picture"/>
+								<img :src="innerV.avatarUrl" class="object-cover" alt="profile-picture"/>
 								<div v-show="editAppearance" class="absolute bottom-0 flex items-center justify-center w-full h-full bg-black bg-opacity-30">
 									<button type="button" class="w-9 h-9 flex items-center justify-center text-white px-2 py-0 bg-transparent hover:bg-black hover:bg-opacity-50 rounded-sm transition duration-100 ease-in-out" tabindex="0">
 										<i class="far fa-pen fa-lg"></i>
@@ -107,7 +107,7 @@
 											</label>
 											<div class="p-3 bg-white border rounded">
 												<div class="flex items-center mb-3">
-													<img :src="innerV.profileUrl" class="w-9 h-9 rounded-sm bg-white bg-opacity-20 mr-3" alt="avatar">
+													<img :src="innerV.avatarUrl" class="w-9 h-9 rounded-sm bg-white bg-opacity-20 mr-3" alt="avatar">
 													<div class="text-xs font-semibold text-gray-900 leading-tight" :style="{ 'color': innerV.usernameColor }">
 														{{ innerV.username }}
 													</div>
@@ -299,7 +299,7 @@
 												When someone follows me
 											</p>
 										</div>
-										<Toggle v-model:enabled="innerV.hasNotifications.followers"/>
+										<Toggle v-model:enabled="innerV.hasNotifications[followers]"/>
 									</div>
 								</div>
 							</div>
@@ -314,7 +314,7 @@
 												When someone I follow posts
 											</p>
 										</div>
-										<Toggle v-model:enabled="innerV.hasNotifications.posts"/>
+										<Toggle v-model:enabled="innerV.hasNotifications[posts]"/>
 									</div>
 								</div>
 							</div>
@@ -329,7 +329,7 @@
 												When someone replies to my post or comment
 											</p>
 										</div>
-										<Toggle v-model:enabled="innerV.hasNotifications.replies"/>
+										<Toggle v-model:enabled="innerV.hasNotifications[replies]"/>
 									</div>
 								</div>
 							</div>
@@ -344,7 +344,7 @@
 												When someone mentions me by @username
 											</p>
 										</div>
-										<Toggle v-model:enabled="innerV.hasNotifications.mentions"/>
+										<Toggle v-model:enabled="innerV.hasNotifications[mentions]"/>
 									</div>
 								</div>
 							</div>
