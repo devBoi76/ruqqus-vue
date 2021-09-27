@@ -437,7 +437,7 @@ export default {
 			this.editAppearance = !this.editAppearance;
 		},
 		save() {
-			this.$store.dispatch('account/updateAccountSettings', this.innerV)
+			this.$store.dispatch('account/saveAccountSettings', this.innerV)
 			.then(() => {
 				console.log("submitUserSettings dispatch successful")
 			})

@@ -42,7 +42,7 @@ const actions = {
 			commit("SET_ACCOUNT_SETTINGS", data)
 		})
 	},
-	updateAccountSettings({ state, commit }, payload) {
+	saveAccountSettings({ state, commit }, payload) {
 		updateAccountSettings(payload.id, payload)
 		.then(response => {
 			let data = response.data
