@@ -3,7 +3,8 @@
 
 import axios from 'axios';
 
-const url = `/account/`
+//const url = `/account/`
+const url = `https://08816b9e-9bc2-436d-96b5-621552da59d0.mock.pstmn.io/api/account/`
 
 // Return all public info given account username (or id)
 export function getAccount(id){
