@@ -369,6 +369,8 @@
 import { defineAsyncComponent } from 'vue'
 import { mapState } from 'vuex';
 
+import { getAccountSettings } from '../../../api/Account.js';
+
 import isEqual from 'lodash/isEqual';
 import cloneDeep from 'lodash/cloneDeep';
 
@@ -381,6 +383,10 @@ export default {
 	name: "UserSettingsView",
 	data() {
 		return {
+			loading: false,
+			errored: false,
+			formLoading: false,
+			formErrored: false,
 			editProfile: false,
 			editAppearance: false,
 			showPassword: false,
@@ -410,17 +416,12 @@ export default {
 		}
 	},
 	methods: {
-		getEditorContent(value) {
-			this.innerV.bio = value;
-		},
-		toggleAppearance() {
-			this.editAppearance = !this.editAppearance;
-		},
-		save() {
-			this.$store.dispatch('persist/submitUserSettings', this.innerV)
-			.then(() => {
-				console.log("submitUserSettings dispatch successful")
-				this.innerV = {...this.v}
+		getSettings() {
+			let id = this.v.id
+			getAccountSettings(id)
+			.then(response => {
+				let data = response.data
+				this.innerV = cloneDeep(data);
 			})
 			.catch(error => {
 				console.error(error)
@@ -428,10 +429,29 @@ export default {
 
 			})
 			.finally(() => this.loading = false)
+		},
+		getEditorContent(value) {
+			this.innerV.bio = value;
+		},
+		toggleAppearance() {
+			this.editAppearance = !this.editAppearance;
+		},
+		save() {
+			this.$store.dispatch('account/updateAccountSettings', this.innerV)
+			.then(() => {
+				console.log("submitUserSettings dispatch successful")
+			})
+			.catch(error => {
+				console.error(error)
+				this.formErrored = true
+
+			})
+			.finally(() => this.formLoading = false)
 		}
 	},
 	created() {
-		this.innerV = cloneDeep(this.v);
+		this.getSettings();
+		//this.innerV = cloneDeep(this.v);
 		this.isDifferent = false;
 	}
 }

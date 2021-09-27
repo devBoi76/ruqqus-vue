@@ -3,28 +3,28 @@ const namespaced = true
 import { getSite } from '../../api/Site.js';
 
 const state = {
-	site: {
-		domain: 'piedpiper.gg',
-		name: 'Pied Piper',
-		meta: {
-			title: 'Pied Piper - Middle-Out Compression',
-			description: 'Know what has three commas in it?'
+	"site": {
+		"domain": "piedpiper.gg",
+		"name": "Pied Piper",
+		"meta": {
+			"title": "Pied Piper - Middle-Out Compression",
+			"description": "Know what has three commas in it?"
 		},
-		tagline: 'Know what has three commas in it?',
-		description: 'Know what has three commas in it?',
-		bannerUrl: 'https://i.imgur.com/AgS5BXJ.jpg',
-		iconUrl: 'https://i.imgur.com/2Ah9CcW.gif',
-		isNsfw: false,
-		isPrivate: true,
-		canDownvote: true,
-		canRegister: false,
-		canPost: true,
-		canComment: true,
-		canVote: true,
-		banner: {
-			image: 'https://i.imgur.com/AgS5BXJ.jpg',
-			title: 'Pied Piper',
-			subtitle: 'Know what has three commas in it?'
+		"tagline": "Know what has three commas in it?",
+		"description": "Know what has three commas in it?",
+		"bannerUrl": "https://i.imgur.com/AgS5BXJ.jpg",
+		"iconUrl": "https://i.imgur.com/2Ah9CcW.gif",
+		"isNsfw": false,
+		"isPrivate": true,
+		"canDownvote": true,
+		"canRegister": false,
+		"canPost": true,
+		"canComment": true,
+		"canVote": true,
+		"banner": {
+			"image": "https://i.imgur.com/AgS5BXJ.jpg",
+			"title": "Pied Piper",
+			"subtitle": "Know what has three commas in it?"
 		}
 	}
 }

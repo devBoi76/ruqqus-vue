@@ -83,10 +83,14 @@ const mutations = {
 	changeLoadingState(state, payload) {
 		state.loading = payload
 	},
-	SET_USER(state, payload){
+	SET_USER(state, payload) {
 		console.log("setting u : ")
 		console.log("payload: ", payload.data)
 		state.u = payload.data
+	},
+	SET_AUTH_USER(state, payload) {
+		state.v = payload
+		console.log("v data: ", payload)
 	},
 	v(state, payload){
 		state.v = payload
@@ -168,15 +172,15 @@ const actions = {
 			function(response){
 
 				if (response.status === 200) {
-					commit("v", response.data.v);
+					commit("SET_AUTH_USER", response.data.v);
 					commit("AUTHENTICATE", true);
 				}
 					// handle MFA code
 					else if (response.status === 201) {
-						//commit("v", response.data.v);
+						//commit("SET_AUTH_USER", response.data.v);
 						console.log(`form hash : ${response.data.hash}`)
 						console.log(`form time : ${response.data.time}`)
-						commit("v", {time: response.data.time,
+						commit("SET_AUTH_USER", {time: response.data.time,
 							hash: response.data.hash,
 							username: response.data.v.username});
 						commit("TOGGLE_MFA")
@@ -185,12 +189,12 @@ const actions = {
 						//return response.data.status_code
 					}
 					else{
-						commit("v", {});
+						commit("SET_AUTH_USER", {});
 						commit("AUTHENTICATE", false);
 					}
 				})
 		.catch(function() {
-			commit("v", {});
+			commit("SET_AUTH_USER", {});
 			commit("AUTHENTICATE", false);
 		})
 		commit("changeLoadingState", false);
@@ -211,7 +215,7 @@ const actions = {
 		}).then(
 		function(response) {
 			if (response.status === 200) {
-				commit("v", response.data.v);
+				commit("SET_AUTH_USER", response.data.v);
 				commit("AUTHENTICATE", true);
 				commit("TOGGLE_MFA")
 			}
@@ -225,12 +229,12 @@ const actions = {
 		.then(
 			function(response) {
 				if (response.status === 200) {
-					commit("v", {});
+					commit("SET_AUTH_USER", {});
 					commit("AUTHENTICATE", false);
 				}
 			})
 		.catch(function(){
-			commit("v", {});
+			commit("SET_AUTH_USER", {});
 			commit("AUTHENTICATE", false);
 		})
 	},
