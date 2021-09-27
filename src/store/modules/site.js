@@ -7,7 +7,7 @@ const state = {
 }
 
 const getters = {
-	getSite (state) {
+    getSite: state => {
       return state.site
     }
 }
