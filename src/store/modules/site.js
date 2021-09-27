@@ -44,7 +44,7 @@ const mutations = {
 
 const actions = {
 	fetchSite({ state, commit }) {
-		getGuild()
+		getSite()
 		.then(response => {
 			let data = response.data
 			commit("SET_SITE", data)
