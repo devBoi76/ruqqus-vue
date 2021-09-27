@@ -33,7 +33,7 @@
 						</div>
 						<div class="absolute bottom-4 left-4 md:bottom-6 md:left-6 flex items-center">
 							<div class="relative rounded overflow-hidden w-20 h-20 flex-shrink-0">
-								<img :src="innerV.avatarUrl" class="object-cover" alt="profile-picture"/>
+								<img :src="innerV.avatarUrl" class="w-full h-full object-cover" alt="profile-picture"/>
 								<div v-show="editAppearance" class="absolute bottom-0 flex items-center justify-center w-full h-full bg-black bg-opacity-30">
 									<button type="button" class="w-9 h-9 flex items-center justify-center text-white px-2 py-0 bg-transparent hover:bg-black hover:bg-opacity-50 rounded-sm transition duration-100 ease-in-out" tabindex="0">
 										<i class="far fa-pen fa-lg"></i>
