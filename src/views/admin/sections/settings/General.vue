@@ -353,7 +353,7 @@ export default {
 			.finally(() => this.loading = false)
 		}
 	},
-	created() {
+	mounted() {
 		this.getSite()
 		//this.innerSite = {...this.site}
 		this.isDifferent = false;
