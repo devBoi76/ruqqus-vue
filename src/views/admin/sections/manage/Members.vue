@@ -1,5 +1,5 @@
 <template>
-	<div class="flex flex-col flex-grow spacey-y-4 overflow-y-auto">
+	<div class="flex flex-col flex-grow space-y-4 overflow-y-auto">
 
 		<!-- Header content section -->
 		<div class="grid grid-cols-12 sticky top-0 z-10">
