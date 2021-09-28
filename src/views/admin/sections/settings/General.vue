@@ -317,18 +317,11 @@ export default {
 			deep: true
 		}
 	},
-	computed: {
-		site() {
-			return this.$store.getters['site/getSite'];
-		}
-	},
 	methods: {
 		getSite() {
 			this.$store.dispatch('site/fetchSite')
 			.then(() => {
-				console.log("getSite dispatch successful")
-				this.innerSite = cloneDeep(this.site);
-				console.log(this.innerSite);
+				this.innerSite = cloneDeep(this.$store.getters['site/getSite']);
 			})
 			.catch(error => {
 				console.error(error)
