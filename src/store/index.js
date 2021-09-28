@@ -10,13 +10,13 @@ import * as Cookies from 'js-cookie'
 import account from './modules/account'
 import base from './modules/base'
 import comments from './modules/comments'
-import create from "./modules/create"
-import items from "./modules/items"
-import notifications from "./modules/notifications"
-import onboarding from "./modules/onboarding"
-import persist from "./modules/persist"
-import site from "./modules/site"
-import toasts from "./modules/toasts"
+import create from './modules/create'
+import items from './modules/items'
+import notifications from './modules/notifications'
+import onboarding from './modules/onboarding'
+import persist from './modules/persist'
+import site from './modules/site'
+import toasts from './modules/toasts'
 
 //import * as mods from 'modules'
 
@@ -33,7 +33,7 @@ import toasts from "./modules/toasts"
 //console.log(files, modules);
 
 const persistedState = createPersistedState({
-  paths: ['persist','account','site'],
+  paths: ['site','persist','account'],
   getState: (key) => Cookies.getJSON(key),
   //set secure to true for ssl
   setState: (key, state) => Cookies.set(key, state, {
