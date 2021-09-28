@@ -286,7 +286,7 @@ export default {
 					this.members[id].role = this.selectedRole;
 					i++
 				}
-				if (i === this.selected.length - 1) {
+				if (i === this.selected.length) {
 					this.confirmation = !this.confirmation
 					this.selectedRole = null
 					this.selected = []
