@@ -68,7 +68,7 @@
 									{{ role.text }}
 								</option>
 							</select>
-							<button class="button gray200" v-show="!confirmation || !selected.length" :disabled="!selectedRole || !selected.length"  @click="confirmation = true">
+							<button class="button gray200" v-show="!confirmation || !selected.length" :disabled="!selectedRole >= 0 || !selected.length"  @click="confirmation = true">
 								Change
 							</button>
 							<button v-if="confirmation && selected.length" @click="editRole()" class="button green500 flex-shrink-0">
@@ -230,16 +230,16 @@ export default {
 			{ id: 'guildmaster', text: 'Guild Master' }
 			],
 			roles: [
-			{ id: 1, text: 'exile' },
-			{ id: 2, text: 'member' },
-			{ id: 3, text: 'approved' },
-			{ id: 4, text: 'guildmaster' }
+			{ id: 0, text: 'exile' },
+			{ id: 1, text: 'member' },
+			{ id: 2, text: 'approved' },
+			{ id: 3, text: 'guildmaster' }
 			],
 			roleStyle: {
-				1: 'bg-red-100 text-red-800',
-				2: 'bg-gray-100 text-gray-800',
-				3: 'bg-green-100 text-green-800',
-				4: 'bg-yellow-100 text-yellow-800',
+				0: 'bg-red-100 text-red-800',
+				1: 'bg-gray-100 text-gray-800',
+				2: 'bg-green-100 text-green-800',
+				3: 'bg-yellow-100 text-yellow-800',
 				normal: 'bg-gray-100 text-gray-800'
 			},
 			confirmation: false
