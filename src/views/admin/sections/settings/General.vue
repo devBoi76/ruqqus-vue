@@ -320,12 +320,12 @@ export default {
 	},
 	computed: {
 		site() {
-			return this.$store.getters['persist/getSite'];
+			return this.$store.getters['site/getSite'];
 		}
 	},
 	methods: {
 		getSite() {
-			this.$store.dispatch('persist/fetchSite')
+			this.$store.dispatch('site/fetchSite')
 			.then(() => {
 				console.log("getSite dispatch successful")
 				this.innerSite = cloneDeep(this.site);

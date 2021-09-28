@@ -32,7 +32,7 @@ import toasts from "./modules/toasts"
 //console.log(files, modules);
 
 const persistedState = createPersistedState({
-  paths: ['persist'],
+  paths: ['persist','account','site'],
   getState: (key) => Cookies.getJSON(key),
   //set secure to true for ssl
   setState: (key, state) => Cookies.set(key, state, {
