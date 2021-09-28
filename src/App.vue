@@ -102,7 +102,7 @@ export default {
     }
   },
   created() {
-    console.log(this.$store.site.site)
+    console.log(this.$store.persist.darkMode)
   }
 };
 
