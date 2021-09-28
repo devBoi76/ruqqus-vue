@@ -187,7 +187,7 @@ export default {
 			{
 				'id': '1',
 				'username': 'bidpots',
-				'profile_url': 'https://i.ruqqus.com/users/Bidpots/profile-21.png',
+				'profile_url': 'https://i.ruqqus.com/uid/5pr/profile-22.png',
 				'role': 'member',
 				'date': 'Mon Jul 05 2021',
 				'reputation': 2048,
@@ -196,10 +196,10 @@ export default {
 			},
 			{
 				'id': '2',
-				'username': 'Nemu',
-				'profile_url': 'https://i.ruqqus.com/uid/8cq/profile-7.png',
+				'username': 'IsaiahIsacc765',
+				'profile_url': 'https://i.ruqqus.com/uid/aof/profile-13.png',
 				'role': 'exiled',
-				'date': 'Mon Jul 05 2021',
+				'date': 'Mon Jun 28 2021',
 				'reputation': 420,
 				'post_count': 72,
 				'comment_count': 240
@@ -207,7 +207,7 @@ export default {
 			{
 				'id': '3',
 				'username': 'citwrong',
-				'profile_url': 'https://i.ruqqus.com/users/citwrong/profile-3.png',
+				'profile_url': 'https://i.ruqqus.com/uid/1ay3/profile-4.png',
 				'role': 'guildmaster',
 				'date': 'Mon Jul 05 2021',
 				'reputation': 4273,
