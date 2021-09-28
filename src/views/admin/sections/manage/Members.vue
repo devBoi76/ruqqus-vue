@@ -71,13 +71,13 @@
 							</button>
 						</div>
 					</div>
-					<t-pagination
+					<!-- <t-pagination
 					:total-items="members.length"
 					:per-page="25"
 					:limit="5"
 					:value="1"
 					class="ml-auto"
-					/>
+					/> -->
 				</div>
 			</div>
 
@@ -128,7 +128,7 @@
 										</div>
 									</td>
 									<td class="px-6 py-4 whitespace-no-wrap leading-5 text-gray-900">
-										<span class="px-2 inline-flex text-xs leading-5 font-medium rounded-sm" :class="role[member.role] || role.normal">
+										<span class="px-2 inline-flex text-xs leading-5 font-medium rounded-sm" :class="roleStyle[member.role] || roleStyle.normal">
 											{{ roles[member.role].text }}
 										</span>
 									</td>
