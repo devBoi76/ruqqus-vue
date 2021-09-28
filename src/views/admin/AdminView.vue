@@ -37,7 +37,7 @@
 
 		<!-- Main content section -->
 		<keep-alive :max="10">
-			<router-view></router-view>
+			<router-view :key="$route.fullPath"></router-view>
 		</keep-alive>
 
 	</div>
