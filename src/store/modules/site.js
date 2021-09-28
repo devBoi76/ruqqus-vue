@@ -21,7 +21,6 @@ const mutations = {
 
 const actions = {
 	fetchSite({ state, commit }) {
-		console.log('fetchSite action triggered')
 		getSite()
 		.then(response => {
 			let data = response.data
