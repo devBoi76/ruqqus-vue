@@ -27,7 +27,7 @@
 		>
 		<div v-if="open && searchHistory.length">
 			<!-- Don't forget to add static to your PopoverPanel! -->
-			<PopoverPanel static class="absolute right-0 w-96 z-10 mt-2 bg-white border rounded shadow-lg">
+			<PopoverPanel v-slot="{ close }" class="absolute right-0 w-96 z-10 mt-2 bg-white border rounded shadow-lg">
 				<div class="divide-y">
 					<div class="flex items-center px-4 py-3">
 						<div class="uppercase tracking-wide font-semibold leading-none text-2xs text-gray-900">
