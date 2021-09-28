@@ -7,6 +7,7 @@ import createPersistedState from 'vuex-persistedstate'
 import * as Cookies from 'js-cookie'
 
 // hard coded paths, replace this with glob importing
+import account from './modules/account'
 import base from './modules/base'
 import comments from './modules/comments'
 import create from "./modules/create"
@@ -52,6 +53,7 @@ const vuexLocalStorage = new VuexPersist({
 
 export const store = createStore({
   modules: {
+    account: account,
     base: base,
     comments: comments,
     create: create,
