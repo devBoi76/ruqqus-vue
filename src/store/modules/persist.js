@@ -1,34 +1,12 @@
 const namespaced = true
 
 import axios from 'axios'
+
+import { getSite } from '../../api/Site.js';
+
 const state = {
-	site: {
-		"domain": "piedpiper.gg",
-		"name": "Pied Piper",
-		"tagline": "Know what has three commas in it?",
-		"description": "Know what has three commas in it?",
-		"meta": {
-			"title": "Pied Piper - Middle-Out Compression",
-			"description": "Know what has three commas in it?"
-		},
-		"coverUrl": "https://i.imgur.com/AgS5BXJ.jpg",
-		"iconUrl": "https://i.imgur.com/2Ah9CcW.gif",
-		"isNsfw": false,
-		"isPrivate": true,
-		"hasIcon": false,
-		"hasBanner": true,
-		"canDownvote": true,
-		"canRegister": false,
-		"canPost": true,
-		"canComment": true,
-		"canVote": true,
-		"memberCount": 503,
-		"unsplash": {
-			"isActive": true,
-			"query": "code"
-		}
-	},
-	v: Object,
+	site: {},
+	v: {},
 	v2: {
 		'username': 'steve',
 		'usernameColor': '#00FFFF',
@@ -69,7 +47,7 @@ const getters = {
 		return state.site
 	},
 	getAuthUser(state) {
-		return state.v2
+		return state.v
 	}
 }
 
@@ -124,6 +102,14 @@ const mutations = {
 	}
 }
 const actions = {
+	fetchSite({ state, commit }) {
+		getSite()
+		.then(response => {
+			let data = response.data
+			commit("SET_SITE", data)
+			document.documentElement.style.setProperty('--color-primary', data.rgb)
+		})
+	},
 	login({ commit, dispatch }){
 		commit('changeLoadingState', true)
 		commit('authenticate', true)
