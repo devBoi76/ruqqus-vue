@@ -230,13 +230,13 @@ export default {
 			{ id: 'guildmaster', text: 'Guild Master' }
 			],
 			roles: [
-			{ id: -1, text: 'exile' },
+			{ id: 0, text: 'exile' },
 			{ id: 1, text: 'member' },
 			{ id: 2, text: 'approved' },
 			{ id: 3, text: 'guildmaster' }
 			],
 			roleStyle: {
-				-1: 'bg-red-100 text-red-800',
+				0: 'bg-red-100 text-red-800',
 				1: 'bg-gray-100 text-gray-800',
 				2: 'bg-green-100 text-green-800',
 				3: 'bg-yellow-100 text-yellow-800',
