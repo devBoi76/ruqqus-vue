@@ -68,7 +68,7 @@
 									{{ role.text }}
 								</option>
 							</select>
-							<button class="button gray200" v-show="!confirmation || !selected.length" :disabled="!(selectedRole >= 0) || !selected.length"  @click="confirmation = true">
+							<button class="button gray200" v-show="!confirmation || !selected.length" :disabled="selectedRole !== null || !selected.length"  @click="confirmation = true">
 								Change
 							</button>
 							<button v-if="confirmation && selected.length" @click="editRole()" class="button green500 flex-shrink-0">
