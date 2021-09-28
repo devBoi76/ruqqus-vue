@@ -198,7 +198,7 @@ export default {
 				'id': '2',
 				'username': 'IsaiahIsacc765',
 				'profile_url': 'https://i.ruqqus.com/uid/aof/profile-13.png',
-				'role': 'exiled',
+				'role': 'exile',
 				'date': 'Mon Jun 28 2021',
 				'reputation': 420,
 				'post_count': 72,
