@@ -178,7 +178,7 @@ export default {
 				'id': '0',
 				'username': 'throwaway420',
 				'profile_url': 'https://i.ruqqus.com/users/throwaway420/profile-2.png',
-				'role': 'member',
+				'role': 1,
 				'date': 'Mon Jul 05 2021',
 				'reputation': 1024,
 				'post_count': 24,
@@ -188,7 +188,7 @@ export default {
 				'id': '1',
 				'username': 'bidpots',
 				'profile_url': 'https://i.ruqqus.com/uid/5pr/profile-22.png',
-				'role': 'member',
+				'role': 2,
 				'date': 'Mon Jul 05 2021',
 				'reputation': 2048,
 				'post_count': 19,
@@ -198,7 +198,7 @@ export default {
 				'id': '2',
 				'username': 'IsaiahIsacc765',
 				'profile_url': 'https://i.ruqqus.com/uid/aof/profile-13.png',
-				'role': 'exile',
+				'role': 0,
 				'date': 'Mon Jun 28 2021',
 				'reputation': 420,
 				'post_count': 72,
@@ -208,7 +208,7 @@ export default {
 				'id': '3',
 				'username': 'citwrong',
 				'profile_url': 'https://i.ruqqus.com/uid/1ay3/profile-4.png',
-				'role': 'guildmaster',
+				'role': 3,
 				'date': 'Mon Jul 05 2021',
 				'reputation': 4273,
 				'post_count': 82,
@@ -225,10 +225,10 @@ export default {
 			{ id: 'guildmaster', text: 'Guild Master' }
 			],
 			roles: [
-			{ id: 'member', text: 'Member' },
-			{ id: 'approved', text: 'Approved' },
-			{ id: 'exile', text: 'Exile' },
-			{ id: 'guildmaster', text: 'Guild Master' }
+			{ id: 0, text: 'Exile' },
+			{ id: 1, text: 'Member' },
+			{ id: 2, text: 'Approved' },
+			{ id: 3, text: 'Guild Master' }
 			],
 			role: {
 				'member': 'bg-gray-100 text-gray-800',
