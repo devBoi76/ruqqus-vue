@@ -108,7 +108,7 @@
 		computed: {
 			...mapState("persist", ["mfa"]),
 			site() {
-				return this.$store.getters['persist/getSite'];
+				return this.$store.getters['site/getSite'];
 			}
 		},
 		methods: {

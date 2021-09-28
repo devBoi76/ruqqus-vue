@@ -189,7 +189,7 @@
 		computed: {
 			...mapState("persist", ["v", "darkMode"]),
 			site() {
-				return this.$store.getters['persist/getSite'];
+				return this.$store.getters['site/getSite'];
 			},
 			loginOrRegister() {
 				return this.$route.name == 'LoginView' || this.$route.name == 'RegisterView'
