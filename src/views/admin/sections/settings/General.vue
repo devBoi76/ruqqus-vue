@@ -74,7 +74,7 @@
 														<label class="label">
 															Community name
 														</label>
-														<input class="form-input light" v-model="innerSite.name" :placeholder="$route.params.name" type="text"/>
+														<input class="form-input light" v-model="site.name" :placeholder="$route.params.name" type="text"/>
 														<p class="text-sm text-gray-500 mt-1">
 															This does not affect your community web address
 														</p>
