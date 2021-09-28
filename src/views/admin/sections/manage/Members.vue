@@ -15,6 +15,7 @@
 									<i class="far fa-search fa-fw fa-sm"></i>
 								</button>
 							</div>
+							{{ selectedRole }} {{ selected.length }}
 							<input required type="text" class="form-input light pl-9" v-model="searchTerm" placeholder="Search members"/>
 							<div v-show="searchTerm" class="absolute right-3 top-[6px]">
 								<button class="text-gray-400 hover:text-gray-500" @click="searchTerm = ''">
