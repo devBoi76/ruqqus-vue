@@ -100,9 +100,6 @@ export default {
 
       console.log('on paste', event.clipboardData.getData('text/plain'))
     }
-  },
-  created() {
-    this.$store.dispatch('site/fetchSite')
   }
 };
 
