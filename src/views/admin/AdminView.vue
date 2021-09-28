@@ -7,7 +7,7 @@
 					<!-- Define sidebar bg color here so tailwidn doesn't purge the class during prod build -->
 					<span class="hidden bg-purple-500"/>
 					<!-- Loading skeleton elements -->
-					<div v-show="!v" class="flex flex-grow animate-pulse">
+					<div v-show="!site" class="flex flex-grow animate-pulse">
 						<div class="w-10 h-10 rounded-sm bg-white bg-opacity-20 dark:bg-gray-800"></div>
 						<div class="flex flex-col justify-between flex-grow pl-2">
 							<div class="w-3/4 h-3 bg-white bg-opacity-20 rounded-sm"></div>
