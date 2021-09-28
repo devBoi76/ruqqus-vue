@@ -57,7 +57,7 @@
 				<div class="flex items-center">
 					<div class="flex space-x-4">
 						<select class="form-select light capitalize" v-model="sort" :options="routes" >
-							<option v-for="route in routes" :value="route.id">{{ route.text }}</option>
+							<option v-for="route in routes" :value="route.id" class="capitalize">{{ route.text }}</option>
 						</select>
 						<div class="flex flex-shrink-0 space-x-2">
 							<select class="form-select light" placeholder="Change role" :disabled="!selected.length" v-model="selectedRole">
