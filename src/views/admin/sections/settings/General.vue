@@ -305,6 +305,7 @@ export default {
 			loading: false,
 			errored: false,
 			isDifferent: false,
+			site: this.$store.getters['site/getSite'],
 			innerSite: {}
 		}
 	},
@@ -321,8 +322,7 @@ export default {
 		getSite() {
 			this.$store.dispatch('site/fetchSite')
 			.then(() => {
-				let data = this.$store.getters['site/getSite'];
-				this.innerSite = cloneDeep(data);
+				this.innerSite = cloneDeep(this.site);
 			})
 			.catch(error => {
 				console.error(error)
