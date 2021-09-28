@@ -329,6 +329,7 @@ export default {
 			.then(() => {
 				console.log("getSite dispatch successful")
 				this.innerSite = cloneDeep(this.site);
+				console.log(this.innerSite);
 			})
 			.catch(error => {
 				console.error(error)
@@ -340,8 +341,9 @@ export default {
 		save() {
 			this.$store.dispatch('site/submitSiteSettings', this.innerSite)
 			.then(() => {
-				console.log("submitSiteSettings dispatch successful")
+				console.log("submitSiteSettings dispatch successful");
 				this.innerSite = cloneDeep(this.site);
+				console.log(this.innerSite);
 			})
 			.catch(error => {
 				console.error(error)
