@@ -46,7 +46,7 @@ const actions = {
 		updateAccountSettings(payload.id, payload)
 		.then(response => {
 			let data = response.data
-			commit("persist/SET_AUTH_USER", data, { root: true }
+			commit("persist/SET_AUTH_USER", data, { root: true })
 			dispatch('toasts/addNotification', {
 				type: 'success',
 				header: 'Settings saved',
