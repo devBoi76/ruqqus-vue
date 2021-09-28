@@ -286,7 +286,7 @@ export default {
 	methods: {
 		editRole() {
 			let i = 0;
-			if (this.selected.length && this.selectedRole) {
+			if (this.selected.length && this.selectedRole !== null) {
 				for (let id of this.selected) {
 					this.members[id].role = this.selectedRole;
 					i++
