@@ -16,7 +16,7 @@
 					</div>
 					<!-- Show this when guild data has loaded -->
 					<div v-if="site" class="flex items-center">
-						<img :src="site.icon" class="w-10 h-10 rounded-sm bg-white bg-opacity-20" alt="Community icon"/>
+						<img :src="site.iconUrl" class="w-10 h-10 rounded-sm bg-white bg-opacity-20" alt="Community icon"/>
 						<div class="pl-3">
 							<div class="text-gray-900 font-semibold">
 								{{ site.name }}
