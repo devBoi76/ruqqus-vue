@@ -53,7 +53,7 @@
 			</div>
 
 			<!-- Tools -->
-			<div v-if="!loading && !errored" class="col-span-full px-4 md:px-8 z-10">
+			<div v-if="!loading && !errored" class="col-span-full px-4 md:px-8">
 				<div class="flex items-center">
 					<div class="flex space-x-4">
 						<select class="form-select light capitalize" v-model="sort" :options="routes" >
