@@ -139,7 +139,7 @@ export default {
 		...mapState("persist", ["is_authenticated", "v", "isCard"]),
 		...mapState("items", ["posts"]),
 		site() {
-			return this.$store.getters['persist/getSite'];
+			return this.$store.getters['site/getSite'];
 		},
 		feedIcon() {
 			if (this.$route.name === 'HomeView') {
