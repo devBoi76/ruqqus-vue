@@ -320,7 +320,7 @@ export default {
 	},
 	computed: {
 		site() {
-			return this.$store.getters['persist/getSite']
+			return this.$store.getters['persist/getSite'];
 		}
 	},
 	methods: {
