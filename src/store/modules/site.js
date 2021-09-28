@@ -25,8 +25,7 @@ const actions = {
 		.then(response => {
 			let data = response.data
 			commit("SET_SITE", data)
-			console.log(state.site)
-			document.documentElement.style.setProperty('--color-primary', data.rgb)
+			//document.documentElement.style.setProperty('--color-primary', data.rgb)
 		})
 	}
 }
