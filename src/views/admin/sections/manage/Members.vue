@@ -175,7 +175,7 @@ export default {
 			reorder: false,
 			members: [
 			{
-				'id': 1,
+				'id': '0',
 				'username': 'throwaway420',
 				'profile_url': 'https://i.ruqqus.com/users/throwaway420/profile-2.png',
 				'role': 'member',
@@ -185,7 +185,7 @@ export default {
 				'comment_count': 240
 			},
 			{
-				'id': '2',
+				'id': '1',
 				'username': 'bidpots',
 				'profile_url': 'https://i.ruqqus.com/users/Bidpots/profile-21.png',
 				'role': 'member',
@@ -195,7 +195,7 @@ export default {
 				'comment_count': 290
 			},
 			{
-				'id': '3',
+				'id': '2',
 				'username': 'Nemu',
 				'profile_url': 'https://i.ruqqus.com/uid/8cq/profile-7.png',
 				'role': 'exiled',
@@ -205,7 +205,7 @@ export default {
 				'comment_count': 240
 			},
 			{
-				'id': '4',
+				'id': '3',
 				'username': 'citwrong',
 				'profile_url': 'https://i.ruqqus.com/users/citwrong/profile-3.png',
 				'role': 'guildmaster',
