@@ -3,13 +3,13 @@ const namespaced = true
 import { getAccount, getAccountSettings, updateAccountSettings } from '../../api/Account.js';
 
 const state = {
-	"account": {},
+	"v": {},
 	"settings": {}
 }
 
 const getters = {
 	getAccount (state) {
-      return state.account
+      return state.v
     },
     getAccountSettings (state) {
     	return state.settings
@@ -19,7 +19,7 @@ const getters = {
 const mutations = {
 	SET_ACCOUNT: (state, account) => {
 		console.log(account)
-		state.account = Object.assign({}, account)
+		state.v = Object.assign({}, account)
 	},
 	SET_ACCOUNT_SETTINGS: (state, settings) => {
 		console.log(settings)
