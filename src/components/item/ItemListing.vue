@@ -1,11 +1,11 @@
 <template>
-	<div class="mb-2 md:mb-4 last:mb-0" :class="pinned ? 'hidden' : 'flex'">
+	<div class="mb-2 md:mb-4 last:mb-0" :class="hidePinned ? 'hidden' : 'flex'">
 		<!-- Item Actions -->
 		<ItemActions avatar stickyPos :author="item.author" :score="item.score" :id="item.id"/>
 		<div class="relative flex w-full bg-white dark:bg-gray-800 border-t border-b border-gray-100 dark:border-transparent sm:border sm:rounded-sm dark:text-gray-100">
 			<!-- Post Details -->
 			<div class="flex flex-col flex-grow">
-				<div class="flex flex-shrink-0 items-center justify-between p-2.5 border-b dark:border-gray-700 dark:border-opacity-70" :class="{ 'border-green-400':pinned }">
+				<div class="flex flex-shrink-0 items-center justify-between p-2.5 border-b dark:border-gray-700 dark:border-opacity-70" :class="{ 'border-green-400':item.isStickied }">
 					<div class="flex items-center">
 						<!-- Author Avatar -->
 						<router-link :to="'/'+item.author.username" class="block md:hidden">
@@ -262,11 +262,8 @@ export default {
 		itemVoteActionStatus() {
 			return this.$store.getters['items/getItemVoteActionStatus'](this.item.id); // get vote status from state
 		},
-		pinned() {
-			return (this.item.isStickied && this.$route.meta.guild)
-		},
 		hidePinned() {
-			return (this.item.isStickied && this.$route.meta.guild && this.$route.query.sort !== 'hot')
+			return (this.item.isStickied && this.$route.query.sort !== 'hot')
 		},
 		author() {
 			return this.v && this.v.username === this.item.author.username

@@ -3,9 +3,11 @@
 
 import axios from 'axios';
 
-// Return a posts of a feed. Requires a type (all, hot, etc). Optioanl parameters for sort, pagination, etc
+const url = 'https://ed938631-cc32-4bb1-805e-ae9a7f5b4bca.mock.pstmn.io/api/feed/'
+
+// Return a posts of a feed. Requires a type (all, hot, etc). Optional parameters for sort, pagination, etc
 export function getFeed(type, params) {
-	return axios.get(`/feed/${type}`, {
+	return axios.get(url+type, {
 		params: params
 	});
 }
