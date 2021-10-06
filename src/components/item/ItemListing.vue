@@ -10,7 +10,7 @@
 						<!-- Author Avatar -->
 						<router-link :to="'/'+item.author.username" class="block md:hidden">
 							<img
-							:src="item.author.profile_url"
+							:src="item.author.avatarUrl"
 							alt="avatar"
 							class="w-9 h-9 md:w-8 md:h-8 object-cover mr-2 rounded-sm bg-gray-100 dark:bg-gray-700"
 							/>
@@ -22,12 +22,12 @@
 							</router-link>
 							<div class="flex items-center space-x-2 text-xs mt-0.5 sm:mt-0 sm:text-sm text-gray-500 dark:text-gray-400">
 								<!-- Timestamp -->
-								<span>{{ getFormat(item.created_utc) }}</span>
+								<span>{{ getFormat(item.createdUtc) }}</span>
 								<!-- Edited Timestamp -->
-								<span v-if="item.edited_utc != 0">
+								<span v-if="item.editedUtc != 0">
 									<span class="font-black text-gray-400 dark:text-gray-500">·</span>
 									<span class="italic">
-										Edited {{ getFormat(item.edited_utc) }}
+										Edited {{ getFormat(item.editedUtc) }}
 									</span>
 								</span>
 								<!-- Community Name -->
@@ -40,13 +40,13 @@
 							</div>
 						</div>
 					</div>
-					<!-- Post Type Icon -->
-					<a v-if="item.url && !item.is_image && !pinned" :href="item.url" target="_blank" class="block">
+					<!-- External Link Icon -->
+					<a v-if="item.url" :href="item.url" target="_blank" class="block">
 						<i class="far fa-external-link text-gray-400"></i>
 					</a>
-					<!-- Pinned Icon -->
+					<!-- Thumbtack, Image, or Text Icon -->
 					<div v-else>
-						<i :class="pinned ? 'fas fa-thumbtack text-green-500' : postIcon"></i>
+						<i :class="item.isStickied ? 'fas fa-thumbtack text-green-500' : postIcon[item.type]"></i>
 					</div>
 				</div>
 				<!-- Embed -->
@@ -235,7 +235,12 @@ export default {
 		return {
 			expanded: false,
 			isValid,
-			formatDistanceToNowStrict
+			formatDistanceToNowStrict,
+			postIcon: {
+				'image': 'far fa-camera-alt text-gray-400',
+				'text': 'far fa-text text-gray-400',
+				'link': 'far fa-external-link text-gray-400'
+			}
 		};
 	},
 	watch: {
@@ -264,17 +269,11 @@ export default {
 		itemVoteActionStatus() {
 			return this.$store.getters['items/getItemVoteActionStatus'](this.item.id); // get vote status from state
 		},
-		textPost() {
-			return this.item.body_html !== '' && !this.item.is_image && !this.item.url
-		},
-		postIcon() {
-			return this.item.url ? 'far fa-camera-alt text-gray-400' : 'far fa-text text-gray-400'
-		},
 		pinned() {
-			return (this.item.is_pinned && this.$route.meta.guild)
+			return (this.item.isStickied && this.$route.meta.guild)
 		},
 		hidePinned() {
-			return (this.item.is_pinned && this.$route.meta.guild && this.$route.query.sort !== 'hot')
+			return (this.item.isStickied && this.$route.meta.guild && this.$route.query.sort !== 'hot')
 		},
 		author() {
 			return this.v && this.v.username === this.item.author.username

@@ -12,7 +12,7 @@
 						<!-- Author Avatar -->
 						<router-link :to="'/'+item.author.username">
 							<img
-							:src="item.author.profile_url"
+							:src="item.author.avatarUrl"
 							alt="avatar"
 							class="w-9 h-9 md:w-8 md:h-8 object-cover mr-2 rounded-sm bg-gray-100 dark:bg-gray-700"
 							/>
@@ -24,12 +24,12 @@
 							</router-link>
 							<div class="flex items-center space-x-2 text-xs mt-0.5 sm:mt-0 sm:text-sm text-gray-500 dark:text-gray-400">
 								<!-- Timestamp -->
-								<span>{{ getFormat(item.created_utc) }}</span>
+								<span>{{ getFormat(item.createdUtc) }}</span>
 								<!-- Edited Timestamp -->
-								<span v-if="item.edited_utc != 0">
+								<span v-if="item.editedUtc != 0">
 									<span class="font-black text-gray-400 dark:text-gray-500">·</span>
 									<span class="italic">
-										Edited {{ getFormat(item.edited_utc) }}
+										Edited {{ getFormat(item.editedUtc) }}
 									</span>
 								</span>
 							</div>
@@ -296,7 +296,7 @@ export default {
 			}
 		},
 		pinned() {
-			return (this.item.is_pinned && (this.$route.name === 'guild-post-view' || this.$route.name === 'guild-item-view'))
+			return (this.item.isStickied && (this.$route.name === 'guild-post-view' || this.$route.name === 'guild-item-view'))
 		},
 		postIcon() {
 			if (!this.item.url) {

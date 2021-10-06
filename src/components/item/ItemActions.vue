@@ -6,7 +6,7 @@
       <img
       v-if="avatar"
       class="w-16 h-16 object-cover rounded-sm bg-white dark:bg-gray-700"
-      :src="author.profile_url"
+      :src="author.avatarUrl"
       />
     </router-link>
 
