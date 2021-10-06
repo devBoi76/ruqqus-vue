@@ -30,13 +30,6 @@
 										Edited {{ getFormat(item.editedUtc) }}
 									</span>
 								</span>
-								<!-- Community Name -->
-								<!-- <span v-show="$route.meta.guild">
-									<span class="font-black text-gray-400 dark:text-gray-500">·</span>
-									<router-link :to="`/+${item.guild_name}`">
-										+{{ item.guild_name }}
-									</router-link>
-								</span> -->
 							</div>
 						</div>
 					</div>
@@ -50,17 +43,17 @@
 					</div>
 				</div>
 				<!-- Embed -->
-				<div class="px-2.5 mt-2.5" v-if="item.url && !item.is_image">
+				<div class="px-2.5 mt-2.5" v-if="item.url && !item.type === 'image'">
 					<EmbedLink
 					:domain="item.domain"
 					:title="item.meta_title"
-					:thumbnail="item.thumb_url"
+					:thumbnail="item.thumbUrl"
 					:url="item.url"
 					:preview="item.meta_description"
 					/>
 				</div>
 				<!-- Image -->
-				<router-link v-if="item.is_image" :to="item.permalink" class="flex justify-center md:mt-2.5 md:px-2.5">
+				<router-link v-if="item.type === 'image'" :to="item.permalink" class="flex justify-center md:mt-2.5 md:px-2.5">
 					<img
 					:src="item.url"
 					alt="Post image"
@@ -76,11 +69,11 @@
 						</router-link>
 					</h5>
 					<!-- Body -->
-					<div v-if="textPost" class="relative overflow-hidden" :class="{'max-h-56 mask-overlay':!expanded}">
-						<div class="text-gray-900 dark:text-gray-200 break-words" v-html="item.body_html"></div>
+					<div v-if="item.bodyHtml" class="relative overflow-hidden" :class="{'max-h-56 mask-overlay':!expanded}">
+						<div class="text-gray-900 dark:text-gray-200 break-words" v-html="item.bodyHtml"></div>
 					</div>
 					<!-- Body expand button, mobile only -->
-					<div v-if="textPost" class="relative flex sm:hidden justify-center -mt-2">
+					<div v-if="item.bodyHtml" class="relative flex sm:hidden justify-center -mt-2">
 						<button class="text-sm text-gray-600 dark:text-gray-400 font-bold px-4 py-2" @click="expanded = !expanded">
 							<i class="far fa-lg" :class="expanded ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
 						</button>
@@ -89,7 +82,7 @@
 					<div class="flex items-center mt-3">
 						<router-link class="flex items-center -space-x-4" :to="item.permalink">
 							<!-- Avatar Group -->
-							<img
+							<!-- <img
 							v-for="participant in item.participants"
 							v-bind:key="participant.id"
 							:src="participant.avatar"
@@ -98,12 +91,12 @@
 							class="w-8 h-8 border border-gray-500 border-2"
 							v-b-tooltip.hover.bottom="participant.username"
 							:id="`popover-user-${participant.username}`"
-							/>
+							/> -->
 						</router-link>
 						<div class="hidden md:block ml-2">
 							<!-- Replies Count -->
 							<router-link :to="item.permalink" class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary">
-								{{ item.comment_count === 1 ? '1 reply' : `${item.comment_count} replies` }}
+								{{ item.commentCount === 1 ? '1 reply' : `${item.commentCount} replies` }}
 							</router-link>
 						</div>
 					</div>
@@ -169,8 +162,8 @@
 					<!-- Mobile actions -->
 					<div class="flex flex-grow md:hidden items-center">
 						<!-- Replies Count -->
-						<router-link v-if="item.comment_count > 0" class="text-sm text-gray-600 dark:text-gray-400 font-bold" :to="item.permalink">
-							{{ item.comment_count === 1 ? '1 reply' : `${item.comment_count} replies` }}
+						<router-link v-if="item.commentCount > 0" class="text-sm text-gray-600 dark:text-gray-400 font-bold" :to="item.permalink">
+							{{ item.commentCount === 1 ? '1 reply' : `${item.commentCount} replies` }}
 						</router-link>
 						<!-- Voting Buttons -->
 						<div class="flex items-center space-x-4 ml-auto">

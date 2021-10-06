@@ -37,7 +37,7 @@
 					</div>
 					<div class="hidden md:block">
 						<!-- Post Type Icon -->
-						<a v-if="item.url && !item.is_image && !pinned" :href="item.url" target="_blank" class="block">
+						<a v-if="item.url && !item.type === 'image' && !pinned" :href="item.url" target="_blank" class="block">
 							<i class="far fa-external-link text-gray-400"></i>
 						</a>
 						<!-- Pinned Icon -->
@@ -60,17 +60,17 @@
 							</router-link>
 						</h5>
 						<!-- Link Post Domain -->
-						<a :href="item.url" v-if="item.url && !item.is_image" target="_blank" class="block text-sm text-gray-500 dark:tex-gray-400 hover:underline">
+						<a :href="item.url" v-if="item.url && !item.type === 'image'" target="_blank" class="block text-sm text-gray-500 dark:tex-gray-400 hover:underline">
 							{{ item.domain }}
 							<i class="far fa-external-link fa-sm pl-1"></i>
 						</a>
 					</div>
 					<div class="flex-shrink-0 pl-3">
 						<!-- Thumbnail -->
-						<div v-if="item.thumb_url && isScreenshot" class="relative">
+						<div v-if="item.thumbUrl && isScreenshot" class="relative">
 							<img
-							v-if="item.is_image"
-							:src="item.thumb_url"
+							v-if="item.type === 'image'"
+							:src="item.thumbUrl"
 							alt="Post image"
 							class="w-14 md:w-20 h-14 object-cover rounded-sm bg-gray-200 dark:bg-white dark:bg-opacity-20"
 							@click="isExpanded = !isExpanded"
@@ -78,7 +78,7 @@
 							<!-- Fallback Icon - Link Posts Only -->
 							<a v-else :href="item.url" target="_blank" class="block">
 								<img
-								:src="item.thumb_url"
+								:src="item.thumbUrl"
 								alt="Post image"
 								class="w-14 md:w-20 h-14 object-cover rounded-sm bg-gray-200 dark:bg-white dark:bg-opacity-20"
 								/>
@@ -94,7 +94,7 @@
 					</div>
 				</div>
 				<!-- Expanded Image -->
-				<router-link v-show="isExpanded" v-if="item.is_image" :to="item.permalink">
+				<router-link v-show="isExpanded" v-if="item.type === 'image'" :to="item.permalink">
 					<img
 					:src="item.url"
 					alt="Post image"
@@ -155,8 +155,8 @@
 
 					<!-- Mobile actions -->
 					<div class="flex flex-grow md:hidden items-center">
-						<router-link v-if="item.comment_count > 0" class="text-sm text-gray-600 dark:text-gray-400 font-bold" :to="item.permalink">
-							{{ item.comment_count === 1 ? '1 reply' : `${item.comment_count} replies` }}
+						<router-link v-if="item.commentCount > 0" class="text-sm text-gray-600 dark:text-gray-400 font-bold" :to="item.permalink">
+							{{ item.commentCount === 1 ? '1 reply' : `${item.commentCount} replies` }}
 						</router-link>
 
 						<div class="flex items-center space-x-4 ml-auto">
@@ -212,8 +212,8 @@
 							/>
 						</div> -->
 						<!-- Comment Count -->
-						<router-link v-if="item.comment_count > 0" class="block ml-2 text-sm text-gray-500 dark:text-gray-400 hover:text-primary" :to="item.permalink">
-							{{ item.comment_count === 1 ? '1 reply' : `${item.comment_count} replies` }}
+						<router-link v-if="item.commentCount > 0" class="block ml-2 text-sm text-gray-500 dark:text-gray-400 hover:text-primary" :to="item.permalink">
+							{{ item.commentCount === 1 ? '1 reply' : `${item.commentCount} replies` }}
 						</router-link>
 					</div>
 				</div>
@@ -301,14 +301,14 @@ export default {
 		postIcon() {
 			if (!this.item.url) {
 				return 'far fa-text text-gray-400'
-			} else if (this.item.is_image) {
+			} else if (this.item.type === 'image') {
 				return 'far fa-camera-alt text-gray-400'
 			} else {
 				return 'far fa-link text-gray-400'
 			}
 		},
 		isScreenshot() {
-			return !this.item.thumb_url.startsWith("/assets/images/icons/")
+			return !this.item.thumbUrl.startsWith("/assets/images/icons/")
 		},
 		hidePinned() {
 			return (this.pinned && this.$route.query.sort)
