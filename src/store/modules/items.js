@@ -204,6 +204,7 @@ const actions = {
 		getFeed(payload.feed, payload.params)
 		.then(response => {
 			commit("SET_ITEMS", response.data.results);
+			console.log(response.data)
 			//commit('guild/SET_GUILDS', response.data.results, { root: true });
 		})
 	},
