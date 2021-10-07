@@ -203,9 +203,10 @@ const actions = {
 		console.log(payload.params)
 		getFeed(payload.feed, payload.params)
 		.then(response => {
-			console.log(response.data)
-			console.log(response.data.results)
-			commit("SET_ITEMS", response.data.results);
+			let data = response.data
+			console.log(data)
+			console.log(data.results)
+			commit("SET_ITEMS", data.results);
 			//commit('guild/SET_GUILDS', response.data.results, { root: true });
 		})
 	},
