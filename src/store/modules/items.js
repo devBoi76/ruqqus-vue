@@ -205,8 +205,7 @@ const actions = {
 		.then(response => {
 			let data = response.data
 			console.log(data)
-			console.log(data.results)
-			commit("SET_ITEMS", data.results);
+			commit("SET_ITEMS", data);
 			//commit('guild/SET_GUILDS', response.data.results, { root: true });
 		})
 	},
