@@ -112,6 +112,9 @@
 			loadMore() {
 				this.$emit('paginate')
 			}
+		},
+		mounted() {
+			console.log('ItemList.vue:' + this.items)
 		}
 	};
 </script>
