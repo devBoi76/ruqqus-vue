@@ -97,7 +97,8 @@ export default {
 				this.fetchResults();
 				this.$store.dispatch('persist/addSearchItem', this.$route.query.q);
 			},
-			immediate: true
+			immediate: true,
+			flush: 'post'
 		}
 	},
 	methods: {
