@@ -180,23 +180,43 @@ const actions = {
 	GET POSTS FROM THE SERVER
 	*/
 
-	fetchPost({ commit }, id) {
+	fetchPost({ commit, dispatch, rootState }, id) {
 		//commit("CLEAR_ITEMS")
 		getPost(id)
 		.then(response => {
 			commit("SET_ITEM", response.data)
 			//commit('guild/SET_GUILD', response.data.guild, { root: true });
 		})
+		.catch(error => {
+			dispatch('toasts/addNotification', {
+				type: 'error',
+				header: 'Error fetching content.',
+				message: 'Unable to load this post :/'
+			},
+			{
+				root: true
+			})
+		})
 	},
-	fetchAccountPosts({ commit }, account) {
+	fetchAccountPosts({ commit, dispatch, rootState }, account) {
 		commit("CLEAR_ITEMS")
 		getAccountPosts(account)
 		.then(response => {
 			commit("SET_ITEMS", response.data.listing)
 			commit('guild/SET_GUILDS', response.data.results, { root: true });
 		})
+		.catch(error => {
+			dispatch('toasts/addNotification', {
+				type: 'error',
+				header: 'Error fetching content.',
+				message: 'Unable to load posts right now :/'
+			},
+			{
+				root: true
+			})
+		})
 	},
-	fetchFeed({ commit }, payload) {
+	fetchFeed({ commit, dispatch, rootState }, payload) {
 		if (payload.params.page === 1) {
 			commit("CLEAR_ITEMS")
 		}
@@ -208,13 +228,33 @@ const actions = {
 			commit("SET_ITEMS", data);
 			//commit('guild/SET_GUILDS', response.data.results, { root: true });
 		})
+		.catch(error => {
+			dispatch('toasts/addNotification', {
+				type: 'error',
+				header: 'Error fetching content.',
+				message: 'Unable to load posts right now :/'
+			},
+			{
+				root: true
+			})
+		})
 	},
-	fetchSearch({ commit }, query) {
+	fetchSearch({ commit, dispatch, rootState }, query) {
 		commit("CLEAR_ITEMS")
 		getSearch(query)
 		.then(response => {
 			commit("SET_ITEMS", response.data.results)
 			commit('guild/SET_GUILDS', response.data.results, { root: true });
+		})
+		.catch(error => {
+			dispatch('toasts/addNotification', {
+				type: 'error',
+				header: 'Error fetching results.',
+				message: 'Unable to load search results :/'
+			},
+			{
+				root: true
+			})
 		})
 	},
 
@@ -251,10 +291,20 @@ const actions = {
 			return error
 		})
 	},
-	deleteItem({commit}, id) {
+	deleteItem({commit, dispatch, rootState}, id) {
 		deletePost(id)
 		.then(() => {              
 			commit('DELETE_ITEM', id)
+		})
+		.catch(error => {
+			dispatch('toasts/addNotification', {
+				type: 'error',
+				header: 'Error deleting post.',
+				message: 'Please try again later.'
+			},
+			{
+				root: true
+			})
 		})
 	},
 
