@@ -139,7 +139,7 @@ const actions = {
 	// register(){
 
 	// },
-	auth_v({commit}, form){
+	auth_v({commit, dispatch, rootState}, form){
 		commit("changeLoadingState", true);
 
 		const headers = {'Content-Type': 'multipart/form-data'}
@@ -179,9 +179,17 @@ const actions = {
 						commit("AUTHENTICATE", false);
 					}
 				})
-		.catch(function() {
+		.catch(error => {
 			commit("SET_AUTH_USER", {});
 			commit("AUTHENTICATE", false);
+			dispatch('toasts/addNotification', {
+				type: 'error',
+				header: 'There was a problem logging in',
+				message: 'Please try again later.'
+			},
+			{
+				root: true
+			})
 		})
 		commit("changeLoadingState", false);
 	},
