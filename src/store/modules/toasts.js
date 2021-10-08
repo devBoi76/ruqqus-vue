@@ -12,7 +12,7 @@ const getters = {
 
 const mutations = {
 	PUSH_NOTIFICATION: (state, notification) => {
-		notification[id] = (Math.random().toString(36) + Date.now().toString(36)).substr(2)
+		notification.id = (Math.random().toString(36) + Date.now().toString(36)).substr(2)
 		state.notifications.push(notification)
 	},
 	REMOVE_NOTIFICATION: (state, notificationToRemove) => {
