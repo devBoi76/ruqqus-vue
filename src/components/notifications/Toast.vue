@@ -37,7 +37,7 @@
     created() {
       this.timeout = setTimeout(() => {
         this.removeNotification(this.notification);
-      }, 3500);
+      }, 4000);
     },
     beforeUnmount() {
       clearTimeout(this.timeout)
