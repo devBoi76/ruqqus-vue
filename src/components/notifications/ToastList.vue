@@ -7,9 +7,7 @@
           leave-active-class="transition-all duration-200 ease-in-out"
           leave-from-class="opacity-100"
           leave-to-class="opacity-0 translate-x-10">
-          	<div v-if="notifications.length">
-				<Notification v-for="notification in notifications" :key="notification.id" :notification="notification" class="mx-auto"/>
-			</div>
+			<Notification v-for="notification in notifications" :key="notification.id" :notification="notification" class="mx-auto"/>
 		</transition-group>
 	</div>
 </template>
