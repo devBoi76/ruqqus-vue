@@ -1,12 +1,12 @@
 <template>
 	<div class="fixed left-0 bottom-4 md:top-18 md:right-4 space-y-3 w-80 z-100">
 		<transition-group name="toasts"
-          enter="duration-300 ease-out"
-          enter-from="opacity-0"
-          enter-to="opacity-100"
-          leave="duration-200 ease-in"
-          leave-from="opacity-100"
-          leave-to="opacity-0">
+          enter-class="duration-300 ease-in-out"
+          enter-from-class="opacity-0 -translate-x-10"
+          enter-to-class="opacity-100"
+          leave-class="duration-200 ease-in-out"
+          leave-from-class="opacity-100"
+          leave-to-class="opacity-0 translate-x-10">
 			<Notification v-for="notification in notifications" :key="notification.id" :notification="notification" class="mx-auto"/>
 		</transition-group>
 	</div>
