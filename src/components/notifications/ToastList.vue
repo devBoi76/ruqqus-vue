@@ -1,7 +1,7 @@
 <template>
 	<div class="fixed bottom-4 md:top-18 md:right-4 space-y-3 w-80 z-100">
 		<transition-group name="toasts"
-          enter-class="duration-300 ease-in-out"
+          enter-class="duration-200 ease-in-out"
           enter-from-class="opacity-0 translate-x-10"
           enter-to-class="opacity-100"
           leave-class="duration-200 ease-in-out"
