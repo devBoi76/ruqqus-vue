@@ -8,7 +8,7 @@
           leave-from="opacity-100"
           leave-to="opacity-0">
 			<Notification v-for="notification in notifications" :key="notification.id" :notification="notification"/>
-		<transition-group/>
+		</transition-group>
 	</div>
 </template>
 
