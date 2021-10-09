@@ -111,7 +111,7 @@
 													<div class="text-xs font-semibold text-gray-900 leading-tight" :style="{ 'color': innerV.usernameColor }">
 														{{ innerV.username }}
 													</div>
-													<span v-if="innerV.title" class="ml-2 px-2 inline-flex text-xs leading-5 font-medium rounded-sm text-gray-900" :style="{ 'background-color': innerV.titleColor }">
+													<span v-if="innerV.title && site.hasCustomTitles" class="ml-2 px-2 inline-flex text-xs leading-5 font-medium rounded-sm text-gray-900" :style="{ 'background-color': innerV.titleColor }">
 														{{ innerV.title }}
 													</span>
 												</div>
