@@ -91,9 +91,13 @@
 
 <script>
 // Import components
-import { getGuild } from '@/api/Guild.js';
+// Import components
+import { defineAsyncComponent } from 'vue'
 
-import Toggle from "@/components/forms/Toggle.vue";
+import isEqual from 'lodash/isEqual';
+import cloneDeep from 'lodash/cloneDeep';
+
+const Toggle = defineAsyncComponent(() => import('@/components/forms/Toggle.vue'));
 
 export default {
 	name: "UserSettingsBasicInfoView",
