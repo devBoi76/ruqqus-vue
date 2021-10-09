@@ -98,6 +98,23 @@
 								</div>
 							</div>
 						</div>
+						<div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
+								Community Perks
+							</div>
+							<div class="sm:rounded-sm border-t border-b sm:border bg-white divide-y">
+								<div class="flex flex-grow items-center justify-between p-4">
+									<div>
+										<div class="font-semibold leading-tight">
+											Enable Custom Titles
+										</div>
+										<p class="text-sm text-gray-500 mt-1">
+											Let members customize badges next to their username
+										</p>
+									</div>
+									<Toggle v-model:enabled="innerSite.hasCustomTitles"/>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>

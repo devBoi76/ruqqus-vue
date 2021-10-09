@@ -1,4 +1,4 @@
-<template>
+d<template>
 	<div class="flex flex-col flex-grow space-y-4 overflow-y-auto">
 
 		<!-- Header content section -->
@@ -62,11 +62,11 @@
 							</option>
 						</select>
 						<div class="flex flex-shrink-0 space-x-2">
-							<select class="form-select light capitalize" placeholder="Change role" :disabled="!selected.length" v-model="selectedRole">
+							<!-- <select class="form-select light capitalize" placeholder="Change role" :disabled="!selected.length" v-model="selectedRole">
 								<option v-for="role in roles" :value="role.id">
 									{{ role.text }}
 								</option>
-							</select>
+							</select> -->
 							<button class="button gray200" v-show="!confirmation || !selected.length" :disabled="selectedRole === null || !selected.length"  @click="confirmation = true">
 								Change
 							</button>

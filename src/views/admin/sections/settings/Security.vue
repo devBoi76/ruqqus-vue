@@ -99,11 +99,11 @@ export default {
 	name: "UserSettingsBasicInfoView",
 	data() {
 		return {
-			changed: false,
 			loading: false,
 			errored: false,
-			s: {},
-			saved: {}
+			isDifferent: false,
+			site: this.$store.getters['site/getSite'],
+			innerSite: {}
 		}
 	},
 	components: {
@@ -116,28 +116,27 @@ export default {
 		// 	},
 		// 	immediate: true
 		// },
-		's': { // get guild info and posts if guild changes
+		'innerSite': { // get guild info and posts if guild changes
 			handler() {
-				this.changed = (JSON.stringify(this.s) !== JSON.stringify(this.saved))
+				console.log('site obj watcher triggered')
+				this.isDifferent = !isEqual(this.site, this.innerSite)
 			},
 			deep: true
 		}
 	},
 	methods: {
-		// getGuildInfo() {
-		// 	let guild = this.$route.params.name;
-		// 	getGuild(guild)
-		// 	.then(response => {
-		// 		let data = response.data
-		// 		this.saved = Object.assign({}, data);
-		// 		this.g = data;
-		// 	})
-		// 	.catch(error => {
-		// 		console.error(error)
-		// 		this.errored = true
-		// 	})
-		// 	.finally(() => this.loading = false)
-		// },
+		getSite() {
+			this.$store.dispatch('site/fetchSite')
+			.then(() => {
+				this.innerSite = cloneDeep(this.site);
+			})
+			.catch(error => {
+				console.error(error)
+				this.errored = true
+
+			})
+			.finally(() => this.loading = false)
+		},
 		save() {
 			this.changed = false;
 			this.saved = Object.assign({}, this.s);
@@ -145,7 +144,9 @@ export default {
 		}
 	},
 	created() {
-		this.s = Object.assign({}, this.$store.getters['site/getSite'])
+		this.getSite()
+		//this.innerSite = {...this.site}
+		this.isDifferent = false;
 	}
 };
 </script>

@@ -139,14 +139,14 @@ export default {
 					icon: 'fa-image',
 					textCase: 'capitalize'
 				},
-				{
-					name: 'titles',
-					route: {
-						name: 'admin-titles-view'
-					},
-					icon: 'fa-badge-check',
-					textCase: 'capitalize'
-				},
+				// {
+				// 	name: 'titles',
+				// 	route: {
+				// 		name: 'admin-titles-view'
+				// 	},
+				// 	icon: 'fa-badge-check',
+				// 	textCase: 'capitalize'
+				// },
 				{
 					name: 'emoji',
 					route: {
