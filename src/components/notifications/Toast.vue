@@ -11,7 +11,7 @@
         </div>
       </div>
     </div>
-    <button class="w-8 h-8 flex items-center justify-center px-2 py-0 text-gray-500 rounded-sm bg-transparent hover:bg-gray-800" aria-label="Close toast" @click="removeNotification(notification)">
+    <button class="w-8 h-8 flex items-center justify-center px-2 py-0 text-gray-500 rounded-sm bg-transparent hover:bg-gray-900" aria-label="Close toast" @click="removeNotification(notification)">
       <i class="far fa-times"></i>
     </button>
   </div>
