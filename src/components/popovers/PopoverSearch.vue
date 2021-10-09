@@ -1,14 +1,14 @@
 <template>
 	<Popover v-slot="{ open }">
 		<PopoverButton as="div" class="w-96 appearance-none">
-			<form class="relative" @submit.prevent="onSubmit" @submit="search()">
+			<form class="group relative" @submit.prevent="onSubmit" @submit="search()">
 				<div class="absolute left-3 top-[6px]">
 					<button class="text-gray-400 hover:text-gray-500" type="submit">
 						<i class="far fa-search fa-fw fa-sm"></i>
 					</button>
 				</div>
 				<input required type="text" class="form-input light pl-9" v-model="searchTerm" placeholder="Search posts or @users" @keyup.enter="search()"/>
-				<div v-show="searchTerm" class="absolute right-3 top-[6px] flex justify-end w-4">
+				<div v-show="searchTerm" class="absolute right-3 top-[6px] bg-gradient-to-l bg-gray-50 group-focus:bg-white flex justify-end w-10">
 					<button class="text-gray-400 hover:text-gray-500" @click="searchTerm = ''">
 						<i class="far fa-times-circle fa-fw fa-sm"></i>
 					</button>
