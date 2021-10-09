@@ -9,10 +9,10 @@
 						Security
 					</h1>
 					<div class="flex items-center space-x-4">
-						<div v-show="changed" class="text-xs text-gray-400">
+						<div v-show="isDifferent" class="text-xs text-gray-400">
 							You have unsaved changes!
 						</div>
-						<button v-if="!loading && !errored" :disabled="!changed" class="button purple500" @click="save()">
+						<button v-if="!loading && !errored" :disabled="!isDifferent" class="button purple500" @click="save()">
 							Save
 						</button>
 					</div>
