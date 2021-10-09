@@ -58,7 +58,7 @@
 							</div>
 						</div>
 						<form class="border-t border-b border-gray-100 dark:border-transparent sm:border sm:border-gray-200 sm:rounded-sm bg-white divide-y" @submit.prevent="onSubmit">
-							<div class="p-4">
+							<div v-if="site.canEditDisplayName || site.hasCustomTitles" class="p-4">
 								<div class="flex items-center justify-between">
 									<div>
 										<div class="font-semibold leading-tight">
@@ -74,13 +74,13 @@
 								</div>
 								<div v-if="editProfile" class="space-y-6 mt-6">
 									<div class="grid grid-cols-3 gap-6">
-										<div class="col-span-3 sm:col-span-2">
+										<div v-if="site.canEditDisplayName" class="col-span-3 sm:col-span-2">
 											<label class="label">
 												Display name
 											</label>
 											<div class="flex items-center space-x-2">
 												<input class="form-input light pr-8" v-model="innerV.username" :placeholder="innerV.username" type="text"/>
-												<ColorPicker v-model:color="innerV.usernameColor"/>
+												<ColorPicker v-if="site.canEditUsernameColor" v-model:color="innerV.usernameColor"/>
 											</div>
 											<p class="text-sm text-gray-500 mt-1">
 												Your original username will always be reserved:
@@ -89,7 +89,7 @@
 												</span>
 											</p>
 										</div>
-										<div class="col-span-3 sm:col-span-2">
+										<div v-if="site.hasCustomTitles" class="col-span-3 sm:col-span-2">
 											<label class="label">
 												Title
 											</label>
@@ -413,6 +413,9 @@ export default {
 	computed: {
 		v() {
 			return this.$store.getters['persist/getAuthUser']
+		},
+		site() {
+			return this.$store.getters['site/getSite']
 		}
 	},
 	methods: {
