@@ -47,13 +47,13 @@
                   <span class="text-gray-500 pl-[1px]">:</span>
                 </div>
               </div>
-              <input type="text" placeholder="kekw" class="form-input white ml-3">
+              <input type="text" v-model="innerEmoji.name" :placeholder="innerEmoji.name" class="form-input white ml-3">
             </div>
             <div>
               <div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
                 Category
               </div>
-              <Select v-model:selected="selected" :options="options" class="w-full"/>
+              <Select v-model:selected="innerEmoji.category" :options="options" class="w-full"/>
             </div>
             <div>
               <div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
@@ -63,19 +63,19 @@
                 <label class="label">
                   Allow in posts
                 </label>
-                <toggle v-model="isNsfw"/>
+                <toggle v-model:enabled="innerEmoji.restrictions.posts"/>
               </div>
               <div class="flex flex-grow items-center justify-between mt-5">
                 <label class="label">
                   Allow in comments
                 </label>
-                <toggle v-model="isNsfw"/>
+                <toggle v-model:enabled="innerEmoji.restrictions.comments"/>
               </div>
               <div class="flex flex-grow items-center justify-between mt-5">
                 <label class="label">
                   Requires premium membership
                 </label>
-                <toggle v-model="isNsfw"/>
+                <toggle v-model:enabled="innerEmoji.restrictions.premium"/>
               </div>
             </div>
           </div>
@@ -124,21 +124,29 @@
       Select,
       Toggle
     },
-
+    props: {
+      emoji: Object
+    },
     setup() {
       const isOpen = ref(false)
 
       let isNsfw = false
 
+      let innerEmoji = {
+        name: 'kekw',
+        category: 'memes',
+        restrictions: {
+          posts: true,
+          comments: true,
+          premium: true
+        }
+      }
+
       let selected = { name: 'Wade Cooper' }
 
       const options = [
-      { name: 'Wade Cooper' },
-      { name: 'Arlene Mccoy' },
-      { name: 'Devon Webb' },
-      { name: 'Tom Cook' },
-      { name: 'Tanya Fox' },
-      { name: 'Hellen Schmidt' },
+      { name: 'memes' },
+      { name: 'animated' }
       ]
 
       return {
