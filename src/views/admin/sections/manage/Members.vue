@@ -56,17 +56,17 @@ d<template>
 			<div v-if="!loading && !errored" class="col-span-full px-4 md:px-8">
 				<div class="flex items-center">
 					<div class="flex space-x-4">
-						<select class="form-select light capitalize" v-model="sort" :options="routes">
+						<!-- <select class="form-select light capitalize" v-model="sort" :options="routes">
 							<option v-for="route in routes" :value="route.id">
 								{{ route.text }}
 							</option>
-						</select>
+						</select> -->
 						<div class="flex flex-shrink-0 space-x-2">
-							<!-- <select class="form-select light capitalize" placeholder="Change role" :disabled="!selected.length" v-model="selectedRole">
+							<select class="form-select light capitalize" placeholder="Change role" :disabled="!selected.length" v-model="selectedRole">
 								<option v-for="role in roles" :value="role.id">
 									{{ role.text }}
 								</option>
-							</select> -->
+							</select>
 							<button class="button gray200" v-show="!confirmation || !selected.length" :disabled="selectedRole === null || !selected.length"  @click="confirmation = true">
 								Change
 							</button>
