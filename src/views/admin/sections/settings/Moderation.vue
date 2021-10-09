@@ -98,7 +98,8 @@
 								</div>
 							</div>
 						</div>
-						<div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
+						<div>
+							<div class="uppercase tracking-wide font-semibold text-sm md:text-xs text-gray-400 mb-2">
 								Community Perks
 							</div>
 							<div class="sm:rounded-sm border-t border-b sm:border bg-white divide-y">
