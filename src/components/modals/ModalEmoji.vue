@@ -130,8 +130,6 @@
     setup() {
       const isOpen = ref(false)
 
-      let isNsfw = false
-
       let innerEmoji = {
         name: 'kekw',
         category: 'memes',
@@ -150,6 +148,7 @@
       ]
 
       return {
+        innerEmoji,
         selected,
         options,
         isOpen,
