@@ -63,7 +63,7 @@
 												Require an account to view your community
 											</p>
 										</div>
-										<Toggle v-model:enabled="s.isPrivate"/>
+										<Toggle v-model:enabled="innerSite.isPrivate"/>
 									</div>
 								</div>
 								<div class="p-4">
@@ -76,7 +76,7 @@
 												Disable any new account creation
 											</p>
 										</div>
-										<Toggle v-model:enabled="s.canRegister"/>
+										<Toggle v-model:enabled="innerSite.canRegister"/>
 									</div>
 								</div>
 							</div>
