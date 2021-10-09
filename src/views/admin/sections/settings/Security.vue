@@ -142,9 +142,8 @@ export default {
 			.finally(() => this.loading = false)
 		},
 		save() {
-			this.changed = false;
-			this.saved = Object.assign({}, this.s);
-			this.$store.commit('site/SET_SITE', {site: this.saved});
+			this.isDifferent = false;
+			this.$store.commit('site/SET_SITE', {site: this.innerSite});
 		}
 	},
 	created() {
