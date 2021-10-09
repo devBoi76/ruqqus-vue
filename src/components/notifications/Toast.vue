@@ -1,7 +1,7 @@
 <template>
-  <div class="flex justify-between p-3 rounded shadow-lg bg-gray-900 text-white transition-all duration-200">
-    <div class="flex space-x-3 pr-3">
-      <i class='far fa-lg mt-1' :class="notification.type === 'success' ? 'fa-check-circle text-green-500' : 'fa-exclamation-circle text-red-500'"></i>
+  <div class="flex justify-between p-4 rounded shadow-lg bg-gray-900 bg-opacity-90 backdrop-filter backdrop-blur-lg text-white transition-all duration-200">
+    <div class="flex items-center space-x-3 pr-4">
+      <i class='far fa-lg' :class="notification.type === 'success' ? 'fa-check-circle text-green-500' : 'fa-exclamation-circle text-red-500'"></i>
       <div>
         <div v-if="notification.header" class="text-base font-medium">
           {{ notification.header }}
