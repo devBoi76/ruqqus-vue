@@ -453,6 +453,7 @@ export default {
 		}
 	},
 	created() {
+		this.$store.dispatch('site/fetchSite');
 		this.getSettings();
 		//this.innerV = cloneDeep(this.v);
 		this.isDifferent = false;
