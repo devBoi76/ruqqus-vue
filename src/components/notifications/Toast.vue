@@ -1,17 +1,17 @@
 <template>
-  <div class="flex justify-between p-4 rounded shadow-lg bg-gray-900 bg-opacity-90 backdrop-filter backdrop-blur-lg text-white transition-all duration-200">
+  <div class="flex justify-between p-4 rounded shadow-lg bg-white transition-all duration-200">
     <div class="flex items-center space-x-4 pr-4">
       <i class='far fa-lg' :class="notification.type === 'success' ? 'fa-check-circle text-green-500' : 'fa-exclamation-circle text-red-500'"></i>
       <div>
         <div v-if="notification.header" class="text-base font-medium">
           {{ notification.header }}
         </div>
-        <div class="text-sm text-white text-opacity-70">
+        <div class="text-sm text-gray-600">
           {{ notification.message }}
         </div>
       </div>
     </div>
-    <button class="w-8 h-8 flex items-center justify-center px-2 py-0 text-gray-500 rounded-sm bg-transparent hover:bg-gray-800" aria-label="Close toast" @click="removeNotification(notification)">
+    <button class="w-8 h-8 flex items-center justify-center px-2 py-0 text-gray-700 hover:text-gray-900 rounded-sm bg-transparent hover:bg-gray-100" aria-label="Close toast" @click="removeNotification(notification)">
       <i class="far fa-times"></i>
     </button>
   </div>
