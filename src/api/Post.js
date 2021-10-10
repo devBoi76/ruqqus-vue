@@ -15,7 +15,7 @@ export function getPostComments(id){
 	return axios.get(url+id+'/comments'); // api/vue/post/{{ id }}/comments/{{ comment id }}
 }
 
-// // Delete comment given id
-// export function deletePost(id){
-// 	return axios.delete(id)
-// }
+// Delete comment given id
+export function deletePost(id){
+	return axios.delete(id)
+}
