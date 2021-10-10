@@ -1,6 +1,5 @@
 <template>
 	<div class="w-full overflow-y-auto">
-		<Banner/>
 		<div class="grid grid-cols-12">
 			<div class="col-span-full xl:col-start-2 xl:col-end-12 flex gap-6 sm:p-6 my-2.5 sm:my-0">
 
@@ -327,6 +326,7 @@ export default {
 		CommentList
 	},
 	watch: {
+		// Fetch the post if the id changes
 		'$route.params.id': {
 			handler() {
 				if (this.item == null) {
@@ -336,6 +336,7 @@ export default {
 			immediate: true,
 			flush: 'post'
 		},
+		// If viewing a single comment thread, fetch the replies
 		'$route.params.commentId': {
 			handler() {
 				if (this.$route.params.commentId) {
@@ -346,7 +347,8 @@ export default {
 			immediate: true,
 			flush: 'post'
 		},
-		'item': { // get replies when item changes
+		// After post has loaded, fetch its comments
+		'item': {
 			handler(newVal) {
 				if (newVal !== undefined && !this.$route.params.commentId) {
 					this.comments = []
@@ -355,7 +357,8 @@ export default {
 			},
 			immediate: true
 		},
-		'comments': { // set mentions when comments array changes
+		// When the comments are loaded, set the mentions array
+		'comments': {
 			handler(newVal) {
 				if (newVal !== undefined) {
 					this.setMentions()
