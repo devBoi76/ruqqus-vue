@@ -21,7 +21,7 @@
 					<!-- End Bread Crumbs -->
 
 					<!-- Pinned Banner -->
-					<div v-if="item && item.pinned" class="flex items-center mb-2 px-4 py-2 bg-green-500 text-green-700 rounded-sm">
+					<div v-if="item && item.isStickied" class="flex items-center mb-2 px-4 py-2 bg-green-500 text-green-700 rounded-sm">
 						<i class="fas fa-thumbtack fa-sm mr-2"></i>
 						This post has been pinned by the guild masters.
 					</div>
