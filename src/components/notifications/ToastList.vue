@@ -1,6 +1,6 @@
 <template>
-	<div class="fixed bottom-4 block w-full overflow-hidden bg-clip-padding z-100 mx-auto">
-		<div class="w-96 space-y-3">
+	<div class="fixed bottom-4 block w-96 overflow-hidden bg-clip-padding z-100 mx-auto">
+		<div class="space-y-3">
 			<transition-group name="toasts"
 			enter-active-class="transition-all duration-200 ease-in"
 			enter-from-class="opacity-0 translate-y-10"
