@@ -440,11 +440,11 @@ export default {
 			.catch(error => {
 				console.error(error)
 				this.erroredComments = true
-				this.$store.dispatch('toasts/addNotification', {
-					type: 'error',
-					header: 'Error fetching comments.',
-					message: 'Unable to load comments right now :/'
-				}
+				// this.$store.dispatch('toasts/addNotification', {
+				// 	type: 'error',
+				// 	header: 'Error fetching comments.',
+				// 	message: 'Unable to load comments right now :/'
+				// }
 			})
 			.finally(() => this.loadingComments = false)
 		},
@@ -459,11 +459,11 @@ export default {
 			.catch(error => {
 				console.error(error)
 				this.erroredComments = true
-				this.$store.dispatch('toasts/addNotification', {
-					type: 'error',
-					header: 'Error fetching replies.',
-					message: 'Unable to load replies right now :/'
-				}
+				// this.$store.dispatch('toasts/addNotification', {
+				// 	type: 'error',
+				// 	header: 'Error fetching replies.',
+				// 	message: 'Unable to load replies right now :/'
+				// }
 			})
 			.finally(() => this.loadingComments = false)
 		}
