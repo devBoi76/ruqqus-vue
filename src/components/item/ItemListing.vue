@@ -44,7 +44,7 @@
 					</div>
 				</div>
 				<!-- Embed -->
-				<div class="px-2.5 mt-2.5" v-if="item.url && !item.type === 'image'">
+				<div class="px-2.5 mt-2.5" v-if="item.url && item.type !== 'image'">
 					<EmbedLink
 					:domain="item.domain"
 					:title="item.meta_title"

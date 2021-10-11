@@ -33,7 +33,7 @@
 							<div class="flex items-center w-full overflow-x-auto">
 								<router-link :to="'/'+item.author.username">
 									<img
-									v-lazy="item.author.profile_url"
+									v-lazy="item.author.avatarUrl"
 									alt="avatar"
 									class="w-9 h-9 md:w-8 md:h-8 object-cover mr-2 rounded-sm"
 									/>
@@ -54,11 +54,13 @@
 								</div>
 							</div>
 							<div class="hidden md:block">
-								<a v-if="item.url && !item.is_image && !item.pinned" :href="item.url" target="_blank" class="block">
+								<!-- External Link Icon -->
+								<a v-if="item.url" :href="item.url" target="_blank" class="block">
 									<i class="far fa-external-link text-gray-400"></i>
 								</a>
+								<!-- Thumbtack, Image, or Text Icon -->
 								<div v-else>
-									<i :class="item.pinned ? 'fas fa-thumbtack text-green-500' : postIcon"></i>
+									<i :class="item.isStickied ? 'fas fa-thumbtack text-green-500' : postIcon[item.type]"></i>
 								</div>
 							</div>
 							<button class="flex items-center justify-center md:hidden -mr-1 p-1 text-gray-600 dark:text-gray-400">
@@ -75,18 +77,18 @@
 						</div>
 
 						<!-- Embed -->
-						<div class="px-2.5 mt-3 sm:mt-4" v-if="item.url && !item.is_image">
+						<div class="px-2.5 mt-3 sm:mt-4" v-if="item.url && item.type !== 'image'">
 							<EmbedLink
 							:domain="item.domain"
 							:title="item.title"
-							:thumbnail="item.thumb_url"
+							:thumbnail="item.thumbUrl"
 							:url="item.url"
 							:preview="item.url"
 							/>
 						</div>
 
 						<!-- Image -->
-						<div v-if="item.is_image" class="flex justify-center mt-3 md:mt-4">
+						<div v-if="item.type !== 'image'" class="flex justify-center mt-3 md:mt-4">
 							<img
 							:src="item.url"
 							alt="Post image"
@@ -95,8 +97,8 @@
 						</div>
 
 						<!-- Text body -->
-						<div v-if="item.body_html !== ''" class="px-2.5 mt-3 sm:mt-4 relative overflow-hidden">
-							<div class="break-words dark:text-gray-200" v-html="item.body_html"></div>
+						<div v-if="item.bodyHtml" class="px-2.5 mt-3 sm:mt-4 relative overflow-hidden">
+							<div class="break-words dark:text-gray-200" v-html="item.bodyHtml"></div>
 						</div>
 
 						<!-- Footer -->
@@ -105,7 +107,7 @@
 							<!-- Mobile actions -->
 							<div class="flex flex-grow md:hidden items-center justify-between">
 								<router-link class="text-sm text-gray-600 dark:text-gray-400 font-bold" :to="item.permalink">
-									{{ item.comment_count === 1 ? '1 reply' : `${item.comment_count} replies` }}
+									{{ item.commentCount === 1 ? '1 reply' : `${item.commentCount} replies` }}
 								</router-link>
 								<div class="flex items-center space-x-4">
 									<div class="flex items-center space-x-1">
@@ -208,8 +210,8 @@
 							</div>
 						</div>
 
-						<div class="relative" :class="{'md:-mt-14':item.comment_count >= 8}">
-							<div v-if="item.comment_count >= 8" class="sticky top-0 hidden md:flex items-center justify-between p-4 bg-white border-b dark:border-gray-700 z-10">
+						<div class="relative" :class="{'md:-mt-14':item.commentCount >= 8}">
+							<div v-if="item.commentCount >= 8" class="sticky top-0 hidden md:flex items-center justify-between p-4 bg-white border-b dark:border-gray-700 z-10">
 								<div class="flex space-x-2 break-words">
 									<router-link :to="`/+${$route.params.name}`" class="text-sm capitalize text-gray-400 hover:underline dark:text-gray-100 router-link-active">
 										+{{ $route.params.name }}
@@ -223,8 +225,8 @@
 								</div>
 							</div>
 
-							<div v-if="item.comment_count > 0">
-								<CommentSort :permalink="item.permalink" :count="item.comment_count" class="px-2.5 pt-3 sm:px-4 sm:py-0 sm:mt-5"/>
+							<div v-if="item.commentCount > 0">
+								<CommentSort :permalink="item.permalink" :count="item.commentCount" class="px-2.5 pt-3 sm:px-4 sm:py-0 sm:mt-5"/>
 							</div>
 
 							<CommentWrite v-if="v" :visible="replying" @change="toggleReplying" class="relative flex md:hidden px-2.5 pt-3 mb-1"/>
@@ -243,7 +245,7 @@
 								</div>
 							</div>
 
-							<div v-if="item.comment_count > 0" class="px-2.5 py-3 sm:p-4">
+							<div v-if="item.commentCount > 0" class="px-2.5 py-3 sm:p-4">
 								<CommentList :comments="comments" :offset="offset"/>
 							</div>
 

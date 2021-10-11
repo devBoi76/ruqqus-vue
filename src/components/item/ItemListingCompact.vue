@@ -36,13 +36,13 @@
 						</div>
 					</div>
 					<div class="hidden md:block">
-						<!-- Post Type Icon -->
-						<a v-if="item.url && !item.type === 'image' && !pinned" :href="item.url" target="_blank" class="block">
+						<!-- External Link Icon -->
+						<a v-if="item.url" :href="item.url" target="_blank" class="block">
 							<i class="far fa-external-link text-gray-400"></i>
 						</a>
-						<!-- Pinned Icon -->
+						<!-- Thumbtack, Image, or Text Icon -->
 						<div v-else>
-							<i :class="pinned ? 'fas fa-thumbtack text-green-500' : postIcon"></i>
+							<i :class="item.isStickied ? 'fas fa-thumbtack text-green-500' : postIcon[item.type]"></i>
 						</div>
 					</div>
 					<!-- Post Options Dropdown - Mobile Only -->
@@ -60,7 +60,7 @@
 							</router-link>
 						</h5>
 						<!-- Link Post Domain -->
-						<a :href="item.url" v-if="item.url && !item.type === 'image'" target="_blank" class="block text-sm text-gray-500 dark:tex-gray-400 hover:underline">
+						<a :href="item.url" v-if="item.url && item.type !== 'image'" target="_blank" class="block text-sm text-gray-500 dark:tex-gray-400 hover:underline">
 							{{ item.domain }}
 							<i class="far fa-external-link fa-sm pl-1"></i>
 						</a>
