@@ -27,7 +27,7 @@
 					</div>
 					<!-- End Pinned Banner -->
 
-					<div v-if="item" class="relative w-full bg-white dark:bg-gray-800 border-t border-b border-gray-100 dark:border-0 sm:border sm:rounded-sm dark:text-gray-100">
+					<div v-if="item" class="relative w-full bg-white dark:bg-gray-800 border-t border-b border-gray-100 dark:border-0 sm:border sm:border-gray-200 sm:rounded-sm dark:text-gray-100">
 						<!-- Item's meta information and content-->
 						<div class="flex flex-shrink-0 items-center justify-between p-2.5 border-b dark:border-gray-700 dark:border-opacity-70">
 							<div class="flex items-center w-full overflow-x-auto">
@@ -193,7 +193,7 @@
 					</div>
 
 					<!-- Comment section -->
-					<div v-if="item" class="bg-white dark:bg-gray-800 border-t border-gray-100 dark:border-0 sm:border sm:rounded-sm mt-3">
+					<div v-if="item" class="bg-white dark:bg-gray-800 border-t border-gray-100 dark:border-0 sm:border sm:border-gray-200 sm:rounded-sm mt-3">
 
 						<CommentWrite v-if="is_authenticated" :visible="replying" @change="toggleReplying" class="relative hidden md:flex p-4 bg-white dark:bg-gray-800 border-b dark:border-gray-700 dark:border-opacity-70 z-20 rounded-t-sm"/>
 
