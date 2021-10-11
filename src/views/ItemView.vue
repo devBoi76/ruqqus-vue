@@ -218,7 +218,7 @@
 
 						<div class="relative">
 
-							<div v-if="item.commentCount > 0">
+							<div v-if="item.commentCount > 0 && !loadingComments && !erroredComments">
 								<CommentSort :permalink="item.permalink" :count="item.commentCount" class="px-2.5 pt-3 sm:px-4 sm:py-0 sm:mt-5"/>
 							</div>
 
