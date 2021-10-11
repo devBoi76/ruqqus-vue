@@ -1,5 +1,5 @@
 <template>
-	<div class="fixed bottom-4 md:top-18 md:right-4 space-y-3 w-80 z-100">
+	<div class="fixed bottom-4 md:top-18 md:right-4 space-y-3 w-96 z-100">
 		<transition-group name="toasts"
           enter-active-class="transition-all duration-200 ease-in"
           enter-from-class="opacity-0 translate-y-10"
