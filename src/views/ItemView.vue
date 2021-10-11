@@ -7,16 +7,16 @@
 				<div class="w-full">
 
 					<!-- Pinned Banner -->
-					<div v-if="item && item.isStickied" class="flex items-center mb-3 bg-green-100 border border-green-500 rounded-sm">
-						<div class="flex items-center justify-center w-10 h-10 bg-green-500">
+					<div v-if="item && item.isStickied" class="flex items-center mb-3 bg-green-100 border border-green-400 rounded-sm">
+						<div class="flex items-center justify-center w-10 h-10 bg-green-400">
 							<i class="fas fa-thumbtack text-white mt-1"></i>
 						</div>
-						<div class="font-medium pl-3">This post has been pinned by the admins.</div>
+						<div class="text-green-700 font-medium pl-3">This post has been pinned by the admins.</div>
 					</div>
 					<!-- End Pinned Banner -->
 
 					<!-- Bread Crumbs -->
-					<div v-if="item" class="space-x-2 mb-3 break-words">
+					<div v-if="item" class="space-x-1 mb-3 break-words">
 						<router-link to="/" class="text-sm capitalize text-gray-500 dark:text-gray-100">Home</router-link>
 						<span class="text-sm text-gray-500 dark:text-gray-100">
 							<i class="fal fa-long-arrow-right"/>
