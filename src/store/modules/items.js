@@ -99,8 +99,10 @@ const mutations = {
 		state.ids.push(item.id)
 		let vote = { itemVoteActionStatus: 0, itemVotedStatus: item.voted !== 0 }
 		let post = { ...vote, ...item } //object = Object.assign(object, item)
+		console.log(post)
 		// set state posts object to item
-		state.posts = Object.assign({}, state.posts, { [item.id]:post })
+		state.posts = { ...state.posts, ...[item.id]:post }
+		//state.posts = Object.assign({}, state.posts, { [item.id]:post })
 		console.log(state.posts)
 	},
 	SET_ITEMS: (state, items) => {
