@@ -198,7 +198,7 @@
 						<CommentWrite v-if="is_authenticated" :visible="replying" @change="toggleReplying" class="relative hidden md:flex p-4 bg-white dark:bg-gray-800 border-b dark:border-gray-700 dark:border-opacity-70 z-20 rounded-t-sm"/>
 
 						<!-- Login CTA -->
-						<div v-else class="hidden sm:flex items-center mb-4 p-2.5 sm:p-4 bg-white dark:bg-gray-800 border-b">
+						<div v-else class="flex items-center mb-4 p-2.5 sm:p-4 bg-white dark:bg-gray-800 border-b">
 							<div class="flex-grow overflow-hidden">
 								<div class="flex items-center justify-center">
 									<router-link to="/register" custom v-slot="{ navigate }">
@@ -224,26 +224,12 @@
 
 							<CommentWrite v-if="is_authenticated" :visible="replying" @change="toggleReplying" class="relative flex md:hidden px-2.5 pt-3 mb-1"/>
 
-							<div v-else class="relative flex md:hidden justify-between px-2.5 pt-3">
-								<p>
-									Create a Ruqqus account to join the discussion, vote on content, and more!
-								</p>
-								<div class="flex items-center space-x-2">
-									<button class="button primary" to="/register">
-										Sign up
-									</button>
-									<button class="button outlinePrimary" to="/login">
-										Log in
-									</button>
-								</div>
-							</div>
-
 							<div v-if="item.commentCount > 0 && !loadingComments && !erroredComments" class="px-2.5 py-3 sm:p-4">
 								<CommentList :comments="comments" :offset="offset"/>
 							</div>
 
 							<!-- Empty state -->
-							<div v-if="loadingComments && !erroredComments" class="flex flex-col items-center w-full px-4 py-12">
+							<div v-if="item.commentCount === 0" class="flex flex-col items-center w-full px-4 py-12">
 								<i class="block fad fa-comment-alt-smile text-primary text-opacity-60 text-4xl mb-3"></i>
 								<div class="h6 text-gray-400 dark:text-gray-600">Be the first to comment!</div>
 							</div>
@@ -454,7 +440,7 @@ export default {
 			.catch(error => {
 				console.error(error)
 				this.erroredComments = true
-				dispatch('toasts/addNotification', {
+				this.$store.dispatch('toasts/addNotification', {
 					type: 'error',
 					header: 'Error fetching comments.',
 					message: 'Unable to load comments right now :/'
@@ -473,7 +459,7 @@ export default {
 			.catch(error => {
 				console.error(error)
 				this.erroredComments = true
-				dispatch('toasts/addNotification', {
+				this.$store.dispatch('toasts/addNotification', {
 					type: 'error',
 					header: 'Error fetching replies.',
 					message: 'Unable to load replies right now :/'
