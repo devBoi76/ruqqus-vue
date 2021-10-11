@@ -33,7 +33,8 @@
 							<div class="flex items-center w-full overflow-x-auto">
 								<router-link :to="'/'+item.author.username">
 									<img
-									v-lazy="item.author.avatarUrl"
+									loading="lazy"
+									:src="item.author.avatarUrl"
 									alt="avatar"
 									class="w-9 h-9 md:w-8 md:h-8 object-cover mr-2 rounded-sm"
 									/>
