@@ -20,12 +20,22 @@ const mutations = {
 }
 
 const actions = {
-	fetchSite({ state, commit }) {
+	fetchSite({ state, commit, rootState }) {
 		getSite()
 		.then(response => {
 			let data = response.data
 			commit("SET_SITE", data)
 			//document.documentElement.style.setProperty('--color-primary', data.rgb)
+		})
+		.catch(error => {
+			dispatch('toasts/addNotification', {
+				type: 'error',
+				header: 'Error fetching site details',
+				message: 'Please try refreshing the page'
+			},
+			{
+				root: true
+			})
 		})
 	}
 }

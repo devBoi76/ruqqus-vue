@@ -442,7 +442,7 @@ export default {
 				this.erroredComments = true;
 				this.$store.dispatch('toasts/addNotification', {
 					type: 'error',
-					header: 'Error fetching comments.',
+					header: 'Error fetching comments',
 					message: 'Unable to load comments right now :/'
 				})
 			})
@@ -461,7 +461,7 @@ export default {
 				this.erroredComments = true
 				this.$store.dispatch('toasts/addNotification', {
 					type: 'error',
-					header: 'Error fetching replies.',
+					header: 'Error fetching replies',
 					message: 'Unable to load replies right now :/'
 				})
 			})
