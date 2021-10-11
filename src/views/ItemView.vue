@@ -218,7 +218,7 @@
 
 						<div class="relative">
 
-							<div v-if="item.commentCount > 0">
+							<!-- <div v-if="item.commentCount > 0">
 								<CommentSort :permalink="item.permalink" :count="item.commentCount" class="px-2.5 pt-3 sm:px-4 sm:py-0 sm:mt-5"/>
 							</div>
 
@@ -226,22 +226,22 @@
 
 							<div v-if="item.commentCount > 0 && !loadingComments && !erroredComments" class="px-2.5 py-3 sm:p-4">
 								<CommentList :comments="comments" :offset="offset"/>
-							</div>
+							</div> -->
 
 							<!-- Empty state -->
-							<div v-if="item.commentCount === 0" class="flex flex-col items-center w-full px-4 py-12">
+							<!-- <div v-if="item.commentCount === 0" class="flex flex-col items-center w-full px-4 py-12">
 								<i class="block fad fa-comment-alt-smile text-primary text-opacity-60 text-4xl mb-3"></i>
 								<div class="h6 text-gray-400 dark:text-gray-600">Be the first to comment!</div>
-							</div>
+							</div> -->
 
 							<!-- Error state -->
-							<div v-if="!loadingComments && erroredComments" class="flex flex-col items-center w-full px-4 py-12">
+							<!-- <div v-if="!loadingComments && erroredComments" class="flex flex-col items-center w-full px-4 py-12">
 								<i class="block fad fa-ghost text-primary text-opacity-60 text-4xl mb-3"></i>
 								<div class="h6 text-gray-700 dark:text-gray-600">Error loading comments :/</div>
 								<p class="text-gray-400 dark:text-gray-400">
 									Sorry, we're unable to fetch the comments right now. Please try again later.
 								</p>
-							</div>
+							</div> -->
 						</div>
 					</div>
 				</div>
