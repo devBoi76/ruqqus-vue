@@ -144,7 +144,7 @@
 									<button class="text-gray-500 dark:text-gray-400" @click="vote(1)">
 										<i class="fa-arrow-alt-up fa-fw text-lg" :class="voteType === 1 ? 'text-primary fas' : 'fal'"></i>
 									</button>
-									<div class="text-sm text-center font-bold leading-4 w-8" :class="{ 'text-primary': voteType === 1, 'text-teal-500': voteType === -1, 'text-gray-900 dark:text-gray-300': voteType === 0 }">
+									<div class="text-sm text-center font-bold leading-4 mx-2" :class="{ 'text-primary': voteType === 1, 'text-teal-500': voteType === -1, 'text-gray-900 dark:text-gray-300': voteType === 0 }">
 										{{ item.score + voteType }}
 									</div>
 									<button class="text-gray-500 dark:text-gray-400" @click="vote(-1)">
