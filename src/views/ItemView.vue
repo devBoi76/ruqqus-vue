@@ -21,9 +21,9 @@
 					<!-- End Bread Crumbs -->
 
 					<!-- Pinned Banner -->
-					<div v-if="item && item.isStickied" class="flex items-center mb-3 px-4 py-2 bg-green-100 text-green-700 border border-green-100 rounded-sm">
+					<div v-if="item && item.isStickied" class="flex items-center mb-3 px-4 py-2 bg-green-200 text-green-700 border border-green-300 rounded-sm">
 						<i class="fas fa-thumbtack fa-fw fa-sm mr-2"></i>
-						<span>This post has been pinned by the admins.</span>
+						<span class="font-medium">This post has been pinned by the admins.</span>
 					</div>
 					<!-- End Pinned Banner -->
 
