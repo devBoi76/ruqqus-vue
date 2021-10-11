@@ -198,12 +198,12 @@
 						<CommentWrite v-if="is_authenticated" :visible="replying" @change="toggleReplying" class="relative hidden md:flex p-4 bg-white dark:bg-gray-800 border-b dark:border-gray-700 dark:border-opacity-70 z-20 rounded-t-sm"/>
 
 						<!-- Login CTA -->
-						<div v-else class="hidden sm:flex items-center mb-4 p-2.5 sm:p-4 bg-white dark:bg-gray-800 sm:border sm:rounded-sm">
+						<div v-else class="hidden sm:flex items-center mb-4 p-2.5 sm:p-4 bg-white dark:bg-gray-800 border-b">
 							<div class="flex-grow overflow-hidden">
 								<div class="flex items-center justify-center">
 									<router-link to="/register" custom v-slot="{ navigate }">
 										<button class="button primary" @click="navigate" @keypress.enter="navigate" role="link">
-											Sign up and start posting
+											Sign up and start commenting
 										</button>
 									</router-link>
 									<router-link to="/login" custom v-slot="{ navigate }">
