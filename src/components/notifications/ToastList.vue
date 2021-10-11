@@ -1,5 +1,5 @@
 <template>
-	<div class="fixed bottom-4 left-0 right-0 block w-96 overflow-hidden bg-clip-padding z-100 mx-auto">
+	<div class="fixed bottom-4 left-0 right-0 block w-96 overflow-hidden bg-clip-padding z-100 mx-auto p-4">
 		<div class="space-y-3">
 			<transition-group name="toasts"
 			enter-active-class="transition-all duration-200 ease-in"
