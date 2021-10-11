@@ -184,8 +184,9 @@ const actions = {
 		//commit("CLEAR_ITEMS")
 		getPost(id)
 		.then(response => {
-			commit("SET_ITEM", response.data)
-			console.log(response.data)
+			let data = response.data
+			commit("SET_ITEM", data)
+			console.log(data)
 			//commit('guild/SET_GUILD', response.data.guild, { root: true });
 		})
 		.catch(error => {
