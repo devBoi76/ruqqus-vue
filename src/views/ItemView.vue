@@ -238,22 +238,24 @@
 								</div>
 							</div>
 
-							<div v-if="item.commentCount > 0" class="px-2.5 py-3 sm:p-4">
+							<div v-if="item.commentCount > 0 && !loadingComments && !erroredComments" class="px-2.5 py-3 sm:p-4">
 								<CommentList :comments="comments" :offset="offset"/>
 							</div>
 
 							<!-- Empty state -->
-							<div v-else class="flex flex-col items-center w-full px-4 py-12">
+							<div v-if="loadingComments && !erroredComments" class="flex flex-col items-center w-full px-4 py-12">
 								<i class="block fad fa-comment-alt-smile text-primary text-opacity-60 text-4xl mb-3"></i>
 								<div class="h6 text-gray-400 dark:text-gray-600">Be the first to comment!</div>
 							</div>
 
-							<!-- Loading state
-							<div v-if="item.comment_count > 0 && !comments.length" class="p-3 md:px-4 md:pt-4 pb-48">
-								<span class="loading text-gray-400 text-sm">
-									{{loadingCopy[Math.floor(Math.random() * loadingCopy.length)]}}
-								</span>
-							</div> -->
+							<!-- Error state -->
+							<div v-if="!loadingComments && erroredComments" class="flex flex-col items-center w-full px-4 py-12">
+								<i class="block fad fa-ghost text-primary text-opacity-60 text-4xl mb-3"></i>
+								<div class="h6 text-gray-700 dark:text-gray-600">Error loading comments :/</div>
+								<p class="text-gray-400 dark:text-gray-400">
+									Sorry, we're unable to fetch the comments right now. Please try again later.
+								</p>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -452,7 +454,11 @@ export default {
 			.catch(error => {
 				console.error(error)
 				this.erroredComments = true
-
+				dispatch('toasts/addNotification', {
+					type: 'error',
+					header: 'Error fetching comments.',
+					message: 'Unable to load comments right now :/'
+				}
 			})
 			.finally(() => this.loadingComments = false)
 		},
@@ -466,8 +472,12 @@ export default {
 			})
 			.catch(error => {
 				console.error(error)
-				this.erroredComment = true
-
+				this.erroredComments = true
+				dispatch('toasts/addNotification', {
+					type: 'error',
+					header: 'Error fetching replies.',
+					message: 'Unable to load replies right now :/'
+				}
 			})
 			.finally(() => this.loadingComments = false)
 		}
