@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-between p-3 rounded shadow bg-white transition-all duration-200">
+  <div class="flex justify-between p-3 rounded shadow-lg bg-white transition-all duration-200">
     <div class="flex items-center space-x-3 pr-3">
       <i class='far fa-fw fa-lg' :class="notification.type === 'success' ? 'fa-check-circle text-green-500' : 'fa-exclamation-circle text-red-500'"></i>
       <div class="border-l pl-4">
