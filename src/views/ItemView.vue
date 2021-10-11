@@ -236,10 +236,10 @@
 
 							<!-- Error state -->
 							<div v-if="!loadingComments && erroredComments" class="flex flex-col items-center w-full px-4 py-12">
-								<i class="block fad fa-ghost text-primary text-opacity-60 text-4xl mb-3"></i>
+								<i class="block fad fa-comment-alt-times text-primary text-opacity-60 text-4xl mb-3"></i>
 								<div class="h6 text-gray-700 dark:text-gray-600">Error loading comments</div>
 								<p class="text-gray-400 dark:text-gray-400">
-									Sorry, we're unable to fetch the comments right now. Please try again later.
+									Whoops! Please try refreshing the page.
 								</p>
 							</div>
 						</div>
