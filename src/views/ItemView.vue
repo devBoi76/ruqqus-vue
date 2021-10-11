@@ -294,6 +294,7 @@ export default {
 	name: "item-view",
 	data() {
 		return {
+			item: this.getItem(this.$route.params.id);
 			loading: true,
 			errored: false,
 			loadingComments: true,
@@ -383,9 +384,9 @@ export default {
 		...mapState("persist", ["v"]),
 		...mapState("comments", ["mentions"]),
 		...mapGetters("items", ["getItem"]),
-		item: function() {
-			return this.getItem(this.$route.params.id);
-		},
+		// item: function() {
+		// 	return this.getItem(this.$route.params.id);
+		// },
 		voteType: {
 			get() {
 				return this.$store.getters['items/getItemVoteType'](this.$route.params.id);
