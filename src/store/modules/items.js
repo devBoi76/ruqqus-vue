@@ -19,8 +19,8 @@ const state = {
 	time_filter: 'day',
 	guild_name: '',
 	ids: [],
-	posts: Object,
-	comments: Object,
+	posts: {},
+	comments: {},
 	lists: {
 		activity: [],
 		disputed: [],
@@ -101,9 +101,9 @@ const mutations = {
 		let post = { ...vote, ...item } //object = Object.assign(object, item)
 		console.log(post)
 		// set state posts object to item
-		state.posts = { ...state.posts, ...{ [item.id]:post } }
+		//state.posts = { ...state.posts, ...{ [item.id]:post } }
 		//state.posts = Object.assign({}, state.posts, { [item.id]:post })
-		console.log(state.posts)
+		//console.log(state.posts)
 	},
 	SET_ITEMS: (state, items) => {
 		for (let i = 0; i < items.length; i++) {
