@@ -195,10 +195,10 @@
 					<!-- Comment section -->
 					<div v-if="item" class="bg-white dark:bg-gray-800 border-t border-gray-100 dark:border-0 sm:border sm:rounded-sm mt-3">
 
-						<!-- <CommentWrite v-if="is_authenticated" :visible="replying" @change="toggleReplying" class="relative hidden md:flex p-4 bg-white dark:bg-gray-800 border-b dark:border-gray-700 dark:border-opacity-70 z-20 rounded-t-sm"/> -->
+						<CommentWrite v-if="is_authenticated" :visible="replying" @change="toggleReplying" class="relative hidden md:flex p-4 bg-white dark:bg-gray-800 border-b dark:border-gray-700 dark:border-opacity-70 z-20 rounded-t-sm"/>
 
 						<!-- Login CTA -->
-						<!-- <div v-else class="flex items-center mb-4 p-2.5 sm:p-4 bg-white dark:bg-gray-800 border-b">
+						<div v-else class="flex items-center mb-4 p-2.5 sm:p-4 bg-white dark:bg-gray-800 border-b">
 							<div class="flex-grow overflow-hidden">
 								<div class="flex items-center justify-center">
 									<router-link to="/register" custom v-slot="{ navigate }">
@@ -213,7 +213,7 @@
 									</router-link>
 								</div>
 							</div>
-						</div> -->
+						</div>
 						<!-- End Login CTA -->
 
 						<div class="relative">
@@ -439,12 +439,12 @@ export default {
 			})
 			.catch(error => {
 				console.error(error)
-				this.erroredComments = true
-				// this.$store.dispatch('toasts/addNotification', {
-				// 	type: 'error',
-				// 	header: 'Error fetching comments.',
-				// 	message: 'Unable to load comments right now :/'
-				// }
+				this.erroredComments = true;
+				this.$store.dispatch('toasts/addNotification', {
+					type: 'error',
+					header: 'Error fetching comments.',
+					message: 'Unable to load comments right now :/'
+				})
 			})
 			.finally(() => this.loadingComments = false)
 		},
@@ -459,11 +459,11 @@ export default {
 			.catch(error => {
 				console.error(error)
 				this.erroredComments = true
-				// this.$store.dispatch('toasts/addNotification', {
-				// 	type: 'error',
-				// 	header: 'Error fetching replies.',
-				// 	message: 'Unable to load replies right now :/'
-				// }
+				this.$store.dispatch('toasts/addNotification', {
+					type: 'error',
+					header: 'Error fetching replies.',
+					message: 'Unable to load replies right now :/'
+				})
 			})
 			.finally(() => this.loadingComments = false)
 		}
