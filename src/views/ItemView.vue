@@ -195,7 +195,7 @@
 					<!-- Comment section -->
 					<div v-if="item" class="bg-white dark:bg-gray-800 border-t border-gray-100 dark:border-0 sm:border sm:rounded-sm mt-3">
 
-						<CommentWrite v-if="v" :visible="replying" @change="toggleReplying" class="relative hidden md:flex p-4 bg-white dark:bg-gray-800 border-b dark:border-gray-700 dark:border-opacity-70 z-20 rounded-t-sm"/>
+						<CommentWrite v-if="is_authenticated" :visible="replying" @change="toggleReplying" class="relative hidden md:flex p-4 bg-white dark:bg-gray-800 border-b dark:border-gray-700 dark:border-opacity-70 z-20 rounded-t-sm"/>
 
 						<div v-else class="relative hidden md:flex justify-between p-2.5 sm:p-4 bg-white border-b z-20">
 							<p>
@@ -211,26 +211,13 @@
 							</div>
 						</div>
 
-						<div class="relative" :class="{'md:-mt-14':item.commentCount >= 8}">
-							<div v-if="item.commentCount >= 8" class="sticky top-0 hidden md:flex items-center justify-between p-4 bg-white border-b dark:border-gray-700 z-10">
-								<div class="flex space-x-2 break-words">
-									<router-link :to="`/+${$route.params.name}`" class="text-sm capitalize text-gray-400 hover:underline dark:text-gray-100 router-link-active">
-										+{{ $route.params.name }}
-									</router-link>
-									<span class="text-sm text-gray-400 dark:text-gray-100">
-										/
-									</span>
-									<span class="font-bold text-sm capitalize dark:text-gray-100 w-80 truncate">
-										{{ item.title }}
-									</span>
-								</div>
-							</div>
+						<div class="relative">
 
 							<div v-if="item.commentCount > 0">
 								<CommentSort :permalink="item.permalink" :count="item.commentCount" class="px-2.5 pt-3 sm:px-4 sm:py-0 sm:mt-5"/>
 							</div>
 
-							<CommentWrite v-if="v" :visible="replying" @change="toggleReplying" class="relative flex md:hidden px-2.5 pt-3 mb-1"/>
+							<CommentWrite v-if="is_authenticated" :visible="replying" @change="toggleReplying" class="relative flex md:hidden px-2.5 pt-3 mb-1"/>
 
 							<div v-else class="relative flex md:hidden justify-between px-2.5 pt-3">
 								<p>
@@ -378,7 +365,7 @@ export default {
 		}
 	},
 	computed: {
-		...mapState("persist", ["v"]),
+		...mapState("persist", ["is_authenticated", "v"]),
 		...mapState("comments", ["mentions"]),
 		...mapGetters("items", ["getItem"]),
 		item: function() {
