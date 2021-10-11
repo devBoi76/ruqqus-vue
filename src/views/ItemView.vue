@@ -7,23 +7,21 @@
 				<div class="w-full">
 
 					<!-- Bread Crumbs -->
-					<div v-if="item" class="hidden space-x-1 mb-3 break-words">
-						<router-link :to="`/+${$route.params.name}`" class="text-sm capitalize text-gray-400 hover:underline dark:text-gray-100">
-							Home
-						</router-link>
-						<span class="text-sm text-gray-400 dark:text-gray-100">
-							<i class="far fa-long-arrow-right"/>
+					<div v-if="item" class="space-x-2 mb-3 break-words">
+						<router-link :to="`/+${$route.params.name}`" class="text-sm capitalize text-gray-500 dark:text-gray-100">Home</router-link>
+						<span class="text-sm text-gray-500 dark:text-gray-100">
+							<i class="fal fa-long-arrow-right"/>
 						</span>
-						<span class="text-sm capitalize text-gray-700 dark:text-gray-100">
-							{{ item.title }}
-						</span>
+						<router-link to="/" class="text-sm capitalize text-gray-700 dark:text-gray-100">{{ item.title }}</router-link>
 					</div>
 					<!-- End Bread Crumbs -->
 
 					<!-- Pinned Banner -->
-					<div v-if="item && item.isStickied" class="flex items-center mb-3 px-4 py-2 bg-green-200 text-green-700 border border-green-300 rounded-sm">
-						<i class="fas fa-thumbtack fa-fw fa-sm mr-2"></i>
-						<span class="font-medium">This post has been pinned by the admins.</span>
+					<div v-if="item && item.isStickied" class="flex items-center mb-3 bg-green-100 border border-green-500 rounded-sm">
+						<div class="flex items-center justify-center w-10 h-10 bg-green-500">
+							<i class="fas fa-thumbtack text-white mt-1"></i>
+						</div>
+						<div class="font-semibold pl-3">This post has been pinned by the admins.</div>
 					</div>
 					<!-- End Pinned Banner -->
 
