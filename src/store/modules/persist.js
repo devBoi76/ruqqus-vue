@@ -184,8 +184,8 @@ const actions = {
 			commit("AUTHENTICATE", false);
 			dispatch('toasts/addNotification', {
 				type: 'error',
-				header: 'Error logging in.',
-				message: 'Sorry, please try again later.'
+				header: 'Error logging in',
+				message: 'Please try again later :/'
 			},
 			{
 				root: true
