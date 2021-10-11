@@ -20,9 +20,9 @@
 				</div>
 				<!-- Sort Links (hot, top, new, etc) -->
 				<ul class="flex items-center space-x-3 mb-0 text-sm">
-					<li v-for="sort in sorts" :key="sort.id" class="capitalize">
+					<li v-for="sort in sorts" :key="sort.id">
 						<router-link :to="sort.route" custom v-slot="{ isExactActive, navigate }">
-							<button @click="navigate" @keypress.enter="navigate" :class="isExactActive ? 'text-gray-700' : 'text-gray-400 hover:text-gray-500'" role="link">
+							<button @click="navigate" @keypress.enter="navigate" class="capitalize" :class="isExactActive ? 'text-gray-700' : 'text-gray-400 hover:text-gray-500'" role="link">
 								{{ sort.text }}
 							</button>
 						</router-link>
