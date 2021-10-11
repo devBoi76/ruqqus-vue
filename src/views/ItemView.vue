@@ -11,7 +11,7 @@
 						<div class="flex items-center justify-center w-10 h-10 bg-green-400">
 							<i class="fas fa-thumbtack text-white mt-1"></i>
 						</div>
-						<div class="text-green-500 font-medium pl-3">This post has been pinned by the admins.</div>
+						<div class="text-green-500 font-medium pl-3">This post has been pinned.</div>
 					</div>
 					<!-- End Pinned Banner -->
 
