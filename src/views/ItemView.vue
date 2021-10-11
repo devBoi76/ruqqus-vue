@@ -195,10 +195,10 @@
 					<!-- Comment section -->
 					<div v-if="item" class="bg-white dark:bg-gray-800 border-t border-gray-100 dark:border-0 sm:border sm:rounded-sm mt-3">
 
-						<CommentWrite v-if="is_authenticated" :visible="replying" @change="toggleReplying" class="relative hidden md:flex p-4 bg-white dark:bg-gray-800 border-b dark:border-gray-700 dark:border-opacity-70 z-20 rounded-t-sm"/>
+						<!-- <CommentWrite v-if="is_authenticated" :visible="replying" @change="toggleReplying" class="relative hidden md:flex p-4 bg-white dark:bg-gray-800 border-b dark:border-gray-700 dark:border-opacity-70 z-20 rounded-t-sm"/> -->
 
 						<!-- Login CTA -->
-						<div v-else class="flex items-center mb-4 p-2.5 sm:p-4 bg-white dark:bg-gray-800 border-b">
+						<!-- <div v-else class="flex items-center mb-4 p-2.5 sm:p-4 bg-white dark:bg-gray-800 border-b">
 							<div class="flex-grow overflow-hidden">
 								<div class="flex items-center justify-center">
 									<router-link to="/register" custom v-slot="{ navigate }">
@@ -213,12 +213,12 @@
 									</router-link>
 								</div>
 							</div>
-						</div>
+						</div> -->
 						<!-- End Login CTA -->
 
 						<div class="relative">
 
-							<!-- <div v-if="item.commentCount > 0">
+							<div v-if="item.commentCount > 0">
 								<CommentSort :permalink="item.permalink" :count="item.commentCount" class="px-2.5 pt-3 sm:px-4 sm:py-0 sm:mt-5"/>
 							</div>
 
@@ -226,22 +226,22 @@
 
 							<div v-if="item.commentCount > 0 && !loadingComments && !erroredComments" class="px-2.5 py-3 sm:p-4">
 								<CommentList :comments="comments" :offset="offset"/>
-							</div> -->
+							</div>
 
 							<!-- Empty state -->
-							<!-- <div v-if="item.commentCount === 0" class="flex flex-col items-center w-full px-4 py-12">
+							<div v-if="item.commentCount === 0" class="flex flex-col items-center w-full px-4 py-12">
 								<i class="block fad fa-comment-alt-smile text-primary text-opacity-60 text-4xl mb-3"></i>
 								<div class="h6 text-gray-400 dark:text-gray-600">Be the first to comment!</div>
-							</div> -->
+							</div>
 
 							<!-- Error state -->
-							<!-- <div v-if="!loadingComments && erroredComments" class="flex flex-col items-center w-full px-4 py-12">
+							<div v-if="!loadingComments && erroredComments" class="flex flex-col items-center w-full px-4 py-12">
 								<i class="block fad fa-ghost text-primary text-opacity-60 text-4xl mb-3"></i>
 								<div class="h6 text-gray-700 dark:text-gray-600">Error loading comments :/</div>
 								<p class="text-gray-400 dark:text-gray-400">
 									Sorry, we're unable to fetch the comments right now. Please try again later.
 								</p>
-							</div> -->
+							</div>
 						</div>
 					</div>
 				</div>
