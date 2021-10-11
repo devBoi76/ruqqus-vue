@@ -1,6 +1,6 @@
 <template>
-	<div class="fixed bottom-4 w-full z-100">
-		<div class="mx-auto w-96 space-y-3">
+	<div class="fixed bottom-4 w-full flex items-center z-100">
+		<div class="w-96 space-y-3">
 			<transition-group name="toasts"
 			enter-active-class="transition-all duration-200 ease-in"
 			enter-from-class="opacity-0 translate-y-10"
