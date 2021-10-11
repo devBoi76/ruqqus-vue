@@ -7,12 +7,12 @@
 				<div class="w-full">
 
 					<!-- Bread Crumbs -->
-					<div v-if="item" class="hidden space-x-2 mb-3 break-words">
+					<div v-if="item" class="hidden space-x-1 mb-3 break-words">
 						<router-link :to="`/+${$route.params.name}`" class="text-sm capitalize text-gray-400 hover:underline dark:text-gray-100">
-							Posts
+							Home
 						</router-link>
 						<span class="text-sm text-gray-400 dark:text-gray-100">
-							/
+							<i class="far fa-long-arrow-right"/>
 						</span>
 						<span class="text-sm capitalize text-gray-700 dark:text-gray-100">
 							{{ item.title }}
