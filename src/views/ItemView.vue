@@ -6,6 +6,15 @@
 				<!-- Main Content Section -->
 				<div class="w-full">
 
+					<!-- Pinned Banner -->
+					<div v-if="item && item.isStickied" class="flex items-center mb-3 bg-green-100 border border-green-500 rounded-sm">
+						<div class="flex items-center justify-center w-10 h-10 bg-green-500">
+							<i class="fas fa-thumbtack text-white mt-1"></i>
+						</div>
+						<div class="font-medium pl-3">This post has been pinned by the admins.</div>
+					</div>
+					<!-- End Pinned Banner -->
+
 					<!-- Bread Crumbs -->
 					<div v-if="item" class="space-x-2 mb-3 break-words">
 						<router-link :to="`/+${$route.params.name}`" class="text-sm capitalize text-gray-500 dark:text-gray-100">Home</router-link>
@@ -15,15 +24,6 @@
 						<router-link to="/" class="text-sm capitalize text-gray-700 dark:text-gray-100">{{ item.title }}</router-link>
 					</div>
 					<!-- End Bread Crumbs -->
-
-					<!-- Pinned Banner -->
-					<div v-if="item && item.isStickied" class="flex items-center mb-3 bg-green-100 border border-green-500 rounded-sm">
-						<div class="flex items-center justify-center w-10 h-10 bg-green-500">
-							<i class="fas fa-thumbtack text-white mt-1"></i>
-						</div>
-						<div class="font-semibold pl-3">This post has been pinned by the admins.</div>
-					</div>
-					<!-- End Pinned Banner -->
 
 					<div v-if="item" class="relative w-full bg-white dark:bg-gray-800 border-t border-b border-gray-100 dark:border-0 sm:border sm:border-gray-200 sm:rounded-sm dark:text-gray-100">
 						<!-- Item's meta information and content-->
