@@ -17,11 +17,11 @@
 
 					<!-- Bread Crumbs -->
 					<div v-if="item" class="space-x-2 mb-3 break-words">
-						<router-link :to="`/+${$route.params.name}`" class="text-sm capitalize text-gray-500 dark:text-gray-100">Home</router-link>
+						<router-link to="/" class="text-sm capitalize text-gray-500 dark:text-gray-100">Home</router-link>
 						<span class="text-sm text-gray-500 dark:text-gray-100">
 							<i class="fal fa-long-arrow-right"/>
 						</span>
-						<router-link to="/" class="text-sm capitalize text-gray-700 dark:text-gray-100">{{ item.title }}</router-link>
+						<router-link :to="item.permalink" class="text-sm capitalize text-gray-700 dark:text-gray-100">{{ item.title }}</router-link>
 					</div>
 					<!-- End Bread Crumbs -->
 
