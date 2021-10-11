@@ -193,7 +193,7 @@ const actions = {
 		.catch(error => {
 			dispatch('toasts/addNotification', {
 				type: 'error',
-				header: 'Error fetching content.',
+				header: 'Error fetching post',
 				message: 'Unable to load this post :/'
 			},
 			{
@@ -211,7 +211,7 @@ const actions = {
 		.catch(error => {
 			dispatch('toasts/addNotification', {
 				type: 'error',
-				header: 'Error fetching content.',
+				header: 'Error fetching posts',
 				message: 'Unable to load posts right now :/'
 			},
 			{
@@ -234,7 +234,7 @@ const actions = {
 		.catch(error => {
 			dispatch('toasts/addNotification', {
 				type: 'error',
-				header: 'Error fetching content.',
+				header: 'Error fetching posts',
 				message: 'Unable to load posts right now :/'
 			},
 			{
@@ -252,7 +252,7 @@ const actions = {
 		.catch(error => {
 			dispatch('toasts/addNotification', {
 				type: 'error',
-				header: 'Error fetching results.',
+				header: 'Error fetching results',
 				message: 'Unable to load search results :/'
 			},
 			{
