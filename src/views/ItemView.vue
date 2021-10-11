@@ -21,13 +21,13 @@
 					<!-- End Bread Crumbs -->
 
 					<!-- Pinned Banner -->
-					<div v-if="item && item.isStickied" class="flex items-center mb-2 px-4 py-2 bg-green-500 text-green-700 rounded-sm">
+					<div v-if="item && item.isStickied" class="flex items-center mb-3 px-4 py-2 bg-green-200 text-green-500 border border-green-700 rounded-sm">
 						<i class="fas fa-thumbtack fa-sm mr-2"></i>
-						This post has been pinned by the guild masters.
+						This post has been pinned by the admins.
 					</div>
 					<!-- End Pinned Banner -->
 
-					<div v-if="item" class="relative w-full bg-white dark:bg-gray-800 border-t border-b border-gray-100 dark:border-0 sm:border-0 sm:rounded-sm dark:text-gray-100">
+					<div v-if="item" class="relative w-full bg-white dark:bg-gray-800 border-t border-b border-gray-100 dark:border-0 sm:border sm:rounded-sm dark:text-gray-100">
 						<!-- Item's meta information and content-->
 						<div class="flex flex-shrink-0 items-center justify-between p-2.5 border-b dark:border-gray-700 dark:border-opacity-70">
 							<div class="flex items-center w-full overflow-x-auto">
@@ -88,7 +88,7 @@
 						</div>
 
 						<!-- Image -->
-						<div v-if="item.type !== 'image'" class="flex justify-center mt-3 md:mt-4">
+						<div v-if="item.type === 'image'" class="flex justify-center mt-3 md:mt-4">
 							<img
 							:src="item.url"
 							alt="Post image"
@@ -192,7 +192,7 @@
 					</div>
 
 					<!-- Comment section -->
-					<div v-if="item" class="bg-white dark:bg-gray-800 border-t border-gray-100 dark:border-0 sm:border-0 sm:rounded-sm mt-3">
+					<div v-if="item" class="bg-white dark:bg-gray-800 border-t border-gray-100 dark:border-0 sm:border sm:rounded-sm mt-3">
 
 						<CommentWrite v-if="v" :visible="replying" @change="toggleReplying" class="relative hidden md:flex p-4 bg-white dark:bg-gray-800 border-b dark:border-gray-700 dark:border-opacity-70 z-20 rounded-t-sm"/>
 
@@ -276,8 +276,6 @@ import { defineAsyncComponent } from 'vue'
 import { getPostComments } from '../api/Post.js';
 import { getComment } from '../api/Comment.js';
 
-import Banner from '@/components/Banner.vue';
-
 const CommentWrite = defineAsyncComponent(() => import('@/components/comment/CommentWrite.vue'));
 const CommentSort = defineAsyncComponent(() => import('@/components/comment/CommentSort.vue'));
 const CommentList = defineAsyncComponent(() => import('@/components/comment/CommentList.vue'));
@@ -326,7 +324,6 @@ export default {
 		};
 	},
 	components: {
-		Banner,
 		EmbedLink,
 		CommentSort,
 		CommentWrite,
