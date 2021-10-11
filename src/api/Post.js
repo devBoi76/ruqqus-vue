@@ -3,7 +3,7 @@
 
 import axios from 'axios';
 
-const url = 'https://ed938631-cc32-4bb1-805e-ae9a7f5b4bca.mock.pstmn.io/v2/post/'
+const url = 'https://e7c49a6d-8ce7-466c-992e-7cf3e6e2d110.mock.pstmn.io/v2/post/'
 
 // Return post info given id
 export function getPost(id){
