@@ -317,7 +317,12 @@ export default {
 			'Summoning replies through wizardry',
 			'Using interweb magic to fetch comments',
 			'Cleaning up unicorn vomit before displaying comments'
-			]
+			],
+			postIcon: {
+				'image': 'far fa-camera-alt text-gray-400',
+				'text': 'far fa-text text-gray-400',
+				'link': 'far fa-external-link text-gray-400'
+			}
 		};
 	},
 	components: {
@@ -395,15 +400,6 @@ export default {
 				return this.$store.getters['items/getItemVoteActionStatus'](this.$route.params.id);
 			} else {
 				return 0
-			}
-		},
-		postIcon() {
-			if (!this.item.url) {
-				return 'far fa-text text-gray-400'
-			} else if (this.item.is_image) {
-				return 'far fa-camera-alt text-gray-400'
-			} else {
-				return 'far fa-link text-gray-400'
 			}
 		},
 		offset() {
