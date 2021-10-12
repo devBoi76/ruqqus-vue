@@ -57,7 +57,7 @@
 							</div>
 							<div class="hidden md:block">
 								<!-- External Link Icon -->
-								<a v-if="item.url" :href="item.url" target="_blank" class="block">
+								<a v-if="item.url && item.type === 'link'" :href="item.url" target="_blank" class="block">
 									<i class="far fa-external-link text-gray-400"></i>
 								</a>
 								<!-- Thumbtack, Image, or Text Icon -->
