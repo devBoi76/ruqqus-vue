@@ -287,7 +287,7 @@ const actions = {
 			commit('SET_ITEM_VOTE_ACTION_STATUS', {status: 3, id: obj.post_id});
 			dispatch('toasts/addNotification', {
 				type: 'error',
-				header: 'Failed to cast vote.',
+				header: 'Failed to cast vote',
 				message: 'Please try again later.'
 			},
 			{
