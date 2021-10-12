@@ -1,5 +1,5 @@
 <template>
-	<div class="w-full overflow-y-auto">
+	<div class="container mx-auto overflow-y-auto">
 		<div class="grid grid-cols-12">
 			<div class="col-span-full xl:col-start-2 xl:col-end-12 flex gap-6 sm:p-6 my-2.5 sm:my-0">
 
@@ -91,7 +91,7 @@
 							<img
 							:src="item.url"
 							alt="Post image"
-							class="w-full md:w-2/3 h-full object-cover sm:rounded-sm"
+							class="w-full md:w-1/3 h-full object-cover md:rounded-sm"
 							/>
 						</div>
 

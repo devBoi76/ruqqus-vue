@@ -1,5 +1,5 @@
 <template>
-	<div class="w-full overflow-y-auto">
+	<div class="container mx-auto overflow-y-auto">
 		<Banner v-if="site.hasBanner"/>
 		<div class="grid grid-cols-12" :class="{ 'xl:grid-cols-10':isCard }">
 			<div class="col-span-full flex gap-6 sm:p-6 my-2.5 sm:my-0" :class="isCard ? 'xl:col-start-3 xl:col-end-9' : 'xl:col-start-2 xl:col-end-12'">
