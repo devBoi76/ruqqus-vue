@@ -112,9 +112,11 @@ const mutations = {
 			// Vue.set(item, 'itemVoteActionStatus', 0)
 			// Vue.set(item, 'itemVotedStatus', item.voted !== 0)
 			//Vue.set(state.posts, item.id, item)
-			let object = { itemVoteActionStatus: 0, itemVotedStatus: item.voted !== 0 }
-			object = Object.assign(object, item)
-			state.posts = Object.assign({}, state.posts, { [item.id]:object })
+			let vote = { itemVoteActionStatus: 0, itemVotedStatus: item.voted !== 0 }
+			let post = { ...vote, ...item }
+			//object = Object.assign(object, item)
+			state.posts = { ...state.posts, ...{ [item.id]:post } }
+			//state.posts = Object.assign({}, state.posts, { [item.id]:object })
 		}
 		console.log(state.posts)
 	},
