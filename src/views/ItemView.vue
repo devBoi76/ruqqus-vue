@@ -16,7 +16,7 @@
 					<!-- End Pinned Banner -->
 
 					<!-- Bread Crumbs -->
-					<div v-if="item" class="space-x-1.5 mb-3 p-2.5 break-words">
+					<div v-if="item" class="space-x-1.5 mb-3 px-2.5 break-words">
 						<router-link to="/" class="text-sm capitalize text-gray-400 dark:text-gray-100">Home</router-link>
 						<span class="text-sm text-gray-400 dark:text-gray-100">
 							<i class="fal fa-long-arrow-right"/>
@@ -25,7 +25,7 @@
 					</div>
 					<!-- End Bread Crumbs -->
 
-					<div v-if="item" class="relative w-full bg-white dark:bg-gray-800 border-t border-b border-gray-100 dark:border-0 sm:border sm:border-gray-200 sm:rounded-sm dark:text-gray-100">
+					<div v-if="item" class="relative w-full bg-white dark:bg-gray-800 border-t border-b border-gray-100 dark:border-0 sm:border sm:border-gray-200 sm:rounded-sm dark:text-gray-100 mb-3">
 						<!-- Item's meta information and content-->
 						<div class="flex flex-shrink-0 items-center justify-between p-2.5 border-b dark:border-gray-700 dark:border-opacity-70">
 							<div class="flex items-center w-full overflow-x-auto">
@@ -193,7 +193,7 @@
 					</div>
 
 					<!-- Comment section -->
-					<div v-if="item" class="bg-white dark:bg-gray-800 border-t border-gray-100 dark:border-0 sm:border sm:border-gray-200 sm:rounded-sm mt-3">
+					<div v-if="item" class="bg-white dark:bg-gray-800 border-t border-gray-100 dark:border-0 sm:border sm:border-gray-200 sm:rounded-sm">
 
 						<CommentWrite v-if="is_authenticated" :visible="replying" @change="toggleReplying" class="relative hidden md:flex p-4 bg-white dark:bg-gray-800 border-b dark:border-gray-700 dark:border-opacity-70 z-20 rounded-t-sm"/>
 
