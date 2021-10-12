@@ -1,7 +1,7 @@
 <template>
 	<div class="w-full overflow-y-auto">
-		<div class="container mx-auto grid grid-cols-12">
-			<div class="col-span-full xl:col-start-2 xl:col-end-12 flex gap-6 sm:p-6 my-2.5 sm:my-0">
+		<div class="container mx-auto grid grid-cols-12 xl:grid-cols-10">
+			<div class="col-span-full xl:col-start-3 xl:col-end-9 flex gap-6 sm:p-6 my-2.5 sm:my-0">
 
 				<!-- Main Content Section -->
 				<div class="w-full">
