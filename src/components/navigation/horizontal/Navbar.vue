@@ -57,12 +57,12 @@
 						</button>
 					</div>
 					<div class="flex flex-col items-center mt-8 px-4 py-2">
-						<router-link to="/login" custom v-slot="{ navigate }">
+						<router-link to="/login" custom v-slot="{ navigate, drawer }">
 							<button class="button outlinePrimary w-full" @click="navigate; drawer" @keypress.enter="navigate; drawer" role="link">
 								Sign in
 							</button>
 						</router-link>
-						<router-link to="/register" custom v-slot="{ navigate }">
+						<router-link to="/register" custom v-slot="{ navigate, drawer }">
 							<button class="button primary mt-2 w-full" @click="navigate; drawer" @keypress.enter="navigate; drawer" role="link">
 								Sign up
 							</button>

@@ -7,16 +7,16 @@
 				<div class="w-full">
 
 					<!-- Pinned Banner -->
-					<div v-if="item && item.isStickied" class="flex items-center mb-3 bg-green-100 border border-green-400 rounded-sm">
+					<div v-if="item && item.isStickied" class="flex items-center mb-3 bg-green-100 border border-green-400 sm:rounded-sm">
 						<div class="flex items-center justify-center w-10 h-10 bg-green-400">
 							<i class="fas fa-thumbtack text-white mt-1"></i>
 						</div>
-						<div class="text-green-500 font-medium pl-3">This post has been pinned.</div>
+						<div class="text-green-500 font-medium pl-2.5">This post has been pinned.</div>
 					</div>
 					<!-- End Pinned Banner -->
 
 					<!-- Bread Crumbs -->
-					<div v-if="item" class="space-x-1.5 mb-3 break-words">
+					<div v-if="item" class="space-x-1.5 mb-3 p-2.5 break-words">
 						<router-link to="/" class="text-sm capitalize text-gray-400 dark:text-gray-100">Home</router-link>
 						<span class="text-sm text-gray-400 dark:text-gray-100">
 							<i class="fal fa-long-arrow-right"/>
@@ -151,18 +151,20 @@
 										<i class="fa-arrow-alt-down fa-fw text-lg" :class="voteType === -1 ? 'text-teal-500 fas' : 'fal'"></i>
 									</button>
 								</div>
-								<button class="flex items-center text-gray-500 leading-none dark:text-gray-400 hover:text-gray-600">
+								<!-- <button class="flex items-center text-gray-500 leading-none dark:text-gray-400 hover:text-gray-600">
 									<i class="far fa-retweet-alt fa-fw mr-1"></i>
 									<span class="text-sm font-bold">Repost</span>
-								</button>
+								</button> -->
 								<button class="flex items-center text-gray-500 leading-none dark:text-gray-400 hover:text-gray-600">
 									<i class="far fa-share-alt fa-fw mr-1"></i>
 									<span class="text-sm font-bold">Share</span>
 								</button>
-								<button class="flex items-center text-gray-500 leading-none dark:text-gray-400 hover:text-gray-600">
-									<i class="far fa-bookmark fa-fw mr-1"></i>
-									<span class="text-sm font-bold">Save</span>
-								</button>
+								<SaveButton #default="{ item }" :isSaved="item.isSaved">
+									<button class="flex items-center text-gray-500 leading-none dark:text-gray-400 hover:text-gray-600">
+										<i class="far fa-bookmark fa-fw mr-1"></i>
+										<span class="text-sm font-bold">Save</span>
+									</button>
+								</SaveButton>
 								<button v-if="author" class="flex items-center text-gray-500 leading-none dark:text-gray-400 hover:text-gray-600">
 									<i class="far fa-trash-alt fa-fw mr-1"></i>
 									<span class="text-sm font-bold">Delete</span>
