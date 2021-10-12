@@ -6,16 +6,6 @@
 				<!-- Main Content Section -->
 				<div class="w-full">
 
-					<!-- Bread Crumbs -->
-					<div v-if="item" class="space-x-1.5 mb-3 px-2.5 break-words">
-						<router-link to="/" class="text-sm capitalize text-gray-400 dark:text-gray-100">Home</router-link>
-						<span class="text-sm text-gray-400 dark:text-gray-100">
-							<i class="fal fa-long-arrow-right"/>
-						</span>
-						<router-link :to="item.permalink" class="text-sm capitalize text-gray-700 dark:text-gray-100">{{ item.title }}</router-link>
-					</div>
-					<!-- End Bread Crumbs -->
-
 					<!-- Pinned Banner -->
 					<div v-if="item && item.isStickied" class="flex items-center mb-3 bg-green-100 border-t border-b sm:border border-green-400 sm:rounded-sm">
 						<div class="flex items-center justify-center w-10 h-10 bg-green-400">
@@ -24,6 +14,16 @@
 						<div class="text-green-500 font-medium pl-2.5">This post has been pinned.</div>
 					</div>
 					<!-- End Pinned Banner -->
+
+					<!-- Bread Crumbs -->
+					<div v-if="item" class="space-x-1 mb-3 px-2.5 break-words">
+						<router-link to="/" class="text-sm capitalize text-gray-400 dark:text-gray-100">Home</router-link>
+						<span class="text-gray-400 dark:text-gray-100">
+							<i class="fal fa-long-arrow-right fa-sm fa-fw"/>
+						</span>
+						<router-link :to="item.permalink" class="text-sm capitalize text-gray-700 dark:text-gray-100">{{ item.title }}</router-link>
+					</div>
+					<!-- End Bread Crumbs -->
 
 					<div v-if="item" class="relative w-full bg-white dark:bg-gray-800 border-t border-b border-gray-100 dark:border-0 sm:border sm:border-gray-200 sm:rounded-sm dark:text-gray-100 mb-3">
 						<!-- Item's meta information and content-->
