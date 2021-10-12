@@ -159,7 +159,7 @@
 									<i class="far fa-share-alt fa-fw mr-1"></i>
 									<span class="text-sm font-bold">Share</span>
 								</button>
-								<SaveButton #default="{ item }" :isSaved="item.isSaved">
+								<SaveButton #default :item="{ id: item.id, isSaved: item.isSaved }">
 									<button class="flex items-center text-gray-500 leading-none dark:text-gray-400 hover:text-gray-600">
 										<i class="far fa-bookmark fa-fw mr-1"></i>
 										<span class="text-sm font-bold">Save</span>
@@ -263,6 +263,8 @@ const CommentList = defineAsyncComponent(() => import('@/components/comment/Comm
 
 const EmbedLink = defineAsyncComponent(() => import('@/components/embeds/Link.vue'));
 
+const SaveButton = defineAsyncComponent(() => import('@/components/buttons/SavePostButton.vue'));
+
 //import state
 import { mapState, mapActions, mapGetters } from "vuex";
 
@@ -308,7 +310,8 @@ export default {
 		EmbedLink,
 		CommentSort,
 		CommentWrite,
-		CommentList
+		CommentList,
+		SaveButton
 	},
 	watch: {
 		// Fetch the post if the id changes
