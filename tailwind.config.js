@@ -180,7 +180,13 @@ module.exports = {
 			'75': 75,
 			'100': 100,
 			'auto': 'auto'
-		}
+		},
+		container: {
+			screens: {
+				lg: "1180px",
+				xl: "1280px"
+			}
+		},
 	},
 	variants: {
 		extend: {
