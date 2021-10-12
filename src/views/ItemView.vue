@@ -1,5 +1,5 @@
 <template>
-	<div class="overflow-y-auto">
+	<div class="w-full overflow-y-auto">
 		<div class="container mx-auto grid grid-cols-12">
 			<div class="col-span-full xl:col-start-2 xl:col-end-12 flex gap-6 sm:p-6 my-2.5 sm:my-0">
 
