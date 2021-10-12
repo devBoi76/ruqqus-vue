@@ -38,7 +38,7 @@
 									/>
 								</router-link>
 								<div class="flex flex-col sm:flex-row sm:items-center sm:space-x-2 leading-4">
-									<router-link :to="'/'+item.author.username" class="block font-bold text-sm text-gray-900 dark:text-gray-100" :style="{ 'color': item.author.usernameColor }">
+									<router-link :to="'/'+item.author.username" class="flex items-center font-bold text-sm text-gray-900 dark:text-gray-100" :style="{ 'color': item.author.usernameColor }">
 										<span>{{ item.author.username }}</span>
 										<span v-if="item.author.title && site.hasCustomTitles" class="ml-2 px-2 inline-flex text-xs leading-5 font-medium rounded-sm text-white" :style="{ 'background-color': item.author.titleColor }">
 											{{ item.author.title }}
