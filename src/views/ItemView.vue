@@ -7,7 +7,7 @@
 				<div class="w-full">
 
 					<!-- Pinned Banner -->
-					<div v-if="item && item.isStickied" class="flex items-center mb-3 bg-green-100 border border-green-400 sm:rounded-sm">
+					<div v-if="item && item.isStickied" class="flex items-center mb-3 bg-green-100 border-t border-b sm:border border-green-400 sm:rounded-sm">
 						<div class="flex items-center justify-center w-10 h-10 bg-green-400">
 							<i class="fas fa-thumbtack text-white mt-1"></i>
 						</div>
