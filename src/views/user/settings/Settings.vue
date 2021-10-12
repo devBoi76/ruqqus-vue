@@ -1,6 +1,6 @@
 <template>
 	<div class="w-full overflow-y-auto">
-		<div class="grid grid-cols-12 xl:grid-cols-10">
+		<div class="container mx-auto grid grid-cols-12 xl:grid-cols-10">
 			<div class="col-span-full xl:col-start-3 xl:col-end-9 flex flex-col gap-4 sm:p-6 my-4 sm:my-0">
 				<div class="px-4 sm:px-0">
 					<h1 class="h3 font-semibold mb-0">
