@@ -10,7 +10,7 @@
 
 		<!-- Search Bar -->
 		<div class="container mx-auto grid grid-cols-12 -mt-8">
-			<div class="col-span-full xl:col-start-2 xl:col-end-12 px-6 z-75">
+			<div class="col-span-full lg:col-start-3 lg:col-end-11 px-6 z-75">
 				<form class="relative" @submit.prevent="onSubmit">
 					<div class="absolute left-4 top-[1.375rem]">
 						<button class="text-gray-400 hover:text-gray-500" @click="search()">
