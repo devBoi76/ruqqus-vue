@@ -9,7 +9,7 @@
 		</div>
 
 		<!-- Search Bar -->
-		<div class="grid grid-cols-12 -mt-8">
+		<div class="container mx-auto grid grid-cols-12 -mt-8">
 			<div class="col-span-full xl:col-start-2 xl:col-end-12 px-6 z-75">
 				<form class="relative" @submit.prevent="onSubmit">
 					<div class="absolute left-4 top-[1.375rem]">
@@ -28,7 +28,7 @@
 		</div>
 		<!-- End Search Bar -->
 
-		<div class="grid grid-cols-12" :class="{ 'xl:grid-cols-10':isCard }">
+		<div class="container mx-auto grid grid-cols-12" :class="{ 'xl:grid-cols-10':isCard }">
 			<div class="col-span-full flex gap-6 sm:p-6 my-2.5 sm:my-0" :class="isCard ? 'xl:col-start-3 xl:col-end-9' : 'xl:col-start-2 xl:col-end-12'">
 
 				<!-- Main Content Section -->
