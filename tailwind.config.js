@@ -170,6 +170,14 @@ module.exports = {
 				}
 			}
 		},
+		container: {
+			screens: {
+				sm: "100%",
+				md: "100%",
+				lg: "1180px",
+				xl: "1280px"
+			}
+		},
 		zIndex: {
 			'0': 0,
 			'10': 10,
