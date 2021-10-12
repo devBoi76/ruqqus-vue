@@ -3,7 +3,7 @@
     <!-- Dynamic navbar component -->
     <component :is="navbarComponent"/>
     <!-- Main content -->
-    <div class="flex h-screen pt-12 sm:pt-14 bg-gray-50 dark:bg-gray-950">
+    <div class="flex h-screen pt-12 sm:pt-14 bg-gray-50 sm:bg-gray-100 dark:bg-gray-950">
       <router-view></router-view>
     </div>
 
