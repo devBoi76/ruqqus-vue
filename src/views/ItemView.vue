@@ -38,8 +38,11 @@
 									/>
 								</router-link>
 								<div class="flex flex-col sm:flex-row sm:items-center sm:space-x-2 leading-4">
-									<router-link :to="'/'+item.author.username" class="block font-bold text-sm text-gray-900 dark:text-gray-100">
-										{{ item.author.username }}
+									<router-link :to="'/'+item.author.username" class="block font-bold text-sm text-gray-900 dark:text-gray-100" :style="{ 'color': item.author.usernameColor }">
+										<span>{{ item.author.username }}</span>
+										<span v-if="item.author.title && site.hasCustomTitles" class="ml-2 px-2 inline-flex text-xs leading-5 font-medium rounded-sm text-gray-900" :style="{ 'background-color': item.author.titleColor }">
+											{{ item.author.title }}
+										</span>
 									</router-link>
 									<div class="flex items-center space-x-2 text-xs mt-0.5 sm:mt-0 sm:text-sm text-gray-500">
 										<span>{{ getFormat(item.created_utc) }}</span>
@@ -361,6 +364,7 @@ export default {
 		}
 	},
 	computed: {
+		...mapState("site", ["site"]),
 		...mapState("persist", ["is_authenticated", "v"]),
 		...mapState("comments", ["mentions"]),
 		...mapGetters("items", ["getItem"]),
