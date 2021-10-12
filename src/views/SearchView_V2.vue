@@ -29,7 +29,7 @@
 		<!-- End Search Bar -->
 
 		<div class="container mx-auto grid grid-cols-12">
-			<div class="col-span-full flex gap-6 sm:p-6 my-2.5 sm:my-0" :class="isCard ? 'xl:col-start-3 xl:col-end-11' : 'xl:col-start-2 xl:col-end-12'">
+			<div class="col-span-full flex gap-6 sm:py-6 my-2.5 sm:my-0" :class="isCard ? 'lg:col-start-3 lg:col-end-11' : 'lg:col-start-2 lg:col-end-12'">
 
 				<!-- Main Content Section -->
 				<div class="w-full">
