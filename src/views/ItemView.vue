@@ -1,7 +1,7 @@
 <template>
 	<div class="w-full overflow-y-auto">
-		<div class="container mx-auto grid grid-cols-12 xl:grid-cols-10">
-			<div class="col-span-full xl:col-start-3 xl:col-end-9 flex gap-6 sm:p-6 my-2.5 sm:my-0">
+		<div class="container mx-auto grid grid-cols-12">
+			<div class="col-span-full xl:col-start-3 xl:col-end-11 flex gap-6 sm:p-6 my-2.5 sm:my-0">
 
 				<!-- Main Content Section -->
 				<div class="w-full">
@@ -91,7 +91,7 @@
 							<img
 							:src="item.url"
 							alt="Post image"
-							class="w-full md:w-1/3 h-full object-cover md:rounded-sm"
+							class="w-full h-full object-cover"
 							/>
 						</div>
 
