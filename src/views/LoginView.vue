@@ -64,7 +64,7 @@
 			</div>
 		</div>
 		<!-- Background artwork -->
-		<div v-if="site.unsplash.isActive" class="relative hidden lg:block w-2/4">
+		<div v-if="false" class="relative hidden lg:block w-2/4">
 			<!-- Background image -->
 			<div class="absolute w-full h-full bg-cover bg-center bg-purple-500" :style="{ backgroundImage: `url(${image.urls.regular})` }">
 			</div>
