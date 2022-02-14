@@ -3,6 +3,7 @@ const namespaced = true
 import axios from 'axios'
 
 import { getSite } from '../../api/Site.js';
+import router from "../../router";
 
 const state = {
 	site: {},
@@ -107,7 +108,7 @@ const actions = {
 		.then(response => {
 			let data = response.data
 			commit("SET_SITE", data)
-			document.documentElement.style.setProperty('--color-primary', data.rgb)
+			document.documentElement.style.setProperty('--color-primary', data.primaryColor)
 		})
 	},
 	login({ commit, dispatch }){
@@ -150,7 +151,7 @@ const actions = {
 
 		axios({
 			method: 'post',
-			url: '/login',
+			url: 'http://ruqqus.localhost:8000/api/v2/login',
 			data: data,
 			headers: headers
 		})
@@ -160,6 +161,7 @@ const actions = {
 				if (response.status === 200) {
 					commit("SET_AUTH_USER", response.data.v);
 					commit("AUTHENTICATE", true);
+					router.push("/");
 				}
 					// handle MFA code
 					else if (response.status === 201) {
@@ -185,7 +187,49 @@ const actions = {
 			dispatch('toasts/addNotification', {
 				type: 'error',
 				header: 'Error logging in',
-				message: 'Please try again later :/'
+				message: error.response.data.error
+			},
+			{
+				root: true
+			})
+		})
+		commit("changeLoadingState", false);
+	},
+	signup({commit, dispatch, rootState}, form){
+		commit("changeLoadingState", true);
+
+		const headers = {'Content-Type': 'multipart/form-data'}
+		const data = new FormData();
+
+		data.append('username', form.name);
+		data.append('password', form.password);
+		data.append('email', form.email)
+
+		axios({
+			method: 'post',
+			url: 'http://ruqqus.localhost:8000/api/v2/signup',
+			data: data,
+			headers: headers
+		})
+		.then(
+			function(response){
+
+				if (response.status === 200) {
+					commit("SET_AUTH_USER", response.data.v);
+					commit("AUTHENTICATE", true);
+					router.push("/");
+				} else{
+						commit("SET_AUTH_USER", {});
+						commit("AUTHENTICATE", false);
+					}
+				})
+		.catch(error => {
+			commit("SET_AUTH_USER", {});
+			commit("AUTHENTICATE", false);
+			dispatch('toasts/addNotification', {
+				type: 'error',
+				header: 'Error registering',
+				message: error.response.data.error
 			},
 			{
 				root: true

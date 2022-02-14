@@ -221,6 +221,7 @@ const routes = [
 
 		// Cancel all pending API requests on route change
 		router.beforeEach((to, from, next) => {
+			store.dispatch('site/fetchSite');
 			store.dispatch('base/CANCEL_PENDING_REQUESTS');
 			next();
 		})

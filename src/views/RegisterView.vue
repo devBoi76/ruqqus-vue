@@ -29,7 +29,7 @@
 								<input required type="password" class="form-input light" placeholder="Enter something secretive" name="password-desktop" v-model="form.password"/>
 							</div>
 						</form>
-						<button class="button primary w-full mt-6">
+						<button class="button primary w-full mt-6" @click="signup(form)">
 							Create account
 						</button>
 					</div>
@@ -70,6 +70,7 @@
 
 <script>
 	import { getRandomPhoto } from "../helpers/unsplash";
+	import { mapActions } from "vuex";
 
 	export default {
 		data() {
@@ -89,6 +90,7 @@
 			}
 		},
 		methods: {
+			...mapActions("persist", ["signup"]),
 			randomItem (items) {
 				return items[Math.floor(Math.random()*items.length)];
 			},

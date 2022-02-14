@@ -4,7 +4,7 @@
 import axios from 'axios';
 
 //const url = `/site`
-const url = 'https://da0eb3a6-c843-47ff-b064-d7e3d6d272ab.mock.pstmn.io/v2/site/'
+const url = 'http://ruqqus.localhost:8000/api/v2/site';
 
 // Return all public site info
 export function getSite(){

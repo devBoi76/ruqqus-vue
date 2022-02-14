@@ -4,7 +4,7 @@
 			<div class="flex items-center justify-between h-12 sm:h-14">
 				<div class="flex flex-grow items-center">
 					<div class="flex-shrink-0">
-						<router-link to="/" class="font-semibold text-xl text-gray-900">
+						<router-link to="/" class="font-semibold text-xl text-primary">
 							{{ site.name }}
 						</router-link>
 					</div>
