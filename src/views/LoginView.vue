@@ -116,18 +116,18 @@
 			randomItem (items) {
 				return items[Math.floor(Math.random()*items.length)];
 			},
-			fetchRandomPhoto() {
+			/*fetchRandomPhoto() {
 				let query = this.site.unsplash.query
 				getRandomPhoto(query)
 				.then(response => {
 					this.image = response.data
 				})
-			}
+			}*/
 		},
-		created() {
+		/*created() {
 			if (this.site.unsplash.isActive) {
 				this.fetchRandomPhoto()
 			}
-		}
+		}*/
 	}
 </script>
