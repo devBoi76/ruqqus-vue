@@ -1,6 +1,6 @@
 <template>
 	<div class="flex flex-grow bg-white">
-		<div class="relative w-full" :class="{ 'lg:w-2/4 shadow':site.unsplash.isActive }">
+		<div class="relative w-full" :class="{ 'lg:w-2/4 shadow':false }">
 			<!-- Form section -->
 			<div class="flex flex-col h-full justify-center mx-auto p-12 md:p-0 md:w-96">
 				<!-- Username and password form -->
