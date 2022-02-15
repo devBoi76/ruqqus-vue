@@ -108,7 +108,7 @@ const actions = {
 		.then(response => {
 			let data = response.data
 			commit("SET_SITE", data)
-			document.documentElement.style.setProperty('--color-primary', data.primaryColor)
+			document.documentElement.style.setProperty('--color-primary', `data.primaryColor`)
 		})
 	},
 	login({ commit, dispatch }){

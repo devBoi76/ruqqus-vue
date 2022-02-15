@@ -4,7 +4,7 @@
 import axios from 'axios';
 
 //const url = `/account/`
-const url = `/api/v2/account/`
+const url = `http://localhost/api/v2/account/`
 
 // Return all public info given account username (or id)
 export function getAccount(id){
