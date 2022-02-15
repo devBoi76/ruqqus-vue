@@ -4,7 +4,7 @@
 import axios from 'axios';
 
 //const url = `/site`
-const url = 'http://ruqqus.localhost:8000/api/v2/site';
+const url = '/api/v2/site';
 
 // Return all public site info
 export function getSite(){
