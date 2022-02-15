@@ -3,7 +3,7 @@
 
 import axios from 'axios';
 
-const url = 'https://ed938631-cc32-4bb1-805e-ae9a7f5b4bca.mock.pstmn.io/v2/feed/'
+const url = '/api/v2/feed/'
 
 // Return a posts of a feed. For demonstration purposes.
 export function getFeed(type, params) {
