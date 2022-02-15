@@ -151,6 +151,11 @@ export default {
 			} else {
 				return 'fa-layer-group'
 			}
+		},
+		hasPosts() {
+			if (!this.loading && this.items.length === 0) {
+				console.log("No posts")
+			}
 		}
 	},
 	watch: {
@@ -162,7 +167,7 @@ export default {
 				this.getFeed()
 			},
 			flush: "post"
-		}
+		},
 	},
 	methods: {
 		getFeed() {

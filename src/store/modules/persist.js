@@ -149,6 +149,8 @@ const actions = {
 		data.append('username', form.name);
 		data.append('password', form.password);
 
+
+		// TODO: Move this to `api`
 		axios({
 			method: 'post',
 			url: '/api/v2/login',
