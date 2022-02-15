@@ -20,7 +20,7 @@ const mutations = {
 }
 
 const actions = {
-	fetchSite({ state, commit, rootState }) {
+	fetchSite({ commit, dispatch, rootState }) {
 		getSite()
 		.then(response => {
 			let data = response.data
