@@ -150,7 +150,7 @@
 				this.count = this.count + 1;
 			}
 		},
-		mounted() {
+		beforeMount() {
 			this.editor = new Editor({
 				extensions: [
 				Image,
@@ -162,6 +162,7 @@
 					showOnlyWhenEditable: true,
 					showOnlyCurrent: true
 				}),
+				console.log("HERE"),
 				CharacterCount.configure({
 					limit: this.limit,
 				}),

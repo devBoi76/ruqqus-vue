@@ -153,7 +153,7 @@ const actions = {
 		// TODO: Move this to `api`
 		axios({
 			method: 'post',
-			url: '/api/v2/login',
+			url: 'http://localhost/api/v2/login',
 			data: data,
 			headers: headers
 		})
@@ -208,42 +208,37 @@ const actions = {
 		data.append('email', form.email)
 
 		// Make a post request to sign up
-		// FIXME: Implement /signup/ route
-		// 		  After posting /signup/ this should redirect to the onboarding page.
+		// After posting /signup/ this should redirect to the onboarding page.
+		axios({
+			method: 'post',
+			url: 'http://localhost/api/v2/signup',
+			data: data,
+			headers: headers
+		})
+		.then(
+			function(response){
 
-			commit("SET_AUTH_USER", data);
-			commit("AUTHENTICATE", true);
-			router.push("/");
-		// axios({
-		// 	method: 'post',
-		// 	url: '/api/v2/signup',
-		// 	data: data,
-		// 	headers: headers
-		// })
-		// .then(
-		// 	function(response){
-
-		// 		if (response.status === 200) {
-		// 			commit("SET_AUTH_USER", response.data.v);
-		// 			commit("AUTHENTICATE", true);
-		// 			router.push("/");
-		// 		} else{
-		// 				commit("SET_AUTH_USER", {});
-		// 				commit("AUTHENTICATE", false);
-		// 			}
-		// 		})
-		// .catch(error => {
-		// 	commit("SET_AUTH_USER", {});
-		// 	commit("AUTHENTICATE", false);
-		// 	dispatch('toasts/addNotification', {
-		// 		type: 'error',
-		// 		header: 'Error registering',
-		// 		message: error.response.data.error
-		// 	},
-		// 	{
-		// 		root: true
-		// 	})
-		// })
+				if (response.status === 200) {
+					commit("SET_AUTH_USER", response.data.v);
+					commit("AUTHENTICATE", true);
+					router.push("/");
+				} else{
+						commit("SET_AUTH_USER", {});
+						commit("AUTHENTICATE", false);
+					}
+				})
+		.catch(error => {
+			commit("SET_AUTH_USER", {});
+			commit("AUTHENTICATE", false);
+			dispatch('toasts/addNotification', {
+				type: 'error',
+				header: 'Error registering',
+				message: error.response.data.error
+			},
+			{
+				root: true
+			})
+		})
 		commit("changeLoadingState", false);
 	},
 	verify_mfa({commit, state}, form){
