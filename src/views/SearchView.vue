@@ -140,9 +140,6 @@ export default {
 			})
 			.finally(() => this.loading = false)
 		}
-	},
-	created() {
-		document.documentElement.style.setProperty('--color-primary', `139, 92, 246`)
 	}
 };
 </script>

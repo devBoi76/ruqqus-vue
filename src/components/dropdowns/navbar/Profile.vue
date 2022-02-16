@@ -82,7 +82,7 @@
       <div class="py-2">
         <!-- Sign Out -->
         <MenuItem v-slot="{ active }">
-          <button :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-1.5']">
+          <button @click="logout" :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','group flex items-center w-full px-4 py-1.5']">
             <i class="far fa-sign-out text-center fa-fw mr-2"></i><span>Sign Out</span>
           </button>
         </MenuItem>

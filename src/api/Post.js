@@ -3,7 +3,7 @@
 
 import axios from 'axios';
 
-const url = '/api/v2/post/'
+const url = 'http://localhost/api/v2/post/'
 
 // Return post info given id
 export function getPost(id){
