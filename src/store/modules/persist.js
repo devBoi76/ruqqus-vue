@@ -269,6 +269,7 @@ const actions = {
 		})
 	},
 	logout({commit}){
+		console.log("logging out")
 		axios({
 			method: 'post',
 			url: '/logout',
