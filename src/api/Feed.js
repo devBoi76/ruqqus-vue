@@ -3,7 +3,7 @@
 
 import axios from 'axios';
 
-const url = 'http://localhost/api/v2/feed/'
+const url = '/api/v2/feed/'
 
 // Return a posts of a feed. For demonstration purposes.
 export function getFeed(type, params) {

@@ -3,7 +3,7 @@
 
 import axios from 'axios';
 
-const url = 'http://localhost/comment/'
+const url = '/comment/'
 
 // Return comment given id
 export function getComment(id){

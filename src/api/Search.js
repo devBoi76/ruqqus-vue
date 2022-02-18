@@ -3,7 +3,7 @@
 
 import axios from 'axios';
 
-const url = `http://localhost/search`
+const url = `/search`
 
 // Return a posts of a feed. Requires a type (all, hot, etc). Optioanl parameters for sort, pagination, etc
 export function getSearch(params){

@@ -71,7 +71,7 @@
 					</h5>
 					<!-- Body -->
 					<div v-if="item.bodyHtml" class="relative overflow-hidden" :class="{'max-h-56 mask-overlay':!expanded}">
-						<div class="text-gray-900 dark:text-gray-200 break-words" v-html="item.bodyHtml"></div>
+						<div class="text-gray-900 dark:text-gray-200 break-all" v-html="item.bodyHtml"></div>
 					</div>
 					<!-- Body expand button, mobile only -->
 					<div v-if="item.bodyHtml" class="relative flex sm:hidden justify-center -mt-2">

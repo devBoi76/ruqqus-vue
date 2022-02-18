@@ -3,7 +3,7 @@
 
 import axios from 'axios';
 
-const url = `http://localhost/guild/`
+const url = `/guild/`
 
 // Return all public guild info given guild name (or id)
 export function getGuild(guild){
