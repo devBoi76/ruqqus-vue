@@ -4,7 +4,7 @@
 			<!-- User Avatar -->
 			<router-link v-if="comment.profile_url" :to="`/${comment.author_name}`">
 				<img
-				:src="comment.profile_url"
+				:src="comment.author.avatarUrl"
 				class="object-fit rounded-sm bg-gray-100 dark:bg-gray-700"
 				:class="level > 1 || isCollapsed ? 'w-6 h-6' : 'w-8 h-8'"
 				/>

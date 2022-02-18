@@ -87,7 +87,7 @@ const routes = [
 	{ path: '/all', name: 'AllView', component: FeedView, props: true, meta: {title: 'all', sidebar: false, requiresAuth: true} },
 
 	// Thread View
-	{ path: '/post/:id/:title?/:commentId?', name: 'item-view', component: ThreadView, props: true, meta: {sidebar: false, requiresAuth: false} },
+	{ path: '/post/:id/:slug?/:commentId?', name: 'item-view', component: ThreadView, props: true, meta: {sidebar: false, requiresAuth: false} },
 
 	{ path: '/settings', component: UserSettingsView, meta: {sidebar: false, requiresAuth: true} },
 

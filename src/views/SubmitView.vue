@@ -36,7 +36,7 @@
 								<div class="p-2.5 space-y-2.5 sm:p-4 sm:space-y-3">
 									<div class="flex items-center justify-between">
 										<div class="flex items-center">
-											<img class="w-9 h-9 md:w-8 md:h-8 object-cover mr-2 rounded-sm bg-gray-100 dark:bg-gray-700" :src="v.profile_url"/>
+											<img class="w-9 h-9 md:w-8 md:h-8 object-cover mr-2 rounded-sm bg-gray-100 dark:bg-gray-700" :src="v.avatarUrl"/>
 											<div class="font-bold text-sm">
 												{{ v.username }}
 											</div>
@@ -51,12 +51,13 @@
 									</div>
 
 									<div v-show="!submission.image.source">
-										<input type="text" class="form-input light" v-model="submission.link" placeholder="Add a link to something cool (optional)"/>
+										<input type="text" class="form-input light" v-model="submission.url" placeholder="Add a link to something cool (optional)"/>
 									</div>
 
 									<iframe v-if="embed" :src="embed" width="100%" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"/>
 
-									<Editor @input="getEditorContent()" min-height="10rem" :limit="10000"/>
+									<!--<Editor @input="getEditorContent()" min-height="10rem" :limit="10000"/>-->
+									<Editor v-model="submission.body" min-height="10rem" :limit="10000"/>
 									<!-- Image upload -->
 									<div :class="{'opacity-50':link}" class="hidden">
 										<div class="rounded-sm w-28 h-28 border border-gray-300 border-dashed flex items-center justify-center cursor-pointer text-sm text-gray-400 bg-gray-50 hover:bg-gray-100" @click="chooseImage">
@@ -101,7 +102,7 @@
 									<button type="button" class="button linkGray400">
 										Save as Draft
 									</button>
-									<button type="button" class="button purple500" @click="createPost()">
+									<button type="button" class="button primary" @click="createPost()">
 										{{ buttonText }}
 									</button>
 								</div>
@@ -121,7 +122,7 @@
 										<div class="flex flex-col space-y-5 mt-4 pt-5">
 											<div class="flex flex-col space-y-5">
 												<label class="inline-flex">
-													<input type="radio" class="form-radio primary" v-model="publishType" value="immediately" checked>
+													<input type="radio" class="form-radio primary" v-model="time" value="immediately" checked>
 													<div class="ml-3 -mt-0.5 w-full">
 														<div class="text-sm text-gray-900 font-bold select-none">
 															Publish now
@@ -132,7 +133,7 @@
 													</div>
 												</label>
 												<label class="inline-flex">
-													<input type="radio" class="form-radio primary" v-model="publishType" value="scheduled">
+													<input type="radio" class="form-radio primary" v-model="time" value="scheduled">
 													<div class="ml-3 -mt-0.5 w-full">
 														<div class="text-sm text-gray-900 font-bold select-none">
 															Schedule for later
@@ -219,26 +220,26 @@
 				{ value: "1", text: "#Memes" },
 				{ value: "2", text: "#Misc" },
 				],
-				ratings: ['All ages','NSFW','NSFL']
-				// submission: {
-				//   title: null,
-				//   link: null,
-				//   image: {
-				//     file: null,
-				//     source: null,
-				//     filename: null
-				//   },
-				//   body: null,
+				ratings: ['All ages','NSFW','NSFL'],
+				submission: {
+				   title: null,
+				   url: null,
+				   image: {
+				     file: null,
+				     source: null,
+				     filename: null
+				   },
+				   body: "",
 				//   guild: null,
-				//   NSFW: false,
-				// }
+				   NSFW: false
+				},
 			};
 		},
 		computed: {
 			...mapState("persist", ["v"]),
-			submission() {
+			/*submission() {
 				return this.$store.state.create.post.submission
-			},
+			}*/
 			buttonText() {
 				if (this.time === 'immediately') {
 					return 'Post'
@@ -262,10 +263,11 @@
 				this.options = options
 			},
 			getEditorContent(value) {
+				console.log(`content updated to ${value}`);
 				this.submission.body = value;
 			},
 			onLinkInput: function(e){
-				this.submission.link = e.target.innerHTML
+				this.submission.url = e.target.innerHTML
 			},
 			chooseLink() {
 				this.showLinkInput = true

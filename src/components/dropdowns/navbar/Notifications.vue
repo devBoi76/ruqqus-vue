@@ -53,7 +53,7 @@
               Show:
             </div>
             <hr>
-            <t-checkbox-group name="filter" v-model="filters" :options="['Replies', 'Mentions', 'Activity', 'Moderation']"></t-checkbox-group>
+            <!--<t-checkbox-group name="filter" v-model="filters" :options="['Replies', 'Mentions', 'Activity', 'Moderation']"></t-checkbox-group>-->
           </div>
 
           <!-- Notifications List -->

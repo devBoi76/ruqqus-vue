@@ -45,11 +45,11 @@
 										</span>
 									</router-link>
 									<div class="flex items-center space-x-2 text-xs mt-0.5 sm:mt-0 sm:text-sm text-gray-500">
-										<span>{{ getFormat(item.created_utc) }}</span>
-										<span v-if="item.edited_utc != 0">
+										<span>{{ getFormat(item.createdUtc) }}</span>
+										<span v-if="item.editedUtc != 0">
 											<span class="font-black text-gray-400 dark:text-gray-500">·</span>
 											<span class="italic">
-												Edited {{ getFormat(item.edited_utc) }}
+												Edited {{ getFormat(item.editedUtc) }}
 											</span>
 										</span>
 									</div>
@@ -82,10 +82,10 @@
 						<div class="px-2.5 mt-3 sm:mt-4" v-if="item.url && item.type !== 'image'">
 							<EmbedLink
 							:domain="item.domain"
-							:title="item.title"
+							:title="item.metaTitle"
 							:thumbnail="item.thumbUrl"
 							:url="item.url"
-							:preview="item.url"
+							:preview="item.metaDescription"
 							/>
 						</div>
 
@@ -99,7 +99,7 @@
 						</div>
 
 						<!-- Text body -->
-						<div v-if="item.bodyHtml" class="px-2.5 mt-3 sm:mt-4 relative overflow-hidden">
+						<div v-if="item.body" class="px-2.5 mt-3 sm:mt-4 relative overflow-hidden">
 							<div class="break-words dark:text-gray-200" v-html="item.bodyHtml"></div>
 						</div>
 

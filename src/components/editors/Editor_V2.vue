@@ -67,7 +67,7 @@
 			</div>
 			<!-- Character Count -->
 			<div class="text-xs text-gray-400">
-				{{ limit - editor.getCharacterCount() }}
+				{{ limit - editor.storage.characterCount.characters() }}
 			</div>
 		</div>
 
@@ -97,7 +97,7 @@
 			EmotePicker
 		},
 		props: {
-			value: {
+			modelValue: {
 				type: String,
 				default: ''
 			},
@@ -150,7 +150,7 @@
 				this.count = this.count + 1;
 			}
 		},
-		mounted() {
+		created() {
 			this.editor = new Editor({
 				extensions: [
 				Image,
@@ -219,11 +219,22 @@
 					},
 				}),
 				],
-				content: this.value,
-				onUpdate: ({ getHTML }) => {
-					this.$emit('input', getHTML())
+				content: this.modelValue,
+				onUpdate: () => {
+					this.$emit('update:modelValue', this.editor.getHTML());
 				}
 			})
+		},
+		watch: {
+			modelValue(value) {
+				const isSame = value === this.editor.getHTML();
+
+				if (isSame) {
+					return
+				}
+
+				this.editor.commands.setContent(value, false);
+			}
 		},
 		beforeUnmount() {
 			this.editor.destroy()

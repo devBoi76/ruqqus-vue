@@ -1,6 +1,7 @@
 const namespaced = true
 
-import axios from 'axios'
+import axios from 'axios';
+import router from "../../router";
 
 const state = {
   firstStepValidated: false,
@@ -112,30 +113,30 @@ const actions = {
     //data.append('file', state.post.submission.image.file);
     data.append('url', state.post.submission.url);
     data.append('body', state.post.submission.body);
-    data.append('board', rootState.guild.guild.name || 'general');
+    //data.append('board', rootState.guild.guild.name || 'general');
     data.append('formkey', rootState.persist.v.formkey)
 
     console.log(state.post.submission.title)
     //console.log(state.post.submission.image.file)
     console.log(state.post.submission.body)
-    console.log(rootState.guild.guild.name)
+    //console.log(rootState.guild.guild.name)
     console.log(rootState.persist.v.formkey)
 
     axios({
       method: 'post',
-      url: '/submit',
+      url: '/api/v2/submissions',
       data: data,
       headers: headers
     })
     .then(response => {
       console.log("post upvoted")
-      return response
+      router.push(response.data.permalink)
     })
     .catch(error => {
       dispatch('toasts/addNotification', {
         type: 'error',
         header: 'Failed to create post',
-        message: 'Please try again later.'
+        message: error.response.data.error || 'Please try again later.'
       },
       {
         root: true

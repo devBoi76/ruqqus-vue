@@ -9,7 +9,7 @@
 
 					<!-- Post Creation -->
 					<router-link to="/submit" v-if="is_authenticated" class="group hidden sm:flex items-center mb-4 px-4 py-3 bg-white dark:bg-gray-800 sm:border sm:rounded-sm">
-						<img :src="v.profile_url" class="flex-shrink-0 w-6 h-6 object-fit mr-3 rounded-sm bg-gray-200 dark:bg-gray-800">
+						<img :src="v.avatarUrl" class="flex-shrink-0 w-6 h-6 object-fit mr-3 rounded-sm bg-gray-200 dark:bg-gray-800">
 						<div class="flex-grow overflow-hidden">
 							<div class="flex items-center h-full">
 								<p class="text-gray-400 group-hover:text-gray-500 dark:group-hover:text-gray-200 mb-0">

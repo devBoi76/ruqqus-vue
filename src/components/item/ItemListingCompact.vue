@@ -340,7 +340,7 @@ export default {
 		},
 		vote(type) {
 			this.voteType = this.voteType === type ? 0 : type; // update component vote count
-			this.$store.dispatch('items/votePost', {post_id: this.item.id, vote: type}); // dispatch action and handle voting server-side-
+			this.$store.dispatch('items/votePost', {post_id: this.item.id, vote: this.voteType}); // dispatch action and handle voting server-side-
 		}
 	},
 };

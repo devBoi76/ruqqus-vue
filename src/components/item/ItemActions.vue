@@ -17,7 +17,7 @@
       </button>
       <!-- Score -->
       <div class="text-sm font-medium" :class="{ 'text-primary': voteType === 1, 'text-teal-500': voteType === -1 }">
-        {{ score + voteType }}
+        {{ score }}
       </div>
       <!-- Downvote Button -->
       <button class="px-2 py-1 text-gray-500 dark:text-gray-100" @click="vote(-1)">
@@ -26,25 +26,25 @@
     </div>
     <!-- Repost Button -->
     <div v-if="repost" class="mb-1 text-center">
-      <button size="lg" class="button link text-gray-400" v-b-tooltip.hover.left title="Repost">
+      <button size="lg" class="button link text-gray-400" title="Repost">
         <i class="far fa-retweet"></i>
       </button>
     </div>
     <!-- Share Button -->
     <div v-if="share" class="mb-1 text-center">
-      <button size="lg" class="button link text-gray-400" v-b-tooltip.hover.left title="Share post">
+      <button size="lg" class="button link text-gray-400" title="Share post">
         <i class="far fa-share-alt"></i>
       </button>
     </div>
     <!-- Save Button -->
     <div v-if="save" class="mb-1 text-center">
-      <button size="lg" class="button link text-gray-400" v-b-tooltip.hover.left title="Save post">
+      <button size="lg" class="button link text-gray-400" title="Save post">
         <i class="far fa-bookmark"></i>
       </button>
     </div>
     <!-- Report Button -->
     <div v-if="report" class="mb-1 text-center">
-      <button size="lg" class="button link text-gray-400" v-b-tooltip.hover.left title="Report post">
+      <button size="lg" class="button link text-gray-400" title="Report post">
         <i class="far fa-flag"></i>
       </button>
     </div>
@@ -65,7 +65,7 @@
       options: Boolean,
       voting: Boolean,
       stickyPos: Boolean,
-      id: Number
+      id: String
     },
     data() {
       return {

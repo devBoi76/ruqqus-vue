@@ -3,7 +3,7 @@
 
 import axios from 'axios';
 
-const url = '/api/v2/post/'
+const url = '/api/v2/submissions/'
 
 // Return post info given id
 export function getPost(id){

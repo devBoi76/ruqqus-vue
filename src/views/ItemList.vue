@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<!-- Skeleton loading -->
-		<div v-if="!items.length">
+		<div v-if="!items">
 			<div v-if="!isCard || compact">
 				<div v-for="i in 4" :key="i" class="mb-2 last:mb-0 p-2.5 sm:px-4 sm:py-3 sm:rounded-sm sm:border bg-white dark:bg-gray-800 dark:border-transparent">
 					<div class="animate-pulse">
@@ -39,6 +39,10 @@
 				<component :is="itemComponent" :id="item" :moderating="moderating" class="mb-2.5 sm:mb-2 last:mb-0"/>
 			</keep-alive>
 		</div>
+		<!--<div v-else-if="items.length === 0" class="text-center p-5">
+			<h1 class="text-lg">This place is a ghost town...</h1>
+			<p class="text-gray-600">There doesn't seem to be anything here</p>
+		</div>-->
 
 		<div v-show="items.length" class="flex w-full justify-center mt-4 px-4 sm:px-8">
 			<button class="button gray200" @click="loadMore()">
@@ -76,7 +80,8 @@
 	const ItemListing = defineAsyncComponent(() => import('@/components/item/ItemListing.vue'))
 	const ItemListingCompact = defineAsyncComponent(() => import('@/components/item/ItemListingCompact.vue'))
 
-	//import ItemListingCompact from "@/components/item/ItemListingCompact.vue";
+	/*import ItemListingCompact from "@/components/item/ItemListingCompact.vue";
+	import ItemListing from "@/components/item/ItemListing.vue";*/
 
 	export default {
 		name: "item-list",

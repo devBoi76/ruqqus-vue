@@ -47,10 +47,10 @@
 				<div class="px-2.5 mt-2.5" v-if="item.url && item.type !== 'image'">
 					<EmbedLink
 					:domain="item.domain"
-					:title="item.meta_title"
+					:title="item.metaTitle"
 					:thumbnail="item.thumbUrl"
 					:url="item.url"
-					:preview="item.meta_description"
+					:preview="item.metaDescription"
 					/>
 				</div>
 				<!-- Image -->
@@ -113,7 +113,7 @@
 							</button>
 							<!-- Score -->
 							<div class="text-sm text-center font-bold leading-4" :class="{ 'text-primary': voteType === 1, 'text-teal-500': voteType === -1, 'text-gray-900 dark:text-gray-300': voteType === 0 }">
-								{{ item.score + voteType }}
+								{{ item.score + voteType  }}
 							</div>
 							<!-- Downvote Button -->
 							<button class="text-gray-500 dark:text-gray-400" @click="vote(-1)">
@@ -122,14 +122,14 @@
 						</div>
 						<div class="hidden">
 							<!-- Thread Link -->
-							<router-link tag="button" :to="{ name: 'guild-item-view', params: { id: this.item.id }}" class="flex items-center text-primary leading-6 hover:text-opacity-80">
+							<!--<router-link tag="button" :to="{ name: 'guild-item-view', params: { id: this.item.id }}" class="flex items-center text-primary leading-6 hover:text-opacity-80">
 								<i class="far fa-long-arrow-right fa-fw mr-1"></i>
 								<span class="text-sm font-bold">View thread</span>
-							</router-link>
+							</router-link>-->
 						</div>
 						<div class="flex items-center space-x-6">
 							<!-- Expand Text Post Button -->
-							<button v-if="textPost" class="flex items-center text-gray-500 leading-none dark:text-gray-400 hover:text-gray-600" @click="toggleExpand()">
+							<button v-if="!item.domain" class="flex items-center text-gray-500 leading-none dark:text-gray-400 hover:text-gray-600" @click="toggleExpand()">
 								<i class="far fa-fw mr-1" :class="expanded ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
 								<span class="text-sm font-bold">{{ expanded ? 'Collapse' : 'Expand' }}</span>
 							</button>
@@ -175,7 +175,7 @@
 								</button>
 								<!-- Score -->
 								<div class="text-sm text-center font-bold" :class="{ 'text-primary': voteType === 1, 'text-teal-500': voteType === -1, 'text-gray-900 dark:text-gray-300': voteType === 0 }">
-									{{ item.score + voteType }}
+									{{ item.score }}
 								</div>
 								<!-- Downvote Button -->
 								<button class="text-gray-600 dark:text-gray-400" @click="vote(-1)">
@@ -282,7 +282,7 @@ export default {
 		},
 		vote(type) {
 			this.voteType = this.voteType === type ? 0 : type; // update component vote count
-			this.$store.dispatch('items/votePost', {post_id: this.id, vote: type}); // dispatch action and handle voting server-side
+			this.$store.dispatch('items/votePost', {post_id: this.id, vote: this.voteType}); // dispatch action and handle voting server-side
 		}
 	},
 };

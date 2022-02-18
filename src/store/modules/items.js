@@ -79,11 +79,12 @@ const getters = {
 		return state.posts[id].itemVoteActionStatus
 	},
 	getItemVoteType: (state) => (id) => {
-		return state.posts[id].voted
+		return state.posts[id].voted || 0
 	},
 	// Get the status of item's saved property
 	getItemSavedStatus: (state) => (id) => {
-		return state.posts[id].isSaved
+		//return state.posts[id].isSaved || false;
+		return false;
 	}
 }
 
@@ -228,7 +229,7 @@ const actions = {
 		console.log(payload.params)
 		getFeed(payload.feed, payload.params)
 		.then(response => {
-			let data = response.data
+			let data = response.data.data
 			console.log(data)
 			commit("SET_ITEMS", data);
 			//commit('guild/SET_GUILDS', response.data.results, { root: true });
@@ -274,7 +275,7 @@ const actions = {
 		data.append('formkey', rootState.persist.v.formkey)
 		axios({
 			method: 'post',
-			url: `/post/${obj.post_id}/${obj.vote}`,
+			url: `/api/v2/submissions/${obj.post_id}/votes/${obj.vote}`,
 			data: data,
 			headers: headers
 		}).then(

@@ -3,7 +3,7 @@
     <div>
       <MenuButton class="flex items-center p-1 text-sm text-gray-900 font-bold bg-white dark:bg-gray-800 rounded-sm hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:shadow-solid focus:outline-none focus:shadow-solid focus:bg-gray-100 dark:focus:bg-gray-700">
         <!-- User Avatar -->
-        <img class="w-8 h-8 object-cover rounded-sm mr-2" :src="v.profile_url" alt="user avatar"/>
+        <img class="w-8 h-8 object-cover rounded-sm mr-2" :src="v.avatarUrl" alt="user avatar"/>
         <i class="far fa-chevron-down fa-sm text-gray-700 dark:text-gray-400 mr-2"></i>
       </MenuButton>
     </div>
@@ -20,7 +20,7 @@
       <!-- User Details -->
       <router-link :to="`/${v.username}`" class="flex items-center p-4">
         <!-- User Avatar -->
-        <img class="w-10 h-10 object-cover rounded-sm" :src="v.profile_url" alt="user avatar"/>
+        <img class="w-10 h-10 object-cover rounded-sm" :src="v.avatarUrl" alt="user avatar"/>
         <div class="pl-3 truncate">
           <!-- Username -->
           <div class="text-gray-900 font-semibold leading-4">

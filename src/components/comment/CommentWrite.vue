@@ -1,7 +1,7 @@
 <template>
   <div class="flex">
     <!-- User Avatar -->
-    <img v-show="!is_reply" :src="v.profile_url" class="w-8 h-8 object-fit rounded-sm bg-gray-200 dark:bg-gray-800 mr-3 hidden sm:block"/>
+    <img v-show="!is_reply" :src="v.avatarUrl" class="w-8 h-8 object-fit rounded-sm bg-gray-200 dark:bg-gray-800 mr-3 hidden sm:block"/>
     <div class="flex-grow">
       <!-- Placeholder Faux-Input -->
       <!-- When clicked, the functional rich-text editor is rendered -->

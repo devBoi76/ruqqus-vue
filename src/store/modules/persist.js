@@ -40,7 +40,8 @@ const state = {
 	is_leftBar_collapsed: false,
 	mfa: false,
 	notificationsFilters: [],
-	searchHistory: []
+	searchHistory: [],
+	token: null
 }
 
 const getters = {
@@ -49,6 +50,9 @@ const getters = {
 	},
 	getAuthUser(state) {
 		return state.v
+	},
+	getToken(state) {
+		return state.token;
 	}
 }
 
@@ -66,6 +70,9 @@ const mutations = {
 		console.log("setting u : ")
 		console.log("payload: ", payload.data)
 		state.u = payload.data
+	},
+	SET_TOKEN(state, token) {
+		state.token = token;
 	},
 	SET_AUTH_USER(state, payload) {
 		state.v = payload
@@ -160,6 +167,7 @@ const actions = {
 
 				if (response.status === 200) {
 					commit("SET_AUTH_USER", response.data.v);
+					commit("SET_TOKEN", response.data.token);
 					commit("AUTHENTICATE", true);
 					router.push("/");
 				}
@@ -204,44 +212,37 @@ const actions = {
 		data.append('username', form.name);
 		data.append('password', form.password);
 		data.append('email', form.email)
+		axios({
+			method: 'post',
+		 	url: '/api/v2/signup',
+		 	data: data,
+		 	headers: headers
+		 })
+		 .then(
+		 	function(response){
 
-		// Make a post request to sign up
-		// FIXME: Implement /signup/ route
-		// 		  After posting /signup/ this should redirect to the onboarding page.
-
-			commit("SET_AUTH_USER", data);
-			commit("AUTHENTICATE", true);
-			router.push("/");
-		// axios({
-		// 	method: 'post',
-		// 	url: '/api/v2/signup',
-		// 	data: data,
-		// 	headers: headers
-		// })
-		// .then(
-		// 	function(response){
-
-		// 		if (response.status === 200) {
-		// 			commit("SET_AUTH_USER", response.data.v);
-		// 			commit("AUTHENTICATE", true);
-		// 			router.push("/");
-		// 		} else{
-		// 				commit("SET_AUTH_USER", {});
-		// 				commit("AUTHENTICATE", false);
-		// 			}
-		// 		})
-		// .catch(error => {
-		// 	commit("SET_AUTH_USER", {});
-		// 	commit("AUTHENTICATE", false);
-		// 	dispatch('toasts/addNotification', {
-		// 		type: 'error',
-		// 		header: 'Error registering',
-		// 		message: error.response.data.error
-		// 	},
-		// 	{
-		// 		root: true
-		// 	})
-		// })
+		 		if (response.status === 200) {
+		 			commit("SET_AUTH_USER", response.data.v);
+		 			commit("AUTHENTICATE", true);
+		 			commit("SET_TOKEN", response.data.token);
+		 			router.push("/");
+		 		} else{
+		 				commit("SET_AUTH_USER", {});
+		 				commit("AUTHENTICATE", false);
+		 			}
+		 		})
+		 .catch(error => {
+		 	commit("SET_AUTH_USER", {});
+		 	commit("AUTHENTICATE", false);
+		 	dispatch('toasts/addNotification', {
+		 		type: 'error',
+		 		header: 'Error registering',
+		 		message: error.response.data.error
+		 	},
+		 	{
+		 		root: true
+		 	})
+		})
 		commit("changeLoadingState", false);
 	},
 	verify_mfa({commit, state}, form){
