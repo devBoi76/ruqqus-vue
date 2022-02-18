@@ -115,7 +115,7 @@ const actions = {
 		.then(response => {
 			let data = response.data
 			commit("SET_SITE", data)
-			document.documentElement.style.setProperty('--color-primary', data.primaryColor)
+			document.documentElement.style.setProperty('--color-primary', `data.primaryColor`)
 		})
 	},
 	login({ commit, dispatch }){
@@ -156,9 +156,11 @@ const actions = {
 		data.append('username', form.name);
 		data.append('password', form.password);
 
+
+		// TODO: Move this to `api`
 		axios({
 			method: 'post',
-			url: '/api/v2/login',
+			url: 'http://localhost/api/v2/login',
 			data: data,
 			headers: headers
 		})
@@ -218,9 +220,7 @@ const actions = {
 		 	data: data,
 		 	headers: headers
 		 })
-		 .then(
-		 	function(response){
-
+		 .then(function(response){
 		 		if (response.status === 200) {
 		 			commit("SET_AUTH_USER", response.data.v);
 		 			commit("AUTHENTICATE", true);
@@ -268,6 +268,7 @@ const actions = {
 		})
 	},
 	logout({commit}){
+		console.log("logging out")
 		axios({
 			method: 'post',
 			url: '/logout',
